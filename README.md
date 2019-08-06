@@ -73,3 +73,14 @@ You also have to do that if you include multiple profiles using the same events
 including profile! If you want to make sure, manually create all EDDI Event 
 handlers used in imported profiles and have them call the corresponding 
 commands. See the Elite Dangerous profile for reference.
+
+## Contributing ##
+
+If you run into any errors, please try running the profile in question on its 
+own / get a fresh version. If that doesn’t fix the error, look at the 
+[devel](https://github.com/alterNERDtive/VoiceAttack-profiles/tree/devel) branch 
+and see if it’s fixed there already.
+
+If you have no idea what I was saying in that last parargraph and / or the 
+things mentioned there don’t fix your problem, please [file an 
+issue](https://github.com/alterNERDtive/VoiceAttack-profiles/issues). Thanks! :)
