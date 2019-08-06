@@ -1,34 +1,63 @@
 # SpanshAttack #
 
-This profile uses the FIXXME plugin to plot neutron jumps using 
-[spansh](https://spansh.co.uk/plotter). It fully does everything you need from 
-within the game and VoiceAttack, you won’t have to visit the site at any point.
+This profile uses the 
+[ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter) plugin to plot 
+neutron jumps using [spansh](https://spansh.co.uk/plotter). It fully does 
+everything you need from within the game and VoiceAttack, you won’t have to 
+visit the site at any point.
 
 ## Settings ##
 
-Currently the only setting in the strict sense is the key use for pasting text 
-into Elite:Dangerous. If you are using a “standard” QWERT[YZ] layout, you don’t 
-have to do anything; if you are using something different, you have to set it to 
-the symbol that’s on the physical button that has `V` on QWERT[YZ]. E.g. for 
-AZERTY, set it to FIXXME.
+Because Elite’s keyboard handling is … weird you’ll have to set the key to use 
+for pasting text into Elite:Dangerous. If you are using a “standard” QWERT[YZ] 
+layout, you don’t have to do anything; if you are using something different, you 
+have to set it to the symbol that’s on the physical button that has `v` on 
+QWERT[YZ]. E.g. for Neo2, set it to `p`.
 
-The other “setting” in the not-so-strict sense of the word is the 
+For other settings, see the [Configuration Variables](#Configuration-Variables) 
+section.
+
+The last “setting” in the not-so-strict sense of the word is the 
 `SpanshAttack.getShipRange` command. Any ship listed in there will automatically 
 have its jump range used instead of VA prompting you for it. Since, again, VA 
 will execute the first matching command found, you can create this command in 
 your own profile when you are using SpanshAttack by including it.
 
-The FIXXME plugin is technically supposed to read the current jump range from 
-EDDI; sadly a) it’s [bugged](FIXXME) right now, and EDDI is storing the 
-_maximum_ distance for your ship instead of the current / full on fuel one.
+The ED-NeutronRouter plugin is technically supposed to read the current jump 
+range from EDDI; sadly a) it’s 
+[bugged](https://github.com/sc-pulgan/ED-NeutronRouter/issues/3) right now, and 
+b) EDDI is storing the _maximum_ distance for your ship instead of the current 
+/ full on fuel one.
+
+## Importing the Profile ##
+
+When importing the prifle, be sure to
+
+* Run the startup command. You will need to have a startup command in your 
+  profile (= one that is run on profile loading) and call `SpanshAttack.startup` 
+  from that one.
+* Set configuration options. In the same startup command of yours, overwrite all 
+  configuration variables you want changed; _after_ the `SpanshAttack.startup` 
+  call. See [below](#Configuration-Variables).
+* Make sure all EDDI events that SpanshAttack needs are correctly handled. For 
+  all events used in Spanshattack that you already have handelrs for in your 
+  profile, you’ll have to include a call to `SpanshAttack.<event name>`. E.g.  
+  for “EDDI Jumped”, call `SpanshAttack.EDDI Jumped` by name from your `((EDDI 
+  Jumped))` command.
+* Initialise the [bindED](https://forum.voiceattack.com/SMF?topic=564.0) plugin 
+  correctly to read your Elite keybinds. Do that in your main profile’s startup 
+  command to only have it run once.
+* (Optional) Have a `SpanshAttack.getShipRange` command in your profile to 
+  overwrite the default one with your ship’s ranges. See the default command for 
+  pointers.
 
 ## Usage ##
 
 ### Plotting a Route ###
 
 1. _Target_ the system you want to be routed to (target, do not plot to it).
-1. Either exit the galaxy map or make sure you are on its first tab (or plotting 
-   will break).
+1. Either exit the galaxy map or make sure you are on its first tab (or 
+   auto-plotting will break).
 1. Trigger the `SpanshAttack.plotRoute` command either by voice (`plot neutron 
    [course;route;trip]`) or calling it from another command
 1. (if ship not listed in `SpanshAttack.getShipRange`) Enter your ship’s jump 
@@ -40,7 +69,7 @@ _maximum_ distance for your ship instead of the current / full on fuel one.
 
 ### Neutron Jumping ###
 
-With standard setting, just supercharge off a neutron cone, you should 
+With standard settings, just supercharge off a neutron cone. You should 
 automatically be taken to the galaxy map with the next waypoint selected.
 
 In case you have disabled auto-plotting to the next waypoint, manually invoke 
