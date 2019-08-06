@@ -56,7 +56,7 @@ If you are already using a custom profile (or want to use mine), you can include
 others by going to the profile options and adding them to the “Include commands 
 form other profiles:” option.
 
-VoiceAttack does not execute configured startup commands for included profiles.  
+VoiceAttack does not execute configured startup commands for included profiles. 
 Hence, you’ll have to have your own profile have one that in turn runs the 
 included profiles’ startup commands. While you are doing that, you might as well 
 set all settings here, centrally. Main advantage is that you can just upgrade 
