@@ -1,10 +1,11 @@
-= EliteDangerous =
+# EliteDangerous #
 
 This is my personal VoiceAttack profile for Elite: Dangerous. It started out 
-ages ago as a modification of [MalicVR’s public profile](FIXXME), then looked 
-less and less and less like that and I added and cleaned up a lot of things 
-while removing the stuff I didn’t use anyway. By now it would have probably been 
-simpler starting from scratch.
+ages ago as a modification of [MalicVR’s public 
+profile](https://forums.frontier.co.uk/threads/malics-voice-attack-profile-for-vr.351050/), 
+then looked less and less and less like that and I added and cleaned up a lot of 
+things while removing the stuff I didn’t use anyway. By now it would have 
+probably been simpler starting from scratch.
 
 Some of it has grown to a state that it might be useful to others in its own 
 package, so I’ve separated the neutron jumping and Seals stuff into their own 

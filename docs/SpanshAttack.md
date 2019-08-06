@@ -1,10 +1,10 @@
-= SpanshAttack =
+# SpanshAttack #
 
 This profile uses the FIXXME plugin to plot neutron jumps using 
 [spansh](https://spansh.co.uk/plotter). It fully does everything you need from 
 within the game and VoiceAttack, you won’t have to visit the site at any point.
 
-== Settings ==
+## Settings ##
 
 Currently the only setting in the strict sense is the key use for pasting text 
 into Elite:Dangerous. If you are using a “standard” QWERT[YZ] layout, you don’t 
@@ -22,9 +22,9 @@ The FIXXME plugin is technically supposed to read the current jump range from
 EDDI; sadly a) it’s [bugged](FIXXME) right now, and EDDI is storing the 
 _maximum_ distance for your ship instead of the current / full on fuel one.
 
-== Usage ==
+## Usage ##
 
-=== Plotting a Route ===
+### Plotting a Route ###
 
 1. _Target_ the system you want to be routed to (target, do not plot to it).
 1. Either exit the galaxy map or make sure you are on its first tab (or plotting 
@@ -38,7 +38,7 @@ _maximum_ distance for your ship instead of the current / full on fuel one.
 1. Either target the first waypoint or plot to it.
 1. Start jumping!
 
-=== Neutron Jumping ===
+### Neutron Jumping ###
 
 With standard setting, just supercharge off a neutron cone, you should 
 automatically be taken to the galaxy map with the next waypoint selected.
@@ -51,35 +51,35 @@ Additionally, you can use the `SpanshAttack.getNextNeutronWaypoint`
 / `[get;copy] next neutron [waypoint;way point]` command to copy the next 
 neutron waypoint to the clipboard.
 
-==== Manual Re-Plot ====
+#### Manual Re-Plot ####
 
 Trigger the `SpanshAttack.replotRoute` command either by voice (`replot neutron 
 [course;route;trip]`) or calling it from another command. This will start 
 a re-plot of the current route with the same target system and jump range.
 
-=== Refueling ===
+### Refueling ###
 
 Whenever you refuel off a scoopable star, the profile will automatically 
 throttle back up to 100% speed.
 
-=== Clearing a Route ===
+### Clearing a Route ###
 
 When you reach your target system, the neutron route will automatically be 
 cleared. If you want to prematurely end your trip, call the 
 `SpanshAttack.clearRoute` / `clear neutron [course;route;trip]` command.
 
-== Other Commands ==
+## Other Commands ##
 
 The profile contains a lot of helper functions that get called by the 
 aforementionde commands. Have a look around, maybe learn something about 
 VoiceAttack :)
 
-== Exposed Variables ==
+## Exposed Variables ##
 
 The following Variables are _global_ and thus readable (and writeable! please 
 don’t unless it’s a config variable …) from other profiles:
 
-=== Configuration Variables ===
+### Configuration Variables ###
 
 These are set in `SpanshAttack.startup` and can be overriden from your profile 
 if you have imported SpanshAttack.
@@ -99,7 +99,7 @@ if you have imported SpanshAttack.
 * SpanshAttack.useEddiForVoice (boolean): whether to use EDDI over VA’s builtin 
   `say` command. Default: false.
 
-=== Other Variables ===
+### Other Variables ###
 
 These variables can be used to get information about the current neutron route.  
 Please do not set them manually and / or from outside the SpanshAttack profile.
