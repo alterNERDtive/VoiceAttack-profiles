@@ -99,6 +99,18 @@ cleared. If you want to prematurely end your trip, call the
 
 ## Other Commands ##
 
+### Announcing Jumps Left ###
+
+You can have VoiceAttack tell you the amount of jumps left on the current route 
+by invoking `SpanshAttack.getJumpsLeft` or saying
+`how many [neutron;] jumps [are;] left?`.
+
+**Note**: Because it’s pretty much impossible to calculate a 100% accurate value 
+for the total jumps left, it will just tell you the jump count _from the current 
+neutron waypoint_.
+
+### Helper Functions ###
+
 The profile contains a lot of helper functions that get called by the 
 aforementionde commands. Have a look around, maybe learn something about 
 VoiceAttack :)
