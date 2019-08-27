@@ -141,7 +141,7 @@ if you have imported SpanshAttack.
 * SpanshAttack.announceJumpsLeft (string): `;`-separated list of remaining jumps 
   to announce when said amounts are reached. Right now only works if they are 
   _exactly_ reached when supercharging off a neutron. Note the extra `;` at the 
-  end. Default: `1;3;5;10;15;20;30;50;75;100;`
+  beginning and end of the string. Default: `;1;3;5;10;15;20;30;50;75;100;`
 * SpanshAttack.autoPlot (boolean): whether to automatically plot to the next 
   waypoint on supercharging. Default: true.
 * SpanshAttack.copyWaypointToClipboard (boolean): whether to copy the next 

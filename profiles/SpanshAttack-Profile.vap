@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <HasMB>false</HasMB>
-  <Id>1d11bb3d-724d-4a77-8f01-859e651586e1</Id>
+  <Id>60021910-3b70-44c5-a957-cd6d0c958367</Id>
   <Name>SpanshAttack</Name>
   <Commands>
     <Command>
@@ -20,7 +20,7 @@
       <BaseId>d42e4392-fbde-4c7b-8144-259b299876b0</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>a2d6b139-3ea2-4661-aea2-f86bd351fb2e</Id>
+      <Id>82fb61d3-ee08-4c14-97ef-27caadb176cd</Id>
       <CommandString>((EDDI Jet cone boost))</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -32,12 +32,12 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>f852616f-4de5-44d8-84ac-db49d6858e2a</Id>
+          <Id>30fc1b90-f767-4f90-a4e8-eafb118475a6</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>79b11815-0041-417e-801d-328eabc3c18f</Context>
+          <Context>13bd707a-976b-4f36-800f-a25ec83ddb15</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -131,7 +131,7 @@
       <BaseId>7ee3073f-bedf-4777-84cc-2e584fe71700</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>735bd55c-072d-400f-a8d3-b31f56033c12</Id>
+      <Id>56c25708-1abc-4dd4-a676-6766505be42e</Id>
       <CommandString>((EDDI Jumped))</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -143,12 +143,12 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>36172790-fe0e-47f1-8a8a-94005eb4aa98</Id>
+          <Id>0e17ef8d-a502-4b67-864e-7af655ef1af9</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>9758dbc6-9c07-4bc3-8a21-3296154be204</Context>
+          <Context>c90e4a99-66b3-4020-a1ad-0494b7556735</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -242,7 +242,7 @@
       <BaseId>b3d221ff-bd7f-4bb8-8772-97a886b092ab</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>d98c4424-1f3f-4246-beff-5c036c09881f</Id>
+      <Id>eb99bcb0-ebff-48ce-a9f4-72152fd4a9ae</Id>
       <CommandString>((EDDI Ship refuelled))</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -254,12 +254,12 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>5962b49f-a3db-48d3-aa6d-2cfb42c8e89e</Id>
+          <Id>6a1e2dbf-8d4d-485c-a7a4-36396d7a0faa</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>1b674ec4-45b3-4640-96cf-803e47525b94</Context>
+          <Context>f9b3123b-01f0-4f0a-bbec-93c3e21ab5a7</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -353,7 +353,7 @@
       <BaseId>63ffe36b-e902-47f4-9a5b-12edaec2e03a</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>09379fa3-0708-4254-aec7-b53d7e9be23d</Id>
+      <Id>e37395b9-6f18-424a-9c3d-8ca9763b6438</Id>
       <CommandString>[clear;plot;replot] neutron [course;route;trip]</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -365,7 +365,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>94b360a0-0f51-424a-a09f-1bc7240b8bfc</Id>
+          <Id>325f6239-a017-43cc-91f0-9c28134ef086</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -402,7 +402,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>677ce91e-164b-4da0-a3cb-f61dabe05200</Id>
+          <Id>a2563b8c-bd7a-4669-bee0-d36558e6ab40</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -429,7 +429,7 @@
           <ConditionExpressions>
             <ArrayOfConditionStruct>
               <ConditionStruct>
-                <Id>f5d36ff5-eae2-4e1c-84e7-b5b2b72b48fb</Id>
+                <Id>db165e16-f36b-4071-9f1c-c2958040d952</Id>
                 <ConditionStartType>1</ConditionStartType>
                 <ConditionStartNameFrom>{CMDSEGMENT:0}</ConditionStartNameFrom>
                 <ConditionStartValueType>0</ConditionStartValueType>
@@ -453,12 +453,12 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>eed91d2d-a7e9-4bac-9d8a-7fa57a6d6901</Id>
+          <Id>42adb036-18a3-4220-af11-b3bb12e21ccf</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>6883f31f-3da6-483b-9dde-471cc060b278</Context>
+          <Context>48480252-4f07-4d0c-b41e-efbff9b00acf</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -485,7 +485,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>5bbd0c92-9a70-4108-ac60-7c3d1be9dee6</Id>
+          <Id>63d95824-4786-4872-85d3-e7acdc821920</Id>
           <ActionType>ConditionElseIf</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -519,12 +519,12 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>b32833c5-220c-49e7-b456-7e6d7cc1621f</Id>
+          <Id>15393f9b-53dc-4866-84f3-fc417768c673</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>bfb5e46a-5512-4a17-bab2-bbd424873b3f</Context>
+          <Context>3731599a-5609-4597-8ad6-297b254e6c37</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -551,7 +551,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>1e187933-51af-4f41-b2a3-13c743901e93</Id>
+          <Id>f03b095e-fb10-4e1d-a1ca-271a60aab59f</Id>
           <ActionType>ConditionElseIf</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -585,12 +585,12 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>b5dbac98-ca9f-48ed-a43f-cda452f39953</Id>
+          <Id>f60efe78-d3c6-4c9a-8ed8-e648dd8ea5e4</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>2cdaf224-8a33-497b-8410-9c77bae1d18d</Context>
+          <Context>dab21404-7e13-45b6-8003-7fc2e9da8ae5</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -617,7 +617,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>bca5ca9d-7f2c-41ba-82e4-e9b06059dca9</Id>
+          <Id>d712f306-3947-43e5-9ed6-9f344bedc36d</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -716,7 +716,7 @@
       <BaseId>ba1c3e6c-beaa-4938-a932-49d2d4d285b6</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>370ff404-9984-4fb8-9eec-3165c4b90d40</Id>
+      <Id>584f6dd3-1e30-464e-b3e9-eea258dcb556</Id>
       <CommandString>[get;copy] next neutron [waypoint;way point]</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -728,7 +728,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>7c4df2fd-1786-4781-a0a9-f1f19890323e</Id>
+          <Id>e1367352-9282-43b9-9c4d-1daf7dc9138e</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -761,12 +761,12 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>876c58e7-1186-466e-a1b4-f5c9c772f292</Id>
+          <Id>fee7c5f1-806a-4e54-a757-49f03a256204</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>5583691f-06a4-4bf1-ba6e-de3b18a02ea4</Context>
+          <Context>616af24b-ef4b-4ab7-b966-9b0fc236f3b2</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -793,7 +793,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>8106f030-5032-46ff-98fd-020d2110c205</Id>
+          <Id>ceeaa32a-3da1-4524-9263-b8c1ad7367b0</Id>
           <ActionType>ConditionElse</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -824,12 +824,12 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>7b04c019-7220-4165-80f4-51348f0d82b1</Id>
+          <Id>26dfff8c-2171-42ed-9dc0-fbef8451b66f</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>d027b4fc-06bc-4c06-94e6-cffdeb973ab5</Context>
+          <Context>e4d431bf-0fcd-47ab-b3ec-66206a624fd0</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -856,7 +856,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>06e462f1-a19e-43c3-8702-4512e49ed7a0</Id>
+          <Id>d15ccd2b-2412-4f4d-8917-98f757182234</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -954,7 +954,7 @@
       <BaseId>1678af82-862e-4ec9-a09b-52a8906a10c9</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>8a1388fa-2a8a-4e15-a175-b0aa582c8be2</Id>
+      <Id>0295385d-ef41-4d4c-be03-7bb357888e16</Id>
       <CommandString>how long have i been [jumping;on this trip;on this neutron trip]?</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -968,12 +968,12 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Execute command, 'SpanshAttack.announceTripTime' (and wait until it completes)</Caption>
-          <Id>6d7d1f20-cb70-4049-a1d5-a15d69d2fe8e</Id>
+          <Id>a66237b8-a99c-477b-935b-08bb527dafc1</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>a1ad9ae0-bc35-4c48-8c43-518fd18fc7b6</Context>
+          <Context>4ddf0a58-62bf-4711-a7e1-b5851eab928b</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -1067,7 +1067,7 @@
       <BaseId>d5d9d975-3906-46aa-b5ad-d791af5ff0fa</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>ec08bc5f-b9ff-4079-8d66-9b0817c5e164</Id>
+      <Id>96f86667-c0d6-468c-91c6-4da326bacb22</Id>
       <CommandString>how many [neutron;] jumps [are;] left?</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -1079,12 +1079,12 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>10b1e832-164c-472a-a276-43780cffebdb</Id>
+          <Id>cc2403c9-0f1f-4a05-ab7a-9865b44bd336</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>8945b9a6-6026-43f2-8e59-cab94427dcd5</Context>
+          <Context>bde08f53-5ab0-46f6-9a26-aec0eea719b9</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -1178,7 +1178,7 @@
       <BaseId>7fc72852-ae61-4a06-8caf-17e29de15c71</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>8945b9a6-6026-43f2-8e59-cab94427dcd5</Id>
+      <Id>bde08f53-5ab0-46f6-9a26-aec0eea719b9</Id>
       <CommandString>SpanshAttack.announceJumpsLeft</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -1192,7 +1192,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Begin Boolean Compare : [SpanshAttack.neutronJumpMode] Equals True</Caption>
-          <Id>1ea655e4-739e-417b-bc88-5d2f90c2cb92</Id>
+          <Id>19b3cf29-2a76-458e-9940-6fa05c1a3398</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1227,7 +1227,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    === there is no way to properly calculate a 100% accurate jumps left figure, so we just do the next best thing: jumps left from the last spansh waypoint.</Caption>
-          <Id>8fe7e0b4-93de-4134-b597-8ac259b0710c</Id>
+          <Id>6dba835e-07e5-4a65-bcd1-9ead1d87635b</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1261,7 +1261,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Set Text [~~message] to '{INT:Remaining jumps} jumps remaining from current neutron waypoint.'</Caption>
-          <Id>09c58f47-39d1-46ba-8761-65df2b45eb3b</Id>
+          <Id>5de421d8-1e16-4533-be61-d03531cccc75</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1301,12 +1301,12 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Execute command, 'SpanshAttack.talk' (and wait until it completes)</Caption>
-          <Id>a8209a9f-d3e7-436e-beb9-263784acf6df</Id>
+          <Id>e60927be-8e86-4f88-b3ce-7db1056fa0fc</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>836b29b1-3f43-4658-b1a7-cc8ce123608b</Context>
+          <Context>698178d7-f44f-45f7-b5b1-c010bc7a42d6</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -1335,7 +1335,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Else</Caption>
-          <Id>f046f96c-8ce1-4437-917f-d59cdb368d33</Id>
+          <Id>497694f4-49ae-4830-a0bc-bb7186611402</Id>
           <ActionType>ConditionElse</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1368,12 +1368,12 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Execute command, 'SpanshAttack.notActive' (and wait until it completes)</Caption>
-          <Id>d119e6b1-3c01-4226-8d3a-bc8d64d41156</Id>
+          <Id>0dfb1c3a-cc9f-47a2-aaee-7270f9c30056</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>d027b4fc-06bc-4c06-94e6-cffdeb973ab5</Context>
+          <Context>e4d431bf-0fcd-47ab-b3ec-66206a624fd0</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -1402,7 +1402,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>End Condition</Caption>
-          <Id>c0ff88bc-cc84-4be9-84ee-c309d73d795c</Id>
+          <Id>a5e5e59a-a39a-46e2-8052-08a954710664</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1501,7 +1501,7 @@
       <BaseId>e726807c-1dbe-4f89-ac8b-bc56b5a6353c</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>a1ad9ae0-bc35-4c48-8c43-518fd18fc7b6</Id>
+      <Id>4ddf0a58-62bf-4711-a7e1-b5851eab928b</Id>
       <CommandString>SpanshAttack.announceTripTime</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -1515,7 +1515,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Begin Boolean Compare : [SpanshAttack.neutronJumpMode] Equals True</Caption>
-          <Id>b022959e-d5eb-4f35-8459-a1730d7f1480</Id>
+          <Id>e7d9dd3e-3949-4946-b955-092ce78138c6</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1550,7 +1550,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Set date [~endTime] value to the current date/time</Caption>
-          <Id>eac4920f-fb3a-4dc3-8887-1c7475877b04</Id>
+          <Id>e3ff1e7b-3746-4771-8934-30816545cc65</Id>
           <ActionType>DateSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1585,7 +1585,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Set date [~endTime] to [~endTime] plus [117] minutes</Caption>
-          <Id>208ab960-be07-49d0-ab18-81864de4341d</Id>
+          <Id>af7080fd-77a9-4259-bcfb-20ed9664ea15</Id>
           <ActionType>DateSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1620,7 +1620,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Set integer [~startHour] value to the converted value of {TIMEHOUR24:SpanshAttack.startTime}</Caption>
-          <Id>b298939a-454c-4206-956c-d05feab3d614</Id>
+          <Id>734556d9-2656-4241-a063-508f89776055</Id>
           <ActionType>IntSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1655,7 +1655,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Set integer [~endHour] value to the converted value of {TIMEHOUR24:~endTime}</Caption>
-          <Id>c9d7b071-e41d-42bd-8e5b-967513306bce</Id>
+          <Id>db760e7c-7921-4772-a8ca-df15c3a83bc5</Id>
           <ActionType>IntSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1690,7 +1690,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Set integer [~startMinute] value to the converted value of {TIMEMINUTE:SpanshAttack.startTime}</Caption>
-          <Id>a1ace425-53ce-4cc6-9d5c-3537d75d04a8</Id>
+          <Id>53202adb-cfd0-4b52-b7d8-c2b32bf78860</Id>
           <ActionType>IntSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1725,7 +1725,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Set integer [~endMinute] value to the converted value of {TIMEMINUTE:~endTime}</Caption>
-          <Id>6c21712b-5bce-4d24-9944-1835801a8daf</Id>
+          <Id>7b153d08-6266-4fd5-818f-019bdc82f440</Id>
           <ActionType>IntSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1760,7 +1760,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Begin Integer Compare : [~endHour] Is Less Than [~startHour]</Caption>
-          <Id>30811976-be06-49cb-b611-694e2633aecc</Id>
+          <Id>e9427dde-97b3-4551-bb6c-7fc78d1b3a94</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1795,7 +1795,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        Set integer [~endHour] to [~endHour] plus 24</Caption>
-          <Id>8819f5ec-c934-4630-aef3-408371dd4f13</Id>
+          <Id>51f17e09-67fc-4305-b5b0-1c3e17668ed1</Id>
           <ActionType>IntSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1829,7 +1829,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    End Condition</Caption>
-          <Id>6a7c700d-218d-4f9e-91c8-a1e7e53b1339</Id>
+          <Id>2098dc25-5bd8-471c-ba98-6f7c919227f0</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1862,7 +1862,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Begin Integer Compare : [~endMinute] Is Less Than [~startMinute]</Caption>
-          <Id>f028ac78-e607-4f6b-ac50-66e7733ed0e8</Id>
+          <Id>9af7e30e-3c84-4e65-a88b-5af413c322e9</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1897,7 +1897,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        Set integer [~endHour] to [~endHour] minus 1</Caption>
-          <Id>c760ef3d-ac17-4e85-b461-48e620212743</Id>
+          <Id>88ef1050-e728-4f63-a066-8d55b8e5be9f</Id>
           <ActionType>IntSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1931,7 +1931,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        Set integer [~endMinute] to [~endMinute] plus 60</Caption>
-          <Id>d1c56fe0-7226-4ffa-b51f-87cb7a094eea</Id>
+          <Id>4def8de7-7b35-4d85-b82b-44097424c7b9</Id>
           <ActionType>IntSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1965,7 +1965,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    End Condition</Caption>
-          <Id>66cea14c-8881-4457-8a55-c92bf263face</Id>
+          <Id>e60b6ed0-fd26-4c85-9d7e-bf8936cd5527</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1998,7 +1998,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Set integer [~durationHours] value to the converted value of {EXP: {INT:~endHour}-{INT:~startHour}}</Caption>
-          <Id>c2d525df-af6e-40cf-a5fc-53767a992fa0</Id>
+          <Id>a5e11711-8c0c-4cf4-9462-683a51148e53</Id>
           <ActionType>IntSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -2033,7 +2033,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Set integer [~durationMinutes] value to the converted value of {EXP: {INT:~endMinute}-{INT:~startMinute}}</Caption>
-          <Id>678f99f5-bdc1-4781-803c-460c724b96d8</Id>
+          <Id>885bbb8b-2aab-43fc-be46-8de6a78489ee</Id>
           <ActionType>IntSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -2068,7 +2068,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    === announce it :)</Caption>
-          <Id>4ede9949-94a4-4771-b4c8-99ce4c8a8955</Id>
+          <Id>96e7e9d5-9b0a-42e8-a86c-ebe4a36d588b</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -2102,7 +2102,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Set Text [~~message] to 'You have been on this trip for {INT:~durationHours} hours and {INT:~durationMinutes} minutes.'</Caption>
-          <Id>b2413e77-740f-4727-9fdd-aab019905b31</Id>
+          <Id>25791010-b115-4daa-8335-1497a40b511d</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -2141,12 +2141,12 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Execute command, 'SpanshAttack.talk' (and wait until it completes)</Caption>
-          <Id>c463c2ed-58b1-41bb-b241-91cb7aae01de</Id>
+          <Id>0de64483-e956-409c-aa7a-b51f3e8c79e8</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>836b29b1-3f43-4658-b1a7-cc8ce123608b</Context>
+          <Context>698178d7-f44f-45f7-b5b1-c010bc7a42d6</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -2175,7 +2175,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Else</Caption>
-          <Id>c9a085cd-689e-4203-a474-c2e9ed4cbe72</Id>
+          <Id>241441dc-ed07-4623-ab4b-abaae102b1a4</Id>
           <ActionType>ConditionElse</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -2208,12 +2208,12 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Execute command, 'SpanshAttack.notActive' (and wait until it completes)</Caption>
-          <Id>e9204e01-265b-493a-8789-e3f6e7c52b29</Id>
+          <Id>c049459c-d41a-43a2-aa08-c839f307b810</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>d027b4fc-06bc-4c06-94e6-cffdeb973ab5</Context>
+          <Context>e4d431bf-0fcd-47ab-b3ec-66206a624fd0</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -2242,7 +2242,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>End Condition</Caption>
-          <Id>fb3795ef-abf7-444b-9a31-c7e31b34e489</Id>
+          <Id>fce8ee9f-97c4-41c6-b09d-bb4796166f04</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -2341,7 +2341,7 @@
       <BaseId>e3126d1a-a695-46e2-b638-7fec0b510866</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>2cdaf224-8a33-497b-8410-9c77bae1d18d</Id>
+      <Id>dab21404-7e13-45b6-8003-7fc2e9da8ae5</Id>
       <CommandString>SpanshAttack.clearRoute</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -2355,7 +2355,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Begin Boolean Compare : [SpanshAttack.neutronJumpMode] Equals True</Caption>
-          <Id>5836c50a-7331-4be3-8a72-18f7b08833eb</Id>
+          <Id>45a2d947-9af6-400a-a8d4-440ce5957773</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -2390,7 +2390,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    === disable jump mode</Caption>
-          <Id>8a49f539-1287-45ec-9d80-bbc1bcfd5eb8</Id>
+          <Id>4880301c-4ffd-462e-b191-59263ef4a8ea</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -2424,7 +2424,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Set Boolean [SpanshAttack.neutronJumpMode] to False</Caption>
-          <Id>ddbb1ad4-f581-4a5d-8058-8f7aa726790b</Id>
+          <Id>525dda3e-2b9c-4691-964f-0acf2ff71d5d</Id>
           <ActionType>BooleanSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -2462,7 +2462,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Set Text [SpanshAttack.targetSystem] to [Not Set]</Caption>
-          <Id>fe309436-37dd-40e3-9a00-04f0d82223bf</Id>
+          <Id>c878d7fe-b6af-4343-a933-7afc48561c9f</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -2501,7 +2501,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Set decimal [SpanshAttack.jumpRange] value to [Not Set]</Caption>
-          <Id>ad18c56b-2503-4fba-b99a-11367b5c1d5f</Id>
+          <Id>1f4d9d41-9907-4f5f-be18-340df91fc083</Id>
           <ActionType>DecimalSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -2535,7 +2535,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    === announce it</Caption>
-          <Id>4abb4e22-7535-4654-8a22-b9f47dceb028</Id>
+          <Id>4d3aa0b0-bfb0-49cd-b549-e7d8fa6c757f</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -2569,7 +2569,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Set Text [~~message] to 'Neutron jump mode disengaged.'</Caption>
-          <Id>0084aa58-d289-4c5e-8e67-f66c3ab73c71</Id>
+          <Id>a7c4ed7d-c24d-421d-a886-8b30ad76c1e1</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -2609,12 +2609,12 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Execute command, 'SpanshAttack.talk' (and wait until it completes)</Caption>
-          <Id>5074ba44-b4af-48a9-a048-b803317166c0</Id>
+          <Id>3b367ed2-c3d6-40b5-907a-1d07667e583f</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>836b29b1-3f43-4658-b1a7-cc8ce123608b</Context>
+          <Context>698178d7-f44f-45f7-b5b1-c010bc7a42d6</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -2643,7 +2643,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    === clear route</Caption>
-          <Id>54b9ad55-e1b9-4eef-af21-bef4c26fee4c</Id>
+          <Id>2a4d11c6-b01a-4743-bc05-ebf40e56c2c9</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -2678,7 +2678,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Execute external plugin, 'Neutron Router - v0.1.0+'</Caption>
-          <Id>364d8120-1ac6-4add-9781-a3caf3368af8</Id>
+          <Id>90cc4d9b-f520-40b9-afdc-f6e61684bac9</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -2720,7 +2720,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    === trip time</Caption>
-          <Id>23a5e6fb-14ba-442b-bb28-cdccae11fd9c</Id>
+          <Id>54ba4dc3-1b7a-400b-a414-50651ff78a96</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -2754,7 +2754,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Begin Boolean Compare : [SpanshAttack.timeTrip] Equals True</Caption>
-          <Id>11c5dfc9-b2ea-4007-b9ae-05291c8cb86e</Id>
+          <Id>239e14d0-80fb-4f75-9002-65c143413fbe</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -2789,12 +2789,12 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        Execute command, 'SpanshAttack.announceTripTime' (and wait until it completes)</Caption>
-          <Id>20af349b-fa2e-4105-aae3-49b6a7937148</Id>
+          <Id>36389550-b42b-43e8-9670-046da5366d5b</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>a1ad9ae0-bc35-4c48-8c43-518fd18fc7b6</Context>
+          <Context>4ddf0a58-62bf-4711-a7e1-b5851eab928b</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -2823,7 +2823,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    End Condition</Caption>
-          <Id>209b217b-dfce-4231-9f4e-45e89f6abbc4</Id>
+          <Id>a7c5b661-6d00-43a4-b6cd-bac230d4bfb2</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -2856,7 +2856,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Set date [SpanshAttack.startTime] value to [Not Set]</Caption>
-          <Id>2149ebe5-7705-4165-b77d-37d2c29cd174</Id>
+          <Id>5088f2bd-967c-4460-b2f3-ae2eaa3a5b9a</Id>
           <ActionType>DateSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -2890,7 +2890,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Else</Caption>
-          <Id>146d489c-e137-4613-86a8-0d395799520d</Id>
+          <Id>14f2693a-d557-4c87-b2a6-f70940b7de3c</Id>
           <ActionType>ConditionElse</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -2923,12 +2923,12 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Execute command, 'SpanshAttack.notActive' (and wait until it completes)</Caption>
-          <Id>10288deb-1d7f-4bbc-8dff-3f02962bdd2f</Id>
+          <Id>b6bac780-e5f0-44d0-b51d-5ab1f4da13b4</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>d027b4fc-06bc-4c06-94e6-cffdeb973ab5</Context>
+          <Context>e4d431bf-0fcd-47ab-b3ec-66206a624fd0</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -2957,7 +2957,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>End Condition</Caption>
-          <Id>b371813e-9653-494a-83d4-93cf63f715da</Id>
+          <Id>444c1513-ac4d-47a2-a39c-a5e8e25c65e1</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -3056,7 +3056,7 @@
       <BaseId>e419f201-d37e-49c3-b21e-a38ff7af4d9a</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>09754379-ee4f-48d5-add2-b5d01c3e0040</Id>
+      <Id>eb44ac17-21e1-49b4-9bb1-05cda03aa7bd</Id>
       <CommandString>SpanshAttack.closeMenus</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -3068,7 +3068,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>83d5b37f-2dd4-4311-a375-bf83e9bfe1c8</Id>
+          <Id>855ffa4a-9890-4f51-b706-4b250ca93202</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -3103,7 +3103,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>c9de28f3-6956-4182-bb75-3aef621a70be</Id>
+          <Id>e46a8537-742d-4c46-8b36-957adc7a7276</Id>
           <ActionType>PressKey</ActionType>
           <Duration>0.1</Duration>
           <Delay>0</Delay>
@@ -3136,7 +3136,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>a5d4d50d-73d0-4ee8-a331-0b2ef5ec0ac1</Id>
+          <Id>95ee4a6c-6fd7-4ffd-96ea-6512e4c4441d</Id>
           <ActionType>Pause</ActionType>
           <Duration>0.1</Duration>
           <Delay>0</Delay>
@@ -3168,7 +3168,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>bfdf071c-4d1e-45fe-bcd1-117e93eea5b4</Id>
+          <Id>26081568-0ba9-4bb8-aa2b-3588389335a4</Id>
           <ActionType>ConditionElseIf</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -3203,7 +3203,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>7fb0088b-88ca-47b0-99f7-a162ba87e33f</Id>
+          <Id>86131d2a-8a49-489e-af64-c2de814fea09</Id>
           <ActionType>PressKey</ActionType>
           <Duration>0.1</Duration>
           <Delay>0</Delay>
@@ -3236,7 +3236,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>d086b864-86f2-4e03-aed2-3fd00b0d84ed</Id>
+          <Id>d271b5b1-385e-4bfb-bc07-73752739c792</Id>
           <ActionType>Pause</ActionType>
           <Duration>0.5</Duration>
           <Delay>0</Delay>
@@ -3268,7 +3268,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>5affde68-8a68-48e1-ba12-c2a87a50832e</Id>
+          <Id>f90b61eb-ed30-430d-9897-9d3b360445f4</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -3300,7 +3300,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>db7482fa-15b9-4080-81f6-650d0d2e6dbd</Id>
+          <Id>62d17b5a-cd2e-4001-bd55-b866f8800b60</Id>
           <ActionType>WhileStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -3327,7 +3327,7 @@
           <ConditionExpressions>
             <ArrayOfConditionStruct>
               <ConditionStruct>
-                <Id>384fc974-7bc4-4004-a063-2c4887103632</Id>
+                <Id>83dc19ff-1f5f-47e0-8a5a-08596a9945bb</Id>
                 <ConditionStartType>1</ConditionStartType>
                 <ConditionStartNameFrom>{TXT:Status gui focus}</ConditionStartNameFrom>
                 <ConditionStartValueType>0</ConditionStartValueType>
@@ -3351,7 +3351,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>0d9028e0-4028-45cf-8d63-b07d4fe359ad</Id>
+          <Id>459d6403-cde5-4c17-a4c1-e570d4be35a2</Id>
           <ActionType>PressKey</ActionType>
           <Duration>0.1</Duration>
           <Delay>0</Delay>
@@ -3384,7 +3384,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>0108845f-ad45-4a6e-ba25-d17a00a91822</Id>
+          <Id>dd86d16f-9af3-474e-9dfa-7590db8e2000</Id>
           <ActionType>Pause</ActionType>
           <Duration>0.1</Duration>
           <Delay>0</Delay>
@@ -3416,7 +3416,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>8f25cbb8-d50a-43c7-832c-72f6acd3b020</Id>
+          <Id>cecb4376-335b-4e33-b0e7-6cf4139f9aab</Id>
           <ActionType>WhileEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -3516,7 +3516,7 @@
       <BaseId>d1be864e-6d8d-42f9-afe2-a0a7a2fb38b6</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>79b11815-0041-417e-801d-328eabc3c18f</Id>
+      <Id>13bd707a-976b-4f36-800f-a25ec83ddb15</Id>
       <CommandString>SpanshAttack.EDDI Jet cone boost</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -3530,7 +3530,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Press variable key(s) [edSetSpeed100] and hold for 0,1 seconds and release</Caption>
-          <Id>71d98e2e-a0b7-42db-b56b-7ddaba03880c</Id>
+          <Id>a5fe0e28-99be-4c19-bd6b-625eb82e6bec</Id>
           <ActionType>PressKey</ActionType>
           <Duration>0.1</Duration>
           <Delay>0</Delay>
@@ -3565,7 +3565,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Begin Boolean Compare : [SpanshAttack.neutronJumpMode] Equals True</Caption>
-          <Id>73e02ea8-d02b-40d1-bc62-6169309a4c60</Id>
+          <Id>0cadf704-28c2-4deb-acf6-751d7fcba102</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -3601,7 +3601,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    === check if current system = next waypoint; if yes, get and plot to next</Caption>
-          <Id>16dd64e9-5fca-428f-b9d3-47d261e86adf</Id>
+          <Id>12135e27-1347-4a40-bfce-955c499215d6</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -3636,7 +3636,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Begin Text Compare : [System name] Equals [SpanshAttack.nextNeutronWaypoint]</Caption>
-          <Id>e745e739-106a-4ec9-a9f6-d23213cf1615</Id>
+          <Id>884a6a3d-8dd6-4736-a461-3932729c0386</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -3673,7 +3673,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        === announce jumps left</Caption>
-          <Id>53e2833f-7d59-474e-909f-a7970b07369e</Id>
+          <Id>d746fbf6-ebea-4037-92ed-b0be70a0f521</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -3708,7 +3708,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        Execute external plugin, 'Neutron Router - v0.1.0+' and wait for return</Caption>
-          <Id>f5f50d4f-d127-4f6b-81b3-d0bccd2d7f78</Id>
+          <Id>428d1d0d-080e-4b28-9b4e-962b3f8eff60</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -3750,7 +3750,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        Execute external plugin, 'Neutron Router - v0.1.0+' and wait for return</Caption>
-          <Id>3f1eea6c-ed9f-4ec0-a118-9ef42a8c75c2</Id>
+          <Id>236ca35a-3996-41b3-8703-b4261ebddf66</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -3792,7 +3792,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        Set Text [SpanshAttack.nextNeutronWaypoint] to [Next system]</Caption>
-          <Id>72e3e96a-09aa-49f3-8f84-868c1f9bd310</Id>
+          <Id>01c4ac6d-d332-4483-85a7-b9024e4d4691</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -3832,7 +3832,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        Begin Boolean Compare : [SpanshAttack.copyWaypointToClipboard] Equals True</Caption>
-          <Id>64b280b4-e6c0-49d0-a027-e16d04eeaff0</Id>
+          <Id>da66c06e-8f57-4f9f-adea-62d8544621a1</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -3867,7 +3867,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>            Set Windows clipboard to '{TXT:SpanshAttack.nextNeutronWaypoint}'</Caption>
-          <Id>d7427b32-c08e-4523-880b-7b846aaa8f82</Id>
+          <Id>3067491d-9984-4d1b-955d-bc4a7769addc</Id>
           <ActionType>SetClipboard</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -3902,7 +3902,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        End Condition</Caption>
-          <Id>acf20caa-5cd0-43f0-9622-2bb8871e3371</Id>
+          <Id>9a642d07-3b44-4188-9361-91e025b43a2e</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -3935,7 +3935,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        === target next waypoint</Caption>
-          <Id>4c561bf4-63bf-4070-ba20-e0b9d7333828</Id>
+          <Id>54e1e69e-fe8b-4733-b354-3fa5148a7c2b</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -3969,7 +3969,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        Begin Boolean Compare : [SpanshAttack.autoPlot] Equals True</Caption>
-          <Id>c2c603f9-6496-4dac-86d0-d11ed51a0321</Id>
+          <Id>46ef12a3-7fee-4dda-b565-372f3d8107eb</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -4004,12 +4004,12 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>            Execute command, '[target;] next neutron [waypoint;way point]'</Caption>
-          <Id>8a3bd7d3-4593-4765-8c07-0b1d89ca1ada</Id>
+          <Id>4ab94cf0-3f42-45e6-855b-4baa2e531030</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>97c48b6c-7514-4027-8107-86f2e2a6fc51</Context>
+          <Context>531f3be3-9562-492d-93d9-9690dddc3c04</Context>
           <X>0</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -4039,7 +4039,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        End Condition</Caption>
-          <Id>8e84ba7a-edd4-4346-bfd1-0b9a461ececc</Id>
+          <Id>96db24aa-474f-4561-b8e8-293426c281a6</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -4072,7 +4072,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        === announce next waypoint</Caption>
-          <Id>c415adb8-afd1-4f58-aa71-c0281abbf43f</Id>
+          <Id>16993058-f85d-4c9b-962e-eb44f0165f8e</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -4106,7 +4106,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        Begin Boolean Compare : [SpanshAttack.announceWaypoints] Equals True</Caption>
-          <Id>16962cae-4eca-4e48-893f-2a7843321fbd</Id>
+          <Id>56ea94f8-d2eb-4682-9d0b-b8e7010b8e07</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -4141,7 +4141,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>            Set Text [~~message] to 'Next waypoint: {TXT:SpanshAttack.nextNeutronWaypoint}.'</Caption>
-          <Id>08f8cdc6-a824-4fdf-a518-28b790d3bfcc</Id>
+          <Id>99b77eee-0500-40ff-9dec-bf102278efa2</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -4181,12 +4181,12 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>            Execute command, 'SpanshAttack.talk' (and wait until it completes)</Caption>
-          <Id>505d9a74-b8c6-470c-a4b5-46d051ecc6da</Id>
+          <Id>ad62765c-c4b0-430d-85e5-15d93d502a12</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>836b29b1-3f43-4658-b1a7-cc8ce123608b</Context>
+          <Context>698178d7-f44f-45f7-b5b1-c010bc7a42d6</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -4215,7 +4215,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        End Condition</Caption>
-          <Id>68eb6184-b228-4e37-95c7-1fb4d1420923</Id>
+          <Id>9fd56022-41dc-4ebe-aaaa-797041d8ad0d</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -4248,7 +4248,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        === announce jumps left</Caption>
-          <Id>f487258d-a2d7-4042-8506-b75452042251</Id>
+          <Id>f2d243a2-4b1c-4015-ad6f-2936dcfc36f8</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -4273,7 +4273,7 @@
           <ConditionExpressions />
         </CommandAction>
         <CommandAction>
-          <_caption>        Begin Text Compare : [SpanshAttack.announceJumpsLeft] Contains '{INT:Remaining jumps};'</_caption>
+          <_caption>        Begin Text Compare : [SpanshAttack.announceJumpsLeft] Contains ';{INT:Remaining jumps};'</_caption>
           <PairingSet>false</PairingSet>
           <PairingSetElse>false</PairingSetElse>
           <Ordinal>21</Ordinal>
@@ -4282,13 +4282,13 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Caption>        Begin Text Compare : [SpanshAttack.announceJumpsLeft] Contains '{INT:Remaining jumps};'</Caption>
-          <Id>8544df86-5144-4676-891d-a83fe873d2ac</Id>
+          <Caption>        Begin Text Compare : [SpanshAttack.announceJumpsLeft] Contains ';{INT:Remaining jumps};'</Caption>
+          <Id>56c7cd95-0248-4f83-bece-1bb195eab64f</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context2 xml:space="preserve">{INT:Remaining jumps};</Context2>
+          <Context2 xml:space="preserve">;{INT:Remaining jumps};</Context2>
           <X>0</X>
           <Y>0</Y>
           <Z>1</Z>
@@ -4310,7 +4310,7 @@
           <ConditionExpressions>
             <ArrayOfConditionStruct>
               <ConditionStruct>
-                <Id>1b487a5a-8cbb-4e4d-8974-0e4b817b3973</Id>
+                <Id>7ee13731-4bf8-4edd-a68c-78ed489045f5</Id>
                 <ConditionStartType>1</ConditionStartType>
                 <ConditionStartNameFrom>SpanshAttack.announceJumpsLeft</ConditionStartNameFrom>
                 <ConditionStartValueType>0</ConditionStartValueType>
@@ -4326,7 +4326,7 @@
           </ConditionExpressions>
         </CommandAction>
         <CommandAction>
-          <_caption>            Execute command, 'SpanshAttack.getJumpsLeft' (and wait until it completes)</_caption>
+          <_caption>            Execute command, 'SpanshAttack.announceJumpsLeft' (and wait until it completes)</_caption>
           <PairingSet>false</PairingSet>
           <PairingSetElse>false</PairingSetElse>
           <Ordinal>22</Ordinal>
@@ -4335,13 +4335,13 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Caption>            Execute command, 'SpanshAttack.getJumpsLeft' (and wait until it completes)</Caption>
-          <Id>692fdcb9-017b-451d-beb3-269347837bec</Id>
+          <Caption>            Execute command, 'SpanshAttack.announceJumpsLeft' (and wait until it completes)</Caption>
+          <Id>f32a9654-e337-4a55-be5b-06f4808b67f0</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>8945b9a6-6026-43f2-8e59-cab94427dcd5</Context>
+          <Context>bde08f53-5ab0-46f6-9a26-aec0eea719b9</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -4370,7 +4370,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        End Condition</Caption>
-          <Id>ab3152fd-f278-4e83-9924-d948033a1ef3</Id>
+          <Id>09cf2935-eeef-4275-be00-b5f27f608a22</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -4404,7 +4404,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Else</Caption>
-          <Id>4e2a5d31-6ffa-4019-85f0-2d231b0804e0</Id>
+          <Id>8df10f0e-cdb1-4121-91e6-028159fb98e1</Id>
           <ActionType>ConditionElse</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -4438,7 +4438,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        === if it’s not the next waypoint yet, keep jumping</Caption>
-          <Id>9ee293bb-51e1-49da-ac13-046317499005</Id>
+          <Id>3a1db22b-6a11-4102-9080-125041a2e4ac</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -4472,7 +4472,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        Begin Boolean Compare : [SpanshAttack.autoPlot] Equals True</Caption>
-          <Id>e8743da4-1371-485a-afb1-2b65ac6c975e</Id>
+          <Id>bbed0468-59c1-4c98-97fc-ddbae5945ff2</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -4507,7 +4507,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>            Press variable key(s) [edHyperspace] and hold for 0,1 seconds and release</Caption>
-          <Id>4f4a0205-64c6-448b-a137-a39ac06e8210</Id>
+          <Id>42805ae2-db47-473b-8a24-6f35881ee716</Id>
           <ActionType>PressKey</ActionType>
           <Duration>0.1</Duration>
           <Delay>0</Delay>
@@ -4541,7 +4541,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>        End Condition</Caption>
-          <Id>7d79eed6-aaec-42dc-beb0-42aa085028aa</Id>
+          <Id>eee42903-4460-4def-93ee-b91dabf41807</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -4574,7 +4574,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    End Condition</Caption>
-          <Id>46cb756c-0467-49de-9ebf-b7a8c8c66206</Id>
+          <Id>c2e0c63b-1894-462a-a351-30e7b83363ee</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -4608,7 +4608,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>End Condition</Caption>
-          <Id>fb92b446-7273-46b4-b8f5-3531ef86376a</Id>
+          <Id>4a29ad57-2e82-4af5-9710-ec86ec36969d</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -4676,7 +4676,7 @@
       <MouseUpOnly>false</MouseUpOnly>
       <MousePassThru>true</MousePassThru>
       <joystickExclusive>false</joystickExclusive>
-      <lastEditedAction>bbf59e14-9653-4adb-89d8-aa4226b75c68</lastEditedAction>
+      <lastEditedAction>bbe6c348-4ab2-435d-b05a-086b9f6b54e9</lastEditedAction>
       <UseProfileProcessOverride>false</UseProfileProcessOverride>
       <ProfileProcessOverrideActiveWindow>false</ProfileProcessOverrideActiveWindow>
       <RepeatIfKeysDown>false</RepeatIfKeysDown>
@@ -4708,7 +4708,7 @@
       <BaseId>d9a24b61-2dcc-41e0-bbe2-590ae31889f3</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>9758dbc6-9c07-4bc3-8a21-3296154be204</Id>
+      <Id>c90e4a99-66b3-4020-a1ad-0494b7556735</Id>
       <CommandString>SpanshAttack.EDDI Jumped</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -4720,7 +4720,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>80ddc41d-6183-429b-970f-90e07edc287b</Id>
+          <Id>8fb52e05-00e1-4f50-89c2-342a87f6b4aa</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -4753,7 +4753,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>aaef88f8-1f1a-4fb7-ac65-0b27acf87459</Id>
+          <Id>dc8d28d1-c56d-4740-85d5-55e9f8ff9c37</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -4788,7 +4788,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>cbaa8f89-283f-45e5-95e4-97f2d04ba0a4</Id>
+          <Id>baff9e40-45fd-4982-bfaa-d1f45288534d</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -4825,12 +4825,12 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>49f7d417-4506-470f-b6ec-d2509b2dea28</Id>
+          <Id>a8015bbd-700c-4065-9bed-46c12bcaa5e0</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>836b29b1-3f43-4658-b1a7-cc8ce123608b</Context>
+          <Context>698178d7-f44f-45f7-b5b1-c010bc7a42d6</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -4857,12 +4857,12 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>b14f2fa5-6546-45bb-8274-485cdcaf9bbb</Id>
+          <Id>ca760f74-9f55-49e3-9190-bbfb9c982129</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>2cdaf224-8a33-497b-8410-9c77bae1d18d</Context>
+          <Context>dab21404-7e13-45b6-8003-7fc2e9da8ae5</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -4889,7 +4889,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>dcfc25c8-9f37-424b-bc6b-a0e4f49e04eb</Id>
+          <Id>582ac109-b306-4239-9e03-a935a36106ca</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -4989,7 +4989,7 @@
       <BaseId>eecfaebd-1c0c-4282-9cc2-fd4bbf28fe37</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>1b674ec4-45b3-4640-96cf-803e47525b94</Id>
+      <Id>f9b3123b-01f0-4f0a-bbec-93c3e21ab5a7</Id>
       <CommandString>SpanshAttack.EDDI Ship refuelled</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -5001,7 +5001,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>ea4de515-37c2-43ae-9af8-334ac44fbc09</Id>
+          <Id>3af68feb-d9fa-4bcb-9081-8e9af5974e15</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>1</Duration>
           <Delay>0</Delay>
@@ -5025,7 +5025,7 @@
           <ConditionExpressions>
             <ArrayOfConditionStruct>
               <ConditionStruct>
-                <Id>3e904751-cccc-4640-be78-53a0816baf08</Id>
+                <Id>f0bb32a2-230a-4ec5-a690-e013f14d9031</Id>
                 <ConditionStartType>2</ConditionStartType>
                 <ConditionStartNameFrom>SpanshAttack.neutronJumpMode</ConditionStartNameFrom>
                 <ConditionStartValueType>0</ConditionStartValueType>
@@ -5037,7 +5037,7 @@
                 <DecimalContext1>0</DecimalContext1>
               </ConditionStruct>
               <ConditionStruct>
-                <Id>0b24773f-a61c-4e82-b725-39c27d486b4f</Id>
+                <Id>a5e06011-4678-48c2-a3d1-042fa0991efb</Id>
                 <ConditionStartType>1</ConditionStartType>
                 <ConditionStartNameFrom>EDDI ship refuelled source</ConditionStartNameFrom>
                 <ConditionStartValueType>0</ConditionStartValueType>
@@ -5050,7 +5050,7 @@
                 <DecimalContext1>0</DecimalContext1>
               </ConditionStruct>
               <ConditionStruct>
-                <Id>4e0c2b28-beff-485b-93b6-ec25bdb48166</Id>
+                <Id>cb4f3467-218d-4cd0-a774-d2dba22b257a</Id>
                 <ConditionStartType>2</ConditionStartType>
                 <ConditionStartNameFrom>EDDI ship refuelled full</ConditionStartNameFrom>
                 <ConditionStartValueType>0</ConditionStartValueType>
@@ -5073,7 +5073,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>4f531b05-7bfc-43f2-b8b1-d68d970a041b</Id>
+          <Id>2fbc188d-0b61-4ee9-9378-d565e505cf41</Id>
           <ActionType>PressKey</ActionType>
           <Duration>0.1</Duration>
           <Delay>0</Delay>
@@ -5105,7 +5105,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>c605d0a5-e1d4-45d2-a182-bdf8c07fce70</Id>
+          <Id>3275946a-ef1b-47b3-a6c0-f3c45d084748</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -5205,7 +5205,7 @@
       <BaseId>8142a651-348f-47d3-b7d4-5f5ebf031761</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>f591f045-2497-4c4a-9059-64c99aa33839</Id>
+      <Id>56d15b16-5986-40e4-85cb-123b93e6afdd</Id>
       <CommandString>SpanshAttack.galaxyMap</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -5217,12 +5217,12 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>0d65a6d4-4caf-4f3e-ac75-3c4f220f4c82</Id>
+          <Id>037e6865-0c86-4518-a1bb-93dba5b72f0c</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>09754379-ee4f-48d5-add2-b5d01c3e0040</Context>
+          <Context>eb44ac17-21e1-49b4-9bb1-05cda03aa7bd</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -5250,7 +5250,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>b0c8a125-b05b-45c1-82f4-f0f34ccdbaab</Id>
+          <Id>4cfd342e-628e-48bc-8c26-49b8e30b95a6</Id>
           <ActionType>PressKey</ActionType>
           <Duration>0.1</Duration>
           <Delay>0</Delay>
@@ -5283,7 +5283,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>52e00dc9-4e9d-47ee-99bc-3a8c51263bfe</Id>
+          <Id>3cff28dd-74d9-48ff-ad6a-38824b6891c9</Id>
           <ActionType>WhileStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -5318,7 +5318,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>962ae2d4-3b25-4f8b-8935-863ee08b7aa7</Id>
+          <Id>53dfd98c-e11f-4f60-a41f-00318465b6a2</Id>
           <ActionType>Pause</ActionType>
           <Duration>0.1</Duration>
           <Delay>0</Delay>
@@ -5350,7 +5350,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>0b8a0f0a-b5ce-46c3-be52-b716366e15f7</Id>
+          <Id>4469feed-fcf1-46b3-a935-3e263597b148</Id>
           <ActionType>WhileEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -5451,7 +5451,7 @@
       <BaseId>f4546455-874f-4b9f-b614-80313c65087f</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>cda15835-76ea-4bcf-bf6d-dc3b8a95c1dc</Id>
+      <Id>71df31d7-b3b2-4392-b761-477d6a4fdaf4</Id>
       <CommandString>SpanshAttack.getJumpRange</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -5463,7 +5463,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>d9320a73-d3cc-49c8-844c-afeb0192bb69</Id>
+          <Id>9e457ab6-b02b-4380-84a8-a08605bd20ce</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -5495,7 +5495,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>89088a0c-7f08-4984-bf98-29372795da1c</Id>
+          <Id>0d8fdd94-eb14-4f60-9fee-eb4c9513164e</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -5527,7 +5527,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>8164e8ce-4ecc-4e46-826e-40ed6ebadb95</Id>
+          <Id>33e25593-afd6-4dd8-9879-1d3b65d6f612</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -5567,7 +5567,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>acc5551a-fdec-45a4-8663-563f83a9f915</Id>
+          <Id>c109e842-6519-4e4f-8ee2-799f7da4c1d3</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -5599,7 +5599,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>dec5d93d-cef8-4dfc-bef3-71492e5d5faf</Id>
+          <Id>4c52fbdf-d382-4ddf-a7d1-918fec2a242e</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -5633,7 +5633,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>7760cf67-8f21-4b05-9089-f102a1ea181c</Id>
+          <Id>cea6babf-5500-49c6-9516-030269272573</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>1</Delay>
@@ -5666,7 +5666,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>36dc03dd-ad34-4aef-b965-f80d81b7763d</Id>
+          <Id>76a279a5-a246-444a-bf0f-b139678d2f45</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -5701,7 +5701,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>62d9383e-e530-4300-9b27-71ecdeb7f884</Id>
+          <Id>bdf5cfa7-0226-4af9-b7b4-726397a4c354</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -5739,7 +5739,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>a6b605ab-17ca-4814-b885-1de9de233595</Id>
+          <Id>a2177eb4-a19f-44b6-9562-c7d8a2eed797</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -5779,7 +5779,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>8073b5df-a091-4a66-be14-52d63a521d3f</Id>
+          <Id>83ecbbd1-52b9-47df-bb5a-b031698b3bd7</Id>
           <ActionType>GetUserDecimal</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -5817,7 +5817,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>32ddace1-e7d5-42ef-8802-52f745b350ad</Id>
+          <Id>5676ce76-598a-4fb6-a5a9-ba11248e8e89</Id>
           <ActionType>ConditionElse</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -5849,7 +5849,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>db8855e5-c3f2-4e40-87f5-813d4de5e898</Id>
+          <Id>2a72b971-2ab4-4b15-a7b5-5bf4546b5738</Id>
           <ActionType>DecimalSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -5883,7 +5883,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>0897f434-7d82-40cc-8fbf-88cdb9c0c4fb</Id>
+          <Id>28c50037-b429-41bd-97b9-7a16f644f42c</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -5915,7 +5915,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>9f5f941e-dcf3-4e45-a590-db0e8fa57dea</Id>
+          <Id>05d6d460-c81d-4a34-b77c-4f13c68b769f</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -6015,7 +6015,7 @@
       <BaseId>54eb5f36-be65-417d-832f-d7e05c70d349</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>5583691f-06a4-4bf1-ba6e-de3b18a02ea4</Id>
+      <Id>616af24b-ef4b-4ab7-b966-9b0fc236f3b2</Id>
       <CommandString>SpanshAttack.getNextNeutronWaypoint</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -6027,7 +6027,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>a8a55194-eb28-40cd-b631-a7f273bc6eb4</Id>
+          <Id>4d85dee0-6459-47d4-8221-14fc9a4a1f1f</Id>
           <ActionType>SetClipboard</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -6127,7 +6127,7 @@
       <BaseId>5b5876cf-4e3d-4b5f-9921-4e40dbb76a34</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>68bc80e1-196c-4137-a0c2-489d1e478e7e</Id>
+      <Id>7078accd-dd28-433a-ac1f-cf42422ae118</Id>
       <CommandString>SpanshAttack.getShipRange</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -6139,7 +6139,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>a1bcaf98-ff17-44b0-8225-1551a0deb5c5</Id>
+          <Id>63d6f1b7-bf2a-44c5-94a9-ed2df3cbde4b</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -6171,7 +6171,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>b9af66ae-4ec8-4048-a6db-0caf9e61a62f</Id>
+          <Id>91718331-9329-45c3-97db-d3a6e9a2dee7</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -6206,7 +6206,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>d61e1fc5-c869-4e87-ba00-e5be7d36e8b0</Id>
+          <Id>c5e05b14-c585-4131-8255-885a993e7cb5</Id>
           <ActionType>DecimalSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -6239,7 +6239,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>4d6da504-e229-48a5-b8c7-e45b9f470c71</Id>
+          <Id>43e4ddf8-f0af-4912-a76d-cca8235a83ba</Id>
           <ActionType>ConditionElseIf</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -6274,7 +6274,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>d306f5d3-9c93-45ce-93d6-96dca15ba1f4</Id>
+          <Id>cb18004c-e047-41dd-b8a3-5a3c456fac66</Id>
           <ActionType>DecimalSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -6307,7 +6307,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>a8994631-7558-4dfa-9c4c-fad39f7c1902</Id>
+          <Id>f6caff3a-4ebc-42f6-8a78-cbe15a412d35</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -6407,7 +6407,7 @@
       <BaseId>c4acc18f-f84e-476e-907f-790f31f0196f</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>d027b4fc-06bc-4c06-94e6-cffdeb973ab5</Id>
+      <Id>e4d431bf-0fcd-47ab-b3ec-66206a624fd0</Id>
       <CommandString>SpanshAttack.notActive</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -6419,7 +6419,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>df816907-e5ed-4bf9-9f44-94abe5803d6e</Id>
+          <Id>33dcb415-2535-4f0b-b551-28bb6111f6f8</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -6456,12 +6456,12 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>2d35ba90-8e4a-42ec-9f6f-e421070fcddc</Id>
+          <Id>857f930e-4a49-42ed-ab50-9d4e901963e0</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>836b29b1-3f43-4658-b1a7-cc8ce123608b</Context>
+          <Context>698178d7-f44f-45f7-b5b1-c010bc7a42d6</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -6556,7 +6556,7 @@
       <BaseId>978cb914-adc5-4b57-9401-8a13b40e8d46</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>5fdba2ff-b8fd-4ace-b258-3d035b7dee30</Id>
+      <Id>be045d36-4da0-4fcf-95ea-902e1115f2ba</Id>
       <CommandString>SpanshAttack.pasteText</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -6568,7 +6568,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>5c8f56ac-d648-4f56-abd4-4b313344d914</Id>
+          <Id>1554b02d-7f98-4b04-b735-3a7ca0bdf2df</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -6600,7 +6600,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>1d8dc4d4-b3d7-4061-80c7-ef98e4bccdb8</Id>
+          <Id>484bfd7f-6ab0-451c-bba4-5a0d5a2cb575</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -6638,7 +6638,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>4db308b8-1eb9-4e50-9173-1e04c603bd57</Id>
+          <Id>ac0fbbca-e2c8-4e02-90f5-31c3314f0a3b</Id>
           <ActionType>SetClipboard</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -6670,7 +6670,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>4c3cf103-65b3-4cd1-a12c-2a5d3e8f294a</Id>
+          <Id>189aee51-82ef-493e-a0ca-312d38c27188</Id>
           <ActionType>KeyDown</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -6704,7 +6704,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>15377e11-86bd-407e-be61-274a1682635b</Id>
+          <Id>5beff57d-99be-4554-8464-1bbd3a655f43</Id>
           <ActionType>PressKey</ActionType>
           <Duration>0.1</Duration>
           <Delay>0</Delay>
@@ -6736,7 +6736,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>5e4de002-13f8-4a49-ad2a-3679e1d18b1c</Id>
+          <Id>5ff2409f-c427-44b6-b9c1-6b4fed6af8a1</Id>
           <ActionType>KeyUp</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -6770,7 +6770,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>8f8b0a28-f96e-4a34-8aee-e0864acccc8e</Id>
+          <Id>49580776-231e-4645-be2c-eccf75a0b187</Id>
           <ActionType>Pause</ActionType>
           <Duration>0.2</Duration>
           <Delay>0</Delay>
@@ -6801,7 +6801,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>94cd450f-4399-4c21-88c7-1d2fec7c6b7b</Id>
+          <Id>1eb4d301-cc7d-4e84-a975-93fe40b6cbae</Id>
           <ActionType>SetClipboard</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -6901,7 +6901,7 @@
       <BaseId>02a64a19-e107-4b9c-b395-d005deb3b49e</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>6883f31f-3da6-483b-9dde-471cc060b278</Id>
+      <Id>48480252-4f07-4d0c-b41e-efbff9b00acf</Id>
       <CommandString>SpanshAttack.plotRoute</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -6915,7 +6915,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>=== enable neutron jump mode</Caption>
-          <Id>197bc48a-c09d-4c90-88c1-150c1fc0337e</Id>
+          <Id>5781dfa8-a9d2-454e-b903-93197033192c</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -6949,7 +6949,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Set Boolean [SpanshAttack.neutronJumpMode] to True</Caption>
-          <Id>e9f28910-5a17-43a7-becb-ba2a2ce9a3f4</Id>
+          <Id>82b7c910-d2f9-4bef-aab4-56266d034814</Id>
           <ActionType>BooleanSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -6987,7 +6987,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Set Text [SpanshAttack.targetSystem] to [Next system name]</Caption>
-          <Id>67ae5f64-011e-449e-910d-b712db9d562a</Id>
+          <Id>57c567e3-6484-40a0-b63d-96ed5c67944d</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -7026,7 +7026,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>=== set jump range</Caption>
-          <Id>98b011c7-001e-49b9-999e-626ce173a688</Id>
+          <Id>2991583b-deb8-4c9e-bb17-5bc798fe4534</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -7061,7 +7061,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Begin Decimal Compare : [SpanshAttack.jumpRange] Equals 0</Caption>
-          <Id>373cc6ae-ac0d-485b-99a2-8d583aca2e57</Id>
+          <Id>9affb93e-25cf-4097-b00b-e90604fd2f98</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -7096,12 +7096,12 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Execute command, 'SpanshAttack.getJumpRange' (and wait until it completes)</Caption>
-          <Id>892d5004-1305-44a2-9d66-d26dd51f24fc</Id>
+          <Id>a2af808d-81f3-452e-99cd-cf828afd5c30</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>cda15835-76ea-4bcf-bf6d-dc3b8a95c1dc</Context>
+          <Context>71df31d7-b3b2-4392-b761-477d6a4fdaf4</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -7130,7 +7130,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Set decimal [SpanshAttack.jumpRange] value to the value of [Jump range]</Caption>
-          <Id>73071f4a-8fb9-4ddc-af62-c6c110dfb76f</Id>
+          <Id>3c10ce96-d4ff-4f58-a761-c8a4ef94bb56</Id>
           <ActionType>DecimalSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -7165,7 +7165,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Else</Caption>
-          <Id>6c89d110-1246-45f8-a0f4-48f9add4296e</Id>
+          <Id>2048441a-2c1a-4e6f-badb-74b30bad90b1</Id>
           <ActionType>ConditionElse</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -7198,7 +7198,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>    Set decimal [Jump range] value to the value of [SpanshAttack.jumpRange]</Caption>
-          <Id>6783993f-59a2-493a-992b-5bba1431e3a3</Id>
+          <Id>8d21d3eb-a491-4aa6-82c1-0c8eee375f3b</Id>
           <ActionType>DecimalSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -7233,7 +7233,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>End Condition</Caption>
-          <Id>fea516b4-70c8-4911-8354-99cd4aa13531</Id>
+          <Id>49696fb3-7a77-4f54-b605-8218036db091</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -7266,7 +7266,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Set Text [~~message] to 'Jump range {DEC:Jump range} light years.'</Caption>
-          <Id>46740c78-ed2e-4c17-82cf-b7f4481a9cf8</Id>
+          <Id>b67918ec-7e14-40fb-b7e5-12b48adb41d6</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -7306,12 +7306,12 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Execute command, 'SpanshAttack.talk'</Caption>
-          <Id>7f1cc8ec-a056-4d4e-8a4a-253f0db4f4e4</Id>
+          <Id>c4fcc361-7cb6-4811-9837-2b9f5e789dc5</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>836b29b1-3f43-4658-b1a7-cc8ce123608b</Context>
+          <Context>698178d7-f44f-45f7-b5b1-c010bc7a42d6</Context>
           <X>0</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -7340,7 +7340,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>=== plot route</Caption>
-          <Id>37394b49-04ad-4d37-852d-c9a3d4ecdad4</Id>
+          <Id>b87478be-3099-4a48-a3ee-7a34066b99c7</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -7375,7 +7375,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Execute external plugin, 'Neutron Router - v0.1.0+' and wait for return</Caption>
-          <Id>c96ac120-c6be-4c71-a47d-4fea6a312ff7</Id>
+          <Id>9ae23d94-7078-45ae-95f6-09ebf4364b6b</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -7417,7 +7417,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Execute external plugin, 'Neutron Router - v0.1.0+'</Caption>
-          <Id>90d4a777-a0dd-46a7-8998-b810144ec47f</Id>
+          <Id>10f92b1b-b7d7-4081-9c46-fdd548b723a2</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -7459,7 +7459,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>=== give feedback</Caption>
-          <Id>39ed778e-0d23-4a51-8d1a-b9bb49442834</Id>
+          <Id>07406144-f129-470e-9fb0-7321764cd9de</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -7494,7 +7494,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Set Text [~~message] to '{INT:Remaining jumps} jumps towards {TXT:Next system name}.'</Caption>
-          <Id>a4e0bd3d-c341-4ce2-9b01-d1f53c9ab65e</Id>
+          <Id>aa5a1fd3-1f8f-4288-befc-25ed38a46b61</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -7534,12 +7534,12 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Execute command, 'SpanshAttack.talk'</Caption>
-          <Id>81c94ea6-5981-4759-9f5e-6fc5e0cb2329</Id>
+          <Id>64b1141f-b099-4c98-b243-6d9cd68be446</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>836b29b1-3f43-4658-b1a7-cc8ce123608b</Context>
+          <Context>698178d7-f44f-45f7-b5b1-c010bc7a42d6</Context>
           <X>0</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -7568,7 +7568,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>=== plot to first waypoint</Caption>
-          <Id>8eed2ce4-47fa-4839-93b7-13f0445d5b8a</Id>
+          <Id>60c7df25-e722-4ced-8d7d-ac3b8eae382b</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -7603,7 +7603,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Execute external plugin, 'Neutron Router - v0.1.0+' and wait for return</Caption>
-          <Id>5ae6abd1-6b93-47e8-af89-815bbbecb439</Id>
+          <Id>b366b149-cb82-458a-9cbf-10b9f8842894</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -7645,7 +7645,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Set Text [SpanshAttack.nextNeutronWaypoint] to [Next system]</Caption>
-          <Id>52d97e83-1068-46d6-abb4-69be09e8b2b7</Id>
+          <Id>3d41a139-b7ec-4c0b-b5e1-dffe70b8650c</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -7685,7 +7685,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Set Text [~~message] to 'Next waypoint: {TXT:SpanshAttack.nextNeutronWaypoint}.'</Caption>
-          <Id>3da13572-cf5c-4102-9732-90b9b34dcbac</Id>
+          <Id>0a305279-8ff8-4906-8a55-59e0a256ba8e</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -7725,7 +7725,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Set date [SpanshAttack.startTime] value to the current date/time</Caption>
-          <Id>6473e4c9-68bb-470e-bbc8-88ea42c3bd93</Id>
+          <Id>bb1fcd9a-c6a8-499d-9a52-f95d217bcef2</Id>
           <ActionType>DateSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -7759,12 +7759,12 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Execute command, 'SpanshAttack.talk'</Caption>
-          <Id>ae7ac6b6-f285-4608-9bd1-e6a625bdfb51</Id>
+          <Id>527facff-b3d8-46b6-b4d0-8872fcaa751f</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>836b29b1-3f43-4658-b1a7-cc8ce123608b</Context>
+          <Context>698178d7-f44f-45f7-b5b1-c010bc7a42d6</Context>
           <X>0</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -7793,12 +7793,12 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Execute command, '[target;] next neutron [waypoint;way point]'</Caption>
-          <Id>de4ffe37-bbbc-46d5-8eed-ab2c08c223d6</Id>
+          <Id>81a03d85-3a8b-4b9a-9d60-557a9b533f90</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>97c48b6c-7514-4027-8107-86f2e2a6fc51</Context>
+          <Context>531f3be3-9562-492d-93d9-9690dddc3c04</Context>
           <X>0</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -7828,7 +7828,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Write [Pink] 'SpanshAttack.next waypoint: {TXT:SpanshAttack.nextNeutronWaypoint}' to log</Caption>
-          <Id>a7239110-509a-4b43-9ce5-532c2d88abca</Id>
+          <Id>05ac3c4a-44c8-47f5-bb87-d566419cb19e</Id>
           <ActionType>WriteToLog</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -7929,7 +7929,7 @@
       <BaseId>73382680-c856-41e8-b479-9ba3b20befb7</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>bfb5e46a-5512-4a17-bab2-bbd424873b3f</Id>
+      <Id>3731599a-5609-4597-8ad6-297b254e6c37</Id>
       <CommandString>SpanshAttack.replotRoute</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -7941,7 +7941,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>9935e873-a44a-4d8a-ab0d-80a4d16d8dcc</Id>
+          <Id>6ac5d207-c175-44fd-866c-2bd8fb052fb8</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -7974,7 +7974,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>b346e930-eeb9-4b1f-b98f-59fc70c4fe03</Id>
+          <Id>7b6c7832-5c44-494b-811c-7cf6b4a268c0</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8006,7 +8006,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>665245d3-1493-4ba8-a1dc-fdbbb15b1931</Id>
+          <Id>e749e371-e7bf-436b-84d8-49f825a1d9b0</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8043,7 +8043,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>c5344360-a4dd-4a10-a06d-dbc6dbcd061d</Id>
+          <Id>fbfcbadf-6918-4c8c-a77f-5b5b693908d0</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8075,12 +8075,12 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>386ea0c6-07ce-4ba7-9aff-fda1d5476c2c</Id>
+          <Id>d466d33e-bbeb-40ad-8690-7daf2853cf3d</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>6883f31f-3da6-483b-9dde-471cc060b278</Context>
+          <Context>48480252-4f07-4d0c-b41e-efbff9b00acf</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -8107,7 +8107,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>5de2129b-0a80-46db-aff7-55dd55b066d2</Id>
+          <Id>f8f73114-79bf-4903-99b2-e1464818fd42</Id>
           <ActionType>ConditionElse</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8138,12 +8138,12 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>b7862283-4c0c-4a4a-b3db-72ab196b9c0e</Id>
+          <Id>cdf62427-af04-4106-9f48-29c9bc592c75</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>d027b4fc-06bc-4c06-94e6-cffdeb973ab5</Context>
+          <Context>e4d431bf-0fcd-47ab-b3ec-66206a624fd0</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -8170,7 +8170,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>2df67938-431d-46cf-ae78-411b6d8b565a</Id>
+          <Id>4fa12e9f-3310-42f9-a807-301c9928b7bf</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8269,7 +8269,7 @@
       <BaseId>d603003d-1d64-4003-9254-42b7eda40cdb</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>8ec27f68-25ad-4d6b-91f8-da1d708658cd</Id>
+      <Id>27e9ec56-0a35-4395-95e3-b31999789389</Id>
       <CommandString>SpanshAttack.startup</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -8283,7 +8283,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>= if you include this profile in your own, please call this command in your own startup sequence</Caption>
-          <Id>98724480-cbb8-46c9-aaf4-9963922f7a46</Id>
+          <Id>13f05491-6807-402b-84c4-2f6eab9b56e3</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8317,7 +8317,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>= THEN overwrite variables to fit your needs.</Caption>
-          <Id>9ce5a744-5bc0-411c-bd84-af1c97ae797c</Id>
+          <Id>3f08b671-42f0-4c59-ade7-ac23cd20e7b9</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8351,7 +8351,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Execute external plugin, 'bindED Plugin v1.0' and wait for return</Caption>
-          <Id>b079f210-8827-457d-92a3-f408253d3500</Id>
+          <Id>1184e938-b580-4a03-97ef-e97949883832</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8393,7 +8393,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>=== key used for pasting text. generally the `V` key, but for non-QWERTY the key that’s in the same place as QWERTY-`V`</Caption>
-          <Id>06f7d5f4-566e-4e6d-9f8e-976fdde2519a</Id>
+          <Id>a4ff66cd-f877-4af3-ba95-164e4855ee54</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8427,7 +8427,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Set Text [Elite.pasteKey] to 'v'</Caption>
-          <Id>5cebacba-3456-4f75-aa1e-72e624eb60e2</Id>
+          <Id>73871fef-fc48-4188-a08a-014db37317f2</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8466,7 +8466,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>=== `;`-seperated list of jump counts to report when supercharging</Caption>
-          <Id>91bbcf92-7492-4bcf-ac6d-9b62f3b0c87e</Id>
+          <Id>1500f446-91c0-41a4-9770-7ecfcaded1b0</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8490,7 +8490,7 @@
           <RandomSounds />
         </CommandAction>
         <CommandAction>
-          <_caption>Set Text [SpanshAttack.announceJumpsLeft] to '1;3;5;10;15;20;30;50;75;100;'</_caption>
+          <_caption>Set Text [SpanshAttack.announceJumpsLeft] to ';1;3;5;10;15;20;30;50;75;100;'</_caption>
           <PairingSet>false</PairingSet>
           <PairingSetElse>false</PairingSetElse>
           <Ordinal>6</Ordinal>
@@ -8499,14 +8499,14 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Caption>Set Text [SpanshAttack.announceJumpsLeft] to '1;3;5;10;15;20;30;50;75;100;'</Caption>
-          <Id>388b6393-22d8-4f10-827f-045a64d3bdbe</Id>
+          <Caption>Set Text [SpanshAttack.announceJumpsLeft] to ';1;3;5;10;15;20;30;50;75;100;'</Caption>
+          <Id>7922a137-42cb-423e-9503-874281aa6d93</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>SpanshAttack.announceJumpsLeft</Context>
-          <Context2 xml:space="preserve">1;3;5;10;15;20;30;50;75;100;</Context2>
+          <Context2 xml:space="preserve">;1;3;5;10;15;20;30;50;75;100;</Context2>
           <Context3 />
           <Context4 />
           <X>0</X>
@@ -8539,7 +8539,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>=== announce the next waypoint using TTS. first waypoint on the route will always be announced.</Caption>
-          <Id>e87175bf-1bdd-42a1-ade9-a2f052816167</Id>
+          <Id>80246b53-f983-4a3c-a42e-8b82f6ab97bb</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8573,7 +8573,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Set Boolean [SpanshAttack.announceWaypoints] to True</Caption>
-          <Id>d0fde53f-ebb3-410e-a8e2-5000f9f46326</Id>
+          <Id>f942a013-5fc8-4e1c-8b94-db620f085c87</Id>
           <ActionType>BooleanSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8610,7 +8610,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>=== automatically select the next waypoint on the galaxy map</Caption>
-          <Id>f037e628-8e4d-4b60-b36d-31013538cff2</Id>
+          <Id>93310407-a7b2-42d7-a9c3-af6f6240bcc0</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8644,7 +8644,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Set Boolean [SpanshAttack.autoPlot] to True</Caption>
-          <Id>13824076-f679-4554-ac05-91f6ad1894d4</Id>
+          <Id>11186390-8ea1-4ade-acc6-b312d4713ec9</Id>
           <ActionType>BooleanSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8681,7 +8681,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>=== auto-copy the next waypoint to the windows clipboard. enable if you need it someplace outside of VoiceAttack.</Caption>
-          <Id>da2f52a4-b0fd-4678-9db3-6243e45c1f0d</Id>
+          <Id>83aab9c2-1697-4935-bdb3-d5d5410b3d86</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8715,7 +8715,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Set Boolean [SpanshAttack.copyWaypointToClipboard] to False</Caption>
-          <Id>f53e0aa0-a8f2-4c6d-8f9b-6323a1232ea7</Id>
+          <Id>0d535108-366e-4bde-b4e6-7dd1406a588b</Id>
           <ActionType>BooleanSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8752,7 +8752,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>=== set this to true if you want to have your neutron trips timed</Caption>
-          <Id>1b2452b5-d80b-427c-9fa6-ddeed4925e4d</Id>
+          <Id>f2a8a9d1-89c2-4fa5-9cd3-7cb666fc47ed</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8786,7 +8786,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Set Boolean [SpanshAttack.timeTrip] to False</Caption>
-          <Id>e3463b9e-615a-4c72-aa7d-7771a3bdce4e</Id>
+          <Id>b1d66f08-4695-4012-beb4-db7e80c68063</Id>
           <ActionType>BooleanSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8823,7 +8823,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>=== set this to true if you want to use the EDDI plugin for TTS</Caption>
-          <Id>854f5007-8ce0-4fb2-839f-7d9b8840fd20</Id>
+          <Id>5b639234-c33c-4867-960c-9256ba6aa6aa</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8857,7 +8857,7 @@
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
           <Caption>Set Boolean [SpanshAttack.useEddiForVoice] to False</Caption>
-          <Id>83ea2629-dab9-4a5c-8506-54a1d7e0da8b</Id>
+          <Id>e5445d3c-716b-4a86-8c19-aea3ef8e4863</Id>
           <ActionType>BooleanSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -8928,7 +8928,7 @@
       <MouseUpOnly>false</MouseUpOnly>
       <MousePassThru>true</MousePassThru>
       <joystickExclusive>false</joystickExclusive>
-      <lastEditedAction>077dd361-2cf1-4c2a-a568-8017a5c5a315</lastEditedAction>
+      <lastEditedAction>ade6c45b-0cb7-4853-aff4-f194d8b62b21</lastEditedAction>
       <UseProfileProcessOverride>false</UseProfileProcessOverride>
       <ProfileProcessOverrideActiveWindow>false</ProfileProcessOverrideActiveWindow>
       <RepeatIfKeysDown>false</RepeatIfKeysDown>
@@ -8960,7 +8960,7 @@
       <BaseId>d9aa047c-b114-416d-a160-b486550324b1</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>836b29b1-3f43-4658-b1a7-cc8ce123608b</Id>
+      <Id>698178d7-f44f-45f7-b5b1-c010bc7a42d6</Id>
       <CommandString>SpanshAttack.talk</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -8972,7 +8972,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>8e1c79dc-edf4-483c-ab65-b390e584b923</Id>
+          <Id>1a9aeb85-c77f-4004-a653-e92cff8b280d</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -9005,7 +9005,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>ad5e1f19-c013-42d9-9449-e07ff94b585a</Id>
+          <Id>fca54374-7300-422b-958a-bc2777e4dc90</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -9042,7 +9042,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>983ef082-6078-4eb6-8c6e-d5ae8ed6d2f9</Id>
+          <Id>2c95fec5-91c5-48cd-85cb-d9a8bb2099cd</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -9081,7 +9081,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>a66c450e-88f5-43ac-82af-adc888869344</Id>
+          <Id>e6a2f095-184a-4e94-b243-088f56e2e799</Id>
           <ActionType>ConditionElse</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -9112,7 +9112,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>dc95604a-7dfd-4879-930c-093345e4c89c</Id>
+          <Id>049ac8ee-ce0d-4f85-9e05-89a109b49ff4</Id>
           <ActionType>Say</ActionType>
           <Duration>1</Duration>
           <Delay>0</Delay>
@@ -9146,7 +9146,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>d7f1fb1c-550c-4f45-b957-fb4fffbd6841</Id>
+          <Id>d03646f0-eb98-4a61-95eb-51b91686e610</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -9245,7 +9245,7 @@
       <BaseId>4e28b6e4-af13-4a90-8e09-83fc27db2c52</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>8889713f-9385-4f68-a6ff-fa7258e9cb83</Id>
+      <Id>39f38000-2c50-444c-abb4-1144a5938e23</Id>
       <CommandString>SpanshAttack.targetNextNeutronWaypoint</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -9257,7 +9257,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>fab094dd-1785-4f41-8cb3-ea4f15776be1</Id>
+          <Id>24f14f36-9fb0-449d-9290-05cc23aaa219</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -9290,7 +9290,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>1dd4bd35-1516-46b7-906b-6a820d0040f6</Id>
+          <Id>8e361cf5-15af-451e-9588-a1bfcfdad7bd</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -9322,7 +9322,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>3427f437-0333-43f5-87e4-17b2dbcfc576</Id>
+          <Id>a83a4667-0987-4728-8c1a-8f988d2c3397</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -9357,12 +9357,12 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>dfe7f500-ab08-415b-a96a-d469f65f8ae7</Id>
+          <Id>8f157777-5919-4102-a7c0-35b5dde0729e</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>f591f045-2497-4c4a-9059-64c99aa33839</Context>
+          <Context>56d15b16-5986-40e4-85cb-123b93e6afdd</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -9390,7 +9390,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>3fdbb355-2e33-4e87-9a46-34a84dac6275</Id>
+          <Id>ec1a2c74-bacd-41cc-a315-9a050b336c87</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -9422,7 +9422,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>d79dac80-0b04-4122-9795-c122dff709a8</Id>
+          <Id>9976ace9-269f-42c1-a3f9-abc1dd82b387</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -9454,7 +9454,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>24abe478-fa73-4bfc-bf8e-013d9ad1956f</Id>
+          <Id>998dc70c-b528-4ec3-96bb-77c9537a89dc</Id>
           <ActionType>PressKey</ActionType>
           <Duration>0.1</Duration>
           <Delay>0</Delay>
@@ -9487,7 +9487,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>37ff2041-947f-4924-aab1-cef490199db4</Id>
+          <Id>9104e277-9333-434c-9bb2-d74493f6ecab</Id>
           <ActionType>Pause</ActionType>
           <Duration>0.1</Duration>
           <Delay>0</Delay>
@@ -9519,7 +9519,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>f5a4c497-790d-44b8-b67a-91e47d9ae2d2</Id>
+          <Id>8ecfb7cf-8651-4aef-b8e4-72ce5646bdc5</Id>
           <ActionType>PressKey</ActionType>
           <Duration>0.1</Duration>
           <Delay>0</Delay>
@@ -9552,7 +9552,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>ba34af52-88ae-495e-93b8-f3d9def08f8b</Id>
+          <Id>d8988ec0-4a97-467d-81b9-0abd127227e1</Id>
           <ActionType>Pause</ActionType>
           <Duration>0.1</Duration>
           <Delay>0</Delay>
@@ -9584,7 +9584,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>1998bc7e-b416-459d-bf5a-22ee85ac01f6</Id>
+          <Id>0069f4df-5768-4502-a24b-1c8cdb951108</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -9616,7 +9616,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>0a112c7a-0849-43e8-a49e-6d17ce204e88</Id>
+          <Id>26750192-2155-412b-b741-628f81cd5592</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -9654,7 +9654,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>eb9970fe-20f1-4832-bc3a-163d23aef863</Id>
+          <Id>f73478f5-d19e-4bdd-a667-8db7c6d4f1ba</Id>
           <ActionType>Pause</ActionType>
           <Duration>0.1</Duration>
           <Delay>0</Delay>
@@ -9686,12 +9686,12 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>05312316-8ce9-45d7-a646-3b09dded13f0</Id>
+          <Id>1ec4d5f7-807a-4e17-ad28-b18e845f23c9</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>5fdba2ff-b8fd-4ace-b258-3d035b7dee30</Context>
+          <Context>be045d36-4da0-4fcf-95ea-902e1115f2ba</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -9718,7 +9718,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>93d6b67e-0178-47a8-b1a6-e362626ec11b</Id>
+          <Id>42faa91a-b2f0-43a4-bb77-2dddaf83088f</Id>
           <ActionType>Pause</ActionType>
           <Duration>0.1</Duration>
           <Delay>0</Delay>
@@ -9750,7 +9750,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>f7321dde-7668-42be-842a-418dc084acc8</Id>
+          <Id>9fb1ab2f-3e80-4fc7-8587-dc41f97342a6</Id>
           <ActionType>PressKey</ActionType>
           <Duration>0.1</Duration>
           <Delay>0</Delay>
@@ -9785,7 +9785,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>e096521d-1bff-40a5-9dff-d4ca0d723455</Id>
+          <Id>2053f24a-a800-4fca-9446-9c8c097f6418</Id>
           <ActionType>ConditionElse</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -9816,12 +9816,12 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>54288216-1054-4f4e-87da-480c06ea74cc</Id>
+          <Id>42aaa80b-47e7-479e-91f6-264295c44452</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>d027b4fc-06bc-4c06-94e6-cffdeb973ab5</Context>
+          <Context>e4d431bf-0fcd-47ab-b3ec-66206a624fd0</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -9848,7 +9848,7 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>a46ceaf5-86fd-4a4a-aa10-c7ba95182512</Id>
+          <Id>476b60c5-c800-4eab-8761-73eed8a288af</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -9947,7 +9947,7 @@
       <BaseId>6a3fc277-02e8-4473-9582-8ebf5dc0dd46</BaseId>
       <OriginId>00000000-0000-0000-0000-000000000000</OriginId>
       <SessionEnabled>true</SessionEnabled>
-      <Id>97c48b6c-7514-4027-8107-86f2e2a6fc51</Id>
+      <Id>531f3be3-9562-492d-93d9-9690dddc3c04</Id>
       <CommandString>[target;] next neutron [waypoint;way point]</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -9959,12 +9959,12 @@
           <ConditionSkip>false</ConditionSkip>
           <IsSuffixAction>false</IsSuffixAction>
           <DecimalTransient1>0</DecimalTransient1>
-          <Id>ceb2f149-07bb-4128-bde3-e5b657a35b5a</Id>
+          <Id>e7326492-4b87-4465-b332-c2ed585e372c</Id>
           <ActionType>ExecuteCommand</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <Context>8889713f-9385-4f68-a6ff-fa7258e9cb83</Context>
+          <Context>39f38000-2c50-444c-abb4-1144a5938e23</Context>
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
@@ -10079,7 +10079,7 @@
   <CatchAllEnabled>false</CatchAllEnabled>
   <CatchAllId xsi:nil="true" />
   <InitializeCommandEnabled>true</InitializeCommandEnabled>
-  <InitializeCommandId>8ec27f68-25ad-4d6b-91f8-da1d708658cd</InitializeCommandId>
+  <InitializeCommandId>27e9ec56-0a35-4395-95e3-b31999789389</InitializeCommandId>
   <UseProcessOverride>true</UseProcessOverride>
   <ProcessOverride>Elite - Dangerous (CLIENT)</ProcessOverride>
   <ProcessOverrideAciveWindow>false</ProcessOverrideAciveWindow>
@@ -10088,7 +10088,7 @@
   <EnableProfileSwitch>false</EnableProfileSwitch>
   <CategoryGroups />
   <GroupCategory>true</GroupCategory>
-  <LastEditedCommand>1678af82-862e-4ec9-a09b-52a8906a10c9</LastEditedCommand>
+  <LastEditedCommand>d1be864e-6d8d-42f9-afe2-a0a7a2fb38b6</LastEditedCommand>
   <IS>0</IS>
   <IO>0</IO>
   <IP>0</IP>
