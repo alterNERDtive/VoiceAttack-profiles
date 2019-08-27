@@ -102,12 +102,19 @@ cleared. If you want to prematurely end your trip, call the
 ### Announcing Jumps Left ###
 
 You can have VoiceAttack tell you the amount of jumps left on the current route 
-by invoking `SpanshAttack.getJumpsLeft` or saying
+by invoking `SpanshAttack.announceJumpsLeft` or saying
 `how many [neutron;] jumps [are;] left?`.
 
 **Note**: Because it’s pretty much impossible to calculate a 100% accurate value 
 for the total jumps left, it will just tell you the jump count _from the current 
 neutron waypoint_.
+
+### Announce elapsed time on the trip ###
+
+SpanshAttack keeps track of your start time, even if you have the option to time 
+your trip turned off. This way you can get the time you’ve been jumping with the 
+`SpanshAttack.announceTripTime` or
+`how long have i been [jumping;on this trip;on this neutron trip]?` commands.
 
 ### Helper Functions ###
 
@@ -127,6 +134,8 @@ if you have imported SpanshAttack.
 
 * Elite.pasteKey (string): the key used for pasting into Elite. On QWERTY this 
   is `v`. Default: `v`.
+* SpanshAttack.timeTrip: whether to automatically tell you at the end of a trip 
+  how long it to you to get there. Default: false.
 * SpanshAttack.announceWaypoints (boolean): whether to announce each waypoint of 
   the neutron route. Default: true.
 * SpanshAttack.announceJumpsLeft (string): `;`-separated list of remaining jumps 
