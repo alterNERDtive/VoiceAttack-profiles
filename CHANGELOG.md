@@ -1,3 +1,15 @@
+# v0.3 (2019-09-22)
+
+## SpanshAttack v1.1
+
+* no changes
+
+## EliteDangerous v1.0
+
+Should be usable by other people now without too much hassle. If you run into 
+problems, please hit me up on [Discord](https://discord.gg/mD6dAb) or file an 
+issue here.
+
 # v0.2 (2019-08-06)
 
 ## SpanshAttack v1.1
