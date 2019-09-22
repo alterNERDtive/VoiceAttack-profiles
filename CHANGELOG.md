@@ -1,8 +1,9 @@
 # v0.3 (2019-09-22)
 
-## SpanshAttack v1.1
+## SpanshAttack v1.2
 
-* no changes
+* improved trip time announcements
+* trip time is now also wrote to the VoiceAttack log
 
 ## EliteDangerous v1.0
 
