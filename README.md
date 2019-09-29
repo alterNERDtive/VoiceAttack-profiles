@@ -74,6 +74,23 @@ including profile! If you want to make sure, manually create all EDDI Event
 handlers used in imported profiles and have them call the corresponding 
 commands. See the Elite Dangerous profile for reference.
 
+## Major Version Changes ##
+
+If a profile’s major version number changes (e.g. SpanshAttack 1.x.x to 2.0.0) 
+there _will_ be changes to the profile that do one or any amount of the 
+following:
+
+* command names / command invocation have changed
+* configuration variable name or format have changed
+* features removed
+* _major_ features added
+
+**If you see a major version number change in the release notes, please pay 
+attention to said notes to know what you might have to change to get it to 
+work!**
+
+If any of the steps are unclear, please see below.
+
 ## Need Help / Want to Contribute? ##
 
 If you run into any errors, please try running the profile in question on its 
