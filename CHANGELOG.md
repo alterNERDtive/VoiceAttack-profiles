@@ -2,6 +2,12 @@
 
 * plotting a route now aborts if no jump range was given
 
+## EliteDangerous v1.1
+
+* now compares current system bodies to the bodies found on EDSM and gives 
+  feedback if there’s a discrepancy (and you should FSS the entire system to 
+  update EDSM)
+
 # v0.3 (2019-09-22)
 
 ## SpanshAttack v1.2
