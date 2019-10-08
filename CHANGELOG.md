@@ -2,7 +2,7 @@
 
 * plotting a route now aborts if no jump range was given
 
-## EliteDangerous v1.1
+## EliteDangerous v2.0
 
 * fixed `EliteDangerous.jumpToSuperCruise` to no longer drop you from SC when 
   called while in SC
