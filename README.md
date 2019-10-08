@@ -30,6 +30,11 @@ Each of the profiles is documented in `/docs/`.
   and SealAttack.
 * [ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter): required 
   for SpanshAttack.
+* [elite-scripts](https://github.com/alterNERDtive/elite-scripts): required for 
+  EliteDangerous, recommended for RatAttack and SealAttack. The release page 
+  here includes a compiled version for Windows that does not need Python 
+  installed. Just download the zip file from the release page and extract into 
+  your VoiceAttack directory.
 
 Additionally, you need to have keyboard binds setup at least as secondary 
 bindings in Elite’s controls options. VA _cannot_ “push” joystick buttons for 
