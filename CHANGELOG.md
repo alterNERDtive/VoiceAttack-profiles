@@ -7,7 +7,8 @@
 * fixed `EliteDangerous.jumpToSuperCruise` to no longer drop you from SC when 
   called while in SC
 * fixed “relog to {open,solo}” command for new menu structure
-* added “distance from home” command (requires python scripts, see docs)
+* added “distance [from;to] [home;the center;Beagle Point;Colonia]” command 
+  (requires python scripts, see docs)
 * now compares current system bodies to the bodies found on EDSM and gives 
   feedback if there’s a discrepancy (and you should FSS the entire system to 
   update EDSM) (requires python scripts, see doc)
