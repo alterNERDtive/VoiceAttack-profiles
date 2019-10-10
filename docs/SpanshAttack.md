@@ -40,7 +40,7 @@ When importing the prifle, be sure to
   configuration variables you want changed; _after_ the `SpanshAttack.startup` 
   call. See [below](#Configuration-Variables).
 * Make sure all EDDI events that SpanshAttack needs are correctly handled. For 
-  all events used in Spanshattack that you already have handelrs for in your 
+  all events used in Spanshattack that you already have handlers for in your 
   profile, you’ll have to include a call to `SpanshAttack.<event name>`. E.g.  
   for “EDDI Jumped”, call `SpanshAttack.EDDI Jumped` by name from your `((EDDI 
   Jumped))` command.
