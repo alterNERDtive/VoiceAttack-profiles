@@ -29,9 +29,9 @@ range from EDDI; sadly a) it’s
 b) EDDI is storing the _maximum_ distance for your ship instead of the current 
 / full on fuel one.
 
-## Importing the Profile ##
+## Including the Profile ##
 
-When importing the profile, be sure to
+When including the profile, be sure to
 
 * Run the startup command. You will need to have a startup command in your 
   profile (= one that is run on profile loading) and call `SpanshAttack.startup` 
@@ -132,7 +132,7 @@ don’t unless it’s a config variable …) from other profiles:
 ### Configuration Variables ###
 
 These are set in `SpanshAttack.startup` and can be overriden from your profile 
-if you have imported SpanshAttack.
+if you have included SpanshAttack.
 
 * `Elite.pasteKey` (string): the key used for pasting into Elite. On QWERTY this 
   is `v`. Default: `v`.
