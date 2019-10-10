@@ -16,9 +16,9 @@ Each of the profiles is documented in `/docs/`.
 * [SpanshAttack](docs/SpanshAttack.md): profile to plot and follow trips along 
   the neutron highway using [spansh](https://spansh.co.uk/plotter).
 * [RatAttack](docs/RatAttack.md): profile for interactions with the Fuel Rats’ 
-  IRC server.
+  IRC server. (Not a thing yet.)
 * [SealAttack](docs/SealAttack.md): profile for interactions with the Hull 
-  Seals’ IRC server.
+  Seals’ IRC server. (Not a thing yet.)
 
 ## Requirements ##
 
