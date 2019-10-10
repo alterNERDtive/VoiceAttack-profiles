@@ -144,6 +144,8 @@ if you have imported SpanshAttack.
   beginning and end of the string. Default: `;1;3;5;10;15;20;30;50;75;100;`
 * SpanshAttack.autoPlot (boolean): whether to automatically plot to the next 
   waypoint on supercharging. Default: true.
+* SpanshAttack.clearOnShutdown (boolean): whether or not to automtically clear 
+  an active neutron route on Elite client shutdown. Default: true.
 * SpanshAttack.copyWaypointToClipboard (boolean): whether to copy the next 
   waypoint into the Windows clipboard for use in other programs. Default: false.
 * SpanshAttack.useEddiForVoice (boolean): whether to use EDDI over VA’s builtin 

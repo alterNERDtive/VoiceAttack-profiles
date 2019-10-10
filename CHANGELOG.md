@@ -1,6 +1,8 @@
 ## SpanshAttack v1.3
 
 * plotting a route now aborts if no jump range was given
+* added option to clear an active neutron route on closing the game client 
+  (default: on)
 
 ## EliteDangerous v2.0
 
@@ -12,6 +14,7 @@
 * now compares current system bodies to the bodies found on EDSM and gives 
   feedback if there’s a discrepancy (and you should FSS the entire system to 
   update EDSM) (requires python scripts, see doc)
+* added compatibility for SpanshAttack’s clear on shutdown
 
 # v0.3 (2019-09-22)
 
