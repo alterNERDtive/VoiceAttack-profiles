@@ -132,33 +132,33 @@ don’t unless it’s a config variable …) from other profiles:
 These are set in `SpanshAttack.startup` and can be overriden from your profile 
 if you have imported SpanshAttack.
 
-* Elite.pasteKey (string): the key used for pasting into Elite. On QWERTY this 
+* `Elite.pasteKey` (string): the key used for pasting into Elite. On QWERTY this 
   is `v`. Default: `v`.
-* SpanshAttack.timeTrip: whether to automatically tell you at the end of a trip 
-  how long it to you to get there. Default: false.
-* SpanshAttack.announceWaypoints (boolean): whether to announce each waypoint of 
-  the neutron route. Default: true.
-* SpanshAttack.announceJumpsLeft (string): `;`-separated list of remaining jumps 
-  to announce when said amounts are reached. Right now only works if they are 
-  _exactly_ reached when supercharging off a neutron. Note the extra `;` at the 
-  beginning and end of the string. Default: `;1;3;5;10;15;20;30;50;75;100;`
-* SpanshAttack.autoPlot (boolean): whether to automatically plot to the next 
+* `SpanshAttack.timeTrip` (boolean): whether to automatically tell you at the 
+  end of a trip how long it to you to get there. Default: false.
+* `SpanshAttack.announceWaypoints` (boolean): whether to announce each waypoint 
+  of the neutron route. Default: true.
+* `SpanshAttack.announceJumpsLeft` (string): `;`-separated list of remaining 
+  jumps to announce when said amounts are reached. Right now only works if they 
+  are _exactly_ reached when supercharging off a neutron. Note the extra `;` at 
+  the beginning and end of the string. Default: `;1;3;5;10;15;20;30;50;75;100;`
+* `SpanshAttack.autoPlot` (boolean): whether to automatically plot to the next 
   waypoint on supercharging. Default: true.
-* SpanshAttack.clearOnShutdown (boolean): whether or not to automtically clear 
+* `SpanshAttack.clearOnShutdown` (boolean): whether or not to automtically clear 
   an active neutron route on Elite client shutdown. Default: true.
-* SpanshAttack.copyWaypointToClipboard (boolean): whether to copy the next 
+* `SpanshAttack.copyWaypointToClipboard` (boolean): whether to copy the next 
   waypoint into the Windows clipboard for use in other programs. Default: false.
-* SpanshAttack.useEddiForVoice (boolean): whether to use EDDI over VA’s builtin 
-  `say` command. Default: false.
+* `SpanshAttack.useEddiForVoice` (boolean): whether to use EDDI over VA’s 
+  builtin `say` command. Default: false.
 
 ### Other Variables ###
 
 These variables can be used to get information about the current neutron route.  
 Please do not set them manually and / or from outside the SpanshAttack profile.
 
-* SpanshAttack.targetSystem (string): the target system for the current neutron 
-  route
-* SpanshAttack.nextNeutronWaypoint (string): the next waypoint on the current 
+* `SpanshAttack.targetSystem` (string): the target system for the current 
   neutron route
-* SpanshAttack.neutronJumpMode (boolean): neutron jump mode active/inactive
-* SpanshAttack.jumpRange (decimal): the current ship’s jump range
+* `SpanshAttack.nextNeutronWaypoint` (string): the next waypoint on the current 
+  neutron route
+* `SpanshAttack.neutronJumpMode` (boolean): neutron jump mode active/inactive
+* `SpanshAttack.jumpRange` (decimal): the current ship’s jump range
