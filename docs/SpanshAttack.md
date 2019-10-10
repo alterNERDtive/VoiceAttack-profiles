@@ -89,7 +89,9 @@ a re-plot of the current route with the same target system and jump range.
 ### Refueling ###
 
 Whenever you refuel off a scoopable star, the profile will automatically 
-throttle back up to 100% speed.
+throttle back up to 100% speed. Unless you have disabled it in your 
+configuration, you will also automatically target the next system on your route 
+and jump to it once you leave fuel scoop range.
 
 ### Clearing a Route ###
 
@@ -142,6 +144,8 @@ if you have imported SpanshAttack.
   jumps to announce when said amounts are reached. Right now only works if they 
   are _exactly_ reached when supercharging off a neutron. Note the extra `;` at 
   the beginning and end of the string. Default: `;1;3;5;10;15;20;30;50;75;100;`
+* `SpanshAttack.autoJumpAfterScooping` (boolean): whether to automatically jump 
+  after fuel scooping (and moving out of scoop range). Default: true.
 * `SpanshAttack.autoPlot` (boolean): whether to automatically plot to the next 
   waypoint on supercharging. Default: true.
 * `SpanshAttack.clearOnShutdown` (boolean): whether or not to automtically clear 

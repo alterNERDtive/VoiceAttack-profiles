@@ -3,6 +3,7 @@
 * plotting a route now aborts if no jump range was given
 * added option to clear an active neutron route on closing the game client 
   (default: on)
+* added option to auto jump after fuel scooping (default: on)
 * fixed `SpanshAttack.announceTripTime` saying “1 hours” and “1 minutes” (#13)
 
 ## EliteDangerous v2.0
