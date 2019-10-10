@@ -31,7 +31,7 @@ b) EDDI is storing the _maximum_ distance for your ship instead of the current
 
 ## Importing the Profile ##
 
-When importing the prifle, be sure to
+When importing the profile, be sure to
 
 * Run the startup command. You will need to have a startup command in your 
   profile (= one that is run on profile loading) and call `SpanshAttack.startup` 
