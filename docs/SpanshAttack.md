@@ -29,9 +29,9 @@ range from EDDI; sadly a) it’s
 b) EDDI is storing the _maximum_ distance for your ship instead of the current 
 / full on fuel one.
 
-## Importing the Profile ##
+## Including the Profile ##
 
-When importing the prifle, be sure to
+When including the profile, be sure to
 
 * Run the startup command. You will need to have a startup command in your 
   profile (= one that is run on profile loading) and call `SpanshAttack.startup` 
@@ -40,7 +40,7 @@ When importing the prifle, be sure to
   configuration variables you want changed; _after_ the `SpanshAttack.startup` 
   call. See [below](#Configuration-Variables).
 * Make sure all EDDI events that SpanshAttack needs are correctly handled. For 
-  all events used in Spanshattack that you already have handelrs for in your 
+  all events used in Spanshattack that you already have handlers for in your 
   profile, you’ll have to include a call to `SpanshAttack.<event name>`. E.g.  
   for “EDDI Jumped”, call `SpanshAttack.EDDI Jumped` by name from your `((EDDI 
   Jumped))` command.
@@ -89,7 +89,9 @@ a re-plot of the current route with the same target system and jump range.
 ### Refueling ###
 
 Whenever you refuel off a scoopable star, the profile will automatically 
-throttle back up to 100% speed.
+throttle back up to 100% speed. Unless you have disabled it in your 
+configuration, you will also automatically target the next system on your route 
+and jump to it once you leave fuel scoop range.
 
 ### Clearing a Route ###
 
@@ -130,33 +132,37 @@ don’t unless it’s a config variable …) from other profiles:
 ### Configuration Variables ###
 
 These are set in `SpanshAttack.startup` and can be overriden from your profile 
-if you have imported SpanshAttack.
+if you have included SpanshAttack.
 
-* Elite.pasteKey (string): the key used for pasting into Elite. On QWERTY this 
+* `Elite.pasteKey` (string): the key used for pasting into Elite. On QWERTY this 
   is `v`. Default: `v`.
-* SpanshAttack.timeTrip: whether to automatically tell you at the end of a trip 
-  how long it to you to get there. Default: false.
-* SpanshAttack.announceWaypoints (boolean): whether to announce each waypoint of 
-  the neutron route. Default: true.
-* SpanshAttack.announceJumpsLeft (string): `;`-separated list of remaining jumps 
-  to announce when said amounts are reached. Right now only works if they are 
-  _exactly_ reached when supercharging off a neutron. Note the extra `;` at the 
-  beginning and end of the string. Default: `;1;3;5;10;15;20;30;50;75;100;`
-* SpanshAttack.autoPlot (boolean): whether to automatically plot to the next 
+* `SpanshAttack.timeTrip` (boolean): whether to automatically tell you at the 
+  end of a trip how long it to you to get there. Default: false.
+* `SpanshAttack.announceWaypoints` (boolean): whether to announce each waypoint 
+  of the neutron route. Default: true.
+* `SpanshAttack.announceJumpsLeft` (string): `;`-separated list of remaining 
+  jumps to announce when said amounts are reached. Right now only works if they 
+  are _exactly_ reached when supercharging off a neutron. Note the extra `;` at 
+  the beginning and end of the string. Default: `;1;3;5;10;15;20;30;50;75;100;`
+* `SpanshAttack.autoJumpAfterScooping` (boolean): whether to automatically jump 
+  after fuel scooping (and moving out of scoop range). Default: true.
+* `SpanshAttack.autoPlot` (boolean): whether to automatically plot to the next 
   waypoint on supercharging. Default: true.
-* SpanshAttack.copyWaypointToClipboard (boolean): whether to copy the next 
+* `SpanshAttack.clearOnShutdown` (boolean): whether or not to automtically clear 
+  an active neutron route on Elite client shutdown. Default: true.
+* `SpanshAttack.copyWaypointToClipboard` (boolean): whether to copy the next 
   waypoint into the Windows clipboard for use in other programs. Default: false.
-* SpanshAttack.useEddiForVoice (boolean): whether to use EDDI over VA’s builtin 
-  `say` command. Default: false.
+* `SpanshAttack.useEddiForVoice` (boolean): whether to use EDDI over VA’s 
+  builtin `say` command. Default: false.
 
 ### Other Variables ###
 
 These variables can be used to get information about the current neutron route.  
 Please do not set them manually and / or from outside the SpanshAttack profile.
 
-* SpanshAttack.targetSystem (string): the target system for the current neutron 
-  route
-* SpanshAttack.nextNeutronWaypoint (string): the next waypoint on the current 
+* `SpanshAttack.targetSystem` (string): the target system for the current 
   neutron route
-* SpanshAttack.neutronJumpMode (boolean): neutron jump mode active/inactive
-* SpanshAttack.jumpRange (decimal): the current ship’s jump range
+* `SpanshAttack.nextNeutronWaypoint` (string): the next waypoint on the current 
+  neutron route
+* `SpanshAttack.neutronJumpMode` (boolean): neutron jump mode active/inactive
+* `SpanshAttack.jumpRange` (decimal): the current ship’s jump range
