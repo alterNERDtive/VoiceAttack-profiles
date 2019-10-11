@@ -1,3 +1,5 @@
+# v0.4 (2019-10-12)
+
 ## SpanshAttack v1.3
 
 * plotting a route now aborts if no jump range was given
