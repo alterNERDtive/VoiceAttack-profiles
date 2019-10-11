@@ -8,6 +8,7 @@
 
 ## EliteDangerous v2.0
 
+* added documentation! (#11)
 * fixed `EliteDangerous.jumpToSuperCruise` to no longer drop you from SC when 
   called while in SC
 * fixed `relog to [open;solo]` command for new menu structure
