@@ -18,25 +18,32 @@ handlers.
 Speaking of EDDI; it has become in integral part of my Elite experience, 
 especially the plethora of information it extracts from the game’s journal and 
 presents to you via lots and lots of status variables and by firing various 
-events that can then be handled through VA commands. It’s great. Check it out.  
+events that can then be handled through VA commands. It’s great. Check it out. 
 (You might want to make it talk a lot less in it’s personality options, or 
 disable the speech responder entirely like I have.)
+
+## Requirements ##
+
+In addition to the bindED and EDDI VoiceAttack plugins, this profiles needs my 
+[Python elite-scripts](https://github.com/alterNERDtive/elite-scripts) to do 
+everything properly. The release page here includes a compiled version for 
+Windows that does not need Python installed. Just download the zip file from the 
+release page and extract into your VoiceAttack directory.
 
 ## Settings ##
 
 Because Elite’s keyboard handling is … weird you’ll have to set the key to use 
 for pasting text into Elite:Dangerous. If you are using a “standard” QWERT[YZ] 
-layout, you don’t have to do anything; if you are using something different, you 
-have to set it to the symbol that’s on the physical button that has `v` on 
-QWERT[YZ]. E.g. for Neo2, set it to `p`.
+layout, you will have to change it back to `v`. It’s defaulting to `p` because 
+that’s the key that is in `v`’s place on my keyboard layout, Neo2.
 
 For other settings, see the [Configuration Variables](#Configuration-Variables) 
 section.
 
-## Including the Profile ##
+## Including the Profile In Another Profile ##
 
 This is meant to be a standalone profile, including the others in this repo (and 
-a couple more). It was never designed to be included into your existing profile.  
+a couple more). It was never designed to be included into your existing profile. 
 Nevertheless, it _should_ work properly if you follow some guide lines:
 
 * Run the startup command. You will need to have a startup command in your 
@@ -47,12 +54,11 @@ Nevertheless, it _should_ work properly if you follow some guide lines:
   call. See [below](#Configuration-Variables).
 * Make sure all EDDI events that EliteDangerous needs are correctly handled. For 
   all events used in EliteDangerous that you already have handlers for in your 
-  profile, you’ll have to include a call to `EliteDangerous.<event name>`.  E.g.  
-  for “EDDI Jumped”, call `SpanshAttack.EDDI Jumped` by name from your `((EDDI 
+  profile, you’ll have to include a call to `EliteDangerous.<event name>`.  E.g. 
+  for “EDDI Jumped”, call `EliteDangerous.EDDI Jumped` by name from your `((EDDI 
   Jumped))` command.
 * Initialise the [bindED](https://forum.voiceattack.com/SMF?topic=564.0) plugin 
-  correctly to read your Elite keybinds. Do that in your main profile’s startup 
-  command to only have it run once.
+  correctly to read your Elite keybinds.
 
 ## Usage ##
 
@@ -163,7 +169,8 @@ windows.
 
 #### Ship FSD ####
 
-This event actually is several different events in one:
+This event actually is several different events in one. Currently the following 
+are handled:
 
 * charging: Warns you if your target system’s main star is not scoopable, 
   including an extra warning at low fuel levels. (__Note__: This is currently 
@@ -185,7 +192,9 @@ thought.
 #### Shutdown ####
 
 Changes my nick back to default in FuelRats IRC. Probably largely useless to 
-you.
+you. If you are using FuelRats IRC you need to change/deactivate this (see 
+[below](#Configuration-Variables)) or you will start impersonating me by 
+accident :)
 
 #### SRV Launched ####
 
@@ -202,7 +211,7 @@ _don’t_ immediately want to retract it after takeoff?
 
 ### HOTAS Buttons ####
 
-These commands are all bound to keys on my Throttle to make them do different 
+These commands are all bound to keys on my throttle to make them do different 
 things on tapping and on holding.
 
 * `docking request key`: Well, that one just sends a docking request using the 
@@ -221,7 +230,7 @@ automatically retracting everything.
 
 The commands in here do random more or less useful things.
 
-* `bind keys;reset key binds`: Reloads your key binds through the bindED plugin.  
+* `bind keys;reset key binds`: Reloads your key binds through the bindED plugin. 
   You should do that after changing anything in the controls options.
 * `copy current system`: Copies the current system name into the clipboard.
 * `distance [from;to] […]`: Tells you the distance from your current position to 
@@ -236,14 +245,14 @@ The commands in here do random more or less useful things.
 * `neutron jumps left`: Shorter version of the same thing in SpanshAttack.
 * `open copied system on EDSM`: Opens the system in your clipboard on EDSM in 
   your default browser.
-* `open [current;] system on EDSM: Opens your current system on EDSM in your 
+* `open [current;] system on EDSM`: Opens your current system on EDSM in your 
   default browser.
 * `open EDDI options; configure EDDI`: Opens the EDDI configuration window.
 * `open [the;] miner’s tool`: Opens https://edtools.ddns.net/miner in your 
   default browser.
 * `[start;stop] [EDISON;navigation]`: Hits `CTRL+ALT+E` which just so happens to 
   be the start/stop hotkey I have set in E.D.I.S.O.N.
-* `[what’s;what is] left to [map;be mapped]`: Telss you which bodies EDDI thinks 
+* `[what’s;what is] left to [map;be mapped]`: Tells you which bodies EDDI thinks 
   are worth mapping in the system that you haven’t mapped yet.
 
 ### Ship Controls ###
@@ -251,7 +260,7 @@ The commands in here do random more or less useful things.
 Basically anything that is related to directly doing something with your ship.
 
 * `[abort;cancel;stop] jumping`: Stops a currently charging FSD jump.
-* `[buggy;exploration] power`: Sets your PD to 0/4/2 or 2/4/0 respectively.  
+* `[buggy;exploration] power`: Sets your PD to 0/4/2 or 2/4/0 respectively. 
   Works in SRV too.
 * `check next [star;hop;jump;system]`: Will quickly engage and disengage your 
   FSD to show you the star class of the currently targeted system in the info 
@@ -261,22 +270,22 @@ Basically anything that is related to directly doing something with your ship.
   Gear. You get the gist, I guess. Works in SRV too.
 * `[disco;discovery scan]`: Executes a discovery scan. To work properly, you’ll 
   have to set the Discovery Scanner to your first fire group, secondary fire.
-* `[head;spot;] lights [on;off]: Turns your lights on and off. Works in SRV too, 
-  kinda; turning lights off there relies on the state updating fast enough, 
+* `[head;spot;] lights [on;off]`: Turns your lights on and off. Works in SRV 
+  too, kinda; turning lights off there relies on the state updating fast enough, 
   which sometimes leads to weird results.
 * `[jump;engage;get me out;punch it chewie] [and scan;] [when ready;]`: Retracts 
   everything that might be protruding from your ship, then jumps to the next 
-  system. If the FSD isn’t charging within 1s, it gets you into SC instead (e.g.  
-  if your target is obstructed). If given “and scan”, runs a discovery scan. If 
-  given “when ready”, waits for mass lock to clear, your FSD to cool down and 
-  you to leave scoop range before jumping.
+  system. If the FSD isn’t charging within 1s, it gets you into SC instead (e.g. 
+  if your target is obstructed). If given “and scan” runs a discovery scan. If 
+  given “when ready” waits for mass lock to clear, your FSD to cool down and you 
+  to leave scoop range before jumping.
 * `night vision [on;off]`: Toggles your night vision on/off. Works in SRV too.
 * `power to [engines;shields;systems;weapons`: Sets 4 pips to the thing you told 
   it, 1 to the others.
 * `rapid fire lights`: Flashes your lights 5 times in a row.
 * `retract [all;everything]`: Retracts, well, everything.
-* `[super;] cruise [when ready;] Retracts everything, then jupms to SC. If given 
-  “when ready”, will wait for mass lock to clear and your FSD to cool down 
+* `[super;] cruise [when ready;]`: Retracts everything, then jupms to SC. If 
+  given “when ready” will wait for mass lock to clear and your FSD to cool down 
   first.
 
 ### SRV controls ###
@@ -303,7 +312,7 @@ category, but oh well :)
 ### UI Commands ###
 
 Everything handling stuff that’s not related to controlling your ship, but 
-manipulating some UI elemnt(s).
+manipulating some UI element(s).
 
 * `controls options`: Opens the controls options menu.
 * `docking request;request dock[ing;]`: Sends a docking request.
@@ -319,11 +328,11 @@ manipulating some UI elemnt(s).
   over the filter button, then run this.
 * `system map`: Opens the system map.
 * `take [high res;] screenshot`: Takes a (high res) screenshot.
-* `target […]`: Targes the given system on the galaxy map. There’s a bunch in 
+* `target […]`: Targets the given system on the galaxy map. There’s a bunch in 
   there, the list is easily extensible. Drop me a note if you want something 
   included.
 * `toggle orbit lines`: Toggles the visibility of orbit lines.
-* `[toggle;show;hide] interface`: Toggles the cockpit interface (CTRL+ALT+G).  
+* `[toggle;show;hide] interface`: Toggles the cockpit interface (CTRL+ALT+G). 
   Probably needs to be adjusted if you are not playing with Neo2 keyboard layout 
   :)
 
@@ -333,7 +342,7 @@ These are set in `EliteDangerous.startup` and can be overriden from your profile
 if you have included EliteDangerous.
 
 * `Elite.pasteKey` (string): the key used for pasting into Elite. On QWERTY this 
-  is `v`. Default: `v`.
+  is `v`. Default: `p`.
 * `>announceMappingCandidates` (boolean): whether to announce mapping candidates 
   when they are scanned. Default: true.
 * `>autoChangeFuelratsNick` (boolean): whether to change the FuelRats IRC 
