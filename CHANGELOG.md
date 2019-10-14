@@ -1,3 +1,12 @@
+# v0.4.1 (2019-10-14)
+
+This is a bug fix release (as the version number indicates). Mainly for changes 
+in EDDI 3.5.0-b1. If you haven’t updated to the beta, DO NOT update to this 
+version yet!
+
+There has also been a minor update to `elite-scripts` – this is not relevant 
+yet, so you do not have to download the new archive.
+
 ## SpanshAttack v1.3.1
 
 * fixed jump on scooping to no longer conflict with an already charging jump
