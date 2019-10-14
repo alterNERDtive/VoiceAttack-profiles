@@ -198,7 +198,9 @@ accident :)
 
 #### SRV Launched ####
 
-Toggles SRV lights off after launching. Currently weirdly bugged.
+Toggles SRV lights off after launching. Might not work if you drop particularly 
+far after deployment because it works off a timer. Conversely might take 
+a second to turn your lights off on a short drop and/or in high gravity.
 
 #### System Scan Complete ####
 
