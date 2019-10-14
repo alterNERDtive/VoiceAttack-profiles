@@ -1,3 +1,7 @@
+## SpanshAttack v1.3.1
+
+* fixed jump on scooping to no longer conflict with an already charging jump
+
 ## EliteDangerous v2.0.1
 
 * fixed lights off command for SRV, will no longer have a loop on race condition
