@@ -1,7 +1,8 @@
-## EliteDangerous v2.1
+## EliteDangerous v2.0.1
 
 * fixed lights off command for SRV, will no longer have a loop on race condition
 * fixed discovery scan event for new EDDI variable naming
+* fixed srv lauched event to properly turn off the lights
 
 # v0.4 (2019-10-12)
 
