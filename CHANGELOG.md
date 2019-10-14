@@ -45,7 +45,7 @@ yet, so you do not have to download the new archive.
 ## SpanshAttack v1.2
 
 * improved trip time announcements
-* trip time is now also wrote to the VoiceAttack log
+* trip time is now also written to the VoiceAttack log
 
 ## EliteDangerous v1.0
 
