@@ -24,10 +24,11 @@ Each of the profiles is documented in `/docs/`.
 
 * [VoiceAttack](https://voiceattack.com): absolutely required (duh).
 * [bindED](https://forum.voiceattack.com/smf/index.php?topic=564.0): required 
-  for all profiles; makes anything involving hitting E:D key binds portable.
+  for EliteDangerous and SpanshAttack; makes anything involving hitting E:D key 
+  binds portable.
 * [EDDI](https://github.com/EDCD/EDDI) installed as a VoiceAttack plugin: 
-  required for my personal profile and for SpanshAttack, optional for RatAttack 
-  and SealAttack.
+  required for EliteDangerous and SpanshAttack, optional for RatAttack and 
+  SealAttack.
 * [ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter): required 
   for SpanshAttack.
 * [elite-scripts](https://github.com/alterNERDtive/elite-scripts): required for 
