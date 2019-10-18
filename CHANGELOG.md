@@ -1,3 +1,9 @@
+## RatAttack v1.0
+
+RatAttack is now a thing! :D
+
+(Documentation isn’t yet.)
+
 ## SpanshAttack v1.3.2
 
 * fixed auto jump on scooping. Now only queues a jump _once_ not once per 
