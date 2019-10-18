@@ -1,3 +1,8 @@
+## SpanshAttack v1.3.2
+
+* fixed auto jump on scooping. Now only queues a jump _once_ not once per 
+  “refuelled” event (fires every 5s)
+
 # v0.4.1 (2019-10-14)
 
 This is a bug fix release (as the version number indicates). Mainly for changes 
