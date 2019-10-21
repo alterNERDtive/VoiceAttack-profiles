@@ -1,4 +1,4 @@
-## RatAttack v1.0
+## RatAttack v0.1
 
 RatAttack is now a thing! :D
 
@@ -8,6 +8,12 @@ RatAttack is now a thing! :D
 
 * fixed auto jump on scooping. Now only queues a jump _once_ not once per 
   “refuelled” event (fires every 5s)
+
+## EliteDangerous v2.0.2
+
+* fixed the discovery scan event to only tell you about differences with EDSM 
+  when EDSM knows _fewer_ bodies (there are some issues with duplicate entries 
+  in EDSM, e.g. in Dromi)
 
 # v0.4.1 (2019-10-14)
 
