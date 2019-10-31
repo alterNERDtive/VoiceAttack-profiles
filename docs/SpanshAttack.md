@@ -6,6 +6,20 @@ neutron jumps using [spansh](https://spansh.co.uk/plotter). It fully does
 everything you need from within the game and VoiceAttack, you won’t have to 
 visit the site at any point.
 
+## Requirements ##
+
+In addition to VoiceAttack, you will need the following plugins to use this 
+profile:
+
+* [bindED](https://forum.voiceattack.com/smf/index.php?topic=564.0): required 
+  for EliteDangerous and SpanshAttack; makes anything involving hitting E:D key 
+  binds portable.
+* [EDDI](https://github.com/EDCD/EDDI) installed as a VoiceAttack plugin: 
+required for EliteDangerous and SpanshAttack, optional for RatAttack and 
+SealAttack.
+* [ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter): required 
+for SpanshAttack.
+
 ## Settings ##
 
 Because Elite’s keyboard handling is … weird you’ll have to set the key to use 
