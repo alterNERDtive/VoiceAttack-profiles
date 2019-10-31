@@ -54,7 +54,7 @@ When including the profile, be sure to
   configuration variables you want changed; _after_ the `SpanshAttack.startup` 
   call. See [below](#Configuration-Variables).
 * Make sure all EDDI events that SpanshAttack needs are correctly handled. For 
-  all events used in Spanshattack that you already have handlers for in your 
+  all events used in SpanshAttack that you already have handlers for in your 
   profile, you’ll have to include a call to `SpanshAttack.<event name>`. E.g.  
   for “EDDI Jumped”, call `SpanshAttack.EDDI Jumped` by name from your `((EDDI 
   Jumped))` command.
@@ -135,17 +135,17 @@ your trip turned off. This way you can get the time you’ve been jumping with t
 ### Helper Functions ###
 
 The profile contains a lot of helper functions that get called by the 
-aforementionde commands. Have a look around, maybe learn something about 
+aforementioned commands. Have a look around, maybe learn something about 
 VoiceAttack :)
 
 ## Exposed Variables ##
 
-The following Variables are _global_ and thus readable (and writeable! please 
+The following Variables are _global_ and thus readable (and writeable! Please 
 don’t unless it’s a config variable …) from other profiles:
 
 ### Configuration Variables ###
 
-These are set in `SpanshAttack.startup` and can be overriden from your profile 
+These are set in `SpanshAttack.startup` and can be overridden from your profile 
 if you have included SpanshAttack.
 
 * `Elite.pasteKey` (string): the key used for pasting into Elite. On QWERTY this 
@@ -162,8 +162,8 @@ if you have included SpanshAttack.
   after fuel scooping (and moving out of scoop range). Default: true.
 * `SpanshAttack.autoPlot` (boolean): whether to automatically plot to the next 
   waypoint on supercharging. Default: true.
-* `SpanshAttack.clearOnShutdown` (boolean): whether or not to automtically clear 
-  an active neutron route on Elite client shutdown. Default: true.
+* `SpanshAttack.clearOnShutdown` (boolean): whether or not to automatically 
+  clear an active neutron route on Elite client shutdown. Default: true.
 * `SpanshAttack.copyWaypointToClipboard` (boolean): whether to copy the next 
   waypoint into the Windows clipboard for use in other programs. Default: false.
 * `SpanshAttack.useEddiForVoice` (boolean): whether to use EDDI over VA’s 
