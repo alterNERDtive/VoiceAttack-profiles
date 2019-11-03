@@ -353,6 +353,8 @@ if you have included EliteDangerous.
 * `>enableR2Rannouncements` (boolean): whether to announce planets worth mapping 
   when jumping into a known system. This is useful for doing some R2R on the 
   side. Default: false.
+* `>flightAssistOff` (boolean): whether to automatically toggle FlightAssist off 
+  on liftoff. Default: true.
 * `>targetSubsystem` (string): the default target subsystem. Unused. Default: 
   “drive”.
 * `python.ScriptPath` (string): the path you have placed the compiled python 
