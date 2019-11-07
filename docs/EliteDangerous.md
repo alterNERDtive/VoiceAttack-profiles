@@ -286,6 +286,9 @@ Basically anything that is related to directly doing something with your ship.
   it, 1 to the others.
 * `rapid fire lights`: Flashes your lights 5 times in a row.
 * `retract [all;everything]`: Retracts, well, everything.
+* `[start;stop] [firing;mining]`: Starts/stops holding down primary fire. Mostly 
+  useful when mining. When triggered with “mining”, also deploys the cargo 
+  scoop.
 * `[super;] cruise [when ready;]`: Retracts everything, then jupms to SC. If 
   given “when ready” will wait for mass lock to clear and your FSD to cool down 
   first.
