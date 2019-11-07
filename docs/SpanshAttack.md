@@ -20,6 +20,21 @@ SealAttack.
 * [ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter): required 
 for SpanshAttack.
 
+### EDDI speech responder ###
+
+For the convenience of people that have not been using EDDI in the past, 
+SpanshAttack will deactivate the speech responder automatically to not clutter 
+them with unwanted TTS.
+
+If you are already an EDDI user and want to keep the default speech responder 
+functionality, you will have to run the `enablespeechresponder` plugin function 
+of the EDDI plugin from your profile’s startup command _after_ the 
+`SpanshAttack.startup` command invocation.
+
+In order to do that, choose “Other” → “Advanced” → “Execute an External Plugin 
+Function”, choose the EDDI plugin and set the “Plugin Context” to 
+“enablespeechresponder”.
+
 ## Settings ##
 
 Because Elite’s keyboard handling is … weird you’ll have to set the key to use 
