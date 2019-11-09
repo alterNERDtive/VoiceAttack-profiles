@@ -14,22 +14,23 @@ you can install EDDI and my elite scripts for advanced features.
 * [EDDI](https://github.com/EDCD/EDDI) installed as a VoiceAttack plugin: This 
   will give you a better (IMO) way of using TTS. Be sure to set 
   `RatAttack.useEddiForVoice`. It will also enable you to have ingame chat be 
-  transferred to IRC; see below. FIXXME: more things?
+  transferred to IRC; see below.
 * [elite-scripts](https://github.com/alterNERDtive/elite-scripts): Using the 
   Python scripts will give RatAttack a way to be aware of where your CMDRs are 
   and give you the nearest one to a rat case. That’s only really needed if you 
-  actually _have_ multiple CMDRs, obviously.
+  actually _have_ multiple CMDRs, obviously. Just download the zip file from the 
+  release page and extract into your VoiceAttack directory.
 
 ### EDDI speech responder ###
 
 For the convenience of people that have not been using EDDI in the past, 
-SpanshAttack will deactivate the speech responder automatically to not clutter 
-them with unwanted TTS.
+RatAttack will deactivate the speech responder automatically to not clutter them 
+with unwanted TTS.
 
 If you are already an EDDI user and want to keep the default speech responder 
 functionality, you will have to run the `enablespeechresponder` plugin function 
 of the EDDI plugin from your profile’s startup command _after_ the 
-`SpanshAttack.startup` command invocation.
+`RatAttack.startup` command invocation.
 
 In order to do that, choose “Other” → “Advanced” → “Execute an External Plugin 
 Function”, choose the EDDI plugin and set the “Plugin Context” to 
@@ -41,7 +42,7 @@ There are a lot of preferences you can set, including some you really want to
 concern yourself with before you start using the profile. Some of the more 
 advanced features heavily rely on you giving it the correct things to work with.
 
-Nee the [Configuration Variables](#Configuration-Variables) section.
+See the [Configuration Variables](#Configuration-Variables) section.
 
 ## Including the Profile ##
 
@@ -83,24 +84,23 @@ This has two purposes:
    the case’s system into the clipboard
 
 In my case I am running AdiIRC and have the following script setup for handling 
-this:a
+this:
 
 ```
 on *:TEXT:RATSIGNAL - CMDR*(??_SIGNAL):#fuelrats:{
   var %clip = $cb(-1)
   /clipboard $1-
-  /run -h "D:\tools\VoiceAttack\VoiceAttack.exe" -nofocus -command 
-  "RatAttack.getInfoFromRatSignal"
+  /run -h "D:\tools\VoiceAttack\VoiceAttack.exe" -nofocus -command "RatAttack.getInfoFromRatSignal"
   /sleep 2 /clipboard %clip
 }
 ```
 
 This does the following things:
 
-1. temporarily save the current clipboard
 1. listen for a line starting with “RATSIGNAL - CMDR” and ending with 
    “(??\_SIGNAL)” (`?` being any character); that will catch an incoming signal 
    with basically no false positives
+1. temporarily save the current clipboard
 1. copy the entire line to the clipboard
 1. run VoiceAttack (should already be open) with the 
    `RatAttack.getInfoFromRatsignal` command that will parse the signal and store 
@@ -151,7 +151,7 @@ you can run on this list, giving it a case number:
 There are a bunch of calls you can make for a case, the most common are modelled 
 through VoiceAttack commands. The descriptive commands (e.g. “system confirmed”) 
 will be shortened to the usual IRC short hands (e.g. “sysconf”). If you need 
-something more unusual, you can either still manually type it into your IRC 
+something more unusual you can either still manually type it into your IRC 
 client or use the “General IRC Integration”, see below.
 
 * `call [1..20] jumps [and login;and takeoff]`: Calls jump for the currently 
@@ -166,7 +166,7 @@ client or use the “General IRC Integration”, see below.
 * `call client in [exclusion zone;main menu;open;open sysconf;pg;private 
   group;solo;super cruise]`: Callouts for all the various things a client could 
   get themselves into.
-* `call [client destroyed;sysconf;system confirmed]: This is the command you 
+* `call [client destroyed;sysconf;system confirmed]`: This is the command you 
   don’t want to use. Include sysconf in your “friend+” or “in open” calls, and 
   make sure you will never have to call “client destroyed”, would you?
 
@@ -177,24 +177,24 @@ client or use the “General IRC Integration”, see below.
 Using EDDI to read the game’s journal, you can send messages to IRC from Elite’s 
 ingame chat.
 
-**Be aware that the chat message will still appear in the ingame chat you send 
-it to!**
+**Be aware that the chat message will still appear in the ingame chat channel 
+you send it to!**
 
 I recommend using local chat and limiting the use to instances that will 
 probably not have other players in it (e.g. instanced in normal space with the 
 client or in SC in some remote system out in the black on a long range rescue).
 
-* #fuelrats: Use “.fr <message>” to have VoiceAttack send “#<caseNumber> 
-  <message>” to the #fuelrats channel – or yell at you when you are not on 
+* #fuelrats: Use “.fr \<message\>” to have VoiceAttack send “#\<caseNumber\> 
+  \<message\>” to the #fuelrats channel – or yell at you when you are not on 
   a case.
-* #ratchat: Use “.rc <message>” to have VoiceAttack send “<message>” to 
+* #ratchat: Use “.rc \<message\>” to have VoiceAttack send “\<message\>” to 
   #ratchat.
 
 These commands send their text to windows with “#fuelrats” and “#ratchat” in 
 their title, respectively. If your IRC client does not do that, you will have to 
 change the “target” window of the `RatAttack.sendToFuelrats` and 
 `RatAttack.sendToRatchat` commands to reflect the actual window titles on your 
-system.
+system. I will look into making this more elegant to change in the future.
 
 ## Exposed Variables ##
 
@@ -211,12 +211,12 @@ you have included RatAttack.
 * `RatAttack.confirmCalls` (boolean): whether VoiceAttack should ask you before 
   posting to #fuelrats to make sure there hasn’t been an error in voice 
   recognition and you accidentally post the wrong thing. Default: true.
-* `RatAttack.onDuty` (boolean): whether or not you are currently on rat duty.  
-  Default: true.
+* `RatAttack.onDuty` (boolean): whether or not you are currently on rat duty. 
+ Default: true.
 * `RatAttack.platforms` (string): the platforms you want to be informed of 
   incoming cases for. If you are on console, you can still have VoiceAttack 
   running on the PC that you are using for IRC and handle calls and stuff using 
-  voice!  Delimited by whatever you want. Can include “PC”, “XB”, “PS4”.  
+  voice!  Delimited by whatever you want. Can include “PC”, “XB”, “PS4”. 
   Default: “PC”.
 * `RatAttack.platformAnnouncements` (boolean): whether or not to announce the 
   case’s platform by default. Useful to set if you are active on more than one 
@@ -239,7 +239,7 @@ you have included RatAttack.
 
 Current case data:
 
-* `RatAttack.caseNumber` (int): the number of the case you are currently on.  
+* `RatAttack.caseNumber` (int): the number of the case you are currently on. 
   Will be `Not Set` if you are not on a case.
 * `RatAttack.onCase` (boolean): whether or not you are currently on a case.
 
