@@ -6,6 +6,35 @@ neutron jumps using [spansh](https://spansh.co.uk/plotter). It fully does
 everything you need from within the game and VoiceAttack, you won’t have to 
 visit the site at any point.
 
+## Requirements ##
+
+In addition to VoiceAttack, you will need the following plugins to use this 
+profile:
+
+* [bindED](https://forum.voiceattack.com/smf/index.php?topic=564.0): required 
+  for EliteDangerous and SpanshAttack; makes anything involving hitting E:D key 
+  binds portable.
+* [EDDI](https://github.com/EDCD/EDDI) installed as a VoiceAttack plugin: 
+required for EliteDangerous and SpanshAttack, optional for RatAttack and 
+SealAttack.
+* [ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter): required 
+for SpanshAttack.
+
+### EDDI speech responder ###
+
+For the convenience of people that have not been using EDDI in the past, 
+SpanshAttack will deactivate the speech responder automatically to not clutter 
+them with unwanted TTS.
+
+If you are already an EDDI user and want to keep the default speech responder 
+functionality, you will have to run the `enablespeechresponder` plugin function 
+of the EDDI plugin from your profile’s startup command _after_ the 
+`SpanshAttack.startup` command invocation.
+
+In order to do that, choose “Other” → “Advanced” → “Execute an External Plugin 
+Function”, choose the EDDI plugin and set the “Plugin Context” to 
+“enablespeechresponder”.
+
 ## Settings ##
 
 Because Elite’s keyboard handling is … weird you’ll have to set the key to use 
@@ -40,7 +69,7 @@ When including the profile, be sure to
   configuration variables you want changed; _after_ the `SpanshAttack.startup` 
   call. See [below](#Configuration-Variables).
 * Make sure all EDDI events that SpanshAttack needs are correctly handled. For 
-  all events used in Spanshattack that you already have handlers for in your 
+  all events used in SpanshAttack that you already have handlers for in your 
   profile, you’ll have to include a call to `SpanshAttack.<event name>`. E.g.  
   for “EDDI Jumped”, call `SpanshAttack.EDDI Jumped` by name from your `((EDDI 
   Jumped))` command.
@@ -121,17 +150,17 @@ your trip turned off. This way you can get the time you’ve been jumping with t
 ### Helper Functions ###
 
 The profile contains a lot of helper functions that get called by the 
-aforementionde commands. Have a look around, maybe learn something about 
+aforementioned commands. Have a look around, maybe learn something about 
 VoiceAttack :)
 
 ## Exposed Variables ##
 
-The following Variables are _global_ and thus readable (and writeable! please 
+The following Variables are _global_ and thus readable (and writeable! Please 
 don’t unless it’s a config variable …) from other profiles:
 
 ### Configuration Variables ###
 
-These are set in `SpanshAttack.startup` and can be overriden from your profile 
+These are set in `SpanshAttack.startup` and can be overridden from your profile 
 if you have included SpanshAttack.
 
 * `Elite.pasteKey` (string): the key used for pasting into Elite. On QWERTY this 
@@ -148,8 +177,8 @@ if you have included SpanshAttack.
   after fuel scooping (and moving out of scoop range). Default: true.
 * `SpanshAttack.autoPlot` (boolean): whether to automatically plot to the next 
   waypoint on supercharging. Default: true.
-* `SpanshAttack.clearOnShutdown` (boolean): whether or not to automtically clear 
-  an active neutron route on Elite client shutdown. Default: true.
+* `SpanshAttack.clearOnShutdown` (boolean): whether or not to automatically 
+  clear an active neutron route on Elite client shutdown. Default: true.
 * `SpanshAttack.copyWaypointToClipboard` (boolean): whether to copy the next 
   waypoint into the Windows clipboard for use in other programs. Default: false.
 * `SpanshAttack.useEddiForVoice` (boolean): whether to use EDDI over VA’s 

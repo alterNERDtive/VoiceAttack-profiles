@@ -16,7 +16,7 @@ Each of the profiles is documented in `/docs/`.
 * [SpanshAttack](docs/SpanshAttack.md): profile to plot and follow trips along 
   the neutron highway using [spansh](https://spansh.co.uk/plotter).
 * [RatAttack](docs/RatAttack.md): profile for interactions with the Fuel Rats’ 
-  IRC server. (Not a thing yet.)
+  IRC server.
 * [SealAttack](docs/SealAttack.md): profile for interactions with the Hull 
   Seals’ IRC server. (Not a thing yet.)
 
@@ -24,10 +24,13 @@ Each of the profiles is documented in `/docs/`.
 
 * [VoiceAttack](https://voiceattack.com): absolutely required (duh).
 * [bindED](https://forum.voiceattack.com/smf/index.php?topic=564.0): required 
-  for all profiles; makes anything involving hitting E:D key binds portable.
+  for EliteDangerous and SpanshAttack; makes anything involving hitting E:D key 
+  binds portable.
 * [EDDI](https://github.com/EDCD/EDDI) installed as a VoiceAttack plugin: 
-  required for my personal profile and for SpanshAttack, optional for RatAttack 
-  and SealAttack.
+  required for EliteDangerous and SpanshAttack, optional for RatAttack and 
+  SealAttack. If you are already running EDDI and want to keep the default 
+  speech responder active, you will need to re-enable it in your profile _after_ 
+  running the `<profile>.startup` command.
 * [ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter): required 
   for SpanshAttack.
 * [elite-scripts](https://github.com/alterNERDtive/elite-scripts): required for 

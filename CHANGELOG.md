@@ -1,3 +1,36 @@
+# v0.5 (2019-11-09)
+
+## RatAttack v0.1
+
+RatAttack is now a thing! :D
+
+## SpanshAttack v2.0
+
+* SpanshAttack will now disable EDDI’s speech responder by default. To get it 
+  back you will have to manually re-enable it after including 
+  `SpanshAttack.startup`. See docs for more info.
+* Fixed the target announcement when plotting. Will now properly use the plot 
+  target instead of the system that you have targeted at the moment of the 
+  announcement.
+* Requirements are now listed in the documentation.
+* Fixed auto jump on scooping. Now only queues a jump _once_ not once per 
+  “refuelled” event (fires every 5s)
+
+## EliteDangerous v2.0.2
+
+* Scanning a body will now tell you if it is in a fast orbit (less than 6h).
+* Fixed the `sentToX` commands to do a CTRL+A before pasting text. This will 
+  prevent garbled things to be send when you have already typed some text into 
+  the edit box.
+* Now automatically toggles FlightAssist off on takeoff/undock. Set 
+  `>FlightAssistOff` to false in `EliteDangerous.startup` to disable.
+* Added `[start;stop] [firing;mining]`. This command will start/stop hold down 
+  the primary fire button for you; in case of mining it will also deploy your 
+  cargo scoop.
+* Fixed the discovery scan event to only tell you about differences with EDSM 
+  when EDSM knows _fewer_ bodies (there are some issues with duplicate entries 
+  in EDSM, e.g. in Dromi)
+
 # v0.4.1 (2019-10-14)
 
 This is a bug fix release (as the version number indicates). Mainly for changes 
@@ -45,7 +78,7 @@ yet, so you do not have to download the new archive.
 ## SpanshAttack v1.2
 
 * improved trip time announcements
-* trip time is now also wrote to the VoiceAttack log
+* trip time is now also written to the VoiceAttack log
 
 ## EliteDangerous v1.0
 

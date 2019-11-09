@@ -286,6 +286,9 @@ Basically anything that is related to directly doing something with your ship.
   it, 1 to the others.
 * `rapid fire lights`: Flashes your lights 5 times in a row.
 * `retract [all;everything]`: Retracts, well, everything.
+* `[start;stop] [firing;mining]`: Starts/stops holding down primary fire. Mostly 
+  useful when mining. When triggered with “mining”, also deploys the cargo 
+  scoop.
 * `[super;] cruise [when ready;]`: Retracts everything, then jupms to SC. If 
   given “when ready” will wait for mass lock to clear and your FSD to cool down 
   first.
@@ -353,6 +356,8 @@ if you have included EliteDangerous.
 * `>enableR2Rannouncements` (boolean): whether to announce planets worth mapping 
   when jumping into a known system. This is useful for doing some R2R on the 
   side. Default: false.
+* `>flightAssistOff` (boolean): whether to automatically toggle FlightAssist off 
+  on liftoff. Default: true.
 * `>targetSubsystem` (string): the default target subsystem. Unused. Default: 
   “drive”.
 * `python.ScriptPath` (string): the path you have placed the compiled python 
