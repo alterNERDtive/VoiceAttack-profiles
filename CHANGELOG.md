@@ -1,3 +1,7 @@
+## elite-scripts 0.1.1
+
+* fixed bug with wonky system names (e.g. `+` or `[]`)
+
 # v0.5 (2019-11-09)
 
 ## RatAttack v0.1
