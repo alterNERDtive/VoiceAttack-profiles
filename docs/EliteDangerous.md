@@ -352,7 +352,7 @@ if you have included EliteDangerous.
   when they are scanned. Default: true.
 * `>autoChangeFuelratsNick` (boolean): whether to change the FuelRats IRC 
   nickname automatically when changing commanders. Probably largely irrelevant 
-  to you. Default: true.
+  to you. Default: false.
 * `>enableR2Rannouncements` (boolean): whether to announce planets worth mapping 
   when jumping into a known system. This is useful for doing some R2R on the 
   side. Default: false.
