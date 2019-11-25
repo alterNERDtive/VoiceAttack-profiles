@@ -163,6 +163,8 @@ client or use the “General IRC Integration”, see below.
 * `call [beacon;fuel;instance;pos;position;prep;sys;system;wing] 
   [positive;negative]`: All the stuff you usually need for ratting after you 
   have received the friend request.
+* `call wing pending`: Calls “wr pending” for when it takes 30s again to 
+  actually show up.
 * `call client in [exclusion zone;main menu;open;open sysconf;pg;private 
   group;solo;super cruise]`: Callouts for all the various things a client could 
   get themselves into.
