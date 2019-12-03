@@ -362,7 +362,7 @@ if you have included EliteDangerous.
 * `>targetSubsystem` (string): the default target subsystem. Unused. Default: 
   “drive”.
 * `python.ScriptPath` (string): the path you have placed the compiled python 
-  scripts in. Default: “{VA_DIR}\scripts” (the “scripts” folder in your 
-  VoiceAttack installation directory).
+  scripts in. Default: “{VA_DIR}\Sounds\scripts” (the “\Sounds\scripts” folder 
+  in your VoiceAttack installation directory).
 * `>bindingsFile` (string): the bindings file bindED should use for your key 
   binds. Default: mine. You should really change this setting.

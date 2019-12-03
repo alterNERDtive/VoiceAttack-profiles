@@ -235,7 +235,7 @@ you have included RatAttack.
   your names include spaces, you will have to put them in quotes. Default: “"J 
   Jora Jameson" NameWithNoSpace”.
 * `python.scriptPath` (string): the path you put the Python scripts in. Default: 
-  “{VA_DIR}\scripts”.
+  “{VA_DIR}\Sounds\scripts”.
 
 ### Other Variables ###
 
