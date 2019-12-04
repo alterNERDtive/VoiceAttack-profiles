@@ -55,6 +55,9 @@ Last but not least, if you want to use my setup as-is, you need to go into the
 profile options for the freshly imported `EliteDangerous` profile and import 
 `RatAttack` and `SpanshAttack`.
 
+You can also download the profiles individually from the `profiles/` folder on 
+github.
+
 ### Updating ###
 
 If you use the profiles unchanged or just import them and override commands from 
