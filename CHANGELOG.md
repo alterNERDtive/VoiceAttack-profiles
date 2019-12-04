@@ -1,6 +1,6 @@
 # v1.0 (2019-12-04)
 
-### single-file profile package ###
+### single-file profile package
 
 You can now install a single “profile package” for all the packages and related 
 stuff (excluding required plugins)! That should make the entire setup process 
@@ -12,14 +12,14 @@ you delete the now obsolote `scripts` folder in your VoiceAttack directory, or
 wherever you have installed the scripts instead. If you haven’t been using them, 
 just ignore this paragraph.
 
-### new profile format ###
+### new profile format
 
 VoiceAttack 1.8 has the compressed profile as default export format. The 
 profiles will now come in this since I would forget to change the export format 
 every time I export them anyway. This shouldn’t lead to any issues but please do 
 open a bug if it does.
 
-## RatAttack v1.0 ##
+## RatAttack v1.0
 
 * fixed first case announcement after starting VoiceAttack
 * on opening a case, VoiceAttack will now first copy the target system to the 
@@ -28,17 +28,17 @@ open a bug if it does.
   is actually for a platform you want to have cases announced for
 * added `call wing pending` command
 
-## SpanshAttack v2.1 ##
+## SpanshAttack v2.1
 
 * will now set neutron mode and target system _before_ getting ship range. This 
   avoids race conditions with targeting a system, executing the plot command, 
   then changing the targeted system.
 
-## EliteDangerous v3.0 ##
+## EliteDangerous v3.0
 
 * added `[dis;]engage silent running` command
 
-## elite-scripts 0.1.1 ##
+## elite-scripts 0.1.1
 
 * fixed bug with wonky system names (including e.g. `+` or `[]`)
 
