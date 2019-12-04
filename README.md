@@ -5,7 +5,7 @@ to enhance my Elite experience. They give me important info, facilitate
 day-to-day gaming and do some special things for [Fuel 
 Rats](https://fuelrats.com) and [Hull Seals](https://hullseals.space) work.
 
-Each of the profiles is documented in `/docs/`.
+Each of the profiles is documented in `docs/`.
 
 ## Available Profiles ##
 
