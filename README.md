@@ -5,7 +5,7 @@ to enhance my Elite experience. They give me important info, facilitate
 day-to-day gaming and do some special things for [Fuel 
 Rats](https://fuelrats.com) and [Hull Seals](https://hullseals.space) work.
 
-Each of the profiles is documented in `/docs/`.
+Each of the profiles is documented in `docs/`.
 
 ## Available Profiles ##
 
@@ -34,16 +34,50 @@ Each of the profiles is documented in `/docs/`.
 * [ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter): required 
   for SpanshAttack.
 * [elite-scripts](https://github.com/alterNERDtive/elite-scripts): required for 
-  EliteDangerous, recommended for RatAttack and SealAttack. The release page 
-  here includes a compiled version for Windows that does not need Python 
-  installed. Just download the zip file from the release page and extract into 
-  your VoiceAttack directory.
+  EliteDangerous, recommended for RatAttack and SealAttack (included).
 
 Additionally, you need to have keyboard binds setup at least as secondary 
 bindings in Elite’s controls options. VA _cannot_ “push” joystick buttons for 
 you, it can only do keyboard inputs. Hence its only way to interact with Elite 
 is through keyboard emulation, even if you otherwise play the game with 
 a controller or HOTAS. Or racing wheel. Or Rock Band set. Or bananas.
+
+## Installing ##
+
+Install the plugins listed in [Requirements](#Requirements).
+
+Download the profile package (`alterNERDtive-voiceattack-profiles.vax`) from the 
+[release page](https://github.com/alterNERDtive/VoiceAttack-profiles/releases/latest)
+and import it as a profile into VoiceAttack. This will install all 3 profiles, 
+the referenced sound files and the Python scripts.
+
+Last but not least, if you want to use my setup as-is, you need to go into the 
+profile options for the freshly imported `EliteDangerous` profile and import 
+`RatAttack` and `SpanshAttack`.
+
+You can also download the profiles individually from the `profiles/` folder on 
+github.
+
+### Updating ###
+
+If you use the profiles unchanged or just import them and override commands from 
+your main profile, updating should work just like installing: import the profile 
+package and tell VoiceAttack to overwrite commands when prompted.
+
+### Major Version Changes ###
+
+If a profile’s major version number changes (e.g. SpanshAttack 1.x.x to 2.0.0) 
+there _will_ be changes to the profile that do one or any amount of the 
+following:
+
+* command names / command invocation have changed
+* configuration variable name or format have changed
+* features removed
+* _major_ features added
+
+**If you see a major version number change in the release notes, please pay 
+attention to said notes to know what you might have to change to get it to 
+work!**
 
 ## Settings ##
 
@@ -81,23 +115,6 @@ You also have to do that if you include multiple profiles using the same events
 including profile! If you want to make sure, manually create all EDDI Event 
 handlers used in imported profiles and have them call the corresponding 
 commands. See the Elite Dangerous profile for reference.
-
-## Major Version Changes ##
-
-If a profile’s major version number changes (e.g. SpanshAttack 1.x.x to 2.0.0) 
-there _will_ be changes to the profile that do one or any amount of the 
-following:
-
-* command names / command invocation have changed
-* configuration variable name or format have changed
-* features removed
-* _major_ features added
-
-**If you see a major version number change in the release notes, please pay 
-attention to said notes to know what you might have to change to get it to 
-work!**
-
-If any of the steps are unclear, please see below.
 
 ## Need Help / Want to Contribute? ##
 
