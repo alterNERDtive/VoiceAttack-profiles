@@ -1,9 +1,3 @@
-I updated my VoiceAttack to the beta channel (1.9.x). Exporting profiles now 
-defaults to the compressed format. That’s not as nice for git, but considering 
-I’ll probably forget to change it to XML every time I export, I’m just going 
-with it now. It _should_ be no problem to import the profiles into stable 
-(1.8.x). If you run into any problems, please do tell.
-
 ## elite-scripts 0.1.1
 
 * fixed bug with wonky system names (e.g. `+` or `[]`)
