@@ -215,6 +215,8 @@ you have included RatAttack.
   recognition and you accidentally post the wrong thing. Default: true.
 * `RatAttack.onDuty` (boolean): whether or not you are currently on rat duty. 
  Default: true.
+* `RatAttack.autoCloseCase` (boolean): whether or not to automatically close an 
+  open rat case on calling “fuel+”. Default: false.
 * `RatAttack.platforms` (string): the platforms you want to be informed of 
   incoming cases for. If you are on console, you can still have VoiceAttack 
   running on the PC that you are using for IRC and handle calls and stuff using 
