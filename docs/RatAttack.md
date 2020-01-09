@@ -123,6 +123,12 @@ you can run on this list, giving it a case number:
 * `rat case number [0..19] details`: Will give you all stored info on a case.
 * `[current;rat] case details`: Will give you all stored info on the currently 
   open case.
+* `distance to current rat case`: Will give you the distance from your current 
+  location to the currently opened rat case. Requires the use of my 
+  `elite-scripts` Python scripts.
+* `distance to rat case number [0..19]`: Will give you the distance from your 
+  current system to a case’s system. Requires the use of my `elite-scripts` 
+  Python scripts.
 * `nearest commander to rat case number [0..19]`: Will give you the nearest of 
   your CMDRs with their distance to a case’s system. Requires some setup and the 
   use of my `elite-scripts` Python scripts.
