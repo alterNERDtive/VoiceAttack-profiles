@@ -154,9 +154,10 @@ will be shortened to the usual IRC short hands (e.g. “sysconf”). If you need
 something more unusual you can either still manually type it into your IRC 
 client or use the “General IRC Integration”, see below.
 
-* `call [1..20] jumps [and login;and takeoff]`: Calls jump for the currently 
-  open case. You can optionally include that you will still have to login to the 
-  game or have to take off from your current station/port/outpost/planet.
+* `call [1..20] jumps [and login;and takeoff;left]`: Calls jump for the 
+  currently open case. You can optionally include that you will still have to 
+  login to the game or have to take off from your current 
+  station/port/outpost/planet.
 * `call friend [positive;negative] [in pg;in private group;in solo;in main 
   meu;sysconf;system confirmed]`: Friend request confirmations, with all the 
   things you might want to / should call with it.
