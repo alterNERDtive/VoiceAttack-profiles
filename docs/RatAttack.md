@@ -175,9 +175,10 @@ client or use the “General IRC Integration”, see below.
 * `call client in [exclusion zone;main menu;open;open sysconf;pg;private 
   group;solo;super cruise]`: Callouts for all the various things a client could 
   get themselves into.
-* `call [client destroyed;sysconf;system confirmed]`: This is the command you 
-  don’t want to use. Include sysconf in your “friend+” or “in open” calls, and 
-  make sure you will never have to call “client destroyed”, would you?
+* `call [client destroyed;client offline;sysconf;system confirmed]`: This is the 
+  command you don’t want to use. Include sysconf in your “friend+” or “in open” 
+  calls, and make sure you will never have to call “client destroyed”, would 
+  you?
 
 ### General IRC Interaction ###
 
