@@ -160,7 +160,7 @@ will be shortened to the usual IRC short hands (e.g. “sysconf”). If you need
 something more unusual you can either still manually type it into your IRC 
 client or use the “General IRC Integration”, see below.
 
-* `call [1..20] jumps [and login;and takeoff;left]`: Calls jump for the 
+* `call [1..20] jumps [and login;and takeoff;left;]`: Calls jump for the 
   currently open case. You can optionally include that you will still have to 
   login to the game or have to take off from your current 
   station/port/outpost/planet.
