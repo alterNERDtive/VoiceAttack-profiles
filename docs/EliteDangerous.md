@@ -27,8 +27,8 @@ disable the speech responder entirely like I have.)
 In addition to the bindED and EDDI VoiceAttack plugins, this profiles needs my 
 [Python elite-scripts](https://github.com/alterNERDtive/elite-scripts) to do 
 everything properly. The release page here includes a compiled version for 
-Windows that does not need Python installed. Just download the zip file from the 
-release page and extract into your VoiceAttack directory.
+Windows that does not need Python installed. If you use the profile package from 
+the release page, they will be installed automatically.
 
 ## Settings ##
 
@@ -141,7 +141,7 @@ Sets your ship to full throttle immediately after you have supercharged.
 
 * zeroes throttle
 * gets the system’s body count from EDSM (requires Python scripts)
-* if you hvaen’t visited the systems, starts a discovery scan (see the discovery 
+* if you haven’t visited the systems, starts a discovery scan (see the discovery 
   scan command)
 
 #### Liftoff ####
@@ -158,7 +158,7 @@ Warns you when you reach 25% fuel.
 Checks any message you send for a chat prefix and sends it to the proper chat 
 window. Probably largely useless to you without modification.
 
-* `.dt`: Actually doesn’t send anything, but runs the 
+* `.nc`: Actually doesn’t send anything, but runs the 
   `RatAttack.announceNearestCMDR` command with the system given in the rest of 
   the message.
 * `.dc`: Sends the message to the Discord window.
@@ -173,15 +173,16 @@ This event actually is several different events in one. Currently the following
 are handled:
 
 * charging: Warns you if your target system’s main star is not scoopable, 
-  including an extra warning at low fuel levels. (__Note__: This is currently 
-  kind of bugged, not sure if it’s EDDI’s or Elite’s fault.)
+  including an extra warning at low fuel levels. (__Note__: This only works if 
+  the target system is in EDSM. So it’s kind of useless for its intended use 
+  (exploration) and probably going to be removed at some point.)
 * cooldown complete: Announces FSD cooldown if you are currently in normal 
   space.
 
-#### Ship interdiction ####
+#### Ship interdicted ####
 
-Tells you when you are interdicted by a player. Is also supposed to target the 
-interdictor automatically, but that randomly sometimes just doesn’t work. Yay!
+Tells you when you have been interdicted by a player. Is also supposed to target 
+the interdictor automatically, but randomly sometimes just doesn’t work.  Yay!
 
 #### Ship targeted ####
 
@@ -298,7 +299,7 @@ Basically anything that is related to directly doing something with your ship.
 
 Things revelant to your SRV, but not your ship.
 
-* `[recall;dismiss] ship`; Recalls or dismisses ship. Currently does the same 
+* `[recall;dismiss] ship`: Recalls or dismisses ship. Currently does the same 
   thing regardless of the state of your ship. I wish it would be possible to 
   restrict it to doing one thing each, but that’s currently not possible sadly.
 * `[toggle;enable;disable] drive assist`: Handles all your drive assist needs!
