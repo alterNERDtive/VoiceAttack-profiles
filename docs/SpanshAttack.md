@@ -11,14 +11,9 @@ visit the site at any point.
 In addition to VoiceAttack, you will need the following plugins to use this 
 profile:
 
-* [bindED](https://forum.voiceattack.com/smf/index.php?topic=564.0): required 
-  for EliteDangerous and SpanshAttack; makes anything involving hitting E:D key 
-  binds portable.
-* [EDDI](https://github.com/EDCD/EDDI) installed as a VoiceAttack plugin: 
-required for EliteDangerous and SpanshAttack, optional for RatAttack and 
-SealAttack.
-* [ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter): required 
-for SpanshAttack.
+* [bindED](https://forum.voiceattack.com/smf/index.php?topic=564.0)
+* [EDDI](https://github.com/EDCD/EDDI) installed as a VoiceAttack plugin
+* [ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter)
 
 ### EDDI speech responder ###
 
@@ -168,7 +163,7 @@ if you have included SpanshAttack.
 * `Elite.pasteKey` (string): the key used for pasting into Elite. On QWERTY this 
   is `v`. Default: `v`.
 * `SpanshAttack.timeTrip` (boolean): whether to automatically tell you at the 
-  end of a trip how long it to you to get there. Default: false.
+  end of a trip how long it took you to get there. Default: false.
 * `SpanshAttack.announceWaypoints` (boolean): whether to announce each waypoint 
   of the neutron route. Default: true.
 * `SpanshAttack.announceJumpsLeft` (string): `;`-separated list of remaining 

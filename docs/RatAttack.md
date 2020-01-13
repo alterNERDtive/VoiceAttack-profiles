@@ -18,8 +18,8 @@ you can install EDDI and my elite scripts for advanced features.
 * [elite-scripts](https://github.com/alterNERDtive/elite-scripts): Using the 
   Python scripts will give RatAttack a way to be aware of where your CMDRs are 
   and give you the nearest one to a rat case. That’s only really needed if you 
-  actually _have_ multiple CMDRs, obviously. Just download the zip file from the 
-  release page and extract into your VoiceAttack directory.
+  actually _have_ multiple CMDRs, obviously. If you are using the profile 
+  package from the release page, they will be installed automatically.
 
 ### EDDI speech responder ###
 
