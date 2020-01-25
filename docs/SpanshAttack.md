@@ -81,6 +81,7 @@ When including the profile, be sure to
 
 ### Plotting a Route ###
 
+1. Make sure your target system is in EDDB.
 1. _Target_ the system you want to be routed to (target, do not plot to it).
 1. Either exit the galaxy map or make sure you are on its first tab (or 
    auto-plotting will break).
@@ -89,7 +90,8 @@ When including the profile, be sure to
 1. (if ship not listed in `SpanshAttack.getShipRange` or command invoked with 
    `with custom range` option) Enter your ship’s jump range when prompted.
 1. Wait for the route to be calculated. The command will automatically open the 
-   galaxy map and jump to the first waypoint on your route.
+   galaxy map and jump to the first waypoint on your route. If you run into 
+   weird behaviour, it’s probably because your target system is not in EDDB.
 1. Either target the first waypoint or plot to it.
 1. Start jumping!
 
