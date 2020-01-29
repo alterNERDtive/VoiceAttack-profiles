@@ -217,14 +217,20 @@ _don’t_ immediately want to retract it after takeoff?
 These commands are all bound to keys on my throttle to make them do different 
 things on tapping and on holding.
 
+* `boost combo key`: Bound to the same button as the boost key ingame, this will 
+  deploy landing gear if held down to perform a half-boost.
+* `center headlook`: Triggers the keybind to center ViewTracker
 * `docking request key`: Well, that one just sends a docking request using the 
   proper command. No secondary function.
 * `FSS key`: Well … that one too just opens/closes FSS. And sets throttle to 0% 
   so you can enter it.
 * `jump combo key`: Jumps on tap, executes the `jump` command on hold.
+* `mute mic`: Hits ^M which is the standard hotkey I use for muting my mic (OBS, 
+  Discord, …)
 * `plot combo key`: Targets next system on route on tap, plots to the thing in 
   your clipboard via the galaxy map on hold.
 * `sc combo key`: Goes into SC on tap, executes the `cruise` command on hold.
+* `toggle headlook`: Triggers the keybind that turns ViewTracker on/off
 
 Main benefit of using the jump/cruise commands instead of the buttons would be 
 automatically retracting everything.
