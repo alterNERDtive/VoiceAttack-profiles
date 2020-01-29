@@ -121,7 +121,7 @@ number, CMDR name, system, O₂ status and platform. There are several commands
 you can run on this list, giving it a case number:
 
 * `rat case number [0..19] details`: Will give you all stored info on a case.
-* `[current;rat] case details`: Will give you all stored info on the currently 
+* `[current;] rat case details`: Will give you all stored info on the currently 
   open case.
 * `distance to current rat case`: Will give you the distance from your current 
   location to the currently opened rat case. Requires the use of my 
