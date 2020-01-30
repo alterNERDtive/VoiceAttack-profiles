@@ -11,14 +11,9 @@ visit the site at any point.
 In addition to VoiceAttack, you will need the following plugins to use this 
 profile:
 
-* [bindED](https://forum.voiceattack.com/smf/index.php?topic=564.0): required 
-  for EliteDangerous and SpanshAttack; makes anything involving hitting E:D key 
-  binds portable.
-* [EDDI](https://github.com/EDCD/EDDI) installed as a VoiceAttack plugin: 
-required for EliteDangerous and SpanshAttack, optional for RatAttack and 
-SealAttack.
-* [ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter): required 
-for SpanshAttack.
+* [bindED](https://forum.voiceattack.com/smf/index.php?topic=564.0)
+* [EDDI](https://github.com/EDCD/EDDI) installed as a VoiceAttack plugin
+* [ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter)
 
 ### EDDI speech responder ###
 
@@ -50,7 +45,9 @@ The last “setting” in the not-so-strict sense of the word is the
 `SpanshAttack.getShipRange` command. Any ship listed in there will automatically 
 have its jump range used instead of VA prompting you for it. Since, again, VA 
 will execute the first matching command found, you can create this command in 
-your own profile when you are using SpanshAttack by including it.
+your own profile when you are using SpanshAttack by including it. You can 
+override a saved range for your ship by using the `plot neutron 
+[course;route;trip] with custom range` command.
 
 The ED-NeutronRouter plugin is technically supposed to read the current jump 
 range from EDDI; sadly a) it’s 
@@ -84,15 +81,17 @@ When including the profile, be sure to
 
 ### Plotting a Route ###
 
+1. Make sure your target system is in EDDB.
 1. _Target_ the system you want to be routed to (target, do not plot to it).
 1. Either exit the galaxy map or make sure you are on its first tab (or 
    auto-plotting will break).
 1. Trigger the `SpanshAttack.plotRoute` command either by voice (`plot neutron 
-   [course;route;trip]`) or calling it from another command
-1. (if ship not listed in `SpanshAttack.getShipRange`) Enter your ship’s jump 
-   range when prompted.
+   [course;route;trip] [with custom range;]`) or calling it from another command
+1. (if ship not listed in `SpanshAttack.getShipRange` or command invoked with 
+   `with custom range` option) Enter your ship’s jump range when prompted.
 1. Wait for the route to be calculated. The command will automatically open the 
-   galaxy map and jump to the first waypoint on your route.
+   galaxy map and jump to the first waypoint on your route. If you run into 
+   weird behaviour, it’s probably because your target system is not in EDDB.
 1. Either target the first waypoint or plot to it.
 1. Start jumping!
 
@@ -166,7 +165,7 @@ if you have included SpanshAttack.
 * `Elite.pasteKey` (string): the key used for pasting into Elite. On QWERTY this 
   is `v`. Default: `v`.
 * `SpanshAttack.timeTrip` (boolean): whether to automatically tell you at the 
-  end of a trip how long it to you to get there. Default: false.
+  end of a trip how long it took you to get there. Default: false.
 * `SpanshAttack.announceWaypoints` (boolean): whether to announce each waypoint 
   of the neutron route. Default: true.
 * `SpanshAttack.announceJumpsLeft` (string): `;`-separated list of remaining 

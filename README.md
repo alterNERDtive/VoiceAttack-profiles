@@ -18,7 +18,7 @@ Each of the profiles is documented in `docs/`.
 * [RatAttack](docs/RatAttack.md): profile for interactions with the Fuel Rats’ 
   IRC server.
 * [SealAttack](docs/SealAttack.md): profile for interactions with the Hull 
-  Seals’ IRC server. (Not a thing yet.)
+  Seals’ IRC server. (**VERY early alpha stage.**)
 
 ## Requirements ##
 

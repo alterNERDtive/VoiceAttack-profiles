@@ -18,8 +18,8 @@ you can install EDDI and my elite scripts for advanced features.
 * [elite-scripts](https://github.com/alterNERDtive/elite-scripts): Using the 
   Python scripts will give RatAttack a way to be aware of where your CMDRs are 
   and give you the nearest one to a rat case. That’s only really needed if you 
-  actually _have_ multiple CMDRs, obviously. Just download the zip file from the 
-  release page and extract into your VoiceAttack directory.
+  actually _have_ multiple CMDRs, obviously. If you are using the profile 
+  package from the release page, they will be installed automatically.
 
 ### EDDI speech responder ###
 
@@ -121,8 +121,14 @@ number, CMDR name, system, O₂ status and platform. There are several commands
 you can run on this list, giving it a case number:
 
 * `rat case number [0..19] details`: Will give you all stored info on a case.
-* `[current;rat] case details`: Will give you all stored info on the currently 
+* `[current;] rat case details`: Will give you all stored info on the currently 
   open case.
+* `distance to current rat case`: Will give you the distance from your current 
+  location to the currently opened rat case. Requires the use of my 
+  `elite-scripts` Python scripts.
+* `distance to rat case number [0..19]`: Will give you the distance from your 
+  current system to a case’s system. Requires the use of my `elite-scripts` 
+  Python scripts.
 * `nearest commander to rat case number [0..19]`: Will give you the nearest of 
   your CMDRs with their distance to a case’s system. Requires some setup and the 
   use of my `elite-scripts` Python scripts.
@@ -154,9 +160,10 @@ will be shortened to the usual IRC short hands (e.g. “sysconf”). If you need
 something more unusual you can either still manually type it into your IRC 
 client or use the “General IRC Integration”, see below.
 
-* `call [1..20] jumps [and login;and takeoff]`: Calls jump for the currently 
-  open case. You can optionally include that you will still have to login to the 
-  game or have to take off from your current station/port/outpost/planet.
+* `call [1..20] jumps [and login;and takeoff;left;]`: Calls jump for the 
+  currently open case. You can optionally include that you will still have to 
+  login to the game or have to take off from your current 
+  station/port/outpost/planet.
 * `call friend [positive;negative] [in pg;in private group;in solo;in main 
   meu;sysconf;system confirmed]`: Friend request confirmations, with all the 
   things you might want to / should call with it.
@@ -168,9 +175,10 @@ client or use the “General IRC Integration”, see below.
 * `call client in [exclusion zone;main menu;open;open sysconf;pg;private 
   group;solo;super cruise]`: Callouts for all the various things a client could 
   get themselves into.
-* `call [client destroyed;sysconf;system confirmed]`: This is the command you 
-  don’t want to use. Include sysconf in your “friend+” or “in open” calls, and 
-  make sure you will never have to call “client destroyed”, would you?
+* `call [client destroyed;client offline;sysconf;system confirmed]`: This is the 
+  command you don’t want to use. Include sysconf in your “friend+” or “in open” 
+  calls, and make sure you will never have to call “client destroyed”, would 
+  you?
 
 ### General IRC Interaction ###
 
@@ -215,6 +223,8 @@ you have included RatAttack.
   recognition and you accidentally post the wrong thing. Default: true.
 * `RatAttack.onDuty` (boolean): whether or not you are currently on rat duty. 
  Default: true.
+* `RatAttack.autoCloseCase` (boolean): whether or not to automatically close an 
+  open rat case on calling “fuel+”. Default: false.
 * `RatAttack.platforms` (string): the platforms you want to be informed of 
   incoming cases for. If you are on console, you can still have VoiceAttack 
   running on the PC that you are using for IRC and handle calls and stuff using 

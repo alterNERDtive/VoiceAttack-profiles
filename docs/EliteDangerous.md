@@ -27,8 +27,8 @@ disable the speech responder entirely like I have.)
 In addition to the bindED and EDDI VoiceAttack plugins, this profiles needs my 
 [Python elite-scripts](https://github.com/alterNERDtive/elite-scripts) to do 
 everything properly. The release page here includes a compiled version for 
-Windows that does not need Python installed. Just download the zip file from the 
-release page and extract into your VoiceAttack directory.
+Windows that does not need Python installed. If you use the profile package from 
+the release page, they will be installed automatically.
 
 ## Settings ##
 
@@ -141,7 +141,7 @@ Sets your ship to full throttle immediately after you have supercharged.
 
 * zeroes throttle
 * gets the system’s body count from EDSM (requires Python scripts)
-* if you hvaen’t visited the systems, starts a discovery scan (see the discovery 
+* if you haven’t visited the systems, starts a discovery scan (see the discovery 
   scan command)
 
 #### Liftoff ####
@@ -158,7 +158,7 @@ Warns you when you reach 25% fuel.
 Checks any message you send for a chat prefix and sends it to the proper chat 
 window. Probably largely useless to you without modification.
 
-* `.dt`: Actually doesn’t send anything, but runs the 
+* `.nc`: Actually doesn’t send anything, but runs the 
   `RatAttack.announceNearestCMDR` command with the system given in the rest of 
   the message.
 * `.dc`: Sends the message to the Discord window.
@@ -173,15 +173,16 @@ This event actually is several different events in one. Currently the following
 are handled:
 
 * charging: Warns you if your target system’s main star is not scoopable, 
-  including an extra warning at low fuel levels. (__Note__: This is currently 
-  kind of bugged, not sure if it’s EDDI’s or Elite’s fault.)
+  including an extra warning at low fuel levels. (__Note__: This only works if 
+  the target system is in EDSM. So it’s kind of useless for its intended use 
+  (exploration) and probably going to be removed at some point.)
 * cooldown complete: Announces FSD cooldown if you are currently in normal 
   space.
 
-#### Ship interdiction ####
+#### Ship interdicted ####
 
-Tells you when you are interdicted by a player. Is also supposed to target the 
-interdictor automatically, but that randomly sometimes just doesn’t work. Yay!
+Tells you when you have been interdicted by a player. Is also supposed to target 
+the interdictor automatically, but randomly sometimes just doesn’t work.  Yay!
 
 #### Ship targeted ####
 
@@ -216,14 +217,20 @@ _don’t_ immediately want to retract it after takeoff?
 These commands are all bound to keys on my throttle to make them do different 
 things on tapping and on holding.
 
+* `boost combo key`: Bound to the same button as the boost key ingame, this will 
+  deploy landing gear if held down to perform a half-boost.
+* `center headlook`: Triggers the keybind to center ViewTracker
 * `docking request key`: Well, that one just sends a docking request using the 
   proper command. No secondary function.
 * `FSS key`: Well … that one too just opens/closes FSS. And sets throttle to 0% 
   so you can enter it.
 * `jump combo key`: Jumps on tap, executes the `jump` command on hold.
+* `mute mic`: Hits ^M which is the standard hotkey I use for muting my mic (OBS, 
+  Discord, …)
 * `plot combo key`: Targets next system on route on tap, plots to the thing in 
   your clipboard via the galaxy map on hold.
 * `sc combo key`: Goes into SC on tap, executes the `cruise` command on hold.
+* `toggle headlook`: Triggers the keybind that turns ViewTracker on/off.
 
 Main benefit of using the jump/cruise commands instead of the buttons would be 
 automatically retracting everything.
@@ -234,6 +241,7 @@ The commands in here do random more or less useful things.
 
 * `bind keys;reset key binds`: Reloads your key binds through the bindED plugin. 
   You should do that after changing anything in the controls options.
+* `clear jump target`: Clears the current jump target.
 * `copy current system`: Copies the current system name into the clipboard.
 * `distance [from;to] […]`: Tells you the distance from your current position to 
   the other thing you mentioned and is supported in the command. (requires 
@@ -247,11 +255,17 @@ The commands in here do random more or less useful things.
 * `neutron jumps left`: Shorter version of the same thing in SpanshAttack.
 * `open copied system on EDSM`: Opens the system in your clipboard on EDSM in 
   your default browser.
+  * `open coriolis`: Opens Coriolis in your default browser.
 * `open [current;] system on EDSM`: Opens your current system on EDSM in your 
   default browser.
 * `open EDDI options; configure EDDI`: Opens the EDDI configuration window.
+* `open e d d b [station;system;faction;] [search;]`: Opens EDDB in your default 
+  browser.
+* `open e d s m`: Opens EDSM in your default browser.
 * `open [the;] miner’s tool`: Opens https://edtools.ddns.net/miner in your 
   default browser.
+* `set jump target`: Sets the jump target to the currently targeted system. 
+  Distance will be written to the configured file.
 * `[start;stop] [EDISON;navigation]`: Hits `CTRL+ALT+E` which just so happens to 
   be the start/stop hotkey I have set in E.D.I.S.O.N.
 * `[what’s;what is] left to [map;be mapped]`: Tells you which bodies EDDI thinks 
@@ -298,7 +312,7 @@ Basically anything that is related to directly doing something with your ship.
 
 Things revelant to your SRV, but not your ship.
 
-* `[recall;dismiss] ship`; Recalls or dismisses ship. Currently does the same 
+* `[recall;dismiss] ship`: Recalls or dismisses ship. Currently does the same 
   thing regardless of the state of your ship. I wish it would be possible to 
   restrict it to doing one thing each, but that’s currently not possible sadly.
 * `[toggle;enable;disable] drive assist`: Handles all your drive assist needs!
@@ -359,6 +373,8 @@ if you have included EliteDangerous.
   side. Default: false.
 * `>flightAssistOff` (boolean): whether to automatically toggle FlightAssist off 
   on liftoff. Default: true.
+* `>jumpTargetFile` (string): the file the distance to the currently set jump 
+  target will be written to.
 * `>targetSubsystem` (string): the default target subsystem. Unused. Default: 
   “drive”.
 * `python.ScriptPath` (string): the path you have placed the compiled python 
