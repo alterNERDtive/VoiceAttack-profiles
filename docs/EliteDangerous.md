@@ -255,9 +255,13 @@ The commands in here do random more or less useful things.
 * `neutron jumps left`: Shorter version of the same thing in SpanshAttack.
 * `open copied system on EDSM`: Opens the system in your clipboard on EDSM in 
   your default browser.
+  * `open coriolis`: Opens Coriolis in your default browser.
 * `open [current;] system on EDSM`: Opens your current system on EDSM in your 
   default browser.
 * `open EDDI options; configure EDDI`: Opens the EDDI configuration window.
+* `open e d d b [station;system;faction;] [search;]`: Opens EDDB in your default 
+  browser.
+* `open e d s m`: Opens EDSM in your default browser.
 * `open [the;] miner’s tool`: Opens https://edtools.ddns.net/miner in your 
   default browser.
 * `set jump target`: Sets the jump target to the currently targeted system.  
