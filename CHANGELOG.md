@@ -14,7 +14,7 @@ features:
 * added option to auto-close on fuel+: Defaults to off. Enabled in the 
   EliteDangerous profile.
 * added option to call jumps “left”
-* added distance commands `distance to current rat case`/distance to rat case 
+* added distance commands `distance to current rat case`/`distance to rat case 
   number [0..19]`: Both require a current version of the elite-scripts.
 * added `call client offline` command
 
