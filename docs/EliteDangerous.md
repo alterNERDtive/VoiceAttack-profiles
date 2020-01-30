@@ -230,7 +230,7 @@ things on tapping and on holding.
 * `plot combo key`: Targets next system on route on tap, plots to the thing in 
   your clipboard via the galaxy map on hold.
 * `sc combo key`: Goes into SC on tap, executes the `cruise` command on hold.
-* `toggle headlook`: Triggers the keybind that turns ViewTracker on/off
+* `toggle headlook`: Triggers the keybind that turns ViewTracker on/off.
 
 Main benefit of using the jump/cruise commands instead of the buttons would be 
 automatically retracting everything.
@@ -264,7 +264,7 @@ The commands in here do random more or less useful things.
 * `open e d s m`: Opens EDSM in your default browser.
 * `open [the;] miner’s tool`: Opens https://edtools.ddns.net/miner in your 
   default browser.
-* `set jump target`: Sets the jump target to the currently targeted system.  
+* `set jump target`: Sets the jump target to the currently targeted system. 
   Distance will be written to the configured file.
 * `[start;stop] [EDISON;navigation]`: Hits `CTRL+ALT+E` which just so happens to 
   be the start/stop hotkey I have set in E.D.I.S.O.N.
