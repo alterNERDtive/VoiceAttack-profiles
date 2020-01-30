@@ -1,3 +1,72 @@
+# v1.1 (2020-01-30)
+
+The compiled Python scripts are now distributed as two single .exe files. You 
+can (but don’t have to) delete the subfolders in `Python.scriptDir`.
+
+## RatAttack v2.0
+
+* `[current;] rat case details` changed: Now always has to include “rat” in the 
+  command to pave the way for SealAttack arriving soon™. **This breaks 
+  compatibilty with the old `[current;] case details` command.**
+
+features:
+
+* added option to auto-close on fuel+: Defaults to off. Enabled in the 
+  EliteDangerous profile.
+* added option to call jumps “left”
+* added distance commands `distance to current rat case`/distance to rat case 
+  number [0..19]`: Both require a current version of the elite-scripts.
+* added `call client offline` command
+
+## SealAttack v0.1
+
+VERY early alpha. Basically the only thing that works and is “finished” already 
+is pasting ingame chat into Seals IRC. use `.sb <msg>` for \#Seal-Bob and `.rr
+<msg>` for \#Repair-Requests.
+
+Use at your own risk.
+
+## SpanshAttack v2.2
+
+features:
+
+* added plot command “with custom range”: Instead of using the saved jump range 
+  for your current ship, you can now plot a route with a custom range; e.g. if 
+  you have temporarily changed modules around or have more/less cargo than usual 
+  for this trip.
+
+fixes:
+
+* added info about EDDB to docs: Just a little tidbit about making sure the 
+  target system is actually in the DB.
+
+## EliteDangerous v3.1
+
+features:
+
+* added jumpTarget stuff: You can now set/clear a jump target. This will start 
+  writing the distance to said target to `>jumpTargetFile` for inclusion e.g. in 
+  OBS.  If SpanshAttack currently has a target system, jump target will default 
+  to that. A manually set target will take precedence.
+* added `distance [from;to] jump target` command
+* added some quick links: Coriolis, EDSM main page, EDDB (incl.  
+  station/system/faction search page). `open coriolis`, `open e d s m`, `open 
+  e d d b [station;system;faction;] [search;]`.
+
+fixes:
+
+* refactored for better variable scoping
+* changed `EDDI Body scanned` constraint: Now checks for being in SC instead of 
+  just in FSS; will now include auto-scans of bodies, while still excluding nav 
+  beacon scan data.
+* logic around getting bodycount more sturdy: Now actually notices when the 
+  script errors out for some reason. Probably still won’t notice when it’s flat 
+  out missing, but hey, that’s PEBKAC for not using the profile package.
+* fixed race condition in `EDDI ship fsd`: Weirdly that only started being an 
+  issue in VA 1.8.
+* updated for new controls setup: the HOTAS buttons have changed because my 
+  setup has changed. Probably not really relevant for you.
+
 # v1.0 (2019-12-04)
 
 ### single-file profile package
