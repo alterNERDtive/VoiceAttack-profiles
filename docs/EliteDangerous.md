@@ -92,6 +92,13 @@ The actual `((EDDI <event>))` command will only be executed once by VoiceAttack,
 the first one it can find. Keeping it separate from the actual code to be run 
 makes it easier to handle (multiple) included profiles.
 
+If the command for an event will send key presses to Elite, it focuses the 
+client window first to make sure they get registered properly. If it is not in 
+focus, the first key press might be swallowed otherwise.
+
+For other commands, the profile just assumes that you are actively doing 
+something in game and it is already focused :)
+
 #### Body Mapped ####
 
 Announces remaining mapping candidates as given by EDDI.
