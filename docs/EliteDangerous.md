@@ -101,14 +101,15 @@ something in game and it is already focused :)
 
 #### Body Mapped ####
 
-Announces remaining mapping candidates as given by EDDI.
+Announces an estimate for high-value bodies’ payouts and the remaining mapping 
+candidates in the system as given by EDDI.
 
 #### Body scanned ####
 
 Announces any interesting body traits found when scanning:
 
-* scan data worth >300,000 cr (this translates to roughly 1.5 million cr 
-  including bonuses)
+* terraformable
+* Earth-like World or Ammonia World
 * landable and >5 g
 * semimajor axis <1.5 ls (only really interesting for planets, but there’s no 
   proper way to separate them from moons, sadly)
