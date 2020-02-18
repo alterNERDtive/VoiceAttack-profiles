@@ -379,6 +379,8 @@ if you have included EliteDangerous.
   side. Default: false.
 * `>flightAssistOff` (boolean): whether to automatically toggle FlightAssist off 
   on liftoff. Default: true.
+* `>hyperspaceDethrottle` (boolean): same thing as the SC assist setting; if on, 
+  will throttle to 0 automatically after jumping. Default: false.
 * `>jumpTargetFile` (string): the file the distance to the currently set jump 
   target will be written to.
 * `>targetSubsystem` (string): the default target subsystem. Unused. Default: 
