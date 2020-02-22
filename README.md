@@ -19,6 +19,8 @@ Each of the profiles is documented in `docs/`.
   IRC server.
 * [SealAttack](docs/SealAttack.md): profile for interactions with the Hull 
   Seals’ IRC server. (**VERY early alpha stage.**)
+* [StreamAttack](docs/StreamAttack.md): profile for writing various things to 
+  files that can then be read by streaming software like OBS.
 
 ## Requirements ##
 
@@ -27,14 +29,15 @@ Each of the profiles is documented in `docs/`.
   for EliteDangerous and SpanshAttack; makes anything involving hitting E:D key 
   binds portable.
 * [EDDI](https://github.com/EDCD/EDDI) installed as a VoiceAttack plugin: 
-  required for EliteDangerous and SpanshAttack, optional for RatAttack and 
-  SealAttack. If you are already running EDDI and want to keep the default 
-  speech responder active, you will need to re-enable it in your profile _after_ 
-  running the `<profile>.startup` command.
+  required for EliteDangerous SpanshAttack and Streamattack, optional for 
+  RatAttack and SealAttack. If you are already running EDDI and want to keep the 
+  default speech responder active, you will need to re-enable it in your profile 
+  _after_ running the `<profile>.startup` command.
 * [ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter): required 
   for SpanshAttack.
 * [elite-scripts](https://github.com/alterNERDtive/elite-scripts): required for 
-  EliteDangerous, recommended for RatAttack and SealAttack (included).
+  EliteDangerous and StreamAttack, recommended for RatAttack and SealAttack 
+  (included).
 
 Additionally, you need to have keyboard binds setup at least as secondary 
 bindings in Elite’s controls options. VA _cannot_ “push” joystick buttons for 

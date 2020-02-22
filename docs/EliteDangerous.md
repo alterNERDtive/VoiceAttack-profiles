@@ -247,7 +247,6 @@ The commands in here do random more or less useful things.
 
 * `bind keys;reset key binds`: Reloads your key binds through the bindED plugin. 
   You should do that after changing anything in the controls options.
-* `clear jump target`: Clears the current jump target.
 * `copy current system`: Copies the current system name into the clipboard.
 * `distance [from;to] […]`: Tells you the distance from your current position to 
   the other thing you mentioned and is supported in the command. (requires 
@@ -270,8 +269,6 @@ The commands in here do random more or less useful things.
 * `open e d s m`: Opens EDSM in your default browser.
 * `open [the;] miner’s tool`: Opens https://edtools.ddns.net/miner in your 
   default browser.
-* `set jump target`: Sets the jump target to the currently targeted system. 
-  Distance will be written to the configured file.
 * `[start;stop] [EDISON;navigation]`: Hits `CTRL+ALT+E` which just so happens to 
   be the start/stop hotkey I have set in E.D.I.S.O.N.
 * `[what’s;what is] left to [map;be mapped]`: Tells you which bodies EDDI thinks 
