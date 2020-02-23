@@ -68,6 +68,7 @@ When you are on duty, RatAttack will automatically announce cases coming in
 through IRC. When off duty, it won’t.
 
 * `[enable;disable] rat duty`: puts you on/off duty.
+* `open [rat;] dispatch board`: opens the web dispatch board.
 
 ### Handling a Case ###
 
