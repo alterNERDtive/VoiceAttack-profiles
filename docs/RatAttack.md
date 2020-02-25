@@ -99,7 +99,7 @@ alias handleratsignal {
 		/inc -gz %delayratsignal 5
 		/var %clip = $cb(-1)
 		/clipboard $1-
-		/run -h "D:\tools\VoiceAttack\VoiceAttack.exe" -nofocus -command "RatAttack.getInfoFromRatSignal"
+		/run -h "D:\tools\VoiceAttack\VoiceAttack.exe" -nofocus -command "RatAttack.announceCaseFromRatSignal"
 		/sleep 4 /clipboard %clip
 	}
 }
