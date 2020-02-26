@@ -55,6 +55,8 @@ When including the profile, be sure to
 * `set jump target`: sets the jump target to the currently targeted system. 
   Distance will be written to the configured file.
 
+* `[copy;open] ship build`: copies the current ship build (coriolis) or opens it 
+  in your default browser.
 * `open StreamAttack folder`: opens the configured folder in Explorer.
 
 ## Files the Profile Provides ##
