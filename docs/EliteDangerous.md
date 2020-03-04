@@ -149,6 +149,7 @@ Sets your ship to full throttle immediately after you have supercharged.
 
 * zeroes throttle
 * gets the system’s body count from EDSM (requires Python scripts)
+* gets stations with outdated data (older than 1 year) from Spansh’s API
 * if you haven’t visited the systems, starts a discovery scan (see the discovery 
   scan command)
 
