@@ -34,7 +34,9 @@ Each of the profiles is documented in `docs/`.
   default speech responder active, you will need to re-enable it in your profile 
   _after_ running the `<profile>.startup` command.
 * [ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter): required 
-  for SpanshAttack.
+  for SpanshAttack. **Make sure to [grab the pre-release 
+  1.02](https://github.com/sc-pulgan/ED-NeutronRouter/releases/tag/1.02)** since 
+  1.01 has a bug with a hardcoded 50 ly jump range.
 * [elite-scripts](https://github.com/alterNERDtive/elite-scripts): required for 
   EliteDangerous and StreamAttack, recommended for RatAttack and SealAttack 
   (included).
