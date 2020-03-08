@@ -178,6 +178,10 @@ if you have included SpanshAttack.
   waypoint on supercharging. Default: true.
 * `SpanshAttack.clearOnShutdown` (boolean): whether or not to automatically 
   clear an active neutron route on Elite client shutdown. Default: true.
+* `SpanshAttack.defaultToLadenRange` (boolean): whether or not to default to 
+  your ship’s laden range (as reported by EDDI) instead of asking for user 
+  input.  Setting a ship’s jump range in the `SpanshAttack.getShipRange` command 
+  will still overrule this. Default: false.
 * `SpanshAttack.copyWaypointToClipboard` (boolean): whether to copy the next 
   waypoint into the Windows clipboard for use in other programs. Default: false.
 * `SpanshAttack.useEddiForVoice` (boolean): whether to use EDDI over VA’s 
