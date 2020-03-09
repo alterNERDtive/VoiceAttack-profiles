@@ -1,3 +1,69 @@
+# v1.2 (2020-03-09)
+
+## EliteDangerous v4.0
+
+The big new feature is being able to pull data from Spansh’s database in 
+addition to EDSM. That allows checking for stations that haven’t had their data 
+updated in ages. Probably not that interesting to you, but I like keeping things 
+up to date in EDDN.
+
+* EDDI events will now focus Elite before sending keyboard inputs. That should 
+  help with inputs being swallowed. For non-event commands I’m just going to 
+  assume that Elite is already focused :)
+* Changed logice for “worthwhile” bodies while scanning a system. It will now 
+  alert you to terraformable bodies, Earth-like, Water and Ammonia Worlds. It 
+  will no longer check against a scan value.
+* Mapping a body will now announce the expected payout.
+* Added `>hyperspaceDethrottle` setting. Basically does the same thing as the SC 
+  Assist thing, and has been doing it forever. Now defaults to false.
+* Added a call to `StreamAttack.startup` to `EliteDangerous.startup`. Duh. And 
+  calls to the EDDI event handlers.
+* Fixed the docking request command if you currently have a target (and 
+  subsequently a forth “target” tab in your left hand panel).
+* Upon jumping into a (populated) system, will now check Spansh for stations in 
+  the system with outdated data (>1 yo) and announce those.
+
+## RatAttack v3.0
+
+* Added `open [rat;] dispatch board` command. Opens the web dispatch board in 
+  your default browser.
+* Added proper handling for multiple ratsignals hitting at once. That’s mainly 
+  an IRC client config thing,
+  [see the docs](docs/RatAttack.md#getting-case-data-from-irc).
+* Renamed `RatAttack.getInfoFromRatsignal` to 
+  `RatAttack.announceCaseFromRatsignal`. Removed the “open case?” voice input 
+  prompt.
+* Added new `RatAttack.getInfoFromRatsignal` command that will only add 
+  a ratsignal’s data to the internal case list, but not announce the case.
+
+## SpanshAttack v3.0
+
+This now also pulls data from Spansh’s database. In this case to make sure your 
+target system is actually in there for plotting. If not, it will prompt you for 
+coordinates and use the nearest one that is.
+
+This means that you will now need to install my `elite-scripts` to run 
+SpanshAttack. If you are using the profile package, you are doing that already 
+and don’t have to do anything.
+
+* Added `SpanshAttack.defaultToLadenRange` config option. If enabled, will pull 
+  current range from EDDI before asking you to manually input a range for your 
+  ship. Sadly that will be range with full cargo but _current_ fuel levels. So 
+  make sure your tank is full. Will default to false for this very reason.
+* Will now check if you actually have a current and target system set and abort 
+  plotting a route if you e.g. aren’t logged into Elite or EDDI is throwing 
+  a fit.
+* As said above, SpanshAttack will now check for the target system being in the 
+  router’s database or ask you to put in target coordinates instead.
+
+## StreamAttack v0.1
+
+This profile will write some state data to files that can then be read e.g. by 
+OBS for streaming shenanigans. Yes, other tools do that as well, but this one is 
+mine ;)
+
+[See the docs](docs/StreamAttack.md).
+
 # v1.1 (2020-01-30)
 
 The compiled Python scripts are now distributed as two single .exe files. You 
@@ -49,7 +115,7 @@ features:
   OBS.  If SpanshAttack currently has a target system, jump target will default 
   to that. A manually set target will take precedence.
 * added `distance [from;to] jump target` command
-* added some quick links: Coriolis, EDSM main page, EDDB (incl.  
+* added some quick links: Coriolis, EDSM main page, EDDB (incl. 
   station/system/faction search page). `open coriolis`, `open e d s m`, `open 
   e d d b [station;system;faction;] [search;]`.
 
