@@ -109,7 +109,7 @@ candidates in the system as given by EDDI.
 Announces any interesting body traits found when scanning:
 
 * terraformable
-* Earth-like World or Ammonia World
+* Earth-like World, Ammonia World or Water World
 * landable and >5 g
 * semimajor axis <1.5 ls (only really interesting for planets, but there’s no 
   proper way to separate them from moons, sadly)
