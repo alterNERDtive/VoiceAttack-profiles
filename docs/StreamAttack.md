@@ -17,13 +17,13 @@ profile:
 ### EDDI speech responder ###
 
 For the convenience of people that have not been using EDDI in the past, 
-SpanshAttack will deactivate the speech responder automatically to not clutter 
+StreamAttack will deactivate the speech responder automatically to not clutter 
 them with unwanted TTS.
 
 If you are already an EDDI user and want to keep the default speech responder 
 functionality, you will have to run the `enablespeechresponder` plugin function 
 of the EDDI plugin from your profile’s startup command _after_ the 
-`SpanshAttack.startup` command invocation.
+`StreamAttack.startup` command invocation.
 
 In order to do that, choose “Other” → “Advanced” → “Execute an External Plugin 
 Function”, choose the EDDI plugin and set the “Plugin Context” to 
@@ -45,8 +45,8 @@ When including the profile, be sure to
   call.  See [below](#Configuration-Variables).
 * Make sure all EDDI events that StreamAttack needs are correctly handled. For 
   all events used in StreamAttack that you already have handlers for in your 
-  profile, you’ll have to include a call to `StreamAttack.<event name>`. E.g. 
-  for “EDDI Jumped”, call `SpanshAttack.EDDI Jumped` by name from your `((EDDI 
+  profile, you’ll have to include a call to `StreamAttack.<event name>`. E.g.  
+  for “EDDI Jumped”, call `StreamAttack.EDDI Jumped` by name from your `((EDDI 
   Jumped))` command.
 
 ## Commands ##
@@ -94,8 +94,8 @@ don’t unless it’s a config variable …) from other profiles:
 
 ### Configuration Variables ###
 
-These are set in `SpanshAttack.startup` and can be overridden from your profile 
-if you have included SpanshAttack.
+These are set in `StreamAttack.startup` and can be overridden from your profile 
+if you have included StreamAttack.
 
 * `StreamAttack.outputDir` (string): the directory StreamAttack will save its 
   information to. Default: `%appdata%\StreamAttack\`.
@@ -105,7 +105,7 @@ if you have included SpanshAttack.
 
 ### Other Variables ###
 
-These variables can be used to get information about the current neutron route. 
-Please do not set them manually and / or from outside the SpanshAttack profile.
+These variables can be used to get information about the current neutron route.  
+Please do not set them manually and / or from outside the StreamAttack profile.
 
 * `StreamAttack.Elite.jumpTarget` (string): the current jump target.
