@@ -13,12 +13,12 @@ Each of the profiles is documented in `docs/`.
   dragons; things may be heavily tailored towards how _I_ play the game and may 
   not apply to how you play it. Included for reference and as a baseline or 
   inspiration to create your own stuff.
-* [SpanshAttack](docs/SpanshAttack.md): profile to plot and follow trips along 
-  the neutron highway using [spansh](https://spansh.co.uk/plotter).
 * [RatAttack](docs/RatAttack.md): profile for interactions with the Fuel Rats’ 
   IRC server.
 * [SealAttack](docs/SealAttack.md): profile for interactions with the Hull 
   Seals’ IRC server. (**VERY early alpha stage.**)
+* [SpanshAttack](docs/SpanshAttack.md): profile to plot and follow trips along 
+  the neutron highway using [spansh](https://spansh.co.uk/plotter).
 * [StreamAttack](docs/StreamAttack.md): profile for writing various things to 
   files that can then be read by streaming software like OBS.
 
@@ -38,8 +38,8 @@ Each of the profiles is documented in `docs/`.
   1.02](https://github.com/sc-pulgan/ED-NeutronRouter/releases/tag/1.02)** since 
   1.01 has a bug with a hardcoded 50 ly jump range.
 * [elite-scripts](https://github.com/alterNERDtive/elite-scripts): required for 
-  EliteDangerous and StreamAttack, recommended for RatAttack and SealAttack 
-  (included).
+  EliteDangerous, SpanshAttack and StreamAttack, recommended for RatAttack and 
+  SealAttack (included).
 
 Additionally, you need to have keyboard binds setup at least as secondary 
 bindings in Elite’s controls options. VA _cannot_ “push” joystick buttons for 

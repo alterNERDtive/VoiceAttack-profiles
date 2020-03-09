@@ -186,6 +186,8 @@ if you have included SpanshAttack.
   waypoint into the Windows clipboard for use in other programs. Default: false.
 * `SpanshAttack.useEddiForVoice` (boolean): whether to use EDDI over VA’s 
   builtin `say` command. Default: false.
+* `python.scriptPath` (string): the path you put the Python scripts in. 
+  Default: “{VA_DIR}\Sounds\scripts”.
 
 ### Other Variables ###
 
