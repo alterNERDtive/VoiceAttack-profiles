@@ -10,7 +10,7 @@ up to date in EDDN.
 * EDDI events will now focus Elite before sending keyboard inputs. That should 
   help with inputs being swallowed. For non-event commands I’m just going to 
   assume that Elite is already focused :)
-* Changed logice for “worthwhile” bodies while scanning a system. It will now 
+* Changed logic for “worthwhile” bodies while scanning a system. It will now 
   alert you to terraformable bodies, Earth-like, Water and Ammonia Worlds. It 
   will no longer check against a scan value.
 * Mapping a body will now announce the expected payout.
@@ -54,7 +54,7 @@ and don’t have to do anything.
   plotting a route if you e.g. aren’t logged into Elite or EDDI is throwing 
   a fit.
 * As said above, SpanshAttack will now check for the target system being in the 
-  router’s database or ask you to put in target coordinates instead.
+  router’s database or ask you to input target coordinates instead.
 
 ## StreamAttack v0.1
 
