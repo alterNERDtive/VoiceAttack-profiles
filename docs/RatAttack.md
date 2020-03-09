@@ -68,6 +68,7 @@ When you are on duty, RatAttack will automatically announce cases coming in
 through IRC. When off duty, it won’t.
 
 * `[enable;disable] rat duty`: puts you on/off duty.
+* `open [rat;] dispatch board`: opens the web dispatch board.
 
 ### Handling a Case ###
 
@@ -88,24 +89,39 @@ this:
 
 ```
 on *:TEXT:RATSIGNAL - CMDR*(??_SIGNAL):#fuelrats:{
-  var %clip = $cb(-1)
-  /clipboard $1-
-  /run -h "D:\tools\VoiceAttack\VoiceAttack.exe" -nofocus -command "RatAttack.getInfoFromRatSignal"
-  /sleep 2 /clipboard %clip
+	/handleratsignal $1-
+}
+alias handleratsignal {
+	if ( %delayratsignal ) {
+		//sleep %delayratsignal /handleratsignal $1-
+	}
+	else {
+		/inc -gz %delayratsignal 5
+		/var %clip = $cb(-1)
+		/clipboard $1-
+		/run -h "D:\tools\VoiceAttack\VoiceAttack.exe" -nofocus -command "RatAttack.announceCaseFromRatSignal"
+		/sleep 4 /clipboard %clip
+	}
 }
 ```
 
-This does the following things:
+The `on TEXT` even trigger will listen for a line starting with “RATSIGNAL 
+- CMDR” and ending with “(??\_SIGNAL)” (`?` being any character) to catch an 
+incoming signal with basically no false positives and hand it off to the 
+`handleratsignal command`.
 
-1. listen for a line starting with “RATSIGNAL - CMDR” and ending with 
-   “(??\_SIGNAL)” (`?` being any character); that will catch an incoming signal 
-   with basically no false positives
+Which in turn will:
+
+1. delay execution if a signal is being handled right now
+1. set a 5s delay for the next signal to be handled (these two steps are 
+   necessary since the only way to get a sig to VoiceAttack is through the 
+   clipboard, sadly)
 1. temporarily save the current clipboard
-1. copy the entire line to the clipboard
+1. copy Mecha’s entire line (the ratsignal) to the clipboard
 1. run VoiceAttack (should already be open) with the 
    `RatAttack.getInfoFromRatsignal` command that will parse the signal and store 
    case information
-1. wait for 2s to make sure the command had time to grab the clipboard, then 
+1. wait for 4s to make sure the command had time to grab the clipboard, then 
    restore the old clipboard
 
 If you don’t know how to do the same thing for your IRC client or it doesn’t 

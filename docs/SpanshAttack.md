@@ -67,7 +67,7 @@ When including the profile, be sure to
   call. See [below](#Configuration-Variables).
 * Make sure all EDDI events that SpanshAttack needs are correctly handled. For 
   all events used in SpanshAttack that you already have handlers for in your 
-  profile, you’ll have to include a call to `SpanshAttack.<event name>`. E.g.  
+  profile, you’ll have to include a call to `SpanshAttack.<event name>`. E.g. 
   for “EDDI Jumped”, call `SpanshAttack.EDDI Jumped` by name from your `((EDDI 
   Jumped))` command.
 * Initialise the [bindED](https://forum.voiceattack.com/SMF?topic=564.0) plugin 
@@ -178,14 +178,21 @@ if you have included SpanshAttack.
   waypoint on supercharging. Default: true.
 * `SpanshAttack.clearOnShutdown` (boolean): whether or not to automatically 
   clear an active neutron route on Elite client shutdown. Default: true.
+* `SpanshAttack.defaultToLadenRange` (boolean): whether or not to default to 
+  your ship’s laden range (as reported by EDDI) instead of asking for user 
+  input. Sadly it’s with _current_ fuel, not full. Setting a ship’s jump range 
+  in the `SpanshAttack.getShipRange` command will still overrule this. Default: 
+  false.
 * `SpanshAttack.copyWaypointToClipboard` (boolean): whether to copy the next 
   waypoint into the Windows clipboard for use in other programs. Default: false.
 * `SpanshAttack.useEddiForVoice` (boolean): whether to use EDDI over VA’s 
   builtin `say` command. Default: false.
+* `python.scriptPath` (string): the path you put the Python scripts in. 
+  Default: “{VA_DIR}\Sounds\scripts”.
 
 ### Other Variables ###
 
-These variables can be used to get information about the current neutron route.  
+These variables can be used to get information about the current neutron route. 
 Please do not set them manually and / or from outside the SpanshAttack profile.
 
 * `SpanshAttack.targetSystem` (string): the target system for the current 

@@ -92,16 +92,24 @@ The actual `((EDDI <event>))` command will only be executed once by VoiceAttack,
 the first one it can find. Keeping it separate from the actual code to be run 
 makes it easier to handle (multiple) included profiles.
 
+If the command for an event will send key presses to Elite, it focuses the 
+client window first to make sure they get registered properly. If it is not in 
+focus, the first key press might be swallowed otherwise.
+
+For other commands, the profile just assumes that you are actively doing 
+something in game and it is already focused :)
+
 #### Body Mapped ####
 
-Announces remaining mapping candidates as given by EDDI.
+Announces an estimate for high-value bodies’ payouts and the remaining mapping 
+candidates in the system as given by EDDI.
 
 #### Body scanned ####
 
 Announces any interesting body traits found when scanning:
 
-* scan data worth >300,000 cr (this translates to roughly 1.5 million cr 
-  including bonuses)
+* terraformable
+* Earth-like World, Ammonia World or Water World
 * landable and >5 g
 * semimajor axis <1.5 ls (only really interesting for planets, but there’s no 
   proper way to separate them from moons, sadly)
@@ -141,6 +149,7 @@ Sets your ship to full throttle immediately after you have supercharged.
 
 * zeroes throttle
 * gets the system’s body count from EDSM (requires Python scripts)
+* gets stations with outdated data (older than 1 year) from Spansh’s API
 * if you haven’t visited the systems, starts a discovery scan (see the discovery 
   scan command)
 
@@ -219,7 +228,6 @@ things on tapping and on holding.
 
 * `boost combo key`: Bound to the same button as the boost key ingame, this will 
   deploy landing gear if held down to perform a half-boost.
-* `center headlook`: Triggers the keybind to center ViewTracker
 * `docking request key`: Well, that one just sends a docking request using the 
   proper command. No secondary function.
 * `FSS key`: Well … that one too just opens/closes FSS. And sets throttle to 0% 
@@ -230,7 +238,6 @@ things on tapping and on holding.
 * `plot combo key`: Targets next system on route on tap, plots to the thing in 
   your clipboard via the galaxy map on hold.
 * `sc combo key`: Goes into SC on tap, executes the `cruise` command on hold.
-* `toggle headlook`: Triggers the keybind that turns ViewTracker on/off.
 
 Main benefit of using the jump/cruise commands instead of the buttons would be 
 automatically retracting everything.
@@ -241,7 +248,6 @@ The commands in here do random more or less useful things.
 
 * `bind keys;reset key binds`: Reloads your key binds through the bindED plugin. 
   You should do that after changing anything in the controls options.
-* `clear jump target`: Clears the current jump target.
 * `copy current system`: Copies the current system name into the clipboard.
 * `distance [from;to] […]`: Tells you the distance from your current position to 
   the other thing you mentioned and is supported in the command. (requires 
@@ -264,8 +270,6 @@ The commands in here do random more or less useful things.
 * `open e d s m`: Opens EDSM in your default browser.
 * `open [the;] miner’s tool`: Opens https://edtools.ddns.net/miner in your 
   default browser.
-* `set jump target`: Sets the jump target to the currently targeted system. 
-  Distance will be written to the configured file.
 * `[start;stop] [EDISON;navigation]`: Hits `CTRL+ALT+E` which just so happens to 
   be the start/stop hotkey I have set in E.D.I.S.O.N.
 * `[what’s;what is] left to [map;be mapped]`: Tells you which bodies EDDI thinks 
@@ -373,6 +377,8 @@ if you have included EliteDangerous.
   side. Default: false.
 * `>flightAssistOff` (boolean): whether to automatically toggle FlightAssist off 
   on liftoff. Default: true.
+* `>hyperspaceDethrottle` (boolean): same thing as the SC assist setting; if on, 
+  will throttle to 0 automatically after jumping. Default: false.
 * `>jumpTargetFile` (string): the file the distance to the currently set jump 
   target will be written to.
 * `>targetSubsystem` (string): the default target subsystem. Unused. Default: 
