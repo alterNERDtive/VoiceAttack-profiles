@@ -271,8 +271,8 @@ The commands in here do random more or less useful things.
 * `open inara`: Opens Inara in your default browser.
 * `open materials finder`: Opens EDTutorials’ materials finder in your default 
   browser.
-* `open [the;] miner’s tool`: Opens https://edtools.ddns.net/miner in your 
-  default browser.
+* `open miner’s tool`: Opens https://edtools.ddns.net/miner in your default 
+  browser.
 * `[start;stop] [EDISON;navigation]`: Hits `CTRL+ALT+E` which just so happens to 
   be the start/stop hotkey I have set in E.D.I.S.O.N.
 * `[what’s;what is] left to [map;be mapped]`: Tells you which bodies EDDI thinks 
