@@ -268,6 +268,8 @@ The commands in here do random more or less useful things.
 * `open e d d b [station;system;faction;] [search;]`: Opens EDDB in your default 
   browser.
 * `open e d s m`: Opens EDSM in your default browser.
+* `open materials finder`: Opens EDTutorials’ materials finder in your default 
+  browser.
 * `open [the;] miner’s tool`: Opens https://edtools.ddns.net/miner in your 
   default browser.
 * `[start;stop] [EDISON;navigation]`: Hits `CTRL+ALT+E` which just so happens to 
