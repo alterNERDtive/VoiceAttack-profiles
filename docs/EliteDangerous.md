@@ -350,6 +350,8 @@ manipulating some UI element(s).
   system set in `~~system` or the one in your clipboard. The former way is 
   usually used by other commands to not interfere with your clipboard.
 * `[relog;reset] to [open;solo]`: Relogs to Open or Solo mode, respectively.
+* `restart from Desktop`: Quits the game and restarts from an open launcher by 
+  clicking the play button.
 * `set […] filter`: Sets a nav panel filter setting. See the command or just try 
   different things for what is possible. You need to clear filters and hover 
   over the filter button, then run this.
@@ -381,7 +383,7 @@ if you have included EliteDangerous.
 * `>flightAssistOff` (boolean): whether to automatically toggle FlightAssist off 
   on liftoff. Default: true.
 * `>hyperspaceDethrottle` (boolean): same thing as the SC assist setting; if on, 
-  will throttle to 0 automatically after jumping. Default: false.
+  will throttle to 0 automatically after jumping. Default: true.
 * `>jumpTargetFile` (string): the file the distance to the currently set jump 
   target will be written to.
 * `>targetSubsystem` (string): the default target subsystem. Unused. Default: 
@@ -391,3 +393,14 @@ if you have included EliteDangerous.
   in your VoiceAttack installation directory).
 * `>bindingsFile` (string): the bindings file bindED should use for your key 
   binds. Default: mine. You should really change this setting.
+
+#### Delays / Pauses ####
+
+Delays needed e.g. between key presses in UI navigation can vary wildly 
+depending on your PC’s specs and configuration. Therefore they should be 
+configurable, shouldn’t they?
+
+So far those actually are:
+
+* `EliteDangerous.delays.quitToDesktop`: Delay between quitting to desktop and 
+  hitting the play button in the launcher.
