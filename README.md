@@ -132,5 +132,5 @@ If you have no idea what I was saying in that last parargraph and / or the
 things mentioned there don’t fix your problem, please [file an 
 issue](https://github.com/alterNERDtive/VoiceAttack-profiles/issues). Thanks! :)
 
-You can also [say “Hi” on Discord](https://discord.gg/mD6dAb) if that is your 
+You can also [say “Hi” on Discord](https://discord.gg/kXtXm54) if that is your 
 thing.
