@@ -12,8 +12,7 @@ package, so I’ve separated the neutron jumping and Seals stuff into their own
 profiles.
 
 The rest is a random conglomerate of all things VA and E:D; from various voice 
-commands and some buttons that are now being handled by VA to lots of EDDI event 
-handlers.
+commands to lots of EDDI event handlers.
 
 Speaking of EDDI; it has become in integral part of my Elite experience, 
 especially the plethora of information it extracts from the game’s journal and 
@@ -220,27 +219,6 @@ Lists you all bodies EDDI considers worth mapping in the current system.
 
 Retracts landing gear for you. Seriously, is there any occasion in which you 
 _don’t_ immediately want to retract it after takeoff?
-
-### HOTAS Buttons ####
-
-These commands are all bound to keys on my throttle to make them do different 
-things on tapping and on holding.
-
-* `boost combo key`: Bound to the same button as the boost key ingame, this will 
-  deploy landing gear if held down to perform a half-boost.
-* `docking request key`: Well, that one just sends a docking request using the 
-  proper command. No secondary function.
-* `FSS key`: Well … that one too just opens/closes FSS. And sets throttle to 0% 
-  so you can enter it.
-* `jump combo key`: Jumps on tap, executes the `jump` command on hold.
-* `mute mic`: Hits ^M which is the standard hotkey I use for muting my mic (OBS, 
-  Discord, …)
-* `plot combo key`: Targets next system on route on tap, plots to the thing in 
-  your clipboard via the galaxy map on hold.
-* `sc combo key`: Goes into SC on tap, executes the `cruise` command on hold.
-
-Main benefit of using the jump/cruise commands instead of the buttons would be 
-automatically retracting everything.
 
 ### Misc ###
 
