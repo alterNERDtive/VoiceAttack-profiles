@@ -29,7 +29,7 @@ Each of the profiles is documented in `docs/`.
   for EliteDangerous and SpanshAttack; makes anything involving hitting E:D key 
   binds portable.
 * [EDDI](https://github.com/EDCD/EDDI) installed as a VoiceAttack plugin: 
-  required for EliteDangerous SpanshAttack and Streamattack, optional for 
+  required for EliteDangerous, SpanshAttack and Streamattack, optional for 
   RatAttack and SealAttack. If you are already running EDDI and want to keep the 
   default speech responder active, you will need to re-enable it in your profile 
   _after_ running the `<profile>.startup` command.
