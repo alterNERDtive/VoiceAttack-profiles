@@ -116,7 +116,7 @@ Announces any interesting body traits found when scanning:
 
 Feel free to suggest more!
 
-#### Commander Continued ####
+#### Commander Loading ####
 
 Auto-sets my nick in the FuelRats IRC. Probably largely irrelevant to you.
 
@@ -160,6 +160,12 @@ _don’t_ immediately want to retract it after takeoff?
 #### Low Fuel ####
 
 Warns you when you reach 25% fuel.
+
+#### Material Threshold ####
+
+Warns you when a monitored material falls below it’s minimum stock level. You 
+will have to set a minimum desired amount in EDDI’s material monitor options 
+first for all materials you wish to be monitored.
 
 #### Message Sent ####
 
@@ -255,6 +261,11 @@ The commands in here do random more or less useful things.
   be the start/stop hotkey I have set in E.D.I.S.O.N.
 * `[what’s;what is] left to [map;be mapped]`: Tells you which bodies EDDI thinks 
   are worth mapping in the system that you haven’t mapped yet.
+* `[what;which] materials do i need?`: Runs the EDDI responder that tells you 
+  which materials are below wanted threshold. Needs setting those first. Gets 
+  very spammy if you do it for all of them; personally I only set them for g5 
+  manufactured, so I can quickly check if it’s worth looking for HGE in a system 
+  I’m in.
 
 ### Ship Controls ###
 
