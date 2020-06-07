@@ -80,6 +80,20 @@ own.
 * `send high gravity p.s.a.`: Warns about (a) high gravity planet(s) being in 
   the system. I use that on expedition waypoints, too – if it applies.
 
+### Engineering/Materials ###
+
+* `how many [<g5 manufactured materials list>] do i have`: Tells you how many of 
+  the given g5 manufactured material you currently have on board. I’ve 
+  restricted it to just those to not spam speech recognition with too many 
+  phrases, and because those are the ones I usually want to know while jumping 
+  around the bubble and having an eye on any HGE that might be around.
+* `open e d engineer`: Opens the ED Engineer tool.
+* `what [mats;materials] do i need?`: Runs the EDDI responder that tells you 
+  which materials are below wanted threshold. Needs setting those first. Gets 
+  very spammy if you do it for all of them; personally I only set them for g5 
+  manufactured, so I can quickly check if it’s worth looking for HGE in a system 
+  I’m in.
+
 ### Events ###
 
 The main point of this profile is to react to Elite’s journal events (powered by 
@@ -135,6 +149,11 @@ Automatically gets your ship into the hangar and opens station services.
 #### Docking Denied ####
 
 Tells you the reason for docking denial.
+
+#### Entered Normal Space ####
+
+Throttles to 0 upon dropping from SC, if `EliteDangerous.hyperSpaceDethrottle` 
+is set.
 
 #### Fighter Launched ####
 
@@ -261,11 +280,6 @@ The commands in here do random more or less useful things.
   be the start/stop hotkey I have set in E.D.I.S.O.N.
 * `[what’s;what is] left to [map;be mapped]`: Tells you which bodies EDDI thinks 
   are worth mapping in the system that you haven’t mapped yet.
-* `[what;which] materials do i need?`: Runs the EDDI responder that tells you 
-  which materials are below wanted threshold. Needs setting those first. Gets 
-  very spammy if you do it for all of them; personally I only set them for g5 
-  manufactured, so I can quickly check if it’s worth looking for HGE in a system 
-  I’m in.
 
 ### Ship Controls ###
 
