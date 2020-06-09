@@ -405,5 +405,5 @@ configurable, shouldn’t they?
 
 So far those actually are:
 
-* `EliteDangerous.delays.quitToDesktop`: Delay between quitting to desktop and 
-  hitting the play button in the launcher.
+* `>delays.quitToDesktop`: Delay between quitting to desktop and hitting the 
+  play button in the launcher.
