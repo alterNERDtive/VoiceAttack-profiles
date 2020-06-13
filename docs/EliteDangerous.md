@@ -56,8 +56,6 @@ Nevertheless, it _should_ work properly if you follow some guide lines:
   profile, you’ll have to include a call to `EliteDangerous.<event name>`.  E.g. 
   for “EDDI Jumped”, call `EliteDangerous.EDDI Jumped` by name from your `((EDDI 
   Jumped))` command.
-* Initialise the [bindED](https://forum.voiceattack.com/SMF?topic=564.0) plugin 
-  correctly to read your Elite keybinds.
 
 ## Usage ##
 
@@ -276,6 +274,7 @@ The commands in here do random more or less useful things.
   browser.
 * `open miner’s tool`: Opens https://edtools.ddns.net/miner in your default 
   browser.
+* `reload bindings`: Reloads your bindings for bindED.
 * `[start;stop] [EDISON;navigation]`: Hits `CTRL+ALT+E` which just so happens to 
   be the start/stop hotkey I have set in E.D.I.S.O.N.
 * `[what’s;what is] left to [map;be mapped]`: Tells you which bodies EDDI thinks 
@@ -394,8 +393,6 @@ if you have included EliteDangerous.
 * `python.ScriptPath` (string): the path you have placed the compiled python 
   scripts in. Default: “{VA_DIR}\Sounds\scripts” (the “\Sounds\scripts” folder 
   in your VoiceAttack installation directory).
-* `>bindingsFile` (string): the bindings file bindED should use for your key 
-  binds. Default: mine. You should really change this setting.
 
 #### Delays / Pauses ####
 

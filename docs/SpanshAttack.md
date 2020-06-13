@@ -146,6 +146,15 @@ your trip turned off. This way you can get the time you’ve been jumping with t
 `SpanshAttack.announceTripTime` or
 `how long have i been [jumping;on this trip;on this neutron trip]?` commands.
 
+### Reload bindings ###
+
+If you change any relevant bindings (e.g. the galaxy map key), you should run 
+the `reload bindings` command to make sure that SpanshAttack presses the right 
+thing for you.
+
+Eh, just do it every time you edit your controls without re-starting 
+VoiceAttack, just to be sure.
+
 ### Helper Functions ###
 
 The profile contains a lot of helper functions that get called by the 
