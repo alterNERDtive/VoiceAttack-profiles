@@ -1,3 +1,44 @@
+# v1.3 (2020-06-14)
+
+## EliteDangerous v5.0
+
+You don’t need to find out your bindings file anymore! It will now automatically 
+be read from the file the game reads it from, too.
+
+* Removed the HOTAS buttons section. They were pretty personal to me and not 
+  very useful to other people anyway. They are in their own profile now without 
+  polluting the public one.
+
+* Fixed nav panel filter commands for the addition of fleet carriers.
+* Fixed the `EDDI Docked` event for the new interface.
+* There are a couple engineering/materials related things now. See the docs for 
+  more info.
+* Added `EDDI Entered normal space` event. Will now automatically throttle you 
+  to 0 upon exiting SC if `>hyperSpaceDethrottle` is set.
+* Replaced `EDDI Commander continued` with `EDDI commander loading` so it only 
+  runs when the game starts, not on relogging. If you don’t know what that 
+  means, it probably won’t affect you :)
+* Added `restart from Desktop` command. Useful for farming HGEs. You might want 
+  to set `>delays.quitToDesktop` according to your needs. Restarting the game 
+  also only works on 1080p currently. Might change in the future.
+* Updated miner’s toll URL.
+* Added `open Inara` and `open materials finder` commands.
+
+## RatAttack v3.1
+
+* Added `RatAttack.[enable;disable]RatDuty` commands that can be invoked 
+  externally more easily.
+
+## SpanshAttack v3.1
+
+Now also reads the corrent bindings file (automatically). Didn’t read any 
+bindings before even though it needs them …
+
+## StreamAttack v0.2
+
+* Now updates your location when dropping from SC.
+* Fixed some copypasta errors in the documentation.
+
 # v1.2 (2020-03-09)
 
 ## EliteDangerous v4.0

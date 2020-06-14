@@ -150,8 +150,7 @@ Tells you the reason for docking denial.
 
 #### Entered Normal Space ####
 
-Throttles to 0 upon dropping from SC, if `EliteDangerous.hyperSpaceDethrottle` 
-is set.
+Throttles to 0 upon dropping from SC, if `>hyperSpaceDethrottle` is set.
 
 #### Fighter Launched ####
 
