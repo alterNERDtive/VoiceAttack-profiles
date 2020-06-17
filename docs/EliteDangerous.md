@@ -279,6 +279,25 @@ The commands in here do random more or less useful things.
 * `[what’s;what is] left to [map;be mapped]`: Tells you which bodies EDDI thinks 
   are worth mapping in the system that you haven’t mapped yet.
 
+### Navigation ###
+
+There are so many navigation-focused commands now, they deserve there own 
+category. Basically anything that helps you plot anywhere. A lot of those are 
+powered by awesome EDDI so I don’t have to do the work myself!
+
+* `plot course;[target;] next [waypoint;way point]`: Plots a course to the 
+  system set in `~~system` or the one in your clipboard. The former way is 
+  usually used by other commands to not interfere with your clipboard.
+* `target nearest [encoded;manufactured;raw] material trader`: Targets the 
+  nearest respective material trader.
+* `target nearest [guardian;human] tech broker`: Targets the nearest respective 
+  tech broker.
+* `target nearest [interstellar factor;mission system;scoopable star]`: Well, 
+  you know the drill by now.
+* `target [<system>]`: Targets the given system on the galaxy map. There’s 
+  a bunch in there, the list is easily extensible. Drop me a note if you want 
+  something included.
+
 ### Ship Controls ###
 
 Basically anything that is related to directly doing something with your ship.
@@ -312,13 +331,13 @@ Basically anything that is related to directly doing something with your ship.
 * `[start;stop] [firing;mining]`: Starts/stops holding down primary fire. Mostly 
   useful when mining. When triggered with “mining”, also deploys the cargo 
   scoop.
-* `[super;] cruise [when ready;]`: Retracts everything, then jupms to SC. If 
+* `[super;] cruise [when ready;]`: Retracts everything, then jumps to SC. If 
   given “when ready” will wait for mass lock to clear and your FSD to cool down 
   first.
 
 ### SRV controls ###
 
-Things revelant to your SRV, but not your ship.
+Things relevant to your SRV, but not your ship.
 
 * `[recall;dismiss] ship`: Recalls or dismisses ship. Currently does the same 
   thing regardless of the state of your ship. I wish it would be possible to 
@@ -344,12 +363,9 @@ manipulating some UI element(s).
 
 * `controls options`: Opens the controls options menu.
 * `docking request;request dock[ing;]`: Sends a docking request.
-* `[enter;leave] F S S`: Opnes/closes FSS.
+* `[enter;leave] F S S`: Opens/closes FSS.
 * `galaxy map`: Opens the galaxy map.
 * `[main;game] menu`: Opens the ESC menu.
-* `plot course;[target;] next [waypoint;way point]`: Plots a course to the 
-  system set in `~~system` or the one in your clipboard. The former way is 
-  usually used by other commands to not interfere with your clipboard.
 * `[relog;reset] to [open;solo]`: Relogs to Open or Solo mode, respectively.
 * `restart from Desktop`: Quits the game and restarts from an open launcher by 
   clicking the play button.
@@ -358,9 +374,6 @@ manipulating some UI element(s).
   over the filter button, then run this.
 * `system map`: Opens the system map.
 * `take [high res;] screenshot`: Takes a (high res) screenshot.
-* `target […]`: Targets the given system on the galaxy map. There’s a bunch in 
-  there, the list is easily extensible. Drop me a note if you want something 
-  included.
 * `toggle orbit lines`: Toggles the visibility of orbit lines.
 * `[toggle;show;hide] interface`: Toggles the cockpit interface (CTRL+ALT+G). 
   Probably needs to be adjusted if you are not playing with Neo2 keyboard layout 
@@ -368,7 +381,7 @@ manipulating some UI element(s).
 
 ### Configuration Variables ###
 
-These are set in `EliteDangerous.startup` and can be overriden from your profile 
+These are set in `EliteDangerous.startup` and can be overridden from your profile 
 if you have included EliteDangerous.
 
 * `Elite.pasteKey` (string): the key used for pasting into Elite. On QWERTY this 
