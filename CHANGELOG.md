@@ -1,3 +1,23 @@
+# v1.4 (2020-06-14)
+
+This is basically just a bug fix release, but I happened to have one new feature 
+ready, so it’s in, too!
+
+I managed to have leftover debug output in the version of `elite-scripts` 
+published with v1.3. You might have noticed after jumping into a system that had 
+a station with data in EDDN >1 year old. Apologies.
+
+* New, fixed version of `elite-scripts` included.
+
+## EliteDangerous v5.1
+
+* Added `shut up EDDI` command. Immediately makes EDDI stop talking. Might come 
+  in handy at some point.
+* Added a bunch of `target nearest <thing>` commands powered by EDDI’s `route()` 
+  function. See the docs for details.
+* Added new “Navigation” section. This includes the aforementioned new commands 
+  and a bunch of old ones that fit there better than into “Misc”.
+
 # v1.3 (2020-06-14)
 
 ## EliteDangerous v5.0
