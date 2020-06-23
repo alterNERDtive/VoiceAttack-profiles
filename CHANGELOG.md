@@ -11,6 +11,11 @@ See [KeepAChangelog](https://keepachangelog.com/en/1.0.0/).
 * Support for EDDI’s new `Carrier` events!
 * `>enableCarrierAnnouncements` configuration variable. Default: true.
 
+### Removed
+
+* `check next [star;hop;jump;system]` command. Only works if the target system 
+  is in EDSM which makes the entire thing kind of pointless.
+
 ## RatAttack 3.1.1
 
 ### Changed

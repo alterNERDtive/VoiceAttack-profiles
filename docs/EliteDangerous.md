@@ -346,9 +346,6 @@ Basically anything that is related to directly doing something with your ship.
 * `[abort;cancel;stop] jumping`: Stops a currently charging FSD jump.
 * `[buggy;exploration] power`: Sets your PD to 0/4/2 or 2/4/0 respectively. 
   Works in SRV too.
-* `check next [star;hop;jump;system]`: Will quickly engage and disengage your 
-  FSD to show you the star class of the currently targeted system in the info 
-  window (top right).
 * `[close;deploy;extend;open;retract;] […] [up;down;]`: Overly complicated 
   command to handle everything related to Cargo Scoop, Hard Points, Landing 
   Gear. You get the gist, I guess. Works in SRV too.
