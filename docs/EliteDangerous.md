@@ -276,6 +276,12 @@ Lists you all bodies EDDI considers worth mapping in the current system.
 Retracts landing gear for you. Seriously, is there any occasion in which you 
 _don’t_ immediately want to retract it after takeoff?
 
+#### VA initialized ####
+
+Fires when the EDDI VoiceAttack plugin is loaded. Makes sure that EDDI is set to 
+quite mode even if the profile was loaded before plugin initialization had 
+completed.
+
 ### Misc ###
 
 The commands in here do random more or less useful things.
@@ -426,6 +432,8 @@ if you have included EliteDangerous.
 * `>autoChangeFuelratsNick` (boolean): whether to change the FuelRats IRC 
   nickname automatically when changing commanders. Probably largely irrelevant 
   to you. Default: false.
+* `>eddiQuietMode` (boolean): whether or not to set EDDI to quite mode. Default: 
+  true.
 * `>enableCarrierAnnouncements` (boolean): whether or not to process fleet 
   carrier events. Default: true.
 * `>enableR2Rannouncements` (boolean): whether to announce planets worth mapping 
