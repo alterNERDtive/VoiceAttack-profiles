@@ -1,3 +1,16 @@
+# devel
+
+Changed Changelog format. Should be even clearer now at a glance!
+
+See [KeepAChangelog](https://keepachangelog.com/en/1.0.0/).
+
+## EliteDangerous v5.2
+
+### Added
+
+* Support for EDDI’s new `Carrier` events!
+* `>enableCarrierAnnouncements` configuration variable. Default: true.
+
 # v1.4 (2020-06-14)
 
 This is basically just a bug fix release, but I happened to have one new feature 

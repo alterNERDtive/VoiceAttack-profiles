@@ -128,6 +128,40 @@ Announces any interesting body traits found when scanning:
 
 Feel free to suggest more!
 
+#### Carrier Cooldown ####
+
+Tells you when your carrier is able to do its next jump. Technically only works 
+if you were docked at it when it performed the jump, but I’m doing some 
+behind-the-scenes magic if you weren’t :)
+
+Might be slightly off (too early) in the latter case.
+
+#### Carrier Jumped ####
+
+Announces system and body your carrier has just jumped to.
+
+#### Carrier Jump Engaged ####
+
+This event fires when your carrier jumps but you are _not_ docked at it. It 
+provides way less information than the `Carrier Jumped` event, but hey, I don’t 
+use most of it anyway.
+
+Basically just calls `Carrier Jumped` (and makes sure that a `Carrier cooldown` 
+event is triggered manually at approximately the right time).
+
+#### Carrier Jump Request ####
+
+Announces the system and body your carrier has just been scheduled to jump to. 
+Use this to double check ingame information; I’ve had my carrier accept a body 
+as jump target, but then end up around the star. This _might_ give you a heads 
+up on that.
+
+#### Carrier Pads Locked ####
+
+Announces your carriers lockdown procedures. This _might_ only work when you are 
+docked (which would make it pretty useless). Feel free to open in issue if 
+that’s the case.
+
 #### Commander Loading ####
 
 Auto-sets my nick in the FuelRats IRC. Probably largely irrelevant to you.
@@ -392,6 +426,8 @@ if you have included EliteDangerous.
 * `>autoChangeFuelratsNick` (boolean): whether to change the FuelRats IRC 
   nickname automatically when changing commanders. Probably largely irrelevant 
   to you. Default: false.
+* `>enableCarrierAnnouncements` (boolean): whether or not to process fleet 
+  carrier events. Default: true.
 * `>enableR2Rannouncements` (boolean): whether to announce planets worth mapping 
   when jumping into a known system. This is useful for doing some R2R on the 
   side. Default: false.
