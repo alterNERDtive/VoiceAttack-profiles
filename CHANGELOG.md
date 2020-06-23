@@ -44,7 +44,7 @@ See [KeepAChangelog](https://keepachangelog.com/en/1.0.0/).
   * Now setting EDDI to quite mode even if the profile was loaded before plugin 
   initialization had been completed.
 
-# v1.4 (2020-06-14)
+# v1.4 (2020-06-19)
 
 This is basically just a bug fix release, but I happened to have one new feature 
 ready, so it’s in, too!
