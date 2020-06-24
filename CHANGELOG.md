@@ -27,21 +27,29 @@ See [KeepAChangelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
-  * Now setting EDDI to quite mode even if the profile was loaded before plugin 
+* Now setting EDDI to quite mode even if the profile was loaded before plugin 
   initialization had been completed.
 
 ## SpanshAttack 3.1.1
 
+### Added
+
+* If the target system is not in the router’s data base but has already been 
+  uploaded to EDSM, it will now pull target coordinates from EDDI instead of 
+  making the user input them manually. This at least works for fresh discoveries 
+  dating after the last rebuilding of the router’s system index which lags up to 
+  24h behind.
+
 ### Changed
 
-  * Now setting EDDI to quite mode even if the profile was loaded before plugin 
+* Now setting EDDI to quite mode even if the profile was loaded before plugin 
   initialization had been completed.
 
 ## StreamAttack 0.2.1
 
 ### Changed
 
-  * Now setting EDDI to quite mode even if the profile was loaded before plugin 
+* Now setting EDDI to quite mode even if the profile was loaded before plugin 
   initialization had been completed.
 
 # v1.4 (2020-06-19)
