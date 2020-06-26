@@ -47,6 +47,11 @@ See [KeepAChangelog](https://keepachangelog.com/en/1.0.0/).
 
 ## StreamAttack 0.2.1
 
+### Added
+
+* Now updates your location on `Carrier jumped` events. Those only fire when you 
+  are on board a carrier that is jumping, and it clearly changes your location.
+
 ### Changed
 
 * Now setting EDDI to quite mode even if the profile was loaded before plugin 
