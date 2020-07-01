@@ -104,7 +104,7 @@ In case you have disabled auto-plotting to the next waypoint, manually invoke
 the `SpanshAttack.targetNextNeutronWaypoint` command by voice (`[target;] next 
 neutron [waypoint; way point]` or calling it from another command.
 
-Additionally, you can use the `SpanshAttack.getNextNeutronWaypoint` 
+Additionally, you can use the `SpanshAttack.copyNextNeutronWaypoint` 
 / `[get;copy] next neutron [waypoint;way point]` command to copy the next 
 neutron waypoint to the clipboard.
 
@@ -204,6 +204,9 @@ if you have included SpanshAttack.
 These variables can be used to get information about the current neutron route. 
 Please do not set them manually and / or from outside the SpanshAttack profile.
 
+* `SpanshAttack.plotSystem` (string): the system actually plotted towards using 
+  the neutron router (onley used/set if the target system is not in the data 
+  base)
 * `SpanshAttack.targetSystem` (string): the target system for the current 
   neutron route
 * `SpanshAttack.nextNeutronWaypoint` (string): the next waypoint on the current 

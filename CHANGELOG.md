@@ -30,20 +30,24 @@ See [KeepAChangelog](https://keepachangelog.com/en/1.0.0/).
 * Now setting EDDI to quite mode even if the profile was loaded before plugin 
   initialization had been completed.
 
-## SpanshAttack 3.1.1
+## SpanshAttack 4.0.0
 
 ### Added
 
 * If the target system is not in the router’s data base but has already been 
   uploaded to EDSM, it will now pull target coordinates from EDDI instead of 
-  making the user input them manually. This at least works for fresh discoveries 
-  dating after the last rebuilding of the router’s system index which lags up to 
-  24h behind.
+  making the user input them manually. This at least works for systems that are 
+  in EDSM, but haven’t been sent through EDDN.
 
 ### Changed
 
 * Now setting EDDI to quite mode even if the profile was loaded before plugin 
   initialization had been completed.
+* `SpanshAttack.getNextNeutronWaypoint` reworked. The old one is now available 
+  as `SpanshAttack.copyNextNeutronWaypoint`.
+* If the target system is not in the database, it will now acknowledge that the 
+  system you plot to is not the actual target system and target the latter 
+  instead on the last way point.
 
 ## StreamAttack 0.2.1
 
