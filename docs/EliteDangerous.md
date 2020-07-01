@@ -66,17 +66,11 @@ stated otherwise, they will only work with the comms panel active, and you
 should be in the edit window ready to send. They will _not_ hit Enter on their 
 own.
 
-* `announce my services`: Gives a rundown of my refuel&repair services. 
-  I usually post that in system chat coming into the waypoint systems of an 
-  expedition.
 * `clear [chat;text]`: Clears the chat window. Use from outside the comms panel.
 * `[local;squad;system;wing] chat`: Puts you into the chosen chat channel.
 * `paste text`: Pastes your clipboard into Elite. Works outside the comms panel 
   too, e.g. on the galaxy map inside the search field.
 * `salute; oh seven`: Will put “o7” into the chat.
-* `send fuel rats p.s.a.`: Sends a fuel rats PSA. Duh.
-* `send high gravity p.s.a.`: Warns about (a) high gravity planet(s) being in 
-  the system. I use that on expedition waypoints, too – if it applies.
 
 ### Engineering/Materials ###
 
@@ -387,7 +381,6 @@ Things relevant to your SRV, but not your ship.
 Well … targeting stuff, I guess. Not really sure why I made that it’s own 
 category, but oh well :)
 
-* `target <list of subsystems>`: NYI. Way too fiddly and buggy to be reliable.
 * `target next system`: Selects the next system on your route.
 * `target wing man [1;2;3]`: Targets your wing men.
 * `target’s target`: Targets your target’s target.

@@ -15,6 +15,9 @@ See [KeepAChangelog](https://keepachangelog.com/en/1.0.0/).
 
 * `check next [star;hop;jump;system]` command. Only works if the target system 
   is in EDSM which makes the entire thing kind of pointless.
+* A bunch of personal chat macros.
+* `target <subsystem>` command. NYI, haven’t found a way to make it work 
+  properly.
 
 ## RatAttack 3.1.1
 
