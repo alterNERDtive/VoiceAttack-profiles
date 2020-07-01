@@ -38,6 +38,13 @@ See [KeepAChangelog](https://keepachangelog.com/en/1.0.0/).
   uploaded to EDSM, it will now pull target coordinates from EDDI instead of 
   making the user input them manually. This at least works for systems that are 
   in EDSM, but haven’t been sent through EDDN.
+* If EDSM doesn’t know about the system either, it will now try getting 
+  coordinates through EDTS. EDTS calculates them based on the procedurally 
+  generated system name. Only if this fails will you have to input coordinates 
+  manually now!
+* Re-plotting a route is now aware of the actual target ≠ plot target conundrum. 
+  It will remember the plot target and re-use it instead of starting the process 
+  of finding a plottable system again.
 
 ### Changed
 

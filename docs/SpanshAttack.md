@@ -81,19 +81,39 @@ When including the profile, be sure to
 
 ### Plotting a Route ###
 
-1. Make sure your target system is in EDDB.
 1. _Target_ the system you want to be routed to (target, do not plot to it).
 1. Either exit the galaxy map or make sure you are on its first tab (or 
    auto-plotting will break).
 1. Trigger the `SpanshAttack.plotRoute` command either by voice (`plot neutron 
-   [course;route;trip] [with custom range;]`) or calling it from another command
-1. (if ship not listed in `SpanshAttack.getShipRange` or command invoked with 
-   `with custom range` option) Enter your ship’s jump range when prompted.
+   [course;route;trip] [with custom range;]`) or calling it from another 
+   command.
+1. Enter your ship’s jump range if prompted.
 1. Wait for the route to be calculated. The command will automatically open the 
    galaxy map and jump to the first waypoint on your route. If you run into 
    weird behaviour, it’s probably because your target system is not in EDDB.
 1. Either target the first waypoint or plot to it.
 1. Start jumping!
+
+#### Plotting to a System Unknown to the Neutron Router ####
+
+The router can only plot a route to a system that is in its data base (obviously 
+can also only give you way points that are). If your target system is not, there 
+are several levels of fallback handling to find a system that is.
+
+1. Check `Next system` coordinates provided by EDDI. If the system is in EDSM, 
+   but has for some reason not been sent over EDDN to other sites including 
+   Spansh we can get coordinates here.
+1. If the system is not in EDSM check EDTS. It can calculate approximate 
+   coordinates for a given procedurally generated system name.
+1. If that fails prompt the user for input.
+1. Query Spansh’ API for the closest system to these coordinates.
+1. Plot a route to the closest system.
+
+Generally you should almost never be asked to input coordinates manually. If 
+EDTS provides coordinates with an accuracy that is worse than ±100 ly per axis, 
+you will be prompetd to make sure you are going roughly to the right 
+coordinates. You will find the system that is used for plotting, its coordinates 
+and the accuracy in VoiceAttack’s log window.
 
 ### Neutron Jumping ###
 
