@@ -62,6 +62,9 @@ See [KeepAChangelog](https://keepachangelog.com/en/1.0.0/).
 * If the target system is not in the database, it will now acknowledge that the 
   system you plot to is not the actual target system and target the latter 
   instead on the last way point.
+* Trip time will no longer be reset when re-plotting, nor when plotting a new 
+  route while a route is currently active. If you want to reset, make sure to 
+  `clear` the current route first.
 
 ## StreamAttack 0.2.1
 
