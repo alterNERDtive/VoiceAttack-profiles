@@ -1,3 +1,13 @@
+# 1.5.1 (2020-07-05)
+
+This is just a minor bug fix release.
+
+## EliteDangerous 5.2
+
+### Fixed
+
+* `EDDI Carrier cooldown` will no longer call your carrier “Not set”.
+
 # 1.5 (2020-07-05)
 
 Changed Changelog format. Should be even clearer now at a glance!
