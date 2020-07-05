@@ -1,4 +1,4 @@
-# devel
+# 1.5 (2020-07-05)
 
 Changed Changelog format. Should be even clearer now at a glance!
 
@@ -34,7 +34,7 @@ See [KeepAChangelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
-* Now setting EDDI to quite mode even if the profile was loaded before plugin 
+* Now setting EDDI to quiet mode even if the profile was loaded before plugin 
   initialization had been completed.
 
 ## SpanshAttack 4.0.0
@@ -55,7 +55,7 @@ See [KeepAChangelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
-* Now setting EDDI to quite mode even if the profile was loaded before plugin 
+* Now setting EDDI to quiet mode even if the profile was loaded before plugin 
   initialization had been completed.
 * `SpanshAttack.getNextNeutronWaypoint` reworked. The old one is now available 
   as `SpanshAttack.copyNextNeutronWaypoint`.
@@ -75,7 +75,7 @@ See [KeepAChangelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
-* Now setting EDDI to quite mode even if the profile was loaded before plugin 
+* Now setting EDDI to quiet mode even if the profile was loaded before plugin 
   initialization had been completed.
 
 # v1.4 (2020-06-19)
