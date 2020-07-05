@@ -21,6 +21,10 @@ See [KeepAChangelog](https://keepachangelog.com/en/1.0.0/).
 
 ## RatAttack 3.1.1
 
+### Fixed
+
+* `distance to rat case […]` commands now actually work.
+
 ### Changed
 
 * Now setting EDDI to quite mode even if the profile was loaded before plugin 
