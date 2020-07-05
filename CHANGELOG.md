@@ -2,7 +2,7 @@
 
 This is just a minor bug fix release.
 
-## EliteDangerous 5.2
+## EliteDangerous 5.2.1
 
 ### Fixed
 
