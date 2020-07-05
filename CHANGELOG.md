@@ -27,7 +27,7 @@ See [KeepAChangelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
-* Now setting EDDI to quite mode even if the profile was loaded before plugin 
+* Now setting EDDI to quiet mode even if the profile was loaded before plugin 
   initialization had been completed.
 
 ## SealAttack 0.1.1
