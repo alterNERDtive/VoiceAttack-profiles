@@ -37,7 +37,7 @@ See [KeepAChangelog](https://keepachangelog.com/en/1.0.0/).
 * Now setting EDDI to quiet mode even if the profile was loaded before plugin 
   initialization had been completed.
 
-## SpanshAttack 4.0.0
+## SpanshAttack 4.0
 
 ### Added
 
