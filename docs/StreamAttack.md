@@ -97,6 +97,8 @@ don’t unless it’s a config variable …) from other profiles:
 These are set in `StreamAttack.startup` and can be overridden from your profile 
 if you have included StreamAttack.
 
+* `EDDI.quietMode` (boolean): whether or not to set EDDI to quite mode. Default: 
+  true.
 * `StreamAttack.outputDir` (string): the directory StreamAttack will save its 
   information to. Default: `%appdata%\StreamAttack\`.
 * `python.ScriptPath` (string): the path you have placed the compiled Python 

@@ -224,6 +224,8 @@ don’t unless it’s a config variable …) from other profiles.
 These are set in `RatAttack.startup` and can be overridden from your profile if 
 you have included RatAttack.
 
+* `EDDI.quietMode` (boolean): whether or not to set EDDI to quite mode. Default: 
+  true.
 * `Elite.pasteKey` (string): the key used for pasting into Elite. On QWERTY this 
   is `v`. Default: `v`.
 * `RatAttack.confirmCalls` (boolean): whether VoiceAttack should ask you before 

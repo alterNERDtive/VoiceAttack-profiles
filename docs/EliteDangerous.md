@@ -178,7 +178,7 @@ Tells you the reason for docking denial.
 
 #### Entered Normal Space ####
 
-Throttles to 0 upon dropping from SC, if `>hyperSpaceDethrottle` is set.
+Throttles to 0 upon dropping from SC, if `EliteDangerous.hyperSpaceDethrottle` is set.
 
 #### Fighter Launched ####
 
@@ -415,27 +415,27 @@ manipulating some UI element(s).
 These are set in `EliteDangerous.startup` and can be overridden from your profile 
 if you have included EliteDangerous.
 
+* `EDDI.quietMode` (boolean): whether or not to set EDDI to quite mode. Default: 
+  true.
 * `Elite.pasteKey` (string): the key used for pasting into Elite. On QWERTY this 
   is `v`. Default: `p`.
-* `>announceMappingCandidates` (boolean): whether to announce mapping candidates 
+* `EliteDangerous.announceMappingCandidates` (boolean): whether to announce mapping candidates 
   when they are scanned. Default: true.
-* `>autoChangeFuelratsNick` (boolean): whether to change the FuelRats IRC 
+* `EliteDangerous.autoChangeFuelratsNick` (boolean): whether to change the FuelRats IRC 
   nickname automatically when changing commanders. Probably largely irrelevant 
   to you. Default: false.
-* `>eddiQuietMode` (boolean): whether or not to set EDDI to quite mode. Default: 
-  true.
-* `>enableCarrierAnnouncements` (boolean): whether or not to process fleet 
-  carrier events. Default: true.
-* `>enableR2Rannouncements` (boolean): whether to announce planets worth mapping 
+* `EliteDangerous.enableCarrierAnnouncements` (boolean): whether or not to 
+  process fleet carrier events. Default: true.
+* `EliteDangerous.enableR2Rannouncements` (boolean): whether to announce planets worth mapping 
   when jumping into a known system. This is useful for doing some R2R on the 
   side. Default: false.
-* `>flightAssistOff` (boolean): whether to automatically toggle FlightAssist off 
+* `EliteDangerous.flightAssistOff` (boolean): whether to automatically toggle FlightAssist off 
   on liftoff. Default: true.
-* `>hyperspaceDethrottle` (boolean): same thing as the SC assist setting; if on, 
+* `EliteDangerous.hyperspaceDethrottle` (boolean): same thing as the SC assist setting; if on, 
   will throttle to 0 automatically after jumping. Default: true.
-* `>jumpTargetFile` (string): the file the distance to the currently set jump 
+* `EliteDangerous.jumpTargetFile` (string): the file the distance to the currently set jump 
   target will be written to.
-* `>targetSubsystem` (string): the default target subsystem. Unused. Default: 
+* `EliteDangerous.targetSubsystem` (string): the default target subsystem. Unused. Default: 
   “drive”.
 * `python.ScriptPath` (string): the path you have placed the compiled python 
   scripts in. Default: “{VA_DIR}\Sounds\scripts” (the “\Sounds\scripts” folder 
@@ -449,5 +449,5 @@ configurable, shouldn’t they?
 
 So far those actually are:
 
-* `>delays.quitToDesktop`: Delay between quitting to desktop and hitting the 
+* `EliteDangerous.delays.quitToDesktop`: Delay between quitting to desktop and hitting the 
   play button in the launcher.
