@@ -86,9 +86,15 @@ work!**
 
 ## Settings ##
 
-Each profile has its respective `startup` command that should be launched upon 
-loading the profile. If you include the profile in your own (see below) you have 
-to manually call them for each included profile when yours is loaded.
+All profiles will now load sane defaults if you haven’t changed anything. You no 
+longer need to fiddle with the `startup` commands of each profile, instead you 
+can use voice commands to change settings! See the `docs/` and the 
+`_configuration` commands section of each profile.
+
+One caveat applies: settings are stored in the _profile where you run the 
+configuration commands_. If you change your active, main profile around a lot 
+you’ll have to set everything up for each of them separately. I suggest instead 
+having a single “main” profiles and including everything else.
 
 ## Using a Profile ##
 
@@ -105,9 +111,8 @@ form other profiles:” option.
 
 VoiceAttack does not execute configured startup commands for included profiles. 
 Hence, you’ll have to have your own profile have one that in turn runs the 
-included profiles’ startup commands. While you are doing that, you might as well 
-set all settings here, centrally. Main advantage is that you can just upgrade 
-the included profiles to newer versions without losing your settings.
+included profiles’ startup commands. Main advantage is that you can just upgrade 
+the included profiles to newer versions without losing your own stuff.
 
 Because of limitations of VoiceAttack itself, only the first matching command 
 found will be executed, _including EDDI events_. That means you have to check 

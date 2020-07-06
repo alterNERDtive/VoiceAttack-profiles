@@ -1,3 +1,48 @@
+# devel
+
+This is a HUGE one! :D
+
+You now no longer have to fiddle with configuration options in the various 
+`startup` commands. Instead you can set everything with voice commands! See the 
+`docs/` and the new `_configuration` command sections of the individual profiles 
+for details.
+
+This also means that importing the profiles and updating them has become easier 
+on you, the user.
+
+## EliteDangerous 6.0
+
+### Added
+
+* Configuration via voice commands!
+
+## RatAttack 4.0
+
+### Added
+
+* Configuration via voice commands!
+
+## SealAttack 0.2
+
+### Added
+
+* Configuration via voice commands! As this profile is … a work in progress, not 
+  everything is implemented yet.
+
+## SpanshAttack 5.0
+
+### Added
+
+* Configuration via voice commands!
+
+## StreamAttack 0.3
+
+### Added
+
+* Configuration via voice commands! Not a lot to configure here though.
+
+-----
+
 # 1.5.1 (2020-07-05)
 
 This is just a minor bug fix release.
@@ -7,6 +52,8 @@ This is just a minor bug fix release.
 ### Fixed
 
 * `EDDI Carrier cooldown` will no longer call your carrier “Not set”.
+
+-----
 
 # 1.5 (2020-07-05)
 
@@ -87,6 +134,8 @@ See [KeepAChangelog](https://keepachangelog.com/en/1.0.0/).
 
 * Now setting EDDI to quiet mode even if the profile was loaded before plugin 
   initialization had been completed.
+
+-----
 
 # v1.4 (2020-06-19)
 

@@ -28,13 +28,8 @@ RatAttack will deactivate the speech responder automatically to not clutter them
 with unwanted TTS.
 
 If you are already an EDDI user and want to keep the default speech responder 
-functionality, you will have to run the `enablespeechresponder` plugin function 
-of the EDDI plugin from your profile’s startup command _after_ the 
-`RatAttack.startup` command invocation.
-
-In order to do that, choose “Other” → “Advanced” → “Execute an External Plugin 
-Function”, choose the EDDI plugin and set the “Plugin Context” to 
-“enablespeechresponder”.
+functionality, you will have to disable the `EDDI.quietMode` setting by running 
+the `customize settings disable eddi quiet mode` command.
 
 ## Settings ##
 
@@ -51,9 +46,6 @@ When including the profile, be sure to
 * Run the startup command. You will need to have a startup command in your 
   profile (= one that is run on profile loading) and call `RatAttack.startup` 
   from that one.
-* Set configuration options. In the same startup command of yours, overwrite all 
-  configuration variables you want changed; _after_ the `RatAttack.startup` 
-  call. See [below](#Configuration-Variables).
 * Make sure all EDDI events that RatAttack needs are correctly handled. For all 
   events used in RatAttack that you already have handlers for in your profile, 
   you’ll have to include a call to `RatAttack.<event name>`. E.g.  for “EDDI 
@@ -229,39 +221,38 @@ don’t unless it’s a config variable …) from other profiles.
 
 ### Configuration Variables ###
 
-These are set in `RatAttack.startup` and can be overridden from your profile if 
-you have included RatAttack.
+There are a bunch of configuration variables. You should not overwrite those 
+manually, instead use the provided commands in the `_configuration` section!
 
 * `EDDI.quietMode` (boolean): whether or not to set EDDI to quite mode. Default: 
   true.
+* `EDDI.useEddiForVoice` (boolean): whether to use the EDDI plugin to handle 
+  text-to-speech over VoiceAttacks built-in speech function. Default: false.
 * `Elite.pasteKey` (string): the key used for pasting into Elite. On QWERTY this 
   is `v`. Default: `v`.
+* `RatAttack.announceNearestCMDR` (boolean): whether or not to automatically 
+  announce your nearest CMDR to a case.  Requires the `elite-scripts` Python 
+  scripts. Will probably break in creative ways if you don’t have them and turn 
+  it on anyway.  Default: false.
+* `RatAttack.announcePlatform` (boolean): whether or not to announce the case’s 
+  platform by default. Useful to set if you are active on more than one 
+  platform. Even with this off, you will still be warned when you open a case 
+  that is _not_ on one of your platforms.  Default: false.
+* `RatAttack.CMDRs` (string): list of your CMDR names, delimited by spaces. If 
+  your names include spaces, you will have to put them in quotes. Default: “"J 
+  Jora Jameson" NameWithNoSpace”.
 * `RatAttack.confirmCalls` (boolean): whether VoiceAttack should ask you before 
   posting to #fuelrats to make sure there hasn’t been an error in voice 
   recognition and you accidentally post the wrong thing. Default: true.
-* `RatAttack.onDuty` (boolean): whether or not you are currently on rat duty. 
- Default: true.
 * `RatAttack.autoCloseCase` (boolean): whether or not to automatically close an 
   open rat case on calling “fuel+”. Default: false.
+* `RatAttack.onDuty` (boolean): whether or not you are currently on rat duty.  
+  Default: true.
 * `RatAttack.platforms` (string): the platforms you want to be informed of 
   incoming cases for. If you are on console, you can still have VoiceAttack 
   running on the PC that you are using for IRC and handle calls and stuff using 
   voice!  Delimited by whatever you want. Can include “PC”, “XB”, “PS4”. 
   Default: “PC”.
-* `RatAttack.platformAnnouncements` (boolean): whether or not to announce the 
-  case’s platform by default. Useful to set if you are active on more than one 
-  platform. Even with this off, you will still be warned when you open a case 
-  that is _not_ on one of your platforms. Default: false.
-* `RatAttack.useEddiForVoice` (boolean): whether to use the EDDI plugin to 
-  handle text-to-speech over VoiceAttacks built-in speech function. Default: 
-  false.
-* `RatAttack.announceNearestCMDR` (boolean): whether or not to automatically 
-  announce your nearest CMDR to a case. Requires the `elite-scripts` Python 
-  scripts. Will probably break in creative ways if you don’t have them and turn 
-  it on anyway.  Default: false.
-* `RatAttack.CMDRs` (string): list of your CMDR names, delimited by spaces. If 
-  your names include spaces, you will have to put them in quotes. Default: “"J 
-  Jora Jameson" NameWithNoSpace”.
 * `python.scriptPath` (string): the path you put the Python scripts in. Default: 
   “{VA_DIR}\Sounds\scripts”.
 

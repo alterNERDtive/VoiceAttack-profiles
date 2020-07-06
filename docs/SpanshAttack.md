@@ -22,21 +22,15 @@ SpanshAttack will deactivate the speech responder automatically to not clutter
 them with unwanted TTS.
 
 If you are already an EDDI user and want to keep the default speech responder 
-functionality, you will have to run the `enablespeechresponder` plugin function 
-of the EDDI plugin from your profile’s startup command _after_ the 
-`SpanshAttack.startup` command invocation.
-
-In order to do that, choose “Other” → “Advanced” → “Execute an External Plugin 
-Function”, choose the EDDI plugin and set the “Plugin Context” to 
-“enablespeechresponder”.
+functionality, you will have to disable the `EDDI.quietMode` setting by running 
+the `customize settings disable eddi quiet mode` command.
 
 ## Settings ##
 
 Because Elite’s keyboard handling is … weird you’ll have to set the key to use 
-for pasting text into Elite:Dangerous. If you are using a “standard” QWERT[YZ] 
-layout, you don’t have to do anything; if you are using something different, you 
-have to set it to the symbol that’s on the physical button that has `v` on 
-QWERT[YZ]. E.g. for Neo2, set it to `p`.
+for pasting text into Elite:Dangerous. If you are not using a “standard” 
+QWERT[YZ] layout, you will have to change it back to the key that is physically 
+in the place where `v` would be on QWERTY.
 
 For other settings, see the [Configuration Variables](#Configuration-Variables) 
 section.
@@ -62,17 +56,11 @@ When including the profile, be sure to
 * Run the startup command. You will need to have a startup command in your 
   profile (= one that is run on profile loading) and call `SpanshAttack.startup` 
   from that one.
-* Set configuration options. In the same startup command of yours, overwrite all 
-  configuration variables you want changed; _after_ the `SpanshAttack.startup` 
-  call. See [below](#Configuration-Variables).
 * Make sure all EDDI events that SpanshAttack needs are correctly handled. For 
   all events used in SpanshAttack that you already have handlers for in your 
-  profile, you’ll have to include a call to `SpanshAttack.<event name>`. E.g. 
+  profile, you’ll have to include a call to `SpanshAttack.<event name>`. E.g.  
   for “EDDI Jumped”, call `SpanshAttack.EDDI Jumped` by name from your `((EDDI 
   Jumped))` command.
-* Initialise the [bindED](https://forum.voiceattack.com/SMF?topic=564.0) plugin 
-  correctly to read your Elite keybinds. Do that in your main profile’s startup 
-  command to only have it run once.
 * (Optional) Have a `SpanshAttack.getShipRange` command in your profile to 
   overwrite the default one with your ship’s ranges. See the default command for 
   pointers.
@@ -188,11 +176,13 @@ don’t unless it’s a config variable …) from other profiles:
 
 ### Configuration Variables ###
 
-These are set in `SpanshAttack.startup` and can be overridden from your profile 
-if you have included SpanshAttack.
+There are a bunch of configuration variables. You should not overwrite those 
+manually, instead use the provided commands in the `_configuration` section!
 
 * `EDDI.quietMode` (boolean): whether or not to set EDDI to quite mode. Default: 
   true.
+* `EDDI.useEddiForVoice` (boolean): whether to use EDDI over VA’s builtin `say` 
+  command. Default: false.
 * `Elite.pasteKey` (string): the key used for pasting into Elite. On QWERTY this 
   is `v`. Default: `v`.
 * `SpanshAttack.timeTrip` (boolean): whether to automatically tell you at the 
@@ -216,9 +206,7 @@ if you have included SpanshAttack.
   false.
 * `SpanshAttack.copyWaypointToClipboard` (boolean): whether to copy the next 
   waypoint into the Windows clipboard for use in other programs. Default: false.
-* `SpanshAttack.useEddiForVoice` (boolean): whether to use EDDI over VA’s 
-  builtin `say` command. Default: false.
-* `python.scriptPath` (string): the path you put the Python scripts in. 
+* `python.scriptPath` (string): the path you put the Python scripts in.  
   Default: “{VA_DIR}\Sounds\scripts”.
 
 ### Other Variables ###

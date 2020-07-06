@@ -32,9 +32,9 @@ the release page, they will be installed automatically.
 ## Settings ##
 
 Because Elite’s keyboard handling is … weird you’ll have to set the key to use 
-for pasting text into Elite:Dangerous. If you are using a “standard” QWERT[YZ] 
-layout, you will have to change it back to `v`. It’s defaulting to `p` because 
-that’s the key that is in `v`’s place on my keyboard layout, Neo2.
+for pasting text into Elite:Dangerous. If you are not using a “standard” 
+QWERT[YZ] layout, you will have to change it back to the key that is physically 
+in the place where `v` would be on QWERTY.
 
 For other settings, see the [Configuration Variables](#Configuration-Variables) 
 section.
@@ -48,12 +48,9 @@ Nevertheless, it _should_ work properly if you follow some guide lines:
 * Run the startup command. You will need to have a startup command in your 
   profile (= one that is run on profile loading) and call 
   `EliteDangerous.startup` by name from that one.
-* Set configuration options. In the same startup command of yours, overwrite all 
-  configuration variables you want changed; _after_ the `EliteDangerous.startup` 
-  call. See [below](#Configuration-Variables).
 * Make sure all EDDI events that EliteDangerous needs are correctly handled. For 
   all events used in EliteDangerous that you already have handlers for in your 
-  profile, you’ll have to include a call to `EliteDangerous.<event name>`.  E.g. 
+  profile, you’ll have to include a call to `EliteDangerous.<event name>`.  E.g.  
   for “EDDI Jumped”, call `EliteDangerous.EDDI Jumped` by name from your `((EDDI 
   Jumped))` command.
 
@@ -412,8 +409,8 @@ manipulating some UI element(s).
 
 ### Configuration Variables ###
 
-These are set in `EliteDangerous.startup` and can be overridden from your profile 
-if you have included EliteDangerous.
+There are a bunch of configuration variables. You should not overwrite those 
+manually, instead use the provided commands in the `_configuration` section!
 
 * `EDDI.quietMode` (boolean): whether or not to set EDDI to quite mode. Default: 
   true.
@@ -421,16 +418,16 @@ if you have included EliteDangerous.
   is `v`. Default: `p`.
 * `EliteDangerous.announceMappingCandidates` (boolean): whether to announce mapping candidates 
   when they are scanned. Default: true.
+* `EliteDangerous.announcemeR2RMappingCandidates` (boolean): whether to announce 
+  planets worth mapping when jumping into a known system.  This is useful for 
+  doing some R2R on the side.  Default: false.
 * `EliteDangerous.autoChangeFuelratsNick` (boolean): whether to change the FuelRats IRC 
   nickname automatically when changing commanders. Probably largely irrelevant 
   to you. Default: false.
 * `EliteDangerous.enableCarrierAnnouncements` (boolean): whether or not to 
   process fleet carrier events. Default: true.
-* `EliteDangerous.enableR2Rannouncements` (boolean): whether to announce planets worth mapping 
-  when jumping into a known system. This is useful for doing some R2R on the 
-  side. Default: false.
-* `EliteDangerous.flightAssistOff` (boolean): whether to automatically toggle FlightAssist off 
-  on liftoff. Default: true.
+* `EliteDangerous.flightAssistOff` (boolean): whether to automatically toggle 
+  FlightAssist off on liftoff. Default: true.
 * `EliteDangerous.hyperspaceDethrottle` (boolean): same thing as the SC assist setting; if on, 
   will throttle to 0 automatically after jumping. Default: true.
 * `EliteDangerous.jumpTargetFile` (string): the file the distance to the currently set jump 
