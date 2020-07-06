@@ -91,6 +91,10 @@ longer need to fiddle with the `startup` commands of each profile, instead you
 can use voice commands to change settings! See the `docs/` and the 
 `_configuration` commands section of each profile.
 
+Basically all the settings are available using the `customize settings` prefix, 
+then saying `[enable;disable] <setting>` for on/off switches and `set <setting>` 
+for text variables.
+
 One caveat applies: settings are stored in the _profile where you run the 
 configuration commands_. If you change your active, main profile around a lot 
 you’ll have to set everything up for each of them separately. I suggest instead 

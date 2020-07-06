@@ -89,6 +89,10 @@ don’t unless it’s a config variable …) from other profiles:
 There are a bunch of configuration variables. You should not overwrite those 
 manually, instead use the provided commands in the `_configuration` section!
 
+Basically all the settings are available using the `customize settings` prefix, 
+then saying `[enable;disable] <setting>` for on/off switches and `set <setting>` 
+for text variables.
+
 * `EDDI.quietMode` (boolean): whether or not to set EDDI to quite mode. Default: 
   true.
 * `EDDI.useEddiForVoice` (boolean): whether to use EDDI over VA’s builtin `say` 
