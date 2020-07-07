@@ -95,10 +95,8 @@ Basically all the settings are available using the `customize settings` prefix,
 then saying `[enable;disable] <setting>` for on/off switches and `set <setting>` 
 for text variables.
 
-One caveat applies: settings are stored in the _profile where you run the 
-configuration commands_. If you change your active, main profile around a lot 
-you’ll have to set everything up for each of them separately. I suggest instead 
-having a single “main” profiles and including everything else.
+One caveat applies: settings will only be saved in the profile you have selected 
+when changing them, but be preserved if you switch around.
 
 ## Using a Profile ##
 

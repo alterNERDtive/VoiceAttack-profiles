@@ -7,6 +7,9 @@ You now no longer have to fiddle with configuration options in the various
 `docs/` and the new `_configuration` command sections of the individual profiles 
 for details.
 
+Settings will only be saved in the profile you have selected when changing them, 
+but be preserved if you switch around.
+
 This also means that importing the profiles and updating them has become easier 
 on you, the user.
 
