@@ -23,12 +23,19 @@ on you, the user.
 
 * The Elite client is now targeted by process name instead of window title. 
   Should technically be faster, but probably won’t make much of a difference.
+* System/body names are now passed to EDDI using the `{P("<string>")}` literal 
+  which should improve pronunciation in most cases.
 
 ## RatAttack 4.0
 
 ### Added
 
 * Configuration via voice commands!
+
+### Changed
+
+* System/body names are now passed to EDDI using the `{P("<string>")}` literal 
+which should improve pronunciation in most cases.
 
 ## SealAttack 0.2
 
@@ -47,6 +54,8 @@ on you, the user.
 
 * The Elite client is now targeted by process name instead of window title. 
 Should technically be faster, but probably won’t make much of a difference.
+* System/body names are now passed to EDDI using the `{P("<string>")}` literal 
+which should improve pronunciation in most cases.
 
 ## StreamAttack 0.3
 
