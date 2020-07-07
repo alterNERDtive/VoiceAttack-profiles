@@ -16,6 +16,11 @@ on you, the user.
 
 * Configuration via voice commands!
 
+### Changed
+
+* The Elite client is now targeted by process name instead of window title. 
+  Should technically be faster, but probably won’t make much of a difference.
+
 ## RatAttack 4.0
 
 ### Added
@@ -34,6 +39,11 @@ on you, the user.
 ### Added
 
 * Configuration via voice commands!
+
+### Changed
+
+* The Elite client is now targeted by process name instead of window title. 
+Should technically be faster, but probably won’t make much of a difference.
 
 ## StreamAttack 0.3
 
