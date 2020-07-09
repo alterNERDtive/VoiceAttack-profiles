@@ -13,7 +13,10 @@ profile:
 
 * [bindED](https://forum.voiceattack.com/smf/index.php?topic=564.0)
 * [EDDI](https://github.com/EDCD/EDDI) installed as a VoiceAttack plugin
-* [ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter)
+* [ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter): required 
+  for SpanshAttack. **Make sure to [grab the pre-release 
+  1.02](https://github.com/sc-pulgan/ED-NeutronRouter/releases/tag/1.02)** since 
+  1.01 has a bug with a hardcoded 50 ly jump range.
 
 ### EDDI speech responder ###
 
