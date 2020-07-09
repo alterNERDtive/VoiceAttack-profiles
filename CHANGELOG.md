@@ -18,6 +18,8 @@ on you, the user.
 ### Added
 
 * Configuration via voice commands!
+* `Low Fuel` event will now tell you how many jumps you have left, or an 
+  estimate for your remaining range if it’s less than a single full range jump.
 
 ### Changed
 

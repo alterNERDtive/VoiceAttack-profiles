@@ -200,7 +200,8 @@ _don’t_ immediately want to retract it after takeoff?
 
 #### Low Fuel ####
 
-Warns you when you reach 25% fuel.
+Warns you when you reach 25% fuel. Also reports number of jumps you have left or 
+the (rough) range you still have on the fumes left in your tank.
 
 #### Material Threshold ####
 
