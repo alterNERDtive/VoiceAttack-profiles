@@ -13,6 +13,8 @@ but be preserved if you switch around.
 This also means that importing the profiles and updating them has become easier 
 on you, the user.
 
+* Updated to `elite-scripts` 0.6.
+
 ## EliteDangerous 6.0
 
 ### Added
@@ -20,6 +22,8 @@ on you, the user.
 * Configuration via voice commands!
 * `Low Fuel` event will now tell you how many jumps you have left, or an 
   estimate for your remaining range if it’s less than a single full range jump.
+* The threshold for stations to be considered outdated is now a configuration 
+  option! Just invoke `customize setting set old station threshold`.
 
 ### Changed
 
