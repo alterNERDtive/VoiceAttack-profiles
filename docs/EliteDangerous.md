@@ -437,10 +437,6 @@ for text variables.
   will throttle to 0 automatically after jumping. Default: true.
 * `EliteDangerous.oldStationThreshold` (int): Age in days that will cause 
   station data to be considered outdated. Default: 365 (1 year).
-* `EliteDangerous.jumpTargetFile` (string): the file the distance to the currently set jump 
-  target will be written to.
-* `EliteDangerous.targetSubsystem` (string): the default target subsystem. Unused. Default: 
-  “drive”.
 * `python.ScriptPath` (string): the path you have placed the compiled python 
   scripts in. Default: “{VA_DIR}\Sounds\scripts” (the “\Sounds\scripts” folder 
   in your VoiceAttack installation directory).
