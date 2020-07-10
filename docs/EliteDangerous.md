@@ -50,7 +50,7 @@ Nevertheless, it _should_ work properly if you follow some guide lines:
   `EliteDangerous.startup` by name from that one.
 * Make sure all EDDI events that EliteDangerous needs are correctly handled. For 
   all events used in EliteDangerous that you already have handlers for in your 
-  profile, you’ll have to include a call to `EliteDangerous.<event name>`.  E.g.  
+  profile, you’ll have to include a call to `EliteDangerous.<event name>`.  E.g. 
   for “EDDI Jumped”, call `EliteDangerous.EDDI Jumped` by name from your `((EDDI 
   Jumped))` command.
 
@@ -421,20 +421,24 @@ for text variables.
   true.
 * `Elite.pasteKey` (string): the key used for pasting into Elite. On QWERTY this 
   is `v`. Default: `p`.
-* `EliteDangerous.announceMappingCandidates` (boolean): whether to announce mapping candidates 
-  when they are scanned. Default: true.
-* `EliteDangerous.announcemeR2RMappingCandidates` (boolean): whether to announce 
+* `EliteDangerous.announceEdsmSystemStatus` (boolean): whether to announce the 
+  system or some of its bodies missing on EDSM. Default: true.
+* `EliteDangerous.announceMappingCandidates` (boolean): whether to announce 
+  mapping candidates when they are scanned.  Default: true.
+* `EliteDangerous.announceOutdatedStationData` (boolean): whether to announce 
+  stations with outdated data in systems you jump to.  Default: true.
+* `EliteDangerous.announceR2RMappingCandidates` (boolean): whether to announce 
   planets worth mapping when jumping into a known system.  This is useful for 
   doing some R2R on the side.  Default: false.
-* `EliteDangerous.autoChangeFuelratsNick` (boolean): whether to change the FuelRats IRC 
-  nickname automatically when changing commanders. Probably largely irrelevant 
-  to you. Default: false.
+* `EliteDangerous.autoChangeFuelratsNick` (boolean): whether to change the 
+  FuelRats IRC nickname automatically when changing commanders. Probably largely 
+  irrelevant to you. Default: false.
 * `EliteDangerous.enableCarrierAnnouncements` (boolean): whether or not to 
   process fleet carrier events. Default: true.
 * `EliteDangerous.flightAssistOff` (boolean): whether to automatically toggle 
   FlightAssist off on liftoff. Default: true.
-* `EliteDangerous.hyperspaceDethrottle` (boolean): same thing as the SC assist setting; if on, 
-  will throttle to 0 automatically after jumping. Default: true.
+* `EliteDangerous.hyperspaceDethrottle` (boolean): same thing as the SC assist 
+  setting; if on, will throttle to 0 automatically after jumping. Default: true.
 * `EliteDangerous.oldStationThreshold` (int): Age in days that will cause 
   station data to be considered outdated. Default: 365 (1 year).
 * `python.ScriptPath` (string): the path you have placed the compiled python 

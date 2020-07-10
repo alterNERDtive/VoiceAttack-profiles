@@ -23,7 +23,9 @@ on you, the user.
 * `Low Fuel` event will now tell you how many jumps you have left, or an 
   estimate for your remaining range if it’s less than a single full range jump.
 * The threshold for stations to be considered outdated is now a configuration 
-  option! Just invoke `customize setting set old station threshold`.
+  option.
+* Announcement of missing bodies on EDSM and outdated station data is now 
+  a configuration option.
 
 ### Changed
 
