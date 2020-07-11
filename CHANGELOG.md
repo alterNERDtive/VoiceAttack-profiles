@@ -26,6 +26,7 @@ on you, the user.
   option.
 * Announcement of missing bodies on EDSM and outdated station data is now 
   a configuration option.
+* `reload bindings` now has TTS feedback.
 
 ### Changed
 
@@ -61,6 +62,7 @@ which should improve pronunciation in most cases.
 ### Added
 
 * Configuration via voice commands!
+* `reload bindings` now has TTS feedback.
 
 ### Changed
 
