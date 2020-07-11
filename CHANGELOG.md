@@ -29,6 +29,10 @@ on you, the user.
 
 ### Changed
 
+* Configuration variables have been renamed to fit the global scheme of 
+  `Profile.variable`. If you have overwritten any, you’ll have to re-change 
+  them. You’ll have to do that anyway though because of voice command 
+  configuration :)
 * The Elite client is now targeted by process name instead of window title. 
   Should technically be faster, but probably won’t make much of a difference.
 * System/body names are now passed to EDDI using the `{P("<string>")}` literal 
