@@ -95,8 +95,8 @@ Basically all the settings are available using the `customize settings` prefix,
 then saying `[enable;disable] <setting>` for on/off switches and `set <setting>` 
 for text variables.
 
-One caveat applies: settings will only be saved in the profile you have selected 
-when changing them, but be preserved if you switch around.
+One caveat applies: settings will only be saved in the profile you have 
+selected, but be preserved if you switch around.
 
 ## Using a Profile ##
 
