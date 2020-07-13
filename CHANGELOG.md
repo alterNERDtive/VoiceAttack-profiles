@@ -37,6 +37,7 @@ them*.
 * Announcement of missing bodies on EDSM and outdated station data is now 
   a configuration option.
 * `reload bindings` now has TTS feedback.
+* Old station search now also writes results to the log window.
 
 ### Changed
 
