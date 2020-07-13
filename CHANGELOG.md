@@ -71,6 +71,9 @@ them*.
 
 ### Changed
 
+* **Breaking Change**: Passing RATSIGNALs to VoiceAttack is no longer done 
+  through the windows clipboard, and instead through a file. See `docs/` for 
+  details. You have to change your IRC client’s configuration.
 * System/body names are now passed to EDDI using the `{P("<string>")}` literal 
   which should improve pronunciation in most cases.
 * Converted all command category names to lower case. Shouldn’t bother you at 

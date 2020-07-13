@@ -66,9 +66,10 @@ through IRC. When off duty, it won’t.
 
 #### Getting Case Data From IRC ####
 
-Currently there is one singular way of getting case info from IRC into 
-VoiceAttack: having your IRC client put the ratsignal into the clipboard, then 
-having it run the `RatAttack.getInfoFromRatsignal` command.
+You can setup your IRC client to pass incoming RATSIGNALS to VoiceAttack by 
+writing them to a file (`%appdata%\Ratattack\ratsignal.pipe`), then calling the 
+appropriate command (`RatAttack.announceCaseFromRatsignal` for notification, 
+`RatAttack.getInfoFromRatsignal` for silently putting it into the case list).
 
 This has two purposes:
 
@@ -76,50 +77,35 @@ This has two purposes:
 1. storing case data and making it available to VoiceAttack, e.g. for copying 
    the case’s system into the clipboard
 
+You need to make your IRC client
+
+1. wait until the file disappears (for several cases coming in at once)
+1. write the RATSIGNAL to the file
+1. run the VoiceAttack command
+
 In my case I am running AdiIRC and have the following script setup for handling 
 this:
 
 ```
 on *:TEXT:RATSIGNAL - CMDR*(??_SIGNAL):#fuelrats:{
-	/handleratsignal $1-
-}
-alias handleratsignal {
-	if ( %delayratsignal ) {
-		//sleep %delayratsignal /handleratsignal $1-
+	while ( $exists(C:\users\<user>\appdata\roaming\RatAttack\ratsignal.pipe)) {
+		/sleep 1
+    }
+	/mkdir C:\users\<user>\appdata\roaming\RatAttack\
+	/write C:\users\<user>\appdata\roaming\RatAttack\ratsignal.pipe $1-
+	if ( %justconnected || $away ) {
+		/run -h "D:\tools\VoiceAttack\VoiceAttack.exe" -nofocus -command "RatAttack.getInfoFromRatSignal"
 	}
 	else {
-		/inc -gz %delayratsignal 5
-		/var %clip = $cb(-1)
-		/clipboard $1-
-		/run -h "D:\tools\VoiceAttack\VoiceAttack.exe" -nofocus -command "RatAttack.announceCaseFromRatSignal"
-		/sleep 4 /clipboard %clip
+	    /run -h "D:\tools\VoiceAttack\VoiceAttack.exe" -nofocus -command "RatAttack.announceCaseFromRatSignal"
 	}
 }
 ```
 
-The `on TEXT` even trigger will listen for a line starting with “RATSIGNAL 
-- CMDR” and ending with “(??\_SIGNAL)” (`?` being any character) to catch an 
-incoming signal with basically no false positives and hand it off to the 
-`handleratsignal command`.
-
-Which in turn will:
-
-1. delay execution if a signal is being handled right now
-1. set a 5s delay for the next signal to be handled (these two steps are 
-   necessary since the only way to get a sig to VoiceAttack is through the 
-   clipboard, sadly)
-1. temporarily save the current clipboard
-1. copy Mecha’s entire line (the ratsignal) to the clipboard
-1. run VoiceAttack (should already be open) with the 
-   `RatAttack.getInfoFromRatsignal` command that will parse the signal and store 
-   case information
-1. wait for 4s to make sure the command had time to grab the clipboard, then 
-   restore the old clipboard
-
-If you don’t know how to do the same thing for your IRC client or it doesn’t 
-support copying the control characters in the ratsignal that the profile uses to 
-split the information, either switch to AdiIRC or bribe me to include some other 
-way to get case data into VoiceAttack.
+You get the gist; if not and you don’t know how to do the same thing for your 
+IRC client or it doesn’t support copying the control characters in the ratsignal 
+that the profile uses to split the information, either switch to AdiIRC or bribe 
+me to include some other way to get case data into VoiceAttack.
 
 #### Internal Case List ####
 
