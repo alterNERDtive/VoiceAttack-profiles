@@ -90,9 +90,9 @@ after upgrading.
 ### Changed
 
 * The Elite client is now targeted by process name instead of window title. 
-Should technically be faster, but probably won’t make much of a difference.
+  Should technically be faster, but probably won’t make much of a difference.
 * System/body names are now passed to EDDI using the `{P("<string>")}` literal 
-which should improve pronunciation in most cases.
+  which should improve pronunciation in most cases.
 * No longer targeting the Elite client profile-wide, instead on command level. 
   Should be more accurate and alleviate potential issues with focus switching, 
   and should be more robust when importing the profile.
@@ -102,6 +102,10 @@ which should improve pronunciation in most cases.
 ### Added
 
 * Configuration via voice commands! Not a lot to configure here though.
+
+### Changed
+
+* Restricted `distance to jump target` command to a single running instance.
 
 -----
 
