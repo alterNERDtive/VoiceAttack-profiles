@@ -19,6 +19,10 @@ you currently have and import everything from scratch. Make sure to keep track
 of configuration/commands you have changed so you can get a similar state back 
 after upgrading.
 
+**Importanter**: The profiles are now implementing features introduced in 
+VoiceAttack 1.8.6. *You’ll __have__ to upgrade to __VoiceAttack 1.8.6__ to use 
+them*.
+
 * Updated to `elite-scripts` 0.6.
 
 ## EliteDangerous 6.0
@@ -61,6 +65,9 @@ after upgrading.
 ### Added
 
 * Configuration via voice commands!
+* `RatAttack.setRatDuty` command. Accepts a boolean parameter. 
+  `RatAttack.[enable;disable]RatDuty` still exist for calling from the command 
+  line.
 
 ### Changed
 
