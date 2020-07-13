@@ -13,6 +13,12 @@ but be preserved if you switch around.
 This also means that importing the profiles and updating them has become easier 
 on you, the user.
 
+**Important**: I’ve made a lot of changes that _might_ break stuff if you just 
+import into/over your existing profiles. Please _delete_ (or rename) the ones 
+you currently have and import everything from scratch. Make sure to keep track 
+of configuration/commands you have changed so you can get a similar state back 
+after upgrading.
+
 * Updated to `elite-scripts` 0.6.
 
 ## EliteDangerous 6.0
@@ -38,6 +44,17 @@ on you, the user.
   Should technically be faster, but probably won’t make much of a difference.
 * System/body names are now passed to EDDI using the `{P("<string>")}` literal 
   which should improve pronunciation in most cases.
+* No longer targeting the Elite client profile-wide, instead on command level. 
+  Should be more accurate and alleviate potential issues with focus switching, 
+  and should be more robust when importing the profile.
+* Renamed `EDDI Events` category to `EDDI events` for consistency. Shouldn’t 
+  bother you at all unless you have fiddled with the commands in there.
+* Restricted a bunch of commands to only execute if they are not already 
+  running.
+
+### Removed
+
+* `fix window dimensions` command. Too specific to my setup.
 
 ## RatAttack 4.0
 
@@ -48,7 +65,9 @@ on you, the user.
 ### Changed
 
 * System/body names are now passed to EDDI using the `{P("<string>")}` literal 
-which should improve pronunciation in most cases.
+  which should improve pronunciation in most cases.
+* Converted all command category names to lower case. Shouldn’t bother you at 
+  all unless you have fiddled with the commands.
 
 ## SealAttack 0.2
 
@@ -63,6 +82,10 @@ which should improve pronunciation in most cases.
 
 * Configuration via voice commands!
 * `reload bindings` now has TTS feedback.
+* Renamed `EDDI Events` category to `EDDI events` for consistency. Shouldn’t 
+  bother you at all unless you have fiddled with the commands in there.
+* Restricted a bunch of commands to only execute if they are not already 
+  running.
 
 ### Changed
 
@@ -70,6 +93,9 @@ which should improve pronunciation in most cases.
 Should technically be faster, but probably won’t make much of a difference.
 * System/body names are now passed to EDDI using the `{P("<string>")}` literal 
 which should improve pronunciation in most cases.
+* No longer targeting the Elite client profile-wide, instead on command level. 
+  Should be more accurate and alleviate potential issues with focus switching, 
+  and should be more robust when importing the profile.
 
 ## StreamAttack 0.3
 
