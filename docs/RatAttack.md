@@ -88,16 +88,21 @@ this:
 
 ```
 on *:TEXT:RATSIGNAL - CMDR*(??_SIGNAL):#fuelrats:{
-	while ( $exists(C:\users\<user>\appdata\roaming\RatAttack\ratsignal.pipe)) {
-		/sleep 1
-    }
-	/mkdir C:\users\<user>\appdata\roaming\RatAttack\
-	/write C:\users\<user>\appdata\roaming\RatAttack\ratsignal.pipe $1-
-	if ( %justconnected || $away ) {
-		/run -h "D:\tools\VoiceAttack\VoiceAttack.exe" -nofocus -command "RatAttack.getInfoFromRatSignal"
+	/handleratsignal $1-
+}
+alias handleratsignal {
+	if ( $exists(C:\users\<user>\appdata\roaming\RatAttack\ratsignal.pipe) ) {
+		/sleep 1 /handleratsignal $1-
 	}
 	else {
-	    /run -h "D:\tools\VoiceAttack\VoiceAttack.exe" -nofocus -command "RatAttack.announceCaseFromRatSignal"
+		/mkdir C:\users\<user>\appdata\roaming\RatAttack\
+		/write C:\users\<user>\appdata\roaming\RatAttack\ratsignal.pipe $1-
+		if ( %justconnected || $away ) {
+			/run -h "X:\path\to\VoiceAttack\VoiceAttack.exe" -nofocus -command "RatAttack.getInfoFromRatSignal"
+		}
+		else {
+			/run -h "X:\path\to\VoiceAttack\VoiceAttack.exe" -nofocus -command "RatAttack.announceCaseFromRatSignal"
+	    }
 	}
 }
 ```
