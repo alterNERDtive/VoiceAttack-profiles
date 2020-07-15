@@ -58,6 +58,9 @@ them*.
   running.
 * Focusing the Elite client for event commands that need to send keys should be 
   more sturdy now.
+* Bumped required detection confidence for the `FSS` and `cruise` commands to 85 
+  since they were misfiring a lot. If you have any problems please file an 
+  issue.
 
 ### Removed
 
