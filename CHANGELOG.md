@@ -56,6 +56,8 @@ them*.
   bother you at all unless you have fiddled with the commands in there.
 * Restricted a bunch of commands to only execute if they are not already 
   running.
+* Focusing the Elite client for event commands that need to send keys should be 
+  more sturdy now.
 
 ### Removed
 
