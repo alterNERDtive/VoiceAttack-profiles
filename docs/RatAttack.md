@@ -88,6 +88,7 @@ this:
 
 ```
 on *:TEXT:RATSIGNAL - CMDR*(??_SIGNAL):#fuelrats:{
+	/mkdir C:\users\<user>\appdata\roaming\RatAttack\
 	/handleratsignal $1-
 }
 alias handleratsignal {
@@ -95,9 +96,8 @@ alias handleratsignal {
 		/sleep 1 /handleratsignal $1-
 	}
 	else {
-		/mkdir C:\users\<user>\appdata\roaming\RatAttack\
 		/write C:\users\<user>\appdata\roaming\RatAttack\ratsignal.pipe $1-
-		if ( %justconnected || $away ) {
+		if ( $away ) {
 			/run -h "X:\path\to\VoiceAttack\VoiceAttack.exe" -nofocus -command "RatAttack.getInfoFromRatSignal"
 		}
 		else {
