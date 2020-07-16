@@ -39,6 +39,7 @@ them*.
 * `reload bindings` now has TTS feedback.
 * Old station search now also writes results to the log window.
 * New `open spansh` command.
+* Carrier lockdown announcements at 10, 5 and 2 minutes left.
 
 ### Changed
 
