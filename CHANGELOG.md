@@ -76,6 +76,8 @@ them*.
 * `RatAttack.setRatDuty` command. Accepts a boolean parameter. 
   `RatAttack.[enable;disable]RatDuty` still exist for calling from the command 
   line.
+* Will now inform you if an incoming rat case is within the permit locked 
+  starter area.
 
 ### Changed
 
