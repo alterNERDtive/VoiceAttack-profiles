@@ -30,9 +30,7 @@ Each of the profiles is documented in `docs/`.
   binds portable.
 * [EDDI](https://github.com/EDCD/EDDI) installed as a VoiceAttack plugin: 
   required for EliteDangerous, SpanshAttack and Streamattack, optional for 
-  RatAttack and SealAttack. If you are already running EDDI and want to keep the 
-  default speech responder active, you will need to re-enable it in your profile 
-  _after_ running the `<profile>.startup` command.
+  RatAttack and SealAttack.
 * [ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter): required 
   for SpanshAttack. **Make sure to [grab the pre-release 
   1.02](https://github.com/sc-pulgan/ED-NeutronRouter/releases/tag/1.02)** since 
