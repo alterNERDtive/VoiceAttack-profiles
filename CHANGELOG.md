@@ -1,3 +1,13 @@
+# devel
+
+## EliteDangerous 6.0
+
+### Fixed
+
+* `Carrier jump request` event now has TTS again.
+
+-----
+
 # 2.0 (2020-07-18)
 
 This is a HUGE one! :D
