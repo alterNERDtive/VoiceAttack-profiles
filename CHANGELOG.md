@@ -1,4 +1,4 @@
-# devel
+# 2.0 (2020-07-18)
 
 This is a HUGE one! :D
 
