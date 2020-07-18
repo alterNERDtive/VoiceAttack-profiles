@@ -5,6 +5,7 @@
 ### Fixed
 
 * `Carrier jump request` event now has TTS again.
+* (Hopefully) fixed timing on the carrier pre-lockdown warnings.
 
 -----
 
