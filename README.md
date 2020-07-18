@@ -49,44 +49,57 @@ a controller or HOTAS. Or racing wheel. Or Rock Band set. Or bananas.
 
 ## Installing ##
 
-Install the plugins listed in [Requirements](#Requirements).
+1. Install [VoiceAttack](https://voiceattack.com).
+1. Install the plugins listed in [Requirements](#Requirements).
+1. Download the profile package (`alterNERDtive-voiceattack-profiles.vax`) from 
+   the [release 
+   page](https://github.com/alterNERDtive/VoiceAttack-profiles/releases/latest) 
+   and import it as a profile into VoiceAttack. This will install all included 
+   profiles, the referenced sound files and the Python scripts.
 
-Download the profile package (`alterNERDtive-voiceattack-profiles.vax`) from the 
-[release page](https://github.com/alterNERDtive/VoiceAttack-profiles/releases/latest)
-and import it as a profile into VoiceAttack. This will install all 3 profiles, 
-the referenced sound files and the Python scripts.
+(You can also download the profiles individually from the `profiles/` folder on 
+github.)
 
-Last but not least, if you want to use my setup as-is, you need to go into the 
-profile options for the freshly imported `EliteDangerous` profile and import 
-`RatAttack` and `SpanshAttack`.
+## Getting Started ##
 
-You can also download the profiles individually from the `profiles/` folder on 
-github.
+You will want to create your own profile and then import the downloaded ones 
+into your custom profile. This way you can easily add commands (to your custom 
+profile), change commands (by copying them into your custom profile and editing 
+them) and change settings (by overriding them in your custom profile). Note that 
+most settings can be changed with voice commands. If you find any that cannot 
+but you feel should, please file an issue or report it on Discord.
 
-### Updating ###
+### Creating a Custom Profile ###
 
-If you use the profiles unchanged or just import them and override commands from 
-your main profile, updating should work just like installing: import the profile 
-package and tell VoiceAttack to overwrite commands when prompted.
+Hit the second button next to the profile dropdown menu and choose “Create new 
+Profile”. Give it a name and add some commands if you want to.
 
-### Major Version Changes ###
+You can also just keep using a profile you have already created.
 
-If a profile’s major version number changes (e.g. SpanshAttack 1.x.x to 2.0.0) 
-there _will_ be changes to the profile that do one or any amount of the 
-following:
+### Importing profiles ###
 
-* command names / command invocation have changed
-* configuration variable name or format have changed
-* features removed
-* _major_ features added
+First off, create a startup command. You can name it anything you want, but 
+I recommend calling it “startup” or similar, and to deactivate the “when i say” 
+checkbox in the command options to make sure you don’t accidentally run it via 
+voice. We will need this command later.
 
-**If you see a major version number change in the release notes, please pay 
-attention to said notes to know what you might have to change to get it to 
-work!**
+While editing the profile, hit the “Options” button. On the section labeled 
+“Include commands from other profiles”, hit the “…” button and add all profiles 
+(`EliteDangerous`, `RatAttack`, `SealAttack`, `SpanshAttack`, `StreamAttack`). 
+All commands defined in these profiles will be available to you. Make sure that 
+“EliteDangerous” is on top of the list.
 
-## Settings ##
+Now switch to the “Profile Exec” tab. Tick the “Execute a command each time this 
+profile is loaded” checkbox, and select the “startup” command you have created 
+earlier.
 
-All profiles will now load sane defaults if you haven’t changed anything. You no 
+Edit your startup command. Add a new action using “Other” → “VoiceAttack Action” 
+→ “Execute Another Command”. Choose “Execute by name (Advanced)” and enter 
+“EliteDangerous.startup”.
+
+### Settings ###
+
+All profiles will load sane defaults if you haven’t changed anything. You no 
 longer need to fiddle with the `startup` commands of each profile, instead you 
 can use voice commands to change settings! See the `docs/` and the 
 `_configuration` commands section of each profile.
@@ -98,35 +111,52 @@ for text variables.
 One caveat applies: settings will only be saved in the profile you have 
 selected, but be preserved if you switch around.
 
-## Using a Profile ##
+### Making changes ###
 
-Import the profile into VA, check the startup command for any settings you might 
-want to adjust, activate it, done.
-
-Oh, and you probably might want to check the corresponding README first.
-
-## Including a Profile ##
-
-If you are already using a custom profile (or want to use mine), you can include 
-others by going to the profile options and adding them to the “Include commands 
-form other profiles:” option.
-
-VoiceAttack does not execute configured startup commands for included profiles. 
-Hence, you’ll have to have your own profile have one that in turn runs the 
-included profiles’ startup commands. Main advantage is that you can just upgrade 
-the included profiles to newer versions without losing your own stuff.
+If you want to edit a command or add your own, _do not edit the profiles 
+directly_. Instead create commands in your custom profile, and copy commands you 
+want to change over to that before editing them. This will make sure no changes 
+are lost if you update the profiles.
 
 Because of limitations of VoiceAttack itself, only the first matching command 
-found will be executed, _including EDDI events_. That means you have to check 
-your profile against the imported ones for events they both handle. E.g. if you 
-already have a `((EDDI Message sent))` handler in your profile, you have to run 
-`RatAttack.EDDI Message sent` and `SealAttack.EDDI Message sent` from within it.
+found will be executed, _including EDDI events_. That means that if you create 
+commands to handle EDDI events, you are going to have to check the imported 
+profiles if they rely on these event handlers as well, and call them manually if 
+they do.
 
-You also have to do that if you include multiple profiles using the same events 
-(e.g. RatAttack + SealAttack), even if you don’t have the same event in the 
-including profile! If you want to make sure, manually create all EDDI Event 
-handlers used in imported profiles and have them call the corresponding 
-commands. See the Elite Dangerous profile for reference.
+E.g.  if you want to create a custom `((EDDI Message sent))` handler in your 
+profile, you will have to make it excute the `EliteDangerous.EDDI Message sent`, 
+`RatAttack.EDDI Message sent` and `SealAttack.EDDI Message sent` commands. 
+Otherwise stuff _will_ break.
+
+If you have no idea what the previous two paragraphs were about, you can most 
+likely just ignore them.
+
+## Updating ##
+
+If you have followed the steps outlined above closely, updating will be 
+exceedingly simple: just download the new VoiceAttack package, import, done!
+
+Should VoiceAttack report any conflicts, either tell it to overwrite the 
+commands or start from a clean slate by deleting the profiles manually and then 
+re-importing. Again, if you have followed the recommended installation 
+guidelines this will not cause you to lose any settings or changes you have 
+made.
+
+### Major Version Changes ###
+
+If a profile’s major version number changes (e.g. SpanshAttack 1.x.x to 2.0.0) 
+there _will_ be changes to the profile that include one or any amount of the 
+following changes:
+
+* command names / command invocation have changed
+* configuration variable name or format have changed
+* features removed
+* _major_ features added
+
+**If you see a major version number change in the release notes, please pay 
+attention to said notes to know what you might have to change to get it to 
+work!**
 
 ## Need Help / Want to Contribute? ##
 

@@ -11,7 +11,8 @@ Settings will only be saved in the profile you have selected when changing them,
 but be preserved if you switch around.
 
 This also means that importing the profiles and updating them has become easier 
-on you, the user.
+on you, the user. The README has been updated with the new and improved 
+installation, update and customization process.
 
 **Important**: I’ve made a lot of changes that _might_ break stuff if you just 
 import into/over your existing profiles. Please _delete_ (or rename) the ones 
