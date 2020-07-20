@@ -1,4 +1,4 @@
-# devel
+# 2.0.1 (2020-07-21)
 
 ## EliteDangerous 6.0.1
 
