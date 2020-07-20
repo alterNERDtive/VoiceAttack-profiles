@@ -1,12 +1,19 @@
 # devel
 
-## EliteDangerous 6.0
+## EliteDangerous 6.0.1
 
 ### Fixed
 
 * `Carrier jump request` event now has TTS again.
 * (Hopefully) fixed timing on the carrier pre-lockdown warnings.
 * `Carrier jump engaged` TTS is now working properly again.
+
+## RatAttack 4.0.1
+
+### Fixed
+
+* `distance to …` commands will now report about invalid system names instead of 
+  silently failing.
 
 -----
 
