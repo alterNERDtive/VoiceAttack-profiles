@@ -1,5 +1,14 @@
 # devel
 
+Updated the “Updating” instructions in the README. Sadly it’s a bit more 
+convoluted in practice than just “import the new profile package”.
+
+I have submitted a feature request on the VA formus to make it less of a hassle 
+in the future. Until there’s a better way I will include all profiles that have 
+been updated on the release pages in addition to the profile package. That way 
+you only have to go through the process of deleting the old profile, importing 
+the new one and fixing the includes for profiles that have actually changed.
+
 ## EliteDangerous 6.0.2
 
 ### Fixed
