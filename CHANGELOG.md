@@ -1,3 +1,14 @@
+# devel
+
+## EliteDangerous 6.0.2
+
+### Fixed
+
+* `Route details event` now only firing when it should, not on automated 
+  triggers like handing in missions (#46)
+
+-----
+
 # 2.0.1 (2020-07-21)
 
 ## EliteDangerous 6.0.1
