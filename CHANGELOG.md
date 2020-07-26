@@ -16,6 +16,12 @@ the new one and fixing the includes for profiles that have actually changed.
 * `Route details event` now only firing when it should, not on automated 
   triggers like handing in missions (#46)
 
+## RatAttack 4.0.2
+
+### Fixed
+
+* `RatAttack.enableRatDuty` has TTS again.
+
 -----
 
 # 2.0.1 (2020-07-21)
