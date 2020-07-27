@@ -16,6 +16,12 @@ the new one and fixing the includes for profiles that have actually changed.
 * `Route details event` now only firing when it should, not on automated 
   triggers like handing in missions (#46)
 
+### Removed
+
+* `((EDDI Commander continued))` since that event is only used in StreamAttack 
+  anyway, so doesn’t need multiple handlers loaded. Shouldn’t really change 
+  anything.
+
 ## RatAttack 4.0.2
 
 ### Fixed
