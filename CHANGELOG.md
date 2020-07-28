@@ -19,6 +19,8 @@ the new one and fixing the includes for profiles that have actually changed.
 
 * `Route details event` now only firing when it should, not on automated 
   triggers like handing in missions (#46)
+* `Route details event` now with correct escaping of Cottle syntax (no more “P 
+  \<system\>” TTS)
 
 ### Removed
 
