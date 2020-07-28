@@ -11,6 +11,10 @@ the new one and fixing the includes for profiles that have actually changed.
 
 ## EliteDangerous 6.0.2
 
+### Added
+
+* Parameterized `EliteDangerous.openSystemOnEdsm` command
+
 ### Fixed
 
 * `Route details event` now only firing when it should, not on automated 
@@ -21,6 +25,8 @@ the new one and fixing the includes for profiles that have actually changed.
 * `((EDDI Commander continued))` since that event is only used in StreamAttack 
   anyway, so doesn’t need multiple handlers loaded. Shouldn’t really change 
   anything.
+* `EliteDangerous.openCurrentSystemOnEdsm`, 
+  `EliteDangerous.openCopiedSystemOnEdsm`
 
 ## RatAttack 4.0.2
 
