@@ -1,5 +1,10 @@
 # devel
 
+**Note**: Since 2.0.1 you are probably seeing a warning about the profiles 
+having been created with a newer VoiceAttack version. I am currently alpha 
+testing a VoiceAttack build containing a bug fix. You should be able to safely 
+ignore that message :)
+
 Updated the “Updating” instructions in the README. Sadly it’s a bit more 
 convoluted in practice than just “import the new profile package”.
 
