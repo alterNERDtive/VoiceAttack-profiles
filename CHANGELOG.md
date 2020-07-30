@@ -64,6 +64,7 @@ SealAttack up to date
 * `Carrier jump request` event now has TTS again.
 * (Hopefully) fixed timing on the carrier pre-lockdown warnings.
 * `Carrier jump engaged` TTS is now working properly again.
+* `how many <thing> do i have` working properly now? again? W/e, works.
 
 ## RatAttack 4.0.1
 
