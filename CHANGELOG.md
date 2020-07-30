@@ -41,6 +41,18 @@ the new one and fixing the includes for profiles that have actually changed.
 
 * `RatAttack.enableRatDuty` has TTS again.
 
+## SealAttack
+
+**Has been removed for now.**
+
+You can still your current version around if you want to. It’s based on a very 
+old version of RatAttack and the Seals IRC is still coming “when it’s done”, so 
+currently I don’t see a good reason to keep it.
+
+When the Seals IRC becomes a thing, I’ll reintroduce this profile, based on the 
+then-current version of RatAttack. That’s less work than trying to get current 
+SealAttack up to date
+
 -----
 
 # 2.0.1 (2020-07-21)

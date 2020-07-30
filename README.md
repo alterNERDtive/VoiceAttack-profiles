@@ -15,8 +15,6 @@ Each of the profiles is documented in `docs/`.
   inspiration to create your own stuff.
 * [RatAttack](docs/RatAttack.md): profile for interactions with the Fuel Rats’ 
   IRC server.
-* [SealAttack](docs/SealAttack.md): profile for interactions with the Hull 
-  Seals’ IRC server. (**VERY early alpha stage.**)
 * [SpanshAttack](docs/SpanshAttack.md): profile to plot and follow trips along 
   the neutron highway using [spansh](https://spansh.co.uk/plotter).
 * [StreamAttack](docs/StreamAttack.md): profile for writing various things to 
@@ -30,14 +28,14 @@ Each of the profiles is documented in `docs/`.
   binds portable.
 * [EDDI](https://github.com/EDCD/EDDI) installed as a VoiceAttack plugin: 
   required for EliteDangerous, SpanshAttack and Streamattack, optional for 
-  RatAttack and SealAttack.
+  RatAttack.
 * [ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter): required 
   for SpanshAttack. **Make sure to [grab the pre-release 
   1.02](https://github.com/sc-pulgan/ED-NeutronRouter/releases/tag/1.02)** since 
   1.01 has a bug with a hardcoded 50 ly jump range.
 * [elite-scripts](https://github.com/alterNERDtive/elite-scripts): required for 
-  EliteDangerous, SpanshAttack and StreamAttack, recommended for RatAttack and 
-  SealAttack (included).
+  EliteDangerous, SpanshAttack and StreamAttack, recommended for RatAttack 
+  (included).
 
 Additionally, you need to have keyboard binds setup at least as secondary 
 bindings in Elite’s controls options. VA _cannot_ “push” joystick buttons for 
@@ -83,8 +81,8 @@ voice. We will need this command later.
 
 While editing the profile, hit the “Options” button. On the section labeled 
 “Include commands from other profiles”, hit the “…” button and add all profiles 
-(`EliteDangerous`, `RatAttack`, `SealAttack`, `SpanshAttack`, `StreamAttack`). 
-All commands defined in these profiles will be available to you. Make sure that 
+(`EliteDangerous`, `RatAttack`, `SpanshAttack`, `StreamAttack`).  All commands 
+defined in these profiles will be available to you. Make sure that 
 “EliteDangerous” is on top of the list.
 
 Now switch to the “Profile Exec” tab. Tick the “Execute a command each time this 
@@ -123,9 +121,8 @@ profiles if they rely on these event handlers as well, and call them manually if
 they do.
 
 E.g.  if you want to create a custom `((EDDI Message sent))` handler in your 
-profile, you will have to make it excute the `EliteDangerous.EDDI Message sent`, 
-`RatAttack.EDDI Message sent` and `SealAttack.EDDI Message sent` commands. 
-Otherwise stuff _will_ break.
+profile, you will have to make it excute the `EliteDangerous.EDDI Message sent` 
+and `RatAttack.EDDI Message sent` commands.  Otherwise stuff _will_ break.
 
 If you have no idea what the previous two paragraphs were about, you can most 
 likely just ignore them.
