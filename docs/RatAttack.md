@@ -112,6 +112,11 @@ IRC client or it doesn’t support copying the control characters in the ratsign
 that the profile uses to split the information, either switch to AdiIRC or bribe 
 me to include some other way to get case data into VoiceAttack.
 
+**Note**: If you are running VoiceAttack as admin you need to run your IRC 
+client as admin, too! Otherwise it can’t talk to VoiceAttack for security 
+reasons. You really should _not_ run VoiceAttack with elevated privileges 
+though. Or anything.
+
 #### Internal Case List ####
 
 If you have your IRC client setup properly, VoiceAttack will hold a list with 
