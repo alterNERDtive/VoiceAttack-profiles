@@ -215,7 +215,7 @@ system. I will look into making this more elegant to change in the future.
 The profile supports logging a bunch of stuff to the VoiceAttack event log. By 
 default, logging is concise and constrained to basically error messages.
 
-If you need more logging (usually for debugging purposes), say `enable logging`.  
+If you need more logging (usually for debugging purposes), say `enable logging`. 
 If you want to enable verbose logging _by default_, call the 
 `Logging.enableLogging` command from your custom profile’s `startup` command.
 
@@ -255,7 +255,7 @@ for text variables.
   recognition and you accidentally post the wrong thing. Default: true.
 * `RatAttack.autoCloseCase` (boolean): whether or not to automatically close an 
   open rat case on calling “fuel+”. Default: false.
-* `RatAttack.onDuty` (boolean): whether or not you are currently on rat duty.  
+* `RatAttack.onDuty` (boolean): whether or not you are currently on rat duty. 
   Default: true.
 * `RatAttack.platforms` (string): the platforms you want to be informed of 
   incoming cases for. If you are on console, you can still have VoiceAttack 

@@ -61,7 +61,7 @@ When including the profile, be sure to
   from that one.
 * Make sure all EDDI events that SpanshAttack needs are correctly handled. For 
   all events used in SpanshAttack that you already have handlers for in your 
-  profile, you’ll have to include a call to `SpanshAttack.<event name>`. E.g.  
+  profile, you’ll have to include a call to `SpanshAttack.<event name>`. E.g. 
   for “EDDI Jumped”, call `SpanshAttack.EDDI Jumped` by name from your `((EDDI 
   Jumped))` command.
 * (Optional) Have a `SpanshAttack.getShipRange` command in your profile to 
@@ -177,7 +177,7 @@ VoiceAttack :)
 The profile supports logging a bunch of stuff to the VoiceAttack event log. By 
 default, logging is concise and constrained to basically error messages.
 
-If you need more logging (usually for debugging purposes), say `enable logging`.  
+If you need more logging (usually for debugging purposes), say `enable logging`. 
 If you want to enable verbose logging _by default_, call the 
 `Logging.enableLogging` command from your custom profile’s `startup` command.
 
@@ -222,7 +222,7 @@ for text variables.
   false.
 * `SpanshAttack.copyWaypointToClipboard` (boolean): whether to copy the next 
   waypoint into the Windows clipboard for use in other programs. Default: false.
-* `python.scriptPath` (string): the path you put the Python scripts in.  
+* `python.scriptPath` (string): the path you put the Python scripts in. 
   Default: “{VA_DIR}\Sounds\scripts”.
 
 ### Other Variables ###

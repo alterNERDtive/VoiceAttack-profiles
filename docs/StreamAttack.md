@@ -37,7 +37,7 @@ When including the profile, be sure to
   from that one.
 * Make sure all EDDI events that StreamAttack needs are correctly handled. For 
   all events used in StreamAttack that you already have handlers for in your 
-  profile, you’ll have to include a call to `StreamAttack.<event name>`. E.g.  
+  profile, you’ll have to include a call to `StreamAttack.<event name>`. E.g. 
   for “EDDI Jumped”, call `StreamAttack.EDDI Jumped` by name from your `((EDDI 
   Jumped))` command.
 
@@ -84,7 +84,7 @@ When including the profile, be sure to
 The profile supports logging a bunch of stuff to the VoiceAttack event log. By 
 default, logging is concise and constrained to basically error messages.
 
-If you need more logging (usually for debugging purposes), say `enable logging`.  
+If you need more logging (usually for debugging purposes), say `enable logging`. 
 If you want to enable verbose logging _by default_, call the 
 `Logging.enableLogging` command from your custom profile’s `startup` command.
 
@@ -114,7 +114,7 @@ for text variables.
 
 ### Other Variables ###
 
-These variables can be used to get information about the current neutron route.  
+These variables can be used to get information about the current neutron route. 
 Please do not set them manually and / or from outside the StreamAttack profile.
 
 * `StreamAttack.Elite.jumpTarget` (string): the current jump target.
