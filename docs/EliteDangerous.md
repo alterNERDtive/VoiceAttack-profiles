@@ -416,6 +416,15 @@ manipulating some UI element(s).
   prompt you to restart VoiceAttack when the download has finished to import the 
   updated profiles.
 
+### Logging ###
+
+The profile supports logging a bunch of stuff to the VoiceAttack event log. By 
+default, logging is concise and constrained to basically error messages.
+
+If you need more logging (usually for debugging purposes), say `enable logging`.  
+If you want to enable verbose logging _by default_, call the 
+`Logging.enableLogging` command from your custom profile’s `startup` command.
+
 ### Configuration Variables ###
 
 There are a bunch of configuration variables. You should not overwrite those 

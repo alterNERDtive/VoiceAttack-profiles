@@ -216,6 +216,15 @@ change the “target” window of the `RatAttack.sendToFuelrats` and
 `RatAttack.sendToRatchat` commands to reflect the actual window titles on your 
 system. I will look into making this more elegant to change in the future.
 
+## Logging ##
+
+The profile supports logging a bunch of stuff to the VoiceAttack event log. By 
+default, logging is concise and constrained to basically error messages.
+
+If you need more logging (usually for debugging purposes), say `enable logging`.  
+If you want to enable verbose logging _by default_, call the 
+`Logging.enableLogging` command from your custom profile’s `startup` command.
+
 ## Exposed Variables ##
 
 The following Variables are _global_ and thus readable (and writeable! Please 

@@ -48,6 +48,8 @@ README. Yay!
 
 * Is now set up to overwrite an old version on import. See “Updating” 
   instructions in the README.
+* All logging to the VoiceAttack event log is now properly encapsuled. See the 
+  docs for instructions on how to enable logging.
 
 ### Fixed
 
@@ -74,6 +76,8 @@ README. Yay!
 * Passing RATSIGNALs via pipe file is now considered deprecated and will be 
   replaced by passing it as a parameter on command invocation in a future 
   version. Later down the line pipe file support will be removed.
+* All logging to the VoiceAttack event log is now properly encapsuled. See the 
+  docs for instructions on how to enable logging.
 
 ### Fixed
 
@@ -98,6 +102,8 @@ SealAttack up to date
 
 * Is now set up to overwrite an old version on import. See “Updating” 
   instructions in the README.
+* All logging to the VoiceAttack event log is now properly encapsuled. See the 
+  docs for instructions on how to enable logging.
 
 ### Fixed
 
@@ -109,6 +115,8 @@ SealAttack up to date
 
 * Is now set up to overwrite an old version on import. See “Updating” 
   instructions in the README.
+* All logging to the VoiceAttack event log is now properly encapsuled. See the 
+  docs for instructions on how to enable logging.
 
 ### Fixed
 

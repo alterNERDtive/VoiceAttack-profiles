@@ -172,6 +172,15 @@ The profile contains a lot of helper functions that get called by the
 aforementioned commands. Have a look around, maybe learn something about 
 VoiceAttack :)
 
+## Logging ##
+
+The profile supports logging a bunch of stuff to the VoiceAttack event log. By 
+default, logging is concise and constrained to basically error messages.
+
+If you need more logging (usually for debugging purposes), say `enable logging`.  
+If you want to enable verbose logging _by default_, call the 
+`Logging.enableLogging` command from your custom profile’s `startup` command.
+
 ## Exposed Variables ##
 
 The following Variables are _global_ and thus readable (and writeable! Please 
