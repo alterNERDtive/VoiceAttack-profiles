@@ -1,24 +1,51 @@
 # devel
 
+A bug fix release turned major version update. That’s something new.
+
 **Note**: Since 2.0.1 you are probably seeing a warning about the profiles 
 having been created with a newer VoiceAttack version. I am currently alpha 
 testing a VoiceAttack build containing a bug fix. You should be able to safely 
 ignore that message :)
 
-Updated the “Updating” instructions in the README. Sadly it’s a bit more 
-convoluted in practice than just “import the new profile package”.
+**BREAKING CHANGE IN ALL PROFILES**:
 
-I have submitted a feature request on the VA formus to make it less of a hassle 
-in the future. Until there’s a better way I will include all profiles that have 
-been updated on the release pages in addition to the profile package. That way 
-you only have to go through the process of deleting the old profile, importing 
-the new one and fixing the includes for profiles that have actually changed.
+The profiles now contain flags that will make them overwrite the current version 
+if you import them, streamlining the update process and making it work like 
+I expected it to work in the first place.
 
-## EliteDangerous 6.0.2
+In order for this to work properly in the future, you need to do the following 
+steps _once_ when updating to this version:
+
+1. Keep track of which of your profiles import any of my profiles and which 
+   ones.
+1. Delete all of my profiles from VoiceAttack (`EliteDangerous`, `RatAttack`, 
+   `SpanshAttack`, `StreamAttack`). Technically also `SealAttack`, but since 
+   I am not currently including this you might want to keep it around if you are 
+   actually using it.
+1. Import the updated profiles, either manually or in the way described under 
+   “Updating” in the README.
+1. Fix all profiles that include the updated profiles. You are going to have to 
+   re-add the includes (“Edit Profile” → “Options” → “Include commands from
+   other profiles”).
+1. If you haven’t yet created your own custom profile and imported mine there, 
+   a) do that now for the future and b) you’ll have to re-configure any settings 
+   you have changed either through voice commands or fiddling with commands 
+   manually (don’t do the latter, please).
+
+In the future you will be able to update to new version of my profiles by simply 
+dropping the profile package into your VoiceAttack’s `\Apps\Import` subfolder, 
+as described in the README.
+
+## EliteDangerous 7.0
 
 ### Added
 
 * Parameterized `EliteDangerous.openSystemOnEdsm` command
+
+### Changed
+
+* Is now set up to overwrite an old version on import. See “Updating” 
+  instructions in the README.
 
 ### Fixed
 
@@ -35,7 +62,12 @@ the new one and fixing the includes for profiles that have actually changed.
 * `EliteDangerous.openCurrentSystemOnEdsm`, 
   `EliteDangerous.openCopiedSystemOnEdsm`
 
-## RatAttack 4.0.2
+## RatAttack 5.0
+
+### Changed
+
+  * Is now set up to overwrite an old version on import. See “Updating” 
+  instructions in the README.
 
 ### Fixed
 
@@ -52,6 +84,20 @@ currently I don’t see a good reason to keep it.
 When the Seals IRC becomes a thing, I’ll reintroduce this profile, based on the 
 then-current version of RatAttack. That’s less work than trying to get current 
 SealAttack up to date
+
+## SpanshAttack 6.0
+
+### Changed
+
+* Is now set up to overwrite an old version on import. See “Updating” 
+instructions in the README.
+
+## StreamAttack 1.0
+
+### Changed
+
+* Is now set up to overwrite an old version on import. See “Updating” 
+instructions in the README.
 
 -----
 

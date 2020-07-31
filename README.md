@@ -129,26 +129,24 @@ likely just ignore them.
 
 ## Updating ##
 
-Sadly VoiceAttack doesn’t let you overwrite an existing profile when you import 
-a different (newer) version of it. So you’ll have to follow these steps:
+To make sure that a new version of the profiles actually replaces the old one, 
+you can’t simply import them again. That would import them as additional copies 
+(“\<profile\>-1”).
 
-1. Look at the release page and see which profiles have been updated (they’ll 
-   also be attached as single `.vap` files to the release)
-1. Delete these profiles from your VoiceAttack.
-1. Import the updated profiles.
-1. Fix all profiles that include the updated profiles. You are going to have to 
-   re-add the includes (“Edit Profile” → “Options” → “Include commands from 
-   other profiles”).
+Instead you’ll have to drop the profile package into the `\Apps\Import` 
+subfolder of your VoiceAttack installation directory and re-start VoiceAttack. 
+It will prompt you to import the profile package. I have added an “open 
+voiceattack import folder” command to all profiles for your convenience!
 
-You could also delete _all_ the profiles, then re-import the entire release 
-package (the `.vax` file). You will still have to fix the includes.
-
-If you have followed the installation instructions above, you will not lose any 
-of the changes you have made since they will be in a separate profile. **Do not 
-delete** that profile!
+**Note**: This will make VoiceAttack run with admin privileges. If you do not 
+usually run VoiceAttack with admin privileges, do _not_ have it start 
+VoiceAttack for you after importing the profiles. It will keep running with 
+elevated privileges. Instead re-start it manually. If you are not sure if you 
+are running with elevated privileges check the “VoiceAttack Information” thing 
+mentioned above. It will include a line about it if it does.
 
 If you delete anything by accident or something didn’t work out quite like you 
-intended, you can find backups of VoiceAttacks data file in 
+intended, you can find backups of VoiceAttack’s data file in 
 `%AppData%\VoiceAttack\Backup`. They get saved every time you change settings or 
 profiles. To restore, close VoiceAttack, find the file with the right timestamp 
 just before you made the changes, copy it to the parent directory, remove the 
