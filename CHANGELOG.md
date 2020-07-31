@@ -32,9 +32,9 @@ steps _once_ when updating to this version:
    you have changed either through voice commands or fiddling with commands 
    manually (don’t do the latter, please).
 
-In the future you will be able to update to new version of my profiles by simply 
-dropping the profile package into your VoiceAttack’s `\Apps\Import` subfolder, 
-as described in the README.
+You will only have to do this once. In the future you will also be able to make 
+use of the new, improved and basically automated update process described in the 
+README. Yay!
 
 ## EliteDangerous 7.0
 

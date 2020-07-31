@@ -408,6 +408,14 @@ manipulating some UI element(s).
   Probably needs to be adjusted if you are not playing with Neo2 keyboard layout 
   :)
 
+### Update Commands ###
+
+* `check for profiles update`: Does just that. Is also automatically run each 
+  time the profile is started.
+* `download profiles update`: Downloads a profiles update if applicable. Will 
+  prompt you to restart VoiceAttack when the download has finished to import the 
+  updated profiles.
+
 ### Configuration Variables ###
 
 There are a bunch of configuration variables. You should not overwrite those 

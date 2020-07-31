@@ -129,28 +129,30 @@ likely just ignore them.
 
 ## Updating ##
 
-To make sure that a new version of the profiles actually replaces the old one, 
-you can’t simply import them again. That would import them as additional copies 
-(“\<profile\>-1”).
+### The Best™ Way ###
 
-Instead you’ll have to drop the profile package into the `\Apps\Import` 
-subfolder of your VoiceAttack installation directory and re-start VoiceAttack. 
-It will prompt you to import the profile package. I have added an “open 
-voiceattack import folder” command to all profiles for your convenience!
+Say “check for profiles update”. If it finds one, say “download profiles 
+update”. Restart VoiceAttack.
 
-**Note**: This will make VoiceAttack run with admin privileges. If you do not 
+There will also be an update check every time `EliteDangerous.startup` is run.
+
+### The Manual Way ###
+
+If you don’t like automation or do not use all provided profiles, you’ll have to 
+update semi-manually.
+
+Say “open VoiceAttack import folder”. Download the current release profile 
+package, drop it in there. Restart VoiceAttack.
+
+### Note about Admin Privileges ###
+
+The update process will run VoiceAttack with admin privileges. If you do not 
 usually run VoiceAttack with admin privileges, do _not_ have it start 
-VoiceAttack for you after importing the profiles. It will keep running with 
-elevated privileges. Instead re-start it manually. If you are not sure if you 
-are running with elevated privileges check the “VoiceAttack Information” thing 
-mentioned above. It will include a line about it if it does.
-
-If you delete anything by accident or something didn’t work out quite like you 
-intended, you can find backups of VoiceAttack’s data file in 
-`%AppData%\VoiceAttack\Backup`. They get saved every time you change settings or 
-profiles. To restore, close VoiceAttack, find the file with the right timestamp 
-just before you made the changes, copy it to the parent directory, remove the 
-old “VoiceAttack.dat” file and rename the backup to that.
+VoiceAttack for you after importing the profiles update. It will keep running 
+with elevated privileges. Instead restart it manually. If you are not sure if 
+you are running with elevated privileges check the “VoiceAttack Information” 
+dialog in VoiceAttack General settings → “System Info >”. It will include a line 
+about running with admin prvileges if it does.
 
 ### Major Version Changes ###
 
