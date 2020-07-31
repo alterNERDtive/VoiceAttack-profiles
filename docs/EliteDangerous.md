@@ -443,6 +443,8 @@ for text variables.
   irrelevant to you. Default: false.
 * `EliteDangerous.enableCarrierAnnouncements` (boolean): whether or not to 
   process fleet carrier events. Default: true.
+* `EliteDangerous.enableAutoUpdateCheck` (boolean): whether or not to 
+  automatically check for updates on profile startup. Default: true.
 * `EliteDangerous.flightAssistOff` (boolean): whether to automatically toggle 
   FlightAssist off on liftoff. Default: true.
 * `EliteDangerous.hyperspaceDethrottle` (boolean): same thing as the SC assist 

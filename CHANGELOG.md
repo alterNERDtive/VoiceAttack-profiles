@@ -41,6 +41,8 @@ README. Yay!
 ### Added
 
 * Parameterized `EliteDangerous.openSystemOnEdsm` command
+* `EliteDangerous.enableAutoUpdateCheck` setting. Invoke `[enable;disable] auto 
+  update check` to change.
 
 ### Changed
 
