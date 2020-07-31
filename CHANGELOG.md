@@ -69,8 +69,11 @@ README. Yay!
 
 ### Changed
 
-  * Is now set up to overwrite an old version on import. See “Updating” 
+* Is now set up to overwrite an old version on import. See “Updating” 
   instructions in the README.
+* Passing RATSIGNALs via pipe file is now considered deprecated and will be 
+  replaced by passing it as a parameter on command invocation in a future 
+  version. Later down the line pipe file support will be removed.
 
 ### Fixed
 
@@ -94,7 +97,7 @@ SealAttack up to date
 ### Changed
 
 * Is now set up to overwrite an old version on import. See “Updating” 
-instructions in the README.
+  instructions in the README.
 
 ### Fixed
 
@@ -105,7 +108,7 @@ instructions in the README.
 ### Changed
 
 * Is now set up to overwrite an old version on import. See “Updating” 
-instructions in the README.
+  instructions in the README.
 
 ### Fixed
 

@@ -66,6 +66,12 @@ through IRC. When off duty, it won’t.
 
 #### Getting Case Data From IRC ####
 
+**Note**: Passing RATSIGNALs through the pipe file is now considered deprecated 
+and will be removed in a future version in favor of passing it as a parameter 
+when invoking the VoiceAttack command. This is currently an experimental feature 
+in VoiceAttack β 1.8.6.5. This section will be updated once it is working 
+reliably.
+
 You can setup your IRC client to pass incoming RATSIGNALS to VoiceAttack by 
 writing them to a file (`%appdata%\Ratattack\ratsignal.pipe`), then calling the 
 appropriate command (`RatAttack.announceCaseFromRatsignal` for notification, 
