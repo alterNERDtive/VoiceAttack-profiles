@@ -53,6 +53,7 @@ README. Yay!
   triggers like handing in missions (#46)
 * `Route details event` now with correct escaping of Cottle syntax (no more “P 
   \<system\>” TTS)
+* TTS now handles systems containing `'` correctly. (#49)
 
 ### Removed
 
@@ -72,6 +73,7 @@ README. Yay!
 ### Fixed
 
 * `RatAttack.enableRatDuty` has TTS again.
+* TTS now handles systems containing `'` correctly. (#49)
 
 ## SealAttack
 
@@ -92,12 +94,20 @@ SealAttack up to date
 * Is now set up to overwrite an old version on import. See “Updating” 
 instructions in the README.
 
+### Fixed
+
+* TTS now handles systems containing `'` correctly. (#49)
+
 ## StreamAttack 1.0
 
 ### Changed
 
 * Is now set up to overwrite an old version on import. See “Updating” 
 instructions in the README.
+
+### Fixed
+
+* TTS now handles systems containing `'` correctly. (#49)
 
 -----
 
