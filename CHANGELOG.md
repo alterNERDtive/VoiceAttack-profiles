@@ -1,6 +1,9 @@
-# devel
+# 3.0 (2020-08-03)
 
 A bug fix release turned major version update. That’s something new.
+
+The interesting changes are auto-updates and re-worked logging. Plus a bunch of 
+fixes, as usual.
 
 **Note**: Since 2.0.1 you are probably seeing a warning about the profiles 
 having been created with a newer VoiceAttack version. I am currently alpha 
