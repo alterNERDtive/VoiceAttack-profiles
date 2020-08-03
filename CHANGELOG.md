@@ -1,3 +1,13 @@
+# devel
+
+## EliteDangerous 7.0.1
+
+### Added
+
+* `open profiles change log`: opens `CHANGELOG.md` on Github.
+
+-----
+
 # 3.0 (2020-08-03)
 
 A bug fix release turned major version update. That’s something new.

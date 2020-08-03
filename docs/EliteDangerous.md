@@ -415,6 +415,7 @@ manipulating some UI element(s).
 * `download profiles update`: Downloads a profiles update if applicable. Will 
   prompt you to restart VoiceAttack when the download has finished to import the 
   updated profiles.
+* `open profiles change log`: Opens `CHANGELOG.md` on Github.
 
 ## Logging ##
 
