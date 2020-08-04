@@ -2,6 +2,11 @@
 
 ## EliteDangerous 7.0.1
 
+### Changed
+
+* Update check logging: now a) always logs, even if logging is off and b) logs 
+  the command you need to run, in case you miss the TTS.
+
 ### Added
 
 * `open profiles change log`: opens `CHANGELOG.md` on Github.
