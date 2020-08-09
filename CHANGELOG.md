@@ -11,6 +11,14 @@
 
 * `open profiles change log`: opens `CHANGELOG.md` on Github.
 
+## SpanshAttack 6.0.1
+
+### Fixed
+
+* Plotting to systems not in the DB works again; copypasta fixed in 
+  `SpanshAttack.getNearestSystem` and typo in `SpanshAttack.plotNeutronRoute`. 
+  (#53)
+
 -----
 
 # 3.0 (2020-08-03)
