@@ -102,9 +102,9 @@ are several levels of fallback handling to find a system that is.
 
 Generally you should almost never be asked to input coordinates manually. If 
 EDTS provides coordinates with an accuracy that is worse than ±100 ly per axis, 
-you will be prompetd to make sure you are going roughly to the right 
-coordinates. You will find the system that is used for plotting, its coordinates 
-and the accuracy in VoiceAttack’s log window.
+you will be prompted to make sure you are going roughly to the right 
+coordinates.  You will find the system that is used for plotting, its 
+coordinates and the accuracy in VoiceAttack’s log window.
 
 ### Neutron Jumping ###
 
@@ -113,7 +113,7 @@ automatically be taken to the galaxy map with the next waypoint selected.
 
 In case you have disabled auto-plotting to the next waypoint, manually invoke 
 the `SpanshAttack.targetNextNeutronWaypoint` command by voice (`[target;] next 
-neutron [waypoint; way point]` or calling it from another command.
+neutron [waypoint; way point]`) or calling it from another command.
 
 Additionally, you can use the `SpanshAttack.copyNextNeutronWaypoint` 
 / `[get;copy] next neutron [waypoint;way point]` command to copy the next 
