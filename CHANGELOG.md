@@ -10,6 +10,8 @@
 ### Added
 
 * `open profiles change log`: opens `CHANGELOG.md` on Github.
+* Cancelling a carrier jump now also fires an `((EDDI Carrier cooldown))` event 
+  at the appropriate time.
 
 ## SpanshAttack 6.0.1
 
