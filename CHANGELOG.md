@@ -15,6 +15,14 @@
 
 ## SpanshAttack 6.0.1
 
+### Changed
+
+* Now gets the next waypoint upon jumpin instead of supercharge; that means if 
+  you have copying to clipboard enabled and auto-plotting disabled, you can 
+  shave off some precious seconds by plotting the next waypoint while in the 
+  cone instead of waiting for the auto-plot that would happen a couple seconds 
+  later.
+
 ### Fixed
 
 * Plotting to systems not in the DB works again; copypasta fixed in 
