@@ -15,6 +15,11 @@
 
 ## SpanshAttack 6.0.1
 
+### Added
+
+* Now gives TTS feedback on starting to plot a neutron route since looking up 
+  the system might take a few seconds.
+
 ### Changed
 
 * Now gets the next waypoint upon jumpin instead of supercharge; that means if 
