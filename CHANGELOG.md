@@ -1,11 +1,13 @@
 # devel
 
-## EliteDangerous 7.0.1
+## EliteDangerous 7.1
 
 ### Changed
 
-* Update check logging: now a) always logs, even if logging is off and b) logs 
-  the command you need to run, in case you miss the TTS.
+* Update check logging: now a) always logs when an update is found, even if 
+  logging is off and b) logs the command you need to run, in case you miss the 
+  TTS.
+* Update check logging: now logs the current version when no update is found.
 
 ### Added
 
