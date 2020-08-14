@@ -7,13 +7,15 @@
 * Update check logging: now a) always logs when an update is found, even if 
   logging is off and b) logs the command you need to run, in case you miss the 
   TTS.
-* Update check logging: now logs the current version when no update is found.
 
 ### Added
 
 * `open profiles change log`: opens `CHANGELOG.md` on Github.
 * Cancelling a carrier jump now also fires an `((EDDI Carrier cooldown))` event 
   at the appropriate time.
+* Update check logging: now logs the current version when no update is found. 
+  (#58)
+* `target nearest …` commands now have a `find nearest` variation (#55)
 
 ## SpanshAttack 6.0.1
 

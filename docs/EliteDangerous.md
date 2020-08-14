@@ -321,13 +321,15 @@ powered by awesome EDDI so I don’t have to do the work myself!
 * `plot course;[target;] next [waypoint;way point]`: Plots a course to the 
   system set in `~~system` or the one in your clipboard. The former way is 
   usually used by other commands to not interfere with your clipboard.
-* `target nearest [encoded;manufactured;raw] material trader`: Targets the 
-  nearest respective material trader.
-* `target nearest [guardian;human] tech broker`: Targets the nearest respective 
+* `[find;target] nearest [encoded;manufactured;raw] material trader`: Targets 
+  the nearest respective material trader.
+* `[find;target] nearest [guardian;human] tech broker`: Targets the nearest respective 
   tech broker.
-* `target nearest [interstellar factor;mission system;scoopable star]`: Well, 
+* `[find;target] nearest [interstellar factor;mission system;scoopable star]`: Well, 
   you know the drill by now.
-* `target [<system>]`: Targets the given system on the galaxy map. There’s 
+* `[find;target] nearest mission system`: Targets the nearest system that has a mission 
+  target.
+* `[find;target] [<system>]`: Targets the given system on the galaxy map. There’s 
   a bunch in there, the list is easily extensible. Drop me a note if you want 
   something included.
 
