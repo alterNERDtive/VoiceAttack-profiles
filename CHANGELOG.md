@@ -17,6 +17,12 @@
   (#58)
 * `target nearest …` commands now have a `find nearest` variation (#55)
 
+### Fixed
+
+* `Discovery scan` event now checks if EDSM body count has been refreshed since 
+  the last jump instead of referring to last system’s when EDSM is slow to 
+  respond.
+
 ## SpanshAttack 6.0.1
 
 ### Added
