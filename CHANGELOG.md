@@ -7,6 +7,8 @@
 * Update check logging: now a) always logs when an update is found, even if 
   logging is off and b) logs the command you need to run, in case you miss the 
   TTS.
+* Limited `target nearest…` commands to a single concurrently running route 
+  search. Also added some feedback TTS. (#59)
 
 ### Added
 
