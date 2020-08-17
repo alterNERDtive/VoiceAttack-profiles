@@ -9,7 +9,7 @@
   TTS.
 * Limited `target nearest…` commands to a single concurrently running route 
   search. Also added some feedback TTS. (#59)
-* Moved R2R announcements to the `Jumped` event. No discovery scan needed!
+* Moved R2R announcements to the `Jumped` event. No discovery scan needed! (#61)
 
 ### Added
 
@@ -19,6 +19,8 @@
 * Update check logging: now logs the current version when no update is found. 
   (#58)
 * `target nearest …` commands now have a `find nearest` variation (#55)
+* `[bodies;whats;what is] left to [map;be mapped;scan]` has some more words now! 
+  (#54)
 
 ### Fixed
 
