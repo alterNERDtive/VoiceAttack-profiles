@@ -9,6 +9,7 @@
   TTS.
 * Limited `target nearest…` commands to a single concurrently running route 
   search. Also added some feedback TTS. (#59)
+* Moved R2R announcements to the `Jumped` event. No discovery scan needed!
 
 ### Added
 

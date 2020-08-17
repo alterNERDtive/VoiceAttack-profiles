@@ -163,8 +163,6 @@ Announces the number of bodies (and non-body signals) found in the system. Also
 compares the number of bodies to the amount reported by EDSM (requires Python 
 scripts).
 
-Last but not least tells you about planets worth scanning if you are on the R2R.
-
 #### Docked ####
 
 Automatically gets your ship into the hangar and opens station services.
@@ -192,6 +190,8 @@ Sets your ship to full throttle immediately after you have supercharged.
 * gets stations with outdated data (older than 1 year) from Spansh’s API
 * if you haven’t visited the systems, starts a discovery scan (see the discovery 
   scan command)
+* last but not least tells you about planets worth scanning if you are on the 
+  R2R
 
 #### Liftoff ####
 
