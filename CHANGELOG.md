@@ -1,4 +1,12 @@
-# devel
+# 3.1 (2020-08-18)
+
+This is going to be the last release before I do a bunch of refactoring 
+… including writing some VoiceAttack plugin stuff. Should make a bunch of things 
+easier to tweak, and also allow you to more easily mix&match profiles, 
+especially without using the current de-facto main profile `EliteDangerous`.
+
+So, just as a heads up, the next version might require some manual fiddling 
+again :)
 
 ## EliteDangerous 7.1
 
