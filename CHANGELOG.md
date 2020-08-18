@@ -1,3 +1,13 @@
+# devel
+
+## EliteDangerous 7.1.1
+
+### Fixed
+
+* `[find;target] […]` is now able to find brokers and traders again.
+
+-----
+
 # 3.1 (2020-08-18)
 
 This is going to be the last release before I do a bunch of refactoring 
