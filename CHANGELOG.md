@@ -5,6 +5,7 @@
 ### Fixed
 
 * `[find;target] […]` is now able to find brokers and traders again.
+* Outdated station notification has TTS again.
 
 -----
 
