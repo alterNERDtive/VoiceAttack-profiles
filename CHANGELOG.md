@@ -1,6 +1,12 @@
 # devel
 
-## EliteDangerous 7.1.1
+## EliteDangerous 7.2
+
+### Added
+
+* Outdated station check will now also tell you the amount of stations in the 
+  system if outdated stations are found. Now you can make sure no station is 
+  flat out missing!
 
 ### Fixed
 
