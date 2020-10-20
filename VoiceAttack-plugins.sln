@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoiceAttack-base", "VoiceAttack-base\VoiceAttack-base\VoiceAttack-base.csproj", "{1C05DB3F-3449-4664-B363-A379892995E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RatAttack", "RatAttack\RatAttack\RatAttack.csproj", "{64CD3BA3-7FD2-4360-B055-6927CE92DA68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RatAttack-cli", "RatAttack\RatAttack-cli\RatAttack-cli.csproj", "{D72A35EC-8D39-4B96-BBC5-1B330F4CBEEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EliteAttack", "EliteAttack\EliteAttack\EliteAttack.csproj", "{77CEF35C-C25C-4793-AB2C-0B0C5D9A5BB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C05DB3F-3449-4664-B363-A379892995E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C05DB3F-3449-4664-B363-A379892995E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C05DB3F-3449-4664-B363-A379892995E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C05DB3F-3449-4664-B363-A379892995E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64CD3BA3-7FD2-4360-B055-6927CE92DA68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64CD3BA3-7FD2-4360-B055-6927CE92DA68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64CD3BA3-7FD2-4360-B055-6927CE92DA68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64CD3BA3-7FD2-4360-B055-6927CE92DA68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D72A35EC-8D39-4B96-BBC5-1B330F4CBEEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D72A35EC-8D39-4B96-BBC5-1B330F4CBEEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D72A35EC-8D39-4B96-BBC5-1B330F4CBEEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D72A35EC-8D39-4B96-BBC5-1B330F4CBEEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77CEF35C-C25C-4793-AB2C-0B0C5D9A5BB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77CEF35C-C25C-4793-AB2C-0B0C5D9A5BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77CEF35C-C25C-4793-AB2C-0B0C5D9A5BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77CEF35C-C25C-4793-AB2C-0B0C5D9A5BB8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {339E6747-C7BF-43C3-99C6-9249C9849A84}
+	EndGlobalSection
+EndGlobal

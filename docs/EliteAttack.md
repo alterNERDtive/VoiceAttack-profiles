@@ -1,4 +1,4 @@
-# EliteDangerous #
+# EliteAttack #
 
 This is my personal VoiceAttack profile for Elite: Dangerous. It started out 
 ages ago as a modification of [MalicVR’s public 
