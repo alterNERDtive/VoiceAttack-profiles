@@ -84,30 +84,26 @@ namespace RatAttack
 
         private static int ParseRatsignal(string ratsignal)
         {
-            if (RatsignalRegex.IsMatch(ratsignal))
-            {
-                Match match = RatsignalRegex.Match(ratsignal);
-
-                string cmdr = match.Groups["cmdr"].Value;
-                string system = match.Groups["system"].Value;
-                string platform = match.Groups["platform"].Value;
-
-                bool codeRed = false;
-                if (match.Groups["oxygen"].Equals("NOT OK"))
-                {
-                    codeRed = true;
-                }
-
-                int number = int.Parse(match.Groups["number"].Value);
-
-                CaseList[number] = new RatCase(cmdr, system, platform, codeRed, number);
-
-                return number;
-            }
-            else
-            {
+            if (!RatsignalRegex.IsMatch(ratsignal))
                 throw new ArgumentException($"Invalid RATSIGNAL format: '{ratsignal}'.", "ratsignal");
+
+            Match match = RatsignalRegex.Match(ratsignal);
+
+            string cmdr = match.Groups["cmdr"].Value;
+            string system = match.Groups["system"].Value;
+            string platform = match.Groups["platform"].Value;
+
+            bool codeRed = false;
+            if (match.Groups["oxygen"].Equals("NOT OK"))
+            {
+                codeRed = true;
             }
+
+            int number = int.Parse(match.Groups["number"].Value);
+
+            CaseList[number] = new RatCase(cmdr, system, platform, codeRed, number);
+
+            return number;
         }
 
         private static void On_Ratsignal(Ratsignal ratsignal)
