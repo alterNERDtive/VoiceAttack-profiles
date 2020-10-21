@@ -124,7 +124,7 @@ namespace alterNERDtive
             Log.Notice("Starting up …");
             VA = vaProxy;
             CheckProfiles(VA);
-            Commands.RunAll(ActiveProfiles, "startup", logMissing: false);
+            Commands.RunAll(ActiveProfiles, "startup", logMissing: true);
             Log.Notice("Finished startup.");
         }
 
