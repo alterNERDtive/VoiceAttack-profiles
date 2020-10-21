@@ -1,6 +1,7 @@
 ﻿#nullable enable
 
 using System;
+using System.Text.RegularExpressions;
 using alterNERDtive.util;
 
 namespace RatAttack
@@ -13,6 +14,10 @@ namespace RatAttack
             => ratsignalPipe ??= new alterNERDtive.util.PipeServer<Ratsignal>(Log, "RatAttack",
                 new alterNERDtive.util.PipeServer<Ratsignal>.SignalHandler(On_Ratsignal));
         private static alterNERDtive.util.PipeServer<Ratsignal>? ratsignalPipe;
+
+        private static Regex RatsignalRegex = new Regex(
+            @"RATSIGNAL - CMDR (?<cmdr>.+) - Reported System: (?<system>.+)( \([0-9\.]+ LY from .*\))? - Platform: \x03\d(?<platform>.+)\x03 - O2: (\x034)?(?<oxygen>[A-Z\s]+)\x03? Language: .+ \(Case #(?<number>\d+)\) \([A-Z]+_SIGNAL\)",
+            RegexOptions.RightToLeft);
 
         private static VoiceAttackLog Log
             => log ??= new VoiceAttackLog(VA, "RatAttack");
@@ -79,28 +84,29 @@ namespace RatAttack
 
         private static int ParseRatsignal(string ratsignal)
         {
-            char delimiter = (char)0x02;
-            string[] parts = ratsignal.Split(delimiter);
-
-            try
+            if (RatsignalRegex.IsMatch(ratsignal))
             {
-                string cmdr = parts[1];
-                string system = parts[3];
-                string platform = parts[5];
-                if (platform.Contains("PS4")) { platform = "PS4"; }
-                else if (platform.Contains("XB")) { platform = "XB"; }
-                bool codeRed = parts.Length == 9;
-                int start = ratsignal.LastIndexOf('#') + 1;
-                int end = ratsignal.LastIndexOf(") (");
-                int number = int.Parse(ratsignal.Substring(start, end - start));
+                Match match = RatsignalRegex.Match(ratsignal);
+
+                string cmdr = match.Groups["cmdr"].Value;
+                string system = match.Groups["system"].Value;
+                string platform = match.Groups["platform"].Value;
+
+                bool codeRed = false;
+                if (match.Groups["oxygen"].Equals("NOT OK"))
+                {
+                    codeRed = true;
+                }
+
+                int number = int.Parse(match.Groups["number"].Value);
 
                 CaseList[number] = new RatCase(cmdr, system, platform, codeRed, number);
 
                 return number;
             }
-            catch(Exception e)
+            else
             {
-                throw new ArgumentException($"Invalid RATSIGNAL format: '{ratsignal}'.", "ratsignal", e);
+                throw new ArgumentException($"Invalid RATSIGNAL format: '{ratsignal}'.", "ratsignal");
             }
         }
 
