@@ -41,16 +41,11 @@ namespace RatAttack
 
             public string ShortInfo
             {
-                get
-                {
-                    return ($"#{Number}, {Platform}, {System}{(PermitLocked ? " (permit required)" : "")}{(CodeRed ? ", code red" : "")}");
-                }
+                get => $"#{Number}, {Platform}, {System}{(PermitLocked ? " (permit required)" : "")}{(CodeRed ? ", code red" : "")}";
             }
 
             public override string ToString()
-            {
-                return ShortInfo;
-            }
+                => ShortInfo;
         }
 
         public class Ratsignal : IPipable
@@ -90,7 +85,7 @@ namespace RatAttack
             Match match = RatsignalRegex.Match(ratsignal);
 
             string cmdr = match.Groups["cmdr"].Value;
-            string system = match.Groups["system"].Value.ToLower();
+            string system = match.Groups["system"].Value;
             bool permitLocked = match.Groups["permit"].Success;
             string platform = match.Groups["platform"].Value;
             bool codeRed = match.Groups["oxygen"].Value.Equals("NOT OK");
@@ -133,7 +128,7 @@ namespace RatAttack
 
             vaProxy.SetInt("~~caseNumber", rc?.Number);
             vaProxy.SetText("~~cmdr", rc?.Cmdr);
-            vaProxy.SetText("~~system", rc?.System);
+            vaProxy.SetText("~~system", rc?.System.ToLower());
             vaProxy.SetBoolean("~~permitLocked", rc?.PermitLocked);
             vaProxy.SetText("~~platform", rc?.Platform);
             vaProxy.SetBoolean("~~codeRed", rc?.CodeRed);
@@ -213,7 +208,7 @@ namespace RatAttack
         {
             Log.Debug("Starting teardown …");
             Log.Debug("Closing RATSIGNAL pipe …");
-            RatsignalPipe!.Stop();
+            RatsignalPipe.Stop();
             Log.Debug("Teardown finished.");
         }
 
