@@ -1,4 +1,6 @@
-# devel
+# 3.1.1 (2020-10-21)
+
+Bugfix release.
 
 ## RatAttack 5.0.1
 
