@@ -16,7 +16,7 @@ namespace RatAttack
         private static alterNERDtive.util.PipeServer<Ratsignal>? ratsignalPipe;
 
         private static Regex RatsignalRegex = new Regex(
-            @"RATSIGNAL - CMDR (?<cmdr>.+) - Reported System: (?<system>.+)( \([0-9\.]+ LY from .*\))? - Platform: \x03\d(?<platform>.+)\x03 - O2: (\x034)?(?<oxygen>[A-Z\s]+)\x03? Language: .+ \(Case #(?<number>\d+)\) \([A-Z]+_SIGNAL\)",
+            @"^RATSIGNAL - CMDR (?<cmdr>.+) - Reported System: (?<system>.+)( \([0-9,\.]+ LY from .*\))? - Platform: \x03[236](?<platform>(PC|XB|PS4))\x03 - O2: (\x034)?(?<oxygen>(NOT )?OK)\x03? Language: .+ \(Case #(?<number>\d+)\) \((PC|XB|PS)_SIGNAL\)$",
             RegexOptions.RightToLeft);
 
         private static VoiceAttackLog Log
@@ -93,13 +93,16 @@ namespace RatAttack
             string system = match.Groups["system"].Value;
             string platform = match.Groups["platform"].Value;
 
+            string oxygen = match.Groups["oxygen"].Value;
             bool codeRed = false;
-            if (match.Groups["oxygen"].Equals("NOT OK"))
+            if (oxygen.Equals("NOT OK"))
             {
                 codeRed = true;
             }
 
             int number = int.Parse(match.Groups["number"].Value);
+
+            Log.Debug($"new rat case, CMDR “{cmdr}” in “{system}” on {platform}, o₂: “{oxygen}”, code red: {codeRed} (#{number}).");
 
             CaseList[number] = new RatCase(cmdr, system, platform, codeRed, number);
 
