@@ -16,7 +16,7 @@ namespace RatAttack
         private static alterNERDtive.util.PipeServer<Ratsignal>? ratsignalPipe;
 
         private static Regex RatsignalRegex = new Regex(
-            @"^RATSIGNAL - CMDR (?<cmdr>.+) - Reported System: (?<system>.+)( \([0-9,\.]+ LY from .*\))? - Platform: \x03[236](?<platform>(PC|XB|PS4))\x03 - O2: (\x034)?(?<oxygen>(NOT )?OK)\x03? Language: .+ \(Case #(?<number>\d+)\) \((PC|XB|PS)_SIGNAL\)$",
+            @"^RATSIGNAL - CMDR (?<cmdr>.+) - Reported System: (?<system>.+)( \(([0-9,\.]+ LY from .*|not in galaxy database)\))? - Platform: \x03(6|3|12)(?<platform>(PC|XB|PS4))\x03 - O2: (\x034)?(?<oxygen>(NOT )?OK)\x03? Language: .+ \(Case #(?<number>\d+)\) \((PC|XB|PS)_SIGNAL\)\v*$",
             RegexOptions.RightToLeft);
 
         private static VoiceAttackLog Log
