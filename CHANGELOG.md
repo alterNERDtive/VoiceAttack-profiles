@@ -1,5 +1,11 @@
 # devel
 
+## RatAttack 5.0.1
+
+### Fixed
+
+* RATSIGNAL parsing update for Mecha3.
+
 ## EliteDangerous 7.2
 
 ### Added
