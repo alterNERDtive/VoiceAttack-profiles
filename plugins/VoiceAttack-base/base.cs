@@ -55,7 +55,7 @@ namespace alterNERDtive
 
             Process p = PythonProxy.SetupPythonScript(path, arguments);
 
-            decimal distance = 0; // sadly currently you can’t pass decimals to a command by value … so as a string it is.
+            decimal distance = 0;
             bool error = false;
             string errorMessage = "";
 
@@ -65,7 +65,7 @@ namespace alterNERDtive
             switch (p.ExitCode)
             {
                 case 0:
-                    distance = Decimal.Parse(output);
+                    distance = decimal.Parse(output);
                     break;
                 case 1:
                 case 2:
