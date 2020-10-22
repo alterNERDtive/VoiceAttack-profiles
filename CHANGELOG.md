@@ -1,3 +1,17 @@
+# devel
+
+## RatAttack 5.0.3
+
+### Fixed
+
+* System names will now be `ToLower()`ed since Mecha3 capitalizes them and EDDI 
+  likes spelling those out instead of saying the names. Makes them a little 
+  messy in other ways, but less annoying overall.
+* Permit detection part of the RATSIGNAL RegEx fixed for named permits.
+* `XB` platform changed to `Xbox` to match Mecha3.
+
+-----
+
 # 3.1.2 (2020-10-22)
 
 Bugfix to the bugfix, anyone?
