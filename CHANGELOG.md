@@ -1,3 +1,20 @@
+# 3.1.2 (2020-10-22)
+
+Bugfix to the bugfix, anyone?
+
+Mecha3 had a couple more changes to the case announcement I wasn’t aware of. All 
+fixed now! (I hope.)
+
+Sorry for the inconveniece.
+
+## RatAttack 5.0.2
+
+### Fixed
+
+* RATSIGNAL parsing updated for (hopefully) all the changes in Mecha3.
+
+-----
+
 # 3.1.1 (2020-10-21)
 
 Bugfix release.
