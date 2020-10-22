@@ -111,6 +111,7 @@ namespace RatAttack
             catch (ArgumentException e)
             {
                 Log.Error(e.Message);
+                Commands.TriggerEvent("RatAttack.invalidRatsignal", parameters: new dynamic[] { new string[] { ratsignal.Signal } });
             }
             catch (Exception e)
             {
