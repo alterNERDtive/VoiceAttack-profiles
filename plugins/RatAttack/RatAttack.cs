@@ -32,12 +32,13 @@ namespace RatAttack
             public string Cmdr;
             public string System;
             public bool PermitLocked;
+            public string PermitName;
             public string Platform;
             public bool CodeRed;
             public int Number;
 
-            public RatCase(string cmdr, string system, bool permitLocked, string platform, bool codeRed, int number)
-                => (Cmdr, System, PermitLocked, Platform, CodeRed, Number) = (cmdr, system, permitLocked, platform, codeRed, number);
+            public RatCase(string cmdr, string system, bool permitLocked, string permitName, string platform, bool codeRed, int number)
+                => (Cmdr, System, PermitLocked, PermitName, Platform, CodeRed, Number) = (cmdr, system, permitLocked, permitName, platform, codeRed, number);
 
             public string ShortInfo
             {
@@ -95,7 +96,7 @@ namespace RatAttack
 
             Log.Debug($"New rat case: CMDR “{cmdr}” in “{system}” on {platform}, permit locked: {permitLocked}{(permitLocked && !permitName.Equals("") ? $" (permit name: {permitName})" : "")}, code red: {codeRed} (#{number}).");
 
-            CaseList[number] = new RatCase(cmdr, system, permitLocked, platform, codeRed, number);
+            CaseList[number] = new RatCase(cmdr, system, permitLocked, permitName, platform, codeRed, number);
 
             return number;
         }
@@ -132,6 +133,7 @@ namespace RatAttack
             vaProxy.SetText("~~cmdr", rc?.Cmdr);
             vaProxy.SetText("~~system", rc?.System.ToLower());
             vaProxy.SetBoolean("~~permitLocked", rc?.PermitLocked);
+            vaProxy.SetBoolean("~~permitName", rc?.PermitName);
             vaProxy.SetText("~~platform", rc?.Platform);
             vaProxy.SetBoolean("~~codeRed", rc?.CodeRed);
         }
