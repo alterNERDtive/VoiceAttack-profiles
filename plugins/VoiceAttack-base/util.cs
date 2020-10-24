@@ -19,7 +19,7 @@ namespace alterNERDtive.util
             p.StartInfo.Arguments = arguments;
             p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             p.StartInfo.RedirectStandardOutput = true;
-            //p.StartInfo.RedirectStandardError = true;
+            p.StartInfo.RedirectStandardError = true;
             p.StartInfo.UseShellExecute = false;
             p.StartInfo.CreateNoWindow = true;
             return p;

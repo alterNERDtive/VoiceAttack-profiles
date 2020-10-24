@@ -60,22 +60,23 @@ namespace alterNERDtive
             string errorMessage = "";
 
             p.Start();
-            string output = p.StandardOutput.ReadToEnd();
+            string stdout = p.StandardOutput.ReadToEnd();
+            string stderr = p.StandardError.ReadToEnd();
             p.WaitForExit();
             switch (p.ExitCode)
             {
                 case 0:
-                    distance = decimal.Parse(output);
+                    distance = decimal.Parse(stdout);
                     break;
                 case 1:
                 case 2:
                     error = true;
-                    Log.Error(output);
-                    errorMessage = output;
+                    Log.Error(stderr);
+                    errorMessage = stderr;
                     break;
                 default:
                     error = true;
-                    Log.Error(output);
+                    Log.Error(stderr);
                     errorMessage = "Unrecoverable error in plugin.";
                     break;
 
