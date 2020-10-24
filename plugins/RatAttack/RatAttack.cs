@@ -133,7 +133,7 @@ namespace RatAttack
             vaProxy.SetText("~~cmdr", rc?.Cmdr);
             vaProxy.SetText("~~system", rc?.System.ToLower());
             vaProxy.SetBoolean("~~permitLocked", rc?.PermitLocked);
-            vaProxy.SetBoolean("~~permitName", rc?.PermitName);
+            vaProxy.SetText("~~permitName", rc?.PermitName);
             vaProxy.SetText("~~platform", rc?.Platform);
             vaProxy.SetBoolean("~~codeRed", rc?.CodeRed);
         }
