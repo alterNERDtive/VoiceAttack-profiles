@@ -6,7 +6,6 @@ using System.Diagnostics;
 using System.IO;
 using System.IO.Pipes;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace alterNERDtive.util
 {
@@ -110,15 +109,16 @@ namespace alterNERDtive.util
     }
 
     public class VoiceAttackLog
-	{
+    {
         private readonly dynamic VA;
         private readonly string ID;
 
         private static readonly string[] LogColour = { "red", "yellow", "green", "blue", "gray" };
-        public LogLevel? CurrentLogLevel { 
+        public LogLevel? CurrentLogLevel
+        {
             get => currentLogLevel ?? LogLevel.NOTICE;
             set
-            { 
+            {
                 currentLogLevel = value;
                 Notice($"Log level set to {value ?? LogLevel.NOTICE}.");
             }
@@ -132,7 +132,7 @@ namespace alterNERDtive.util
         }
         private static LogLevel? currentLogLevel;
 
-		public VoiceAttackLog(dynamic vaProxy, string id) => (VA, ID) = (vaProxy, id);
+        public VoiceAttackLog(dynamic vaProxy, string id) => (VA, ID) = (vaProxy, id);
 
         public void Log(string message, LogLevel level = LogLevel.INFO)
         {
@@ -163,12 +163,13 @@ namespace alterNERDtive.util
 
     public class PipeServer<Thing> where Thing : IPipable, new()
     {
-        private readonly CancellationTokenSource ThreadTokens = new CancellationTokenSource();
         private readonly string PipeName;
         private readonly SignalHandler Handler;
         private readonly VoiceAttackLog Log;
 
         private bool Running = false;
+
+        private NamedPipeServerStream? Server;
 
         public PipeServer(VoiceAttackLog log, string name, SignalHandler handler)
             => (Log, PipeName, Handler) = (log, name, handler);
@@ -177,41 +178,58 @@ namespace alterNERDtive.util
 
         public PipeServer<Thing> Run()
         {
+            Log.Debug("Starting RATSIGNAL pipe …");
             if (!Running)
             {
-                Task.Factory.StartNew(() => { RunPipeServer(ThreadTokens.Token, PipeName); });
                 Running = true;
+                WaitForConnection();
             }
             return this;
         }
 
         public PipeServer<Thing> Stop()
         {
+            Log.Debug("Stopping RATSIGNAL pipe …");
             if (Running)
             {
-                ThreadTokens.Cancel();
                 Running = false;
+                Server!.Close();
             }
             return this;
         }
 
-        private void RunPipeServer(CancellationToken token, string name)
+        private void WaitForConnection()
         {
-            while (!token.IsCancellationRequested)
+            try
             {
-                try
-                {
-                    using NamedPipeServerStream server = new NamedPipeServerStream(name, PipeDirection.In);
-                    server.WaitForConnection();
-                    using StreamReader reader = new StreamReader(server);
-                    Thing thing = new Thing();
-                    thing.ParseString(reader.ReadToEnd());
-                    Handler(thing);
-                }
-                catch (Exception e)
-                {
-                    Log.Error($"Error reading pipe: {e.Message}");
-                }
+                Server = new NamedPipeServerStream(PipeName, PipeDirection.In, NamedPipeServerStream.MaxAllowedServerInstances, PipeTransmissionMode.Message, PipeOptions.Asynchronous);
+                Server.BeginWaitForConnection(OnConnect, Server);
+            }
+            catch (Exception e)
+            {
+                Log.Error($"Error setting up pipe: {e.Message}");
+            }
+        }
+
+        private void OnConnect(IAsyncResult ar)
+        {
+            NamedPipeServerStream server = (NamedPipeServerStream)ar.AsyncState;
+            try
+            {
+                server.EndWaitForConnection(ar);
+                WaitForConnection();
+                using StreamReader reader = new StreamReader(server);
+                Thing thing = new Thing();
+                thing.ParseString(reader.ReadToEnd());
+                Handler(thing);
+            }
+            catch (ObjectDisposedException)
+            {
+                Log.Info("Ratsignal pipe has been closed.");
+            }
+            catch (Exception e)
+            {
+                Log.Error($"Error reading pipe: {e.Message}");
             }
         }
     }

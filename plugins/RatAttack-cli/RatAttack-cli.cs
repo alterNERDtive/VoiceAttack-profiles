@@ -1,5 +1,6 @@
 ﻿#nullable enable
 
+using System;
 using System.IO;
 using System.IO.Pipes;
 
@@ -13,10 +14,18 @@ namespace RatAttack
 
             using (NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", "RatAttack", PipeDirection.Out))
             {
-                pipeClient.Connect(120); // 120s timeout should really be enough, no? if VA doesn’t respond you probably don’t want the threads to stick around.
-                using (StreamWriter writer = new StreamWriter(pipeClient))
+                try
                 {
-                    writer.WriteLine(ratsignal);
+                    // try connecting for up to 2 minutes; then we’ll assume VoiceAttack just isn’t up and won’t come up
+                    pipeClient.Connect(120000);
+                    using (StreamWriter writer = new StreamWriter(pipeClient))
+                    {
+                        writer.WriteLine(ratsignal);
+                    }
+                }
+                catch (TimeoutException)
+                {
+                    Console.Error.WriteLine("Connection to RatAttack pipe has timed out.");
                 }
             }
         }

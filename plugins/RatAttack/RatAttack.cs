@@ -120,6 +120,9 @@ namespace RatAttack
             }
         }
 
+        private static void On_ProfileChanged(Guid? from, Guid? to, string fromName, string toName)
+            => VA_Exit1(null);
+
         /*================\
         | plugin contexts |
         \================*/
@@ -169,6 +172,7 @@ namespace RatAttack
         {
             VA = vaProxy;
             Log.Notice("Initializing …");
+            vaProxy.ProfileChanged += new Action<Guid?, Guid?, String, String>(On_ProfileChanged);
             Log.Notice("Init successful.");
         }
 
