@@ -178,7 +178,7 @@ namespace alterNERDtive.util
 
         public PipeServer<Thing> Run()
         {
-            Log.Debug("Starting RATSIGNAL pipe …");
+            Log.Debug($"Starting “{PipeName}” pipe …");
             if (!Running)
             {
                 Running = true;
@@ -189,7 +189,7 @@ namespace alterNERDtive.util
 
         public PipeServer<Thing> Stop()
         {
-            Log.Debug("Stopping RATSIGNAL pipe …");
+            Log.Debug($"Stopping “{PipeName}” pipe …");
             if (Running)
             {
                 Running = false;
