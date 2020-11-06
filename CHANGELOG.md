@@ -1,4 +1,6 @@
-# devel
+# 3.1.3 (2020-11-06)
+
+Hopefully last Mecha3 compatibility release.
 
 ## RatAttack 5.0.3
 
