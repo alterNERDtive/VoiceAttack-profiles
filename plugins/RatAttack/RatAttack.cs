@@ -1,6 +1,7 @@
 ﻿#nullable enable
 
 using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using alterNERDtive.util;
 
@@ -8,7 +9,7 @@ namespace RatAttack
 {
     public class RatAttack
     {
-        private static RatCase[] CaseList { get; } = new RatCase[20];
+        private static Dictionary<int,RatCase> CaseList { get; } = new Dictionary<int, RatCase>();
         private static dynamic? VA { get; set; }
         private static alterNERDtive.util.PipeServer<Ratsignal> RatsignalPipe
             => ratsignalPipe ??= new alterNERDtive.util.PipeServer<Ratsignal>(Log, "RatAttack",
