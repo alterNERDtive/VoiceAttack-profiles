@@ -153,10 +153,6 @@ Announces your carriers lockdown procedures. This _might_ only work when you are
 docked (which would make it pretty useless). Feel free to open in issue if 
 that’s the case.
 
-#### Commander Loading ####
-
-Auto-sets my nick in the FuelRats IRC. Probably largely irrelevant to you.
-
 #### Discovery Scan ####
 
 Announces the number of bodies (and non-body signals) found in the system. Also 
@@ -245,13 +241,6 @@ the interdictor automatically, but randomly sometimes just doesn’t work.  Yay!
 This currently doesn’t do anything. I was fiddling around with automatically 
 targeting a certain module on ship targeting, but it was more hassle than I had 
 thought.
-
-#### Shutdown ####
-
-Changes my nick back to default in FuelRats IRC. Probably largely useless to 
-you. If you are using FuelRats IRC you need to change/deactivate this (see 
-[below](#Configuration-Variables)) or you will start impersonating me by 
-accident :)
 
 #### SRV Launched ####
 
@@ -450,9 +439,6 @@ for text variables.
 * `EliteDangerous.announceR2RMappingCandidates` (boolean): whether to announce 
   planets worth mapping when jumping into a known system.  This is useful for 
   doing some R2R on the side.  Default: false.
-* `EliteDangerous.autoChangeFuelratsNick` (boolean): whether to change the 
-  FuelRats IRC nickname automatically when changing commanders. Probably largely 
-  irrelevant to you. Default: false.
 * `EliteDangerous.enableCarrierAnnouncements` (boolean): whether or not to 
   process fleet carrier events. Default: true.
 * `EliteDangerous.enableAutoUpdateCheck` (boolean): whether or not to 
