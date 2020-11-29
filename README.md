@@ -23,8 +23,11 @@ Each of the profiles is documented in `docs/`.
 ## Requirements ##
 
 * [VoiceAttack](https://voiceattack.com): absolutely required (duh).
-* [bindED](https://github.com/alterNERDtive/bindED): required for EliteDangerous 
-  and SpanshAttack; makes anything involving hitting E:D key binds portable.
+* [bindED](https://forum.voiceattack.com/smf/index.php?topic=564.0): required 
+  for EliteDangerous and SpanshAttack; makes anything involving hitting E:D key 
+  binds portable. You can also use [my updated fork of 
+  that](https://github.com/alterNERDtive/bindED); read the README over there for 
+  more information.
 * [EDDI](https://github.com/EDCD/EDDI) installed as a VoiceAttack plugin: 
   required for EliteDangerous, SpanshAttack and Streamattack, optional for 
   RatAttack.
