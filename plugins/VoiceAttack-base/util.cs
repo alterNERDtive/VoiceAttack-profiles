@@ -14,6 +14,7 @@ namespace alterNERDtive.util
         private readonly dynamic VA;
         private readonly string ID;
         private readonly VoiceAttackLog Log;
+        private readonly VoiceAttackCommands Commands;
         private static readonly Dictionary<string, OptDict<string, Option>> Defaults = new Dictionary<string, OptDict<string, Option>>
         {
             {
@@ -83,7 +84,7 @@ namespace alterNERDtive.util
             }
         }
 
-        public Configuration(dynamic vaProxy, VoiceAttackLog log, string id) => (VA, Log, ID) = (vaProxy, log, id);
+        public Configuration(dynamic vaProxy, VoiceAttackLog log, VoiceAttackCommands commands, string id) => (VA, Log, Commands, ID) = (vaProxy, log, commands, id);
 
         public dynamic GetDefault(string name)
         {
@@ -151,6 +152,53 @@ namespace alterNERDtive.util
         public static bool HasDefault(string id, string name)
         {
             return Defaults[id].ContainsKey(name);
+        }
+
+        public void LoadFromProfile()
+        {
+            foreach (KeyValuePair<string,OptDict<string,Option>> options in Defaults)
+            {
+                LoadFromProfile(options.Key);
+            }
+        }
+        public void LoadFromProfile(string id)
+        {
+            foreach (Option option in Defaults[id].Values)
+            {
+                dynamic value = option.DefaultValue;
+                string name = $"{id}.{option.Name}";
+                string type;
+                if (value is bool)
+                {
+                    type = "boolean";
+                }
+                else if (value is DateTime)
+                {
+                    type = "date";
+                }
+                else if (value is decimal)
+                {
+                    type = "decimal";
+                }
+                else if (value is int)
+                {
+                    type = "int";
+                }
+                else if (value is short)
+                {
+                    type = "smallint";
+                }
+                else if (value is string)
+                {
+                    type = "text";
+                }
+                else
+                {
+                    throw new InvalidDataException($"Invalid data type for option '{name}': '{value}'");
+                }
+                Log.Debug($"Loading value for option '{name}' from profile …");
+                Commands.Run("alterNERDtive-base.loadVariableFromProfile", parameters: new dynamic[] { new string[] { $"{name}#", type } });
+            }
         }
 
         public dynamic? ApplyDefault(string name)

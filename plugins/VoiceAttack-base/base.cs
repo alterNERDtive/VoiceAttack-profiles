@@ -27,7 +27,7 @@ namespace alterNERDtive
         private static VoiceAttackCommands Commands => commands ??= new VoiceAttackCommands(VA, Log);
         private static VoiceAttackCommands? commands;
 
-        private static Configuration Config => config ??= new Configuration(VA, Log, "alterNERDtive-base");
+        private static Configuration Config => config ??= new Configuration(VA, Log, Commands, "alterNERDtive-base");
         private static Configuration? config;
 
         private static void CheckProfiles(dynamic vaProxy)
@@ -54,6 +54,7 @@ namespace alterNERDtive
             {
                 Config.SetVoiceTriggers(type);
             }
+            Config.LoadFromProfile();
             Log.Debug("Finished loading configuration.");
         }
 
