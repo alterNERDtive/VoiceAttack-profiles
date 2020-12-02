@@ -229,27 +229,29 @@ namespace alterNERDtive
             {
                 switch (context)
                 {
-                    // plugin methods
+                    case "startup":
+                        Context_Startup(vaProxy);
+                        break;
+                    // config
                     case "config.setup":
                         Context_Config_Setup(vaProxy);
                         break;
                     case "config.getvariables":
                         Context_Config_SetVariables(vaProxy);
                         break;
-                    case "distancebetween":
+                    // EDSM
+                    case "edsm.distancebetween":
                         Context_DistanceBetween(vaProxy);
                         break;
-                    case "eddievent":
+                    // EDDI
+                    case "eddi.event":
                         Context_EddiEvent(vaProxy);
                         break;
-                    case "log":
+                    // log
+                    case "log.log":
                         Context_Log(vaProxy);
                         break;
-                    case "startup":
-                        Context_Startup(vaProxy);
-                        break;
-                    // plugin settings
-                    case "setloglevel":
+                    case "log.setloglevel":
                         Context_SetLogLevel(vaProxy);
                         break;
                     // invalid
