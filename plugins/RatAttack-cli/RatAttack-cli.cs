@@ -10,7 +10,7 @@ namespace RatAttack
     {
         static void Main(string[] args)
         {
-            RatAttack.Ratsignal ratsignal = new RatAttack.Ratsignal(args[0], args.Length > 1 && args[1].Equals("true"));
+            RatAttack.Ratsignal ratsignal = new RatAttack.Ratsignal(args[0], args.Length > 1 && args[1] == "true");
 
             using (NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", "RatAttack", PipeDirection.Out))
             {

@@ -91,11 +91,11 @@ namespace RatAttack
             bool permitLocked = match.Groups["permit"].Success;
             string permitName = match.Groups["permitName"].Value ?? "";
             string platform = match.Groups["platform"].Value;
-            bool codeRed = match.Groups["oxygen"].Value.Equals("NOT OK");
+            bool codeRed = match.Groups["oxygen"].Value == "NOT OK";
 
             int number = int.Parse(match.Groups["number"].Value);
 
-            Log.Debug($"New rat case: CMDR “{cmdr}” in “{system}” on {platform}, permit locked: {permitLocked}{(permitLocked && !permitName.Equals("") ? $" (permit name: {permitName})" : "")}, code red: {codeRed} (#{number}).");
+            Log.Debug($"New rat case: CMDR “{cmdr}” in “{system}” on {platform}, permit locked: {permitLocked}{(permitLocked && !(permitName == "") ? $" (permit name: {permitName})" : "")}, code red: {codeRed} (#{number}).");
 
             CaseList[number] = new RatCase(cmdr, system, permitLocked, permitName, platform, codeRed, number);
 
