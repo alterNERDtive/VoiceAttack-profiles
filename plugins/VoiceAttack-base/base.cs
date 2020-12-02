@@ -4,10 +4,7 @@ using alterNERDtive.util;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Runtime.Remoting.Channels;
-using System.Threading.Tasks;
-using System.Timers;
+using System.Text.RegularExpressions;
 
 namespace alterNERDtive
 {
@@ -22,11 +19,16 @@ namespace alterNERDtive
         };
         private static readonly List<string> ActiveProfiles = new List<string>();
 
+        private static readonly Regex ConfigurationVariableRegex = new Regex(@$"(?<id>(alterNERDtive-base|{String.Join("|", Profiles.Values)}))\.(?<name>.+)#");
+
         private static VoiceAttackLog Log => log ??= new VoiceAttackLog(VA, "alterNERDtive-base");
         private static VoiceAttackLog? log;
 
         private static VoiceAttackCommands Commands => commands ??= new VoiceAttackCommands(VA, Log);
         private static VoiceAttackCommands? commands;
+
+        private static Configuration Config => config ??= new Configuration(VA, Log, "alterNERDtive-base");
+        private static Configuration? config;
 
         private static void CheckProfiles(dynamic vaProxy)
         {
@@ -44,6 +46,24 @@ namespace alterNERDtive
         | plugin contexts |
         \================*/
 
+        private static void Context_Config_Setup(dynamic vaProxy)
+        {
+            Log.Debug("Loading default configuration …");
+            Config.ApplyAllDefaults();
+            foreach (System.Type type in new List<System.Type> { typeof(bool), typeof(DateTime), typeof(decimal), typeof(int), typeof(short), typeof(string) })
+            {
+                Config.SetVoiceTriggers(type);
+            }
+            Log.Debug("Finished loading configuration.");
+        }
+
+        private static void Context_Config_SetVariables(dynamic vaProxy)
+        {
+            string trigger = vaProxy.GetText("~trigger");
+            Log.Debug($"Loading variables for trigger '{trigger}' …");
+            Config.SetVariablesForTrigger(vaProxy, trigger);
+        }
+
         private static void Context_DistanceBetween(dynamic vaProxy)
         {
             string fromSystem = vaProxy.GetText("~fromSystem");
@@ -51,7 +71,7 @@ namespace alterNERDtive
             int roundTo = vaProxy.GetInt("~roundTo") ?? 2;
 
             string path = $"{vaProxy.GetText("Python.ScriptPath")}\\explorationtools.exe";
-            string arguments = $"distancebetween --roundto {roundTo} \"{fromSystem}\" \"{toSystem}\"";
+            string arguments = $@"distancebetween --roundto {roundTo} ""{fromSystem}"" ""{toSystem}""";
 
             Process p = PythonProxy.SetupPythonScript(path, arguments);
 
@@ -113,9 +133,10 @@ namespace alterNERDtive
                 {
                     Log.Log(sender, message, (LogLevel)Enum.Parse(typeof(LogLevel), level.ToUpper()));
                 }
+                catch (ArgumentNullException) { throw; }
                 catch (ArgumentException)
                 {
-                    Log.Error($"Invalid log level '${level}'.");
+                    Log.Error($"Invalid log level '{level}'.");
                 }
             }
         }
@@ -123,7 +144,6 @@ namespace alterNERDtive
         private static void Context_Startup(dynamic vaProxy)
         {
             Log.Notice("Starting up …");
-            VA = vaProxy;
             CheckProfiles(VA);
             Commands.RunAll(ActiveProfiles, "startup", logMissing: true);
             Log.Notice("Finished startup.");
@@ -139,6 +159,35 @@ namespace alterNERDtive
             catch (ArgumentException)
             {
                 Log.Error($"Invalid LogLevel '{level}'.");
+            }
+        }
+
+        private static void ConfigurationChanged(string name, dynamic? from, dynamic? to, Guid? guid = null)
+        {
+            try
+            {
+                Match match = ConfigurationVariableRegex.Match(name);
+                if (match.Success)
+                {
+                    string id = match.Groups["id"].Value;
+                    string option = match.Groups["name"].Value;
+                    Log.Debug($"Configuration has changed, '{id}.{option}': '{from}' → '{to}'");
+
+                    // When loaded from profile but not explicitly set, will be null.
+                    // Then load default.
+                    // Same applies to resetting a saved option (= saving null to the profile).
+                    _ = to ?? Config.ApplyDefault(id, option);
+
+                    if (name == "alterNERDtive-base.eddi.quietMode#" && VA!.GetText("EDDI version") != null) // if null, EDDI isn’t up yet
+                    {
+                        Log.Debug($"Resetting speech responder ({(to ?? false ? "off" : "on")}) …");
+                        Commands.Run("alterNERDtive-base.setEDDISpeechResponder");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error($"Unhandled exception while handling changed variable '{name}'. ({e.Message})");
             }
         }
 
@@ -159,12 +208,20 @@ namespace alterNERDtive
         {
             VA = vaProxy;
             Log.Notice("Initializing …");
+            vaProxy.BooleanVariableChanged += new Action<String, Boolean?, Boolean?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
+            vaProxy.DateVariableChanged += new Action<String, DateTime?, DateTime?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
+            vaProxy.DecimalVariableChanged += new Action<String, decimal?, decimal?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
+            vaProxy.IntegerVariableChanged += new Action<String, int?, int?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
+            vaProxy.TextVariableChanged += new Action<String, String, String, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
+            VA.SetBoolean("alterNERDtive-base.initialized", true);
             Commands.TriggerEvent("alterNERDtive-base.initialized", wait: false);
             Log.Notice("Init successful.");
         }
 
         public static void VA_Invoke1(dynamic vaProxy)
         {
+            VA = vaProxy;
+
             string context = vaProxy.Context.ToLower();
             Log.Debug($"Running context '{context}' …");
             try
@@ -172,6 +229,12 @@ namespace alterNERDtive
                 switch (context)
                 {
                     // plugin methods
+                    case "config.setup":
+                        Context_Config_Setup(vaProxy);
+                        break;
+                    case "config.getvariables":
+                        Context_Config_SetVariables(vaProxy);
+                        break;
                     case "distancebetween":
                         Context_DistanceBetween(vaProxy);
                         break;

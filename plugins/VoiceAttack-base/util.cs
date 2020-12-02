@@ -5,10 +5,219 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Pipes;
-using System.Threading;
+using System.Linq;
 
 namespace alterNERDtive.util
 {
+    public class Configuration
+    {
+        private readonly dynamic VA;
+        private readonly string ID;
+        private readonly VoiceAttackLog Log;
+        private static readonly Dictionary<string, OptDict<string, Option>> Defaults = new Dictionary<string, OptDict<string, Option>>
+        {
+            {
+                "alterNERDtive-base",
+                new OptDict<string, Option>{
+                    { new Option("eddi.quietMode", true, voiceTrigger: "eddi quiet mode", description: "Whether or not to make EDDI shut up.") },
+                    { new Option("keyPressDuration", (decimal)0.01, voiceTrigger: "key press duration", description: "The time keys will be held down for.") },
+                    { new Option("elite.pasteKey", "v", voiceTrigger: "elite paste key", description: "The key used to paste in conjunction with CTRL. The key that would be 'V' on QWERTY.") }
+                }
+            },
+            {
+                "EliteAttack",
+                new OptDict<string, Option>{
+
+                }
+            },
+            {
+                "RatAttack",
+                new OptDict<string, Option>{
+
+                }
+            },
+            {
+                "SpanshAttack",
+                new OptDict<string, Option>{
+
+                }
+            },
+            {
+                "StreamAttack",
+                new OptDict<string, Option>{
+
+                }
+            }
+        };
+
+        private class Option
+        {
+            public readonly string Name;
+            public readonly dynamic DefaultValue;
+            public readonly string VoiceTrigger;
+            public string TtsDescription { get => ttsDescription ?? VoiceTrigger; }
+            private readonly string? ttsDescription;
+            public string Description { get => description ?? "No description available."; }
+            public readonly string? description;
+
+            public Option(string name, dynamic defaultValue, string voiceTrigger, string? ttsDescription = null, string? description = null)
+                => (Name, DefaultValue, VoiceTrigger, this.ttsDescription, this.description) = (name, defaultValue, voiceTrigger, ttsDescription, description);
+
+            public static implicit operator (string, Option)(Option o) => ( o.Name, o );
+            public static explicit operator bool(Option o) => o.DefaultValue;
+            public static explicit operator DateTime(Option o) => o.DefaultValue;
+            public static explicit operator decimal(Option o) => o.DefaultValue;
+            public static explicit operator int(Option o) => o.DefaultValue;
+            public static explicit operator short(Option o) => o.DefaultValue;
+            public static explicit operator string(Option o) => o.DefaultValue;
+            public override string ToString() => DefaultValue.ToString();
+        }
+        private class OptDict<TKey, TValue> : Dictionary<TKey, TValue>
+        {
+            public OptDict() : base() { }
+            public OptDict(int capacity) : base(capacity) { }
+
+            public void Add((TKey,TValue) tuple)
+            {
+                base.Add(tuple.Item1, tuple.Item2);
+            }
+        }
+
+        public Configuration(dynamic vaProxy, VoiceAttackLog log, string id) => (VA, Log, ID) = (vaProxy, log, id);
+
+        public dynamic GetDefault(string name)
+        {
+            return GetDefault(ID, name);
+        }
+        public static dynamic GetDefault(string id, string name)
+        {
+            return Defaults[id][name];
+        }
+
+        public void SetVoiceTriggers(System.Type type)
+        {
+            List<string> triggers = new List<string>();
+            foreach (Dictionary<string,Option> options in Defaults.Values)
+            {
+                foreach (Option option in options.Values)
+                {
+                    if (option.DefaultValue.GetType() == type)
+                    {
+                        if (triggers.Contains(option.VoiceTrigger))
+                        {
+                            throw new ArgumentException($"Voice trigger '{option.VoiceTrigger}' is not unique, aborting …");
+                        }
+                        triggers.Add(option.VoiceTrigger);
+                    }
+                }
+            }
+            if (triggers.Count > 0)
+            {
+                string triggerString = string.Join(";", triggers);
+                VA.SetText($"alterNERDtive-base.triggers.{type.Name}", triggerString);
+                Log.Debug($"Voice triggers for {type.Name}: '{triggerString}'");
+            }
+            else
+            {
+                // make sure we don’t accidentally have weird things happening with empty config voice triggers
+                string triggerString = $"tenuiadafesslejüsljlejutlesuivle{type.Name}";
+                VA.SetText($"alterNERDtive-base.triggers.{type.Name}", triggerString);
+                Log.Debug($"No voice triggers found for {type.Name}");
+            }
+        }
+
+        public void SetVariablesForTrigger(dynamic vaProxy, string trigger)
+        {
+            _ = trigger ?? throw new ArgumentNullException("trigger");
+
+            foreach (KeyValuePair<string,OptDict<string,Option>> options in Defaults)
+            {
+                try
+                {
+                    Option option = options.Value.First(item => item.Value.VoiceTrigger == trigger).Value;
+                    vaProxy.SetText("~name", $"{options.Key}.{option.Name}");
+                    vaProxy.SetText("~ttsDescription", option.TtsDescription);
+                    vaProxy.SetText("~description", option.Description);
+                    break;
+                }
+                catch (InvalidOperationException) { }
+            }
+        }
+
+        public bool HasDefault(string name)
+        {
+            return HasDefault(ID, name);
+        }
+        public static bool HasDefault(string id, string name)
+        {
+            return Defaults[id].ContainsKey(name);
+        }
+
+        public dynamic? ApplyDefault(string name)
+        {
+            return ApplyDefault(ID, name);
+        }
+        public dynamic? ApplyDefault(string id, string name)
+        {
+            if (!HasDefault(id, name))
+            {
+                Log.Warn($"No default configuration value found for '{id}.{name}'");
+                return null;
+            }
+
+            dynamic value = Defaults[id][name].DefaultValue;
+            Log.Debug($"Loading default configuration value, '{id}.{name}': '{value}' …");
+            string variable = $"{id}.{name}#";
+            if (value is bool)
+            {
+                VA.SetBoolean(variable, value);
+            }
+            else if (value is DateTime)
+            {
+                VA.SetDate(variable, value);
+            }
+            else if (value is decimal)
+            {
+                VA.SetDecimal(variable, value);
+            }
+            else if (value is int)
+            {
+                VA.SetInt(variable, value);
+            }
+            else if (value is short)
+            {
+                VA.SetSmallInt(variable, value);
+            }
+            else if (value is string)
+            {
+                VA.SetText(variable, value);
+            }
+            else
+            {
+                throw new InvalidDataException($"Invalid data type for option '{id}.{name}': '{value}'");
+            }
+            return value;
+        }
+        public void ApplyDefaults()
+        {
+            ApplyDefaults(ID);
+        }
+        public void ApplyAllDefaults()
+        {
+            foreach (string id in Defaults.Keys)
+            {
+                ApplyDefaults(id);
+            }
+        }
+        public void ApplyDefaults(string id)
+        {
+            foreach (string key in Defaults[id].Keys)
+            {
+                ApplyDefault(id, key);
+            }
+        }
+    }
+
     public class PythonProxy
     {
         public static Process SetupPythonScript(string path, string arguments)
@@ -78,7 +287,7 @@ namespace alterNERDtive.util
                     WaitForReturn: wait,
                     AsSubcommand: subcommand,
                     CompletedAction: callback,
-                    PassedText: strings == null ? null : $"\"{String.Join<string>("\";\"", strings)}\"",
+                    PassedText: strings == null ? null : $@"""{String.Join<string>(@""";""", strings)}""",
                     PassedIntegers: integers == null ? null : String.Join<int>(";", integers),
                     PassedDecimals: decimals == null ? null : String.Join<decimal>(";", decimals),
                     PassedBooleans: booleans == null ? null : String.Join<bool>(";", booleans),
@@ -178,7 +387,7 @@ namespace alterNERDtive.util
 
         public PipeServer<Thing> Run()
         {
-            Log.Debug($"Starting “{PipeName}” pipe …");
+            Log.Debug($"Starting '{PipeName}' pipe …");
             if (!Running)
             {
                 Running = true;
@@ -189,7 +398,7 @@ namespace alterNERDtive.util
 
         public PipeServer<Thing> Stop()
         {
-            Log.Debug($"Stopping “{PipeName}” pipe …");
+            Log.Debug($"Stopping '{PipeName}' pipe …");
             if (Running)
             {
                 Running = false;
@@ -225,7 +434,7 @@ namespace alterNERDtive.util
             }
             catch (ObjectDisposedException)
             {
-                Log.Info("Ratsignal pipe has been closed.");
+                Log.Debug($"'{PipeName}' pipe has been closed.");
             }
             catch (Exception e)
             {

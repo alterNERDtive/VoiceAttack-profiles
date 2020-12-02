@@ -122,7 +122,7 @@ namespace RatAttack
         }
 
         private static void On_ProfileChanged(Guid? from, Guid? to, string fromName, string toName)
-            => VA_Exit1(null);
+            => VA_Exit1(VA);
 
         /*================\
         | plugin contexts |
