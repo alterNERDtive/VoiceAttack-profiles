@@ -78,7 +78,7 @@ namespace alterNERDtive
                 bool? value = VA!.GetBoolean(name);
                 if (value != null)
                 {
-                    Log.Debug($"Migrating option {name} …");
+                    Log.Info($"Migrating option {name} …");
                     Commands.Run("alterNERDtive-base.saveVariableToProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}#" }, new bool[] { (bool)value } });
                     Commands.Run("alterNERDtive-base.unsetVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}", "boolean" } });
                 }
@@ -90,7 +90,7 @@ namespace alterNERDtive
                 string value = VA!.GetText(name);
                 if (!string.IsNullOrEmpty(value))
                 {
-                    Log.Debug($"Migrating option {name} …");
+                    Log.Info($"Migrating option {name} …");
                     Commands.Run("alterNERDtive-base.saveVariableToProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}#", value } });
                     Commands.Run("alterNERDtive-base.unsetVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}", "text" } });
                 }
