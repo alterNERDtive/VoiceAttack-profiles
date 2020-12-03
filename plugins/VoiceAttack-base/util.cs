@@ -141,7 +141,7 @@ namespace alterNERDtive.util
             {
                 try
                 {
-                    Option option = options.Value.First(item => item.Value.VoiceTrigger == trigger).Value;
+                    Option option = options.Value.First(item => item.Value.VoiceTrigger.ToLower() == trigger).Value;
                     vaProxy.SetText("~name", $"{options.Key}.{option.Name}");
                     vaProxy.SetText("~ttsDescription", option.TtsDescription);
                     vaProxy.SetText("~description", option.Description);
