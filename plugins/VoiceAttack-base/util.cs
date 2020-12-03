@@ -34,7 +34,13 @@ namespace alterNERDtive.util
             {
                 "RatAttack",
                 new OptDict<string, Option>{
-
+                    { new Option("autoCloseCase", false, voiceTrigger: "auto close case") },
+                    { new Option("announceNearestCMDR", false, voiceTrigger: "announce nearest commander") },
+                    { new Option("announcePlatform", false, voiceTrigger: "announce platform") },
+                    { new Option("CMDRs", "", voiceTrigger: "commanders") },
+                    { new Option("confirmCalls", true, voiceTrigger: "confirm calls") },
+                    { new Option("onDuty", true, voiceTrigger: "on duty") },
+                    { new Option("platforms", "PC", voiceTrigger: "platforms") }
                 }
             },
             {

@@ -65,6 +65,38 @@ namespace alterNERDtive
             Config.SetVariablesForTrigger(vaProxy, trigger);
         }
 
+        private static void Context_Config_VersionMigration(dynamic vaProxy)
+        {
+            // ===========
+            // === 4.0 ===
+            // ===========
+            string prefix = "RatAttack";
+            foreach (string option in new string[] { "autoCloseCase", "announceNearestCMDR", "announcePlatform", "confirmCalls", "onDuty" })
+            {
+                string name = $"{prefix}.{option}";
+                Commands.Run("alterNERDtive-base.loadVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}", "boolean" } });
+                bool? value = VA!.GetBoolean(name);
+                if (value != null)
+                {
+                    Log.Debug($"Migrating option {name} …");
+                    Commands.Run("alterNERDtive-base.saveVariableToProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}#" }, new bool[] { (bool)value } });
+                    Commands.Run("alterNERDtive-base.unsetVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}", "boolean" } });
+                }
+            }
+            foreach (string option in new string[] { "CMDRs", "platforms" })
+            {
+                string name = $"{prefix}.{option}";
+                Commands.Run("alterNERDtive-base.loadVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}", "text" } });
+                string value = VA!.GetText(name);
+                if (!string.IsNullOrEmpty(value))
+                {
+                    Log.Debug($"Migrating option {name} …");
+                    Commands.Run("alterNERDtive-base.saveVariableToProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}#", value } });
+                    Commands.Run("alterNERDtive-base.unsetVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}", "text" } });
+                }
+            }
+        }
+
         private static void Context_DistanceBetween(dynamic vaProxy)
         {
             string fromSystem = vaProxy.GetText("~fromSystem");
@@ -238,6 +270,9 @@ namespace alterNERDtive
                         break;
                     case "config.getvariables":
                         Context_Config_SetVariables(vaProxy);
+                        break;
+                    case "config.versionmigration":
+                        Context_Config_VersionMigration(vaProxy);
                         break;
                     // EDSM
                     case "edsm.distancebetween":
