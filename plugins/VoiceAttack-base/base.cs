@@ -70,6 +70,8 @@ namespace alterNERDtive
             // ===========
             // === 4.0 ===
             // ===========
+
+            // RatAttack
             string prefix = "RatAttack";
             foreach (string option in new string[] { "autoCloseCase", "announceNearestCMDR", "announcePlatform", "confirmCalls", "onDuty" })
             {
@@ -84,6 +86,21 @@ namespace alterNERDtive
                 }
             }
             foreach (string option in new string[] { "CMDRs", "platforms" })
+            {
+                string name = $"{prefix}.{option}";
+                Commands.Run("alterNERDtive-base.loadVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}", "text" } });
+                string value = VA!.GetText(name);
+                if (!string.IsNullOrEmpty(value))
+                {
+                    Log.Info($"Migrating option {name} …");
+                    Commands.Run("alterNERDtive-base.saveVariableToProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}#", value } });
+                    Commands.Run("alterNERDtive-base.unsetVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}", "text" } });
+                }
+            }
+
+            // StreamAttack
+            prefix = "StreamAttack";
+            foreach (string option in new string[] { "outputDir" })
             {
                 string name = $"{prefix}.{option}";
                 Commands.Run("alterNERDtive-base.loadVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}", "text" } });

@@ -52,7 +52,7 @@ namespace alterNERDtive.util
             {
                 "StreamAttack",
                 new OptDict<string, Option>{
-
+                    { new Option("outputDir", @"%appdata%\StreamAttack\", voiceTrigger: "StreamAttack output directory") }
                 }
             }
         };
