@@ -23,7 +23,9 @@ namespace alterNERDtive.util
                     { new Option("eddi.quietMode", true, voiceTrigger: "eddi quiet mode", description: "Whether or not to make EDDI shut up.") },
                     { new Option("keyPressDuration", (decimal)0.01, voiceTrigger: "key press duration", description: "The time keys will be held down for.") },
                     { new Option("delays.quitToDesktop", (decimal)10.0, voiceTrigger: "quit to desktop delay") },
-                    { new Option("elite.pasteKey", "v", voiceTrigger: "elite paste key", description: "The key used to paste in conjunction with CTRL. The key that would be 'V' on QWERTY.") }
+                    { new Option("elite.pasteKey", "v", voiceTrigger: "elite paste key", description: "The key used to paste in conjunction with CTRL. The key that would be 'V' on QWERTY.") },
+                    { new Option("log.logLevel", "NOTICE", voiceTrigger: "log level", validValues: new List<dynamic>{ "ERROR", "WARN", "NOTICE", "INFO", "DEBUG" }, 
+                        description: @"The level of detail for logging to the VoiceAttack log.\nValid levels are ""ERROR"", ""WARN"", ""NOTICE"", ""INFO"" and ""DEBUG"".\nDefault: ""NOTICE"".") },
                 }
             },
             {
@@ -49,7 +51,7 @@ namespace alterNERDtive.util
                     { new Option("CMDRs", "", voiceTrigger: "commanders") },
                     { new Option("confirmCalls", true, voiceTrigger: "confirm calls") },
                     { new Option("onDuty", true, voiceTrigger: "on duty") },
-                    { new Option("platforms", "PC", voiceTrigger: "platforms") }
+                    { new Option("platforms", "PC", voiceTrigger: "platforms") },
                 }
             },
             {
@@ -62,7 +64,7 @@ namespace alterNERDtive.util
                     { new Option("clearOnShutdown", true, voiceTrigger: "clear on shutdown") },
                     { new Option("copyWaypointToClipboard", false, voiceTrigger: "copy waypoint to clipboard") },
                     { new Option("defaultToLadenRange", false, voiceTrigger: "default to laden range") },
-                    { new Option("timeTrip", false, voiceTrigger: "time trip") }
+                    { new Option("timeTrip", false, voiceTrigger: "time trip") },
                 }
             },
             {
@@ -73,18 +75,19 @@ namespace alterNERDtive.util
             }
         };
 
-        private class Option
+        public class Option
         {
             public readonly string Name;
             public readonly dynamic DefaultValue;
+            public readonly List<dynamic>? ValidValues;
             public readonly string VoiceTrigger;
             public string TtsDescription { get => ttsDescription ?? VoiceTrigger; }
             private readonly string? ttsDescription;
             public string Description { get => description ?? "No description available."; }
             public readonly string? description;
 
-            public Option(string name, dynamic defaultValue, string voiceTrigger, string? ttsDescription = null, string? description = null)
-                => (Name, DefaultValue, VoiceTrigger, this.ttsDescription, this.description) = (name, defaultValue, voiceTrigger, ttsDescription, description);
+            public Option(string name, dynamic defaultValue, string voiceTrigger, List<dynamic>? validValues = null, string? ttsDescription = null, string? description = null)
+                => (Name, DefaultValue, VoiceTrigger, ValidValues, this.ttsDescription, this.description) = (name, defaultValue, voiceTrigger, validValues, ttsDescription, description);
 
             public static implicit operator (string, Option)(Option o) => ( o.Name, o );
             public static explicit operator bool(Option o) => o.DefaultValue;
@@ -113,6 +116,15 @@ namespace alterNERDtive.util
             return GetDefault(ID, name);
         }
         public static dynamic GetDefault(string id, string name)
+        {
+            return Defaults[id][name];
+        }
+
+        public Option GetOption(string name)
+        {
+            return GetOption(ID, name);
+        }
+        public Option GetOption(string id, string name)
         {
             return Defaults[id][name];
         }

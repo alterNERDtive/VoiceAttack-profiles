@@ -249,45 +249,46 @@ namespace alterNERDtive
             Log.Notice("Finished startup.");
         }
 
-        private static void Context_SetLogLevel(dynamic vaProxy)
-        {
-            string level = vaProxy.GetText("~level");
-            try
-            {
-                Log.SetCurrentLogLevel(level);
-            }
-            catch (ArgumentException)
-            {
-                Log.Error($"Invalid LogLevel '{level}'.");
-            }
-        }
-
-        private static void ConfigurationChanged(string name, dynamic? from, dynamic? to, Guid? guid = null)
+        private static void ConfigurationChanged(string option, dynamic? from, dynamic? to, Guid? guid = null)
         {
             try
             {
-                Match match = ConfigurationVariableRegex.Match(name);
+                Match match = ConfigurationVariableRegex.Match(option);
                 if (match.Success)
                 {
                     string id = match.Groups["id"].Value;
-                    string option = match.Groups["name"].Value;
-                    Log.Debug($"Configuration has changed, '{id}.{option}': '{from}' → '{to}'");
+                    string name = match.Groups["name"].Value;
+                    Log.Debug($"Configuration has changed, '{id}.{name}': '{from}' → '{to}'");
 
                     // When loaded from profile but not explicitly set, will be null.
                     // Then load default.
                     // Same applies to resetting a saved option (= saving null to the profile).
-                    _ = to ?? Config.ApplyDefault(id, option);
+                    _ = to ?? Config.ApplyDefault(id, name);
 
-                    if (name == "alterNERDtive-base.eddi.quietMode#" && VA!.GetText("EDDI version") != null) // if null, EDDI isn’t up yet
+                    // When not null, check if there’s a constraint on valid values.
+                    Configuration.Option o = Config.GetOption(id, name);
+                    if (o.ValidValues != null && !o.ValidValues.Contains(to))
                     {
-                        Log.Debug($"Resetting speech responder ({(to ?? false ? "off" : "on")}) …");
-                        Commands.Run("alterNERDtive-base.setEDDISpeechResponder");
+                        Log.Error($@"Invalid value ""{to}"" for option ""{id}.{option}"", reverting to default …");
+                        Config.ApplyDefault(id, name);
+                    }
+                    else
+                    {
+                        if (option == "alterNERDtive-base.eddi.quietMode#" && VA!.GetText("EDDI version") != null) // if null, EDDI isn’t up yet
+                        {
+                            Log.Debug($"Resetting speech responder ({(to ?? false ? "off" : "on")}) …");
+                            Commands.Run("alterNERDtive-base.setEDDISpeechResponder");
+                        }
+                        else if (option == "alterNERDtive-base.log.logLevel#")
+                        {
+                            Log.SetCurrentLogLevel(to);
+                        }
                     }
                 }
             }
             catch (Exception e)
             {
-                Log.Error($"Unhandled exception while handling changed variable '{name}'. ({e.Message})");
+                Log.Error($"Unhandled exception while handling changed variable '{option}'. ({e.Message})");
             }
         }
 
@@ -355,9 +356,6 @@ namespace alterNERDtive
                     // log
                     case "log.log":
                         Context_Log(vaProxy);
-                        break;
-                    case "log.setloglevel":
-                        Context_SetLogLevel(vaProxy);
                         break;
                     // invalid
                     default:
