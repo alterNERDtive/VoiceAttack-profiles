@@ -227,7 +227,7 @@ namespace alterNERDtive
         {
             Log.Notice("Starting up …");
             CheckProfiles(VA);
-            Commands.RunAll(ActiveProfiles, "startup", logMissing: true);
+            Commands.TriggerEventAll(ActiveProfiles, "startup", logMissing: true);
             Log.Notice("Finished startup.");
         }
 
