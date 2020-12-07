@@ -103,6 +103,33 @@ namespace alterNERDtive
                 }
             }
 
+            // SpanshAttack
+            prefix = "SpanshAttack";
+            foreach (string option in new string[] { "announceWaypoints", "autoJumpAfterScooping", "autoPlot", "clearOnShutdown", "copyWaypointToClipboard", "defaultToLadenRange", "timeTrip" })
+            {
+                string name = $"{prefix}.{option}";
+                Commands.Run("alterNERDtive-base.loadVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}", "boolean" } });
+                bool? value = VA!.GetBoolean(name);
+                if (value != null)
+                {
+                    Log.Info($"Migrating option {name} …");
+                    Commands.Run("alterNERDtive-base.saveVariableToProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}#" }, new bool[] { (bool)value } });
+                    Commands.Run("alterNERDtive-base.unsetVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}", "boolean" } });
+                }
+            }
+            foreach (string option in new string[] { "announceJumpsLeft" })
+            {
+                string name = $"{prefix}.{option}";
+                Commands.Run("alterNERDtive-base.loadVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}", "text" } });
+                string value = VA!.GetText(name);
+                if (!string.IsNullOrEmpty(value))
+                {
+                    Log.Info($"Migrating option {name} …");
+                    Commands.Run("alterNERDtive-base.saveVariableToProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}#", value } });
+                    Commands.Run("alterNERDtive-base.unsetVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}", "text" } });
+                }
+            }
+
             // StreamAttack
             prefix = "StreamAttack";
             foreach (string option in new string[] { "outputDir" })

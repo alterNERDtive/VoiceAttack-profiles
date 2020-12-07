@@ -46,7 +46,14 @@ namespace alterNERDtive.util
             {
                 "SpanshAttack",
                 new OptDict<string, Option>{
-
+                    { new Option("announceJumpsLeft", ";1;3;5;10;15;20;30;50;75;100;", voiceTrigger: "announce jumps left") },
+                    { new Option("announceWaypoints", true, voiceTrigger: "announce waypoints") },
+                    { new Option("autoJumpAfterScooping", true, voiceTrigger: "auto jump after scooping") },
+                    { new Option("autoPlot", true, voiceTrigger: "auto plot") },
+                    { new Option("clearOnShutdown", true, voiceTrigger: "clear on shutdown") },
+                    { new Option("copyWaypointToClipboard", false, voiceTrigger: "copy waypoint to clipboard") },
+                    { new Option("defaultToLadenRange", false, voiceTrigger: "default to laden range") },
+                    { new Option("timeTrip", false, voiceTrigger: "time trip") },
                 }
             },
             {
