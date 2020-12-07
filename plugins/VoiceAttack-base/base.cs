@@ -76,8 +76,25 @@ namespace alterNERDtive
             // === 4.0 ===
             // ===========
 
+            // EliteAttack
+            string prefix = "EliteAttack";
+            string oldPrefix = "EliteDangerous";
+            foreach (string option in new string[] { "announceEdsmSystemStatus", "announceMappingCandidates", "announceOutdatedStationData", "announceR2RMappingCandidates", "autoRestock", "flightAssistOff", "hyperspaceDethrottle" })
+            {
+                string name = $"{prefix}.{option}";
+                string oldName = $"{oldPrefix}.{option}";
+                Commands.Run("alterNERDtive-base.loadVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{oldName}", "boolean" } });
+                bool? value = VA!.GetBoolean(oldName);
+                if (value != null)
+                {
+                    Log.Info($"Migrating option {oldName} …");
+                    Commands.Run("alterNERDtive-base.saveVariableToProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}#" }, new bool[] { (bool)value } });
+                    Commands.Run("alterNERDtive-base.unsetVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{oldName}", "boolean" } });
+                }
+            }
+
             // RatAttack
-            string prefix = "RatAttack";
+            prefix = "RatAttack";
             foreach (string option in new string[] { "autoCloseCase", "announceNearestCMDR", "announcePlatform", "confirmCalls", "onDuty" })
             {
                 string name = $"{prefix}.{option}";

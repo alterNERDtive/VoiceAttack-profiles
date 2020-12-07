@@ -22,13 +22,22 @@ namespace alterNERDtive.util
                 new OptDict<string, Option>{
                     { new Option("eddi.quietMode", true, voiceTrigger: "eddi quiet mode", description: "Whether or not to make EDDI shut up.") },
                     { new Option("keyPressDuration", (decimal)0.01, voiceTrigger: "key press duration", description: "The time keys will be held down for.") },
+                    { new Option("delays.quitToDesktop", (decimal)10.0, voiceTrigger: "quit to desktop delay") },
                     { new Option("elite.pasteKey", "v", voiceTrigger: "elite paste key", description: "The key used to paste in conjunction with CTRL. The key that would be 'V' on QWERTY.") }
                 }
             },
             {
                 "EliteAttack",
                 new OptDict<string, Option>{
-
+                    { new Option("announceEdsmSystemStatus", true, voiceTrigger: "announce edsm system status") },
+                    { new Option("announceMappingCandidates", true, voiceTrigger: "announce mapping candidates") },
+                    { new Option("announceOutdatedStationData", true, voiceTrigger: "announce outdated station data") },
+                    { new Option("announceR2RMappingCandidates", true, voiceTrigger: "announce road to riches mapping candidates") },
+                    { new Option("autoRestock", true, voiceTrigger: "auto restock") },
+                    //{ new Option("enableAutoUpdateCheck", true, voiceTrigger: "auto update check") },
+                    { new Option("flightAssistOff", false, voiceTrigger: "flight assist off") },
+                    { new Option("hyperspaceDethrottle", true, voiceTrigger: "hyper space dethrottle") },
+                    { new Option("outdatedStationThreshold", (int)365, voiceTrigger: "outdated station threshold") },
                 }
             },
             {
@@ -53,7 +62,7 @@ namespace alterNERDtive.util
                     { new Option("clearOnShutdown", true, voiceTrigger: "clear on shutdown") },
                     { new Option("copyWaypointToClipboard", false, voiceTrigger: "copy waypoint to clipboard") },
                     { new Option("defaultToLadenRange", false, voiceTrigger: "default to laden range") },
-                    { new Option("timeTrip", false, voiceTrigger: "time trip") },
+                    { new Option("timeTrip", false, voiceTrigger: "time trip") }
                 }
             },
             {
