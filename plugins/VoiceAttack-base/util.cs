@@ -270,6 +270,58 @@ namespace alterNERDtive.util
                 ApplyDefault(id, key);
             }
         }
+
+        public void DumpConfig()
+        {
+            foreach (string id in Defaults.Keys)
+            {
+                DumpConfig(id);
+            }
+        }
+        public void DumpConfig(string id)
+        {
+            Log.Notice($"===== {id} configuration: =====");
+            foreach (string name in Defaults[id].Keys)
+            {
+                DumpConfig(id, name);
+            }
+        }
+        public void DumpConfig(string id, string name)
+        {
+            Option option = Defaults[id][name];
+            string variable = $"{id}.{option.Name}#";
+            dynamic defaultValue = option.DefaultValue;
+            dynamic value;
+            if (defaultValue is bool)
+            {
+                value = VA.GetBoolean(variable);
+            }
+            else if (defaultValue is DateTime)
+            {
+                value = VA.GetDate(variable);
+            }
+            else if (defaultValue is decimal)
+            {
+                value = VA.GetDecimal(variable);
+            }
+            else if (defaultValue is int)
+            {
+                value = VA.GetInt(variable);
+            }
+            else if (defaultValue is short)
+            {
+                value = VA.GetSmallInt(variable);
+            }
+            else if (defaultValue is string)
+            {
+                value = VA.GetText(variable);
+            }
+            else
+            {
+                throw new InvalidDataException($"Invalid data type for option '{id}.{name}': '{defaultValue}'");
+            }
+            Log.Notice($"{variable} = {value}{(value == defaultValue? " (default)" : "")}");
+        }
     }
 
     public class PythonProxy

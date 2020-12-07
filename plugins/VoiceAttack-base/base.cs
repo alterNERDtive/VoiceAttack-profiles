@@ -46,6 +46,11 @@ namespace alterNERDtive
         | plugin contexts |
         \================*/
 
+        private static void Context_Config_Dump(dynamic vaProxy)
+        {
+            Config.DumpConfig();
+        }
+
         private static void Context_Config_Setup(dynamic vaProxy)
         {
             Log.Debug("Loading default configuration …");
@@ -282,11 +287,14 @@ namespace alterNERDtive
                         Context_Startup(vaProxy);
                         break;
                     // config
-                    case "config.setup":
-                        Context_Config_Setup(vaProxy);
+                    case "config.dump":
+                        Context_Config_Dump(vaProxy);
                         break;
                     case "config.getvariables":
                         Context_Config_SetVariables(vaProxy);
+                        break;
+                    case "config.setup":
+                        Context_Config_Setup(vaProxy);
                         break;
                     case "config.versionmigration":
                         Context_Config_VersionMigration(vaProxy);
