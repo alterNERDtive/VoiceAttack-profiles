@@ -12,6 +12,7 @@ namespace alterNERDtive
     {
         private static dynamic? VA { get; set; }
         private static readonly Dictionary<Guid, string> Profiles = new Dictionary<Guid, string> {
+            { new Guid("{F7F59CFD-1AE2-4A7E-8F62-C62372418BAC}"), "alterNERDtive-base" },
             { new Guid("{f31b575b-6ce4-44eb-91fc-7459e55013cf}"), "EliteAttack" },
             { new Guid("{87276668-2a6e-4d80-af77-80651daa58b7}"), "RatAttack" },
             { new Guid("{e722b29d-898e-47dd-a843-a409c87e0bd8}"), "SpanshAttack" },
@@ -19,7 +20,7 @@ namespace alterNERDtive
         };
         private static readonly List<string> ActiveProfiles = new List<string>();
 
-        private static readonly Regex ConfigurationVariableRegex = new Regex(@$"(?<id>(alterNERDtive-base|{String.Join("|", Profiles.Values)}))\.(?<name>.+)#");
+        private static readonly Regex ConfigurationVariableRegex = new Regex(@$"(?<id>({String.Join("|", Profiles.Values)}))\.(?<name>.+)#");
 
         private static VoiceAttackLog Log => log ??= new VoiceAttackLog(VA, "alterNERDtive-base");
         private static VoiceAttackLog? log;
@@ -245,7 +246,7 @@ namespace alterNERDtive
             Log.Notice("Starting up …");
             CheckProfiles(VA);
             Log.Notice($"Active profiles: {string.Join(", ", ActiveProfiles)}");
-            Commands.TriggerEventAll(ActiveProfiles, "startup", logMissing: true);
+            Commands.TriggerEventAll(ActiveProfiles, "startup", logMissing: false);
             Log.Notice("Finished startup.");
         }
 
