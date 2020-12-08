@@ -20,83 +20,127 @@ namespace alterNERDtive.util
             {
                 "alterNERDtive-base",
                 new OptDict<string, Option>{
-                    { new Option("eddi.quietMode", true, voiceTrigger: "eddi quiet mode", description: "Whether or not to make EDDI shut up.") },
-                    { new Option("keyPressDuration", (decimal)0.01, voiceTrigger: "key press duration", description: "The time keys will be held down for.") },
-                    { new Option("delays.quitToDesktop", (decimal)10.0, voiceTrigger: "quit to desktop delay") },
-                    { new Option("elite.pasteKey", "v", voiceTrigger: "elite paste key", description: "The key used to paste in conjunction with CTRL. The key that would be 'V' on QWERTY.") },
-                    { new Option("log.logLevel", "NOTICE", voiceTrigger: "log level", validValues: new List<dynamic>{ "ERROR", "WARN", "NOTICE", "INFO", "DEBUG" }, 
+                    { new Option<bool>("eddi.quietMode", true, voiceTrigger: "eddi quiet mode", description: "Whether or not to make EDDI shut up.") },
+                    { new Option<decimal>("keyPressDuration", (decimal)0.01, voiceTrigger: "key press duration", description: "The time keys will be held down for.") },
+                    { new Option<decimal>("delays.quitToDesktop", (decimal)10.0, voiceTrigger: "quit to desktop delay") },
+                    { new Option<string>("elite.pasteKey", "v", voiceTrigger: "elite paste key", description: "The key used to paste in conjunction with CTRL. The key that would be 'V' on QWERTY.") },
+                    { new Option<string>("log.logLevel", "NOTICE", voiceTrigger: "log level", validValues: new List<string>{ "ERROR", "WARN", "NOTICE", "INFO", "DEBUG" }, 
                         description: @"The level of detail for logging to the VoiceAttack log.\nValid levels are ""ERROR"", ""WARN"", ""NOTICE"", ""INFO"" and ""DEBUG"".\nDefault: ""NOTICE"".") },
                 }
             },
             {
                 "EliteAttack",
                 new OptDict<string, Option>{
-                    { new Option("announceEdsmSystemStatus", true, voiceTrigger: "announce edsm system status") },
-                    { new Option("announceMappingCandidates", true, voiceTrigger: "announce mapping candidates") },
-                    { new Option("announceOutdatedStationData", true, voiceTrigger: "announce outdated station data") },
-                    { new Option("announceR2RMappingCandidates", true, voiceTrigger: "announce road to riches mapping candidates") },
-                    { new Option("autoRestock", true, voiceTrigger: "auto restock") },
-                    //{ new Option("enableAutoUpdateCheck", true, voiceTrigger: "auto update check") },
-                    { new Option("flightAssistOff", false, voiceTrigger: "flight assist off") },
-                    { new Option("hyperspaceDethrottle", true, voiceTrigger: "hyper space dethrottle") },
-                    { new Option("outdatedStationThreshold", (int)365, voiceTrigger: "outdated station threshold") },
+                    { new Option<bool>("announceEdsmSystemStatus", true, voiceTrigger: "announce edsm system status") },
+                    { new Option<bool>("announceMappingCandidates", true, voiceTrigger: "announce mapping candidates") },
+                    { new Option<bool>("announceOutdatedStationData", true, voiceTrigger: "announce outdated station data") },
+                    { new Option<bool>("announceR2RMappingCandidates", true, voiceTrigger: "announce road to riches mapping candidates") },
+                    { new Option<bool>("autoRestock", true, voiceTrigger: "auto restock") },
+                    //{ new Option<bool>("enableAutoUpdateCheck", true, voiceTrigger: "auto update check") },
+                    { new Option<bool>("flightAssistOff", false, voiceTrigger: "flight assist off") },
+                    { new Option<bool>("hyperspaceDethrottle", true, voiceTrigger: "hyper space dethrottle") },
+                    { new Option<int>("outdatedStationThreshold", 365, voiceTrigger: "outdated station threshold") },
                 }
             },
             {
                 "RatAttack",
                 new OptDict<string, Option>{
-                    { new Option("autoCloseCase", false, voiceTrigger: "auto close case") },
-                    { new Option("announceNearestCMDR", false, voiceTrigger: "announce nearest commander") },
-                    { new Option("announcePlatform", false, voiceTrigger: "announce platform") },
-                    { new Option("CMDRs", "", voiceTrigger: "commanders") },
-                    { new Option("confirmCalls", true, voiceTrigger: "confirm calls") },
-                    { new Option("onDuty", true, voiceTrigger: "on duty") },
-                    { new Option("platforms", "PC", voiceTrigger: "platforms") },
+                    { new Option<bool>("autoCloseCase", false, voiceTrigger: "auto close case") },
+                    { new Option<bool>("announceNearestCMDR", false, voiceTrigger: "announce nearest commander") },
+                    { new Option<bool>("announcePlatform", false, voiceTrigger: "announce platform") },
+                    { new Option<string>("CMDRs", "", voiceTrigger: "commanders") },
+                    { new Option<bool>("confirmCalls", true, voiceTrigger: "confirm calls") },
+                    { new Option<bool>("onDuty", true, voiceTrigger: "on duty") },
+                    { new Option<string>("platforms", "PC", voiceTrigger: "platforms") },
                 }
             },
             {
                 "SpanshAttack",
                 new OptDict<string, Option>{
-                    { new Option("announceJumpsLeft", ";1;3;5;10;15;20;30;50;75;100;", voiceTrigger: "announce jumps left") },
-                    { new Option("announceWaypoints", true, voiceTrigger: "announce waypoints") },
-                    { new Option("autoJumpAfterScooping", true, voiceTrigger: "auto jump after scooping") },
-                    { new Option("autoPlot", true, voiceTrigger: "auto plot") },
-                    { new Option("clearOnShutdown", true, voiceTrigger: "clear on shutdown") },
-                    { new Option("copyWaypointToClipboard", false, voiceTrigger: "copy waypoint to clipboard") },
-                    { new Option("defaultToLadenRange", false, voiceTrigger: "default to laden range") },
-                    { new Option("timeTrip", false, voiceTrigger: "time trip") },
+                    { new Option<string>("announceJumpsLeft", ";1;3;5;10;15;20;30;50;75;100;", voiceTrigger: "announce jumps left") },
+                    { new Option<bool>("announceWaypoints", true, voiceTrigger: "announce waypoints") },
+                    { new Option<bool>("autoJumpAfterScooping", true, voiceTrigger: "auto jump after scooping") },
+                    { new Option<bool>("autoPlot", true, voiceTrigger: "auto plot") },
+                    { new Option<bool>("clearOnShutdown", true, voiceTrigger: "clear on shutdown") },
+                    { new Option<bool>("copyWaypointToClipboard", false, voiceTrigger: "copy waypoint to clipboard") },
+                    { new Option<bool>("defaultToLadenRange", false, voiceTrigger: "default to laden range") },
+                    { new Option<bool>("timeTrip", false, voiceTrigger: "time trip") },
                 }
             },
             {
                 "StreamAttack",
                 new OptDict<string, Option>{
-                    { new Option("outputDir", @"%appdata%\StreamAttack\", voiceTrigger: "StreamAttack output directory") }
+                    { new Option<string>("outputDir", @"%appdata%\StreamAttack\", voiceTrigger: "StreamAttack output directory") }
                 }
             }
         };
 
-        public class Option
+        public abstract class Option 
         {
-            public readonly string Name;
-            public readonly dynamic DefaultValue;
-            public readonly List<dynamic>? ValidValues;
-            public readonly string VoiceTrigger;
-            public string TtsDescription { get => ttsDescription ?? VoiceTrigger; }
-            private readonly string? ttsDescription;
-            public string Description { get => description ?? "No description available."; }
-            public readonly string? description;
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+            public string Name { get; }
+            public dynamic DefaultValue { get;  }
+            public List<dynamic>? ValidValues { get; }
+            public string VoiceTrigger { get; }
+            public string TtsDescription { get; }
+            public string Description { get; }
+            public Type Type { get; }
 
-            public Option(string name, dynamic defaultValue, string voiceTrigger, List<dynamic>? validValues = null, string? ttsDescription = null, string? description = null)
+            public string? TypeString { get; }
+            public override string ToString() => DefaultValue!.ToString();
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+        }
+        public class Option<T> : Option
+        {
+            public new string Name { get; }
+            public new T DefaultValue { get; }
+            public new List<T>? ValidValues { get; }
+            public new string VoiceTrigger { get; }
+            public new string TtsDescription { get => ttsDescription ?? VoiceTrigger; }
+            private readonly string? ttsDescription;
+            public new string Description { get => description ?? "No description available."; }
+            private readonly string? description;
+
+            public new Type Type { get => typeof(T); }
+            public new string? TypeString
+            {
+                get
+                {
+                    string? type = null;
+                    if (typeof(T) == typeof(bool))
+                    {
+                        type = "boolean";
+                    }
+                    else if (typeof(T) == typeof(DateTime))
+                    {
+                        type = "date";
+                    }
+                    else if (typeof(T) == typeof(decimal))
+                    {
+                        type = "decimal";
+                    }
+                    else if (typeof(T) == typeof(int))
+                    {
+                        type = "int";
+                    }
+                    else if (typeof(T) == typeof(short))
+                    {
+                        type = "smallint";
+                    }
+                    else if (typeof(T) == typeof(string))
+                    {
+                        type = "text";
+                    }
+                    return type;
+                }
+            }
+
+            public Option(string name, T defaultValue, string voiceTrigger, List<T>? validValues = null, string? ttsDescription = null, string? description = null)
                 => (Name, DefaultValue, VoiceTrigger, ValidValues, this.ttsDescription, this.description) = (name, defaultValue, voiceTrigger, validValues, ttsDescription, description);
 
-            public static implicit operator (string, Option)(Option o) => ( o.Name, o );
-            public static explicit operator bool(Option o) => o.DefaultValue;
-            public static explicit operator DateTime(Option o) => o.DefaultValue;
-            public static explicit operator decimal(Option o) => o.DefaultValue;
-            public static explicit operator int(Option o) => o.DefaultValue;
-            public static explicit operator short(Option o) => o.DefaultValue;
-            public static explicit operator string(Option o) => o.DefaultValue;
-            public override string ToString() => DefaultValue.ToString();
+
+            public static implicit operator (string, Option)(Option<T> o) => (o.Name, o);
+            public static explicit operator T(Option<T> o) => o.DefaultValue;
         }
         private class OptDict<TKey, TValue> : Dictionary<TKey, TValue>
         {
@@ -134,7 +178,7 @@ namespace alterNERDtive.util
             List<string> triggers = new List<string>();
             foreach (Dictionary<string,Option> options in Defaults.Values)
             {
-                foreach (Option option in options.Values)
+                foreach (dynamic option in options.Values)
                 {
                     if (option.DefaultValue.GetType() == type)
                     {
@@ -169,7 +213,7 @@ namespace alterNERDtive.util
             {
                 try
                 {
-                    Option option = options.Value.First(item => item.Value.VoiceTrigger.ToLower() == trigger).Value;
+                    dynamic option = options.Value.First(item => ((dynamic)item.Value).VoiceTrigger.ToLower() == trigger).Value;
                     vaProxy.SetText("~name", $"{options.Key}.{option.Name}");
                     vaProxy.SetText("~ttsDescription", option.TtsDescription);
                     vaProxy.SetText("~description", option.Description);
@@ -197,39 +241,10 @@ namespace alterNERDtive.util
         }
         public void LoadFromProfile(string id)
         {
-            foreach (Option option in Defaults[id].Values)
+            foreach (dynamic option in Defaults[id].Values)
             {
-                dynamic value = option.DefaultValue;
                 string name = $"{id}.{option.Name}";
-                string type;
-                if (value is bool)
-                {
-                    type = "boolean";
-                }
-                else if (value is DateTime)
-                {
-                    type = "date";
-                }
-                else if (value is decimal)
-                {
-                    type = "decimal";
-                }
-                else if (value is int)
-                {
-                    type = "int";
-                }
-                else if (value is short)
-                {
-                    type = "smallint";
-                }
-                else if (value is string)
-                {
-                    type = "text";
-                }
-                else
-                {
-                    throw new InvalidDataException($"Invalid data type for option '{name}': '{value}'");
-                }
+                string type = option.TypeString ?? throw new InvalidDataException($"Invalid data type for option '{name}': '{option}'");
                 Log.Debug($"Loading value for option '{name}' from profile …");
                 Commands.Run("alterNERDtive-base.loadVariableFromProfile", parameters: new dynamic[] { new string[] { $"{name}#", type } });
             }
@@ -247,7 +262,8 @@ namespace alterNERDtive.util
                 return null;
             }
 
-            dynamic value = Defaults[id][name].DefaultValue;
+            dynamic option = Defaults[id][name];
+            dynamic value = option.DefaultValue;
             Log.Debug($"Loading default configuration value, '{id}.{name}': '{value}' …");
             string variable = $"{id}.{name}#";
             if (value is bool)
@@ -316,9 +332,9 @@ namespace alterNERDtive.util
         }
         public void DumpConfig(string id, string name)
         {
-            Option option = Defaults[id][name];
-            string variable = $"{id}.{option.Name}#";
+            dynamic option = Defaults[id][name];
             dynamic defaultValue = option.DefaultValue;
+            string variable = $"{id}.{option.Name}#";
             dynamic value;
             if (defaultValue is bool)
             {

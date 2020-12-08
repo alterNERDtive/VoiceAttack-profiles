@@ -260,7 +260,7 @@ namespace alterNERDtive
                     string name = match.Groups["name"].Value;
                     Log.Debug($"Configuration has changed, '{id}.{name}': '{from}' → '{to}'");
 
-                    Configuration.Option o = Config.GetOption(id, name);
+                    dynamic o = Config.GetOption(id, name);
                     // When loaded from profile but not explicitly set, will be null.
                     // Then load default.
                     // Same applies to resetting a saved option (= saving null to the profile).
