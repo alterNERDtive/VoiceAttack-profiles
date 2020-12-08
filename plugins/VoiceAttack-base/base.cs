@@ -260,14 +260,16 @@ namespace alterNERDtive
                     string name = match.Groups["name"].Value;
                     Log.Debug($"Configuration has changed, '{id}.{name}': '{from}' → '{to}'");
 
+                    Configuration.Option o = Config.GetOption(id, name);
                     // When loaded from profile but not explicitly set, will be null.
                     // Then load default.
                     // Same applies to resetting a saved option (= saving null to the profile).
-                    _ = to ?? Config.ApplyDefault(id, name);
-
+                    if (to == null)
+                    {
+                        _ = to ?? Config.ApplyDefault(id, name);
+                    }
                     // When not null, check if there’s a constraint on valid values.
-                    Configuration.Option o = Config.GetOption(id, name);
-                    if (o.ValidValues != null && !o.ValidValues.Contains(to))
+                    else if (o.ValidValues != null && !o.ValidValues.Contains(to))
                     {
                         Log.Error($@"Invalid value ""{to}"" for option ""{id}.{option}"", reverting to default …");
                         Config.ApplyDefault(id, name);
