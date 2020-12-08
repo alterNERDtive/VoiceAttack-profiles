@@ -66,7 +66,7 @@ namespace alterNERDtive
 
         private static void Context_Config_SetVariables(dynamic vaProxy)
         {
-            string trigger = vaProxy.GetText("~trigger");
+            string trigger = vaProxy.GetText("~trigger") ?? throw new ArgumentNullException("~trigger");
             Log.Debug($"Loading variables for trigger '{trigger}' …");
             Config.SetVariablesForTrigger(vaProxy, trigger);
         }
@@ -166,8 +166,8 @@ namespace alterNERDtive
 
         private static void Context_DistanceBetween(dynamic vaProxy)
         {
-            string fromSystem = vaProxy.GetText("~fromSystem");
-            string toSystem = vaProxy.GetText("~toSystem");
+            string fromSystem = vaProxy.GetText("~fromSystem") ?? throw new ArgumentNullException("~fromSystem");
+            string toSystem = vaProxy.GetText("~toSystem") ?? throw new ArgumentNullException("~toSystem");
             int roundTo = vaProxy.GetInt("~roundTo") ?? 2;
 
             string path = $"{vaProxy.GetText("Python.ScriptPath")}\\explorationtools.exe";
