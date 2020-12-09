@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 using alterNERDtive.util;
 
@@ -128,18 +129,79 @@ namespace RatAttack
         | plugin contexts |
         \================*/
 
+        private static void Context_EDSM_GetNearestCMDR(dynamic vaProxy)
+        {
+            int caseNo = vaProxy.GetInt("~caseNo") ?? throw new ArgumentNullException("~caseNo");
+            string cmdrList = vaProxy.GetText("~cmdrs") ?? throw new ArgumentNullException("~cmdrs");
+            string[] cmdrs = cmdrList.Split(';');
+            if (cmdrs.Length == 0)
+            {
+                throw new ArgumentNullException("~cmdrs");
+            }
+            string system = CaseList[caseNo]?.System ?? throw new ArgumentException($"Case #{caseNo} has no system information", "~caseNo");
+
+            string path = $@"{vaProxy.SessionState["VA_SOUNDS"]}\Scripts\edsm-getnearest.exe";
+            string arguments = $@"--short --text --system ""{system}"" ""{string.Join(@""" """, cmdrs)}""";
+
+            Process p = PythonProxy.SetupPythonScript(path, arguments);
+
+            p.Start();
+            string stdout = p.StandardOutput.ReadToEnd();
+            string stderr = p.StandardError.ReadToEnd();
+            p.WaitForExit();
+
+            string message = stdout;
+            string? errorMessage = null;
+            bool error = true;
+
+            switch (p.ExitCode)
+            {
+                case 0:
+                    error = false;
+                    Log.Info(message);
+                    break;
+                case 1: // CMDR not found, Server Error, Api Exception (jeez, what a mess did I make there?)
+                    error = true;
+                    Log.Error(message);
+                    break;
+                case 2: // System not found
+                    error = true;
+                    Log.Warn(message);
+                    break;
+                default:
+                    error = true;
+                    Log.Error(stderr);
+                    errorMessage = "Unrecoverable error in plugin.";
+                    break;
+
+            }
+
+            vaProxy.SetText("~message", message);
+            vaProxy.SetBoolean("~error", error);
+            vaProxy.SetText("~errorMessage", errorMessage);
+            vaProxy.SetInt("~exitCode", p.ExitCode);
+        }
+
         private static void Context_GetCaseData(dynamic vaProxy)
         {
             int cn = vaProxy.GetInt("~caseNumber");
-            RatCase rc = CaseList[cn];
 
-            vaProxy.SetInt("~~caseNumber", rc?.Number);
-            vaProxy.SetText("~~cmdr", rc?.Cmdr);
-            vaProxy.SetText("~~system", rc?.System?.ToLower());
-            vaProxy.SetBoolean("~~permitLocked", rc?.PermitLocked);
-            vaProxy.SetText("~~permitName", rc?.PermitName);
-            vaProxy.SetText("~~platform", rc?.Platform);
-            vaProxy.SetBoolean("~~codeRed", rc?.CodeRed);
+            if (CaseList.ContainsKey(cn))
+            {
+                RatCase rc = CaseList[cn];
+
+                vaProxy.SetInt("~~caseNumber", rc.Number);
+                vaProxy.SetText("~~cmdr", rc.Cmdr);
+                vaProxy.SetText("~~system", rc?.System?.ToLower());
+                vaProxy.SetBoolean("~~permitLocked", rc?.PermitLocked);
+                vaProxy.SetText("~~permitName", rc?.PermitName);
+                vaProxy.SetText("~~platform", rc?.Platform);
+                vaProxy.SetBoolean("~~codeRed", rc?.CodeRed);
+            }
+            else
+            {
+                Log.Warn($"Case #{cn} not found in the case list");
+            }
         }
 
         private static void Context_Startup(dynamic vaProxy)
@@ -195,8 +257,10 @@ namespace RatAttack
                     case "startup":
                         Context_Startup(vaProxy);
                         break;
-                    // plugin settings
-                    // NYI
+                    // EDSM
+                    case "edsm.getnearestcmdr":
+                        Context_EDSM_GetNearestCMDR(vaProxy);
+                        break;
                     // invalid
                     default:
                         Log.Error($"Invalid plugin context '{vaProxy.Context}'.");
@@ -205,7 +269,7 @@ namespace RatAttack
             }
             catch (ArgumentNullException e)
             {
-                Log.Error($"Missing parameter '~{e.ParamName}' for context '{context}'");
+                Log.Error($"Missing parameter '{e.ParamName}' for context '{context}'");
             }
             catch (Exception e)
             {

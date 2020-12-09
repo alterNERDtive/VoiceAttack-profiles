@@ -164,13 +164,68 @@ namespace alterNERDtive
             }
         }
 
-        private static void Context_DistanceBetween(dynamic vaProxy)
+        private static void Context_Eddi_Event(dynamic vaProxy)
+        {
+            string eddiEvent = vaProxy.Command.Name();
+            string command = eddiEvent.Substring(2, eddiEvent.Length - 4);
+            Log.Debug($"Running EDDI event '{command}' …");
+            Commands.RunAll(ActiveProfiles, command, logMissing: false, subcommand: true); // FIXXME: a) triggerAll or something, b) change all profiles to use "((<name>.<event>))" over "<name>.<event>"
+        }
+
+        private static void Context_EDSM_BodyCount(dynamic vaProxy)
+        {
+            string system = vaProxy.GetText("~system") ?? throw new ArgumentNullException("~system");
+
+            string path = $@"{vaProxy.SessionState["VA_SOUNDS"]}\Scripts\explorationtools.exe";
+            string arguments = $@"bodycount ""{system}""";
+
+            Process p = PythonProxy.SetupPythonScript(path, arguments);
+
+            int bodyCount = 0;
+            bool error = false;
+            string errorMessage = "";
+
+            p.Start();
+            string stdout = p.StandardOutput.ReadToEnd();
+            string stderr = p.StandardError.ReadToEnd();
+            p.WaitForExit();
+            switch (p.ExitCode)
+            {
+                case 0:
+                    bodyCount = int.Parse(stdout);
+                    break;
+                case 1:
+                    error = true;
+                    Log.Error(stdout);
+                    errorMessage = stdout;
+                    break;
+                case 2:
+                    error = true;
+                    Log.Notice($@"System ""{system}"" not found on EDSM");
+                    errorMessage = stdout;
+                    break;
+                default:
+                    error = true;
+                    Log.Error(stderr);
+                    errorMessage = "Unrecoverable error in plugin.";
+                    break;
+
+            }
+            Log.Info($"EDSM body count for {system}: {bodyCount}");
+
+            vaProxy.SetInt("~bodyCount", bodyCount);
+            vaProxy.SetBoolean("~error", error);
+            vaProxy.SetText("~errorMessage", errorMessage);
+            vaProxy.SetInt("~exitCode", p.ExitCode);
+        }
+
+        private static void Context_EDSM_DistanceBetween(dynamic vaProxy)
         {
             string fromSystem = vaProxy.GetText("~fromSystem") ?? throw new ArgumentNullException("~fromSystem");
             string toSystem = vaProxy.GetText("~toSystem") ?? throw new ArgumentNullException("~toSystem");
             int roundTo = vaProxy.GetInt("~roundTo") ?? 2;
 
-            string path = $"{vaProxy.GetText("Python.ScriptPath")}\\explorationtools.exe";
+            string path = $@"{vaProxy.SessionState["VA_SOUNDS"]}\Scripts\explorationtools.exe";
             string arguments = $@"distancebetween --roundto {roundTo} ""{fromSystem}"" ""{toSystem}""";
 
             Process p = PythonProxy.SetupPythonScript(path, arguments);
@@ -187,12 +242,13 @@ namespace alterNERDtive
             {
                 case 0:
                     distance = decimal.Parse(stdout);
+                    Log.Info($"{fromSystem} → {toSystem}: {distance} ly");
                     break;
                 case 1:
                 case 2:
                     error = true;
-                    Log.Error(stderr);
-                    errorMessage = stderr;
+                    Log.Error(stdout);
+                    errorMessage = stdout;
                     break;
                 default:
                     error = true;
@@ -201,20 +257,11 @@ namespace alterNERDtive
                     break;
 
             }
-            Log.Info($"{fromSystem} → {toSystem}: {distance} ly");
 
             vaProxy.SetDecimal("~distance", distance);
             vaProxy.SetBoolean("~error", error);
             vaProxy.SetText("~errorMessage", errorMessage);
             vaProxy.SetInt("~exitCode", p.ExitCode);
-        }
-
-        private static void Context_EddiEvent(dynamic vaProxy)
-        {
-            string eddiEvent = vaProxy.Command.Name();
-            string command = eddiEvent.Substring(2, eddiEvent.Length - 4);
-            Log.Debug($"Running EDDI event '{command}' …");
-            Commands.RunAll(ActiveProfiles, command, logMissing: false, subcommand: true); // FIXXME: a) triggerAll or something, b) change all profiles to use "((<name>.<event>))" over "<name>.<event>"
         }
 
         private static void Context_Log(dynamic vaProxy)
@@ -239,6 +286,54 @@ namespace alterNERDtive
                     Log.Error($"Invalid log level '{level}'.");
                 }
             }
+        }
+
+        private static void Context_Spansh_OutdatedStations(dynamic vaProxy)
+        {
+            string system = vaProxy.GetText("~system") ?? throw new ArgumentNullException("~system");
+            int minage = vaProxy.GetInt("~minage") ?? throw new ArgumentNullException("~minage");
+
+            string path = $@"{vaProxy.SessionState["VA_SOUNDS"]}\Scripts\spansh.exe";
+            string arguments = $@"oldstations --system ""{system}"" --minage {minage}";
+
+            Process p = PythonProxy.SetupPythonScript(path, arguments);
+
+
+            p.Start();
+            string stdout = p.StandardOutput.ReadToEnd();
+            string stderr = p.StandardError.ReadToEnd();
+            p.WaitForExit();
+
+            string message = stdout;
+            string? errorMessage = null;
+            bool error = true;
+
+            switch (p.ExitCode)
+            {
+                case 0:
+                    error = false;
+                    Log.Notice($"Outdated stations for {system}: {message}");
+                    break;
+                case 1:
+                    error = true;
+                    Log.Error(message);
+                    break;
+                case 3:
+                    error = true;
+                    Log.Info($@"No outdated stations found for ""{system}""");
+                    break;
+                default:
+                    error = true;
+                    Log.Error(stderr);
+                    errorMessage = "Unrecoverable error in plugin.";
+                    break;
+
+            }
+
+            vaProxy.SetText("~message", message);
+            vaProxy.SetBoolean("~error", error);
+            vaProxy.SetText("~errorMessage", errorMessage);
+            vaProxy.SetInt("~exitCode", p.ExitCode);
         }
 
         private static void Context_Startup(dynamic vaProxy)
@@ -349,12 +444,19 @@ namespace alterNERDtive
                         Context_Config_VersionMigration(vaProxy);
                         break;
                     // EDSM
+                    case "edsm.bodycount":
+                        Context_EDSM_BodyCount(vaProxy);
+                        break;
                     case "edsm.distancebetween":
-                        Context_DistanceBetween(vaProxy);
+                        Context_EDSM_DistanceBetween(vaProxy);
                         break;
                     // EDDI
                     case "eddi.event":
-                        Context_EddiEvent(vaProxy);
+                        Context_Eddi_Event(vaProxy);
+                        break;
+                    // Spansh
+                    case "spansh.outdatedstations":
+                        Context_Spansh_OutdatedStations(vaProxy);
                         break;
                     // log
                     case "log.log":
@@ -368,7 +470,7 @@ namespace alterNERDtive
             }
             catch (ArgumentNullException e)
             {
-                Log.Error($"Missing parameter '~{e.ParamName}' for context '{context}'");
+                Log.Error($"Missing parameter '{e.ParamName}' for context '{context}'");
             }
             catch (Exception e)
             {
