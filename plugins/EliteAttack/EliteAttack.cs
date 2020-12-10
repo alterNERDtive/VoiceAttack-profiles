@@ -73,7 +73,7 @@ namespace EliteAttack
             }
             catch (ArgumentNullException e)
             {
-                Log.Error($"Missing parameter '~{e.ParamName}' for context '{context}'");
+                Log.Error($"Missing parameter '{e.ParamName}' for context '{context}'");
             }
             catch (Exception e)
             {

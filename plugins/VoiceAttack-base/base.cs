@@ -193,6 +193,7 @@ namespace alterNERDtive
             {
                 case 0:
                     bodyCount = int.Parse(stdout);
+                    Log.Info($"EDSM body count for {system}: {bodyCount}");
                     break;
                 case 1:
                     error = true;
@@ -209,9 +210,7 @@ namespace alterNERDtive
                     Log.Error(stderr);
                     errorMessage = "Unrecoverable error in plugin.";
                     break;
-
             }
-            Log.Info($"EDSM body count for {system}: {bodyCount}");
 
             vaProxy.SetInt("~bodyCount", bodyCount);
             vaProxy.SetBoolean("~error", error);
