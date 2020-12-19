@@ -55,6 +55,7 @@ namespace RatAttack
         {
             public string Signal { get; set; }
             public bool Announce { get; set; }
+            private readonly char separator = '\x02';
 
             public Ratsignal()
                 => (Signal, Announce) = ("", false);
@@ -66,7 +67,7 @@ namespace RatAttack
             {
                 try
                 {
-                    string[] parts = serialization.Split('|');
+                    string[] parts = serialization.Split(separator);
                     Signal = parts[0];
                     Announce = Boolean.Parse(parts[1]);
                 }
@@ -77,7 +78,7 @@ namespace RatAttack
             }
 
             public override string ToString()
-                => $"{Signal}|{Announce}";
+                => $"{Signal}{separator}{Announce}";
         }
 
         private static int ParseRatsignal(string ratsignal)
