@@ -35,11 +35,13 @@ namespace alterNERDtive.util
                     { new Option<bool>("announceMappingCandidates", true, voiceTrigger: "announce mapping candidates") },
                     { new Option<bool>("announceOutdatedStationData", true, voiceTrigger: "announce outdated station data") },
                     { new Option<bool>("announceR2RMappingCandidates", true, voiceTrigger: "announce road to riches mapping candidates") },
+                    { new Option<bool>("autoHonkNewSystems", true, voiceTrigger: "auto honk new systems") },
                     { new Option<bool>("autoRestock", true, voiceTrigger: "auto restock") },
                     //{ new Option<bool>("enableAutoUpdateCheck", true, voiceTrigger: "auto update check") },
                     { new Option<bool>("flightAssistOff", false, voiceTrigger: "flight assist off") },
                     { new Option<bool>("hyperspaceDethrottle", true, voiceTrigger: "hyper space dethrottle") },
                     { new Option<int>("outdatedStationThreshold", 365, voiceTrigger: "outdated station threshold") },
+                    { new Option<bool>("usePrimaryFireForDiscoveryScan", false, voiceTrigger: "use primary fire for discovery scan") },
                 }
             },
             {
