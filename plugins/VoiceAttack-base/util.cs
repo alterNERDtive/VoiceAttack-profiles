@@ -41,6 +41,7 @@ namespace alterNERDtive.util
                     { new Option<bool>("flightAssistOff", false, voiceTrigger: "flight assist off") },
                     { new Option<bool>("hyperspaceDethrottle", true, voiceTrigger: "hyper space dethrottle") },
                     { new Option<int>("outdatedStationThreshold", 365, voiceTrigger: "outdated station threshold") },
+                    { new Option<int>("scannerFireGroup", 0, voiceTrigger: "scanner fire group") },
                     { new Option<bool>("usePrimaryFireForDiscoveryScan", false, voiceTrigger: "use primary fire for discovery scan") },
                 }
             },
