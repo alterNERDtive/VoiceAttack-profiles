@@ -476,6 +476,11 @@ namespace alterNERDtive.util
         private readonly dynamic VA;
         private readonly string ID;
 
+        private static readonly string LogFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "alterNERDtive-logs");
+        private static readonly TextWriterTraceListener LogListener = new TextWriterTraceListener(Path.Combine(LogFolder, "VoiceAttack.log"), "error");
+        private static readonly TextWriterTraceListener DebugListener = new TextWriterTraceListener(Path.Combine(LogFolder, "VoiceAttack-debug.log"), "debug");
+        private readonly TraceSource TraceSource;
+
         private static readonly string[] LogColour = { "red", "yellow", "green", "blue", "gray" };
         public LogLevel? CurrentLogLevel
         {
@@ -495,20 +500,67 @@ namespace alterNERDtive.util
         }
         private static LogLevel? currentLogLevel;
 
-        public VoiceAttackLog(dynamic vaProxy, string id) => (VA, ID) = (vaProxy, id);
+        static VoiceAttackLog()
+        {
+            Directory.CreateDirectory(LogFolder);
+            string path = Path.Combine(LogFolder, $"VoiceAttack");
+            foreach (string name in new String[] { "", "-debug" })
+            {
+                File.Delete($"{path}{name}-5.log");
+                for (int i = 4; i > 0; i--)
+                {
+                    if (File.Exists($"{path}{name}-{i}.log"))
+                    {
+                        File.Move($"{path}{name}-{i}.log", $"{path}{name}-{i + 1}.log");
+                    }
+                }
+                File.Move($"{path}{name}.log", $"{path}{name}-1.log");
+            }
+
+            File.Delete(Path.Combine(LogFolder, "VoiceAttack.log"));
+            File.Delete(Path.Combine(LogFolder, "VoiceAttack-debug.log"));
+
+            DebugListener.TraceOutputOptions = LogListener.TraceOutputOptions = TraceOptions.DateTime;
+            LogListener.Filter = new EventTypeFilter(SourceLevels.Information);
+            DebugListener.Filter = new EventTypeFilter(SourceLevels.All);
+        }
+
+        public VoiceAttackLog(dynamic vaProxy, string id)
+        {
+            VA = vaProxy;
+            ID = id;
+
+            TraceSource = new TraceSource(ID);
+            TraceSource.Listeners.Add(LogListener);
+            TraceSource.Listeners.Add(DebugListener);
+            TraceSource.Switch.Level = SourceLevels.All;
+        }
 
         public void Log(string message, LogLevel level = LogLevel.INFO)
         {
-            Log(ID, message, level);
-        }
-
-        public void Log(string sender, string message, LogLevel level = LogLevel.INFO)
-        {
-            _ = sender ?? throw new ArgumentNullException("sender");
             _ = message ?? throw new ArgumentNullException("message");
 
             if (level <= CurrentLogLevel)
-                VA.WriteToLog($"{level} | {sender}: {message}", LogColour[(int)level]);
+            {
+                VA.WriteToLog($"{level} | {ID}: {message}", LogColour[(int)level]);
+            }
+            switch(level)
+            {
+                case LogLevel.ERROR:
+                    TraceSource.TraceEvent(TraceEventType.Error, 0, message);
+                    break;
+                case LogLevel.WARN:
+                    TraceSource.TraceEvent(TraceEventType.Warning, 1, message);
+                    break;
+                case LogLevel.NOTICE:
+                case LogLevel.INFO:
+                    TraceSource.TraceEvent(TraceEventType.Information, 2, message);
+                    break;
+                case LogLevel.DEBUG:
+                    TraceSource.TraceEvent(TraceEventType.Verbose, 3, message);
+                    break;
+            }
+            TraceSource.Flush();
         }
 
         public void Error(string message) => Log(message, LogLevel.ERROR);

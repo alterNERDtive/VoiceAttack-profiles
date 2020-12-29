@@ -81,6 +81,29 @@ namespace SpanshAttack
             vaProxy.SetInt("~exitCode", p.ExitCode);
         }
 
+        private static void Context_Log(dynamic vaProxy)
+        {
+            string message = vaProxy.GetText("~message");
+            string level = vaProxy.GetText("~level");
+
+            if (level == null)
+            {
+                Log.Log(message);
+            }
+            else
+            {
+                try
+                {
+                    Log.Log(message, (LogLevel)Enum.Parse(typeof(LogLevel), level.ToUpper()));
+                }
+                catch (ArgumentNullException) { throw; }
+                catch (ArgumentException)
+                {
+                    Log.Error($"Invalid log level '{level}'.");
+                }
+            }
+        }
+
         private static void Context_Spansh_Nearestsystem(dynamic vaProxy)
         {
             int x = vaProxy.GetInt("~x") ?? throw new ArgumentNullException("~x");
@@ -221,6 +244,10 @@ namespace SpanshAttack
                     // EDTS
                     case "edts.getcoordinates":
                         Context_EDTS_GetCoordinates(vaProxy);
+                        break;
+                    // log
+                    case "log.log":
+                        Context_Log(vaProxy);
                         break;
                     // Spansh
                     case "spansh.systemexists":

@@ -23,7 +23,30 @@ namespace EliteAttack
         /*================\
         | plugin contexts |
         \================*/
-        
+
+        private static void Context_Log(dynamic vaProxy)
+        {
+            string message = vaProxy.GetText("~message");
+            string level = vaProxy.GetText("~level");
+
+            if (level == null)
+            {
+                Log.Log(message);
+            }
+            else
+            {
+                try
+                {
+                    Log.Log(message, (LogLevel)Enum.Parse(typeof(LogLevel), level.ToUpper()));
+                }
+                catch (ArgumentNullException) { throw; }
+                catch (ArgumentException)
+                {
+                    Log.Error($"Invalid log level '{level}'.");
+                }
+            }
+        }
+
         private static void Context_Startup(dynamic vaProxy)
         {
             Log.Notice("Starting up …");
@@ -59,12 +82,13 @@ namespace EliteAttack
             {
                 switch (context)
                 {
-                    // plugin methods
                     case "startup":
                         Context_Startup(vaProxy);
                         break;
-                    // plugin settings
-                    // NYI
+                    // log
+                    case "log.log":
+                        Context_Log(vaProxy);
+                        break;
                     // invalid
                     default:
                         Log.Error($"Invalid plugin context '{vaProxy.Context}'.");

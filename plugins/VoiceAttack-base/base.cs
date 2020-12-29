@@ -274,19 +274,18 @@ namespace alterNERDtive
 
         private static void Context_Log(dynamic vaProxy)
         {
-            string sender = vaProxy.GetText("~sender");
             string message = vaProxy.GetText("~message");
             string level = vaProxy.GetText("~level");
 
             if (level == null)
             {
-                Log.Log(sender, message);
+                Log.Log(message);
             }
             else
             {
                 try
                 {
-                    Log.Log(sender, message, (LogLevel)Enum.Parse(typeof(LogLevel), level.ToUpper()));
+                    Log.Log(message, (LogLevel)Enum.Parse(typeof(LogLevel), level.ToUpper()));
                 }
                 catch (ArgumentNullException) { throw; }
                 catch (ArgumentException)
