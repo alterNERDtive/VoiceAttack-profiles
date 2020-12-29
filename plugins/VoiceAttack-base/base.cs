@@ -19,6 +19,7 @@ namespace alterNERDtive
             { new Guid("{05580e6c-442c-46cd-b36f-f5a1f967ec59}"), "StreamAttack" }
         };
         private static readonly List<string> ActiveProfiles = new List<string>();
+        private static readonly List<string> InstalledProfiles = new List<string>();
 
         private static readonly Regex ConfigurationVariableRegex = new Regex(@$"(?<id>({String.Join("|", Profiles.Values)}))\.(?<name>.+)#");
 
@@ -34,11 +35,19 @@ namespace alterNERDtive
         private static void CheckProfiles(dynamic vaProxy)
         {
             ActiveProfiles.Clear();
+            InstalledProfiles.Clear();
 
-            foreach (KeyValuePair<Guid, string> entry in Profiles)
+            foreach (KeyValuePair<Guid, string> profile in Profiles)
             {
-                if (vaProxy.Profile.Exists(entry.Key))
-                    ActiveProfiles.Add(entry.Value);
+                if (vaProxy.Command.Exists($"(({profile.Value}.startup))"))
+                // Sadly there is no way to find _active_ profiles, so we have to check the one command that always is in them.
+                {
+                    ActiveProfiles.Add(profile.Value);
+                }
+                if (vaProxy.Profile.Exists(profile.Key))
+                {
+                    InstalledProfiles.Add(profile.Value);
+                }
             }
             Log.Debug($"Profiles found: {string.Join<string>(", ", ActiveProfiles)}");
         }
