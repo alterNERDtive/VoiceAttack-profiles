@@ -55,7 +55,7 @@ namespace alterNERDtive.util
                     { new Option<string>("CMDRs", "", voiceTrigger: "commanders") },
                     { new Option<bool>("confirmCalls", true, voiceTrigger: "confirm calls") },
                     { new Option<bool>("onDuty", true, voiceTrigger: "on duty") },
-                    { new Option<string>("platforms", "PC", voiceTrigger: "platforms") },
+                    { new Option<string>("platforms", "PC", voiceTrigger: "platforms", validValues: new List<string>{ "PC", "Xbox", "Playstation" }) },
                 }
             },
             {
