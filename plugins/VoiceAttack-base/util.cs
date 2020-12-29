@@ -35,6 +35,7 @@ namespace alterNERDtive.util
                     { new Option<bool>("announceMappingCandidates", true, voiceTrigger: "announce mapping candidates") },
                     { new Option<bool>("announceOutdatedStationData", true, voiceTrigger: "announce outdated station data") },
                     { new Option<bool>("announceR2RMappingCandidates", true, voiceTrigger: "announce road to riches mapping candidates") },
+                    { new Option<bool>("autoHonkAllSystems", false, voiceTrigger: "auto honk all systems") },
                     { new Option<bool>("autoHonkNewSystems", true, voiceTrigger: "auto honk new systems") },
                     { new Option<bool>("autoRestock", true, voiceTrigger: "auto restock") },
                     //{ new Option<bool>("enableAutoUpdateCheck", true, voiceTrigger: "auto update check") },
