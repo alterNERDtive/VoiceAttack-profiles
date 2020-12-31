@@ -1,3 +1,28 @@
+# 3.2.0 (2020-12-31)
+
+The update mechanism has been changed to manual update in preparation of the
+4.0 release that will come with the need to manually change some things around.
+So in order to not automatically leave people with a broken state, they will
+have to manually go through the update steps for 4.0. To reflect that, 3.2.0
+will no longer auto-download a new release and instead send you to the release
+page on Github.
+
+## RatAttack 5.0.4
+
+### Fixed
+
+* RATSIGNAL parsing updated for the latest Mecha3 changes. Permits are now
+  orange instead of red.
+
+## EliteDangerous 7.3
+
+### Changed
+
+* Updates are no longer automatic, instead you will be sent to the release page
+  on Github.
+
+-----
+
 # 3.1.3 (2020-11-06)
 
 Hopefully last Mecha3 compatibility release.

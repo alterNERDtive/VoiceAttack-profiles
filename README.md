@@ -138,6 +138,9 @@ update”. Restart VoiceAttack.
 
 There will also be an update check every time `EliteDangerous.startup` is run.
 
+**Note**: This is temporarily disabled because version 4.0 will introduce
+breaking changes that need manual upgrade steps.
+
 ### The Manual Way ###
 
 If you don’t like automation or do not use all provided profiles, you’ll have to 
