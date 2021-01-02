@@ -1,3 +1,13 @@
+# devel
+
+## RatAttack 5.0.5
+
+### Fixed
+
+* RATSIGNAL parsing had to be updated _again_. -.-
+
+-----
+
 # 3.2.0 (2020-12-31)
 
 The update mechanism has been changed to manual update in preparation of the
