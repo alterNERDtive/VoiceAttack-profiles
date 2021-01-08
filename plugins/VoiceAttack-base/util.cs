@@ -250,7 +250,7 @@ namespace alterNERDtive.util
                 string name = $"{id}.{option.Name}";
                 string type = option.TypeString ?? throw new InvalidDataException($"Invalid data type for option '{name}': '{option}'");
                 Log.Debug($"Loading value for option '{name}' from profile …");
-                Commands.Run("alterNERDtive-base.loadVariableFromProfile", parameters: new dynamic[] { new string[] { $"{name}#", type } });
+                Commands.Run("alterNERDtive-base.loadVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}#", type } });
             }
         }
 
