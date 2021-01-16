@@ -20,61 +20,70 @@ namespace alterNERDtive.util
             {
                 "alterNERDtive-base",
                 new OptDict<string, Option>{
-                    { new Option<bool>("eddi.quietMode", true, voiceTrigger: "eddi quiet mode", description: "Whether or not to make EDDI shut up.") },
+                    { new Option<bool>("eddi.quietMode", true, voiceTrigger: "eddi quiet mode", description: "Make EDDI shut up. Disables all built-in speech respondes.") },
                     { new Option<decimal>("keyPressDuration", (decimal)0.01, voiceTrigger: "key press duration", description: "The time keys will be held down for.") },
-                    { new Option<decimal>("delays.quitToDesktop", (decimal)10.0, voiceTrigger: "quit to desktop delay") },
-                    { new Option<string>("elite.pasteKey", "v", voiceTrigger: "elite paste key", description: "The key used to paste in conjunction with CTRL. The key that would be 'V' on QWERTY.") },
-                    { new Option<string>("log.logLevel", "NOTICE", voiceTrigger: "log level", validValues: new List<string>{ "ERROR", "WARN", "NOTICE", "INFO", "DEBUG" }, 
+                    { new Option<decimal>("delays.quitToDesktop", (decimal)10.0, voiceTrigger: "quit to desktop delay",
+                        description: "The delay before restarting the game after hitting “Exit to Desktop”.\nDefault: 10.0 seconds.") },
+                    { new Option<string>("elite.pasteKey", "v", voiceTrigger: "elite paste key",
+                        description: "The key used to paste in conjunction with CTRL. The physical key in your layout that would be 'V' on QWERTY.") },
+                    { new Option<string>("log.logLevel", "NOTICE", voiceTrigger: "log level", validValues: new List<string>{ "ERROR", "WARN", "NOTICE", "INFO", "DEBUG" },
                         description: @"The level of detail for logging to the VoiceAttack log.\nValid levels are ""ERROR"", ""WARN"", ""NOTICE"", ""INFO"" and ""DEBUG"".\nDefault: ""NOTICE"".") },
                 }
             },
             {
                 "EliteAttack",
                 new OptDict<string, Option>{
-                    { new Option<bool>("announceEdsmSystemStatus", true, voiceTrigger: "announce edsm system status") },
-                    { new Option<bool>("announceMappingCandidates", true, voiceTrigger: "announce mapping candidates") },
-                    { new Option<bool>("announceOutdatedStationData", true, voiceTrigger: "announce outdated station data") },
-                    { new Option<bool>("announceR2RMappingCandidates", true, voiceTrigger: "announce road to riches mapping candidates") },
-                    { new Option<bool>("autoHonkAllSystems", false, voiceTrigger: "auto honk all systems") },
-                    { new Option<bool>("autoHonkNewSystems", true, voiceTrigger: "auto honk new systems") },
-                    { new Option<bool>("autoRestock", true, voiceTrigger: "auto restock") },
-                    //{ new Option<bool>("enableAutoUpdateCheck", true, voiceTrigger: "auto update check") },
-                    { new Option<bool>("flightAssistOff", false, voiceTrigger: "flight assist off") },
-                    { new Option<bool>("hyperspaceDethrottle", true, voiceTrigger: "hyper space dethrottle") },
-                    { new Option<int>("outdatedStationThreshold", 365, voiceTrigger: "outdated station threshold") },
-                    { new Option<int>("scannerFireGroup", 0, voiceTrigger: "scanner fire group") },
-                    { new Option<bool>("usePrimaryFireForDiscoveryScan", false, voiceTrigger: "use primary fire for discovery scan") },
+                    { new Option<bool>("announceEdsmSystemStatus", true, voiceTrigger: "edsm system status",
+                        description: "Pull system data from EDSM and compare it against your discovery scan.") },
+                    { new Option<bool>("announceMappingCandidates", true, voiceTrigger: "mapping candidates",
+                        description: "Announce bodies worth mapping when you’ve finished scanning a system.\n(Terraformables, Water Worlds, Earth-Like Worlds and Ammonia Worlds that have not been mapped yet.)") },
+                    { new Option<bool>("announceOutdatedStationData", true, voiceTrigger: "outdated stations", description: "Announce stations with outdated data in the online databases.") },
+                    { new Option<bool>("announceR2RMappingCandidates", true, voiceTrigger: "road to riches",
+                        description: "Announce bodies worth scanning if you are looking for some starting cash on the Road to Riches.") },
+                    { new Option<bool>("autoHonkAllSystems", false, voiceTrigger: "auto honk all systems", description: "Automatically honk upon entering a system, each jump without constraints.") },
+                    { new Option<bool>("autoHonkNewSystems", true, voiceTrigger: "auto honk new systems", description: "Automatically honk upon entering as system if it is your first visit.") },
+                    { new Option<bool>("autoRestock", true, voiceTrigger: "auto restock", description:
+                        "Automatically restock after docking at a station.\nYou will alywas refuel, repair and enter the Station Services menu.") },
+                    { new Option<bool>("enableAutoUpdateCheck", true, voiceTrigger: "auto update check", description: "Automatically check Github for profiles updates.") },
+                    { new Option<bool>("flightAssistOff", false, voiceTrigger: "flight assist off", description: "Permanent Flight Assist off mode. You should really do that, it’s great.") },
+                    { new Option<bool>("hyperspaceDethrottle", true, voiceTrigger: "hyper space dethrottle", description: "Throttle down after a jump and when dropping from SC. Like the SC Assist module does.") },
+                    { new Option<int>("outdatedStationThreshold", 365, voiceTrigger: "outdated station threshold", description: "The threshold for station data to count as “outdated”.\nDefault: 365 days.") },
+                    { new Option<int>("scannerFireGroup", 0, voiceTrigger: "scanner fire group", description: "The fire group your discovery scanner is assigned to.\nDefault: 0 (the first one).") },
+                    { new Option<bool>("usePrimaryFireForDiscoveryScan", false, voiceTrigger: "discovery scan on primary fire", description: "Use primary fire for honking instead of secondary.") },
                 }
             },
             {
                 "RatAttack",
                 new OptDict<string, Option>{
-                    { new Option<bool>("autoCloseCase", false, voiceTrigger: "auto close case") },
-                    { new Option<bool>("announceNearestCMDR", false, voiceTrigger: "announce nearest commander") },
-                    { new Option<bool>("announcePlatform", false, voiceTrigger: "announce platform") },
-                    { new Option<string>("CMDRs", "", voiceTrigger: "commanders") },
-                    { new Option<bool>("confirmCalls", true, voiceTrigger: "confirm calls") },
-                    { new Option<bool>("onDuty", true, voiceTrigger: "on duty") },
-                    { new Option<string>("platforms", "PC", voiceTrigger: "platforms", validValues: new List<string>{ "PC", "Xbox", "Playstation" }) },
+                    { new Option<bool>("autoCloseCase", false, voiceTrigger: "auto close fuel rat case", description: "Automatically close a rat case when sending “fuel+” via voice command or ingame chat.") },
+                    { new Option<bool>("announceNearestCMDR", false, voiceTrigger: "nearest commander to fuel rat case", description: "Announce the nearest commander to incoming rat cases.") },
+                    { new Option<bool>("announcePlatform", false, voiceTrigger: "announce platform for fuel rat case", description: "Announce the platform for incoming rat cases.") },
+                    { new Option<string>("CMDRs", "", voiceTrigger: "fuel rat commanders",
+                        description: "All your CMDRs that are ready to take rat cases.\nUse ‘;’ as separator, e.g. “Bud Spencer;Terrence Hill”.") },
+                    { new Option<bool>("confirmCalls", true, voiceTrigger: "confirm fuel rat calls", description: "Only make calls in #fuelrats after vocal confirmation to prevent mistakes.") },
+                    { new Option<bool>("onDuty", true, voiceTrigger: "on fuel rat duty", description: "Set FuelRats duty to active when the profile is loaded.") },
+                    { new Option<string>("platforms", "PC", voiceTrigger: "fuel rat platforms", validValues: new List<string>{ "PC", "Xbox", "Playstation" },
+                        description: "The platform(s) you want to get case announcements for (PC, Xbox, Playstation).\nUse ‘;’ as separator, e.g. “PC;Xbox”.") },
                 }
             },
             {
                 "SpanshAttack",
                 new OptDict<string, Option>{
                     { new Option<string>("announceJumpsLeft", ";1;3;5;10;15;20;30;50;75;100;", voiceTrigger: "announce jumps left") },
-                    { new Option<bool>("announceWaypoints", true, voiceTrigger: "announce waypoints") },
-                    { new Option<bool>("autoJumpAfterScooping", true, voiceTrigger: "auto jump after scooping") },
-                    { new Option<bool>("autoPlot", true, voiceTrigger: "auto plot") },
-                    { new Option<bool>("clearOnShutdown", true, voiceTrigger: "clear on shutdown") },
-                    { new Option<bool>("copyWaypointToClipboard", false, voiceTrigger: "copy waypoint to clipboard") },
-                    { new Option<bool>("defaultToLadenRange", false, voiceTrigger: "default to laden range") },
-                    { new Option<bool>("timeTrip", false, voiceTrigger: "time trip") },
+                    { new Option<bool>("announceWaypoints", true, voiceTrigger: "waypoint announcements", description: "Announce each waypoint by name.") },
+                    { new Option<bool>("autoJumpAfterScooping", true, voiceTrigger: "auto jump after scooping", description: "Automatically accelerate and jump out when fuel scooping is complete.") },
+                    { new Option<bool>("autoPlot", true, voiceTrigger: "auto plot", description: "Automatically plot to the next waypoint after super charging.") },
+                    { new Option<bool>("clearOnShutdown", true, voiceTrigger: "clear neutron route on shutdown", description: "Clear an active neutron route when the game is shut down.") },
+                    { new Option<bool>("copyWaypointToClipboard", false, voiceTrigger: "copy neutron waypoints to clipboard", description: "Copy each neutron waypoint into the Windows clipboard.") },
+                    { new Option<bool>("defaultToLadenRange", false, voiceTrigger: "default to laden range",
+                        description: "Default to the current ship’s laden range as reported by EDDI instead of prompting for input.") },
+                    { new Option<bool>("timeTrip", false, voiceTrigger: "time neutron route", description: "Keep track of how long a neutron route takes you to complete.") },
                 }
             },
             {
                 "StreamAttack",
                 new OptDict<string, Option>{
-                    { new Option<string>("outputDir", @"%appdata%\StreamAttack\", voiceTrigger: "StreamAttack output directory") }
+                    { new Option<string>("outputDir", @"%appdata%\StreamAttack\", voiceTrigger: "StreamAttack output directory", description: "The directory the status files are written to.") }
                 }
             }
         };

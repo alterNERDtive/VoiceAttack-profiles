@@ -371,14 +371,35 @@ namespace alterNERDtive
                     {
                         _ = to ?? Config.ApplyDefault(id, name);
                     }
-                    // When not null, check if there’s a constraint on valid values.
-                    else if (o.ValidValues != null && !o.ValidValues.Contains(to))
-                    {
-                        Log.Error($@"Invalid value ""{to}"" for option ""{id}.{option}"", reverting to default …");
-                        Config.ApplyDefault(id, name);
-                    }
                     else
                     {
+                        // When not null, check if there’s a constraint on valid values.
+                        if (o.ValidValues != null)
+                        {
+                            if (!o.ValidValues.Contains(to))
+                            {
+                                // Handle “arrays” of values
+                                bool valid = false;
+                                if (to is string && ((string)to).Contains(";"))
+                                {
+                                    valid = true;
+                                    foreach (string value in ((string)to).Split(';') )
+                                    {
+                                        if (!o.ValidValues.Contains(value))
+                                        {
+                                            valid = false;
+                                        }
+                                    }
+                                }
+
+                                if (!valid)
+                                {
+                                    Log.Error($@"Invalid value ""{to}"" for option ""{id}.{option}"", reverting to default …");
+                                    Config.ApplyDefault(id, name);
+                                }
+                            }
+                        }
+
                         if (option == "alterNERDtive-base.eddi.quietMode#" && VA!.GetText("EDDI version") != null) // if null, EDDI isn’t up yet
                         {
                             Log.Debug($"Resetting speech responder ({(to ?? false ? "off" : "on")}) …");
