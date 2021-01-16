@@ -377,7 +377,28 @@ namespace alterNERDtive.util
             {
                 throw new InvalidDataException($"Invalid data type for option '{id}.{name}': '{defaultValue}'");
             }
-            Log.Notice($"{variable} = {value}{(value == defaultValue? " (default)" : "")}");
+            Log.Notice($"{variable} = {value}{(value == defaultValue ? " (default)" : "")}");
+        }
+
+        public void ListConfig()
+        {
+            foreach (string id in Defaults.Keys)
+            {
+                ListConfig(id);
+            }
+        }
+        public void ListConfig(string id)
+        {
+            Log.Notice($"===== {id} settings: =====");
+            foreach (string name in Defaults[id].Keys)
+            {
+                ListConfig(id, name);
+            }
+        }
+        public void ListConfig(string id, string name)
+        {
+            dynamic option = Defaults[id][name];
+            Log.Notice($"“{option.VoiceTrigger}”: {option.Description}");
         }
     }
 

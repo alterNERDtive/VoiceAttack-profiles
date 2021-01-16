@@ -61,6 +61,11 @@ namespace alterNERDtive
             Config.DumpConfig();
         }
 
+        private static void Context_Config_List(dynamic vaProxy)
+        {
+            Config.ListConfig();
+        }
+
         private static void Context_Config_Setup(dynamic vaProxy)
         {
             Log.Debug("Loading default configuration …");
@@ -464,6 +469,9 @@ namespace alterNERDtive
                         break;
                     case "config.getvariables":
                         Context_Config_SetVariables(vaProxy);
+                        break;
+                    case "config.list":
+                        Context_Config_List(vaProxy);
                         break;
                     case "config.setup":
                         Context_Config_Setup(vaProxy);
