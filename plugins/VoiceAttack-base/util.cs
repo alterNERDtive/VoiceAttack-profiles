@@ -57,11 +57,11 @@ namespace alterNERDtive.util
                 new OptDict<string, Option>{
                     { new Option<bool>("autoCloseCase", false, voiceTrigger: "auto close fuel rat case", description: "Automatically close a rat case when sending “fuel+” via voice command or ingame chat.") },
                     { new Option<bool>("announceNearestCMDR", false, voiceTrigger: "nearest commander to fuel rat case", description: "Announce the nearest commander to incoming rat cases.") },
-                    { new Option<bool>("announcePlatform", false, voiceTrigger: "announce platform for fuel rat case", description: "Announce the platform for incoming rat cases.") },
+                    { new Option<bool>("announcePlatform", false, voiceTrigger: "platform for fuel rat case", description: "Announce the platform for incoming rat cases.") },
                     { new Option<string>("CMDRs", "", voiceTrigger: "fuel rat commanders",
                         description: "All your CMDRs that are ready to take rat cases.\nUse ‘;’ as separator, e.g. “Bud Spencer;Terrence Hill”.") },
-                    { new Option<bool>("confirmCalls", true, voiceTrigger: "confirm fuel rat calls", description: "Only make calls in #fuelrats after vocal confirmation to prevent mistakes.") },
-                    { new Option<bool>("onDuty", true, voiceTrigger: "on fuel rat duty", description: "Set FuelRats duty to active when the profile is loaded.") },
+                    { new Option<bool>("confirmCalls", true, voiceTrigger: "fuel rat call confirmation", description: "Only make calls in #fuelrats after vocal confirmation to prevent mistakes.") },
+                    { new Option<bool>("onDuty", true, voiceTrigger: "fuel rat duty", description: "Set FuelRats duty to active when the profile is loaded.") },
                     { new Option<string>("platforms", "PC", voiceTrigger: "fuel rat platforms", validValues: new List<string>{ "PC", "Xbox", "Playstation" },
                         description: "The platform(s) you want to get case announcements for (PC, Xbox, Playstation).\nUse ‘;’ as separator, e.g. “PC;Xbox”.") },
                 }
