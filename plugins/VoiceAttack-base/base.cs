@@ -4,6 +4,7 @@ using alterNERDtive.util;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net;
 using System.Text.RegularExpressions;
 
 namespace alterNERDtive
@@ -50,6 +51,90 @@ namespace alterNERDtive
                 }
             }
             Log.Debug($"Profiles found: {string.Join<string>(", ", ActiveProfiles)}");
+        }
+
+        private static void ConfigurationChanged(string option, dynamic? from, dynamic? to, Guid? guid = null)
+        {
+            try
+            {
+                Match match = ConfigurationVariableRegex.Match(option);
+                if (match.Success)
+                {
+                    string id = match.Groups["id"].Value;
+                    string name = match.Groups["name"].Value;
+                    Log.Debug($"Configuration has changed, '{id}.{name}': '{from}' → '{to}'");
+
+                    dynamic o = Config.GetOption(id, name);
+                    // When loaded from profile but not explicitly set, will be null.
+                    // Then load default.
+                    // Same applies to resetting a saved option (= saving null to the profile).
+                    if (to == null)
+                    {
+                        _ = to ?? Config.ApplyDefault(id, name);
+                    }
+                    else
+                    {
+                        // When not null, check if there’s a constraint on valid values.
+                        if (o.ValidValues != null)
+                        {
+                            if (!o.ValidValues.Contains(to))
+                            {
+                                // Handle “arrays” of values
+                                bool valid = false;
+                                if (to is string && ((string)to).Contains(";"))
+                                {
+                                    valid = true;
+                                    foreach (string value in ((string)to).Split(';'))
+                                    {
+                                        if (!o.ValidValues.Contains(value))
+                                        {
+                                            valid = false;
+                                        }
+                                    }
+                                }
+
+                                if (!valid)
+                                {
+                                    Log.Error($@"Invalid value ""{to}"" for option ""{id}.{option}"", reverting to default …");
+                                    Config.ApplyDefault(id, name);
+                                }
+                            }
+                        }
+
+                        if (option == "alterNERDtive-base.eddi.quietMode#" && VA!.GetText("EDDI version") != null) // if null, EDDI isn’t up yet
+                        {
+                            Log.Debug($"Resetting speech responder ({(to ?? false ? "off" : "on")}) …");
+                            Commands.Run("alterNERDtive-base.setEDDISpeechResponder");
+                        }
+                        else if (option == "alterNERDtive-base.log.logLevel#")
+                        {
+                            Log.SetCurrentLogLevel(to);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error($"Unhandled exception while handling changed variable '{option}'. ({e.Message})");
+            }
+        }
+
+        private static void UpdateCheck()
+        {
+            Version latestVersion;
+            try
+            {
+                latestVersion = new Version(new WebClient().DownloadString("https://raw.githubusercontent.com/alterNERDtive/VoiceAttack-profiles/release/VERSION"));
+            }
+            catch (Exception)
+            {
+                throw new Exception("Error fetching latest profiles version from Github.");
+            }
+
+            Log.Notice($"Local version: {VERSION}, latest release: {latestVersion}.");
+
+            Commands.TriggerEvent("alterNERDtive-base.updateCheck",
+                parameters: new dynamic[] { new string[] { VERSION.ToString(), latestVersion.ToString() }, new bool[] { VERSION.CompareTo(latestVersion) < 0 } });
         }
 
         /*================\
@@ -357,77 +442,16 @@ namespace alterNERDtive
             Log.Notice("Finished startup.");
         }
 
-        private static void ConfigurationChanged(string option, dynamic? from, dynamic? to, Guid? guid = null)
+        private static void Context_Update_Check(dynamic vaProxy)
         {
-            try
-            {
-                Match match = ConfigurationVariableRegex.Match(option);
-                if (match.Success)
-                {
-                    string id = match.Groups["id"].Value;
-                    string name = match.Groups["name"].Value;
-                    Log.Debug($"Configuration has changed, '{id}.{name}': '{from}' → '{to}'");
-
-                    dynamic o = Config.GetOption(id, name);
-                    // When loaded from profile but not explicitly set, will be null.
-                    // Then load default.
-                    // Same applies to resetting a saved option (= saving null to the profile).
-                    if (to == null)
-                    {
-                        _ = to ?? Config.ApplyDefault(id, name);
-                    }
-                    else
-                    {
-                        // When not null, check if there’s a constraint on valid values.
-                        if (o.ValidValues != null)
-                        {
-                            if (!o.ValidValues.Contains(to))
-                            {
-                                // Handle “arrays” of values
-                                bool valid = false;
-                                if (to is string && ((string)to).Contains(";"))
-                                {
-                                    valid = true;
-                                    foreach (string value in ((string)to).Split(';') )
-                                    {
-                                        if (!o.ValidValues.Contains(value))
-                                        {
-                                            valid = false;
-                                        }
-                                    }
-                                }
-
-                                if (!valid)
-                                {
-                                    Log.Error($@"Invalid value ""{to}"" for option ""{id}.{option}"", reverting to default …");
-                                    Config.ApplyDefault(id, name);
-                                }
-                            }
-                        }
-
-                        if (option == "alterNERDtive-base.eddi.quietMode#" && VA!.GetText("EDDI version") != null) // if null, EDDI isn’t up yet
-                        {
-                            Log.Debug($"Resetting speech responder ({(to ?? false ? "off" : "on")}) …");
-                            Commands.Run("alterNERDtive-base.setEDDISpeechResponder");
-                        }
-                        else if (option == "alterNERDtive-base.log.logLevel#")
-                        {
-                            Log.SetCurrentLogLevel(to);
-                        }
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Log.Error($"Unhandled exception while handling changed variable '{option}'. ({e.Message})");
-            }
+            UpdateCheck();
         }
 
         /*========================================\
         | required VoiceAttack plugin shenanigans |
         \========================================*/
 
-        static readonly string VERSION = "4.0.0";
+        static readonly Version VERSION = new Version("4.0.0");
 
         public static Guid VA_Id()
             => new Guid("{F7F59CFD-1AE2-4A7E-8F62-C62372418BAC}");
@@ -440,6 +464,7 @@ namespace alterNERDtive
         {
             VA = vaProxy;
             Log.Notice("Initializing …");
+            VA.SetText("alterNERDtive-base.version", VERSION.ToString());
             vaProxy.BooleanVariableChanged += new Action<String, Boolean?, Boolean?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
             vaProxy.DateVariableChanged += new Action<String, DateTime?, DateTime?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
             vaProxy.DecimalVariableChanged += new Action<String, decimal?, decimal?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
@@ -497,6 +522,10 @@ namespace alterNERDtive
                     // log
                     case "log.log":
                         Context_Log(vaProxy);
+                        break;
+                    // update
+                    case "update.check":
+                        Context_Update_Check(vaProxy);
                         break;
                     // invalid
                     default:

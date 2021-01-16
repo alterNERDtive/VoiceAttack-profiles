@@ -58,7 +58,7 @@ namespace EliteAttack
         | required VoiceAttack plugin shenanigans |
         \========================================*/
 
-        static readonly string VERSION = "8.0.0";
+        static readonly Version VERSION = new Version("8.0.0");
 
         public static Guid VA_Id()
             => new Guid("{5B46321D-2935-4550-BEEA-36C2145547B8}");
@@ -71,6 +71,7 @@ namespace EliteAttack
         {
             VA = vaProxy;
             Log.Notice("Initializing …");
+            VA.SetText("EliteAttack.version", VERSION.ToString());
             Log.Notice("Init successful.");
         }
 

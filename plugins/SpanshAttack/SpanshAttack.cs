@@ -214,7 +214,7 @@ namespace SpanshAttack
         | required VoiceAttack plugin shenanigans |
         \========================================*/
 
-        static readonly string VERSION = "7.0.0";
+        static readonly Version VERSION = new Version("7.0.0");
 
         public static Guid VA_Id()
             => new Guid("{e722b29d-898e-47dd-a843-a409c87e0bd8}");
@@ -227,6 +227,7 @@ namespace SpanshAttack
         {
             VA = vaProxy;
             Log.Notice("Initializing …");
+            VA.SetText("SpanshAttack.version", VERSION.ToString());
             Log.Notice("Init successful.");
         }
 
