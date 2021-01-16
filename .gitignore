@@ -352,4 +352,7 @@ MigrationBackup/
 
 
 
-plugins/build
+/plugins/build
+/build
+/alterNERDtive-VoiceAttack-profiles.vax
+/Makefile
