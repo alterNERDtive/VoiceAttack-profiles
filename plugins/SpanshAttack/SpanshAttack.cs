@@ -168,7 +168,7 @@ namespace SpanshAttack
 
             Process p = PythonProxy.SetupPythonScript(path, arguments);
 
-            bool exists = false;
+            bool exists = true;
             bool error = false;
             string errorMessage = "";
 
