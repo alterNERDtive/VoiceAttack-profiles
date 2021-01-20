@@ -1,0 +1,7 @@
+edit_uri: ""
+
+site_name: My Docs
+theme: readthedocs
+plugins:
+  - search
+  - roamlinks
