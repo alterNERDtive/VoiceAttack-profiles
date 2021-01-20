@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>RatAttack # - My Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "RatAttack #";
+    var mkdocs_page_input_path = "RatAttack.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> My Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to MkDocs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../EliteAttack/">EliteAttack #</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">RatAttack #</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#eddi-speech-responder">EDDI speech responder</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#including-the-profile">Including the Profile</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#going-onoff-duty">Going On/Off Duty</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#handling-a-case">Handling a Case</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#getting-case-data-from-irc">Getting Case Data From IRC</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#internal-case-list">Internal Case List</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#opening-a-case">Opening a Case</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#closing-a-case">Closing a Case</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#making-calls">Making Calls</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#general-irc-interaction">General IRC Interaction</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../SpanshAttack/">SpanshAttack #</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../StreamAttack/">StreamAttack #</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">My Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>RatAttack #</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="ratattack">RatAttack</h1>
+<p>This profile facilitates <a href="https://www.fuelrats.com">Fuel Ratting</a>. It aims to 
+eliminate as much of the required manual task and attention switching as 
+possible via automation and voice commands.</p>
+<p>If you don’t know what the Fuel Rats are, come hang out and ask :)</p>
+<h2 id="requirements">Requirements</h2>
+<p>Only vanilla VoiceAttack is absolutely required to use this profile. Optionally 
+you can install EDDI and my elite scripts for advanced features.</p>
+<ul>
+<li><a href="https://github.com/EDCD/EDDI">EDDI</a> installed as a VoiceAttack plugin: This 
+  will give you a better (IMO) way of using TTS. Be sure to set 
+  <code>RatAttack.useEddiForVoice</code>. It will also enable you to have ingame chat be 
+  transferred to IRC; see below.</li>
+<li><a href="https://github.com/alterNERDtive/elite-scripts">elite-scripts</a>: Using the 
+  Python scripts will give RatAttack a way to be aware of where your CMDRs are 
+  and give you the nearest one to a rat case. That’s only really needed if you 
+  actually <em>have</em> multiple CMDRs, obviously. If you are using the profile 
+  package from the release page, they will be installed automatically.</li>
+</ul>
+<h3 id="eddi-speech-responder">EDDI speech responder</h3>
+<p>For the convenience of people that have not been using EDDI in the past, 
+RatAttack will deactivate the speech responder automatically to not clutter them 
+with unwanted TTS.</p>
+<p>If you are already an EDDI user and want to keep the default speech responder 
+functionality, you will have to disable the <code>EDDI.quietMode</code> setting by running 
+the <code>customize settings disable eddi quiet mode</code> command.</p>
+<h2 id="settings">Settings</h2>
+<p>There are a lot of preferences you can set, including some you really want to 
+concern yourself with before you start using the profile. Some of the more 
+advanced features heavily rely on you giving it the correct things to work with.</p>
+<p>See the <a href="#Configuration-Variables">Configuration Variables</a> section.</p>
+<h2 id="including-the-profile">Including the Profile</h2>
+<p>When including the profile, be sure to</p>
+<ul>
+<li>Run the startup command. You will need to have a startup command in your 
+  profile (= one that is run on profile loading) and call <code>RatAttack.startup</code> 
+  from that one.</li>
+<li>Make sure all EDDI events that RatAttack needs are correctly handled. For all 
+  events used in RatAttack that you already have handlers for in your profile, 
+  you’ll have to include a call to <code>RatAttack.&lt;event name&gt;</code>. E.g.  for “EDDI 
+  Message sent”, call <code>RatAttack.EDDI Message sent</code> by name from your <code>((EDDI 
+  Message sent))</code> command.</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<h3 id="going-onoff-duty">Going On/Off Duty</h3>
+<p>When you are on duty, RatAttack will automatically announce cases coming in 
+through IRC. When off duty, it won’t.</p>
+<ul>
+<li><code>[enable;disable] rat duty</code>: puts you on/off duty.</li>
+<li><code>open [rat;] dispatch board</code>: opens the web dispatch board.</li>
+</ul>
+<h3 id="handling-a-case">Handling a Case</h3>
+<h4 id="getting-case-data-from-irc">Getting Case Data From IRC</h4>
+<p>You can setup your IRC client to pass incoming RATSIGNALS to VoiceAttack by 
+writing them to a file (<code>%appdata%\Ratattack\ratsignal.pipe</code>), then calling the 
+appropriate command (<code>RatAttack.announceCaseFromRatsignal</code> for notification, 
+<code>RatAttack.getInfoFromRatsignal</code> for silently putting it into the case list).</p>
+<p>This has two purposes:</p>
+<ol>
+<li>announcing a new incoming case</li>
+<li>storing case data and making it available to VoiceAttack, e.g. for copying 
+   the case’s system into the clipboard</li>
+</ol>
+<p>You need to make your IRC client</p>
+<ol>
+<li>wait until the file disappears (for several cases coming in at once)</li>
+<li>write the RATSIGNAL to the file</li>
+<li>run the VoiceAttack command</li>
+</ol>
+<p>In my case I am running AdiIRC and have the following script setup for handling 
+this:</p>
+<pre><code>on *:TEXT:RATSIGNAL - CMDR*(??_SIGNAL):#fuelrats:{
+    /mkdir C:\users\&lt;user&gt;\appdata\roaming\RatAttack\
+    /handleratsignal $1-
+}
+alias handleratsignal {
+    if ( $exists(C:\users\&lt;user&gt;\appdata\roaming\RatAttack\ratsignal.pipe) ) {
+        /sleep 1 /handleratsignal $1-
+    }
+    else {
+        /write C:\users\&lt;user&gt;\appdata\roaming\RatAttack\ratsignal.pipe $1-
+        if ( $away ) {
+            /run -h &quot;X:\path\to\VoiceAttack\VoiceAttack.exe&quot; -nofocus -command &quot;RatAttack.getInfoFromRatSignal&quot;
+        }
+        else {
+            /run -h &quot;X:\path\to\VoiceAttack\VoiceAttack.exe&quot; -nofocus -command &quot;RatAttack.announceCaseFromRatSignal&quot;
+        }
+    }
+}
+</code></pre>
+<p>You get the gist; if not and you don’t know how to do the same thing for your 
+IRC client or it doesn’t support copying the control characters in the ratsignal 
+that the profile uses to split the information, either switch to AdiIRC or bribe 
+me to include some other way to get case data into VoiceAttack.</p>
+<p><strong>Note</strong>: If you are running VoiceAttack as admin you need to run your IRC 
+client as admin, too! Otherwise it can’t talk to VoiceAttack for security 
+reasons. You really should <em>not</em> run VoiceAttack with elevated privileges 
+though. Or anything.</p>
+<h4 id="internal-case-list">Internal Case List</h4>
+<p>If you have your IRC client setup properly, VoiceAttack will hold a list with 
+all rat cases that have come in while you had it running. It will save the case 
+number, CMDR name, system, O₂ status and platform. There are several commands 
+you can run on this list, giving it a case number:</p>
+<ul>
+<li><code>rat case number [0..19] details</code>: Will give you all stored info on a case.</li>
+<li><code>[current;] rat case details</code>: Will give you all stored info on the currently 
+  open case.</li>
+<li><code>distance to current rat case</code>: Will give you the distance from your current 
+  location to the currently opened rat case. Requires the use of my 
+  <code>elite-scripts</code> Python scripts.</li>
+<li><code>distance to rat case number [0..19]</code>: Will give you the distance from your 
+  current system to a case’s system. Requires the use of my <code>elite-scripts</code> 
+  Python scripts.</li>
+<li><code>nearest commander to rat case number [0..19]</code>: Will give you the nearest of 
+  your CMDRs with their distance to a case’s system. Requires some setup and the 
+  use of my <code>elite-scripts</code> Python scripts.</li>
+<li><code>nearest commander to [the;] rat case</code>: Will give you the nearest of your 
+  CMDRs with their distance to the current case’s system. Requires some setup 
+  and the use of my <code>elite-scripts</code> Python scripts.</li>
+</ul>
+<h4 id="opening-a-case">Opening a Case</h4>
+<ul>
+<li><code>open rat case number [0..19]</code>: Opens rat case with the given number. If there 
+  is no case data for that case (e.g. because you don’t have your IRC client set 
+  up properly), it will still open it, just not have any data on it.</li>
+<li><code>open [latest;] rat case</code>: Opens the latest rat case that has come in through 
+  IRC. Will probably error out in creative ways if you don’t have your IRC 
+  client set up properly. Too tired right now to have proper error handling so 
+  just open an issue if you run into problems (it’s 7am, I haven’t slept and 
+  want to finish this doc to get the release out (yes, you are allowed to laugh 
+  at this section)).</li>
+</ul>
+<h4 id="closing-a-case">Closing a Case</h4>
+<ul>
+<li><code>[close;clear] rat case</code>: Closes the currently open rat case.</li>
+</ul>
+<h3 id="making-calls">Making Calls</h3>
+<p>There are a bunch of calls you can make for a case, the most common are modelled 
+through VoiceAttack commands. The descriptive commands (e.g. “system confirmed”) 
+will be shortened to the usual IRC short hands (e.g. “sysconf”). If you need 
+something more unusual you can either still manually type it into your IRC 
+client or use the “General IRC Integration”, see below.</p>
+<ul>
+<li><code>call [1..20] jumps [and login;and takeoff;left;]</code>: Calls jump for the 
+  currently open case. You can optionally include that you will still have to 
+  login to the game or have to take off from your current 
+  station/port/outpost/planet.</li>
+<li><code>call friend [positive;negative] [in pg;in private group;in solo;in main 
+  meu;sysconf;system confirmed]</code>: Friend request confirmations, with all the 
+  things you might want to / should call with it.</li>
+<li><code>call [beacon;fuel;instance;pos;position;prep;sys;system;wing] 
+  [positive;negative]</code>: All the stuff you usually need for ratting after you 
+  have received the friend request.</li>
+<li><code>call wing pending</code>: Calls “wr pending” for when it takes 30s again to 
+  actually show up.</li>
+<li><code>call client in [exclusion zone;main menu;open;open sysconf;pg;private 
+  group;solo;super cruise]</code>: Callouts for all the various things a client could 
+  get themselves into.</li>
+<li><code>call [client destroyed;client offline;sysconf;system confirmed]</code>: This is the 
+  command you don’t want to use. Include sysconf in your “friend+” or “in open” 
+  calls, and make sure you will never have to call “client destroyed”, would 
+  you?</li>
+</ul>
+<h3 id="general-irc-interaction">General IRC Interaction</h3>
+<p>(requires EDDI)</p>
+<p>Using EDDI to read the game’s journal, you can send messages to IRC from Elite’s 
+ingame chat.</p>
+<p><strong>Be aware that the chat message will still appear in the ingame chat channel 
+you send it to!</strong></p>
+<p>I recommend using local chat and limiting the use to instances that will 
+probably not have other players in it (e.g. instanced in normal space with the 
+client or in SC in some remote system out in the black on a long range rescue).</p>
+<ul>
+<li>
+<h1 id="fuelrats-use-fr-message-to-have-voiceattack-send-casenumber">fuelrats: Use “.fr \&lt;message>” to have VoiceAttack send “#\&lt;caseNumber></h1>
+  \&lt;message>” to the #fuelrats channel – or yell at you when you are not on 
+  a case.</li>
+<li>
+<h1 id="ratchat-use-rc-message-to-have-voiceattack-send-message-to">ratchat: Use “.rc \&lt;message>” to have VoiceAttack send “\&lt;message>” to</h1>
+  #ratchat.</li>
+</ul>
+<p>These commands send their text to windows with “#fuelrats” and “#ratchat” in 
+their title, respectively. If your IRC client does not do that, you will have to 
+change the “target” window of the <code>RatAttack.sendToFuelrats</code> and 
+<code>RatAttack.sendToRatchat</code> commands to reflect the actual window titles on your 
+system. I will look into making this more elegant to change in the future.</p>
+<h2 id="logging">Logging</h2>
+<p>The profile supports logging a bunch of stuff to the VoiceAttack event log. By 
+default, logging is concise and constrained to basically error messages.</p>
+<p>If you need more logging (usually for debugging purposes), say <code>enable logging</code>. 
+If you want to enable verbose logging <em>by default</em>, call the 
+<code>Logging.enableLogging</code> command from your custom profile’s <code>startup</code> command.</p>
+<h2 id="exposed-variables">Exposed Variables</h2>
+<p>The following Variables are <em>global</em> and thus readable (and writeable! Please 
+don’t unless it’s a config variable …) from other profiles.</p>
+<h3 id="configuration-variables">Configuration Variables</h3>
+<p>There are a bunch of configuration variables. You should not overwrite those 
+manually, instead use the provided commands in the <code>_configuration</code> section!</p>
+<p>Basically all the settings are available using the <code>customize settings</code> prefix, 
+then saying <code>[enable;disable] &lt;setting&gt;</code> for on/off switches and <code>set &lt;setting&gt;</code> 
+for text variables.</p>
+<ul>
+<li><code>EDDI.quietMode</code> (boolean): whether or not to set EDDI to quite mode. Default: 
+  true.</li>
+<li><code>EDDI.useEddiForVoice</code> (boolean): whether to use the EDDI plugin to handle 
+  text-to-speech over VoiceAttacks built-in speech function. Default: false.</li>
+<li><code>Elite.pasteKey</code> (string): the key used for pasting into Elite. On QWERTY this 
+  is <code>v</code>. Default: <code>v</code>.</li>
+<li><code>RatAttack.announceNearestCMDR</code> (boolean): whether or not to automatically 
+  announce your nearest CMDR to a case.  Requires the <code>elite-scripts</code> Python 
+  scripts. Will probably break in creative ways if you don’t have them and turn 
+  it on anyway.  Default: false.</li>
+<li><code>RatAttack.announcePlatform</code> (boolean): whether or not to announce the case’s 
+  platform by default. Useful to set if you are active on more than one 
+  platform. Even with this off, you will still be warned when you open a case 
+  that is <em>not</em> on one of your platforms.  Default: false.</li>
+<li><code>RatAttack.CMDRs</code> (string): list of your CMDR names, delimited by spaces. If 
+  your names include spaces, you will have to put them in quotes. Default: “"J 
+  Jora Jameson" NameWithNoSpace”.</li>
+<li><code>RatAttack.confirmCalls</code> (boolean): whether VoiceAttack should ask you before 
+  posting to #fuelrats to make sure there hasn’t been an error in voice 
+  recognition and you accidentally post the wrong thing. Default: true.</li>
+<li><code>RatAttack.autoCloseCase</code> (boolean): whether or not to automatically close an 
+  open rat case on calling “fuel+”. Default: false.</li>
+<li><code>RatAttack.onDuty</code> (boolean): whether or not you are currently on rat duty. 
+  Default: true.</li>
+<li><code>RatAttack.platforms</code> (string): the platforms you want to be informed of 
+  incoming cases for. If you are on console, you can still have VoiceAttack 
+  running on the PC that you are using for IRC and handle calls and stuff using 
+  voice!  Delimited by whatever you want. Can include “PC”, “XB”, “PS4”. 
+  Default: “PC”.</li>
+<li><code>python.scriptPath</code> (string): the path you put the Python scripts in. Default: 
+  “{VA_DIR}\Sounds\scripts”.</li>
+</ul>
+<h3 id="other-variables">Other Variables</h3>
+<p>Current case data:</p>
+<ul>
+<li><code>RatAttack.caseNumber</code> (int): the number of the case you are currently on. 
+  Will be <code>Not Set</code> if you are not on a case.</li>
+<li><code>RatAttack.onCase</code> (boolean): whether or not you are currently on a case.</li>
+</ul>
+<p>Case list:</p>
+<ul>
+<li><code>RatAttack.caseList.&lt;case#&gt;.cmdr</code> (string)</li>
+<li><code>RatAttack.caseList.&lt;case#&gt;.system</code> (string)</li>
+<li><code>RatAttack.caseList.&lt;case#&gt;.platform</code> (string)</li>
+<li><code>RatAttack.caseList.&lt;case#&gt;.codeRed</code> (boolean)</li>
+</ul>
+<p>… with <code>&lt;case#&gt;</code> being a number between 0 and 19.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../SpanshAttack/" class="btn btn-neutral float-right" title="SpanshAttack #">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../EliteAttack/" class="btn btn-neutral" title="EliteAttack #"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../EliteAttack/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../SpanshAttack/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
