@@ -5,6 +5,9 @@ This version introduces huge (and _breaking_) changes. **Make sure to refer to
 section](https://alternerdtive.github.io/VoiceAttack-profiles/upgrading/) in the
 new documentation if you are upgrading from an older version!**
 
+Oh yes, there is [an all new and improved documentation
+now](https://alternerdtive.github.io/VoiceAttack-profiles)!
+
 The biggest change is the addition of plugins to supplement the profiles, and
 the new `alterNERDtive-base` profile that handles a lot of the plugin-related
 tasks including configuration.
@@ -70,7 +73,7 @@ profile will keep the old name. Feel free to manually rename it.
 
 * `EDDI Material threshold` event now uses the correct variable names. It will
   automatically start working properly in a future version of EDDI that fixes
-  some bugs with setting event variables.
+  some bugs with setting event variables. (#32)
 
 ### RatAttack 6.0
 
@@ -80,7 +83,7 @@ profile will keep the old name. Feel free to manually rename it.
 * Will now announce permit locks, including the name of the permit if available.
 * Now supports manually injected cases that might not provide a system. You will
   still have to manually copy the system from \#fuelrats or the dispatch board
-  after it has been set.
+  after it has been set. (#76)
 
 ### Changed
 

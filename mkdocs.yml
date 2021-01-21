@@ -16,6 +16,7 @@ plugins:
     - roamlinks
     - mkpdfs:
         author: 'alterNERDtive'
+        output_path: 'pdf/Profiles Documentation.pdf'
 
 markdown_extensions:
     - toc:

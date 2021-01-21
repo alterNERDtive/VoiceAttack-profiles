@@ -1,5 +1,10 @@
 # Elite Dangerous VoiceAttack Profiles
 
+**This documentation is a _work in progress_ for the upcoming 4.0 release.
+Please refer to [the Github
+repository](https://github.com/alterNERDtive/VoiceAttack-profiles) and the
+documentation there for version 3.x.**
+
 These are various profiles for [VoiceAttack](https://voiceattack.com) (VA) I use 
 to enhance my Elite experience. They give me important info, facilitate 
 day-to-day gaming and do some special things for [Fuel 
