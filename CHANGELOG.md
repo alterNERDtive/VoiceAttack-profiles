@@ -1,3 +1,129 @@
+# 4.0 (FIXXME)
+
+This version introduces huge (and _breaking_) changes. **Make sure to refer to
+[the “Upgrading”
+section](https://alternerdtive.github.io/VoiceAttack-profiles/upgrading/) in the
+new documentation if you are upgrading from an older version!**
+
+The biggest change is the addition of plugins to supplement the profiles, and
+the new `alterNERDtive-base` profile that handles a lot of the plugin-related
+tasks including configuration.
+
+Long-term goal is to re-implement the Python scripts in the plugins, too, to
+reduce the complexity (= probability of silly errors) and the download size.
+
+The profile package now also includes [my fork of the `bindED`
+plugin](https://github.com/alterNERDtive/bindED). If you use other profiles that
+expect the old version, you will see error messages in the log about not being
+able to invoke that plugin. [You can safely ignore that](https://github.com/alterNERDtive/bindED#migrating-from-the-old-plugin).
+
+## alterNERDtive-base 4.0
+
+### Added
+
+* `alterNERDtive-base` plugin. FIXXME
+* Proper logging to the VoiceAttack log. You will notice a lot of useful
+  information, more is available if you change the log level configuration
+  option. Logging to a file for troubleshooting will be added at a later date.
+* `generate missing key binds report` command: Will place a list of missing key
+  binds (provided by bindED) on your Desktop for troubleshooting.
+* Lots of new configuration options, see [the
+  documentation](https://alternerdtive.github.io/VoiceAttack-profiles/configuration/).
+* You can now have a list of configuration voice commands as well as a list
+  of all configuration options and their current settings printed to the
+  VoiceAttack log.
+* `open [docs;documentation;help] [site;]` command: Opens the new documentation site.
+* `open [docs;documentation;help] file` command: Opens the PDF version of the
+  new documentation site distributed with the profiles for offline use.
+
+### Removed
+
+* `Python.scriptPath` configuration option: The scripts are basically already
+  deprecated, and I’m from now on assuming that you use the profile package for
+  installation/upgrades, so I expect the scripts where they are supposed to be.
+
+### Changed
+
+* Completely reworked how the configuration works. It will be trivial to add new
+  options in the future including voice commands to set them. Adding a GUI is
+  also possible, but not on the roadmap yet.
+* EDDI events (and some other more administrative commands) are now hidden from
+  the VoiceAttack log.
+
+### EliteAttack 8.0
+
+The `EliteDangerous` profile has been renamed to `EliteAttack` to be consistent
+with the other profiles. If you are upgrading instead of installing fresh, your
+profile will keep the old name. Feel free to manually rename it.
+
+### Added
+
+* `EliteAttack` plugin. FIXXME
+* `where is my landing pad` command: Will use EDDI to tell you about the landing
+  pad location on star ports in relation to the mail slot.
+
+### Changed
+
+* FIXXME
+
+### Fixed
+
+* `EDDI Material threshold` event now uses the correct variable names. It will
+  automatically start working properly in a future version of EDDI that fixes
+  some bugs with setting event variables.
+
+### RatAttack 6.0
+
+### Added
+
+* `RatAttack` plugin. FIXXME
+* Will now announce permit locks, including the name of the permit if available.
+* Now supports manually injected cases that might not provide a system. You will
+  still have to manually copy the system from \#fuelrats or the dispatch board
+  after it has been set.
+
+### Changed
+
+* RATSIGNAL handling is no longer done through a file, there is now a helper
+  tool that communicates with the plugin directly.
+* Now supports up to 30 cases (0–29). Thanks, Epicalypse!
+
+### Fixed
+
+* Updated RATSIGNAL parsing for Mecha3.
+
+### SpanshAttack 6.0
+
+### Added
+
+* `SpanshAttack` plugin. FIXXME
+* Will now log the jumps calculated for a trip to the VoiceAttack log.
+
+### Changed
+
+* FIXXME
+
+### Fixed
+
+* FIXXME
+
+### StreamAttack 2.0
+
+### Added
+
+* FIXXME
+
+### Changed
+
+* Jump target will now be set to SpanshAttack’s plot target if the actual target
+  system is not in the database.
+
+### Fixed
+
+* FIXXME
+
+-----
+
 # 3.2.1 (2021-01-02)
 
 ## RatAttack 5.0.5
