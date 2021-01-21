@@ -1,7 +1,48 @@
-edit_uri: ""
+site_name: "alterNERDtive VA profiles"
+site_url: https://alterNERDtive.github.io/VoiceAttack-profiles
+repo_url: https://github.com/alterNERDtive/VoiceAttack-profiles
+edit_uri: "edit/release/docs/"
+site_description: "alterNERDtive VoiceAttack profiles for Elite: Dangerous"
+site_author: "alterNERDtive"
+remote_name: "ssh-origin"
 
-site_name: My Docs
-theme: readthedocs
+theme:
+    name: readthedocs
+    prev_next_buttons_location: both
+
 plugins:
-  - search
-  - roamlinks
+    #- htmlproofer
+    - search
+    - roamlinks
+    - mkpdfs:
+        author: 'alterNERDtive'
+
+markdown_extensions:
+    - toc:
+        permalink: True
+    - sane_lists
+
+nav:
+    - 'Home': 'index.md'
+    - 'Install':
+        - 'requirements.md'
+        - 'installing.md'
+        - 'upgrading.md'
+    - 'Configure':
+        - 'configuration/VoiceAttack.md'
+        - 'configuration/general.md'
+        - 'configuration/EliteAttack.md'
+        - 'configuration/RatAttack.md'
+        - 'configuration/SpanshAttack.md'
+        - 'configuration/StreamAttack.md'
+    - 'Use':
+        - 'EliteAttack.md'
+        - 'RatAttack.md'
+        - 'SpanshAttack.md'
+        - 'StreamAttack.md'
+    - 'Issues':
+        - 'troubleshooting.md'
+        - 'Report a Bug': 'https://github.com/alterNERDtive/VoiceAttack-profiles/issues/new'
+    - 'Watch in Action':
+        - 'Twitch': 'https://twitch.tv/alterNERDtive'
+        - 'Youtube': 'https://www.youtube.com/channel/UC3XNZA7xWed1zM1AWOOdmog'
