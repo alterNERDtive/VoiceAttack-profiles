@@ -3,7 +3,7 @@
 This version introduces huge (and _breaking_) changes. **Make sure to refer to
 [the “Upgrading”
 section](https://alternerdtive.github.io/VoiceAttack-profiles/upgrading/) in the
-new documentation if you are upgrading from an older version!**
+documentation if you are upgrading from an older version!**
 
 Oh yes, there is [an all new and improved documentation
 now](https://alternerdtive.github.io/VoiceAttack-profiles)!
@@ -52,6 +52,9 @@ able to invoke that plugin. [You can safely ignore that](https://github.com/alte
   also possible, but not on the roadmap yet.
 * EDDI events (and some other more administrative commands) are now hidden from
   the VoiceAttack log.
+* `power to` command now supports of lot more options. `power to X and Y` sets
+  8/4/0, `balanced power to X and Y` sets 6/6/0, `half power to X` sets 6/3/3,
+  `half power to X and Y` sets 5/5/2.
 
 ### EliteAttack 8.0
 
@@ -88,7 +91,8 @@ profile will keep the old name. Feel free to manually rename it.
 ### Changed
 
 * RATSIGNAL handling is no longer done through a file, there is now a helper
-  tool that communicates with the plugin directly.
+  tool that communicates with the plugin directly. See “Upgrading” in the
+  documentation.
 * Now supports up to 30 cases (0–29). Thanks, Epicalypse!
 
 ### Fixed

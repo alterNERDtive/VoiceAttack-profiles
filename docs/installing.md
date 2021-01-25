@@ -26,7 +26,7 @@ for you if you are not using that.
 Make sure you have plugin support enabled:
 
 1. Go to VoiceAttack settings. ![[VoiceAttack-settings.png]]
-1. Check “enable plugin support” ![[VoiceAttack-settings-plugin-support.png]]
+1. Check “enable plugin support”. ![[VoiceAttack-settings-plugin-support.png]]
 
 While you are there, you might also want to enable the automatic update checks.
 
@@ -177,7 +177,7 @@ button.
 ![[VoiceAttack-profile-options-include.png]]
 
 Add all my profiles (“EliteDangerous”, “RatAttack”, “SpanshAttack”,
-`StreamAttack`).
+“StreamAttack”).
 
 ![[VoiceAttack-profile-options-includelist.png]]
 
@@ -192,3 +192,24 @@ profile is loaded” checkbox, and select the “startup” command you have cre
 earlier.
 
 ![[VoiceAttack-profile-options-startup.png]]
+
+## Set Elite Keyboard Binds
+
+You need to have keyboard binds setup at least as secondary bindings in Elite’s
+controls options. VoiceAttack _cannot_ “push” joystick buttons for you, it can
+only do keyboard inputs. Hence its only way to interact with Elite is through
+keyboard emulation, even if you otherwise play the game with a controller or
+HOTAS. Or racing wheel. Or Rock Band set. Or bananas.
+
+![[Elite-binds.png]]
+
+Should you use a keyboard layout that is _not_ en-US QWERTY, some keys might not
+work out of the box. You can try telling bindED about your keyboard layout by
+setting the `bindED.layout#` variable (including the \#!) to something more
+appropriate in your startup command.
+
+![[bindED-layout.png]]
+
+Currently bindED supports the `en-US`, `en-GB` and `de-Neo2` layouts. [You can
+find instructions on how to add your own on
+Github](https://github.com/alterNERDtive/bindED/wiki/Keyboard-Layouts).

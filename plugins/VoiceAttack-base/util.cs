@@ -20,10 +20,8 @@ namespace alterNERDtive.util
             {
                 "alterNERDtive-base",
                 new OptDict<string, Option>{
-                    { new Option<bool>("eddi.quietMode", true, voiceTrigger: "eddi quiet mode", description: "Make EDDI shut up. Disables all built-in speech respondes.") },
+                    { new Option<bool>("eddi.quietMode", true, voiceTrigger: "eddi quiet mode", description: "Make EDDI shut up. Disables all built-in speech responders.") },
                     { new Option<decimal>("keyPressDuration", (decimal)0.01, voiceTrigger: "key press duration", description: "The time keys will be held down for.") },
-                    { new Option<decimal>("delays.quitToDesktop", (decimal)10.0, voiceTrigger: "quit to desktop delay",
-                        description: "The delay before restarting the game after hitting “Exit to Desktop”.\nDefault: 10.0 seconds.") },
                     { new Option<string>("elite.pasteKey", "v", voiceTrigger: "elite paste key",
                         description: "The key used to paste in conjunction with CTRL. The physical key in your layout that would be 'V' on QWERTY.") },
                     { new Option<string>("log.logLevel", "NOTICE", voiceTrigger: "log level", validValues: new List<string>{ "ERROR", "WARN", "NOTICE", "INFO", "DEBUG" },
@@ -44,6 +42,8 @@ namespace alterNERDtive.util
                     { new Option<bool>("autoHonkNewSystems", true, voiceTrigger: "auto honk new systems", description: "Automatically honk upon entering as system if it is your first visit.") },
                     { new Option<bool>("autoRestock", true, voiceTrigger: "auto restock", description:
                         "Automatically restock after docking at a station.\nYou will alywas refuel, repair and enter the Station Services menu.") },
+                    { new Option<decimal>("delays.quitToDesktop", (decimal)10.0, voiceTrigger: "quit to desktop delay",
+                        description: "The delay before restarting the game after hitting “Exit to Desktop”.\nDefault: 10.0 seconds.") },
                     { new Option<bool>("enableAutoUpdateCheck", true, voiceTrigger: "auto update check", description: "Automatically check Github for profiles updates.") },
                     { new Option<bool>("flightAssistOff", false, voiceTrigger: "flight assist off", description: "Permanent Flight Assist off mode. You should really do that, it’s great.") },
                     { new Option<bool>("hyperspaceDethrottle", true, voiceTrigger: "hyper space dethrottle", description: "Throttle down after a jump and when dropping from SC. Like the SC Assist module does.") },

@@ -30,18 +30,19 @@ nav:
         - 'installing.md'
         - 'upgrading.md'
     - 'Configure':
-        - 'configuration/VoiceAttack.md'
         - 'configuration/general.md'
         - 'configuration/EliteAttack.md'
         - 'configuration/RatAttack.md'
         - 'configuration/SpanshAttack.md'
         - 'configuration/StreamAttack.md'
     - 'Use':
+        - 'general.md'
         - 'EliteAttack.md'
         - 'RatAttack.md'
         - 'SpanshAttack.md'
         - 'StreamAttack.md'
     - 'Issues':
+        - 'VoiceAttack tips': 'VoiceAttack.md'
         - 'troubleshooting.md'
         - 'Report a Bug': 'https://github.com/alterNERDtive/VoiceAttack-profiles/issues/new'
     - 'Watch in Action':
