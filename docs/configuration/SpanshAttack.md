@@ -30,8 +30,8 @@ You can override a saved range for your ship by using the
 
 Toggles:
 
-* `auto jump after scooping`: Automatically accelerate and jump out when fuel
-  scooping is complete. Default: true.
+* `auto jump after scooping`: Automatically jump out when fuel scooping is
+  complete. Default: true.
 * `auto plot`: Automatically plot to the next waypoint after supercharging.
   Default: true.
 * `clear neutron route on shutdown`: Clear an active neutron route when the game

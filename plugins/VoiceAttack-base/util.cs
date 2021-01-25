@@ -74,7 +74,7 @@ namespace alterNERDtive.util
                     { new Option<string>("announceJumpsLeft", ";1;3;5;10;15;20;30;50;75;100;", voiceTrigger: "announce jumps left",
                         description: "Estimated jumps left to announce when reached.\nNEEDS to have leading and trailing “;”.") },
                     { new Option<bool>("announceWaypoints", true, voiceTrigger: "waypoint announcements", description: "Announce each waypoint by name.") },
-                    { new Option<bool>("autoJumpAfterScooping", true, voiceTrigger: "auto jump after scooping", description: "Automatically accelerate and jump out when fuel scooping is complete.") },
+                    { new Option<bool>("autoJumpAfterScooping", true, voiceTrigger: "auto jump after scooping", description: "Automatically jump out when fuel scooping is complete.") },
                     { new Option<bool>("autoPlot", true, voiceTrigger: "auto plot", description: "Automatically plot to the next waypoint after supercharging.") },
                     { new Option<bool>("clearOnShutdown", true, voiceTrigger: "clear neutron route on shutdown", description: "Clear an active neutron route when the game is shut down.") },
                     { new Option<bool>("copyWaypointToClipboard", false, voiceTrigger: "copy neutron waypoints to clipboard", description: "Copy each neutron waypoint into the Windows clipboard.") },

@@ -52,9 +52,6 @@ able to invoke that plugin. [You can safely ignore that](https://github.com/alte
   also possible, but not on the roadmap yet.
 * EDDI events (and some other more administrative commands) are now hidden from
   the VoiceAttack log.
-* `power to` command now supports of lot more options. `power to X and Y` sets
-  8/4/0, `balanced power to X and Y` sets 6/6/0, `half power to X` sets 6/3/3,
-  `half power to X and Y` sets 5/5/2.
 
 ### EliteAttack 8.0
 
@@ -65,12 +62,28 @@ profile will keep the old name. Feel free to manually rename it.
 ### Added
 
 * `EliteAttack` plugin. Doesn’t do a lot yet.
-* `where is my landing pad` command: Will use EDDI to tell you about the landing
-  pad location on star ports in relation to the mail slot.
+* Submodule targeting! Say
+  `target the [drive;drives;power plant;frame shift drive;f s d;shield generator]`
+  to target submodules on your current target, and `clear sub [module;system]
+  target` to clear your target.
+* `distance [from;to] [Sol;home;the center;Beagle Point;Colonia]` command: Gives
+  you your current distance to the given POI.
+* `[where’s;where is] my landing pad` command: Will tell you the location of
+  your assigned landing pad on a starport.
+* `[dis;]engage silent running` command: Handles silent running.
+* `[are there any;] outdated stations [in this system;]` command: Runs an
+  on-demand check for outdated stations in the current system.
+* `open spansh` command: Opens https://spansh.uk in your default browser.
 
 ### Changed
 
-* FIXXME
+* `power to` command now supports of lot more options. `power to X and Y` sets
+  8/4/0, `balanced power to X and Y` sets 6/6/0, `half power to X` sets 6/3/3,
+  `half power to X and Y` sets 5/5/2.
+
+### Removed
+
+* `[buggy;exploration] power` command.
 
 ### Fixed
 
@@ -96,7 +109,7 @@ profile will keep the old name. Feel free to manually rename it.
 * RATSIGNAL handling is no longer done through a file, there is now a helper
   tool that communicates with the plugin directly. See “Upgrading” in the
   documentation.
-* Now supports up to 30 cases (0–29). Thanks, Epicalypse!
+* Now supports up to 31 cases (0–30). Thanks, Epicalypse!
 
 ### Fixed
 
@@ -106,31 +119,16 @@ profile will keep the old name. Feel free to manually rename it.
 
 ### Added
 
-* `SpanshAttack` plugin. FIXXME
+* `SpanshAttack` plugin. Does miscellaneous things for now, will at some point
+  replace the dependency on the EDNeutronRouter plugin.
 * Will now log the jumps calculated for a trip to the VoiceAttack log.
 
-### Changed
-
-* FIXXME
-
-### Fixed
-
-* FIXXME
-
 ### StreamAttack 2.0
-
-### Added
-
-* FIXXME
 
 ### Changed
 
 * Jump target will now be set to SpanshAttack’s plot target if the actual target
   system is not in the database.
-
-### Fixed
-
-* FIXXME
 
 -----
 

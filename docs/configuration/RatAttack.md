@@ -58,12 +58,12 @@ ETA yet.
 
 Currently there is no way to specify a platform for each CMDR.
 
-## Ingame chat → FuelRats IRC
+## Sending Text to FuelRats IRC
 
-You can send messages from ingame chat directly to the “\#fuelrats” and
-“\#ratchat” channels on FuelRats IRC. (See [[#FIXXME]])
+The profile will attempt to send calls to “\#fuelrats”, and you can send
+messages from ingame chat to “\#fuelrats” and “\#ratchat”.
 
-That will send text to windows with “#fuelrats” and “#ratchat” in 
+That will send text to windows with “\#fuelrats” and “\#ratchat” in 
 their title, respectively. If your IRC client does not do that, you will have to 
 change the “target” window of the `RatAttack.sendToFuelrats` and 
 `RatAttack.sendToRatchat` commands to reflect the actual window titles on your 
