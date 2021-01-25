@@ -1,7 +1,7 @@
 site_name: "alterNERDtive VA profiles"
 site_url: https://alterNERDtive.github.io/VoiceAttack-profiles
 repo_url: https://github.com/alterNERDtive/VoiceAttack-profiles
-edit_uri: "edit/release/docs/"
+edit_uri: "edit/devel/docs/"
 site_description: "alterNERDtive VoiceAttack profiles for Elite: Dangerous"
 site_author: "alterNERDtive"
 remote_name: "ssh-origin"

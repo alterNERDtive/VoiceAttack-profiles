@@ -20,10 +20,13 @@ namespace alterNERDtive.util
             {
                 "alterNERDtive-base",
                 new OptDict<string, Option>{
+                    { new Option<decimal>("delays.keyPressDuration", (decimal)0.01, voiceTrigger: "key press duration", description: "The time keys will be held down for.") },
+                    { new Option<decimal>("delays.quitToDesktop", (decimal)10.0, voiceTrigger: "quit to desktop delay",
+                        description: "The delay before restarting the game after hitting “Exit to Desktop”.\nDefault: 10.0 seconds. (Used by the `restart from desktop` command)") },
                     { new Option<bool>("eddi.quietMode", true, voiceTrigger: "eddi quiet mode", description: "Make EDDI shut up. Disables all built-in speech responders.") },
-                    { new Option<decimal>("keyPressDuration", (decimal)0.01, voiceTrigger: "key press duration", description: "The time keys will be held down for.") },
                     { new Option<string>("elite.pasteKey", "v", voiceTrigger: "elite paste key",
                         description: "The key used to paste in conjunction with CTRL. The physical key in your layout that would be 'V' on QWERTY.") },
+                    { new Option<bool>("enableAutoUpdateCheck", true, voiceTrigger: "auto update check", description: "Automatically check Github for profiles updates.") },
                     { new Option<string>("log.logLevel", "NOTICE", voiceTrigger: "log level", validValues: new List<string>{ "ERROR", "WARN", "NOTICE", "INFO", "DEBUG" },
                         description: @"The level of detail for logging to the VoiceAttack log.\nValid levels are ""ERROR"", ""WARN"", ""NOTICE"", ""INFO"" and ""DEBUG"".\nDefault: ""NOTICE"".") },
                 }
@@ -36,18 +39,17 @@ namespace alterNERDtive.util
                     { new Option<bool>("announceMappingCandidates", true, voiceTrigger: "mapping candidates",
                         description: "Announce bodies worth mapping when you’ve finished scanning a system.\n(Terraformables, Water Worlds, Earth-Like Worlds and Ammonia Worlds that have not been mapped yet.)") },
                     { new Option<bool>("announceOutdatedStationData", true, voiceTrigger: "outdated stations", description: "Announce stations with outdated data in the online databases.") },
-                    { new Option<bool>("announceR2RMappingCandidates", true, voiceTrigger: "road to riches",
+                    { new Option<bool>("announceR2RMappingCandidates", false, voiceTrigger: "road to riches",
                         description: "Announce bodies worth scanning if you are looking for some starting cash on the Road to Riches.") },
                     { new Option<bool>("autoHonkAllSystems", false, voiceTrigger: "auto honk all systems", description: "Automatically honk upon entering a system, each jump without constraints.") },
                     { new Option<bool>("autoHonkNewSystems", true, voiceTrigger: "auto honk new systems", description: "Automatically honk upon entering as system if it is your first visit.") },
                     { new Option<bool>("autoRestock", true, voiceTrigger: "auto restock", description:
-                        "Automatically restock after docking at a station.\nYou will alywas refuel, repair and enter the Station Services menu.") },
-                    { new Option<decimal>("delays.quitToDesktop", (decimal)10.0, voiceTrigger: "quit to desktop delay",
-                        description: "The delay before restarting the game after hitting “Exit to Desktop”.\nDefault: 10.0 seconds.") },
-                    { new Option<bool>("enableAutoUpdateCheck", true, voiceTrigger: "auto update check", description: "Automatically check Github for profiles updates.") },
+                        "Automatically restock after docking at a station.\nYou will always refuel, repair and enter the Station Services menu.") },
                     { new Option<bool>("flightAssistOff", false, voiceTrigger: "flight assist off", description: "Permanent Flight Assist off mode. You should really do that, it’s great.") },
-                    { new Option<bool>("hyperspaceDethrottle", true, voiceTrigger: "hyper space dethrottle", description: "Throttle down after a jump and when dropping from SC. Like the SC Assist module does.") },
-                    { new Option<int>("outdatedStationThreshold", 365, voiceTrigger: "outdated station threshold", description: "The threshold for station data to count as “outdated”.\nDefault: 365 days.") },
+                    { new Option<bool>("hyperspaceDethrottle", true, voiceTrigger: "hyper space dethrottle",
+                        description: "Throttle down after a jump and when dropping from SC. Like the SC Assist module does.") },
+                    { new Option<int>("outdatedStationThreshold", 365, voiceTrigger: "outdated station threshold",
+                        description: "The threshold for station data to count as “outdated”, in days.\nDefault: 365.") },
                     { new Option<int>("scannerFireGroup", 0, voiceTrigger: "scanner fire group", description: "The fire group your discovery scanner is assigned to.\nDefault: 0 (the first one).") },
                     { new Option<bool>("usePrimaryFireForDiscoveryScan", false, voiceTrigger: "discovery scan on primary fire", description: "Use primary fire for honking instead of secondary.") },
                 }
@@ -69,10 +71,11 @@ namespace alterNERDtive.util
             {
                 "SpanshAttack",
                 new OptDict<string, Option>{
-                    { new Option<string>("announceJumpsLeft", ";1;3;5;10;15;20;30;50;75;100;", voiceTrigger: "announce jumps left") },
+                    { new Option<string>("announceJumpsLeft", ";1;3;5;10;15;20;30;50;75;100;", voiceTrigger: "announce jumps left",
+                        description: "Estimated jumps left to announce when reached.\nNEEDS to have leading and trailing “;”.") },
                     { new Option<bool>("announceWaypoints", true, voiceTrigger: "waypoint announcements", description: "Announce each waypoint by name.") },
                     { new Option<bool>("autoJumpAfterScooping", true, voiceTrigger: "auto jump after scooping", description: "Automatically accelerate and jump out when fuel scooping is complete.") },
-                    { new Option<bool>("autoPlot", true, voiceTrigger: "auto plot", description: "Automatically plot to the next waypoint after super charging.") },
+                    { new Option<bool>("autoPlot", true, voiceTrigger: "auto plot", description: "Automatically plot to the next waypoint after supercharging.") },
                     { new Option<bool>("clearOnShutdown", true, voiceTrigger: "clear neutron route on shutdown", description: "Clear an active neutron route when the game is shut down.") },
                     { new Option<bool>("copyWaypointToClipboard", false, voiceTrigger: "copy neutron waypoints to clipboard", description: "Copy each neutron waypoint into the Windows clipboard.") },
                     { new Option<bool>("defaultToLadenRange", false, voiceTrigger: "default to laden range",

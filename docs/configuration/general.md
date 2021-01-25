@@ -33,14 +33,28 @@ selected, but be preserved if you switch around.
 
 Toggles:
 
+* `auto update check`: Automatically check Github for profiles updates.
 * `eddi quiet mode`: Make EDDI shut up. Disables all built-in speech responders.
 
 Other settings:
 
 * `elite paste key`: The key used to paste in conjunction with CTRL. The
-  physical key in your layout that would be 'V' on QWERTY.
+  physical key in your layout that would be 'V' on QWERTY. Default: 'v'.
 * `log level`: The level of detail for logging to the VoiceAttack log. Valid
   levels are "ERROR", "WARN", "NOTICE", "INFO" and "DEBUG". Default: "NOTICE".
+  Default: "NOTICE".
+* `quit to desktop delay`: The delay before restarting the game after hitting
+  “Exit to Desktop”. Default: 10.0 seconds. (Used by the `restart from desktop`
+  command)
+
+## Note on Non-Standard Keyboard Layouts
+
+Because Elite’s keyboard handling is … weird you’ll have to set the key to use 
+for pasting text into Elite:Dangerous. If you are not using a “standard” 
+QWERT[YZ] layout, you will have to change it back to the key that is physically 
+in the place where `v` would be on QWERTY.
+
+To set the key, say “customize setting set elite paste key”.
 
 ## Adding Commands
 

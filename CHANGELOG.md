@@ -24,7 +24,7 @@ able to invoke that plugin. [You can safely ignore that](https://github.com/alte
 
 ### Added
 
-* `alterNERDtive-base` plugin. FIXXME
+* `alterNERDtive-base` plugin. Provides functionality common to all profiles.
 * Proper logging to the VoiceAttack log. You will notice a lot of useful
   information, more is available if you change the log level configuration
   option. Logging to a file for troubleshooting will be added at a later date.
@@ -64,7 +64,7 @@ profile will keep the old name. Feel free to manually rename it.
 
 ### Added
 
-* `EliteAttack` plugin. FIXXME
+* `EliteAttack` plugin. Doesn’t do a lot yet.
 * `where is my landing pad` command: Will use EDDI to tell you about the landing
   pad location on star ports in relation to the mail slot.
 
@@ -82,7 +82,10 @@ profile will keep the old name. Feel free to manually rename it.
 
 ### Added
 
-* `RatAttack` plugin. FIXXME
+* `RatAttack` plugin. Responsible for handling case data instead of having a way
+  too long and convoluted list of VoiceAttack variables. Also provides a way to
+  send RATSIGNALs to VoiceAttack via IPC.
+* `RatAttack-cli.exe` helper tool. Used to send RATSIGNALs to the plugin via IPC.
 * Will now announce permit locks, including the name of the permit if available.
 * Now supports manually injected cases that might not provide a system. You will
   still have to manually copy the system from \#fuelrats or the dispatch board

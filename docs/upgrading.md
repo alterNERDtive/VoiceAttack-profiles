@@ -8,7 +8,7 @@ To upgrade to the latest version, follow these steps:
 1. Restart VoiceAttack.
 
 In general, migration from old versions will be handled automatically. If there
-is something you have to do manually, you will find the information below.
+is something you have to do manually you will find the necessary steps below.
 
 ## 3.x.x to 4.0
 
@@ -20,11 +20,33 @@ If you have not … well, you will unfortunately have to take note of your
 settings, and recreate them after creating a custom profile and including
 everything.
 
+Please do not fiddle with the configuration variables from your startup command
+(or any other, really). It _should_ not break anything, but it might. And it is
+entirely unnecessary since configuration will be saved to and loaded from the
+profile anyway.
+
 ### bindED
 
 If you have done anything non-standard with bindED before, it might break. The
 profiles now include my fork of bindED which has a lot more features, but
-doesn’t support a bunch of plugin invocations that have become obsolete.
+does no longer support a bunch of plugin invocations that have become obsolete.
+
+Please [file an issue with
+bindED](https://github.com/alterNERDtive/bindED/issues/new/choose) on Github if
+your use case does not work anymore.
+
+### EliteDangerous
+
+The “EliteDangerous” profile is no longer the main profile. Instead you will
+_have_ to create a custom profile, and the new “base” profile that the others
+require to be included in your custom profile is “alterNERDtive-base”. That way
+you can use e.g. RatAttack without having to also use the general Elite profile.
+
+It has also been renamed to “EliteAttack” to be consistent with the others. If
+you are upgrading from an older version the name will not change for you in the
+profiles list. I recommend renaming your “EliteDangerous” profile to
+“EliteAttack” to prevent confusion in the future, but it is not strictly
+necessary to do so.
 
 ### RatAttack
 
