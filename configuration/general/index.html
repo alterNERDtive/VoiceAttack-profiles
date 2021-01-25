@@ -61,6 +61,8 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#note-on-non-standard-keyboard-layouts">Note on Non-Standard Keyboard Layouts</a>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#adding-commands">Adding Commands</a>
 <ul>
 <li class="toctree-l3"><a class="reference internal" href="#eddi-events">EDDI Events</a>
@@ -69,13 +71,13 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../EliteAttack/">EliteAttack #</a>
+<li class="toctree-l1"><a class="reference internal" href="../EliteAttack/">EliteAttack</a>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../RatAttack/">RatAttack #</a>
+<li class="toctree-l1"><a class="reference internal" href="../RatAttack/">RatAttack</a>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../SpanshAttack/">SpanshAttack #</a>
+<li class="toctree-l1"><a class="reference internal" href="../SpanshAttack/">SpanshAttack</a>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../StreamAttack/">StreamAttack #</a>
+<li class="toctree-l1"><a class="reference internal" href="../StreamAttack/">StreamAttack</a>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Use</span></p>
@@ -123,11 +125,11 @@
 <li>Configure »</li>
 <li>General Configuration</li>
 <li class="wy-breadcrumbs-aside">
-<a class="icon icon-github" href="https://github.com/alterNERDtive/VoiceAttack-profiles/edit/release/docs/configuration/general.md"> Edit on GitHub</a>
+<a class="icon icon-github" href="https://github.com/alterNERDtive/VoiceAttack-profiles/edit/devel/docs/configuration/general.md"> Edit on GitHub</a>
 </li>
 </ul>
 <div aria-label="breadcrumb navigation" class="rst-breadcrumbs-buttons" role="navigation">
-<a class="btn btn-neutral float-right" href="../EliteAttack/" title="EliteAttack #">Next <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral float-right" href="../EliteAttack/" title="EliteAttack">Next <span class="icon icon-circle-arrow-right"></span></a>
 <a class="btn btn-neutral" href="../../upgrading/" title="Upgrading"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 </div>
 <hr/>
@@ -161,15 +163,26 @@ selected, but be preserved if you switch around.</p>
 <h3 id="general-settings-for-all-profiles">General Settings for All Profiles<a class="headerlink" href="#general-settings-for-all-profiles" title="Permanent link">¶</a></h3>
 <p>Toggles:</p>
 <ul>
+<li><code>auto update check</code>: Automatically check Github for profiles updates.</li>
 <li><code>eddi quiet mode</code>: Make EDDI shut up. Disables all built-in speech responders.</li>
 </ul>
 <p>Other settings:</p>
 <ul>
 <li><code>elite paste key</code>: The key used to paste in conjunction with CTRL. The
-  physical key in your layout that would be 'V' on QWERTY.</li>
+  physical key in your layout that would be 'V' on QWERTY. Default: 'v'.</li>
 <li><code>log level</code>: The level of detail for logging to the VoiceAttack log. Valid
-  levels are "ERROR", "WARN", "NOTICE", "INFO" and "DEBUG". Default: "NOTICE".</li>
+  levels are "ERROR", "WARN", "NOTICE", "INFO" and "DEBUG". Default: "NOTICE".
+  Default: "NOTICE".</li>
+<li><code>quit to desktop delay</code>: The delay before restarting the game after hitting
+  “Exit to Desktop”. Default: 10.0 seconds. (Used by the <code>restart from desktop</code>
+  command)</li>
 </ul>
+<h2 id="note-on-non-standard-keyboard-layouts">Note on Non-Standard Keyboard Layouts<a class="headerlink" href="#note-on-non-standard-keyboard-layouts" title="Permanent link">¶</a></h2>
+<p>Because Elite’s keyboard handling is … weird you’ll have to set the key to use 
+for pasting text into Elite:Dangerous. If you are not using a “standard” 
+QWERT[YZ] layout, you will have to change it back to the key that is physically 
+in the place where <code>v</code> would be on QWERTY.</p>
+<p>To set the key, say “customize setting set elite paste key”.</p>
 <h2 id="adding-commands">Adding Commands<a class="headerlink" href="#adding-commands" title="Permanent link">¶</a></h2>
 <p>If you want to edit a command or add your own, <em>do not edit the profiles 
 directly</em>. Instead create commands in your custom profile, and copy commands you 
@@ -187,7 +200,7 @@ stuff <em>will</em> break.</p>
 </div>
 <footer>
 <div aria-label="footer navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-right" href="../EliteAttack/" title="EliteAttack #">Next <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral float-right" href="../EliteAttack/" title="EliteAttack">Next <span class="icon icon-circle-arrow-right"></span></a>
 <a class="btn btn-neutral" href="../../upgrading/" title="Upgrading"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 </div>
 <hr/>

@@ -9,14 +9,14 @@
 <meta content="alterNERDtive" name="author"/>
 <link href="https://alterNERDtive.github.io/VoiceAttack-profiles/configuration/StreamAttack/" rel="canonical"/>
 <link href="../../img/favicon.ico" rel="shortcut icon"/>
-<title>StreamAttack # - alterNERDtive VA profiles</title>
+<title>StreamAttack - alterNERDtive VA profiles</title>
 <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet">
 <link href="../../css/theme.css" rel="stylesheet">
 <link href="../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet"/>
 <script>
     // Current page data
-    var mkdocs_page_name = "StreamAttack #";
+    var mkdocs_page_name = "StreamAttack";
     var mkdocs_page_input_path = "configuration/StreamAttack.md";
     var mkdocs_page_url = "/VoiceAttack-profiles/configuration/StreamAttack/";
   </script>
@@ -55,51 +55,15 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../general/">General Configuration</a>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../EliteAttack/">EliteAttack #</a>
+<li class="toctree-l1"><a class="reference internal" href="../EliteAttack/">EliteAttack</a>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../RatAttack/">RatAttack #</a>
+<li class="toctree-l1"><a class="reference internal" href="../RatAttack/">RatAttack</a>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../SpanshAttack/">SpanshAttack #</a>
+<li class="toctree-l1"><a class="reference internal" href="../SpanshAttack/">SpanshAttack</a>
 </li>
-<li class="toctree-l1 current"><a class="reference internal current" href="./">StreamAttack #</a>
+<li class="toctree-l1 current"><a class="reference internal current" href="./">StreamAttack</a>
 <ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#eddi-speech-responder">EDDI speech responder</a>
-</li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#including-the-profile">Including the Profile</a>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#files-the-profile-provides">Files the Profile Provides</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#elite">Elite</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#commander">Commander</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#jump-target">Jump Target</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#location">Location</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#ship">Ship</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#logging">Logging</a>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#exposed-variables">Exposed Variables</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#configuration-variables">Configuration Variables</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#other-variables">Other Variables</a>
-</li>
-</ul>
 </li>
 </ul>
 </li>
@@ -147,129 +111,31 @@
 <ul class="wy-breadcrumbs">
 <li><a href="../..">Docs</a> »</li>
 <li>Configure »</li>
-<li>StreamAttack #</li>
+<li>StreamAttack</li>
 <li class="wy-breadcrumbs-aside">
-<a class="icon icon-github" href="https://github.com/alterNERDtive/VoiceAttack-profiles/edit/release/docs/configuration/StreamAttack.md"> Edit on GitHub</a>
+<a class="icon icon-github" href="https://github.com/alterNERDtive/VoiceAttack-profiles/edit/devel/docs/configuration/StreamAttack.md"> Edit on GitHub</a>
 </li>
 </ul>
 <div aria-label="breadcrumb navigation" class="rst-breadcrumbs-buttons" role="navigation">
 <a class="btn btn-neutral float-right" href="../../general/" title="General Commands">Next <span class="icon icon-circle-arrow-right"></span></a>
-<a class="btn btn-neutral" href="../SpanshAttack/" title="SpanshAttack #"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral" href="../SpanshAttack/" title="SpanshAttack"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 </div>
 <hr/>
 </div>
 <div role="main"><a class="md-content__icon pdf-download-btn" download href="../../pdf/Profiles Documentation.pdf" title="Download"><i class="fa fas fa-download"></i><small> PDF</small></a>
 <div class="section">
 <h1 id="streamattack">StreamAttack<a class="headerlink" href="#streamattack" title="Permanent link">¶</a></h1>
-<p>This profile uses the <a href="https://github.com/EDCD/EDDI">EDDI</a> plugin to write 
-a bunch of information about your commander, your current location and your ship 
-to files that can be accessed e.g. by your streaming software to be displayed on 
-stream.</p>
-<p>Default folder is <code>%appdata%\StreamAttack\</code>.</p>
-<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">¶</a></h2>
-<p>In addition to VoiceAttack, you will need the following plugins to use this 
-profile:</p>
-<ul>
-<li><a href="https://github.com/EDCD/EDDI">EDDI</a> installed as a VoiceAttack plugin</li>
-</ul>
-<h3 id="eddi-speech-responder">EDDI speech responder<a class="headerlink" href="#eddi-speech-responder" title="Permanent link">¶</a></h3>
-<p>For the convenience of people that have not been using EDDI in the past, 
-StreamAttack will deactivate the speech responder automatically to not clutter 
-them with unwanted TTS.</p>
-<p>If you are already an EDDI user and want to keep the default speech responder 
-functionality, you will have to disable the <code>EDDI.quietMode</code> setting by running 
-the <code>customize settings disable eddi quiet mode</code> command.</p>
 <h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h2>
-<p>See the <a href="#Configuration-Variables">Configuration Variables</a> section.</p>
-<h2 id="including-the-profile">Including the Profile<a class="headerlink" href="#including-the-profile" title="Permanent link">¶</a></h2>
-<p>When including the profile, be sure to</p>
 <ul>
-<li>Run the startup command. You will need to have a startup command in your 
-  profile (= one that is run on profile loading) and call <code>StreamAttack.startup</code> 
-  from that one.</li>
-<li>Make sure all EDDI events that StreamAttack needs are correctly handled. For 
-  all events used in StreamAttack that you already have handlers for in your 
-  profile, you’ll have to include a call to <code>StreamAttack.&lt;event name&gt;</code>. E.g. 
-  for “EDDI Jumped”, call <code>StreamAttack.EDDI Jumped</code> by name from your <code>((EDDI 
-  Jumped))</code> command.</li>
-</ul>
-<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">¶</a></h2>
-<ul>
-<li><code>clear jump target</code>: clears the current jump target.</li>
-<li>
-<p><code>set jump target</code>: sets the jump target to the currently targeted system. 
-  Distance will be written to the configured file.</p>
-</li>
-<li>
-<p><code>[copy;open] ship build</code>: copies the current ship build (coriolis) or opens it 
-  in your default browser.</p>
-</li>
-<li><code>open StreamAttack folder</code>: opens the configured folder in Explorer.</li>
-</ul>
-<h2 id="files-the-profile-provides">Files the Profile Provides<a class="headerlink" href="#files-the-profile-provides" title="Permanent link">¶</a></h2>
-<h3 id="elite">Elite<a class="headerlink" href="#elite" title="Permanent link">¶</a></h3>
-<h4 id="commander">Commander<a class="headerlink" href="#commander" title="Permanent link">¶</a></h4>
-<ul>
-<li><code>Elite\cmdr\name</code>: the current commander’s name.</li>
-</ul>
-<h4 id="jump-target">Jump Target<a class="headerlink" href="#jump-target" title="Permanent link">¶</a></h4>
-<ul>
-<li><code>Elite\jumpTarget\distance</code>: distance to current jump target in light years.</li>
-<li><code>Elite\jumpTarget\full</code>: pretty-printed <code>&lt;distance&gt; ly to &lt;name&gt;</code>.</li>
-<li><code>Elite\jumpTarget\name</code>: the current jump target’s system name.</li>
-</ul>
-<h4 id="location">Location<a class="headerlink" href="#location" title="Permanent link">¶</a></h4>
-<ul>
-<li><code>Elite\location\full</code>: depending on your status, either the station you are 
-  currently docked at (+ system), the body you are currently near, or the system 
-  you are currently in.</li>
-<li><code>Elite\location\system</code>: the system you are currently in.</li>
-</ul>
-<h4 id="ship">Ship<a class="headerlink" href="#ship" title="Permanent link">¶</a></h4>
-<ul>
-<li><code>Elite\ship\build</code>: your current ship’s loadout (link to coriolis).</li>
-<li><code>Elite\ship\full</code>: <code>“&lt;name&gt;” | &lt;model&gt; | &lt;build&gt;</code>.</li>
-<li><code>Elite\ship\model</code>: your current ship’s model.</li>
-<li><code>Elite\ship\name</code>: your current ship’s name.</li>
-</ul>
-<h2 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">¶</a></h2>
-<p>The profile supports logging a bunch of stuff to the VoiceAttack event log. By 
-default, logging is concise and constrained to basically error messages.</p>
-<p>If you need more logging (usually for debugging purposes), say <code>enable logging</code>. 
-If you want to enable verbose logging <em>by default</em>, call the 
-<code>Logging.enableLogging</code> command from your custom profile’s <code>startup</code> command.</p>
-<h2 id="exposed-variables">Exposed Variables<a class="headerlink" href="#exposed-variables" title="Permanent link">¶</a></h2>
-<p>The following Variables are <em>global</em> and thus readable (and writeable! Please 
-don’t unless it’s a config variable …) from other profiles:</p>
-<h3 id="configuration-variables">Configuration Variables<a class="headerlink" href="#configuration-variables" title="Permanent link">¶</a></h3>
-<p>There are a bunch of configuration variables. You should not overwrite those 
-manually, instead use the provided commands in the <code>_configuration</code> section!</p>
-<p>Basically all the settings are available using the <code>customize settings</code> prefix, 
-then saying <code>[enable;disable] &lt;setting&gt;</code> for on/off switches and <code>set &lt;setting&gt;</code> 
-for text variables.</p>
-<ul>
-<li><code>EDDI.quietMode</code> (boolean): whether or not to set EDDI to quite mode. Default: 
-  true.</li>
-<li><code>EDDI.useEddiForVoice</code> (boolean): whether to use EDDI over VA’s builtin <code>say</code> 
-  command. Default: false.</li>
-<li><code>StreamAttack.outputDir</code> (string): the directory StreamAttack will save its 
-  information to. Default: <code>%appdata%\StreamAttack\</code>.</li>
-<li><code>python.ScriptPath</code> (string): the path you have placed the compiled Python 
-  scripts in.  Default: “{VA_DIR}\Sounds\scripts” (the “\Sounds\scripts” folder 
-  in your VoiceAttack installation directory).</li>
-</ul>
-<h3 id="other-variables">Other Variables<a class="headerlink" href="#other-variables" title="Permanent link">¶</a></h3>
-<p>These variables can be used to get information about the current neutron route. 
-Please do not set them manually and / or from outside the StreamAttack profile.</p>
-<ul>
-<li><code>StreamAttack.Elite.jumpTarget</code> (string): the current jump target.</li>
+<li><code>StreamAttack output directory</code>: The directory the status files are written
+  to. Default: "%appdata%\StreamAttack\"</li>
 </ul>
 </div>
 </div>
 <footer>
 <div aria-label="footer navigation" class="rst-footer-buttons" role="navigation">
 <a class="btn btn-neutral float-right" href="../../general/" title="General Commands">Next <span class="icon icon-circle-arrow-right"></span></a>
-<a class="btn btn-neutral" href="../SpanshAttack/" title="SpanshAttack #"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral" href="../SpanshAttack/" title="SpanshAttack"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 </div>
 <hr/>
 <div role="contentinfo">

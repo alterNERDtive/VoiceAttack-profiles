@@ -55,19 +55,27 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../configuration/general/">General Configuration</a>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration/EliteAttack/">EliteAttack #</a>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/EliteAttack/">EliteAttack</a>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration/RatAttack/">RatAttack #</a>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/RatAttack/">RatAttack</a>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration/SpanshAttack/">SpanshAttack #</a>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/SpanshAttack/">SpanshAttack</a>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration/StreamAttack/">StreamAttack #</a>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/StreamAttack/">StreamAttack</a>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Use</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal current" href="./">General Commands</a>
 <ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#chat">Chat</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#updating">Updating</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#miscellaneous">Miscellaneous</a>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../EliteAttack/">EliteAttack #</a>
@@ -111,24 +119,61 @@
 <li>Use »</li>
 <li>General Commands</li>
 <li class="wy-breadcrumbs-aside">
-<a class="icon icon-github" href="https://github.com/alterNERDtive/VoiceAttack-profiles/edit/release/docs/general.md"> Edit on GitHub</a>
+<a class="icon icon-github" href="https://github.com/alterNERDtive/VoiceAttack-profiles/edit/devel/docs/general.md"> Edit on GitHub</a>
 </li>
 </ul>
 <div aria-label="breadcrumb navigation" class="rst-breadcrumbs-buttons" role="navigation">
 <a class="btn btn-neutral float-right" href="../EliteAttack/" title="EliteAttack #">Next <span class="icon icon-circle-arrow-right"></span></a>
-<a class="btn btn-neutral" href="../configuration/StreamAttack/" title="StreamAttack #"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral" href="../configuration/StreamAttack/" title="StreamAttack"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 </div>
 <hr/>
 </div>
 <div role="main"><a class="md-content__icon pdf-download-btn" download href="../pdf/Profiles Documentation.pdf" title="Download"><i class="fa fas fa-download"></i><small> PDF</small></a>
 <div class="section">
 <h1 id="general-commands">General Commands<a class="headerlink" href="#general-commands" title="Permanent link">¶</a></h1>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">¶</a></h2>
+<p>The base profile provides voice commands for changing the profiles settings.
+See <a href="/configuration/general#settings">the configuration section</a>.</p>
+<h2 id="chat">Chat<a class="headerlink" href="#chat" title="Permanent link">¶</a></h2>
+<ul>
+<li><code>paste text</code>: Pastes the contents of your current clipboard. Note that this
+  command is supposed to be used for pasting <em>into Elite</em> and hence uses the
+  configured paste key. If you’re using a non-standard layout that means that
+  you can <em>not</em> use this command to paste text into other applications.</li>
+</ul>
+<h2 id="updating">Updating<a class="headerlink" href="#updating" title="Permanent link">¶</a></h2>
+<ul>
+<li><code>check for profiles update</code>: Checks Github for a new version, and alerts you
+  if there is one.</li>
+<li><code>download profiles update</code>: Opens the latest release on Github and the
+  VoiceAttack import folder where you can drop it.</li>
+<li><code>open profiles [docs;documentation;help] [file;site;]</code>: Opens this
+  documentation, either on the web or the PDF file supplied with the installed
+  release.</li>
+<li><code>open profiles change log</code>: Opens the CHANGELOG on Github.</li>
+<li><code>open voiceattack [apps;import;sounds] [folder;directory]</code>: Opens the
+  respective VoiceAttack-related folder.</li>
+</ul>
+<h2 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">¶</a></h2>
+<ul>
+<li><code>generate missing key binds report</code>: Generates a report of missing key binds
+  and places it on your Desktop. Note that this currently uses bindED’s built-in
+  report which will output <em>any</em> bind that does not have a keyboard key set,
+  including axis binds and binds that are not actually used by the profiles.</li>
+<li><code>open EDDI options;configure EDDI</code>: Displays EDDI’s configuration window.</li>
+<li><code>open elite bindings folder</code>: Opens Elite’s bindings folder
+  (<code>%localappdata%\Frontier Developments\Elite Dangerous\Options\Bindings</code>)</li>
+<li><code>reload elite key binds</code>: Forces a reload of your Elite binds. Should not be
+  necessary.</li>
+<li><code>shut up EDDI</code>: Immediately interrupts any current and pending speech on
+  EDDI’s end.</li>
+</ul>
 </div>
 </div>
 <footer>
 <div aria-label="footer navigation" class="rst-footer-buttons" role="navigation">
 <a class="btn btn-neutral float-right" href="../EliteAttack/" title="EliteAttack #">Next <span class="icon icon-circle-arrow-right"></span></a>
-<a class="btn btn-neutral" href="../configuration/StreamAttack/" title="StreamAttack #"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral" href="../configuration/StreamAttack/" title="StreamAttack"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 </div>
 <hr/>
 <div role="contentinfo">

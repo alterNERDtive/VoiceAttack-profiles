@@ -54,6 +54,8 @@
 <ul>
 <li class="toctree-l3"><a class="reference internal" href="#binded">bindED</a>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#elitedangerous">EliteDangerous</a>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#ratattack">RatAttack</a>
 </li>
 </ul>
@@ -65,13 +67,13 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../configuration/general/">General Configuration</a>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration/EliteAttack/">EliteAttack #</a>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/EliteAttack/">EliteAttack</a>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration/RatAttack/">RatAttack #</a>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/RatAttack/">RatAttack</a>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration/SpanshAttack/">SpanshAttack #</a>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/SpanshAttack/">SpanshAttack</a>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration/StreamAttack/">StreamAttack #</a>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/StreamAttack/">StreamAttack</a>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Use</span></p>
@@ -119,7 +121,7 @@
 <li>Install »</li>
 <li>Upgrading</li>
 <li class="wy-breadcrumbs-aside">
-<a class="icon icon-github" href="https://github.com/alterNERDtive/VoiceAttack-profiles/edit/release/docs/upgrading.md"> Edit on GitHub</a>
+<a class="icon icon-github" href="https://github.com/alterNERDtive/VoiceAttack-profiles/edit/devel/docs/upgrading.md"> Edit on GitHub</a>
 </li>
 </ul>
 <div aria-label="breadcrumb navigation" class="rst-breadcrumbs-buttons" role="navigation">
@@ -139,7 +141,7 @@
 <li>Restart VoiceAttack.</li>
 </ol>
 <p>In general, migration from old versions will be handled automatically. If there
-is something you have to do manually, you will find the information below.</p>
+is something you have to do manually you will find the necessary steps below.</p>
 <h2 id="3xx-to-40">3.x.x to 4.0<a class="headerlink" href="#3xx-to-40" title="Permanent link">¶</a></h2>
 <p>If you have been using a custom profile as outlined in <a href="../installing/#create-a-custom-profile">Installing#Create a 
 Custom Profile</a> your settings will be migrated to the new variables
@@ -147,10 +149,27 @@ automatically.</p>
 <p>If you have not … well, you will unfortunately have to take note of your
 settings, and recreate them after creating a custom profile and including
 everything.</p>
+<p>Please do not fiddle with the configuration variables from your startup command
+(or any other, really). It <em>should</em> not break anything, but it might. And it is
+entirely unnecessary since configuration will be saved to and loaded from the
+profile anyway.</p>
 <h3 id="binded">bindED<a class="headerlink" href="#binded" title="Permanent link">¶</a></h3>
 <p>If you have done anything non-standard with bindED before, it might break. The
 profiles now include my fork of bindED which has a lot more features, but
-doesn’t support a bunch of plugin invocations that have become obsolete.</p>
+does no longer support a bunch of plugin invocations that have become obsolete.</p>
+<p>Please <a href="https://github.com/alterNERDtive/bindED/issues/new/choose">file an issue with
+bindED</a> on Github if
+your use case does not work anymore.</p>
+<h3 id="elitedangerous">EliteDangerous<a class="headerlink" href="#elitedangerous" title="Permanent link">¶</a></h3>
+<p>The “EliteDangerous” profile is no longer the main profile. Instead you will
+<em>have</em> to create a custom profile, and the new “base” profile that the others
+require to be included in your custom profile is “alterNERDtive-base”. That way
+you can use e.g. RatAttack without having to also use the general Elite profile.</p>
+<p>It has also been renamed to “EliteAttack” to be consistent with the others. If
+you are upgrading from an older version the name will not change for you in the
+profiles list. I recommend renaming your “EliteDangerous” profile to
+“EliteAttack” to prevent confusion in the future, but it is not strictly
+necessary to do so.</p>
 <h3 id="ratattack">RatAttack<a class="headerlink" href="#ratattack" title="Permanent link">¶</a></h3>
 <p>Handing a RATSIGNAL from IRC to VoiceAttack via text file is now deprecated and
 support for that will be removed in a future version.</p>
