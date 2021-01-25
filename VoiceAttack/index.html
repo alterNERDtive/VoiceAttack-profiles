@@ -7,18 +7,18 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="alterNERDtive" name="author"/>
-<link href="https://alterNERDtive.github.io/VoiceAttack-profiles/upgrading/" rel="canonical"/>
+<link href="https://alterNERDtive.github.io/VoiceAttack-profiles/VoiceAttack/" rel="canonical"/>
 <link href="../img/favicon.ico" rel="shortcut icon"/>
-<title>Upgrading - alterNERDtive VA profiles</title>
+<title>VoiceAttack tips - alterNERDtive VA profiles</title>
 <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet">
 <link href="../css/theme.css" rel="stylesheet">
 <link href="../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet"/>
 <script>
     // Current page data
-    var mkdocs_page_name = "Upgrading";
-    var mkdocs_page_input_path = "upgrading.md";
-    var mkdocs_page_url = "/VoiceAttack-profiles/upgrading/";
+    var mkdocs_page_name = "VoiceAttack tips";
+    var mkdocs_page_input_path = "VoiceAttack.md";
+    var mkdocs_page_url = "/VoiceAttack-profiles/VoiceAttack/";
   </script>
 <script defer="" src="../js/jquery-2.1.1.min.js"></script>
 <script defer="" src="../js/modernizr-2.8.3.min.js"></script>
@@ -43,22 +43,12 @@
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Install</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../requirements/">Requirements</a>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../installing/">Installing</a>
 </li>
-<li class="toctree-l1 current"><a class="reference internal current" href="./">Upgrading</a>
-<ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="#3xx-to-40">3.x.x to 4.0</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#binded">bindED</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#ratattack">RatAttack</a>
-</li>
-</ul>
-</li>
-</ul>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/">Upgrading</a>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Configure</span></p>
@@ -88,8 +78,10 @@
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Issues</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../VoiceAttack/">VoiceAttack tips</a>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="./">VoiceAttack tips</a>
+<ul class="current">
+</ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../troubleshooting/">Troubleshooting</a>
 </li>
@@ -116,72 +108,27 @@
 <div aria-label="breadcrumbs navigation" role="navigation">
 <ul class="wy-breadcrumbs">
 <li><a href="..">Docs</a> »</li>
-<li>Install »</li>
-<li>Upgrading</li>
+<li>Issues »</li>
+<li>VoiceAttack tips</li>
 <li class="wy-breadcrumbs-aside">
-<a class="icon icon-github" href="https://github.com/alterNERDtive/VoiceAttack-profiles/edit/release/docs/upgrading.md"> Edit on GitHub</a>
+<a class="icon icon-github" href="https://github.com/alterNERDtive/VoiceAttack-profiles/edit/release/docs/VoiceAttack.md"> Edit on GitHub</a>
 </li>
 </ul>
 <div aria-label="breadcrumb navigation" class="rst-breadcrumbs-buttons" role="navigation">
-<a class="btn btn-neutral float-right" href="../configuration/general/" title="General Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
-<a class="btn btn-neutral" href="../installing/" title="Installing"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../troubleshooting/" title="Troubleshooting">Next <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral" href="../StreamAttack/" title="StreamAttack #"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 </div>
 <hr/>
 </div>
 <div role="main"><a class="md-content__icon pdf-download-btn" download href="../pdf/Profiles Documentation.pdf" title="Download"><i class="fa fas fa-download"></i><small> PDF</small></a>
 <div class="section">
-<h1 id="upgrading">Upgrading<a class="headerlink" href="#upgrading" title="Permanent link">¶</a></h1>
-<p>To upgrade to the latest version, follow these steps:</p>
-<ol>
-<li>Say “download profiles update”.</li>
-<li>Put the <code>alterNERDtive-voiceattack-profiles.vax</code> file from Github into the
-   “Import” folder.</li>
-<li>Restart VoiceAttack.</li>
-</ol>
-<p>In general, migration from old versions will be handled automatically. If there
-is something you have to do manually, you will find the information below.</p>
-<h2 id="3xx-to-40">3.x.x to 4.0<a class="headerlink" href="#3xx-to-40" title="Permanent link">¶</a></h2>
-<p>If you have been using a custom profile as outlined in <a href="../installing/#create-a-custom-profile">Installing#Create a 
-Custom Profile</a> your settings will be migrated to the new variables
-automatically.</p>
-<p>If you have not … well, you will unfortunately have to take note of your
-settings, and recreate them after creating a custom profile and including
-everything.</p>
-<h3 id="binded">bindED<a class="headerlink" href="#binded" title="Permanent link">¶</a></h3>
-<p>If you have done anything non-standard with bindED before, it might break. The
-profiles now include my fork of bindED which has a lot more features, but
-doesn’t support a bunch of plugin invocations that have become obsolete.</p>
-<h3 id="ratattack">RatAttack<a class="headerlink" href="#ratattack" title="Permanent link">¶</a></h3>
-<p>Handing a RATSIGNAL from IRC to VoiceAttack via text file is now deprecated and
-support for that will be removed in a future version.</p>
-<p>Instead you should use the new <code>RatAttack-cli.exe</code> helper tool that uses IPC to
-talk to the VoiceAttack plugin. For that you have to change the way your IRC
-client handles incoming case announcements. Instead of writing the announcement
-to the text file and walling VoiceAttack to run a command, it will have to call
-the helper tool with a) the announcement and b) an optional true/false switch to
-determine if the case should be announced via TTS or just added to the case
-list.</p>
-<p>For my AdiIRC, it looks like this (obviously change the path, please):</p>
-<pre><code class="language-adiirc">on *:TEXT:RATSIGNAL - CMDR*(??_SIGNAL):#fuelrats:{
-  if ( $away ) {
-    /run -h "X:\path\to\VoiceAttack\Apps\alterNERDtive\RatAttack-cli.exe" " $+ $replace($1-,","") $+ " false
-  }
-  else {
-    /run -h "X:\path\to\VoiceAttack\Apps\alterNERDtive\RatAttack-cli.exe" " $+ $replace($1-,","") $+ " true
-  }
-}
-</code></pre>
-<p>If I am away it will just add the new case to the list. If I am not away, it
-will announce it using TTS.</p>
-<p>The “replace” part handles the fact that announcements now put the system in
-quotes. They have to be escaped as double quotes (<code>""</code>) to create a correct
-command invocation.</p>
+<h1 id="voiceattack">VoiceAttack<a class="headerlink" href="#voiceattack" title="Permanent link">¶</a></h1>
 </div>
 </div>
 <footer>
 <div aria-label="footer navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-right" href="../configuration/general/" title="General Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
-<a class="btn btn-neutral" href="../installing/" title="Installing"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../troubleshooting/" title="Troubleshooting">Next <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral" href="../StreamAttack/" title="StreamAttack #"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 </div>
 <hr/>
 <div role="contentinfo">
@@ -197,8 +144,8 @@ command invocation.</p>
 <div aria-label="versions" class="rst-versions" role="note">
 <span class="rst-current-version" data-toggle="rst-current-version">
 <a class="fa fa-github" href="https://github.com/alterNERDtive/VoiceAttack-profiles/" style="float: left; color: #fcfcfc"> GitHub</a>
-<span><a href="../installing/" style="color: #fcfcfc;">« Previous</a></span>
-<span style="margin-left: 15px"><a href="../configuration/general/" style="color: #fcfcfc">Next »</a></span>
+<span><a href="../StreamAttack/" style="color: #fcfcfc;">« Previous</a></span>
+<span style="margin-left: 15px"><a href="../troubleshooting/" style="color: #fcfcfc">Next »</a></span>
 </span>
 </div>
 <script>var base_url = '..';</script>

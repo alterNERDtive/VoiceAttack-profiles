@@ -72,15 +72,15 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#set-elite-keyboard-binds">Set Elite Keyboard Binds</a>
+</li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../upgrading/">Upgrading #</a>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/">Upgrading</a>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Configure</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../configuration/VoiceAttack/">VoiceAttack</a>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration/general/">General Configuration</a>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration/EliteAttack/">EliteAttack #</a>
@@ -94,6 +94,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Use</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/">General Commands</a>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../EliteAttack/">EliteAttack #</a>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../RatAttack/">RatAttack #</a>
@@ -105,6 +107,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Issues</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../VoiceAttack/">VoiceAttack tips</a>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../troubleshooting/">Troubleshooting</a>
 </li>
 <li class="toctree-l1"><a class="" href="https://github.com/alterNERDtive/VoiceAttack-profiles/issues/new">Report a Bug</a>
@@ -137,7 +141,7 @@
 </li>
 </ul>
 <div aria-label="breadcrumb navigation" class="rst-breadcrumbs-buttons" role="navigation">
-<a class="btn btn-neutral float-right" href="../upgrading/" title="Upgrading #">Next <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral float-right" href="../upgrading/" title="Upgrading">Next <span class="icon icon-circle-arrow-right"></span></a>
 <a class="btn btn-neutral" href="../requirements/" title="Requirements"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 </div>
 <hr/>
@@ -165,7 +169,7 @@ for you if you are not using that.</p>
 <p>Make sure you have plugin support enabled:</p>
 <ol>
 <li>Go to VoiceAttack settings. <img alt="VoiceAttack-settings.png" src="../images/VoiceAttack-settings.png"/></li>
-<li>Check “enable plugin support” <img alt="VoiceAttack-settings-plugin-support.png" src="../images/VoiceAttack-settings-plugin-support.png"/></li>
+<li>Check “enable plugin support”. <img alt="VoiceAttack-settings-plugin-support.png" src="../images/VoiceAttack-settings-plugin-support.png"/></li>
 </ol>
 <p>While you are there, you might also want to enable the automatic update checks.</p>
 <p><img alt="VoiceAttack-settings-updates.png" src="../images/VoiceAttack-settings-updates.png"/></p>
@@ -277,7 +281,7 @@ more elegantly! More on this <a href="../configuration/general/">later on</a>.</
 button.</p>
 <p><img alt="VoiceAttack-profile-options-include.png" src="../images/VoiceAttack-profile-options-include.png"/></p>
 <p>Add all my profiles (“EliteDangerous”, “RatAttack”, “SpanshAttack”,
-<code>StreamAttack</code>).</p>
+“StreamAttack”).</p>
 <p><img alt="VoiceAttack-profile-options-includelist.png" src="../images/VoiceAttack-profile-options-includelist.png"/></p>
 <p>Technically you can leave out anything you are not planning on using.
 Practically it probably will nott hurt you to just include everything, and it
@@ -288,11 +292,26 @@ does not matter. But I like it nice and alphabetical …</p>
 profile is loaded” checkbox, and select the “startup” command you have created 
 earlier.</p>
 <p><img alt="VoiceAttack-profile-options-startup.png" src="../images/VoiceAttack-profile-options-startup.png"/></p>
+<h2 id="set-elite-keyboard-binds">Set Elite Keyboard Binds<a class="headerlink" href="#set-elite-keyboard-binds" title="Permanent link">¶</a></h2>
+<p>You need to have keyboard binds setup at least as secondary bindings in Elite’s
+controls options. VoiceAttack <em>cannot</em> “push” joystick buttons for you, it can
+only do keyboard inputs. Hence its only way to interact with Elite is through
+keyboard emulation, even if you otherwise play the game with a controller or
+HOTAS. Or racing wheel. Or Rock Band set. Or bananas.</p>
+<p><img alt="Elite-binds.png" src="../images/Elite-binds.png"/></p>
+<p>Should you use a keyboard layout that is <em>not</em> en-US QWERTY, some keys might not
+work out of the box. You can try telling bindED about your keyboard layout by
+setting the <code>bindED.layout#</code> variable (including the #!) to something more
+appropriate in your startup command.</p>
+<p><img alt="bindED-layout.png" src="../images/bindED-layout.png"/></p>
+<p>Currently bindED supports the <code>en-US</code>, <code>en-GB</code> and <code>de-Neo2</code> layouts. <a href="https://github.com/alterNERDtive/bindED/wiki/Keyboard-Layouts">You can
+find instructions on how to add your own on
+Github</a>.</p>
 </div>
 </div>
 <footer>
 <div aria-label="footer navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-right" href="../upgrading/" title="Upgrading #">Next <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral float-right" href="../upgrading/" title="Upgrading">Next <span class="icon icon-circle-arrow-right"></span></a>
 <a class="btn btn-neutral" href="../requirements/" title="Requirements"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 </div>
 <hr/>
