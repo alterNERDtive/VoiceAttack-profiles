@@ -9,8 +9,10 @@ Default folder is `%appdata%\StreamAttack\`.
 
 ## Commands
 
-* `clear jump target`: clears the current jump target.
-* `set jump target`: sets the jump target to the currently targeted system. 
+* `clear jump target`: Clears the current jump target.
+* `distance [to;from] jump target`: Tells you the current distance to the jump
+  target.
+* `set jump target`: Sets the jump target to the currently targeted system.
   Distance will be written to the configured file.
 
 * `[copy;open] ship build`: copies the current ship build (coriolis) or opens it 
@@ -23,24 +25,24 @@ Default folder is `%appdata%\StreamAttack\`.
 
 #### Commander
 
-* `Elite\cmdr\name`: the current commander’s name.
+* `Elite\cmdr\name`: The current commander’s name.
 
 #### Jump Target
 
-* `Elite\jumpTarget\distance`: distance to current jump target in light years.
-* `Elite\jumpTarget\full`: pretty-printed `<distance> ly to <name>`.
-* `Elite\jumpTarget\name`: the current jump target’s system name.
+* `Elite\jumpTarget\distance`: Distance to current jump target in light years.
+* `Elite\jumpTarget\full`: Pretty-printed `<distance> ly to <name>`.
+* `Elite\jumpTarget\name`: The current jump target’s system name.
 
 #### Location
 
-* `Elite\location\full`: depending on your status, either the station you are 
+* `Elite\location\full`: Depending on your status, either the station you are 
   currently docked at (+ system), the body you are currently near, or the system 
   you are currently in.
-* `Elite\location\system`: the system you are currently in.
+* `Elite\location\system`: The system you are currently in.
 
 #### Ship
 
-* `Elite\ship\build`: your current ship’s loadout (link to coriolis).
+* `Elite\ship\build`: Your current ship’s loadout (link to coriolis).
 * `Elite\ship\full`: `“<name>” | <model> | <build>`.
-* `Elite\ship\model`: your current ship’s model.
-* `Elite\ship\name`: your current ship’s name.
+* `Elite\ship\model`: Your current ship’s model.
+* `Elite\ship\name`: Your current ship’s name.

@@ -2,16 +2,17 @@
 
 ## Getting Case Data From IRC
 
-You can setup your IRC client to pass incoming RATSIGNALS to VoiceAttack by calling the 
-`RatAttack-cli.exe` helper tool with the RATSIGNAL as first argument and an
-optional boolean that triggers a TTS case announcement. You can find it under
-your VoiceAttack “Apps” folder, `\alterNERDtive\RatAttack-cli.exe`.
+You can setup your IRC client to pass incoming RATSIGNALS to VoiceAttack by
+calling the `RatAttack-cli.exe` helper tool with the RATSIGNAL as first argument
+and an optional boolean as second argument that triggers a TTS case
+announcement. You can find it under your VoiceAttack “Apps” folder,
+`\alterNERDtive\RatAttack-cli.exe`.
 
 This has two purposes:
 
 1. Announcing a new incoming case (if passing `true` as second argument).
 1. Storing case data and making it available to VoiceAttack, e.g. for copying 
-   the case’s system into the clipboard.
+   the client’s system into the clipboard.
 
 For my AdiIRC, it looks like this (obviously change the path, please):
 
@@ -40,7 +41,7 @@ Note: If you are not on duty (see below) you will _not_ get case announcements.
 
 ## Announcing Your Nearest CMDR
 
-In case you have more than one CMDR registered as a Fuel Rat, you can have
+In case you have more than one CMDR registered as a Fuel Rat you can have
 VoiceAttack announce the nearest one to a case and the distance. You will have
 to go through a couple steps to set that up:
 
@@ -77,8 +78,7 @@ Toggles:
   “fuel+” via voice command or ingame chat. Default: false.
 * `fuel rat call confirmation`: Only make calls in #fuelrats after vocal
   confirmation to prevent mistakes. Default: true.
-* `fuel rat duty`: Set FuelRats duty to active when the profile is loaded.
-  Default: true.
+* `fuel rat duty`: On duty, receiving case announcements via TTS. Default: true.
 * `nearest commander to fuel rat case`: Announce the nearest commander to
   incoming rat cases. Default: false.
 * `platform for fuel rat case`: Announce the platform for incoming rat cases.

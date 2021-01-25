@@ -32,10 +32,10 @@ you can run on this list, giving it a case number:
   current system to a case’s system.
 * `nearest commander to rat case number [0..30]`: Will give you the nearest of
   your CMDRs with their distance to a case’s system. [Requires some
-  setup](/configuration/RatAttack/#announcing-your-nearest-cmdr).
+  setup](../configuration/RatAttack/#announcing-your-nearest-cmdr).
 * `nearest commander to [the;] rat case`: Will give you the nearest of your
   CMDRs with their distance to the current case’s system. [Requires some
-  setup](/configuration/RatAttack/#announcing-your-nearest-cmdr).
+  setup](../configuration/RatAttack/#announcing-your-nearest-cmdr).
 
 ### Opening a Case
 
@@ -45,7 +45,7 @@ you can run on this list, giving it a case number:
 * `open [latest;] rat case`: Opens the latest rat case that has come in through
   IRC. Will only work if you actually have [your IRC client setup to send case
   announcements to
-  VoiceAttack](/configuration/RatAttack/#getting-case-data-from-irc).
+  VoiceAttack](../configuration/RatAttack/#getting-case-data-from-irc).
 
 ### Making Calls ###
 
@@ -96,4 +96,4 @@ client or in SC in some remote system out in the black on a long range rescue).
   \#ratchat.
 
 Make sure [that your IRC client is setup
-properly](/configuration/RatAttack/#sending-text-to-fuelrats-irc).
+properly](../configuration/RatAttack/#sending-text-to-fuelrats-irc).

@@ -3,14 +3,11 @@
 ## Supplying Your Ship’s Range
 
 The ED-NeutronRouter plugin is technically supposed to read the current jump
-range from EDDI; sadly a) it’s
-[bugged](https://github.com/sc-pulgan/ED-NeutronRouter/issues/3) right now, and
-b) EDDI is storing the _maximum_ distance for your ship instead of the current /
-full on fuel one.
-
-The “default to laden range” option works reasonably well, but it has a few
-quirks. It always assumes full cargo, and it will take your _current_ fuel
-levels for range calculations, disregrading the range loss if you fill your tank.
+range from EDDI; sadly EDDI is storing the _maximum_ distance for your ship
+instead of the current / full on fuel one. The “default to laden range” option
+works reasonably well, but it has a few quirks. It always assumes full cargo,
+and it will take your _current_ fuel levels for range calculations, disregrading
+the range loss if you fill your tank.
 
 For any ships that you regularly use for neutron jumping, e.g. long range Fuel
 Rat ships, I recommend telling SpanshAttack about the range they are supposed to

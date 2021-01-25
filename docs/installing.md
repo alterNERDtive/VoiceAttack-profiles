@@ -40,7 +40,7 @@ VoiceAttack
 plugin](https://github.com/EDCD/EDDI/wiki/VoiceAttack-Integration#using-eddi-with-voiceattack).
 
 If you do not want to install it into the VoiceAttack installation folder (or
-already have it installed somewhere else) you can also just make a symbolic
+already have it installed somewhere else) you can also just create a symbolic
 link. Open a CMD prompt (Windows key + `R`, enter “cmd”, hit `Enter`) and do
 
 ```cmd
@@ -94,12 +94,10 @@ for Elite. It will allow you to add your own commands, override any commands in
 the profiles that you want to change and add voice triggers or hotkeys.
 
 You can either use an existing profile, create a new one or use the provided
-profile example as a basis.
+profile example as a basis. Regardless of which way you choose, make sure to
+read the [[#Import Profiles]] section and follow the instructions there!
 
-Regardless of which way you choose, make sure to read the [[#Import Profiles]]
-section and follow the instructions there!
-
-### Create a New Custom Profile
+### Create a New Profile
 
 1. Click the “Profile Actions” button, then “Create New Profile”.
    ![[VoiceAttack-new-profile.png]]
@@ -118,7 +116,7 @@ Once you are done with the setup and configuration process, you can find a bunch
 of example commands with comments on how to do things in this profile. Make sure
 to also rename it to something more exciting than “Custom Profile Example”!
 
-### Import Profiles
+### Include Profiles
 
 In order to use my profiles with your custom profiles, you will need to take two
 additional steps:
@@ -150,7 +148,7 @@ Add a new action using “Other” → “VoiceAttack Action”→ “Execute An
 
 ![[VoiceAttack-edit-startup-execute.png]]
 
-Choose “Execute by name (Advanced)” and enter “alterNERDtive-base.startup”.
+Choose “Execute by name (Advanced)” and enter “((alterNERDtive-base.startup))”.
 
 ![[VoiceAttack-edit-startup-action.png]]
 
@@ -163,7 +161,7 @@ actions are processed.
 
 You can add anything else you want your profile to do when it loads below this
 action. You do not have to set any configuration options, this can be done way
-more elegantly! More on this [later on](general.md).
+more elegantly! More on this [later on](general.md#settings).
 
 #### Set Profile Options
 
@@ -171,20 +169,20 @@ While editing the profile, hit the “Options” button.
 
 ![[VoiceAttack-profile-options.png]]
 
-On the section labeled“Include commands from other profiles”, hit the “…”
+On the section labeled “Include commands from other profiles”, hit the “…”
 button.
 
 ![[VoiceAttack-profile-options-include.png]]
 
-Add all my profiles (“EliteDangerous”, “RatAttack”, “SpanshAttack”,
-“StreamAttack”).
+Add all my profiles (“alterNERDtive-base”, “EliteDangerous”, “RatAttack”,
+“SpanshAttack”,“StreamAttack”).
 
 ![[VoiceAttack-profile-options-includelist.png]]
 
 Technically you can leave out anything you are not planning on using.
-Practically it probably will nott hurt you to just include everything, and it
+Practically it probably will not hurt you to just include everything, and it
 will then available for you in the future if you choose to check it out! Make
-sure that“alterNERDtive-base” is on top of the list, the order of the others
+sure that “alterNERDtive-base” is on top of the list, the order of the others
 does not matter. But I like it nice and alphabetical …
 
 Now switch to the “Profile Exec” tab. Tick the “Execute a command each time this 

@@ -4,9 +4,9 @@
 
 Toggles:
 
-* `auto honk all systems`: Automatically honk upon entering a system, each jump
+* `auto honk all systems`: Automatically honk upon entering a system, each jump,
   without constraints. Default: false.
-* `auto honk new systems`: Automatically honk upon entering as system if it is
+* `auto honk new systems`: Automatically honk upon entering a system if it is
   your first visit. Default: true.
 * `auto restock`: Automatically restock after docking at a station. You will
   always refuel, repair and enter the Station Services menu. Default: true.
@@ -18,7 +18,7 @@ Toggles:
   that, it’s great. Default: false.
 * `hyper space dethrottle`: Throttle down after a jump and when dropping from
   SC. Like the SC Assist module does. Default: true.
-* `mapping candidates`: Announce bodies worth mapping when you’ve finished
+* `mapping candidates`: Announce bodies worth mapping when you have finished
   scanning a system. (Terraformables, Water Worlds, Earth-Like Worlds and
   Ammonia Worlds that have not been mapped yet.) Default: true.
 * `outdated stations`: Announce stations with outdated data in the online
@@ -29,6 +29,6 @@ Toggles:
 Other settings:
 
 * `outdated station threshold`: The threshold for station data to count as
-  “outdated”, an days. Default: 365.
+  “outdated”, in days. Default: 365.
 * `scanner fire group`: The fire group your discovery scanner is assigned to.
   Default: 0 (the first one).

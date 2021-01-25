@@ -22,11 +22,11 @@ namespace alterNERDtive.util
                 new OptDict<string, Option>{
                     { new Option<decimal>("delays.keyPressDuration", (decimal)0.01, voiceTrigger: "key press duration", description: "The time keys will be held down for.") },
                     { new Option<decimal>("delays.quitToDesktop", (decimal)10.0, voiceTrigger: "quit to desktop delay",
-                        description: "The delay before restarting the game after hitting “Exit to Desktop”.\nDefault: 10.0 seconds. (Used by the `restart from desktop` command)") },
+                        description: "The delay before restarting the game after hitting “Exit to Desktop”, in seconds.\nDefault: 10.0. (Used by the `restart from desktop` command)") },
                     { new Option<bool>("eddi.quietMode", true, voiceTrigger: "eddi quiet mode", description: "Make EDDI shut up. Disables all built-in speech responders.") },
                     { new Option<string>("elite.pasteKey", "v", voiceTrigger: "elite paste key",
                         description: "The key used to paste in conjunction with CTRL. The physical key in your layout that would be 'V' on QWERTY.") },
-                    { new Option<bool>("enableAutoUpdateCheck", true, voiceTrigger: "auto update check", description: "Automatically check Github for profiles updates.") },
+                    { new Option<bool>("enableAutoUpdateCheck", true, voiceTrigger: "auto update check", description: "Automatically check Github for profiles updates when the profile loads.") },
                     { new Option<string>("log.logLevel", "NOTICE", voiceTrigger: "log level", validValues: new List<string>{ "ERROR", "WARN", "NOTICE", "INFO", "DEBUG" },
                         description: @"The level of detail for logging to the VoiceAttack log.\nValid levels are ""ERROR"", ""WARN"", ""NOTICE"", ""INFO"" and ""DEBUG"".\nDefault: ""NOTICE"".") },
                 }
@@ -37,12 +37,12 @@ namespace alterNERDtive.util
                     { new Option<bool>("announceEdsmSystemStatus", true, voiceTrigger: "edsm system status",
                         description: "Pull system data from EDSM and compare it against your discovery scan.") },
                     { new Option<bool>("announceMappingCandidates", true, voiceTrigger: "mapping candidates",
-                        description: "Announce bodies worth mapping when you’ve finished scanning a system.\n(Terraformables, Water Worlds, Earth-Like Worlds and Ammonia Worlds that have not been mapped yet.)") },
+                        description: "Announce bodies worth mapping when you have finished scanning a system.\n(Terraformables, Water Worlds, Earth-Like Worlds and Ammonia Worlds that have not been mapped yet.)") },
                     { new Option<bool>("announceOutdatedStationData", true, voiceTrigger: "outdated stations", description: "Announce stations with outdated data in the online databases.") },
                     { new Option<bool>("announceR2RMappingCandidates", false, voiceTrigger: "road to riches",
                         description: "Announce bodies worth scanning if you are looking for some starting cash on the Road to Riches.") },
-                    { new Option<bool>("autoHonkAllSystems", false, voiceTrigger: "auto honk all systems", description: "Automatically honk upon entering a system, each jump without constraints.") },
-                    { new Option<bool>("autoHonkNewSystems", true, voiceTrigger: "auto honk new systems", description: "Automatically honk upon entering as system if it is your first visit.") },
+                    { new Option<bool>("autoHonkAllSystems", false, voiceTrigger: "auto honk all systems", description: "Automatically honk upon entering a system, each jump, without constraints.") },
+                    { new Option<bool>("autoHonkNewSystems", true, voiceTrigger: "auto honk new systems", description: "Automatically honk upon entering a system if it is your first visit.") },
                     { new Option<bool>("autoRestock", true, voiceTrigger: "auto restock", description:
                         "Automatically restock after docking at a station.\nYou will always refuel, repair and enter the Station Services menu.") },
                     { new Option<bool>("flightAssistOff", false, voiceTrigger: "flight assist off", description: "Permanent Flight Assist off mode. You should really do that, it’s great.") },
@@ -63,7 +63,7 @@ namespace alterNERDtive.util
                     { new Option<string>("CMDRs", "", voiceTrigger: "fuel rat commanders",
                         description: "All your CMDRs that are ready to take rat cases.\nUse ‘;’ as separator, e.g. “Bud Spencer;Terrence Hill”.") },
                     { new Option<bool>("confirmCalls", true, voiceTrigger: "fuel rat call confirmation", description: "Only make calls in #fuelrats after vocal confirmation to prevent mistakes.") },
-                    { new Option<bool>("onDuty", true, voiceTrigger: "fuel rat duty", description: "Set FuelRats duty to active when the profile is loaded.") },
+                    { new Option<bool>("onDuty", true, voiceTrigger: "fuel rat duty", description: "On duty, receiving case announcements via TTS.") },
                     { new Option<string>("platforms", "PC", voiceTrigger: "fuel rat platforms", validValues: new List<string>{ "PC", "Xbox", "Playstation" },
                         description: "The platform(s) you want to get case announcements for (PC, Xbox, Playstation).\nUse ‘;’ as separator, e.g. “PC;Xbox”.") },
                 }

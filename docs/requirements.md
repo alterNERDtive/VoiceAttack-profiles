@@ -23,10 +23,11 @@ fixes/additions in beta versions quite often.
 
 [EDDI](https://github.com/EDCD/EDDI) is a companion application for Elite:
 Dangerous, providing responses to events that occur in-game using data from the
-game as well as various third-party tools.
+game as well as various third-party tools. In this case, you will need to run it
+as a VoiceAttack plugin.
 
 EDDI also regularly publishes beta versions. Unless a profiles release
-explicitly states it, you will _not_ have to run EDDI beta.
+explicitly states it you will _not_ have to run EDDI beta.
 
 ## bindED
 
@@ -39,7 +40,7 @@ This plugin is _included_ in the release package.
 
 ## Elite Scripts
 
-I have wrote a [collection of Python
+I have written a [collection of Python
 scripts](https://github.com/alterNERDtive/elite-scripts) to interface with
 various 3ʳᵈ party services like EDSM or Spansh. Those are called by the profiles
 for various tasks, like checking a system’s body count.

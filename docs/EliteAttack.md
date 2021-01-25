@@ -39,8 +39,8 @@ There are so many navigation-focused commands now, they deserve there own
 category. Basically anything that helps you plot anywhere. A lot of those are 
 powered by awesome EDDI so I don’t have to do the work myself!
 
-* `distance [from;to] [Sol;home;the center;Beagle Point;Colonia]`: Gives you
-  your current distance to the given POI.
+* `distance [from;to] [Sol;home;the center;Beagle Point;Colonia]`: Gives you the
+  current distance to the given POI.
 * `[find;target] nearest [encoded;manufactured;raw] material trader`: Targets 
   the nearest respective material trader.
 * `[find;target] nearest [fuel;scoopable] star`: Targets the nearest scoopable

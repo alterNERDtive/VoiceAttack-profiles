@@ -120,10 +120,15 @@ profile will keep the old name. Feel free to manually rename it.
 ### Added
 
 * `SpanshAttack` plugin. Does miscellaneous things for now, will at some point
-  replace the dependency on the EDNeutronRouter plugin.
+  replace the dependency on the ED-NeutronRouter plugin.
 * Will now log the jumps calculated for a trip to the VoiceAttack log.
 
 ### StreamAttack 2.0
+
+### Added
+
+* `distance [to;from] jump target` command: Tells you the current distance to
+  the jump target.
 
 ### Changed
 

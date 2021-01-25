@@ -1,6 +1,6 @@
 # Upgrading
 
-To upgrade to the latest version, follow these steps:
+To upgrade to the latest version, follow these simple steps:
 
 1. Say “download profiles update”.
 1. Put the `alterNERDtive-voiceattack-profiles.vax` file from Github into the
@@ -16,9 +16,9 @@ If you have been using a custom profile as outlined in [[Installing#Create a
 Custom Profile]] your settings will be migrated to the new variables
 automatically.
 
-If you have not … well, you will unfortunately have to take note of your
-settings, and recreate them after creating a custom profile and including
-everything.
+If you have not and you have used my “EliteDangerous” profile as the main
+profile … well, you will unfortunately have to take note of your settings, and
+recreate them after creating a custom profile and including everything.
 
 Please do not fiddle with the configuration variables from your startup command
 (or any other, really). It _should_ not break anything, but it might. And it is
@@ -42,21 +42,21 @@ _have_ to create a custom profile, and the new “base” profile that the other
 require to be included in your custom profile is “alterNERDtive-base”. That way
 you can use e.g. RatAttack without having to also use the general Elite profile.
 
-It has also been renamed to “EliteAttack” to be consistent with the others. If
-you are upgrading from an older version the name will not change for you in the
-profiles list. I recommend renaming your “EliteDangerous” profile to
+To be consistent with the other profiles it has been renamed to “EliteAttack”.
+If you are upgrading from an older version the name will not change for you in
+the profiles list. I recommend renaming your “EliteDangerous” profile to
 “EliteAttack” to prevent confusion in the future, but it is not strictly
 necessary to do so.
 
 ### RatAttack
 
 Handing a RATSIGNAL from IRC to VoiceAttack via text file is now deprecated and
-support for that will be removed in a future version.
+the feature will be removed in a future version.
 
 Instead you should use the new `RatAttack-cli.exe` helper tool that uses IPC to
 talk to the VoiceAttack plugin. For that you have to change the way your IRC
 client handles incoming case announcements. Instead of writing the announcement
-to the text file and walling VoiceAttack to run a command, it will have to call
+to the text file and calling VoiceAttack to run a command, it will have to call
 the helper tool with a) the announcement and b) an optional true/false switch to
 determine if the case should be announced via TTS or just added to the case
 list.
@@ -79,4 +79,4 @@ will announce it using TTS.
 
 The “replace” part handles the fact that announcements now put the system in
 quotes. They have to be escaped as double quotes (`""`) to create a correct
-command invocation.
+command line invocation.
