@@ -58,11 +58,11 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#create-a-custom-profile">Create a Custom Profile</a>
 <ul>
-<li class="toctree-l3"><a class="reference internal" href="#create-a-new-custom-profile">Create a New Custom Profile</a>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-new-profile">Create a New Profile</a>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#use-the-profile-example">Use the Profile Example</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#import-profiles">Import Profiles</a>
+<li class="toctree-l3"><a class="reference internal" href="#include-profiles">Include Profiles</a>
 <ul>
 <li class="toctree-l4"><a class="reference internal" href="#create-a-startup-command">Create a Startup Command</a>
 </li>
@@ -179,7 +179,7 @@ Github (The <code>EDDI-X.Y.Z.exe</code> under “Assets”). You will need to <a
 VoiceAttack
 plugin</a>.</p>
 <p>If you do not want to install it into the VoiceAttack installation folder (or
-already have it installed somewhere else) you can also just make a symbolic
+already have it installed somewhere else) you can also just create a symbolic
 link. Open a CMD prompt (Windows key + <code>R</code>, enter “cmd”, hit <code>Enter</code>) and do</p>
 <pre><code class="language-cmd">&gt;cd x:\path\to\VoiceAttack\Apps
 &gt;mklink /J EDDI x:\path\to\EDDI
@@ -221,10 +221,9 @@ from Github (the <code>alterNERDtive-voiceattack-profiles.vax</code> file under 
 for Elite. It will allow you to add your own commands, override any commands in
 the profiles that you want to change and add voice triggers or hotkeys.</p>
 <p>You can either use an existing profile, create a new one or use the provided
-profile example as a basis.</p>
-<p>Regardless of which way you choose, make sure to read the <a href="#import-profiles">#Import Profiles</a>
-section and follow the instructions there!</p>
-<h3 id="create-a-new-custom-profile">Create a New Custom Profile<a class="headerlink" href="#create-a-new-custom-profile" title="Permanent link">¶</a></h3>
+profile example as a basis. Regardless of which way you choose, make sure to
+read the <a href="#import-profiles">#Import Profiles</a> section and follow the instructions there!</p>
+<h3 id="create-a-new-profile">Create a New Profile<a class="headerlink" href="#create-a-new-profile" title="Permanent link">¶</a></h3>
 <ol>
 <li>Click the “Profile Actions” button, then “Create New Profile”.
    <img alt="VoiceAttack-new-profile.png" src="../images/VoiceAttack-new-profile.png"/></li>
@@ -242,7 +241,7 @@ section and follow the instructions there!</p>
 <p>Once you are done with the setup and configuration process, you can find a bunch
 of example commands with comments on how to do things in this profile. Make sure
 to also rename it to something more exciting than “Custom Profile Example”!</p>
-<h3 id="import-profiles">Import Profiles<a class="headerlink" href="#import-profiles" title="Permanent link">¶</a></h3>
+<h3 id="include-profiles">Include Profiles<a class="headerlink" href="#include-profiles" title="Permanent link">¶</a></h3>
 <p>In order to use my profiles with your custom profiles, you will need to take two
 additional steps:</p>
 <ol>
@@ -264,7 +263,7 @@ make sure you do not accidentally run it via voice.</p>
 <p><img alt="VoiceAttack-edit-startup.png" src="../images/VoiceAttack-edit-startup.png"/></p>
 <p>Add a new action using “Other” → “VoiceAttack Action”→ “Execute Another Command”.</p>
 <p><img alt="VoiceAttack-edit-startup-execute.png" src="../images/VoiceAttack-edit-startup-execute.png"/></p>
-<p>Choose “Execute by name (Advanced)” and enter “alterNERDtive-base.startup”.</p>
+<p>Choose “Execute by name (Advanced)” and enter “((alterNERDtive-base.startup))”.</p>
 <p><img alt="VoiceAttack-edit-startup-action.png" src="../images/VoiceAttack-edit-startup-action.png"/></p>
 <p>Make sure to leave “Wait until this command completes before continuing” on and
 have this action at the top of the action list for the command. That way you can
@@ -273,20 +272,20 @@ actions are processed.</p>
 <p><img alt="VoiceAttack-edit-startup-actionlist.png" src="../images/VoiceAttack-edit-startup-actionlist.png"/></p>
 <p>You can add anything else you want your profile to do when it loads below this
 action. You do not have to set any configuration options, this can be done way
-more elegantly! More on this <a href="../configuration/general/">later on</a>.</p>
+more elegantly! More on this <a href="../configuration/general/#settings">later on</a>.</p>
 <h4 id="set-profile-options">Set Profile Options<a class="headerlink" href="#set-profile-options" title="Permanent link">¶</a></h4>
 <p>While editing the profile, hit the “Options” button.</p>
 <p><img alt="VoiceAttack-profile-options.png" src="../images/VoiceAttack-profile-options.png"/></p>
-<p>On the section labeled“Include commands from other profiles”, hit the “…”
+<p>On the section labeled “Include commands from other profiles”, hit the “…”
 button.</p>
 <p><img alt="VoiceAttack-profile-options-include.png" src="../images/VoiceAttack-profile-options-include.png"/></p>
-<p>Add all my profiles (“EliteDangerous”, “RatAttack”, “SpanshAttack”,
-“StreamAttack”).</p>
+<p>Add all my profiles (“alterNERDtive-base”, “EliteDangerous”, “RatAttack”,
+“SpanshAttack”,“StreamAttack”).</p>
 <p><img alt="VoiceAttack-profile-options-includelist.png" src="../images/VoiceAttack-profile-options-includelist.png"/></p>
 <p>Technically you can leave out anything you are not planning on using.
-Practically it probably will nott hurt you to just include everything, and it
+Practically it probably will not hurt you to just include everything, and it
 will then available for you in the future if you choose to check it out! Make
-sure that“alterNERDtive-base” is on top of the list, the order of the others
+sure that “alterNERDtive-base” is on top of the list, the order of the others
 does not matter. But I like it nice and alphabetical …</p>
 <p>Now switch to the “Profile Exec” tab. Tick the “Execute a command each time this 
 profile is loaded” checkbox, and select the “startup” command you have created 

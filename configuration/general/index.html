@@ -139,12 +139,12 @@
 <h1 id="general-configuration">General Configuration<a class="headerlink" href="#general-configuration" title="Permanent link">¶</a></h1>
 <h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h2>
 <p>All profiles will load sane defaults if you haven’t changed anything. The
-configuration is stored in a bunch of VoiceAttack variables stored in your
-custom profile. You could even have different custom profiles with their own
-distinct settings.</p>
+configuration is stored in a bunch of VoiceAttack variables which in turn are
+stored in your custom profile. You could even have different custom profiles
+with their own distinct settings.</p>
 <p>You change the configuration via voice commands:</p>
 <ul>
-<li>For booleans (toggles): <code>customize setting [enable;disable] &lt;trigger phrase&gt;</code></li>
+<li>For toggles (booleans): <code>customize setting [enable;disable] &lt;trigger phrase&gt;</code></li>
 <li>For everything else: <code>customize setting set &lt;trigger phrase&gt;</code></li>
 </ul>
 <p>You can find a list of trigger phrases here, or you can say
@@ -153,35 +153,34 @@ what they do. If you don’t remember your settings or just want a nice list,
 <code>customize setting report [options;settings]</code> will print that to the
 VoiceAttack log. If you want to reset everything back to default state, say
 <code>customize setting clear all my settings</code>.</p>
-<p>The “customize setting” preset is kind of a leftover from times long gone and
+<p>The “customize setting” prefix is kind of a leftover from times long gone and
 does not quite fit anymore. Might change in a future version.</p>
-<p>Basically all the settings are available using the <code>customize settings</code> prefix, 
-then saying <code>[enable;disable] &lt;setting&gt;</code> for on/off switches and <code>set &lt;setting&gt;</code> 
-for text variables.</p>
-<p>One caveat applies: settings will only be saved in the profile you have 
-selected, but be preserved if you switch around.</p>
+<p>Since the settings are saved to your custom profile they will not be preserved
+when you switch profiles. Once you switch back, the correct settings for the
+profile are re-loaded.</p>
 <h3 id="general-settings-for-all-profiles">General Settings for All Profiles<a class="headerlink" href="#general-settings-for-all-profiles" title="Permanent link">¶</a></h3>
 <p>Toggles:</p>
 <ul>
-<li><code>auto update check</code>: Automatically check Github for profiles updates.</li>
-<li><code>eddi quiet mode</code>: Make EDDI shut up. Disables all built-in speech responders.</li>
+<li><code>auto update check</code>: Automatically check Github for profiles updates when the
+  profile loads. Default: true.</li>
+<li><code>eddi quiet mode</code>: Make EDDI shut up. Disables all built-in speech responders.
+  Default: true.</li>
 </ul>
 <p>Other settings:</p>
 <ul>
 <li><code>elite paste key</code>: The key used to paste in conjunction with CTRL. The
   physical key in your layout that would be 'V' on QWERTY. Default: 'v'.</li>
 <li><code>log level</code>: The level of detail for logging to the VoiceAttack log. Valid
-  levels are "ERROR", "WARN", "NOTICE", "INFO" and "DEBUG". Default: "NOTICE".
-  Default: "NOTICE".</li>
+  levels are "ERROR", "WARN", "NOTICE", "INFO" and "DEBUG". Default: "NOTICE".</li>
 <li><code>quit to desktop delay</code>: The delay before restarting the game after hitting
-  “Exit to Desktop”. Default: 10.0 seconds. (Used by the <code>restart from desktop</code>
+  “Exit to Desktop”, in seconds. Default: 10.0. (Used by the <code>restart from desktop</code>
   command)</li>
 </ul>
 <h2 id="note-on-non-standard-keyboard-layouts">Note on Non-Standard Keyboard Layouts<a class="headerlink" href="#note-on-non-standard-keyboard-layouts" title="Permanent link">¶</a></h2>
-<p>Because Elite’s keyboard handling is … weird you’ll have to set the key to use 
-for pasting text into Elite:Dangerous. If you are not using a “standard” 
-QWERT[YZ] layout, you will have to change it back to the key that is physically 
-in the place where <code>v</code> would be on QWERTY.</p>
+<p>Because Elite’s keyboard handling is … weird you’ll have to set the key to use
+for pasting text into Elite:Dangerous if you are not using a “standard”QWERT[YZ]
+layout. You will have to change it to the key that is physically in the place
+where <code>V</code> would be on QWERTY, e.g. <code>P</code> for <a href="https://neo-layout.org">Neo2</a>.</p>
 <p>To set the key, say “customize setting set elite paste key”.</p>
 <h2 id="adding-commands">Adding Commands<a class="headerlink" href="#adding-commands" title="Permanent link">¶</a></h2>
 <p>If you want to edit a command or add your own, <em>do not edit the profiles 
