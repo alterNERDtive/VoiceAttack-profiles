@@ -83,6 +83,9 @@ profile will keep the old name. Feel free to manually rename it.
 * `power to` command now supports of lot more options. `power to X and Y` sets
   8/4/0, `balanced power to X and Y` sets 6/6/0, `half power to X` sets 6/3/3,
   `half power to X and Y` sets 5/5/2.
+* Moved the EDSM body count and outdated station checks from the `Jumped` event
+  to the pre-jump `FSD engaged` event to work around increased EDSM response
+  times.
 
 ### Removed
 
