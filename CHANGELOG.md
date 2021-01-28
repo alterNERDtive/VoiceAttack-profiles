@@ -85,7 +85,7 @@ profile will keep the old name. Feel free to manually rename it.
   `half power to X and Y` sets 5/5/2.
 * Moved the EDSM body count and outdated station checks from the `Jumped` event
   to the pre-jump `FSD engaged` event to work around increased EDSM response
-  times.
+  times. (#85)
 
 ### Removed
 
@@ -128,6 +128,11 @@ profile will keep the old name. Feel free to manually rename it.
 * `SpanshAttack` plugin. Does miscellaneous things for now, will at some point
   replace the dependency on the ED-NeutronRouter plugin.
 * Will now log the jumps calculated for a trip to the VoiceAttack log.
+
+### Changed
+
+* Now pulls/announces next neutron waypoint on `FSD engaged` (starting a jump)
+  instead of `Jumped` (finishing a jump). (#85)
 
 ### StreamAttack 2.0
 
