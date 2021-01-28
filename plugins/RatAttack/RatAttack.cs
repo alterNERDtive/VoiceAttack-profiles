@@ -45,7 +45,7 @@ namespace RatAttack
 
             public string ShortInfo
             {
-                get => $"#{Number}, {Platform}, {System ?? "None"}{(SystemInfo != null ? $" ({SystemInfo}{(PermitLocked ? ", permit required" : "")})" : "")}{(CodeRed ? ", code red" : "")}";
+                get => $"#{Number}, {Platform}{(CodeRed ? ", code red" : "")}, {System ?? "None"}{(SystemInfo != null ? $" ({SystemInfo}{(PermitLocked ? ", permit required" : "")})" : "")}";
             }
 
             public override string ToString()
