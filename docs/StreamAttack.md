@@ -15,9 +15,9 @@ Default folder is `%appdata%\StreamAttack\`.
 * `set jump target`: Sets the jump target to the currently targeted system.
   Distance will be written to the configured file.
 
-* `[copy;open] ship build`: copies the current ship build (coriolis) or opens it 
+* `[copy;open] ship build`: Copies the current ship build (coriolis) or opens it 
   in your default browser.
-* `open StreamAttack folder`: opens the configured folder in Explorer.
+* `open StreamAttack folder`: Opens the configured folder in Explorer.
 
 ## Output Files
 

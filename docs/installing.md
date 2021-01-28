@@ -148,7 +148,7 @@ Add a new action using “Other” → “VoiceAttack Action”→ “Execute An
 
 ![[VoiceAttack-edit-startup-execute.png]]
 
-Choose “Execute by name (Advanced)” and enter “((alterNERDtive-base.startup))”.
+Choose “Execute by name (Advanced)” and enter `((alterNERDtive-base.startup))`.
 
 ![[VoiceAttack-edit-startup-action.png]]
 

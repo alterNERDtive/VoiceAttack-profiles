@@ -52,6 +52,9 @@ able to invoke that plugin. [You can safely ignore that](https://github.com/alte
   also possible, but not on the roadmap yet.
 * EDDI events (and some other more administrative commands) are now hidden from
   the VoiceAttack log.
+* The command beep sound used by some commands as acknowledgment has been
+  changed to a builtin sound effect in VoiceAttack to avoid having to ship a
+  .wav file of unknown origin.
 
 ### EliteAttack 8.0
 
