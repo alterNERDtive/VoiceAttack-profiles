@@ -228,8 +228,8 @@ Tells you the reason for docking denial.
 
 ### Entered Normal Space
 
-Throttles to 0 upon dropping from SC, if `EliteDangerous.hyperSpaceDethrottle`
-is set.
+Throttles to 0 upon dropping from SC, if the hyperspace dethrottle option is
+enabled.
 
 ### Fighter Launched
 
@@ -241,11 +241,11 @@ Sets your ship to full throttle immediately after you have supercharged.
 
 ### Jumped
 
-* Zeroes throttle.
-* Gets the system’s body count from EDSM.
-* Gets stations with outdated data (by default: older than 1 year) from Spansh’s API.
-* If you haven’t visited the systems (or set it up to honk every jump) starts a
-  discovery scan.
+* Zeroes throttle if the hyperspace dethrottle option is enabled.
+* Gets the system’s body count from EDSM if that option is enabled.
+* Gets stations with outdated data (by default: older than 1 year) from Spansh’s
+  API. Again, if it is enabled.
+* Starts a discovery scan if that is enabled.
 * Last but not least tells you about planets worth scanning if you are on the
   R2R.
 
