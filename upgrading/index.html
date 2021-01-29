@@ -57,6 +57,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#elitedangerous">EliteDangerous</a>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#ratattack">RatAttack</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#getting-case-data-from-irc">Getting Case Data From IRC</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#nearest-cmdr-announcements">Nearest CMDR Announcements</a>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -142,6 +148,9 @@
 </ol>
 <p>In general, migration from old versions will be handled automatically. If there
 is something you have to do manually you will find the necessary steps below.</p>
+<p>You can find the full
+<a href="https://github.com/alterNERDtive/VoiceAttack-profiles/blob/release/CHANGELOG.md">Changelog</a>
+on Github.</p>
 <h2 id="3xx-to-40">3.x.x to 4.0<a class="headerlink" href="#3xx-to-40" title="Permanent link">¶</a></h2>
 <p>If you have been using a custom profile as outlined in <a href="../installing/#create-a-custom-profile">Installing#Create a 
 Custom Profile</a> your settings will be migrated to the new variables
@@ -171,6 +180,7 @@ the profiles list. I recommend renaming your “EliteDangerous” profile to
 “EliteAttack” to prevent confusion in the future, but it is not strictly
 necessary to do so.</p>
 <h3 id="ratattack">RatAttack<a class="headerlink" href="#ratattack" title="Permanent link">¶</a></h3>
+<h4 id="getting-case-data-from-irc">Getting Case Data From IRC<a class="headerlink" href="#getting-case-data-from-irc" title="Permanent link">¶</a></h4>
 <p>Handing a RATSIGNAL from IRC to VoiceAttack via text file is now deprecated and
 the feature will be removed in a future version.</p>
 <p>Instead you should use the new <code>RatAttack-cli.exe</code> helper tool that uses IPC to
@@ -195,6 +205,11 @@ will announce it using TTS.</p>
 <p>The “replace” part handles the fact that announcements now put the system in
 quotes. They have to be escaped as double quotes (<code>""</code>) to create a correct
 command line invocation.</p>
+<h4 id="nearest-cmdr-announcements">Nearest CMDR Announcements<a class="headerlink" href="#nearest-cmdr-announcements" title="Permanent link">¶</a></h4>
+<p>If you have RatAttack set up to announce your nearest commander to a case,
+you’ll have to change the setting to the new format, separated by <code>;</code> instead of
+whitespace.</p>
+<p>Say “customize setting set fuel rat commanders” to update it.</p>
 </div>
 </div>
 <footer>

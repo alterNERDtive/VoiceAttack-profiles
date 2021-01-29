@@ -383,19 +383,19 @@ hangar and opens station services.</p>
 <h3 id="docking-denied">Docking Denied<a class="headerlink" href="#docking-denied" title="Permanent link">¶</a></h3>
 <p>Tells you the reason for docking denial.</p>
 <h3 id="entered-normal-space">Entered Normal Space<a class="headerlink" href="#entered-normal-space" title="Permanent link">¶</a></h3>
-<p>Throttles to 0 upon dropping from SC, if <code>EliteDangerous.hyperSpaceDethrottle</code>
-is set.</p>
+<p>Throttles to 0 upon dropping from SC, if the hyperspace dethrottle option is
+enabled.</p>
 <h3 id="fighter-launched">Fighter Launched<a class="headerlink" href="#fighter-launched" title="Permanent link">¶</a></h3>
 <p>Orders your ship to hold position so it doesn’t chase after you immediately.</p>
 <h3 id="jet-cone-boost">Jet Cone Boost<a class="headerlink" href="#jet-cone-boost" title="Permanent link">¶</a></h3>
 <p>Sets your ship to full throttle immediately after you have supercharged.</p>
 <h3 id="jumped">Jumped<a class="headerlink" href="#jumped" title="Permanent link">¶</a></h3>
 <ul>
-<li>Zeroes throttle.</li>
-<li>Gets the system’s body count from EDSM.</li>
-<li>Gets stations with outdated data (by default: older than 1 year) from Spansh’s API.</li>
-<li>If you haven’t visited the systems (or set it up to honk every jump) starts a
-  discovery scan.</li>
+<li>Zeroes throttle if the hyperspace dethrottle option is enabled.</li>
+<li>Gets the system’s body count from EDSM if that option is enabled.</li>
+<li>Gets stations with outdated data (by default: older than 1 year) from Spansh’s
+  API. Again, if it is enabled.</li>
+<li>Starts a discovery scan if that is enabled.</li>
 <li>Last but not least tells you about planets worth scanning if you are on the
   R2R.</li>
 </ul>
