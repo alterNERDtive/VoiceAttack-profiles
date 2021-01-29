@@ -10,6 +10,10 @@ To upgrade to the latest version, follow these simple steps:
 In general, migration from old versions will be handled automatically. If there
 is something you have to do manually you will find the necessary steps below.
 
+You can find the full
+[Changelog](https://github.com/alterNERDtive/VoiceAttack-profiles/blob/release/CHANGELOG.md)
+on Github.
+
 ## 3.x.x to 4.0
 
 If you have been using a custom profile as outlined in [[Installing#Create a 
@@ -50,6 +54,8 @@ necessary to do so.
 
 ### RatAttack
 
+#### Getting Case Data From IRC
+
 Handing a RATSIGNAL from IRC to VoiceAttack via text file is now deprecated and
 the feature will be removed in a future version.
 
@@ -80,3 +86,11 @@ will announce it using TTS.
 The “replace” part handles the fact that announcements now put the system in
 quotes. They have to be escaped as double quotes (`""`) to create a correct
 command line invocation.
+
+#### Nearest CMDR Announcements
+
+If you have RatAttack set up to announce your nearest commander to a case,
+you’ll have to change the setting to the new format, separated by `;` instead of
+whitespace.
+
+Say “customize setting set fuel rat commanders” to update it.

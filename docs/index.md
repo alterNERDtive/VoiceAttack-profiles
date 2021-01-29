@@ -5,10 +5,6 @@ to enhance my Elite experience. They give me important info, facilitate
 day-to-day gaming and do some special things for [Fuel 
 Rats](https://fuelrats.com) and [Hull Seals](https://hullseals.space) work.
 
-You can find the full
-[Changelog](https://github.com/alterNERDtive/VoiceAttack-profiles/blob/release/CHANGELOG.md)
-on Github.
-
 ## Available Profiles
 
 * [EliteAttack](EliteAttack): The main Elite VA profile. Anything related to
