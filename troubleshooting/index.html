@@ -124,6 +124,27 @@
 <h1 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">¶</a></h1>
 <p>This will fill up gradually with Troubleshooting tips as people run into common
 ones.</p>
+<h1 id="voiceattack-does-not-understand-me-mishears-me-fires-random-commands">VoiceAttack does not understand me / mishears me / fires random commands<a class="headerlink" href="#voiceattack-does-not-understand-me-mishears-me-fires-random-commands" title="Permanent link">¶</a></h1>
+<p>There is <a href="https://forum.voiceattack.com/smf/index.php?topic=2667.msg12197#msg12197">a thread on the VoiceAttack
+forums</a>
+on how to set up your microphone and the speech recognition engine to work best.</p>
+<p>If your microphone is bad and you still get erroneous recognitions when you are
+not speaking it is probably going to recognize the same command every time. You
+can remedy that by blocking the voice trigger.</p>
+<ol>
+<li>Create a new command in your custom profile.</li>
+<li>Set the “when I say” field to the trigger that gets misrecognized.</li>
+</ol>
+<p>Adding the “Other” → “VoiceAttack Action” → “Ignore an Unrecognized Word or
+Phrase” action will also hide it from the VoiceAttack log when it is (wrongly)
+recognized. You might or might not want that.</p>
+<p>Example for the “cruise” voice trigger of the Supercruise command:</p>
+<p><img alt="troubleshooting-remove-trigger.png" src="../images/troubleshooting-remove-trigger.png"/></p>
+<p>Alternatively you can raise the minimum confidence level and call the underlying
+command to make misfires less likely:</p>
+<p><img alt="troubleshooting-raise-min-confidence.png" src="../images/troubleshooting-raise-min-confidence.png"/></p>
+<p>There are a few examples in the <a href="../installing#use-the-profile-example">Custom Profile
+Example</a>.</p>
 </div>
 </div>
 <footer>
