@@ -1,4 +1,4 @@
-# 4.0 (FIXXME)
+# 4.0 (2021-01-29)
 
 This version introduces huge (and _breaking_) changes. **Make sure to refer to
 [the “Upgrading”
@@ -121,7 +121,7 @@ profile will keep the old name. Feel free to manually rename it.
 
 * Updated RATSIGNAL parsing for Mecha3.
 
-### SpanshAttack 6.0
+### SpanshAttack 7.0
 
 ### Added
 
