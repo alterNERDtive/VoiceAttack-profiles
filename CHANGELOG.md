@@ -1,3 +1,14 @@
+# 4.0.1 (2021-01-30)
+
+## SpanshAttack 7.0.1
+
+### Fixed
+
+* Now correctly getting the next neutron waypoint again after reaching the
+  current one.
+
+-----
+
 # 4.0 (2021-01-29)
 
 This version introduces huge (and _breaking_) changes. **Make sure to refer to
