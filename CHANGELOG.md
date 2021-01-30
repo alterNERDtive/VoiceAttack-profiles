@@ -31,7 +31,7 @@ able to invoke that plugin. [You can safely ignore that](https://github.com/alte
 * `generate missing key binds report` command: Will place a list of missing key
   binds (provided by bindED) on your Desktop for troubleshooting.
 * Lots of new configuration options, see [the
-  documentation](https://alternerdtive.github.io/VoiceAttack-profiles/configuration/).
+  documentation](https://alternerdtive.github.io/VoiceAttack-profiles/configuration/general).
 * You can now have a list of configuration voice commands as well as a list
   of all configuration options and their current settings printed to the
   VoiceAttack log.
