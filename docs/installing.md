@@ -118,7 +118,7 @@ to also rename it to something more exciting than “Custom Profile Example”!
 
 ### Include Profiles
 
-In order to use my profiles with your custom profiles, you will need to take two
+In order to use my profiles with your custom profile, you will need to take two
 additional steps:
 
 1. Include the profiles in your custom profiles. That will make all commands
