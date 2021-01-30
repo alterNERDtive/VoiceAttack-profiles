@@ -14,7 +14,7 @@ You can find the full
 [Changelog](https://github.com/alterNERDtive/VoiceAttack-profiles/blob/release/CHANGELOG.md)
 on Github.
 
-## 3.x.x to 4.0
+## 3.x.x to 4.x.x
 
 If you have been using a custom profile as outlined in [[Installing#Create a 
 Custom Profile]] your settings will be migrated to the new variables
