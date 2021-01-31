@@ -79,13 +79,17 @@
 </ul>
 <p class="caption"><span class="caption-text">Issues</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../VoiceAttack/">VoiceAttack Tips</a>
-</li>
 <li class="toctree-l1 current"><a class="reference internal current" href="./">Troubleshooting</a>
 <ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#voiceattack-does-not-understand-me-mishears-me-fires-random-commands">VoiceAttack does not understand me / mishears me / fires random commands</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#voiceattack-recognizes-a-command-but-doesnt-do-anything-in-game">VoiceAttack recognizes a command, but doesn’t do anything in game</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#voiceattack-talks-over-the-covas-voice">VoiceAttack talks over the COVAS voice</a>
+</li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="" href="https://github.com/alterNERDtive/VoiceAttack-profiles/issues/new">Report a Bug</a>
+<li class="toctree-l1"><a class="" href="https://github.com/alterNERDtive/VoiceAttack-profiles/issues/">Report a Bug</a>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Watch in Action</span></p>
@@ -115,7 +119,7 @@
 </li>
 </ul>
 <div aria-label="breadcrumb navigation" class="rst-breadcrumbs-buttons" role="navigation">
-<a class="btn btn-neutral" href="../VoiceAttack/" title="VoiceAttack Tips"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral" href="../StreamAttack/" title="StreamAttack"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 </div>
 <hr/>
 </div>
@@ -124,13 +128,14 @@
 <h1 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">¶</a></h1>
 <p>This will fill up gradually with Troubleshooting tips as people run into common
 ones.</p>
-<h1 id="voiceattack-does-not-understand-me-mishears-me-fires-random-commands">VoiceAttack does not understand me / mishears me / fires random commands<a class="headerlink" href="#voiceattack-does-not-understand-me-mishears-me-fires-random-commands" title="Permanent link">¶</a></h1>
+<h2 id="voiceattack-does-not-understand-me-mishears-me-fires-random-commands">VoiceAttack does not understand me / mishears me / fires random commands<a class="headerlink" href="#voiceattack-does-not-understand-me-mishears-me-fires-random-commands" title="Permanent link">¶</a></h2>
 <p>There is <a href="https://forum.voiceattack.com/smf/index.php?topic=2667.msg12197#msg12197">a thread on the VoiceAttack
 forums</a>
 on how to set up your microphone and the speech recognition engine to work best.</p>
 <p>If your microphone is bad and you still get erroneous recognitions when you are
 not speaking it is probably going to recognize the same command every time. You
-can remedy that by blocking the voice trigger.</p>
+can remedy that by blocking the voice trigger. One-syllable triggers are
+especially prone to misrecognition.</p>
 <ol>
 <li>Create a new command in your custom profile.</li>
 <li>Set the “when I say” field to the trigger that gets misrecognized.</li>
@@ -145,11 +150,26 @@ command to make misfires less likely:</p>
 <p><img alt="troubleshooting-raise-min-confidence.png" src="../images/troubleshooting-raise-min-confidence.png"/></p>
 <p>There are a few examples in the <a href="../installing#use-the-profile-example">Custom Profile
 Example</a>.</p>
+<h2 id="voiceattack-recognizes-a-command-but-doesnt-do-anything-in-game">VoiceAttack recognizes a command, but doesn’t do anything in game<a class="headerlink" href="#voiceattack-recognizes-a-command-but-doesnt-do-anything-in-game" title="Permanent link">¶</a></h2>
+<p>Make sure you have a keyboard bind for whatever the command is supposed to do as
+outlined in <a href="../installing/#set-elite-keyboard-binds">Installing#Set Elite Keyboard Binds</a>.</p>
+<h2 id="voiceattack-talks-over-the-covas-voice">VoiceAttack talks over the COVAS voice<a class="headerlink" href="#voiceattack-talks-over-the-covas-voice" title="Permanent link">¶</a></h2>
+<p>There is no way to know for sure when the ingame COVAS is talking to you, so
+there is no way to always prevent the two from speaking over each other.</p>
+<p>You can however either disable TTS responses for events that you know will clash
+(or <a href="https://github.com/alterNERDtive/VoiceAttack-profiles/issues/">file a feature
+request</a> if one
+is not optional yet). Alternatively, if you prefer the info given by VoiceAttack
+over the ingame COVAS, you can deactivate its response to these events in the
+ingame Audo settings:</p>
+<p><img alt="Elite-COVAS.png" src="../images/Elite-COVAS.png"/></p>
+<p>While you’re in there you might as well get rid of the spoken FSD countdown that
+is off by one second …</p>
 </div>
 </div>
 <footer>
 <div aria-label="footer navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral" href="../VoiceAttack/" title="VoiceAttack Tips"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral" href="../StreamAttack/" title="StreamAttack"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 </div>
 <hr/>
 <div role="contentinfo">
@@ -165,7 +185,7 @@ Example</a>.</p>
 <div aria-label="versions" class="rst-versions" role="note">
 <span class="rst-current-version" data-toggle="rst-current-version">
 <a class="fa fa-github" href="https://github.com/alterNERDtive/VoiceAttack-profiles/" style="float: left; color: #fcfcfc"> GitHub</a>
-<span><a href="../VoiceAttack/" style="color: #fcfcfc;">« Previous</a></span>
+<span><a href="../StreamAttack/" style="color: #fcfcfc;">« Previous</a></span>
 </span>
 </div>
 <script>var base_url = '..';</script>
