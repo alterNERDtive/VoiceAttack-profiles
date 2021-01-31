@@ -41,9 +41,9 @@ nav:
         - 'SpanshAttack.md'
         - 'StreamAttack.md'
     - 'Issues':
-        - 'VoiceAttack Tips': 'VoiceAttack.md'
+        #- 'VoiceAttack Tips': 'VoiceAttack.md'
         - 'troubleshooting.md'
-        - 'Report a Bug': 'https://github.com/alterNERDtive/VoiceAttack-profiles/issues/new'
+        - 'Report a Bug': 'https://github.com/alterNERDtive/VoiceAttack-profiles/issues/'
     - 'Watch in Action':
         - 'Twitch': 'https://twitch.tv/alterNERDtive'
         - 'Youtube': 'https://www.youtube.com/channel/UC3XNZA7xWed1zM1AWOOdmog'
