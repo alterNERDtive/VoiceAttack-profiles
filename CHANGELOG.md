@@ -1,3 +1,13 @@
+# devel
+
+## RatAttack 6.0.1
+
+### Fixed
+
+* RATSIGNAL parsing updated for latest Mecha3 changes.
+
+-----
+
 # 4.0.1 (2021-01-30)
 
 ## SpanshAttack 7.0.1
