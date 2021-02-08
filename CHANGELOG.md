@@ -8,6 +8,10 @@
   but you won’t get spammed in voice every time the format changes before an
   update to the profiles is out.
 
+### Fixed
+
+* Updated RATSIGNAL parsing to correctly handle new format for landmark systems.
+
 -----
 
 # 4.0.2 (2021-02-04)
