@@ -248,7 +248,7 @@ namespace RatAttack
         | required VoiceAttack plugin shenanigans |
         \========================================*/
 
-        static readonly Version VERSION = new Version("6.0.1");
+        static readonly Version VERSION = new Version("6.0.2");
 
         public static Guid VA_Id()
             => new Guid("{F2ADF0AE-4837-4E4A-9C87-8A7E2FA63E5F}");

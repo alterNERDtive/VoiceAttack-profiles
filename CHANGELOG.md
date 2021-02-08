@@ -1,3 +1,15 @@
+# devel
+
+## RatAttack 6.0.2
+
+### Changed
+
+* Removed TTS prompt from the invalid RATSIGNAL trigger. It’s still in the log,
+  but you won’t get spammed in voice every time the format changes before an
+  update to the profiles is out.
+
+-----
+
 # 4.0.2 (2021-02-04)
 
 ## RatAttack 6.0.1
