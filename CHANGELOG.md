@@ -1,5 +1,11 @@
 # devel
 
+## EliteAttack 8.0.1
+
+### Fixed
+
+* Restricted outdated stations check to systems with stations again.
+
 ## RatAttack 6.0.2
 
 ### Changed
