@@ -35,6 +35,8 @@
 ### Fixed
 
 * Updated RATSIGNAL parsing to correctly handle new format for landmark systems.
+* Updated RATSIGNAL parsing to accomodate new “Invalid system name” info and
+  colouration.
 
 ## SpanshAttack 7.1
 
