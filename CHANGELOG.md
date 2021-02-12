@@ -749,6 +749,8 @@ a station with data in EDDN >1 year old. Apologies.
 * Added new “Navigation” section. This includes the aforementioned new commands 
   and a bunch of old ones that fit there better than into “Misc”.
 
+-----
+
 # v1.3 (2020-06-14)
 
 ## EliteDangerous v5.0
@@ -788,6 +790,8 @@ bindings before even though it needs them …
 
 * Now updates your location when dropping from SC.
 * Fixed some copypasta errors in the documentation.
+
+-----
 
 # v1.2 (2020-03-09)
 
@@ -854,6 +858,8 @@ OBS for streaming shenanigans. Yes, other tools do that as well, but this one is
 mine ;)
 
 [See the docs](docs/StreamAttack.md).
+
+-----
 
 # v1.1 (2020-01-30)
 
@@ -924,6 +930,8 @@ fixes:
 * updated for new controls setup: the HOTAS buttons have changed because my 
   setup has changed. Probably not really relevant for you.
 
+-----
+
 # v1.0 (2019-12-04)
 
 ### single-file profile package
@@ -968,6 +976,8 @@ open a bug if it does.
 
 * fixed bug with wonky system names (including e.g. `+` or `[]`)
 
+-----
+
 # v0.5 (2019-11-09)
 
 ## RatAttack v0.1
@@ -1001,6 +1011,8 @@ RatAttack is now a thing! :D
   when EDSM knows _fewer_ bodies (there are some issues with duplicate entries 
   in EDSM, e.g. in Dromi)
 
+-----
+
 # v0.4.1 (2019-10-14)
 
 This is a bug fix release (as the version number indicates). Mainly for changes 
@@ -1019,6 +1031,8 @@ yet, so you do not have to download the new archive.
 * fixed lights off command for SRV, will no longer have a loop on race condition
 * fixed discovery scan event for new EDDI variable naming
 * fixed srv lauched event to properly turn off the lights
+
+-----
 
 # v0.4 (2019-10-12)
 
@@ -1043,6 +1057,8 @@ yet, so you do not have to download the new archive.
   update EDSM) (requires python scripts, see doc)
 * added compatibility for SpanshAttack’s clear on shutdown
 
+-----
+
 # v0.3 (2019-09-22)
 
 ## SpanshAttack v1.2
@@ -1055,6 +1071,8 @@ yet, so you do not have to download the new archive.
 Should be usable by other people now without too much hassle. If you run into 
 problems, please hit me up on [Discord](https://discord.gg/mD6dAb) or file an 
 issue here.
+
+-----
 
 # v0.2 (2019-08-28)
 
@@ -1073,6 +1091,8 @@ Added EliteDangerous profile in its current state. It’s in no way sanitised or
 advised for general use, but feel free to dig around and draw inspiration from 
 it. Soon™ it will be published in a more usable state, but I wanted to get it 
 out there for reference.
+
+-----
 
 # v0.1 (2019-08-06)
 
