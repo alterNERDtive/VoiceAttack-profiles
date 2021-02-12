@@ -451,7 +451,7 @@ namespace alterNERDtive
         | required VoiceAttack plugin shenanigans |
         \========================================*/
 
-        static readonly Version VERSION = new Version("4.0.3");
+        static readonly Version VERSION = new Version("4.1.0");
 
         public static Guid VA_Id()
             => new Guid("{F7F59CFD-1AE2-4A7E-8F62-C62372418BAC}");

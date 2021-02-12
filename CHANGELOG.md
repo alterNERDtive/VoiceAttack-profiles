@@ -1,6 +1,11 @@
 # devel
 
-## EliteAttack 8.0.1
+## EliteAttack 8.1.0
+
+### Added
+
+* `how many jumps left` command: Announces the jumps left on a neutron trip
+  (requires SpanshAttack) or a course plotted via the galaxy map.
 
 ### Fixed
 

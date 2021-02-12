@@ -51,6 +51,8 @@ powered by awesome EDDI so I don’t have to do the work myself!
   Well, you know the drill by now.
 * `[find;target] nearest mission system`: Targets the nearest system that has a
   mission target.
+* `how many jumps left`: Announces the jumps left on a neutron trip (requires
+  SpanshAttack) or a course plotted via the galaxy map.
 * `plot course;[target;] next [waypoint;way point]`: Plots a course to the text
   in your clipboard.
 * `target [bug killer;colonia;dav’s hope;explorer’s anchorage;jackson's lighthouse;jameson’s cobra;robigo;shinrarta dezhra;sagittarius a*;shinrarta;sothis]`:
