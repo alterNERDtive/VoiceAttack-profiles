@@ -12,6 +12,7 @@
 ### Fixed
 
 * Restricted outdated stations check to systems with stations again.
+* `Material Threshold` event should no longer cause logging errors.
 
 ## RatAttack 6.1
 
