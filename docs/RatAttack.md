@@ -17,7 +17,7 @@ through IRC. When off duty, it won’t.
 ## Case Handling
 
 [If you have your IRC client setup
-properly](/configuration/RatAttack/#getting-case-data-from-irc), VoiceAttack
+properly](../configuration/RatAttack/#getting-case-data-from-irc), VoiceAttack
 will hold a list with all rat cases that have come in while you had it running.
 It will save the case number, CMDR name, system, O₂ status and platform. There
 are several commands you can run on this list, giving it a case number:
