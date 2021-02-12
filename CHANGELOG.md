@@ -13,6 +13,11 @@
 
 ## RatAttack 6.0.2
 
+### Added
+
+* `call jumps [left;]` command: Calls jumps for the currently open case based on
+  a neutron trip (requires Spanshattack) or a plotted ingame route. 
+
 ### Changed
 
 * Removed TTS prompt from the invalid RATSIGNAL trigger. It’s still in the log,
@@ -27,7 +32,7 @@
 
 # 4.0.2 (2021-02-04)
 
-## RatAttack 6.0.1
+## RatAttack 6.1.0
 
 ### Fixed
 
