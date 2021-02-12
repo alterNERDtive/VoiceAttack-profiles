@@ -55,6 +55,16 @@ Additionally, you can use the `SpanshAttack.copyNextNeutronWaypoint`
 / `[get;copy] next neutron [waypoint;way point]` command to copy the next 
 neutron waypoint to the clipboard.
 
+### Skipping a waypoint
+
+Sometimes, especially in very neutron-sparse areas of the galaxy, the plotter
+will give you weird jumps. E.g. I recently got neutron → 37 ly → neutron → 440
+ly.
+
+In these cases you can use the `SpanshAttack.skipNeutronWaypoint` / `skip
+[this;current] neutron waypoint` command to move on to the next one in the
+list.
+
 ### Manual Re-Plot
 
 Trigger the `SpanshAttack.replotRoute` command either by voice

@@ -1,6 +1,6 @@
 # devel
 
-## EliteAttack 8.1.0
+## EliteAttack 8.1
 
 ### Added
 
@@ -13,7 +13,7 @@
 
 * Restricted outdated stations check to systems with stations again.
 
-## RatAttack 6.1.0
+## RatAttack 6.1
 
 ### Added
 
@@ -34,6 +34,13 @@
 ### Fixed
 
 * Updated RATSIGNAL parsing to correctly handle new format for landmark systems.
+
+## SpanshAttack 7.1
+
+### Added
+
+* `skip [this;current] neutron waypoint` command: Skips the next neutron
+  waypoint. (#94)
 
 -----
 
