@@ -18,13 +18,18 @@
 ### Added
 
 * `call jumps [left;]` command: Calls jumps for the currently open case based on
-  a neutron trip (requires Spanshattack) or a plotted ingame route. 
+  a neutron trip (requires Spanshattack) or a plotted ingame route.
+* Now uses Mecha’s system information in the RATSIGNAL in case announcements.
+* `system information for fuel rat case` configuration option: System
+  information provided by Mecha. Default: true.
 
 ### Changed
 
 * Removed TTS prompt from the invalid RATSIGNAL trigger. It’s still in the log,
   but you won’t get spammed in voice every time the format changes before an
   update to the profiles is out.
+* No longer looks up your nearest CMDR to a rat case if the system is neither in
+  Mecha’s galaxy database nor a potentially valid system name. (#89)
 
 ### Fixed
 

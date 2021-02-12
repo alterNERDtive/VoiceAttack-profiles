@@ -67,6 +67,7 @@ namespace alterNERDtive.util
                     { new Option<bool>("onDuty", true, voiceTrigger: "fuel rat duty", description: "On duty, receiving case announcements via TTS.") },
                     { new Option<string>("platforms", "PC", voiceTrigger: "fuel rat platforms", validValues: new List<string>{ "PC", "Xbox", "Playstation" },
                         description: "The platform(s) you want to get case announcements for (PC, Xbox, Playstation).\nUse ‘;’ as separator, e.g. “PC;Xbox”.") },
+                    { new Option<bool>("announceSystemInfo", true, voiceTrigger: "system information for fuel rat case", description: "System information provided by Mecha.")},
                 }
             },
             {

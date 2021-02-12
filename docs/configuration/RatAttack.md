@@ -83,6 +83,8 @@ Toggles:
   incoming rat cases. Default: false.
 * `platform for fuel rat case`: Announce the platform for incoming rat cases.
   Default: false.
+* `system information for fuel rat case`: System information provided by Mecha.
+  Default: true.
 
 Other Settings:
 
