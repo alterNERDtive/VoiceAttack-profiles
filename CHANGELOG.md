@@ -13,7 +13,7 @@
 
 * Restricted outdated stations check to systems with stations again.
 
-## RatAttack 6.0.2
+## RatAttack 6.1.0
 
 ### Added
 
@@ -34,7 +34,7 @@
 
 # 4.0.2 (2021-02-04)
 
-## RatAttack 6.1.0
+## RatAttack 6.0.1
 
 ### Fixed
 
