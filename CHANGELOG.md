@@ -41,6 +41,7 @@
 
 * `skip [this;current] neutron waypoint` command: Skips the next neutron
   waypoint. (#94)
+* Now also announces the actual jump count with the trip time.
 
 -----
 
