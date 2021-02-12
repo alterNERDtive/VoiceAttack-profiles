@@ -6,6 +6,8 @@
 
 * `how many jumps left` command: Announces the jumps left on a neutron trip
   (requires SpanshAttack) or a course plotted via the galaxy map.
+* `route jump count` configuration option: Give a jump count on plotting a
+  route. Default: true.
 
 ### Fixed
 

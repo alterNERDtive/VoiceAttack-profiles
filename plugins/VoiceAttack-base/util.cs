@@ -36,6 +36,7 @@ namespace alterNERDtive.util
                 new OptDict<string, Option>{
                     { new Option<bool>("announceEdsmSystemStatus", true, voiceTrigger: "edsm system status",
                         description: "Pull system data from EDSM and compare it against your discovery scan.") },
+                    { new Option<bool>("announceJumpsInRoute", true, voiceTrigger: "route jump count", description: "Give a jump count on plotting a route.") },
                     { new Option<bool>("announceMappingCandidates", true, voiceTrigger: "mapping candidates",
                         description: "Announce bodies worth mapping when you have finished scanning a system.\n(Terraformables, Water Worlds, Earth-Like Worlds and Ammonia Worlds that have not been mapped yet.)") },
                     { new Option<bool>("announceOutdatedStationData", true, voiceTrigger: "outdated stations", description: "Announce stations with outdated data in the online databases.") },

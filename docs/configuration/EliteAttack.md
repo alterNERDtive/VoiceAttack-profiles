@@ -25,6 +25,7 @@ Toggles:
   databases. Default: true.
 * `road to riches`: Announce bodies worth scanning if you are looking for some
   starting cash on the Road to Riches. Default: false.
+* `route jump count`: Give a jump count on plotting a route. Default: true.
 
 Other settings:
 

@@ -269,6 +269,10 @@ tells you when you reach your desired level or fill up.
 You will have to set minimum and desired amounts in EDDI’s material monitor
 options first for all materials you wish to be monitored.
 
+### Next Jump
+
+Gives you a jump count upon plotting a route using the galaxy map.
+
 ### Ship FSD
 
 This event actually is several different events in one. Currently the following 
@@ -278,7 +282,7 @@ are handled:
 * Cooldown complete: Announces FSD cooldown if you are currently in normal 
   space.
 
-### Ship interdicted
+### Ship Interdicted
 
 Tells you when you have been interdicted by a player. Is also supposed to target 
 the interdictor automatically, but randomly sometimes just doesn’t work.  Yay!
