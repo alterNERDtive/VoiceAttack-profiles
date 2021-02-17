@@ -37,6 +37,7 @@
 * Updated RATSIGNAL parsing to correctly handle new format for landmark systems.
 * Updated RATSIGNAL parsing to accomodate new “Invalid system name” info and
   colouration.
+* Updated RATSIGNAL parsing for new nick announcement (if different than CMDR name)
 
 ## SpanshAttack 7.1
 
