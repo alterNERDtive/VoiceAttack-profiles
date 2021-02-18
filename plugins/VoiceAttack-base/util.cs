@@ -42,6 +42,8 @@ namespace alterNERDtive.util
                     { new Option<bool>("announceOutdatedStationData", true, voiceTrigger: "outdated stations", description: "Announce stations with outdated data in the online databases.") },
                     { new Option<bool>("announceR2RMappingCandidates", false, voiceTrigger: "road to riches",
                         description: "Announce bodies worth scanning if you are looking for some starting cash on the Road to Riches.") },
+                    { new Option<bool>("announceRepairs", true, voiceTrigger: "repair reports", description: "Report on AFMU repairs.") },
+                    { new Option<bool>("announceSynthesis", true, voiceTrigger: "synthesis reports", description: "Report on synthesis.") },
                     { new Option<bool>("autoHonkAllSystems", false, voiceTrigger: "auto honk all systems", description: "Automatically honk upon entering a system, each jump, without constraints.") },
                     { new Option<bool>("autoHonkNewSystems", true, voiceTrigger: "auto honk new systems", description: "Automatically honk upon entering a system if it is your first visit.") },
                     { new Option<bool>("autoRestock", true, voiceTrigger: "auto restock", description:

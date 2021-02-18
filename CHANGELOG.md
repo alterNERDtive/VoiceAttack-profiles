@@ -8,6 +8,10 @@
   (requires SpanshAttack) or a course plotted via the galaxy map.
 * `route jump count` configuration option: Give a jump count on plotting a
   route. Default: true.
+* Now reports on AFMU repairs.
+* `repair reports` configuration option: Report on AFMU repairs. Default: true.
+* Now reports on Synthesis.
+* `synthesis reports` configuration option: Report on synthesis. Default: true.
 
 ### Fixed
 

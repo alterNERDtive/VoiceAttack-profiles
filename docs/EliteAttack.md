@@ -167,6 +167,11 @@ The commands in here do random more or less useful things.
 
 ## Events
 
+### AFMU Repairs
+
+Reports on the module that has been repaired, and if it has been fully or
+partially repaired.
+
 ### Body Mapped
 
 Announces an estimate for high-value bodies’ payouts and the remaining mapping
@@ -292,6 +297,10 @@ the interdictor automatically, but randomly sometimes just doesn’t work.  Yay!
 Toggles SRV lights off after launching. Might not work if you drop particularly
 far after deployment because it works off a timer. Conversely might take a
 second to turn your lights off on a short drop and/or in high gravity.
+
+### Synthesis
+
+Reports on the synthesis type and quality.
 
 ### System Scan Complete
 

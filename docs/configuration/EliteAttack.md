@@ -23,9 +23,11 @@ Toggles:
   Ammonia Worlds that have not been mapped yet.) Default: true.
 * `outdated stations`: Announce stations with outdated data in the online
   databases. Default: true.
+* `repair reports`: Report on AFMU repairs. Default: true.
 * `road to riches`: Announce bodies worth scanning if you are looking for some
   starting cash on the Road to Riches. Default: false.
 * `route jump count`: Give a jump count on plotting a route. Default: true.
+* `synthesis reports`: Report on synthesis. Default: true.
 
 Other settings:
 
