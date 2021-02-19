@@ -82,6 +82,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#neutron-jumping">Neutron Jumping</a>
 <ul>
+<li class="toctree-l3"><a class="reference internal" href="#skipping-a-waypoint">Skipping a waypoint</a>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#manual-re-plot">Manual Re-Plot</a>
 </li>
 </ul>
@@ -193,6 +195,13 @@ another command.</p>
 <p>Additionally, you can use the <code>SpanshAttack.copyNextNeutronWaypoint</code> 
 / <code>[get;copy] next neutron [waypoint;way point]</code> command to copy the next 
 neutron waypoint to the clipboard.</p>
+<h3 id="skipping-a-waypoint">Skipping a waypoint<a class="headerlink" href="#skipping-a-waypoint" title="Permanent link">¶</a></h3>
+<p>Sometimes, especially in very neutron-sparse areas of the galaxy, the plotter
+will give you weird jumps. E.g. I recently got neutron → 37 ly → neutron → 440
+ly.</p>
+<p>In these cases you can use the <code>SpanshAttack.skipNeutronWaypoint</code> / <code>skip
+[this;current] neutron waypoint</code> command to move on to the next one in the
+list.</p>
 <h3 id="manual-re-plot">Manual Re-Plot<a class="headerlink" href="#manual-re-plot" title="Permanent link">¶</a></h3>
 <p>Trigger the <code>SpanshAttack.replotRoute</code> command either by voice
 (<code>replot neutron [course;route;trip]</code>) or calling it from another command.

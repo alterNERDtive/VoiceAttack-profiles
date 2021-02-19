@@ -88,6 +88,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#events">Events</a>
 <ul>
+<li class="toctree-l3"><a class="reference internal" href="#afmu-repairs">AFMU Repairs</a>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#body-mapped">Body Mapped</a>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#body-scanned">Body scanned</a>
@@ -122,11 +124,15 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#material-threshold">Material Threshold</a>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#next-jump">Next Jump</a>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#ship-fsd">Ship FSD</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#ship-interdicted">Ship interdicted</a>
+<li class="toctree-l3"><a class="reference internal" href="#ship-interdicted">Ship Interdicted</a>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#srv-launched">SRV Launched</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#synthesis">Synthesis</a>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#system-scan-complete">System Scan Complete</a>
 </li>
@@ -232,6 +238,8 @@ powered by awesome EDDI so I don’t have to do the work myself!</p>
   Well, you know the drill by now.</li>
 <li><code>[find;target] nearest mission system</code>: Targets the nearest system that has a
   mission target.</li>
+<li><code>how many jumps left</code>: Announces the jumps left on a neutron trip (requires
+  SpanshAttack) or a course plotted via the galaxy map.</li>
 <li><code>plot course;[target;] next [waypoint;way point]</code>: Plots a course to the text
   in your clipboard.</li>
 <li><code>target [bug killer;colonia;dav’s hope;explorer’s anchorage;jackson's lighthouse;jameson’s cobra;robigo;shinrarta dezhra;sagittarius a*;shinrarta;sothis]</code>:
@@ -340,6 +348,9 @@ manipulating some UI element(s).</p>
 <li><code>open spansh</code>: Opens https://spansh.uk in your default browser.</li>
 </ul>
 <h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">¶</a></h2>
+<h3 id="afmu-repairs">AFMU Repairs<a class="headerlink" href="#afmu-repairs" title="Permanent link">¶</a></h3>
+<p>Reports on the module that has been repaired, and if it has been fully or
+partially repaired.</p>
 <h3 id="body-mapped">Body Mapped<a class="headerlink" href="#body-mapped" title="Permanent link">¶</a></h3>
 <p>Announces an estimate for high-value bodies’ payouts and the remaining mapping
 candidates in the system as given by EDDI.</p>
@@ -408,6 +419,8 @@ the (rough) range you still have on the fumes left in your tank.</p>
 tells you when you reach your desired level or fill up.</p>
 <p>You will have to set minimum and desired amounts in EDDI’s material monitor
 options first for all materials you wish to be monitored.</p>
+<h3 id="next-jump">Next Jump<a class="headerlink" href="#next-jump" title="Permanent link">¶</a></h3>
+<p>Gives you a jump count upon plotting a route using the galaxy map.</p>
 <h3 id="ship-fsd">Ship FSD<a class="headerlink" href="#ship-fsd" title="Permanent link">¶</a></h3>
 <p>This event actually is several different events in one. Currently the following 
 are handled:</p>
@@ -416,13 +429,15 @@ are handled:</p>
 <li>Cooldown complete: Announces FSD cooldown if you are currently in normal 
   space.</li>
 </ul>
-<h3 id="ship-interdicted">Ship interdicted<a class="headerlink" href="#ship-interdicted" title="Permanent link">¶</a></h3>
+<h3 id="ship-interdicted">Ship Interdicted<a class="headerlink" href="#ship-interdicted" title="Permanent link">¶</a></h3>
 <p>Tells you when you have been interdicted by a player. Is also supposed to target 
 the interdictor automatically, but randomly sometimes just doesn’t work.  Yay!</p>
 <h3 id="srv-launched">SRV Launched<a class="headerlink" href="#srv-launched" title="Permanent link">¶</a></h3>
 <p>Toggles SRV lights off after launching. Might not work if you drop particularly
 far after deployment because it works off a timer. Conversely might take a
 second to turn your lights off on a short drop and/or in high gravity.</p>
+<h3 id="synthesis">Synthesis<a class="headerlink" href="#synthesis" title="Permanent link">¶</a></h3>
+<p>Reports on the synthesis type and quality.</p>
 <h3 id="system-scan-complete">System Scan Complete<a class="headerlink" href="#system-scan-complete" title="Permanent link">¶</a></h3>
 <p>Lists you all bodies EDDI considers worth mapping in the current system.</p>
 <h3 id="undocked">Undocked<a class="headerlink" href="#undocked" title="Permanent link">¶</a></h3>
