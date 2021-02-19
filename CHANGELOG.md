@@ -27,6 +27,8 @@
 * Now uses Mecha’s system information in the RATSIGNAL in case announcements.
 * `system information for fuel rat case` configuration option: System
   information provided by Mecha. Default: true.
+* `latest rat case details` command: : Will give you the case data for the
+  latest incoming case.
 
 ### Changed
 

@@ -31,6 +31,8 @@ are several commands you can run on this list, giving it a case number:
   location to the currently opened rat case.
 * `distance to rat case number [0..30]`: Will give you the distance from your 
   current system to a case’s system.
+* `latest rat case details`: Will give you the case data for the latest incoming
+  case.
 * `nearest commander to rat case number [0..30]`: Will give you the nearest of
   your CMDRs with their distance to a case’s system. [Requires some
   setup](../configuration/RatAttack/#announcing-your-nearest-cmdr).
