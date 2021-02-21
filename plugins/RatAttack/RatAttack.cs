@@ -18,7 +18,7 @@ namespace RatAttack
         private static alterNERDtive.util.PipeServer<Ratsignal>? ratsignalPipe;
 
         private static readonly Regex RatsignalRegex = new Regex(
-            @"^RATSIGNAL - CMDR (?<cmdr>.+) - Reported System: (None|""(?<system>.+)""(\x0314)? \((?<systemInfo>([a-zA-Z0-9\s\(\)\-~]*([0-9,\.]+ LY from [a-zA-Z0-9\s]+)?|Not found in galaxy database|Invalid system name))\)(\x03)?(?<permit> \x037\(((?<permitName>.*) )?Permit Required\)\x03)?) - Platform: \x03(6|3|12)(?<platform>(PC|Xbox|Playstation))\x03 - O2: (\x034)?(?<oxygen>(NOT )?OK)\x03? - Language: .+ (- IRC Nick (?<nick>[a-zA-Z_\[\]\-]+))?\(\x02Case #(?<number>\d+)\x02\) \((PC|XB|PS)_SIGNAL\)\v*$"
+            @"^RATSIGNAL - CMDR (?<cmdr>.+) - Reported System: (None|""(?<system>.+)""(\x0314)? \((?<systemInfo>([a-zA-Z0-9\s\(\)\-~]*([0-9,\.]+ LY from [a-zA-Z0-9\s\*]+)?|Not found in galaxy database|Invalid system name))\)(\x03)?(?<permit> \x037\(((?<permitName>.*) )?Permit Required\)\x03)?) - Platform: \x03(6|3|12)(?<platform>(PC|Xbox|Playstation))\x03 - O2: (\x034)?(?<oxygen>(NOT )?OK)\x03? - Language: .+ (- IRC Nick (?<nick>[a-zA-Z_\[\]\-]+))?\(\x02Case #(?<number>\d+)\x02\) \((PC|XB|PS)_SIGNAL\)\v*$"
             );
 
         private static VoiceAttackLog Log
@@ -249,7 +249,7 @@ namespace RatAttack
         | required VoiceAttack plugin shenanigans |
         \========================================*/
 
-        static readonly Version VERSION = new Version("6.1.0");
+        static readonly Version VERSION = new Version("6.1.1");
 
         public static Guid VA_Id()
             => new Guid("{F2ADF0AE-4837-4E4A-9C87-8A7E2FA63E5F}");

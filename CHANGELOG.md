@@ -1,3 +1,13 @@
+# devel
+
+## RatAttack 6.1.1
+
+### Fixed
+
+* Fixed RATSIGNAL parsing for “Sagittarius A*” landmark.
+
+-----
+
 # 4.1 (2021-02-19)
 
 ## EliteAttack 8.1
