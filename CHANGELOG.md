@@ -6,6 +6,17 @@
 
 * Fixed RATSIGNAL parsing for “Sagittarius A*” landmark.
 
+## SpanshAttack 7.2
+
+### Changed
+
+* Moved EDTS system coordinate estimation code from Python script to the
+  VoiceAttack plugin.
+
+### Removed
+
+* `edts.exe` Python script.
+
 -----
 
 # 4.1 (2021-02-19)

@@ -1,6 +1,7 @@
 ﻿#nullable enable
 
 using alterNERDtive.util;
+using alterNERDtive.edts;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -25,60 +26,48 @@ namespace SpanshAttack
 
         private static void Context_EDTS_GetCoordinates(dynamic vaProxy)
         {
-            string system = vaProxy.GetText("~system") ?? throw new ArgumentNullException("~system");
+            string name = vaProxy.GetText("~system") ?? throw new ArgumentNullException("~system");
 
-            string path = $@"{vaProxy.SessionState["VA_SOUNDS"]}\Scripts\edts.exe";
-            string arguments = $@"coords ""{system}""";
+            bool success = false;
+            string? errorType = null;
+            string? errorMessage = null;
 
-            Process p = PythonProxy.SetupPythonScript(path, arguments);
-
-            Dictionary<char, int> coords = new Dictionary<char, int> { { 'x', 0 }, { 'y', 0 }, { 'z', 0 } };
-            int precision = 0;
-            bool error = false;
-            string errorMessage = "";
-
-            p.Start();
-            string stdout = p.StandardOutput.ReadToEnd();
-            string stderr = p.StandardError.ReadToEnd();
-            p.WaitForExit();
-            switch (p.ExitCode)
+            try
             {
-                case 0:
-                    string[] stdoutExploded = stdout.Split('|');
-                    precision = int.Parse(stdoutExploded[1]);
-                    string[] stdoutCoords = stdoutExploded[0].Split(',');
-                    coords['x'] = int.Parse(stdoutCoords[0]);
-                    coords['y'] = int.Parse(stdoutCoords[1]);
-                    coords['z'] = int.Parse(stdoutCoords[2]);
-                    if (precision < 100)
-                    {
-                        Log.Info($"Coordinates for {system}: ({coords['x']}, {coords['y']}, {coords['z']}), precision: {precision} ly");
-                    }
-                    else
-                    {
-                        Log.Warn($"Coordinates with low precision for {system}: ({coords['x']}, {coords['y']}, {coords['z']}), precision: {precision} ly");
-                    }
-                    break;
-                case 3:
-                    errorMessage = $@"No coordinates could be determined for ""{system}"" with acceptable precision";
-                    Log.Error(errorMessage);
-                    break;
-                case 4:
-                    errorMessage = $@"""{system}"" is not a valied proc gen system name";
-                    Log.Error(errorMessage);
-                    break;
-                default:
-                    break;
+                StarSystem system = EdtsApi.GetCoordinates(name);
 
+                if (system.Coords.Precision < 100)
+                {
+                    Log.Info($@"Coordinates for ""{name}"": ({system.Coords.X}, {system.Coords.Y}, {system.Coords.Z}), precision: {system.Coords.Precision} ly");
+                }
+                else
+                {
+                    Log.Warn($@"Coordinates with low precision for ""{name}"": ({system.Coords.X}, {system.Coords.Y}, {system.Coords.Z}), precision: {system.Coords.Precision} ly");
+                }
+
+                vaProxy.SetInt("~x", system.Coords.X);
+                vaProxy.SetInt("~y", system.Coords.Y);
+                vaProxy.SetInt("~z", system.Coords.Z);
+                vaProxy.SetInt("~precision", system.Coords.Precision);
+
+                success = true;
+            } catch (ArgumentException e)
+            {
+                errorType = "invalid name";
+                errorMessage = e.Message;
+            } catch (Exception e)
+            {
+                errorType = "connection error";
+                errorMessage = e.Message;
             }
 
-            vaProxy.SetInt("~x", coords['x']);
-            vaProxy.SetInt("~y", coords['y']);
-            vaProxy.SetInt("~z", coords['z']);
-            vaProxy.SetInt("~precision", precision);
-            vaProxy.SetBoolean("~error", error);
-            vaProxy.SetText("~errorMessage", errorMessage);
-            vaProxy.SetInt("~exitCode", p.ExitCode);
+            vaProxy.SetBoolean("~success", success);
+            if (!string.IsNullOrWhiteSpace(errorType))
+            {
+                Log.Error(errorMessage!);
+                vaProxy.SetText("~errorType", errorType);
+                vaProxy.SetText("~errorMessage", errorMessage);
+            }
         }
 
         private static void Context_Log(dynamic vaProxy)
@@ -214,7 +203,7 @@ namespace SpanshAttack
         | required VoiceAttack plugin shenanigans |
         \========================================*/
 
-        static readonly Version VERSION = new Version("7.1.0");
+        static readonly Version VERSION = new Version("7.2.0");
 
         public static Guid VA_Id()
             => new Guid("{e722b29d-898e-47dd-a843-a409c87e0bd8}");

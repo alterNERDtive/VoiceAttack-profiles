@@ -4,6 +4,7 @@ using alterNERDtive.util;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
 
@@ -173,6 +174,17 @@ namespace alterNERDtive
         private static void Context_Config_VersionMigration(dynamic vaProxy)
         {
             // ===========
+            // === 4.2 ===
+            // ===========
+
+            // SpanshAttack
+            string edtsPath = $@"{vaProxy.SessionState["VA_SOUNDS"]}\scripts\edts.exe";
+            if (File.Exists(edtsPath))
+            {
+                File.Delete(edtsPath);
+            }
+
+            // ===========
             // === 4.0 ===
             // ===========
 
@@ -275,7 +287,7 @@ namespace alterNERDtive
         {
             string system = vaProxy.GetText("~system") ?? throw new ArgumentNullException("~system");
 
-            string path = $@"{vaProxy.SessionState["VA_SOUNDS"]}\Scripts\explorationtools.exe";
+            string path = $@"{vaProxy.SessionState["VA_SOUNDS"]}\scripts\explorationtools.exe";
             string arguments = $@"bodycount ""{system}""";
 
             Process p = PythonProxy.SetupPythonScript(path, arguments);
@@ -451,7 +463,7 @@ namespace alterNERDtive
         | required VoiceAttack plugin shenanigans |
         \========================================*/
 
-        static readonly Version VERSION = new Version("4.1.1");
+        static readonly Version VERSION = new Version("4.2.0");
 
         public static Guid VA_Id()
             => new Guid("{F7F59CFD-1AE2-4A7E-8F62-C62372418BAC}");
