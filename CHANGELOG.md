@@ -5,6 +5,8 @@
 ### Fixed
 
 * Fixed RATSIGNAL parsing for “Sagittarius A*” landmark.
+* Fixed RATSIGNAL parsing for new wording of injected cases with no system
+  given.
 
 ## SpanshAttack 7.2
 
