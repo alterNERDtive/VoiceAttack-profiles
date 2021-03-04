@@ -122,7 +122,7 @@ to also rename it to something more exciting than “Custom Profile Example”!
 In order to use my profiles with your custom profile, you will need to take two
 additional steps:
 
-1. Include the profiles in your custom profiles. That will make all commands
+1. Include the profiles in your custom profile. That will make all commands
    available when your custom profile is active.
 1. Create a startup command for your custom profile. You can use it to do
    anything you want when your profile loads, but it will also have to run the
