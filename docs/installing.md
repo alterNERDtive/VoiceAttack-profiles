@@ -95,7 +95,7 @@ the profiles that you want to change and add voice triggers or hotkeys.
 
 You can either use an existing profile, create a new one or use the provided
 profile example as a basis. Regardless of which way you choose, make sure to
-read the [[#Import Profiles]] section and follow the instructions there!
+read the [[#Include Profiles]] section and follow the instructions there!
 
 ### Create a New Profile
 
