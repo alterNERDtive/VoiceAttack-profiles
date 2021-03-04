@@ -15,7 +15,7 @@ Rats](https://fuelrats.com) and [Hull Seals](https://hullseals.space) work.
 * StreamAttack: Writes various status things to files that can then be read by
   streaming software like OBS.
 
-## Documentation
+## Documentation & Installation Guide
 
 You can find [comprehensive documentation on Github
 Pages](https://alternerdtive.github.io/VoiceAttack-profiles).
