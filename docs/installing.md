@@ -28,7 +28,8 @@ Make sure you have plugin support enabled:
 1. Go to VoiceAttack settings. ![[VoiceAttack-settings.png]]
 1. Check “enable plugin support”. ![[VoiceAttack-settings-plugin-support.png]]
 
-While you are there, you might also want to enable the automatic update checks.
+While you are there, you might also want to enable the automatic update checks
+(Note: those settings do not exist in the Steam version).
 
 ![[VoiceAttack-settings-updates.png]]
 
