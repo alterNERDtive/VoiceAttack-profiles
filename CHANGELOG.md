@@ -2,6 +2,11 @@
 
 ## RatAttack 6.1.1
 
+### Added
+
+* `distance to latest rat case` command: gives you you current distance to the
+  latest rat case.
+
 ### Fixed
 
 * Fixed RATSIGNAL parsing for “Sagittarius A*” landmark.
