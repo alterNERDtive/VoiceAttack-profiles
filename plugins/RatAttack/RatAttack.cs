@@ -18,7 +18,7 @@ namespace RatAttack
         private static alterNERDtive.util.PipeServer<Ratsignal>? ratsignalPipe;
 
         private static readonly Regex RatsignalRegex = new Regex(
-            @"^RATSIGNAL - CMDR (?<cmdr>.+) - Reported System: (None|unknown system|""(?<system>.+)""(\x0314)? \((?<systemInfo>([a-zA-Z0-9\s\(\)\-~""]*([0-9,\.]+ LY from [a-zA-Z0-9\s\*]+)?|Not found in galaxy database|Invalid system name))\)(\x03)?(?<permit> \x037\(((?<permitName>.*) )?Permit Required\)\x03)?) - Platform: \x03(6|3|12)(?<platform>(PC|Xbox|Playstation))\x03 - O2: (\x034)?(?<oxygen>(NOT )?OK)\x03? - Language: .+ (- IRC Nick (?<nick>[a-zA-Z_\[\]\-]+))?\(\x02Case #(?<number>\d+)\x02\) \((PC|XB|PS)_SIGNAL\)\v*$"
+            @"^RATSIGNAL - CMDR (?<cmdr>.+) - Reported System: (None|unknown system|""(?<system>.+)""(\x0314)? \((?<systemInfo>([a-zA-Z0-9\s\(\)\-~]*([0-9,\.]+ LY (""[a-zA-Z\-]+"" of|from) [a-zA-Z0-9\s\*]+)?|Not found in galaxy database|Invalid system name))\)(\x03)?(?<permit> \x037\(((?<permitName>.*) )?Permit Required\)\x03)?) - Platform: \x03(6|3|12)(?<platform>(PC|Xbox|Playstation))\x03 - O2: (\x034)?(?<oxygen>(NOT )?OK)\x03? - Language: (?<language>[a-zA-z\-\(\)\s]+)( - IRC Nick (?<nick>[a-zA-Z0-9_\[\]\-]+))? \(\x02Case #(?<number>\d+)\x02\) \((PC|XB|PS)_SIGNAL\)\v*$"
             );
 
         private static VoiceAttackLog Log
@@ -32,6 +32,7 @@ namespace RatAttack
         private class RatCase
         {
             public string Cmdr;
+            public string? Language;
             public string? System;
             public string? SystemInfo;
             public bool PermitLocked;
@@ -40,8 +41,8 @@ namespace RatAttack
             public bool CodeRed;
             public int Number;
 
-            public RatCase(string cmdr, string? system, string? systemInfo, bool permitLocked, string? permitName, string platform, bool codeRed, int number)
-                => (Cmdr, System, SystemInfo, PermitLocked, PermitName, Platform, CodeRed, Number) = (cmdr, system, systemInfo, permitLocked, permitName, platform, codeRed, number);
+            public RatCase(string cmdr, string? language, string? system, string? systemInfo, bool permitLocked, string? permitName, string platform, bool codeRed, int number)
+                => (Cmdr, Language, System, SystemInfo, PermitLocked, PermitName, Platform, CodeRed, Number) = (cmdr, language, system, systemInfo, permitLocked, permitName, platform, codeRed, number);
 
             public string ShortInfo
             {
@@ -90,6 +91,7 @@ namespace RatAttack
             Match match = RatsignalRegex.Match(ratsignal);
 
             string cmdr = match.Groups["cmdr"].Value;
+            string? language = match.Groups["language"].Value;
             string? system = match.Groups["system"].Value;
             string? systemInfo = match.Groups["systemInfo"].Value;
             bool permitLocked = match.Groups["permit"].Success;
@@ -101,7 +103,7 @@ namespace RatAttack
 
             Log.Debug($"New rat case: CMDR “{cmdr}” in “{system}”{(systemInfo != null ? $" ({systemInfo})" : "")} on {platform}, permit locked: {permitLocked}{(permitLocked && permitName != null ? $" (permit name: {permitName})" : "")}, code red: {codeRed} (#{number}).");
 
-            CaseList[number] = new RatCase(cmdr, system, systemInfo, permitLocked, permitName, platform, codeRed, number);
+            CaseList[number] = new RatCase(cmdr, language, system, systemInfo, permitLocked, permitName, platform, codeRed, number);
 
             return number;
         }
