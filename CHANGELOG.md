@@ -12,6 +12,8 @@
 * Fixed RATSIGNAL parsing for “Sagittarius A*” landmark.
 * Fixed RATSIGNAL parsing for new wording of injected cases with no system
   given.
+* Fixed RATSIGNAL parsing for “cardinal direction” addition to distance
+  estimates for proc gen systems.
 
 ## SpanshAttack 7.2
 
