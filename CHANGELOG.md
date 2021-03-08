@@ -1,5 +1,13 @@
 # devel
 
+## EliteAttack 8.2
+
+### Added
+
+* "limpet check" configuration option: Do a limpet check when undocking,
+  reminding you if you forgot to buy some. Default: true. (see discussion on
+  #86)
+
 ## RatAttack 6.1.1
 
 ### Added

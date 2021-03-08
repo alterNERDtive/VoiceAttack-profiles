@@ -51,6 +51,7 @@ namespace alterNERDtive.util
                     { new Option<bool>("flightAssistOff", false, voiceTrigger: "flight assist off", description: "Permanent Flight Assist off mode. You should really do that, it’s great.") },
                     { new Option<bool>("hyperspaceDethrottle", true, voiceTrigger: "hyper space dethrottle",
                         description: "Throttle down after a jump and when dropping from SC. Like the SC Assist module does.") },
+                    { new Option<bool>("limpetCheck", true, voiceTrigger: "limpet check", description: "Do a limpet check when undocking, reminding you if you forgot to buy some.") },
                     { new Option<int>("outdatedStationThreshold", 365, voiceTrigger: "outdated station threshold",
                         description: "The threshold for station data to count as “outdated”, in days.\nDefault: 365.") },
                     { new Option<int>("scannerFireGroup", 0, voiceTrigger: "scanner fire group", description: "The fire group your discovery scanner is assigned to.\nDefault: 0 (the first one).") },

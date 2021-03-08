@@ -18,6 +18,8 @@ Toggles:
   that, it’s great. Default: false.
 * `hyper space dethrottle`: Throttle down after a jump and when dropping from
   SC. Like the SC Assist module does. Default: true.
+* `limpet check`: Do a limpet check when undocking, reminding you if you forgot
+  to buy some. Default: true.
 * `mapping candidates`: Announce bodies worth mapping when you have finished
   scanning a system. (Terraformables, Water Worlds, Earth-Like Worlds and
   Ammonia Worlds that have not been mapped yet.) Default: true.
