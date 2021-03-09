@@ -1,4 +1,4 @@
-# devel
+# 4.2 (2021-03-09)
 
 ## EliteAttack 8.2
 
@@ -8,7 +8,7 @@
   reminding you if you forgot to buy some. Default: true. (see discussion on
   #86)
 
-## RatAttack 6.1.1
+## RatAttack 6.2
 
 ### Added
 
