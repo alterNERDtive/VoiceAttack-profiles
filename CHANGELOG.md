@@ -1,3 +1,15 @@
+# devel
+
+## RatAttack 6.2.1
+
+### Changed
+
+* Removed the TTS prompt and logging from incoming invalid RATSIGNALs by
+  default, for real this time. See the `((RatAttack.invalidRatsignal))` command
+  for info on how to re-enable for yourself.
+
+-----
+
 # 4.2 (2021-03-09)
 
 ## EliteAttack 8.2
