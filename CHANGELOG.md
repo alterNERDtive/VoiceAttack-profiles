@@ -2,6 +2,11 @@
 
 ## RatAttack 6.2.1
 
+### Fixed
+
+* Fixed RATSIGNAL parsing for language strings that contain numbers (e.g.
+  “es-419”).
+
 ### Changed
 
 * Removed the TTS prompt and logging from incoming invalid RATSIGNALs by
