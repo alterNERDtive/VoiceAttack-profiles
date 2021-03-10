@@ -135,6 +135,9 @@ calling the <code>RatAttack-cli.exe</code> helper tool with the RATSIGNAL as fir
 and an optional boolean as second argument that triggers a TTS case
 announcement. You can find it under your VoiceAttack “Apps” folder,
 <code>\alterNERDtive\RatAttack-cli.exe</code>.</p>
+<p><strong>Note</strong>: If you are running VoiceAttack as admin, you need to run your IRC
+client as admin, too! Otherwise they cannot communicate. In general you want to
+run both with normal privileges.</p>
 <p>This has two purposes:</p>
 <ol>
 <li>Announcing a new incoming case (if passing <code>true</code> as second argument).</li>
@@ -158,7 +161,13 @@ quotes. They have to be escaped as double quotes (<code>""</code>) to create a c
 command invocation.</p>
 <p>You get the gist; if not and you don’t know how to do the same thing for your
 IRC client, either switch to AdiIRC or bribe me to make an example for yours.</p>
-<p>Note: If you are not on duty (see below) you will <em>not</em> get case announcements.</p>
+<p>mIRC is a straight forward copy &amp; paste job from Adi to mIRC (“Tools” → “Script
+Editor” → “Remote”). Make sure you do not strip colour codes from incoming
+messages!</p>
+<p>Note for Hexchat users: Hexchat doesn’t seem to have a simple way of doing this.
+If you figure it out, I’ll gladly add instructions here.</p>
+<p>Keep in mind that if you are not on duty (see below) you will <em>not</em> get case
+announcements.</p>
 <h2 id="announcing-your-nearest-cmdr">Announcing Your Nearest CMDR<a class="headerlink" href="#announcing-your-nearest-cmdr" title="Permanent link">¶</a></h2>
 <p>In case you have more than one CMDR registered as a Fuel Rat you can have
 VoiceAttack announce the nearest one to a case and the distance. You will have
