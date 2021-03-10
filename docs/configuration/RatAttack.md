@@ -8,6 +8,10 @@ and an optional boolean as second argument that triggers a TTS case
 announcement. You can find it under your VoiceAttack “Apps” folder,
 `\alterNERDtive\RatAttack-cli.exe`.
 
+**Note**: If you are running VoiceAttack as admin, you need to run your IRC
+client as admin, too! Otherwise they cannot communicate. In general you want to
+run both with normal privileges.
+
 This has two purposes:
 
 1. Announcing a new incoming case (if passing `true` as second argument).
@@ -37,7 +41,15 @@ command invocation.
 You get the gist; if not and you don’t know how to do the same thing for your
 IRC client, either switch to AdiIRC or bribe me to make an example for yours.
 
-Note: If you are not on duty (see below) you will _not_ get case announcements.
+mIRC is a straight forward copy & paste job from Adi to mIRC (“Tools” → “Script
+Editor” → “Remote”). Make sure you do not strip colour codes from incoming
+messages!
+
+Note for Hexchat users: Hexchat doesn’t seem to have a simple way of doing this.
+If you figure it out, I’ll gladly add instructions here.
+
+Keep in mind that if you are not on duty (see below) you will _not_ get case
+announcements.
 
 ## Announcing Your Nearest CMDR
 
