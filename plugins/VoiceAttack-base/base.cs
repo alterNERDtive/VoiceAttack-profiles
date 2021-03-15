@@ -483,7 +483,7 @@ namespace alterNERDtive
             vaProxy.IntegerVariableChanged += new Action<String, int?, int?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
             vaProxy.TextVariableChanged += new Action<String, String, String, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
             VA.SetBoolean("alterNERDtive-base.initialized", true);
-            Commands.TriggerEvent("alterNERDtive-base.initialized", wait: false);
+            Commands.TriggerEvent("alterNERDtive-base.initialized", wait: false, logMissing: false);
             Log.Notice("Init successful.");
         }
 
