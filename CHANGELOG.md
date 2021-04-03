@@ -1,11 +1,19 @@
 # devel
 
+## EliteAttack 8.2.1
+
+### Fixed
+
+* No longer tries to auto-honk after a hyperdiction event.
+
 ## RatAttack 6.2.1
 
 ### Fixed
 
 * Fixed RATSIGNAL parsing for language strings that contain numbers (e.g.
   “es-419”).
+* Fixed RATSIGNAL parsing for “unknown system” (which contains a zero-width
+  space …)
 
 ### Changed
 
