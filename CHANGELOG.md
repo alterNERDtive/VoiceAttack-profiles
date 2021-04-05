@@ -15,6 +15,7 @@
 * Fixed RATSIGNAL parsing for “unknown system” (which contains a zero-width
   space …)
 * Fixed RATSIGNAL parsing for procedually generated landmark systems.
+* Fixed RATSIGNAL parsing landmark systems with alternate names.
 
 ### Changed
 
