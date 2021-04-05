@@ -14,6 +14,7 @@
   “es-419”).
 * Fixed RATSIGNAL parsing for “unknown system” (which contains a zero-width
   space …)
+* Fixed RATSIGNAL parsing for procedually generated landmark systems.
 
 ### Changed
 
