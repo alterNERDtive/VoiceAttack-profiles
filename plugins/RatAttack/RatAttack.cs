@@ -18,9 +18,7 @@ namespace RatAttack
         private static alterNERDtive.util.PipeServer<Ratsignal>? ratsignalPipe;
 
         private static readonly Regex RatsignalRegex = new Regex(
-            // Yes. There is a zero-width space in “unknown system”. Probably
-            // just so it doesn’t ping Mr. unknown in Fuelrats IRC m)
-            @"^RATSIGNAL - CMDR (?<cmdr>.+) - Reported System: (None|u\u200bnknown system|""(?<system>.+)""(\x0314)? \((?<systemInfo>([a-zA-Z0-9\s\(\)\-~]*([0-9,\.]+ LY (""[a-zA-Z\-]+"" of|from) [a-zA-Z0-9\s\*\-]+)?( \([a-zA-Z\s]+\))?|Not found in galaxy database|Invalid system name))\)(\x03)?(?<permit> \x037\(((?<permitName>.*) )?Permit Required\)\x03)?) - Platform: \x03(6|3|12)(?<platform>(PC|Xbox|Playstation))\x03 - O2: (\x034)?(?<oxygen>(NOT )?OK)\x03? - Language: (?<language>[a-zA-z0-9\x7f-\xff\-\(\)\s]+)( - IRC Nick (?<nick>[a-zA-Z0-9_\[\]\-]+))? \(\x02Case #(?<number>\d+)\x02\) \((PC|XB|PS)_SIGNAL\)\v*$"
+            @"^RATSIGNAL Case #(?<number>\d+) (?<platform>(PC|Xbox|Playstation))(?<oxygen> \(Code Red\))? – CMDR (?<cmdr>.+) – System: (None|u\u200bnknown system|""(?<system>.+)"" \((?<systemInfo>([a-zA-Z0-9\s\(\)\-~]*([0-9,\.]+ LY (""[a-zA-Z\-]+"" of|from) [a-zA-Z0-9\s\*\-]+)?( \([a-zA-Z\s]+\))?|Not found in galaxy database|Invalid system name))\)(?<permit> \(((?<permitName>.*) )?Permit Required\))?) – Language: (?<language>[a-zA-z0-9\x7f-\xff\-\(\)\s]+)( – Nick: (?<nick>[a-zA-Z0-9_\[\]\-]+))? \((PC|XB|PS)_SIGNAL\)\v*$"
             );
 
         private static VoiceAttackLog Log

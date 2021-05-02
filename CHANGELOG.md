@@ -1,15 +1,23 @@
 # devel
 
+Changes to the RATSIGNAL produced by Swiftsqueak broke not only the parsing, but
+also the default string used to detect them in AdiIRC. You’ll need to listen to
+`on *:TEXT:*RATSIGNAL*(??_SIGNAL):#fuelrats:` instead.
+
 ## EliteAttack 8.2.1
 
 ### Fixed
 
 * No longer tries to auto-honk after a hyperdiction event.
+* On-demand outdated station check works again. (#108)
 
 ## RatAttack 6.2.1
 
 ### Fixed
 
+* Fixed RATSIGNAL parsing for new format. Needs adjusting your IRC client, see
+  above. IRC formatting will now be stripped before sending to VoiceAttack.
+  (#111)
 * Fixed RATSIGNAL parsing for language strings that contain numbers (e.g.
   “es-419”).
 * Fixed RATSIGNAL parsing for “unknown system” (which contains a zero-width

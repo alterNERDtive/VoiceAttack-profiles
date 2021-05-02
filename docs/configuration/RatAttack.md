@@ -21,7 +21,7 @@ This has two purposes:
 For my AdiIRC, it looks like this (obviously change the path, please):
 
 ```adiirc
-on *:TEXT:RATSIGNAL - CMDR*(??_SIGNAL):#fuelrats:{
+on *:TEXT:*RATSIGNAL*(??_SIGNAL):#fuelrats:{
   if ( $away ) {
     /run -h "X:\path\to\VoiceAttack\Apps\alterNERDtive\RatAttack-cli.exe" " $+ $replace($1-,","") $+ " false
   }
