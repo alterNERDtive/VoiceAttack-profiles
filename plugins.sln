@@ -13,6 +13,35 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EliteAttack", "plugins\Elit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpanshAttack", "plugins\SpanshAttack\SpanshAttack.csproj", "{D2047704-696B-4665-8D37-3AD298A8B9F9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C2B4D94B-8D73-431A-880B-B1E7ADF064B2}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{5401ADF7-CB6D-448B-A4AC-D8A17B2D841F}"
+	ProjectSection(SolutionItems) = preProject
+		docs\EliteAttack.md = docs\EliteAttack.md
+		docs\general.md = docs\general.md
+		docs\index.md = docs\index.md
+		docs\installing.md = docs\installing.md
+		docs\RatAttack.md = docs\RatAttack.md
+		docs\requirements.md = docs\requirements.md
+		docs\SpanshAttack.md = docs\SpanshAttack.md
+		docs\StreamAttack.md = docs\StreamAttack.md
+		docs\troubleshooting.md = docs\troubleshooting.md
+		docs\upgrading.md = docs\upgrading.md
+		docs\VoiceAttack.md = docs\VoiceAttack.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configuration", "configuration", "{1AFD9AE6-7D22-4EF4-B0DE-51C9E91370FB}"
+	ProjectSection(SolutionItems) = preProject
+		docs\configuration\EliteAttack.md = docs\configuration\EliteAttack.md
+		docs\configuration\general.md = docs\configuration\general.md
+		docs\configuration\RatAttack.md = docs\configuration\RatAttack.md
+		docs\configuration\SpanshAttack.md = docs\configuration\SpanshAttack.md
+		docs\configuration\StreamAttack.md = docs\configuration\StreamAttack.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +71,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5401ADF7-CB6D-448B-A4AC-D8A17B2D841F} = {C2B4D94B-8D73-431A-880B-B1E7ADF064B2}
+		{1AFD9AE6-7D22-4EF4-B0DE-51C9E91370FB} = {5401ADF7-CB6D-448B-A4AC-D8A17B2D841F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {339E6747-C7BF-43C3-99C6-9249C9849A84}

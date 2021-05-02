@@ -1,0 +1,5 @@
+[*]
+guidelines = 80
+
+[*.cs]
+guidelines = 80, 120
