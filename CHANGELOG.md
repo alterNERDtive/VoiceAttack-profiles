@@ -1,4 +1,8 @@
-# devel
+# 4.2.1 (2021-05-03)
+
+This will probably be the last pre-Odyssey release. I am not in the Odyssey
+alpha, and I have no ETA on a compatibility release. Please do file issues you
+encounter regardless.
 
 Changes to the RATSIGNAL produced by Swiftsqueak broke not only the parsing, but
 also the default string used to detect them in AdiIRC. You’ll need to listen to
