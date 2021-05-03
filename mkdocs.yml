@@ -13,9 +13,9 @@ theme:
 plugins:
     - search
     - roamlinks
-    - mkpdfs:
-        author: 'alterNERDtive'
-        output_path: 'pdf/Profiles Documentation.pdf'
+    # - mkpdfs:
+    #     author: 'alterNERDtive'
+    #     output_path: 'pdf/Profiles Documentation.pdf'
 
 markdown_extensions:
     - toc:
