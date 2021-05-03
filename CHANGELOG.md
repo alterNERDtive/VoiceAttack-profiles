@@ -14,7 +14,8 @@ also the default string used to detect them in AdiIRC. You’ll need to listen t
 
 ### Fixed
 
-* No longer tries to auto-honk after a hyperdiction event.
+* ~~No longer tries to auto-honk after a hyperdiction event. (#105)~~ Sadly
+  doesn’t quite work, yet.
 * On-demand outdated station check works again. (#108)
 
 ## RatAttack 6.2.1
