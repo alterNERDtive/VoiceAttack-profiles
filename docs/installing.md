@@ -4,9 +4,13 @@
 
 Grab the [most recent VoiceAttack beta
 version](https://voiceattack.com/#download-1) off the official site and install
-it. Right now 32bit vs. 64bit does not make any difference, but there is no
-reason not to choose 64bit unless you are running a 32bit version of Windows (is
-that even still a thing?).
+it.
+
+**Not on 32- vs. 64-bit:** If you are using any TTS voices that do not have a
+64-bit version, choose 32-bit VoiceAttack. If you are planning on using
+something that _requires_ 64-bit (e.g. a plugin interfacing with the latest MS
+Flight Simulator), choose the 64-bit version. Otherwise it doesn’t really
+matter, and personally I default to 64-bit if available.
 
 If you are using the standalone version you should probably download the
 executable installer. If you are using the Steam version of VoiceAttack, you

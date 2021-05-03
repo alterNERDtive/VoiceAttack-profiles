@@ -4,6 +4,12 @@ Changes to the RATSIGNAL produced by Swiftsqueak broke not only the parsing, but
 also the default string used to detect them in AdiIRC. You’ll need to listen to
 `on *:TEXT:*RATSIGNAL*(??_SIGNAL):#fuelrats:` instead.
 
+## Documentation
+
+* Reworded the 32- vs. 64-bit part of the VoiceAttack installation instructions.
+  Some scenarios require one or the other, otherwise it probably doesn’t matter
+  which you pick.
+
 ## EliteAttack 8.2.1
 
 ### Fixed
