@@ -16,6 +16,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C2B4D94B-8D73-431A-880B-B1E7ADF064B2}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		VERSION = VERSION
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{5401ADF7-CB6D-448B-A4AC-D8A17B2D841F}"
