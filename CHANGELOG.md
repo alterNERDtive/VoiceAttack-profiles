@@ -1,4 +1,4 @@
-# devel
+# 4.2.2 (2021-05-19)
 
 Now comes with Odyssey-compatible bindED.
 
