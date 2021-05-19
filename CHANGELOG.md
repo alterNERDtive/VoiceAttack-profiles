@@ -1,5 +1,11 @@
 # devel
 
+Now comes with Odyssey-compatible bindED.
+
+**DO read [the release notes on
+that](https://github.com/alterNERDtive/bindED/releases/tag/release/4.0) before
+upgrading!**
+
 ## RatAttack 6.2.2
 
 ### Fixed
