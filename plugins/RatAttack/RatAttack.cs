@@ -98,7 +98,7 @@ namespace RatAttack
             bool permitLocked = match.Groups["permit"].Success;
             string? permitName = match.Groups["permitName"].Value;
             string platform = match.Groups["platform"].Value;
-            bool codeRed = match.Groups["oxygen"].Value == "NOT OK";
+            bool codeRed = match.Groups["oxygen"].Success;
             bool odyssey = match.Groups["odyssey"].Success;
 
             int number = int.Parse(match.Groups["number"].Value);

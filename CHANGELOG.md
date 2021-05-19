@@ -7,6 +7,8 @@
 * Added handling for Odyssey clients. (#114)
 * Correctly setting system for manual Ratsignals (`""`) to `None` now. IMO a
   Mecha bug, but whatever.
+* Code reds are now correctly detected again with the new case announcement
+  format. (#115)
 
 -----
 
