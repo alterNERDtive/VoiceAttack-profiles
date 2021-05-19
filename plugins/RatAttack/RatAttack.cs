@@ -103,6 +103,11 @@ namespace RatAttack
 
             int number = int.Parse(match.Groups["number"].Value);
 
+            if (String.IsNullOrEmpty(system))
+            {
+                system = "None";
+            }
+
             Log.Debug($"New rat case: CMDR “{cmdr}” in “{system}”{(systemInfo != null ? $" ({systemInfo})" : "")} on {platform}{(odyssey ? " (Odyssey)" : "")}, permit locked: {permitLocked}{(permitLocked && permitName != null ? $" (permit name: {permitName})" : "")}, code red: {codeRed} (#{number}).");
 
             CaseList[number] = new RatCase(cmdr, language, system, systemInfo, permitLocked, permitName, platform, odyssey, codeRed, number);

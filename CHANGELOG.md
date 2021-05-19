@@ -5,6 +5,8 @@
 ### Fixed
 
 * Added handling for Odyssey clients. (#114)
+* Correctly setting system for manual Ratsignals (`""`) to `None` now. IMO a
+  Mecha bug, but whatever.
 
 -----
 
