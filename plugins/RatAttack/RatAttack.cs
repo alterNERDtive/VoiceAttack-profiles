@@ -18,7 +18,7 @@ namespace RatAttack
         private static alterNERDtive.util.PipeServer<Ratsignal>? ratsignalPipe;
 
         private static readonly Regex RatsignalRegex = new Regex(
-            @"^RATSIGNAL Case #(?<number>\d+) (?<platform>(PC|Xbox|Playstation))(?<oxygen> \(Code Red\))? – CMDR (?<cmdr>.+) – System: (None|u\u200bnknown system|""(?<system>.+)"" \((?<systemInfo>([a-zA-Z0-9\s\(\)\-~]*([0-9,\.]+ LY (""[a-zA-Z\-]+"" of|from) [a-zA-Z0-9\s\*\-]+)?( \([a-zA-Z\s]+\))?|Not found in galaxy database|Invalid system name))\)(?<permit> \(((?<permitName>.*) )?Permit Required\))?) – Language: (?<language>[a-zA-z0-9\x7f-\xff\-\(\)\s]+)( – Nick: (?<nick>[a-zA-Z0-9_\[\]\-]+))? \((PC|XB|PS)_SIGNAL\)\v*$"
+            @"^RATSIGNAL Case #(?<number>\d+) (?<platform>(PC|Xbox|Playstation))(?<oxygen> \(Code Red\))?(?<odyssey> \(Odyssey\))? – CMDR (?<cmdr>.+) – System: (None|u\u200bnknown system|""(?<system>.+)"" \((?<systemInfo>([a-zA-Z0-9\s\(\)\-~]*([0-9,\.]+ LY (""[a-zA-Z\-]+"" of|from) [a-zA-Z0-9\s\*\-]+)?( \([a-zA-Z\s]+\))?|Not found in galaxy database|Invalid system name))\)(?<permit> \(((?<permitName>.*) )?Permit Required\))?) – Language: (?<language>[a-zA-z0-9\x7f-\xff\-\(\)\s]+)( – Nick: (?<nick>[a-zA-Z0-9_\[\]\-]+))? \((PC|XB|PS)_SIGNAL\)\v*$"
             );
 
         private static VoiceAttackLog Log
@@ -38,15 +38,16 @@ namespace RatAttack
             public bool PermitLocked;
             public string? PermitName;
             public string Platform;
+            public bool Odyssey;
             public bool CodeRed;
             public int Number;
 
-            public RatCase(string cmdr, string? language, string? system, string? systemInfo, bool permitLocked, string? permitName, string platform, bool codeRed, int number)
-                => (Cmdr, Language, System, SystemInfo, PermitLocked, PermitName, Platform, CodeRed, Number) = (cmdr, language, system, systemInfo, permitLocked, permitName, platform, codeRed, number);
+            public RatCase(string cmdr, string? language, string? system, string? systemInfo, bool permitLocked, string? permitName, string platform, bool odyssey, bool codeRed, int number)
+                => (Cmdr, Language, System, SystemInfo, PermitLocked, PermitName, Platform, Odyssey, CodeRed, Number) = (cmdr, language, system, systemInfo, permitLocked, permitName, platform, odyssey, codeRed, number);
 
             public string ShortInfo
             {
-                get => $"#{Number}, {Platform}{(CodeRed ? ", code red" : "")}, {System ?? "None"}{(SystemInfo != null ? $" ({SystemInfo}{(PermitLocked ? ", permit required" : "")})" : "")}";
+                get => $"#{Number}, {Platform}{(Odyssey ? " (Odyssey)" : "")}{(CodeRed ? ", code red" : "")}, {System ?? "None"}{(SystemInfo != null ? $" ({SystemInfo}{(PermitLocked ? ", permit required" : "")})" : "")}";
             }
 
             public override string ToString()
@@ -98,12 +99,13 @@ namespace RatAttack
             string? permitName = match.Groups["permitName"].Value;
             string platform = match.Groups["platform"].Value;
             bool codeRed = match.Groups["oxygen"].Value == "NOT OK";
+            bool odyssey = match.Groups["odyssey"].Success;
 
             int number = int.Parse(match.Groups["number"].Value);
 
-            Log.Debug($"New rat case: CMDR “{cmdr}” in “{system}”{(systemInfo != null ? $" ({systemInfo})" : "")} on {platform}, permit locked: {permitLocked}{(permitLocked && permitName != null ? $" (permit name: {permitName})" : "")}, code red: {codeRed} (#{number}).");
+            Log.Debug($"New rat case: CMDR “{cmdr}” in “{system}”{(systemInfo != null ? $" ({systemInfo})" : "")} on {platform}{(odyssey ? " (Odyssey)" : "")}, permit locked: {permitLocked}{(permitLocked && permitName != null ? $" (permit name: {permitName})" : "")}, code red: {codeRed} (#{number}).");
 
-            CaseList[number] = new RatCase(cmdr, language, system, systemInfo, permitLocked, permitName, platform, codeRed, number);
+            CaseList[number] = new RatCase(cmdr, language, system, systemInfo, permitLocked, permitName, platform, odyssey, codeRed, number);
 
             return number;
         }
@@ -202,6 +204,7 @@ namespace RatAttack
                 vaProxy.SetBoolean("~~permitLocked", rc?.PermitLocked);
                 vaProxy.SetText("~~permitName", rc?.PermitName);
                 vaProxy.SetText("~~platform", rc?.Platform);
+                vaProxy.SetBoolean("~~odyssey", rc?.Odyssey);
                 vaProxy.SetBoolean("~~codeRed", rc?.CodeRed);
             }
             else
@@ -251,7 +254,7 @@ namespace RatAttack
         | required VoiceAttack plugin shenanigans |
         \========================================*/
 
-        static readonly Version VERSION = new Version("6.2.1");
+        static readonly Version VERSION = new Version("6.2.2");
 
         public static Guid VA_Id()
             => new Guid("{F2ADF0AE-4837-4E4A-9C87-8A7E2FA63E5F}");

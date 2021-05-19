@@ -1,3 +1,13 @@
+# devel
+
+## RatAttack 6.2.2
+
+### Fixed
+
+* Added handling for Odyssey clients. (#114)
+
+-----
+
 # 4.2.1 (2021-05-03)
 
 This will probably be the last pre-Odyssey release. I am not in the Odyssey
