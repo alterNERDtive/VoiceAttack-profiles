@@ -1,3 +1,11 @@
+# 4.2.3 (2021-05-23)
+
+Updated included bindED plugin to version 4.1 that fixes Odyssey compatibility.
+
+No actual code / profile changes.
+
+-----
+
 # 4.2.2 (2021-05-19)
 
 Now comes with Odyssey-compatible bindED.
