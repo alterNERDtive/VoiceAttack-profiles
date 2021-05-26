@@ -1,3 +1,13 @@
+# devel
+
+## RatAttack 6.2.3
+
+### Fixed
+
+* No longer trying to get nearest CMDR for the new “Unconfirmed” system info.
+
+-----
+
 # 4.2.3 (2021-05-23)
 
 Updated included bindED plugin to version 4.1 that fixes Odyssey compatibility.
