@@ -1,142 +1,168 @@
 <!DOCTYPE html>
-
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
-<meta charset="utf-8"/>
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="alterNERDtive" name="author"/>
-<link href="https://alterNERDtive.github.io/VoiceAttack-profiles/upgrading/" rel="canonical"/>
-<link href="../img/favicon.ico" rel="shortcut icon"/>
-<title>Upgrading - alterNERDtive VA profiles</title>
-<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet">
-<link href="../css/theme.css" rel="stylesheet">
-<link href="../css/theme_extra.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet"/>
-<script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="alterNERDtive">
+  <link rel="canonical" href="https://alterNERDtive.github.io/VoiceAttack-profiles/upgrading/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Upgrading - alterNERDtive VA profiles</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
     // Current page data
     var mkdocs_page_name = "Upgrading";
     var mkdocs_page_input_path = "upgrading.md";
     var mkdocs_page_url = "/VoiceAttack-profiles/upgrading/";
   </script>
-<script defer="" src="../js/jquery-2.1.1.min.js"></script>
-<script defer="" src="../js/modernizr-2.8.3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</link></link></head>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
 <body class="wy-body-for-nav" role="document">
-<div class="wy-grid-for-nav">
-<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
-<div class="wy-side-scroll">
-<div class="wy-side-nav-search">
-<a class="icon icon-home" href=".."> alterNERDtive VA profiles</a>
-<div role="search">
-<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
-<input name="q" placeholder="Search docs" title="Type search term here" type="text"/>
-</form>
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> alterNERDtive VA profiles</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
 </div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Install</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../requirements/">Requirements</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../installing/">Installing</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Upgrading</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#3xx-to-4xx">3.x.x to 4.x.x</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#binded">bindED</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#elitedangerous">EliteDangerous</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ratattack">RatAttack</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#getting-case-data-from-irc">Getting Case Data From IRC</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#nearest-cmdr-announcements">Nearest CMDR Announcements</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Configure</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/general/">General Configuration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/EliteAttack/">EliteAttack</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/RatAttack/">RatAttack</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/SpanshAttack/">SpanshAttack</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/StreamAttack/">StreamAttack</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Use</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../general/">General Commands</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../EliteAttack/">EliteAttack</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../RatAttack/">RatAttack</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../SpanshAttack/">SpanshAttack</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../StreamAttack/">StreamAttack</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Issues</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../troubleshooting/">Troubleshooting</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/alterNERDtive/VoiceAttack-profiles/issues/">Report a Bug</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Watch in Action</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="https://twitch.tv/alterNERDtive">Twitch</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://www.youtube.com/channel/UC3XNZA7xWed1zM1AWOOdmog">Youtube</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">alterNERDtive VA profiles</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Install &raquo;</li>
+        
+      
+    
+    <li>Upgrading</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/alterNERDtive/VoiceAttack-profiles/edit/devel/docs/upgrading.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+        <a href="../configuration/general/" class="btn btn-neutral float-right" title="General Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../installing/" class="btn btn-neutral" title="Installing"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+  
+  <hr/>
 </div>
-<div aria-label="main navigation" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="..">Home</a>
-</li>
-</ul>
-<p class="caption"><span class="caption-text">Install</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../requirements/">Requirements</a>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../installing/">Installing</a>
-</li>
-<li class="toctree-l1 current"><a class="reference internal current" href="./">Upgrading</a>
-<ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="#3xx-to-4xx">3.x.x to 4.x.x</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#binded">bindED</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#elitedangerous">EliteDangerous</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#ratattack">RatAttack</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#getting-case-data-from-irc">Getting Case Data From IRC</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#nearest-cmdr-announcements">Nearest CMDR Announcements</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p class="caption"><span class="caption-text">Configure</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../configuration/general/">General Configuration</a>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration/EliteAttack/">EliteAttack</a>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration/RatAttack/">RatAttack</a>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration/SpanshAttack/">SpanshAttack</a>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration/StreamAttack/">StreamAttack</a>
-</li>
-</ul>
-<p class="caption"><span class="caption-text">Use</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/">General Commands</a>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../EliteAttack/">EliteAttack</a>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../RatAttack/">RatAttack</a>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../SpanshAttack/">SpanshAttack</a>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../StreamAttack/">StreamAttack</a>
-</li>
-</ul>
-<p class="caption"><span class="caption-text">Issues</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/">Troubleshooting</a>
-</li>
-<li class="toctree-l1"><a class="" href="https://github.com/alterNERDtive/VoiceAttack-profiles/issues/">Report a Bug</a>
-</li>
-</ul>
-<p class="caption"><span class="caption-text">Watch in Action</span></p>
-<ul>
-<li class="toctree-l1"><a class="" href="https://twitch.tv/alterNERDtive">Twitch</a>
-</li>
-<li class="toctree-l1"><a class="" href="https://www.youtube.com/channel/UC3XNZA7xWed1zM1AWOOdmog">Youtube</a>
-</li>
-</ul>
-</div>
-</div>
-</nav>
-<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
-<nav aria-label="top navigation" class="wy-nav-top" role="navigation">
-<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
-<a href="..">alterNERDtive VA profiles</a>
-</nav>
-<div class="wy-nav-content">
-<div class="rst-content">
-<div aria-label="breadcrumbs navigation" role="navigation">
-<ul class="wy-breadcrumbs">
-<li><a href="..">Docs</a> »</li>
-<li>Install »</li>
-<li>Upgrading</li>
-<li class="wy-breadcrumbs-aside">
-<a class="icon icon-github" href="https://github.com/alterNERDtive/VoiceAttack-profiles/edit/devel/docs/upgrading.md"> Edit on GitHub</a>
-</li>
-</ul>
-<div aria-label="breadcrumb navigation" class="rst-breadcrumbs-buttons" role="navigation">
-<a class="btn btn-neutral float-right" href="../configuration/general/" title="General Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
-<a class="btn btn-neutral" href="../installing/" title="Installing"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-</div>
-<hr/>
-</div>
-<div role="main"><a class="md-content__icon pdf-download-btn" download href="../pdf/Profiles Documentation.pdf" title="Download"><i class="fa fas fa-download"></i><small> PDF</small></a>
-<div class="section">
-<h1 id="upgrading">Upgrading<a class="headerlink" href="#upgrading" title="Permanent link">¶</a></h1>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="upgrading">Upgrading<a class="headerlink" href="#upgrading" title="Permanent link">&para;</a></h1>
 <p>To upgrade to the latest version, follow these simple steps:</p>
 <ol>
 <li>Say “download profiles update”.</li>
@@ -149,7 +175,7 @@ is something you have to do manually you will find the necessary steps below.</p
 <p>You can find the full
 <a href="https://github.com/alterNERDtive/VoiceAttack-profiles/blob/release/CHANGELOG.md">Changelog</a>
 on Github.</p>
-<h2 id="3xx-to-4xx">3.x.x to 4.x.x<a class="headerlink" href="#3xx-to-4xx" title="Permanent link">¶</a></h2>
+<h2 id="3xx-to-4xx">3.x.x to 4.x.x<a class="headerlink" href="#3xx-to-4xx" title="Permanent link">&para;</a></h2>
 <p>If you have been using a custom profile as outlined in <a href="../installing/#create-a-custom-profile">Installing#Create a 
 Custom Profile</a> your settings will be migrated to the new variables
 automatically.</p>
@@ -160,14 +186,14 @@ recreate them after creating a custom profile and including everything.</p>
 (or any other, really). It <em>should</em> not break anything, but it might. And it is
 entirely unnecessary since configuration will be saved to and loaded from the
 profile anyway.</p>
-<h3 id="binded">bindED<a class="headerlink" href="#binded" title="Permanent link">¶</a></h3>
+<h3 id="binded">bindED<a class="headerlink" href="#binded" title="Permanent link">&para;</a></h3>
 <p>If you have done anything non-standard with bindED before, it might break. The
 profiles now include my fork of bindED which has a lot more features, but
 does no longer support a bunch of plugin invocations that have become obsolete.</p>
 <p>Please <a href="https://github.com/alterNERDtive/bindED/issues/new/choose">file an issue with
 bindED</a> on Github if
 your use case does not work anymore.</p>
-<h3 id="elitedangerous">EliteDangerous<a class="headerlink" href="#elitedangerous" title="Permanent link">¶</a></h3>
+<h3 id="elitedangerous">EliteDangerous<a class="headerlink" href="#elitedangerous" title="Permanent link">&para;</a></h3>
 <p>The “EliteDangerous” profile is no longer the main profile. Instead you will
 <em>have</em> to create a custom profile, and the new “base” profile that the others
 require to be included in your custom profile is “alterNERDtive-base”. That way
@@ -177,8 +203,8 @@ If you are upgrading from an older version the name will not change for you in
 the profiles list. I recommend renaming your “EliteDangerous” profile to
 “EliteAttack” to prevent confusion in the future, but it is not strictly
 necessary to do so.</p>
-<h3 id="ratattack">RatAttack<a class="headerlink" href="#ratattack" title="Permanent link">¶</a></h3>
-<h4 id="getting-case-data-from-irc">Getting Case Data From IRC<a class="headerlink" href="#getting-case-data-from-irc" title="Permanent link">¶</a></h4>
+<h3 id="ratattack">RatAttack<a class="headerlink" href="#ratattack" title="Permanent link">&para;</a></h3>
+<h4 id="getting-case-data-from-irc">Getting Case Data From IRC<a class="headerlink" href="#getting-case-data-from-irc" title="Permanent link">&para;</a></h4>
 <p>Handing a RATSIGNAL from IRC to VoiceAttack via text file is now deprecated and
 the feature will be removed in a future version.</p>
 <p>Instead you should use the new <code>RatAttack-cli.exe</code> helper tool that uses IPC to
@@ -191,10 +217,10 @@ list.</p>
 <p>For my AdiIRC, it looks like this (obviously change the path, please):</p>
 <pre><code class="language-adiirc">on *:TEXT:RATSIGNAL - CMDR*(??_SIGNAL):#fuelrats:{
   if ( $away ) {
-    /run -h "X:\path\to\VoiceAttack\Apps\alterNERDtive\RatAttack-cli.exe" " $+ $replace($1-,","") $+ " false
+    /run -h &quot;X:\path\to\VoiceAttack\Apps\alterNERDtive\RatAttack-cli.exe&quot; &quot; $+ $replace($1-,&quot;,&quot;&quot;) $+ &quot; false
   }
   else {
-    /run -h "X:\path\to\VoiceAttack\Apps\alterNERDtive\RatAttack-cli.exe" " $+ $replace($1-,","") $+ " true
+    /run -h &quot;X:\path\to\VoiceAttack\Apps\alterNERDtive\RatAttack-cli.exe&quot; &quot; $+ $replace($1-,&quot;,&quot;&quot;) $+ &quot; true
   }
 }
 </code></pre>
@@ -203,43 +229,64 @@ will announce it using TTS.</p>
 <p>The “replace” part handles the fact that announcements now put the system in
 quotes. They have to be escaped as double quotes (<code>""</code>) to create a correct
 command line invocation.</p>
-<h4 id="nearest-cmdr-announcements">Nearest CMDR Announcements<a class="headerlink" href="#nearest-cmdr-announcements" title="Permanent link">¶</a></h4>
+<h4 id="nearest-cmdr-announcements">Nearest CMDR Announcements<a class="headerlink" href="#nearest-cmdr-announcements" title="Permanent link">&para;</a></h4>
 <p>If you have RatAttack set up to announce your nearest commander to a case,
 you’ll have to change the setting to the new format, separated by <code>;</code> instead of
 whitespace.</p>
 <p>Say “customize setting set fuel rat commanders” to update it.</p>
-</div>
-</div>
-<footer>
-<div aria-label="footer navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-right" href="../configuration/general/" title="General Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
-<a class="btn btn-neutral" href="../installing/" title="Installing"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-</div>
-<hr/>
-<div role="contentinfo">
-<!-- Copyright etc -->
-</div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../configuration/general/" class="btn btn-neutral float-right" title="General Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../installing/" class="btn btn-neutral" title="Installing"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
 
   Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/alterNERDtive/VoiceAttack-profiles/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../installing/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../configuration/general/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
 </div>
-</div>
-</section>
-</div>
-<div aria-label="versions" class="rst-versions" role="note">
-<span class="rst-current-version" data-toggle="rst-current-version">
-<a class="fa fa-github" href="https://github.com/alterNERDtive/VoiceAttack-profiles/" style="float: left; color: #fcfcfc"> GitHub</a>
-<span><a href="../installing/" style="color: #fcfcfc;">« Previous</a></span>
-<span style="margin-left: 15px"><a href="../configuration/general/" style="color: #fcfcfc">Next »</a></span>
-</span>
-</div>
-<script>var base_url = '..';</script>
-<script defer="" src="../js/theme.js"></script>
-<script defer="" src="../search/main.js"></script>
-<script defer="">
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);
         };
     </script>
+
 </body>
 </html>
