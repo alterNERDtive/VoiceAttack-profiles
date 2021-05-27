@@ -6,7 +6,7 @@ Grab the [most recent VoiceAttack beta
 version](https://voiceattack.com/#download-1) off the official site and install
 it.
 
-**Not on 32- vs. 64-bit:** If you are using any TTS voices that do not have a
+**Note on 32- vs. 64-bit:** If you are using any TTS voices that do not have a
 64-bit version, choose 32-bit VoiceAttack. If you are planning on using
 something that _requires_ 64-bit (e.g. a plugin interfacing with the latest MS
 Flight Simulator), choose the 64-bit version. Otherwise it doesn’t really
