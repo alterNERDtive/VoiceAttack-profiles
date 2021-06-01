@@ -5,6 +5,7 @@
 ### Fixed
 
 * No longer trying to get nearest CMDR for the new “Unconfirmed” system info.
+* Fixed RATSIGNAL parsing for locales containing `&`.
 
 -----
 
