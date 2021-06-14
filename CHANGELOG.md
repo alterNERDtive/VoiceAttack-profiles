@@ -7,6 +7,12 @@
 * No longer trying to get nearest CMDR for the new “Unconfirmed” system info.
 * Fixed RATSIGNAL parsing for locales containing `&`.
 
+## SpanshAttack 7.2.1
+
+### Fixed
+
+* OBOE on last jump.
+
 -----
 
 # 4.2.3 (2021-05-23)
