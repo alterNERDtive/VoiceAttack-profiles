@@ -6,6 +6,8 @@
 
 * No longer trying to get nearest CMDR for the new “Unconfirmed” system info.
 * Fixed RATSIGNAL parsing for locales containing `&`.
+* Fixed RATSIGNAL parsing for system information containing `/` (e.g. “Herbig
+  AE/BE star”).
 
 ## SpanshAttack 7.2.1
 
