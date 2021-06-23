@@ -13,6 +13,10 @@ its contents.
 
 ![[VoiceAttack-download.png]]
 
+I’m usually incorporating beta features / fixes as soon as they are available.
+There might not be a beta version at the time you’re reading this, just get the
+full release then.
+
 [Here is the first hit on a Google search for finding the installation
 folder](https://steamcommunity.com/sharedfiles/filedetails/?id=760447682). It is
 for a completely unrelated game, but the steps are the same.

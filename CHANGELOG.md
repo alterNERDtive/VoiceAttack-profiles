@@ -1,5 +1,8 @@
 ﻿# devel
 
+* Updated documentation for the switch to 64-bit as the standard VoiceAttack
+  distribution format.
+
 ## RatAttack 6.2.3
 
 ### Fixed
