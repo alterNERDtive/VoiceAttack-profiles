@@ -1,5 +1,12 @@
 ﻿# devel
 
+**NOTE**: Further development is on hold and Odyssey compatibility will not be
+worked on for the time being. See [the corresponding issue on
+Github](https://github.com/alterNERDtive/VoiceAttack-profiles/issues/113). This
+might or might not change after the Horizons/Odyssey merge when console release
+is upon us. Feel free to file issues for anything that is broken on Odyssey and
+it will be worked on when it is worked on.
+
 * Updated documentation for the switch to 64-bit as the standard VoiceAttack
   distribution format.
 

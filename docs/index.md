@@ -1,9 +1,16 @@
-# Elite Dangerous VoiceAttack Profiles
+﻿# Elite Dangerous VoiceAttack Profiles
 
 These are various profiles for [VoiceAttack](https://voiceattack.com) (VA) I use 
 to enhance my Elite experience. They give me important info, facilitate 
 day-to-day gaming and do some special things for [Fuel 
 Rats](https://fuelrats.com) and [Hull Seals](https://hullseals.space) work.
+
+**NOTE**: Further development is on hold and Odyssey compatibility will not be
+worked on for the time being. See [the corresponding issue on
+Github](https://github.com/alterNERDtive/VoiceAttack-profiles/issues/113). This
+might or might not change after the Horizons/Odyssey merge when console release
+is upon us. Feel free to file issues for anything that is broken on Odyssey and
+it will be worked on when it is worked on.
 
 ## Available Profiles
 
