@@ -18,6 +18,7 @@ it will be worked on when it is worked on.
 * Fixed RATSIGNAL parsing for locales containing `&`.
 * Fixed RATSIGNAL parsing for system information containing `/` (e.g. “Herbig
   AE/BE star”).
+* “Not Set” case number when asking for details about an invalid case.
 
 ## SpanshAttack 7.2.1
 
