@@ -3,8 +3,8 @@
 To upgrade to the latest version, follow these simple steps:
 
 1. Say “download profiles update”.
-1. Put the `alterNERDtive-voiceattack-profiles.vax` file from Github into the
-   “Import” folder.
+1. Put the `alterNERDtive-voiceattack-profiles.vax` file from Github into
+   VoiceAttack’s “Import” folder.
 1. Restart VoiceAttack.
 
 In general, migration from old versions will be handled automatically. If there
@@ -70,7 +70,7 @@ list.
 For my AdiIRC, it looks like this (obviously change the path, please):
 
 ```adiirc
-on *:TEXT:RATSIGNAL - CMDR*(??_SIGNAL):#fuelrats:{
+on *:TEXT:*RATSIGNAL*(??_SIGNAL):#fuelrats:{
   if ( $away ) {
     /run -h "X:\path\to\VoiceAttack\Apps\alterNERDtive\RatAttack-cli.exe" " $+ $replace($1-,","") $+ " false
   }
@@ -83,8 +83,8 @@ on *:TEXT:RATSIGNAL - CMDR*(??_SIGNAL):#fuelrats:{
 If I am away it will just add the new case to the list. If I am not away, it
 will announce it using TTS.
 
-The “replace” part handles the fact that announcements now put the system in
-quotes. They have to be escaped as double quotes (`""`) to create a correct
+The `$replace` part handles the fact that case announcements now put the system
+in quotes. They have to be escaped as double quotes (`""`) to create a correct
 command line invocation.
 
 #### Nearest CMDR Announcements

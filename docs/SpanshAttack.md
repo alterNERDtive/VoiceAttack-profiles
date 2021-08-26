@@ -23,7 +23,7 @@ visit the site at any point.
 ### Plotting to a System Unknown to the Neutron Router
 
 The router can only plot a route to a system that is in its database (obviously 
-can also only give you way points that are). If your target system is not, there 
+can also only give you waypoints that are). If your target system is not, there 
 are several levels of fallback handling to find a system that is.
 
 1. Check `Next system` coordinates provided by EDDI. If the system is in EDSM, 
@@ -55,7 +55,7 @@ Additionally, you can use the `SpanshAttack.copyNextNeutronWaypoint`
 / `[get;copy] next neutron [waypoint;way point]` command to copy the next 
 neutron waypoint to the clipboard.
 
-### Skipping a waypoint
+### Skipping a Waypoint
 
 Sometimes, especially in very neutron-sparse areas of the galaxy, the plotter
 will give you weird jumps. E.g. I recently got neutron → 37 ly → neutron → 440

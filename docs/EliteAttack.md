@@ -167,6 +167,10 @@ The commands in here do random more or less useful things.
 
 ## Events
 
+This is a list of ingame Events, [provided by
+EDDI](https://github.com/EDCD/EDDI/wiki/VoiceAttack-Integration), that the
+profile will act on.
+
 ### AFMU Repairs
 
 Reports on the module that has been repaired, and if it has been fully or
