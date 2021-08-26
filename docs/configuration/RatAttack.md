@@ -69,7 +69,7 @@ You can use this for a single CMDR, too. A less convoluted setup for announcing
 the distance to your location in that case is on the list™ but does not have an
 ETA yet.
 
-Currently there is no way to specify a platform for each CMDR.
+Currently there is no way to specify a platform for each CMDR separately.
 
 ## Sending Text to FuelRats IRC
 

@@ -4,7 +4,7 @@
 
 Obviously you will need to install [VoiceAttack](https://voiceattack.com). There
 is a free trial version available, but that one is limited to a single profile
-and a few commands. This is 4 profiles and … a lot of commands. You will need the
+and a few commands. This is 5 profiles and … a lot of commands. You will need the
 full version, available for $10 (official site) or €11.99 (Steam, IIRC $14.99
 for our US-based friends).
 
@@ -31,7 +31,7 @@ explicitly states it you will _not_ have to run EDDI beta.
 
 ## bindED
 
-[bindED](https://github.com/alterNERDtive/bindED) reads your Elite Dangerous
+[bindED](https://alterNERDtive.github.io/bindED) reads your Elite Dangerous
 binding files and makes them available to VoiceAttack as variables. That way
 commands can be portable and you do not have to manually go through them and
 change any actions that you happen to not have the standard binds for.
@@ -57,4 +57,4 @@ The scripts are _included_ in the release package.
 with [Spansh’s neutron plotter](https://spansh.uk/plotter) and makes the result
 available to VoiceAttack.
 
-This will also eventually replaced by my own plugins.
+This will also eventually be replaced by my own plugins.
