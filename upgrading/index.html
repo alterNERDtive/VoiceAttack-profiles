@@ -168,8 +168,8 @@
 <p>To upgrade to the latest version, follow these simple steps:</p>
 <ol>
 <li>Say “download profiles update”.</li>
-<li>Put the <code>alterNERDtive-voiceattack-profiles.vax</code> file from Github into the
-   “Import” folder.</li>
+<li>Put the <code>alterNERDtive-voiceattack-profiles.vax</code> file from Github into
+   VoiceAttack’s “Import” folder.</li>
 <li>Restart VoiceAttack.</li>
 </ol>
 <p>In general, migration from old versions will be handled automatically. If there
@@ -217,7 +217,7 @@ the helper tool with a) the announcement and b) an optional true/false switch to
 determine if the case should be announced via TTS or just added to the case
 list.</p>
 <p>For my AdiIRC, it looks like this (obviously change the path, please):</p>
-<pre><code class="language-adiirc">on *:TEXT:RATSIGNAL - CMDR*(??_SIGNAL):#fuelrats:{
+<pre><code class="language-adiirc">on *:TEXT:*RATSIGNAL*(??_SIGNAL):#fuelrats:{
   if ( $away ) {
     /run -h &quot;X:\path\to\VoiceAttack\Apps\alterNERDtive\RatAttack-cli.exe&quot; &quot; $+ $replace($1-,&quot;,&quot;&quot;) $+ &quot; false
   }
@@ -228,8 +228,8 @@ list.</p>
 </code></pre>
 <p>If I am away it will just add the new case to the list. If I am not away, it
 will announce it using TTS.</p>
-<p>The “replace” part handles the fact that announcements now put the system in
-quotes. They have to be escaped as double quotes (<code>""</code>) to create a correct
+<p>The <code>$replace</code> part handles the fact that case announcements now put the system
+in quotes. They have to be escaped as double quotes (<code>""</code>) to create a correct
 command line invocation.</p>
 <h4 id="nearest-cmdr-announcements">Nearest CMDR Announcements<a class="headerlink" href="#nearest-cmdr-announcements" title="Permanent link">&para;</a></h4>
 <p>If you have RatAttack set up to announce your nearest commander to a case,

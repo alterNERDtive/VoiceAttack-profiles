@@ -58,6 +58,10 @@
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Installing</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#install-voiceattack">Install VoiceAttack</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#enable-plugin-support">Enable Plugin Support</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#install-eddi">Install EDDI</a>
     </li>
@@ -67,17 +71,17 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#create-a-custom-profile">Create a Custom Profile</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#create-a-new-profile">Create a New Profile</a>
+    <li class="toctree-l3"><a class="reference internal" href="#option-1-create-a-new-profile">Option 1: Create a New Profile</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#use-the-profile-example">Use the Profile Example</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#include-profiles">Include Profiles</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#create-a-startup-command">Create a Startup Command</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#set-profile-options">Set Profile Options</a>
+    <li class="toctree-l3"><a class="reference internal" href="#option-2-use-the-profile-example">Option 2: Use the Profile Example</a>
     </li>
         </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#include-profiles">Include Profiles</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#create-a-startup-command">Create a Startup Command</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#set-profile-options">Set Profile Options</a>
     </li>
         </ul>
     </li>
@@ -184,15 +188,16 @@ executable installer. If you are using the Steam version of VoiceAttack, you
 will have to download the zipped folder and replace your installed version with
 its contents.</p>
 <p><img alt="VoiceAttack-download.png" src="../images/VoiceAttack-download.png" /></p>
-<p>I’m usually incorporating beta features / fixes as soon as they are available.
-There might not be a beta version at the time you’re reading this, just get the
-full release then.</p>
+<p>If you are using the Steam version of VoiceAttack, you will have to download the
+zipped folder and replace your installed version with its contents.</p>
 <p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=760447682">Here is the first hit on a Google search for finding the installation
 folder</a>. It is
 for a completely unrelated game, but the steps are the same.</p>
 <p>You can potentially also install the latest non-beta version; but I often use
 features that have only just been added to the beta, so some things might break
-for you if you are not using that.</p>
+for you if you are not using that. There might not be a beta version at the time
+you’re reading this, just get the full release then.</p>
+<h3 id="enable-plugin-support">Enable Plugin Support<a class="headerlink" href="#enable-plugin-support" title="Permanent link">&para;</a></h3>
 <p>Make sure you have plugin support enabled:</p>
 <ol>
 <li>Go to VoiceAttack settings. <img alt="VoiceAttack-settings.png" src="../images/VoiceAttack-settings.png" /></li>
@@ -203,25 +208,24 @@ for you if you are not using that.</p>
 <p><img alt="VoiceAttack-settings-updates.png" src="../images/VoiceAttack-settings-updates.png" /></p>
 <h2 id="install-eddi">Install EDDI<a class="headerlink" href="#install-eddi" title="Permanent link">&para;</a></h2>
 <p>Install <a href="https://github.com/EDCD/EDDI/releases/latest">the latest release</a> from
-Github (The <code>EDDI-X.Y.Z.exe</code> under “Assets”). You will need to <a href="https://github.com/EDCD/EDDI/wiki/VoiceAttack-Integration#using-eddi-with-voiceattack">install it as a
-VoiceAttack
+Github (The <code>EDDI-X.Y.Z.exe</code> file under “Assets”). You will need to <a href="https://github.com/EDCD/EDDI/wiki/VoiceAttack-Integration#using-eddi-with-voiceattack">install it 
+as a VoiceAttack
 plugin</a>.</p>
 <p>If you do not want to install it into the VoiceAttack installation folder (or
-already have it installed somewhere else) you can also just create a symbolic
-link. Open a CMD prompt (Windows key + <code>R</code>, enter “cmd”, hit <code>Enter</code>) and do</p>
+already have it installed somewhere else) you can instead put it elsewhere and
+create a symbolic link. Open a command prompt (Windows key + <code>R</code>, enter “cmd”,
+hit <code>Enter</code>) and do</p>
 <pre><code class="language-cmd">&gt;cd x:\path\to\VoiceAttack\Apps
 &gt;mklink /J EDDI x:\path\to\EDDI
 </code></pre>
 <p>If you have installed the non-Steam version of VoiceAttack to the default folder
-within “ProgramFiles” you will have to run the CMD prompt as admin (Windows key
-+ <code>R</code>, enter “cmd”, hit <code>Control</code> + <code>Shift</code> + <code>Enter</code>).</p>
+within “ProgramFiles” you will have to run the command prompt as admin (Windows
+key + <code>R</code>, enter “cmd”, hit <code>Control</code> + <code>Shift</code> + <code>Enter</code>).</p>
 <h2 id="install-ed-neutronrouter">Install ED-NeutronRouter<a class="headerlink" href="#install-ed-neutronrouter" title="Permanent link">&para;</a></h2>
-<p><strong>Make sure to <a href="https://github.com/sc-pulgan/ED-NeutronRouter/releases/tag/1.02">grab the pre-release
-1.02</a></strong> since
-1.01 has a bug with a hardcoded 50 ly jump range (the
-<code>EDNeutronRouter.vX.YZ.zip</code> under “Assets”).</p>
-<p>You will have to extract the contents of the release .zip file to your
-VoiceAttack Apps folder:</p>
+<p><a href="https://github.com/sc-pulgan/ED-NeutronRouter/releases/latest">Grab the latest release release from 
+Github</a> (The 
+<code>EDNeutronRouter.vX.YZ.zip</code> under “Assets”). You will have to extract the 
+contents of the release .zip file to your VoiceAttack Apps folder:</p>
 <ol>
 <li>Go into VoiceAttack settings. <img alt="VoiceAttack-settings.png" src="../images/VoiceAttack-settings.png" /></li>
 <li>Click the folder set as “Apps Folder”. <img alt="VoiceAttack-apps.png" src="../images/VoiceAttack-apps.png" /></li>
@@ -235,7 +239,8 @@ are not naked files under “Apps”, but have their own folder
 <h2 id="import-profiles-package">Import Profiles Package<a class="headerlink" href="#import-profiles-package" title="Permanent link">&para;</a></h2>
 <p>Acquire <a href="https://github.com/alterNERDtive/VoiceAttack-profiles/releases/latest">the latest
 release</a>
-from Github (the <code>alterNERDtive-voiceattack-profiles.vax</code> file under “Assets”).</p>
+from Github (the <code>alterNERDtive-voiceattack-profiles.vax</code> file under “Assets”).
+Put it into VoiceAttack’s “Import” folder:</p>
 <ol>
 <li>Go into VoiceAttack settings. <img alt="VoiceAttack-settings.png" src="../images/VoiceAttack-settings.png" /></li>
 <li>Click the folder set as “Apps Folder”. <img alt="VoiceAttack-apps.png" src="../images/VoiceAttack-apps.png" /></li>
@@ -251,14 +256,14 @@ the profiles that you want to change and add voice triggers or hotkeys.</p>
 <p>You can either use an existing profile, create a new one or use the provided
 profile example as a basis. Regardless of which way you choose, make sure to
 read the <a href="#include-profiles">#Include Profiles</a> section and follow the instructions there!</p>
-<h3 id="create-a-new-profile">Create a New Profile<a class="headerlink" href="#create-a-new-profile" title="Permanent link">&para;</a></h3>
+<h3 id="option-1-create-a-new-profile">Option 1: Create a New Profile<a class="headerlink" href="#option-1-create-a-new-profile" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click the “Profile Actions” button, then “Create New Profile”.
    <img alt="VoiceAttack-new-profile.png" src="../images/VoiceAttack-new-profile.png" /></li>
 <li>Give it a name and add some commands if you want to.</li>
 <li>Hit “Done” to create the new profile.</li>
 </ol>
-<h3 id="use-the-profile-example">Use the Profile Example<a class="headerlink" href="#use-the-profile-example" title="Permanent link">&para;</a></h3>
+<h3 id="option-2-use-the-profile-example">Option 2: Use the Profile Example<a class="headerlink" href="#option-2-use-the-profile-example" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click the “Profile Actions” button, then “Import Profile”.
    <img alt="VoiceAttack-import-profile.png" src="../images/VoiceAttack-import-profile.png" /></li>
@@ -269,7 +274,7 @@ read the <a href="#include-profiles">#Include Profiles</a> section and follow th
 <p>Once you are done with the setup and configuration process, you can find a bunch
 of example commands with comments on how to do things in this profile. Make sure
 to also rename it to something more exciting than “Custom Profile Example”!</p>
-<h3 id="include-profiles">Include Profiles<a class="headerlink" href="#include-profiles" title="Permanent link">&para;</a></h3>
+<h2 id="include-profiles">Include Profiles<a class="headerlink" href="#include-profiles" title="Permanent link">&para;</a></h2>
 <p>In order to use my profiles with your custom profile, you will need to take two
 additional steps:</p>
 <ol>
@@ -310,13 +315,13 @@ button.</p>
 <p>Add all my profiles (“alterNERDtive-base”, “EliteDangerous”, “RatAttack”,
 “SpanshAttack”,“StreamAttack”).</p>
 <p><img alt="VoiceAttack-profile-options-includelist.png" src="../images/VoiceAttack-profile-options-includelist.png" /></p>
-<p>Technically you can leave out anything you are not planning on using.
-Practically it probably will not hurt you to just include everything, and it
-will then available for you in the future if you choose to check it out! Make
-sure that “alterNERDtive-base” is on top of the list, the order of the others
-does not matter. But I like it nice and alphabetical …</p>
-<p>Now switch to the “Profile Exec” tab. Tick the “Execute a command each time this 
-profile is loaded” checkbox, and select the “startup” command you have created 
+<p>Make sure that “alterNERDtive-base” is on top of the list, the order of the
+others does not matter. But I like it nice and alphabetical. Technically you can
+leave out any profile you are not planning to use. Practically it probably will
+not hurt you to just include everything, and it will then be available for you
+in the future should you choose to check it out!</p>
+<p>Now switch to the “Profile Exec” tab. Tick the “Execute a command each time this
+profile is loaded” checkbox, and select the “startup” command you have created
 earlier.</p>
 <p><img alt="VoiceAttack-profile-options-startup.png" src="../images/VoiceAttack-profile-options-startup.png" /></p>
 <h2 id="set-elite-keyboard-binds">Set Elite Keyboard Binds<a class="headerlink" href="#set-elite-keyboard-binds" title="Permanent link">&para;</a></h2>
@@ -328,12 +333,12 @@ HOTAS. Or racing wheel. Or Rock Band set. Or bananas.</p>
 <p><img alt="Elite-binds.png" src="../images/Elite-binds.png" /></p>
 <p>Should you use a keyboard layout that is <em>not</em> en-US QWERTY, some keys might not
 work out of the box. You can try telling bindED about your keyboard layout by
-setting the <code>bindED.layout#</code> variable (including the #!) to something more
+setting the <code>bindED.layout#</code> variable (including the <code>#</code>!) to something more
 appropriate in your startup command.</p>
 <p><img alt="bindED-layout.png" src="../images/bindED-layout.png" /></p>
-<p>Currently bindED supports the <code>en-US</code>, <code>en-GB</code> and <code>de-Neo2</code> layouts. <a href="https://github.com/alterNERDtive/bindED/wiki/Keyboard-Layouts">You can
-find instructions on how to add your own on
-Github</a>.</p>
+<p>Currently bindED supports the <code>en-US</code>, <code>en-GB</code> and <code>de-Neo2</code> layouts. <a href="https://alternerdtive.github.io/bindED/troubleshooting/#adding-a-keyboard-layout">You can
+find instructions on how to add your own 
+here</a>.</p>
               
             </div>
           </div>
