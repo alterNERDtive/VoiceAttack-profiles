@@ -10,6 +10,12 @@ it will be worked on when it is worked on.
 * Updated documentation for the switch to 64-bit as the standard VoiceAttack
   distribution format.
 
+## EliteAttack 8.2.2
+
+### Added
+
+* INFO logging for carrier events.
+
 ## RatAttack 6.2.3
 
 ### Fixed

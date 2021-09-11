@@ -58,7 +58,7 @@ namespace EliteAttack
         | required VoiceAttack plugin shenanigans |
         \========================================*/
 
-        static readonly Version VERSION = new Version("8.2.1");
+        static readonly Version VERSION = new Version("8.2.2");
 
         public static Guid VA_Id()
             => new Guid("{5B46321D-2935-4550-BEEA-36C2145547B8}");
