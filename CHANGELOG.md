@@ -18,6 +18,11 @@ it will be worked on when it is worked on.
 
 ## RatAttack 6.2.3
 
+### Added
+
+* Now gives feedback after asking for call confirmation: “Call aborted.”
+  “Calling <…>.”.
+
 ### Fixed
 
 * No longer trying to get nearest CMDR for the new “Unconfirmed” system info.
