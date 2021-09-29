@@ -205,6 +205,14 @@ HOTAS. Or racing wheel. Or Rock Band set. Or bananas.
 
 ![[Elite-binds.png]]
 
+For the “Galaxy Map” section, make sure that the bindings do not conflict with
+the ones in the “Interface Mode” section. The map bindings take precedence and a
+conflict leads to VoiceAttack being unable to target systems for you. In that
+case you would see it open the map for you and then wiggle the view for a split
+second instead of switching tabs over to the system search.
+
+![[Elite-binds-galmap.png]]
+
 Should you use a keyboard layout that is _not_ en-US QWERTY, some keys might not
 work out of the box. You can try telling bindED about your keyboard layout by
 setting the `bindED.layout#` variable (including the `#`!) to something more
