@@ -29,6 +29,10 @@ as a VoiceAttack plugin.
 EDDI also regularly publishes beta versions. Unless a profiles release
 explicitly states it you will _not_ have to run EDDI beta.
 
+Do note that the profiles put EDDI into quiet mode by default, disabling the
+built-in speech responders. This can be changed
+[via the `EDDI quiet mode` setting](configuration/general.md#general-settings-for-all-profiles).
+
 ## bindED
 
 [bindED](https://alterNERDtive.github.io/bindED) reads your Elite Dangerous
