@@ -10,6 +10,11 @@ it will be worked on when it is worked on.
 * Updated documentation for the switch to 64-bit as the standard VoiceAttack
   distribution format.
 
+### Added
+
+* `open documentation` command: Opens the profile’s documentatin in your
+  default browser.
+
 ## EliteAttack 8.2.2
 
 ### Added
