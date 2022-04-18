@@ -36,6 +36,8 @@ it will be worked on when it is worked on.
   AE/BE star”).
 * “Not Set” case number when asking for details about an invalid case.
 * Fixed RATSIGNAL parsing for locales containing `,`.
+* No longer determines (and logs) nearest CMDR if announcing nearest CMDR is
+  turned off while also being off duty.
 
 ## SpanshAttack 7.2.1
 
