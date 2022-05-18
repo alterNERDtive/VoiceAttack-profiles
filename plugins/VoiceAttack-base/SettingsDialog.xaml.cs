@@ -94,6 +94,8 @@ namespace alterNERDtive
 
         private void okButton_Click(object sender, RoutedEventArgs reargs)
         {
+            bool error = false;
+
             foreach (Setting setting in values)
             {
                 dynamic state = null;
@@ -130,13 +132,17 @@ namespace alterNERDtive
                         log.Log($@"Configuration changed via settings dialog: ""{setting.Profile}.{setting.Option.Name}"" → ""{state}""", util.LogLevel.DEBUG);
                         config.SetConfig(setting.Profile, setting.Option.Name, state);
                     }
-
-                    Window.GetWindow(this).Close();
                 }
                 catch (Exception e) when (e is ArgumentNullException || e is FormatException || e is OverflowException)
                 {
                     log.Log($@"Invalid value for ""{setting.Profile}.{setting.Option.Name}"": ""{((TextBox)setting.UiElement).Text}""", util.LogLevel.ERROR);
+                    error = true;
                 }
+            }
+
+            if (!error)
+            {
+                Window.GetWindow(this).Close();
             }
         }
     }
