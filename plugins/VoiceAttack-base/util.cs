@@ -28,7 +28,7 @@ namespace alterNERDtive.util
                         description: "The key used to paste in conjunction with CTRL. The physical key in your layout that would be 'V' on QWERTY.") },
                     { new Option<bool>("enableAutoUpdateCheck", true, voiceTrigger: "auto update check", description: "Automatically check Github for profiles updates when the profile loads.") },
                     { new Option<string>("log.logLevel", "NOTICE", voiceTrigger: "log level", validValues: new List<string>{ "ERROR", "WARN", "NOTICE", "INFO", "DEBUG" },
-                        description: @"The level of detail for logging to the VoiceAttack log.\nValid levels are ""ERROR"", ""WARN"", ""NOTICE"", ""INFO"" and ""DEBUG"".\nDefault: ""NOTICE"".") },
+                        description: "The level of detail for logging to the VoiceAttack log.\nValid levels are \"ERROR\", \"WARN\", \"NOTICE\", \"INFO\" and \"DEBUG\".\nDefault: \"NOTICE\".") },
                 }
             },
             {
@@ -40,22 +40,22 @@ namespace alterNERDtive.util
                     { new Option<bool>("announceMappingCandidates", true, voiceTrigger: "mapping candidates",
                         description: "Announce bodies worth mapping when you have finished scanning a system.\n(Terraformables, Water Worlds, Earth-Like Worlds and Ammonia Worlds that have not been mapped yet.)") },
                     { new Option<bool>("announceOutdatedStationData", true, voiceTrigger: "outdated stations", description: "Announce stations with outdated data in the online databases.") },
+                    { new Option<int>("outdatedStationThreshold", 365, voiceTrigger: "outdated station threshold",
+                        description: "The threshold for station data to count as “outdated”, in days.\nDefault: 365.") },
                     { new Option<bool>("announceR2RMappingCandidates", false, voiceTrigger: "road to riches",
                         description: "Announce bodies worth scanning if you are looking for some starting cash on the Road to Riches.") },
                     { new Option<bool>("announceRepairs", true, voiceTrigger: "repair reports", description: "Report on AFMU repairs.") },
                     { new Option<bool>("announceSynthesis", true, voiceTrigger: "synthesis reports", description: "Report on synthesis.") },
-                    { new Option<bool>("autoHonkAllSystems", false, voiceTrigger: "auto honk all systems", description: "Automatically honk upon entering a system, each jump, without constraints.") },
                     { new Option<bool>("autoHonkNewSystems", true, voiceTrigger: "auto honk new systems", description: "Automatically honk upon entering a system if it is your first visit.") },
+                    { new Option<bool>("autoHonkAllSystems", false, voiceTrigger: "auto honk all systems", description: "Automatically honk upon entering a system, each jump, without constraints.") },
+                    { new Option<int>("scannerFireGroup", 0, voiceTrigger: "scanner fire group", description: "The fire group your discovery scanner is assigned to.\nDefault: 0 (the first one).") },
+                    { new Option<bool>("usePrimaryFireForDiscoveryScan", false, voiceTrigger: "discovery scan on primary fire", description: "Use primary fire for honking instead of secondary.") },
                     { new Option<bool>("autoRestock", true, voiceTrigger: "auto restock", description:
                         "Automatically restock after docking at a station.\nYou will always refuel, repair and enter the Station Services menu.") },
                     { new Option<bool>("flightAssistOff", false, voiceTrigger: "flight assist off", description: "Permanent Flight Assist off mode. You should really do that, it’s great.") },
                     { new Option<bool>("hyperspaceDethrottle", true, voiceTrigger: "hyper space dethrottle",
                         description: "Throttle down after a jump and when dropping from SC. Like the SC Assist module does.") },
                     { new Option<bool>("limpetCheck", true, voiceTrigger: "limpet check", description: "Do a limpet check when undocking, reminding you if you forgot to buy some.") },
-                    { new Option<int>("outdatedStationThreshold", 365, voiceTrigger: "outdated station threshold",
-                        description: "The threshold for station data to count as “outdated”, in days.\nDefault: 365.") },
-                    { new Option<int>("scannerFireGroup", 0, voiceTrigger: "scanner fire group", description: "The fire group your discovery scanner is assigned to.\nDefault: 0 (the first one).") },
-                    { new Option<bool>("usePrimaryFireForDiscoveryScan", false, voiceTrigger: "discovery scan on primary fire", description: "Use primary fire for honking instead of secondary.") },
                 }
             },
             {
@@ -63,14 +63,14 @@ namespace alterNERDtive.util
                 new OptDict<string, Option>{
                     { new Option<bool>("autoCloseCase", false, voiceTrigger: "auto close fuel rat case", description: "Automatically close a rat case when sending “fuel+” via voice command or ingame chat.") },
                     { new Option<bool>("announceNearestCMDR", false, voiceTrigger: "nearest commander to fuel rat case", description: "Announce the nearest commander to incoming rat cases.") },
-                    { new Option<bool>("announcePlatform", false, voiceTrigger: "platform for fuel rat case", description: "Announce the platform for incoming rat cases.") },
                     { new Option<string>("CMDRs", "", voiceTrigger: "fuel rat commanders",
                         description: "All your CMDRs that are ready to take rat cases.\nUse ‘;’ as separator, e.g. “Bud Spencer;Terrence Hill”.") },
-                    { new Option<bool>("confirmCalls", true, voiceTrigger: "fuel rat call confirmation", description: "Only make calls in #fuelrats after vocal confirmation to prevent mistakes.") },
-                    { new Option<bool>("onDuty", true, voiceTrigger: "fuel rat duty", description: "On duty, receiving case announcements via TTS.") },
+                    { new Option<bool>("announcePlatform", false, voiceTrigger: "platform for fuel rat case", description: "Announce the platform for incoming rat cases.") },
                     { new Option<string>("platforms", "PC", voiceTrigger: "fuel rat platforms", validValues: new List<string>{ "PC", "Xbox", "Playstation" },
                         description: "The platform(s) you want to get case announcements for (PC, Xbox, Playstation).\nUse ‘;’ as separator, e.g. “PC;Xbox”.") },
                     { new Option<bool>("announceSystemInfo", true, voiceTrigger: "system information for fuel rat case", description: "System information provided by Mecha.")},
+                    { new Option<bool>("confirmCalls", true, voiceTrigger: "fuel rat call confirmation", description: "Only make calls in #fuelrats after vocal confirmation to prevent mistakes.") },
+                    { new Option<bool>("onDuty", true, voiceTrigger: "fuel rat duty", description: "On duty, receiving case announcements via TTS.") },
                 }
             },
             {
@@ -163,7 +163,7 @@ namespace alterNERDtive.util
             public static implicit operator (string, Option)(Option<T> o) => (o.Name, o);
             public static explicit operator T(Option<T> o) => o.DefaultValue;
         }
-        private class OptDict<TKey, TValue> : Dictionary<TKey, TValue>
+        public class OptDict<TKey, TValue> : Dictionary<TKey, TValue>
         {
             public OptDict() : base() { }
             public OptDict(int capacity) : base(capacity) { }
@@ -192,6 +192,11 @@ namespace alterNERDtive.util
         public Option GetOption(string id, string name)
         {
             return Defaults[id][name];
+        }
+
+        public OptDict<string, Option> GetOptions(string id)
+        {
+            return Defaults[id];
         }
 
         public void SetVoiceTriggers(System.Type type)
@@ -353,9 +358,14 @@ namespace alterNERDtive.util
         }
         public void DumpConfig(string id, string name)
         {
-            dynamic option = Defaults[id][name];
-            dynamic defaultValue = option.DefaultValue;
-            string variable = $"{id}.{option.Name}#";
+            dynamic defaultValue = ((dynamic)Defaults[id][name]).DefaultValue;
+            dynamic value = GetConfig(id, name);
+            Log.Notice($"{id}.{name}# = {value}{(value == defaultValue ? " (default)" : "")}");
+        }
+        public dynamic GetConfig(string id, string name)
+        {
+            dynamic defaultValue = ((dynamic)Defaults[id][name]).DefaultValue;
+            string variable = $"{id}.{name}#";
             dynamic value;
             if (defaultValue is bool)
             {
@@ -385,7 +395,39 @@ namespace alterNERDtive.util
             {
                 throw new InvalidDataException($"Invalid data type for option '{id}.{name}': '{defaultValue}'");
             }
-            Log.Notice($"{variable} = {value}{(value == defaultValue ? " (default)" : "")}");
+            return value;
+        }
+        public void SetConfig(string id, string name, dynamic value)
+        {
+            string variable = $"{id}.{name}#";
+            if (value is bool)
+            {
+                Commands.Run("alterNERDtive-base.saveVariableToProfile", wait: true, parameters: new dynamic[] { new string[] { $"{variable}" }, new bool[] { value } }); ;
+            }
+            else if (value is DateTime)
+            {
+                Commands.Run("alterNERDtive-base.saveVariableToProfile", wait: true, parameters: new dynamic[] { new string[] { $"{variable}" }, new DateTime[] { value } });
+            }
+            else if (value is decimal)
+            {
+                Commands.Run("alterNERDtive-base.saveVariableToProfile", wait: true, parameters: new dynamic[] { new string[] { $"{variable}" }, new decimal[] { value } });
+            }
+            else if (value is int)
+            {
+                Commands.Run("alterNERDtive-base.saveVariableToProfile", wait: true, parameters: new dynamic[] { new string[] { $"{variable}" }, new int[] { value } });
+            }
+            else if (value is short)
+            {
+                Commands.Run("alterNERDtive-base.saveVariableToProfile", wait: true, parameters: new dynamic[] { new string[] { $"{variable}" }, new short[] { value } });
+            }
+            else if (value is string)
+            {
+                Commands.Run("alterNERDtive-base.saveVariableToProfile", wait: true, parameters: new dynamic[] { new string[] { $"{variable}", value } });
+            }
+            else
+            {
+                throw new InvalidDataException($"Invalid data type for option '{id}.{name}': '{value}'");
+            }
         }
 
         public void ListConfig()

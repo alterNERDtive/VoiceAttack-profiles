@@ -1,4 +1,4 @@
-# General Configuration
+﻿# General Configuration
 
 ## Settings
 
@@ -7,7 +7,10 @@ configuration is stored in a bunch of VoiceAttack variables which in turn are
 stored in your custom profile. You could even have different custom profiles
 with their own distinct settings.
 
-You change the configuration via voice commands:
+The easiest way to change setings is to say `customize settings`. That will
+bring up a rudminteary settings UI.
+
+You change also change the configuration directly via voice commands:
 
 * For toggles (booleans): `customize setting [enable;disable] <trigger phrase>`
 * For everything else: `customize setting set <trigger phrase>`

@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace alterNERDtive
 {
@@ -53,6 +54,8 @@ namespace alterNERDtive
             }
             Log.Debug($"Profiles found: {string.Join<string>(", ", ActiveProfiles)}");
         }
+
+        public static bool IsProfileActive(string profileName) => ActiveProfiles.Contains(profileName);
 
         private static void ConfigurationChanged(string option, dynamic? from, dynamic? to, Guid? guid = null)
         {
@@ -141,6 +144,24 @@ namespace alterNERDtive
         /*================\
         | plugin contexts |
         \================*/
+
+        private static void Context_Config_Dialog(dynamic vaProxy)
+        {
+            Thread dialogThread = new Thread(new ThreadStart(() =>
+            {
+                _ = new System.Windows.Window
+                {
+                    Title = "alterNERDtive Profile Options",
+                    Content = new SettingsDialog(Config, Log),
+                    SizeToContent = System.Windows.SizeToContent.WidthAndHeight,
+                    ResizeMode = System.Windows.ResizeMode.NoResize,
+                    WindowStyle = System.Windows.WindowStyle.ToolWindow
+                }.ShowDialog();
+            }));
+            dialogThread.SetApartmentState(ApartmentState.STA);
+            dialogThread.IsBackground = true;
+            dialogThread.Start();
+        }
 
         private static void Context_Config_Dump(dynamic vaProxy)
         {
@@ -463,7 +484,7 @@ namespace alterNERDtive
         | required VoiceAttack plugin shenanigans |
         \========================================*/
 
-        static readonly Version VERSION = new Version("4.2.4");
+        static readonly Version VERSION = new Version("4.3");
 
         public static Guid VA_Id()
             => new Guid("{F7F59CFD-1AE2-4A7E-8F62-C62372418BAC}");
@@ -501,6 +522,9 @@ namespace alterNERDtive
                         Context_Startup(vaProxy);
                         break;
                     // config
+                    case "config.dialog":
+                        Context_Config_Dialog(vaProxy);
+                        break;
                     case "config.dump":
                         Context_Config_Dump(vaProxy);
                         break;

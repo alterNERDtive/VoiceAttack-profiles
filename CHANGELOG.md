@@ -2,18 +2,26 @@
 
 **NOTE**: Further development is on hold and Odyssey compatibility will not be
 worked on for the time being. See [the corresponding issue on
-Github](https://github.com/alterNERDtive/VoiceAttack-profiles/issues/113). This
-might or might not change after the Horizons/Odyssey merge when console release
-is upon us. Feel free to file issues for anything that is broken on Odyssey and
-it will be worked on when it is worked on.
+Github](https://github.com/alterNERDtive/VoiceAttack-profiles/issues/113). Feel
+free to file issues for anything that is broken on Odyssey and it will be worked
+on when it is worked on.
+
+That said, there is now a settings UI! It’s not pretty, it’s basic, but it does
+the job.
 
 * Updated documentation for the switch to 64-bit as the standard VoiceAttack
   distribution format.
+* Updated included `bindED` plugin to FIXXME.
 
 ### Added
 
+* `customize settings` command: Brings up a rudimentary settings UI. (#80)
 * `open documentation` command: Opens the profile’s documentatin in your
   default browser.
+
+### Fixed
+
+* Log level settings description no longer contains literal `\n`s.
 
 ## EliteAttack 8.2.2
 
@@ -36,7 +44,7 @@ it will be worked on when it is worked on.
   AE/BE star”).
 * “Not Set” case number when asking for details about an invalid case.
 * Fixed RATSIGNAL parsing for locales containing `,`.
-* No longer determines (and logs) nearest CMDR if announcing nearest CMDR is
+* No longer determines (nor logs) nearest CMDR if announcing nearest CMDR is
   turned off while also being off duty.
 
 ## SpanshAttack 7.2.1
