@@ -26,6 +26,8 @@ the job.
 * Documentation now mentions that you have to reload your custom profile after
   creating the `startup` command for the first time. (#129)
 * Clarified not having to install bundled dependencies manually. (#127)
+* Reordered setup instructions to clarify that the profile example already comes
+  with a `startup` command. (#126)
 
 ## EliteAttack 8.3
 

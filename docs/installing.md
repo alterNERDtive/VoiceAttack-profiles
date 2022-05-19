@@ -101,35 +101,15 @@ You can either use an existing profile, create a new one or use the provided
 profile example as a basis. Regardless of which way you choose, make sure to
 read the [[#Include Profiles]] section and follow the instructions there!
 
-### Option 1: Create a New Profile
+### Option 1: Create a New Profile Or Use an Existing One
 
 1. Click the “Profile Actions” button, then “Create New Profile”.
    ![[VoiceAttack-new-profile.png]]
 1. Give it a name and add some commands if you want to.
 1. Hit “Done” to create the new profile.
 
-### Option 2: Use the Profile Example
-
-1. Click the “Profile Actions” button, then “Import Profile”.
-   ![[VoiceAttack-import-profile.png]]
-1. Navigate to your VoiceAttack Apps folder (see above), go into the
-   “alterNERDtive” subfolder, choose the profile example and hit “Open”.
-   ![[VoiceAttack-import-profile-open.png]]
-
-Once you are done with the setup and configuration process, you can find a bunch
-of example commands with comments on how to do things in this profile. Make sure
-to also rename it to something more exciting than “Custom Profile Example”!
-
-## Include Profiles
-
-In order to use my profiles with your custom profile, you will need to take two
-additional steps:
-
-1. Include the profiles in your custom profile. That will make all commands
-   available when your custom profile is active.
-1. Create a startup command for your custom profile. You can use it to do
-   anything you want when your profile loads, but it will also have to run the
-   startup command for my profiles.
+Alternatively you can keep using your existing profile. You will still have to
+follow the rest of the instructions in this case.
 
 #### Create a Startup Command
 
@@ -170,6 +150,29 @@ more elegantly! More on this [later on](general.md#settings).
 After adding the startup command you will have to right click VoiceAttack’s
 title bar and choose “Reload Active Profile” or restart VoiceAttack to it
 executed for the first time.
+
+### Option 2: Use the Profile Example
+
+1. Click the “Profile Actions” button, then “Import Profile”.
+   ![[VoiceAttack-import-profile.png]]
+1. Navigate to your VoiceAttack Apps folder (see above), go into the
+   “alterNERDtive” subfolder, choose the profile example and hit “Open”.
+   ![[VoiceAttack-import-profile-open.png]]
+
+Once you are done with the setup and configuration process, you can find a bunch
+of example commands with comments on how to do things in this profile. Make sure
+to also rename it to something more exciting than “Custom Profile Example”!
+
+## Include Profiles
+
+In order to use my profiles with your custom profile, you will need to take two
+additional steps:
+
+1. Include the profiles in your custom profile. That will make all commands
+   available when your custom profile is active.
+1. Create a startup command for your custom profile. You can use it to do
+   anything you want when your profile loads, but it will also have to run the
+   startup command for my profiles.
 
 #### Set Profile Options
 
