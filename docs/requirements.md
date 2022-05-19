@@ -40,7 +40,9 @@ binding files and makes them available to VoiceAttack as variables. That way
 commands can be portable and you do not have to manually go through them and
 change any actions that you happen to not have the standard binds for.
 
-This plugin is _included_ in the release package.
+This plugin is _included_ in the release package. You do _not_ have to download
+and install it manually, but you _can_ independently update it if a newer
+version is available.
 
 ## Elite Scripts
 
@@ -51,7 +53,9 @@ for various tasks, like checking a system’s body count.
 
 In the future they will be replaced by VoiceAttack plugin code.
 
-The scripts are _included_ in the release package.
+The scripts are _included_ in the release package. You do _not_ have to download
+and install them manually, but you _can_ independently update them if a newer
+version is available.
 
 ## ED-NeutronRouter
 

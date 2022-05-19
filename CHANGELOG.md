@@ -25,6 +25,7 @@ the job.
 * Log level settings description no longer contains literal `\n`s.
 * Documentation now mentions that you have to reload your custom profile after
   creating the `startup` command for the first time. (#129)
+* Clarified not having to install bundled dependencies manually. (#127)
 
 ## EliteAttack 8.3
 
