@@ -1,4 +1,4 @@
-# EliteAttack
+﻿# EliteAttack
 
 This is my personal VoiceAttack profile for Elite: Dangerous. It started out 
 ages ago as a modification of [MalicVR’s public 
@@ -230,8 +230,8 @@ scripts).
 
 ### Docked
 
-Automatically refuels, repairs, optionally rearms, then gets your ship into the
-hangar and opens station services.
+Automatically refuels, repairs, rearms, then gets your ship into the hangar and
+opens station services. Can be individually disabled.
 
 ### Docking Denied
 

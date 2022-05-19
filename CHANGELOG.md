@@ -23,11 +23,19 @@ the job.
 
 * Log level settings description no longer contains literal `\n`s.
 
-## EliteAttack 8.2.2
+## EliteAttack 8.3
 
 ### Added
 
-* INFO logging for carrier events.
+* `INFO` logging for carrier events.
+* `auto refuel` setting: Automatically refuel after docking at a station.
+    Default: true. (#133)
+* `auto repair` setting: Automatically repair after docking at a station.
+  Default: true. (#133)
+* `auto move to hangar` setting: Automatically move the ship to the hanger after
+  docking at a station. Default: true. (#133)
+* `auto enter station services`: Automatically enter the Station Services menu
+  after docking at a station. Default: true. (#133)
 
 ## RatAttack 6.2.3
 
