@@ -71,7 +71,11 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#create-a-custom-profile">Create a Custom Profile</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#option-1-create-a-new-profile">Option 1: Create a New Profile</a>
+    <li class="toctree-l3"><a class="reference internal" href="#option-1-create-a-new-profile-or-use-an-existing-one">Option 1: Create a New Profile Or Use an Existing One</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#create-a-startup-command">Create a Startup Command</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#option-2-use-the-profile-example">Option 2: Use the Profile Example</a>
     </li>
@@ -79,8 +83,6 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#include-profiles">Include Profiles</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#create-a-startup-command">Create a Startup Command</a>
-    </li>
     <li class="toctree-l3"><a class="reference internal" href="#set-profile-options">Set Profile Options</a>
     </li>
         </ul>
@@ -256,34 +258,15 @@ the profiles that you want to change and add voice triggers or hotkeys.</p>
 <p>You can either use an existing profile, create a new one or use the provided
 profile example as a basis. Regardless of which way you choose, make sure to
 read the <a href="#include-profiles">#Include Profiles</a> section and follow the instructions there!</p>
-<h3 id="option-1-create-a-new-profile">Option 1: Create a New Profile<a class="headerlink" href="#option-1-create-a-new-profile" title="Permanent link">&para;</a></h3>
+<h3 id="option-1-create-a-new-profile-or-use-an-existing-one">Option 1: Create a New Profile Or Use an Existing One<a class="headerlink" href="#option-1-create-a-new-profile-or-use-an-existing-one" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click the “Profile Actions” button, then “Create New Profile”.
    <img alt="VoiceAttack-new-profile.png" src="../images/VoiceAttack-new-profile.png" /></li>
 <li>Give it a name and add some commands if you want to.</li>
 <li>Hit “Done” to create the new profile.</li>
 </ol>
-<h3 id="option-2-use-the-profile-example">Option 2: Use the Profile Example<a class="headerlink" href="#option-2-use-the-profile-example" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Click the “Profile Actions” button, then “Import Profile”.
-   <img alt="VoiceAttack-import-profile.png" src="../images/VoiceAttack-import-profile.png" /></li>
-<li>Navigate to your VoiceAttack Apps folder (see above), go into the
-   “alterNERDtive” subfolder, choose the profile example and hit “Open”.
-   <img alt="VoiceAttack-import-profile-open.png" src="../images/VoiceAttack-import-profile-open.png" /></li>
-</ol>
-<p>Once you are done with the setup and configuration process, you can find a bunch
-of example commands with comments on how to do things in this profile. Make sure
-to also rename it to something more exciting than “Custom Profile Example”!</p>
-<h2 id="include-profiles">Include Profiles<a class="headerlink" href="#include-profiles" title="Permanent link">&para;</a></h2>
-<p>In order to use my profiles with your custom profile, you will need to take two
-additional steps:</p>
-<ol>
-<li>Include the profiles in your custom profile. That will make all commands
-   available when your custom profile is active.</li>
-<li>Create a startup command for your custom profile. You can use it to do
-   anything you want when your profile loads, but it will also have to run the
-   startup command for my profiles.</li>
-</ol>
+<p>Alternatively you can keep using your existing profile. You will still have to
+follow the rest of the instructions in this case.</p>
 <h4 id="create-a-startup-command">Create a Startup Command<a class="headerlink" href="#create-a-startup-command" title="Permanent link">&para;</a></h4>
 <p>First off, hit the “Edit” button in VoiceAttack.</p>
 <p><img alt="VoiceAttack-edit.png" src="../images/VoiceAttack-edit.png" /></p>
@@ -306,6 +289,30 @@ actions are processed.</p>
 <p>You can add anything else you want your profile to do when it loads below this
 action. You do not have to set any configuration options, this can be done way
 more elegantly! More on this <a href="../configuration/general/#settings">later on</a>.</p>
+<p>After adding the startup command you will have to right click VoiceAttack’s
+title bar and choose “Reload Active Profile” or restart VoiceAttack to it
+executed for the first time.</p>
+<h3 id="option-2-use-the-profile-example">Option 2: Use the Profile Example<a class="headerlink" href="#option-2-use-the-profile-example" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Click the “Profile Actions” button, then “Import Profile”.
+   <img alt="VoiceAttack-import-profile.png" src="../images/VoiceAttack-import-profile.png" /></li>
+<li>Navigate to your VoiceAttack Apps folder (see above), go into the
+   “alterNERDtive” subfolder, choose the profile example and hit “Open”.
+   <img alt="VoiceAttack-import-profile-open.png" src="../images/VoiceAttack-import-profile-open.png" /></li>
+</ol>
+<p>Once you are done with the setup and configuration process, you can find a bunch
+of example commands with comments on how to do things in this profile. Make sure
+to also rename it to something more exciting than “Custom Profile Example”!</p>
+<h2 id="include-profiles">Include Profiles<a class="headerlink" href="#include-profiles" title="Permanent link">&para;</a></h2>
+<p>In order to use my profiles with your custom profile, you will need to take two
+additional steps:</p>
+<ol>
+<li>Include the profiles in your custom profile. That will make all commands
+   available when your custom profile is active.</li>
+<li>Create a startup command for your custom profile. You can use it to do
+   anything you want when your profile loads, but it will also have to run the
+   startup command for my profiles.</li>
+</ol>
 <h4 id="set-profile-options">Set Profile Options<a class="headerlink" href="#set-profile-options" title="Permanent link">&para;</a></h4>
 <p>While editing the profile, hit the “Options” button.</p>
 <p><img alt="VoiceAttack-profile-options.png" src="../images/VoiceAttack-profile-options.png" /></p>

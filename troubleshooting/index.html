@@ -96,6 +96,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#voiceattack-talks-over-the-covas-voice">VoiceAttack talks over the COVAS voice</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#this-doesnt-work-well-with-my-hcs-pack">This doesn’t work (well) with my HCS pack</a>
+    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="" href="https://github.com/alterNERDtive/VoiceAttack-profiles/blob/release/CHANGELOG.md">⎋ Changelog</a>
@@ -193,6 +195,35 @@ ingame Audo settings:</p>
 <p><img alt="Elite-COVAS.png" src="../images/Elite-COVAS.png" /></p>
 <p>While you’re in there you might as well get rid of the spoken FSD countdown that
 is off by one second …</p>
+<h2 id="this-doesnt-work-well-with-my-hcs-pack">This doesn’t work (well) with my HCS pack<a class="headerlink" href="#this-doesnt-work-well-with-my-hcs-pack" title="Permanent link">&para;</a></h2>
+<p>My profiles are designed from the ground up to work with whatever else you are
+doing with VoiceAttack; that is the reason for importing them into your own
+custom profile instead of selecting e.g. <code>EliteAttack</code> as your active profile.</p>
+<p>HCS on the contrary explicitly expects you do exclusively use HCS with
+VoiceAttack. There is the rudimentary way of including simple profiles into
+theirs, but the mechanism falls flat in many places. For example you cannot tell
+HCS to run an included profile’s startup command.</p>
+<p>So, in order to mostly make stuff work, you need to treat the HCS profile as
+your “custom” profile as per this documentation.</p>
+<ol>
+<li>Include <code>alterNERDtive-base</code> and all profiles you want to use into the active
+   HCS profile.</li>
+<li>Include a custom profile that has a startup command with a voice trigger of
+   your choosing, e.g. “load included profiles”.</li>
+<li>Set up said startup command as you would normally.</li>
+<li>Every time you start VA or change profiles, you will have to manually say
+   “load included profiles”.</li>
+</ol>
+<p>That will make most things work. Conflicts may arise if HCS happens to have
+voice triggers that are the same as mine, in which case their command will take
+priority.</p>
+<p><strong>Note on TTS</strong>: EDDI’s TTS (used by my profiles) and HCS’ TTS / recorded voice
+lines act 100% independently. That means they will frequently “speak over each
+other”. There is no way to alleviate this.</p>
+<p>EDDI does have a mechanism to detect if it is currently speaking – it sets a
+corresponding VoiceAttack variable. HCS neither does anything similar nor checks
+if EDDI is speaking to prevent conflicts. Refer to them if you want that
+changed.</p>
               
             </div>
           </div>
