@@ -51,6 +51,10 @@ the job.
   “Calling <…>.”.
 * `auto copy rat case system` setting: Automatically copy the client’s system to
   the clipboard when you open a rat case. Default: true.
+* Now asks for call confirmation more clearly: “send call \<call\> to fuel
+  rats?” instead of an easily misinterpreted “call \<call\>?”. The question
+  inflection is more or less pronounced depending on the TTS voice used and has
+  led to confusion. (#101)
 
 ### Fixed
 

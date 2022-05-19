@@ -81,6 +81,9 @@ client or use the “General IRC Integration”, see below.
   calls, and make sure you will never have to call “client destroyed”, would 
   you?
 
+By default, VoiceAttack will ask for confirmation before sending calls to the
+`#fuelrats` channel.
+
 ### Closing a Case
 
 * `[close;clear] rat case`: Closes the currently open rat case.
