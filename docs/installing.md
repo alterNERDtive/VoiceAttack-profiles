@@ -167,6 +167,10 @@ You can add anything else you want your profile to do when it loads below this
 action. You do not have to set any configuration options, this can be done way
 more elegantly! More on this [later on](general.md#settings).
 
+After adding the startup command you will have to right click VoiceAttack’s
+title bar and choose “Reload Active Profile” or restart VoiceAttack to it
+executed for the first time.
+
 #### Set Profile Options
 
 While editing the profile, hit the “Options” button.
