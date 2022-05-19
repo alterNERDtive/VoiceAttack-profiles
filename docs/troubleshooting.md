@@ -1,4 +1,4 @@
-# Troubleshooting
+﻿# Troubleshooting
 
 This will fill up gradually with Troubleshooting tips as people run into common
 ones.
@@ -54,3 +54,38 @@ ingame Audo settings:
 
 While you’re in there you might as well get rid of the spoken FSD countdown that
 is off by one second …
+
+## This doesn’t work (well) with my HCS pack
+
+My profiles are designed from the ground up to work with whatever else you are
+doing with VoiceAttack; that is the reason for importing them into your own
+custom profile instead of selecting e.g. `EliteAttack` as your active profile.
+
+HCS on the contrary explicitly expects you do exclusively use HCS with
+VoiceAttack. There is the rudimentary way of including simple profiles into
+theirs, but the mechanism falls flat in many places. For example you cannot tell
+HCS to run an included profile’s startup command.
+
+So, in order to mostly make stuff work, you need to treat the HCS profile as
+your “custom” profile as per this documentation.
+
+1. Include `alterNERDtive-base` and all profiles you want to use into the active
+   HCS profile.
+1. Include a custom profile that has a startup command with a voice trigger of
+   your choosing, e.g. “load included profiles”.
+1. Set up said startup command as you would normally.
+1. Every time you start VA or change profiles, you will have to manually say
+   “load included profiles”.
+
+That will make most things work. Conflicts may arise if HCS happens to have
+voice triggers that are the same as mine, in which case their command will take
+priority.
+
+**Note on TTS**: EDDI’s TTS (used by my profiles) and HCS’ TTS / recorded voice
+lines act 100% independently. That means they will frequently “speak over each
+other”. There is no way to alleviate this.
+
+EDDI does have a mechanism to detect if it is currently speaking – it sets a
+corresponding VoiceAttack variable. HCS neither does anything similar nor checks
+if EDDI is speaking to prevent conflicts. Refer to them if you want that
+changed.
