@@ -52,7 +52,7 @@ the job.
 
 ### Added
 
-* Now gives feedback after asking for call confirmation: “Call aborted.”
+* Now gives feedback after asking for call confirmation: “Call aborted.” /
   “Calling <…>.”.
 * `auto copy rat case system` setting: Automatically copy the client’s system to
   the clipboard when you open a rat case. Default: true.
