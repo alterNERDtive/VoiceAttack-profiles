@@ -1,4 +1,18 @@
-﻿# 4.3 (2022-05-19)
+﻿# devel
+
+## EliteAttack 8.4
+
+### Added
+
+
+* `auto retract landing gear` setting: Automatically retract landing gear when
+  lifting off a planet / undocking from a station. Default: true. (#133)
+* `auto disable s r v lights` setting: Automatically turn SRV lights off when
+  deploying one. Default: true. (#133)
+
+-----
+
+# 4.3 (2022-05-19)
 
 **NOTE**: Further development is on hold and Odyssey compatibility will not be
 worked on for the time being. See [the corresponding issue on
