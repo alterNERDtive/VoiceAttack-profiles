@@ -43,6 +43,8 @@ the job.
   docking at a station. Default: true. (#133)
 * `auto enter station services`: Automatically enter the Station Services menu
   after docking at a station. Default: true. (#133)
+* `find nearest […]` command now logs the result to the VoiceAttack log (log
+  level `INFO`). (#96)
 
 ## RatAttack 6.3
 
