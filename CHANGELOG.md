@@ -67,6 +67,7 @@ the job.
 * Fixed RATSIGNAL parsing for locales containing `,`.
 * No longer determines (nor logs) nearest CMDR if announcing nearest CMDR is
   turned off while also being off duty.
+* No longer silently swallows calls if call confirmation is disabled. (#128)
 
 ## SpanshAttack 7.2.1
 
