@@ -78,6 +78,8 @@ the job.
 ### Fixed
 
 * OBOE on last jump.
+* Moved jumps left announcement from getting the next waypoint (now happens at
+  the start of a jump) to the `Jumped` event (happens after a jump). (#124)
 
 -----
 
