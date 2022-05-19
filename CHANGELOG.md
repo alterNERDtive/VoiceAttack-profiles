@@ -18,6 +18,7 @@ the job.
 * `customize settings` command: Brings up a rudimentary settings UI. (#80)
 * `open documentation` command: Opens the profile’s documentatin in your
   default browser.
+* Section about HCS compatibility in “Troubleshooting” documentation (#130).
 
 ### Fixed
 
