@@ -80,6 +80,8 @@ the job.
 * OBOE on last jump.
 * Moved jumps left announcement from getting the next waypoint (now happens at
   the start of a jump) to the `Jumped` event (happens after a jump). (#124)
+* Will no longer go to neutron jump mode if no route has been found (= there is
+  only a single waypoint). (#104)
 
 -----
 
