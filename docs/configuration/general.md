@@ -1,4 +1,4 @@
-# General Configuration
+﻿# General Configuration
 
 ## Settings
 
@@ -7,12 +7,15 @@ configuration is stored in a bunch of VoiceAttack variables which in turn are
 stored in your custom profile. You could even have different custom profiles
 with their own distinct settings.
 
-You change the configuration via voice commands:
+The easiest way to change setings is to say `customize settings`. That will
+bring up a rudminteary settings UI.
+
+You change also change the configuration directly via voice commands:
 
 * For toggles (booleans): `customize setting [enable;disable] <trigger phrase>`
 * For everything else: `customize setting set <trigger phrase>`
 
-You can find a list of trigger phrases here, or you can say
+You can find a list of trigger phrases on this page, or you can say
 `customize setting list [options;settings]` for a list of voice triggers and
 what they do. If you don’t remember your settings or just want a nice list,
 `customize setting report [options;settings]` will print that to the
@@ -22,9 +25,9 @@ VoiceAttack log. If you want to reset everything back to default state, say
 The “customize setting” prefix is kind of a leftover from times long gone and
 does not quite fit anymore. Might change in a future version.
 
-Since the settings are saved to your custom profile they will not be preserved
-when you switch profiles. Once you switch back, the correct settings for the
-profile are re-loaded.
+Since the settings are saved to your custom profile they will not necessarily be
+preserved when you switch profiles. Once you switch back, the correct settings
+for the profile are re-loaded.
 
 ### General Settings for All Profiles
 
@@ -48,9 +51,10 @@ Other settings:
 ## Note on Non-Standard Keyboard Layouts
 
 Because Elite’s keyboard handling is … weird you’ll have to set the key to use
-for pasting text into Elite:Dangerous if you are not using a “standard”QWERT[YZ]
-layout. You will have to change it to the key that is physically in the place
-where `V` would be on QWERTY, e.g. `P` for [Neo2](https://neo-layout.org).
+for pasting text into Elite Dangerous if you are not using a keyboard layout
+that the game supports by default.  You will have to change it to the key that
+is physically in the place where `V` would be on QWERTY, e.g. `P` for
+[Neo2](https://neo-layout.org).
 
 To set the key, say “customize setting set elite paste key”.
 

@@ -1,4 +1,4 @@
-# EliteAttack
+﻿# EliteAttack
 
 ## Settings
 
@@ -8,8 +8,16 @@ Toggles:
   without constraints. Default: false.
 * `auto honk new systems`: Automatically honk upon entering a system if it is
   your first visit. Default: true.
-* `auto restock`: Automatically restock after docking at a station. You will
-  always refuel, repair and enter the Station Services menu. Default: true.
+* `auto refuel`: Automatically refuel after docking at a station. Default:
+  true.
+* `auto repair`: Automatically repair after docking at a station. Default:
+  true.
+* `auto restock`: Automatically restock after docking at a station. Default:
+  true.
+* `auto move to hangar`: Automatically move the ship to the hanger after docking
+  at a station. Default: true.
+* `auto enter station services`: Automatically enter the Station Services menu
+  after docking at a station. Default: true.
 * `edsm system status`: Pull system data from EDSM and compare it
   against your discovery scan. Default: true.
 * `discovery scan on primary fire`: Use primary fire for honking instead of

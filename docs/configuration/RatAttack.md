@@ -1,4 +1,4 @@
-# RatAttack
+﻿# RatAttack
 
 ## Getting Case Data From IRC
 
@@ -69,7 +69,7 @@ You can use this for a single CMDR, too. A less convoluted setup for announcing
 the distance to your location in that case is on the list™ but does not have an
 ETA yet.
 
-Currently there is no way to specify a platform for each CMDR.
+Currently there is no way to specify a platform for each CMDR separately.
 
 ## Sending Text to FuelRats IRC
 
@@ -88,6 +88,8 @@ Toggles:
 
 * `auto close fuel rat case`: Automatically close a rat case when sending
   “fuel+” via voice command or ingame chat. Default: false.
+* `auto copy rat case system` : Automatically copy the client’s system to the
+  clipboard when you open a rat case. Default: true.
 * `fuel rat call confirmation`: Only make calls in #fuelrats after vocal
   confirmation to prevent mistakes. Default: true.
 * `fuel rat duty`: On duty, receiving case announcements via TTS. Default: true.

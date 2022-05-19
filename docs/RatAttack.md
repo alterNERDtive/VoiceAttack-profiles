@@ -1,4 +1,4 @@
-# RatAttack
+﻿# RatAttack
 
 This profile facilitates [Fuel Ratting](https://www.fuelrats.com). It aims to 
 eliminate as much of the required manual task and attention switching as 
@@ -50,6 +50,9 @@ are several commands you can run on this list, giving it a case number:
   announcements to
   VoiceAttack](../configuration/RatAttack/#getting-case-data-from-irc).
 
+Opening a case will automatically copy the client’s system to the clipboard for
+easy route plotting. This can be disabled.
+
 ### Making Calls ###
 
 There are a bunch of calls you can make for a case, the most common are modelled 
@@ -77,6 +80,9 @@ client or use the “General IRC Integration”, see below.
   command you don’t want to use. Include sysconf in your “friend+” or “in open” 
   calls, and make sure you will never have to call “client destroyed”, would 
   you?
+
+By default, VoiceAttack will ask for confirmation before sending calls to the
+`#fuelrats` channel.
 
 ### Closing a Case
 

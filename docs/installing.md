@@ -6,12 +6,6 @@ Grab the [most recent VoiceAttack beta
 version](https://voiceattack.com/#download-1) off the official site and install
 it.
 
-**Not on 32- vs. 64-bit:** If you are using any TTS voices that do not have a
-64-bit version, choose 32-bit VoiceAttack. If you are planning on using
-something that _requires_ 64-bit (e.g. a plugin interfacing with the latest MS
-Flight Simulator), choose the 64-bit version. Otherwise it doesn’t really
-matter, and personally I default to 64-bit if available.
-
 If you are using the standalone version you should probably download the
 executable installer. If you are using the Steam version of VoiceAttack, you
 will have to download the zipped folder and replace your installed version with
@@ -19,13 +13,19 @@ its contents.
 
 ![[VoiceAttack-download.png]]
 
+If you are using the Steam version of VoiceAttack, you will have to download the
+zipped folder and replace your installed version with its contents.
+
 [Here is the first hit on a Google search for finding the installation
 folder](https://steamcommunity.com/sharedfiles/filedetails/?id=760447682). It is
 for a completely unrelated game, but the steps are the same.
 
 You can potentially also install the latest non-beta version; but I often use
 features that have only just been added to the beta, so some things might break
-for you if you are not using that.
+for you if you are not using that. There might not be a beta version at the time
+you’re reading this, just get the full release then.
+
+### Enable Plugin Support
 
 Make sure you have plugin support enabled:
 
@@ -40,13 +40,14 @@ While you are there, you might also want to enable the automatic update checks
 ## Install EDDI
 
 Install [the latest release](https://github.com/EDCD/EDDI/releases/latest) from
-Github (The `EDDI-X.Y.Z.exe` under “Assets”). You will need to [install it as a
-VoiceAttack
+Github (The `EDDI-X.Y.Z.exe` file under “Assets”). You will need to [install it 
+as a VoiceAttack
 plugin](https://github.com/EDCD/EDDI/wiki/VoiceAttack-Integration#using-eddi-with-voiceattack).
 
 If you do not want to install it into the VoiceAttack installation folder (or
-already have it installed somewhere else) you can also just create a symbolic
-link. Open a CMD prompt (Windows key + `R`, enter “cmd”, hit `Enter`) and do
+already have it installed somewhere else) you can instead put it elsewhere and
+create a symbolic link. Open a command prompt (Windows key + `R`, enter “cmd”,
+hit `Enter`) and do
 
 ```cmd
 >cd x:\path\to\VoiceAttack\Apps
@@ -54,18 +55,15 @@ link. Open a CMD prompt (Windows key + `R`, enter “cmd”, hit `Enter`) and do
 ```
 
 If you have installed the non-Steam version of VoiceAttack to the default folder
-within “ProgramFiles” you will have to run the CMD prompt as admin (Windows key
-+ `R`, enter “cmd”, hit `Control` + `Shift` + `Enter`).
+within “ProgramFiles” you will have to run the command prompt as admin (Windows
+key + `R`, enter “cmd”, hit `Control` + `Shift` + `Enter`).
 
 ## Install ED-NeutronRouter
 
-**Make sure to [grab the pre-release
-1.02](https://github.com/sc-pulgan/ED-NeutronRouter/releases/tag/1.02)** since
-1.01 has a bug with a hardcoded 50 ly jump range (the
-`EDNeutronRouter.vX.YZ.zip` under “Assets”).
-
-You will have to extract the contents of the release .zip file to your
-VoiceAttack Apps folder:
+[Grab the latest release release from 
+Github](https://github.com/sc-pulgan/ED-NeutronRouter/releases/latest) (The 
+`EDNeutronRouter.vX.YZ.zip` under “Assets”). You will have to extract the 
+contents of the release .zip file to your VoiceAttack Apps folder:
 
 1. Go into VoiceAttack settings. ![[VoiceAttack-settings.png]]
 1. Click the folder set as “Apps Folder”. ![[VoiceAttack-apps.png]]
@@ -84,6 +82,7 @@ Leave the “Apps” folder open in Windows Explorer, you will need it for the n
 Acquire [the latest
 release](https://github.com/alterNERDtive/VoiceAttack-profiles/releases/latest)
 from Github (the `alterNERDtive-voiceattack-profiles.vax` file under “Assets”).
+Put it into VoiceAttack’s “Import” folder:
 
 1. Go into VoiceAttack settings. ![[VoiceAttack-settings.png]]
 1. Click the folder set as “Apps Folder”. ![[VoiceAttack-apps.png]]
@@ -102,35 +101,15 @@ You can either use an existing profile, create a new one or use the provided
 profile example as a basis. Regardless of which way you choose, make sure to
 read the [[#Include Profiles]] section and follow the instructions there!
 
-### Create a New Profile
+### Option 1: Create a New Profile Or Use an Existing One
 
 1. Click the “Profile Actions” button, then “Create New Profile”.
    ![[VoiceAttack-new-profile.png]]
 1. Give it a name and add some commands if you want to.
 1. Hit “Done” to create the new profile.
 
-### Use the Profile Example
-
-1. Click the “Profile Actions” button, then “Import Profile”.
-   ![[VoiceAttack-import-profile.png]]
-1. Navigate to your VoiceAttack Apps folder (see above), go into the
-   “alterNERDtive” subfolder, choose the profile example and hit “Open”.
-   ![[VoiceAttack-import-profile-open.png]]
-
-Once you are done with the setup and configuration process, you can find a bunch
-of example commands with comments on how to do things in this profile. Make sure
-to also rename it to something more exciting than “Custom Profile Example”!
-
-### Include Profiles
-
-In order to use my profiles with your custom profile, you will need to take two
-additional steps:
-
-1. Include the profiles in your custom profile. That will make all commands
-   available when your custom profile is active.
-1. Create a startup command for your custom profile. You can use it to do
-   anything you want when your profile loads, but it will also have to run the
-   startup command for my profiles.
+Alternatively you can keep using your existing profile. You will still have to
+follow the rest of the instructions in this case.
 
 #### Create a Startup Command
 
@@ -168,6 +147,33 @@ You can add anything else you want your profile to do when it loads below this
 action. You do not have to set any configuration options, this can be done way
 more elegantly! More on this [later on](general.md#settings).
 
+After adding the startup command you will have to right click VoiceAttack’s
+title bar and choose “Reload Active Profile” or restart VoiceAttack to it
+executed for the first time.
+
+### Option 2: Use the Profile Example
+
+1. Click the “Profile Actions” button, then “Import Profile”.
+   ![[VoiceAttack-import-profile.png]]
+1. Navigate to your VoiceAttack Apps folder (see above), go into the
+   “alterNERDtive” subfolder, choose the profile example and hit “Open”.
+   ![[VoiceAttack-import-profile-open.png]]
+
+Once you are done with the setup and configuration process, you can find a bunch
+of example commands with comments on how to do things in this profile. Make sure
+to also rename it to something more exciting than “Custom Profile Example”!
+
+## Include Profiles
+
+In order to use my profiles with your custom profile, you will need to take two
+additional steps:
+
+1. Include the profiles in your custom profile. That will make all commands
+   available when your custom profile is active.
+1. Create a startup command for your custom profile. You can use it to do
+   anything you want when your profile loads, but it will also have to run the
+   startup command for my profiles.
+
 #### Set Profile Options
 
 While editing the profile, hit the “Options” button.
@@ -184,14 +190,14 @@ Add all my profiles (“alterNERDtive-base”, “EliteDangerous”, “RatAttac
 
 ![[VoiceAttack-profile-options-includelist.png]]
 
-Technically you can leave out anything you are not planning on using.
-Practically it probably will not hurt you to just include everything, and it
-will then available for you in the future if you choose to check it out! Make
-sure that “alterNERDtive-base” is on top of the list, the order of the others
-does not matter. But I like it nice and alphabetical …
+Make sure that “alterNERDtive-base” is on top of the list, the order of the
+others does not matter. But I like it nice and alphabetical. Technically you can
+leave out any profile you are not planning to use. Practically it probably will
+not hurt you to just include everything, and it will then be available for you
+in the future should you choose to check it out!
 
-Now switch to the “Profile Exec” tab. Tick the “Execute a command each time this 
-profile is loaded” checkbox, and select the “startup” command you have created 
+Now switch to the “Profile Exec” tab. Tick the “Execute a command each time this
+profile is loaded” checkbox, and select the “startup” command you have created
 earlier.
 
 ![[VoiceAttack-profile-options-startup.png]]
@@ -206,13 +212,21 @@ HOTAS. Or racing wheel. Or Rock Band set. Or bananas.
 
 ![[Elite-binds.png]]
 
+For the “Galaxy Map” section, make sure that the bindings do not conflict with
+the ones in the “Interface Mode” section. The map bindings take precedence and a
+conflict leads to VoiceAttack being unable to target systems for you. In that
+case you would see it open the map for you and then wiggle the view for a split
+second instead of switching tabs over to the system search.
+
+![[Elite-binds-galmap.png]]
+
 Should you use a keyboard layout that is _not_ en-US QWERTY, some keys might not
 work out of the box. You can try telling bindED about your keyboard layout by
-setting the `bindED.layout#` variable (including the \#!) to something more
+setting the `bindED.layout#` variable (including the `#`!) to something more
 appropriate in your startup command.
 
 ![[bindED-layout.png]]
 
 Currently bindED supports the `en-US`, `en-GB` and `de-Neo2` layouts. [You can
-find instructions on how to add your own on
-Github](https://github.com/alterNERDtive/bindED/wiki/Keyboard-Layouts).
+find instructions on how to add your own 
+here](https://alternerdtive.github.io/bindED/troubleshooting/#adding-a-keyboard-layout).

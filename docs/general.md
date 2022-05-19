@@ -31,6 +31,7 @@ See [the configuration section](../configuration/general#settings).
   and places it on your Desktop. Note that this currently uses bindED’s built-in
   report which will output _any_ bind that does not have a keyboard key set,
   including axis binds and binds that are not actually used by the profiles.
+* `open documentation`: Opens the documentation in your default browser.
 * `open EDDI options;configure EDDI`: Displays EDDI’s configuration window.
 * `open elite bindings folder`: Opens Elite’s bindings folder
   (`%localappdata%\Frontier Developments\Elite Dangerous\Options\Bindings`)

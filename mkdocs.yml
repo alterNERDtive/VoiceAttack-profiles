@@ -1,4 +1,4 @@
-site_name: "alterNERDtive VA profiles"
+﻿site_name: "alterNERDtive VA profiles"
 site_url: https://alterNERDtive.github.io/VoiceAttack-profiles
 repo_url: https://github.com/alterNERDtive/VoiceAttack-profiles
 edit_uri: "edit/devel/docs/"
@@ -43,7 +43,8 @@ nav:
     - 'Issues':
         #- 'VoiceAttack Tips': 'VoiceAttack.md'
         - 'troubleshooting.md'
-        - 'Report a Bug': 'https://github.com/alterNERDtive/VoiceAttack-profiles/issues/'
+        - '⎋ Changelog': 'https://github.com/alterNERDtive/VoiceAttack-profiles/blob/release/CHANGELOG.md'
+        - '⎋ Report a Bug': 'https://github.com/alterNERDtive/VoiceAttack-profiles/issues/'
     - 'Watch in Action':
-        - 'Twitch': 'https://twitch.tv/alterNERDtive'
-        - 'Youtube': 'https://www.youtube.com/channel/UC3XNZA7xWed1zM1AWOOdmog'
+        - '⎋ Twitch': 'https://twitch.tv/alterNERDtive'
+        - '⎋ Youtube': 'https://www.youtube.com/channel/UC3XNZA7xWed1zM1AWOOdmog'

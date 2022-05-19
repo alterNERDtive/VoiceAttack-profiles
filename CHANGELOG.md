@@ -1,3 +1,90 @@
+﻿# 4.3 (2022-05-19)
+
+**NOTE**: Further development is on hold and Odyssey compatibility will not be
+worked on for the time being. See [the corresponding issue on
+Github](https://github.com/alterNERDtive/VoiceAttack-profiles/issues/113). Feel
+free to file issues for anything that is broken on Odyssey and it will be worked
+on when it is worked on.
+
+That said, there is now a settings UI! It’s not pretty, it’s basic, but it does
+the job.
+
+* Updated documentation for the switch to 64-bit as the standard VoiceAttack
+  distribution format.
+* Updated included `bindED` plugin.
+
+### Added
+
+* `customize settings` command: Brings up a rudimentary settings UI. (#80)
+* `open documentation` command: Opens the profile’s documentatin in your
+  default browser.
+* Section about HCS compatibility in “Troubleshooting” documentation (#130).
+
+### Fixed
+
+* Log level settings description no longer contains literal `\n`s.
+* Documentation now mentions that you have to reload your custom profile after
+  creating the `startup` command for the first time. (#129)
+* Clarified not having to install bundled dependencies manually. (#127)
+* Reordered setup instructions to clarify that the profile example already comes
+  with a `startup` command. (#126)
+* No longer cuts off EDDI’s “update available” TTS on VoiceAttack start. (#120)
+* Implemented workaround for EDDI’s `Body scanned` event sometimes not setting
+  variables correctly. Might drop some events, will log to `DEBUG`. (#121)
+
+## EliteAttack 8.3
+
+### Added
+
+* `INFO` logging for carrier events.
+* `auto refuel` setting: Automatically refuel after docking at a station.
+    Default: true. (#133)
+* `auto repair` setting: Automatically repair after docking at a station.
+  Default: true. (#133)
+* `auto move to hangar` setting: Automatically move the ship to the hanger after
+  docking at a station. Default: true. (#133)
+* `auto enter station services`: Automatically enter the Station Services menu
+  after docking at a station. Default: true. (#133)
+* `find nearest […]` command now logs the result to the VoiceAttack log (log
+  level `INFO`). (#96)
+
+## RatAttack 6.3
+
+### Added
+
+* Now gives feedback after asking for call confirmation: “Call aborted.”
+  “Calling <…>.”.
+* `auto copy rat case system` setting: Automatically copy the client’s system to
+  the clipboard when you open a rat case. Default: true.
+* Now asks for call confirmation more clearly: “send call \<call\> to fuel
+  rats?” instead of an easily misinterpreted “call \<call\>?”. The question
+  inflection is more or less pronounced depending on the TTS voice used and has
+  led to confusion. (#101)
+
+### Fixed
+
+* No longer trying to get nearest CMDR for the new “Unconfirmed” system info.
+* Fixed RATSIGNAL parsing for locales containing `&`.
+* Fixed RATSIGNAL parsing for system information containing `/` (e.g. “Herbig
+  AE/BE star”).
+* “Not Set” case number when asking for details about an invalid case.
+* Fixed RATSIGNAL parsing for locales containing `,`.
+* No longer determines (nor logs) nearest CMDR if announcing nearest CMDR is
+  turned off while also being off duty.
+* No longer silently swallows calls if call confirmation is disabled. (#128)
+
+## SpanshAttack 7.2.1
+
+### Fixed
+
+* OBOE on last jump.
+* Moved jumps left announcement from getting the next waypoint (now happens at
+  the start of a jump) to the `Jumped` event (happens after a jump). (#124)
+* Will no longer go to neutron jump mode if no route has been found (= there is
+  only a single waypoint). (#104)
+
+-----
+
 # 4.2.3 (2021-05-23)
 
 Updated included bindED plugin to version 4.1 that fixes Odyssey compatibility.
@@ -139,7 +226,7 @@ also the default string used to detect them in AdiIRC. You’ll need to listen t
 * Now uses Mecha’s system information in the RATSIGNAL in case announcements.
 * `system information for fuel rat case` configuration option: System
   information provided by Mecha. Default: true.
-* `latest rat case details` command: : Will give you the case data for the
+* `latest rat case details` command: Will give you the case data for the
   latest incoming case.
 
 ### Changed

@@ -1,4 +1,4 @@
-# EliteAttack
+﻿# EliteAttack
 
 This is my personal VoiceAttack profile for Elite: Dangerous. It started out 
 ages ago as a modification of [MalicVR’s public 
@@ -167,6 +167,10 @@ The commands in here do random more or less useful things.
 
 ## Events
 
+This is a list of ingame Events, [provided by
+EDDI](https://github.com/EDCD/EDDI/wiki/VoiceAttack-Integration), that the
+profile will act on.
+
 ### AFMU Repairs
 
 Reports on the module that has been repaired, and if it has been fully or
@@ -226,8 +230,8 @@ scripts).
 
 ### Docked
 
-Automatically refuels, repairs, optionally rearms, then gets your ship into the
-hangar and opens station services.
+Automatically refuels, repairs, rearms, then gets your ship into the hangar and
+opens station services. Can be individually disabled.
 
 ### Docking Denied
 
