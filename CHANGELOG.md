@@ -28,6 +28,7 @@ the job.
 * Clarified not having to install bundled dependencies manually. (#127)
 * Reordered setup instructions to clarify that the profile example already comes
   with a `startup` command. (#126)
+* No longer cuts off EDDI’s “update available” TTS on VoiceAttack start. (#120)
 
 ## EliteAttack 8.3
 
