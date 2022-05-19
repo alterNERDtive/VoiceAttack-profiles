@@ -1,4 +1,4 @@
-﻿# devel
+﻿# 4.3 (2022-05-19)
 
 **NOTE**: Further development is on hold and Odyssey compatibility will not be
 worked on for the time being. See [the corresponding issue on
@@ -11,7 +11,7 @@ the job.
 
 * Updated documentation for the switch to 64-bit as the standard VoiceAttack
   distribution format.
-* Updated included `bindED` plugin to FIXXME.
+* Updated included `bindED` plugin.
 
 ### Added
 
