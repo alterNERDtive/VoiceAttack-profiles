@@ -1,4 +1,4 @@
-# RatAttack
+﻿# RatAttack
 
 This profile facilitates [Fuel Ratting](https://www.fuelrats.com). It aims to 
 eliminate as much of the required manual task and attention switching as 
@@ -49,6 +49,9 @@ are several commands you can run on this list, giving it a case number:
   IRC. Will only work if you actually have [your IRC client setup to send case
   announcements to
   VoiceAttack](../configuration/RatAttack/#getting-case-data-from-irc).
+
+Opening a case will automatically copy the client’s system to the clipboard for
+easy route plotting. This can be disabled.
 
 ### Making Calls ###
 

@@ -38,12 +38,14 @@ the job.
 * `auto enter station services`: Automatically enter the Station Services menu
   after docking at a station. Default: true. (#133)
 
-## RatAttack 6.2.3
+## RatAttack 6.3
 
 ### Added
 
 * Now gives feedback after asking for call confirmation: “Call aborted.”
   “Calling <…>.”.
+* `auto copy rat case system` setting: Automatically copy the client’s system to
+  the clipboard when you open a rat case. Default: true.
 
 ### Fixed
 

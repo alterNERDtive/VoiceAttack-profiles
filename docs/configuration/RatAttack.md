@@ -1,4 +1,4 @@
-# RatAttack
+﻿# RatAttack
 
 ## Getting Case Data From IRC
 
@@ -88,6 +88,8 @@ Toggles:
 
 * `auto close fuel rat case`: Automatically close a rat case when sending
   “fuel+” via voice command or ingame chat. Default: false.
+* `auto copy rat case system` : Automatically copy the client’s system to the
+  clipboard when you open a rat case. Default: true.
 * `fuel rat call confirmation`: Only make calls in #fuelrats after vocal
   confirmation to prevent mistakes. Default: true.
 * `fuel rat duty`: On duty, receiving case announcements via TTS. Default: true.
