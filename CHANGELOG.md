@@ -10,6 +10,11 @@
 * `auto disable s r v lights` setting: Automatically turn SRV lights off when
   deploying one. Default: true. (#133)
 
+## SpashAttack 7.2.2
+
+* Fixed getting current jump range from EDDI; no longer fails on the first try,
+  no longer sometimes reports the last requested range instead of current.
+
 -----
 
 # 4.3 (2022-05-19)

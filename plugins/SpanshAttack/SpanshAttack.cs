@@ -203,7 +203,7 @@ namespace SpanshAttack
         | required VoiceAttack plugin shenanigans |
         \========================================*/
 
-        static readonly Version VERSION = new Version("7.2.1");
+        static readonly Version VERSION = new Version("7.2.2");
 
         public static Guid VA_Id()
             => new Guid("{e722b29d-898e-47dd-a843-a409c87e0bd8}");
