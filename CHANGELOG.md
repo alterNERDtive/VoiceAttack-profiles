@@ -4,7 +4,6 @@
 
 ### Added
 
-
 * `auto retract landing gear` setting: Automatically retract landing gear when
   lifting off a planet / undocking from a station. Default: true. (#133)
 * `auto disable s r v lights` setting: Automatically turn SRV lights off when

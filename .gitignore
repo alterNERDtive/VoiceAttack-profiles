@@ -358,3 +358,4 @@ MigrationBackup/
 /Makefile
 /site
 /src
+/build.csproj
