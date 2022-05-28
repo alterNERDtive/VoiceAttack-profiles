@@ -31,10 +31,10 @@ profile anyway.
 
 ### EDDI Events
 
-The process to add your own handlers for EDDI events has changed. You no longer
-have to check which of my profiles handle them and add the commands for that
-manually; instead you need to [run the `eddi.event` context of the
-`alterNERDtive-base` plugin](../configuration/general#eddi-events)
+The process for adding your own handlers for EDDI events has changed. You no
+longer have to check which of my profiles handle them and add the commands for
+those manually; instead you need to [run the `eddi.event` context of the
+`alterNERDtive-base` plugin](../configuration/general#eddi-events).
 
 ### bindED
 
