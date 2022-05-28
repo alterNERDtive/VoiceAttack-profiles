@@ -194,6 +194,25 @@ namespace alterNERDtive
 
         private static void Context_Config_VersionMigration(dynamic vaProxy)
         {
+            // =============
+            // === 4.3.1 ===
+            // =============
+
+            // EliteAttack
+            foreach (string option in new string[] { "autoStationService" })
+            {
+                string name = $"EliteAttack.{option}s#";
+                string oldName = $"EliteAttack.{option}#";
+                Commands.Run("alterNERDtive-base.loadVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{oldName}", "boolean" } });
+                bool? value = VA!.GetBoolean(oldName);
+                if (value != null)
+                {
+                    Log.Info($"Migrating option {oldName} …");
+                    Commands.Run("alterNERDtive-base.saveVariableToProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}" }, new bool[] { (bool)value } });
+                    Commands.Run("alterNERDtive-base.unsetVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{oldName}", "boolean" } });
+                }
+            }
+
             // ===========
             // === 4.2 ===
             // ===========

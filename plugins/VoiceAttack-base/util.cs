@@ -69,7 +69,7 @@ namespace alterNERDtive.util
                         description: "Automatically restock after docking at a station.") },
                     { new Option<bool>("autoHangar", true, voiceTrigger: "auto move to hangar",
                         description: "Automatically move the ship to the hangar after docking at a station.") },
-                    { new Option<bool>("autoStationService", true, voiceTrigger: "auto enter station services",
+                    { new Option<bool>("autoStationServices", true, voiceTrigger: "auto enter station services",
                         description: "Automatically enter the Station Services menu after docking at a station.") },
                     { new Option<bool>("autoRetractLandingGear", true, voiceTrigger: "auto retract landing gear",
                         description: "Automatically retract landing gear when lifting off a planet / undocking from a station.") },
