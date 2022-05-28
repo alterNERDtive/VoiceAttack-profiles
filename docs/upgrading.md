@@ -1,4 +1,4 @@
-# Upgrading
+﻿# Upgrading
 
 To upgrade to the latest version, follow these simple steps:
 
@@ -28,6 +28,13 @@ Please do not fiddle with the configuration variables from your startup command
 (or any other, really). It _should_ not break anything, but it might. And it is
 entirely unnecessary since configuration will be saved to and loaded from the
 profile anyway.
+
+### EDDI Events
+
+The process to add your own handlers for EDDI events has changed. You no longer
+have to check which of my profiles handle them and add the commands for that
+manually; instead you need to [run the `eddi.event` context of the
+`alterNERDtive-base` plugin](../configuration/general#eddi-events)
 
 ### bindED
 
