@@ -33,6 +33,10 @@ namespace RatAttack
                 {
                     Console.Error.WriteLine("Connection to RatAttack pipe has timed out.");
                 }
+                catch (UnauthorizedAccessException)
+                {
+                    Console.Error.WriteLine("Cannot connect to RatAttack pipe. Are you running VoiceAttack as Admin?");
+                }
             }
         }
     }

@@ -13,6 +13,12 @@
 
 * `auto enter station services` option. (#142)
 
+## RatAttack 6.3.1
+
+* Added error message to the CLI tool for running VoiceAttack with elevated
+  privileges which will cause an `UnAuthorizedAccessException` trying to
+  communicate with the plugin. (#138)
+
 ## SpashAttack 7.2.2
 
 * Fixed getting current jump range from EDDI; no longer fails on the first try,
