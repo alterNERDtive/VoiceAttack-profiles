@@ -18,6 +18,7 @@
 * Added error message to the CLI tool for running VoiceAttack with elevated
   privileges which will cause an `UnAuthorizedAccessException` trying to
   communicate with the plugin. (#138)
+* Added warning to VoiceAttack when running it with elevated privileges. (#138)
 
 ## SpashAttack 7.2.2
 
