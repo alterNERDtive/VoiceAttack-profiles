@@ -1,5 +1,9 @@
 ﻿# devel
 
+### Added
+
+* The Configuration GUI now has an “Apply” button.
+
 ## EliteAttack 8.4
 
 ### Added
