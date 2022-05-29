@@ -1,6 +1,24 @@
-﻿#nullable enable
+﻿// <copyright file="base.cs" company="alterNERDtive">
+// Copyright 2019–2022 alterNERDtive.
+//
+// This file is part of alterNERDtive VoiceAttack profiles for Elite Dangerous.
+//
+// alterNERDtive VoiceAttack profiles for Elite Dangerous is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// alterNERDtive VoiceAttack profiles for Elite Dangerous is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with alterNERDtive VoiceAttack profiles for Elite Dangerous.  If not, see &lt;https://www.gnu.org/licenses/&gt;.
+// </copyright>
 
-using alterNERDtive.util;
+#nullable enable
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,31 +27,50 @@ using System.Net;
 using System.Text.RegularExpressions;
 using System.Threading;
 
+using alterNERDtive.util;
+
 namespace alterNERDtive
 {
+    /// <summary>
+    /// This is the base plugin orchestrating all the profile-specific plugins
+    /// to work together properly. It handles things like configuration or
+    /// subscribing to VoiceAttack-triggered events.
+    /// </summary>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1649:File name should match first type name", Justification = "F off :)")]
     public class BasePlugin
     {
-        private static dynamic? VA { get; set; }
-        private static readonly Dictionary<Guid, string> Profiles = new Dictionary<Guid, string> {
+        private static readonly Dictionary<Guid, string> Profiles = new Dictionary<Guid, string>
+        {
             { new Guid("{F7F59CFD-1AE2-4A7E-8F62-C62372418BAC}"), "alterNERDtive-base" },
             { new Guid("{f31b575b-6ce4-44eb-91fc-7459e55013cf}"), "EliteAttack" },
             { new Guid("{87276668-2a6e-4d80-af77-80651daa58b7}"), "RatAttack" },
             { new Guid("{e722b29d-898e-47dd-a843-a409c87e0bd8}"), "SpanshAttack" },
-            { new Guid("{05580e6c-442c-46cd-b36f-f5a1f967ec59}"), "StreamAttack" }
+            { new Guid("{05580e6c-442c-46cd-b36f-f5a1f967ec59}"), "StreamAttack" },
         };
-        private static readonly List<string> ActiveProfiles = new List<string>();
-        private static readonly List<string> InstalledProfiles = new List<string>();
 
-        private static readonly Regex ConfigurationVariableRegex = new Regex(@$"(?<id>({String.Join("|", Profiles.Values)}))\.(?<name>.+)#");
+        private static readonly List<string> ActiveProfiles = new ();
+        private static readonly List<string> InstalledProfiles = new ();
 
-        private static VoiceAttackLog Log => log ??= new VoiceAttackLog(VA, "alterNERDtive-base");
+        private static readonly Regex ConfigurationVariableRegex = new (@$"(?<id>({string.Join("|", Profiles.Values)}))\.(?<name>.+)#");
+
+        private static VoiceAttackCommands? commands;
+        private static Configuration? config;
         private static VoiceAttackLog? log;
 
         private static VoiceAttackCommands Commands => commands ??= new VoiceAttackCommands(VA, Log);
-        private static VoiceAttackCommands? commands;
 
         private static Configuration Config => config ??= new Configuration(VA, Log, Commands, "alterNERDtive-base");
-        private static Configuration? config;
+
+        private static VoiceAttackLog Log => log ??= new VoiceAttackLog(VA, "alterNERDtive-base");
+
+        private static dynamic? VA { get; set; }
+
+        /// <summary>
+        /// Returns whether a given profile is currently active.
+        /// </summary>
+        /// <param name="profileName">The name of the profile in question.</param>
+        /// <returns>The state of the profile in question.</returns>
+        public static bool IsProfileActive(string profileName) => ActiveProfiles.Contains(profileName);
 
         private static void CheckProfiles(dynamic vaProxy)
         {
@@ -43,20 +80,21 @@ namespace alterNERDtive
             foreach (KeyValuePair<Guid, string> profile in Profiles)
             {
                 if (vaProxy.Command.Exists($"(({profile.Value}.startup))"))
-                // Sadly there is no way to find _active_ profiles, so we have to check the one command that always is in them.
                 {
+                    // Sadly there is no way to find _active_ profiles, so we have to check the one command that always is in them.
                     ActiveProfiles.Add(profile.Value);
                 }
+
                 if (vaProxy.Profile.Exists(profile.Key))
                 {
                     InstalledProfiles.Add(profile.Value);
                 }
             }
+
             Log.Debug($"Profiles found: {string.Join<string>(", ", ActiveProfiles)}");
         }
 
-        public static bool IsProfileActive(string profileName) => ActiveProfiles.Contains(profileName);
-
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "required by VoiceAttack plugin API")]
         private static void ConfigurationChanged(string option, dynamic? from, dynamic? to, Guid? guid = null)
         {
             try
@@ -69,6 +107,7 @@ namespace alterNERDtive
                     Log.Debug($"Configuration has changed, '{id}.{name}': '{from}' → '{to}'");
 
                     dynamic o = Config.GetOption(id, name);
+
                     // When loaded from profile but not explicitly set, will be null.
                     // Then load default.
                     // Same applies to resetting a saved option (= saving null to the profile).
@@ -105,7 +144,8 @@ namespace alterNERDtive
                             }
                         }
 
-                        if (option == "alterNERDtive-base.eddi.quietMode#" && VA!.GetText("EDDI version") != null) // if null, EDDI isn’t up yet
+                        // if null, EDDI isn’t up yet
+                        if (option == "alterNERDtive-base.eddi.quietMode#" && VA!.GetText("EDDI version") != null)
                         {
                             Log.Debug($"Resetting speech responder ({(to ?? false ? "off" : "on")}) …");
                             Commands.Run("alterNERDtive-base.setEDDISpeechResponder");
@@ -137,7 +177,8 @@ namespace alterNERDtive
 
             Log.Notice($"Local version: {VERSION}, latest release: {latestVersion}.");
 
-            Commands.TriggerEvent("alterNERDtive-base.updateCheck",
+            Commands.TriggerEvent(
+                "alterNERDtive-base.updateCheck",
                 parameters: new dynamic[] { new string[] { VERSION.ToString(), latestVersion.ToString() }, new bool[] { VERSION.CompareTo(latestVersion) < 0 } });
         }
 
@@ -145,7 +186,7 @@ namespace alterNERDtive
         | plugin contexts |
         \================*/
 
-        private static void Context_Config_Dialog(dynamic vaProxy)
+        private static void Context_Config_Dialog()
         {
             Thread dialogThread = new Thread(new ThreadStart(() =>
             {
@@ -155,7 +196,7 @@ namespace alterNERDtive
                     Content = new SettingsDialog(Config, Log),
                     SizeToContent = System.Windows.SizeToContent.WidthAndHeight,
                     ResizeMode = System.Windows.ResizeMode.NoResize,
-                    WindowStyle = System.Windows.WindowStyle.ToolWindow
+                    WindowStyle = System.Windows.WindowStyle.ToolWindow,
                 }.ShowDialog();
             }));
             dialogThread.SetApartmentState(ApartmentState.STA);
@@ -163,17 +204,17 @@ namespace alterNERDtive
             dialogThread.Start();
         }
 
-        private static void Context_Config_Dump(dynamic vaProxy)
+        private static void Context_Config_Dump()
         {
             Config.DumpConfig();
         }
 
-        private static void Context_Config_List(dynamic vaProxy)
+        private static void Context_Config_List()
         {
             Config.ListConfig();
         }
 
-        private static void Context_Config_Setup(dynamic vaProxy)
+        private static void Context_Config_Setup()
         {
             Log.Debug("Loading default configuration …");
             Config.ApplyAllDefaults();
@@ -181,18 +222,19 @@ namespace alterNERDtive
             {
                 Config.SetVoiceTriggers(type);
             }
+
             Config.LoadFromProfile();
             Log.Debug("Finished loading configuration.");
         }
 
-        private static void Context_Config_SetVariables(dynamic vaProxy)
+        private static void Context_Config_SetVariables()
         {
-            string trigger = vaProxy.GetText("~trigger") ?? throw new ArgumentNullException("~trigger");
+            string trigger = VA!.GetText("~trigger") ?? throw new ArgumentNullException("~trigger");
             Log.Debug($"Loading variables for trigger '{trigger}' …");
-            Config.SetVariablesForTrigger(vaProxy, trigger);
+            Config.SetVariablesForTrigger(VA!, trigger);
         }
 
-        private static void Context_Config_VersionMigration(dynamic vaProxy)
+        private static void Context_Config_VersionMigration()
         {
             // =============
             // === 4.3.1 ===
@@ -218,7 +260,7 @@ namespace alterNERDtive
             // ===========
 
             // SpanshAttack
-            string edtsPath = $@"{vaProxy.SessionState["VA_SOUNDS"]}\scripts\edts.exe";
+            string edtsPath = $@"{VA!.SessionState["VA_SOUNDS"]}\scripts\edts.exe";
             if (File.Exists(edtsPath))
             {
                 File.Delete(edtsPath);
@@ -259,6 +301,7 @@ namespace alterNERDtive
                     Commands.Run("alterNERDtive-base.unsetVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}", "boolean" } });
                 }
             }
+
             foreach (string option in new string[] { "CMDRs", "platforms" })
             {
                 string name = $"{prefix}.{option}";
@@ -286,6 +329,7 @@ namespace alterNERDtive
                     Commands.Run("alterNERDtive-base.unsetVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}", "boolean" } });
                 }
             }
+
             foreach (string option in new string[] { "announceJumpsLeft" })
             {
                 string name = $"{prefix}.{option}";
@@ -315,26 +359,26 @@ namespace alterNERDtive
             }
         }
 
-        private static void Context_Eddi_Event(dynamic vaProxy)
+        private static void Context_Eddi_Event()
         {
-            string eddiEvent = vaProxy.Command.Name();
+            string eddiEvent = VA!.Command.Name();
             string command = eddiEvent.Substring(2, eddiEvent.Length - 4);
             Log.Debug($"Running EDDI event '{command}' …");
             Commands.RunAll(ActiveProfiles, command, logMissing: false, subcommand: true); // FIXXME: a) triggerAll or something, b) change all profiles to use "((<name>.<event>))" over "<name>.<event>"
         }
 
-        private static void Context_EDSM_BodyCount(dynamic vaProxy)
+        private static void Context_EDSM_BodyCount()
         {
-            string system = vaProxy.GetText("~system") ?? throw new ArgumentNullException("~system");
+            string system = VA!.GetText("~system") ?? throw new ArgumentNullException("~system");
 
-            string path = $@"{vaProxy.SessionState["VA_SOUNDS"]}\scripts\explorationtools.exe";
+            string path = $@"{VA!.SessionState["VA_SOUNDS"]}\scripts\explorationtools.exe";
             string arguments = $@"bodycount ""{system}""";
 
             Process p = PythonProxy.SetupPythonScript(path, arguments);
 
             int bodyCount = 0;
             bool error = false;
-            string errorMessage = "";
+            string errorMessage = string.Empty;
 
             p.Start();
             string stdout = p.StandardOutput.ReadToEnd();
@@ -363,26 +407,26 @@ namespace alterNERDtive
                     break;
             }
 
-            vaProxy.SetInt("~bodyCount", bodyCount);
-            vaProxy.SetBoolean("~error", error);
-            vaProxy.SetText("~errorMessage", errorMessage);
-            vaProxy.SetInt("~exitCode", p.ExitCode);
+            VA!.SetInt("~bodyCount", bodyCount);
+            VA!.SetBoolean("~error", error);
+            VA!.SetText("~errorMessage", errorMessage);
+            VA!.SetInt("~exitCode", p.ExitCode);
         }
 
-        private static void Context_EDSM_DistanceBetween(dynamic vaProxy)
+        private static void Context_EDSM_DistanceBetween()
         {
-            string fromSystem = vaProxy.GetText("~fromSystem") ?? throw new ArgumentNullException("~fromSystem");
-            string toSystem = vaProxy.GetText("~toSystem") ?? throw new ArgumentNullException("~toSystem");
-            int roundTo = vaProxy.GetInt("~roundTo") ?? 2;
+            string fromSystem = VA!.GetText("~fromSystem") ?? throw new ArgumentNullException("~fromSystem");
+            string toSystem = VA!.GetText("~toSystem") ?? throw new ArgumentNullException("~toSystem");
+            int roundTo = VA!.GetInt("~roundTo") ?? 2;
 
-            string path = $@"{vaProxy.SessionState["VA_SOUNDS"]}\Scripts\explorationtools.exe";
+            string path = $@"{VA!.SessionState["VA_SOUNDS"]}\Scripts\explorationtools.exe";
             string arguments = $@"distancebetween --roundto {roundTo} ""{fromSystem}"" ""{toSystem}""";
 
             Process p = PythonProxy.SetupPythonScript(path, arguments);
 
             decimal distance = 0;
             bool error = false;
-            string errorMessage = "";
+            string errorMessage = string.Empty;
 
             p.Start();
             string stdout = p.StandardOutput.ReadToEnd();
@@ -405,19 +449,18 @@ namespace alterNERDtive
                     Log.Error(stderr);
                     errorMessage = "Unrecoverable error in plugin.";
                     break;
-
             }
 
-            vaProxy.SetDecimal("~distance", distance);
-            vaProxy.SetBoolean("~error", error);
-            vaProxy.SetText("~errorMessage", errorMessage);
-            vaProxy.SetInt("~exitCode", p.ExitCode);
+            VA!.SetDecimal("~distance", distance);
+            VA!.SetBoolean("~error", error);
+            VA!.SetText("~errorMessage", errorMessage);
+            VA!.SetInt("~exitCode", p.ExitCode);
         }
 
-        private static void Context_Log(dynamic vaProxy)
+        private static void Context_Log()
         {
-            string message = vaProxy.GetText("~message");
-            string level = vaProxy.GetText("~level");
+            string message = VA!.GetText("~message");
+            string level = VA!.GetText("~level");
 
             if (level == null)
             {
@@ -429,7 +472,10 @@ namespace alterNERDtive
                 {
                     Log.Log(message, (LogLevel)Enum.Parse(typeof(LogLevel), level.ToUpper()));
                 }
-                catch (ArgumentNullException) { throw; }
+                catch (ArgumentNullException)
+                {
+                    throw;
+                }
                 catch (ArgumentException)
                 {
                     Log.Error($"Invalid log level '{level}'.");
@@ -437,16 +483,15 @@ namespace alterNERDtive
             }
         }
 
-        private static void Context_Spansh_OutdatedStations(dynamic vaProxy)
+        private static void Context_Spansh_OutdatedStations()
         {
-            string system = vaProxy.GetText("~system") ?? throw new ArgumentNullException("~system");
-            int minage = vaProxy.GetInt("~minage") ?? throw new ArgumentNullException("~minage");
+            string system = VA!.GetText("~system") ?? throw new ArgumentNullException("~system");
+            int minage = VA!.GetInt("~minage") ?? throw new ArgumentNullException("~minage");
 
-            string path = $@"{vaProxy.SessionState["VA_SOUNDS"]}\Scripts\spansh.exe";
+            string path = $@"{VA!.SessionState["VA_SOUNDS"]}\Scripts\spansh.exe";
             string arguments = $@"oldstations --system ""{system}"" --minage {minage}";
 
             Process p = PythonProxy.SetupPythonScript(path, arguments);
-
 
             p.Start();
             string stdout = p.StandardOutput.ReadToEnd();
@@ -476,16 +521,15 @@ namespace alterNERDtive
                     Log.Error(stderr);
                     errorMessage = "Unrecoverable error in plugin.";
                     break;
-
             }
 
-            vaProxy.SetText("~message", message);
-            vaProxy.SetBoolean("~error", error);
-            vaProxy.SetText("~errorMessage", errorMessage);
-            vaProxy.SetInt("~exitCode", p.ExitCode);
+            VA!.SetText("~message", message);
+            VA!.SetBoolean("~error", error);
+            VA!.SetText("~errorMessage", errorMessage);
+            VA!.SetInt("~exitCode", p.ExitCode);
         }
 
-        private static void Context_Startup(dynamic vaProxy)
+        private static void Context_Startup()
         {
             Log.Notice("Starting up …");
             CheckProfiles(VA);
@@ -494,7 +538,7 @@ namespace alterNERDtive
             Log.Notice("Finished startup.");
         }
 
-        private static void Context_Update_Check(dynamic vaProxy)
+        private static void Context_Update_Check()
         {
             UpdateCheck();
         }
@@ -503,30 +547,58 @@ namespace alterNERDtive
         | required VoiceAttack plugin shenanigans |
         \========================================*/
 
-        static readonly Version VERSION = new Version("4.3.1");
+        /// <summary>
+        /// The plugin’s version, as required by the VoiceAttack plugin API.
+        /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1201:Elements should appear in the correct order", Justification = "nicer grouping")]
+        public static readonly Version VERSION = new Version("4.3.1");
 
+        /// <summary>
+        /// The plugin’s GUID, as required by the VoiceAttack plugin API.
+        /// </summary>
+        /// <returns>The GUID.</returns>
         public static Guid VA_Id()
-            => new Guid("{F7F59CFD-1AE2-4A7E-8F62-C62372418BAC}");
+            => new ("{F7F59CFD-1AE2-4A7E-8F62-C62372418BAC}");
+
+        /// <summary>
+        /// The plugin’s display name, as required by the VoiceAttack plugin API.
+        /// </summary>
+        /// <returns>The display name.</returns>
         public static string VA_DisplayName()
             => $"alterNERDtive-base {VERSION}";
+
+        /// <summary>
+        /// The plugin’s description, as required by the VoiceAttack plugin API.
+        /// </summary>
+        /// <returns>The description.</returns>
         public static string VA_DisplayInfo()
             => "The alterNERDtive plugin to manage all the alterNERDtive profiles!";
 
+        /// <summary>
+        /// The Init method, as required by the VoiceAttack plugin API.
+        /// Runs when the plugin is initially loaded.
+        /// </summary>
+        /// <param name="vaProxy">The VoiceAttack proxy object.</param>
         public static void VA_Init1(dynamic vaProxy)
         {
             VA = vaProxy;
             Log.Notice("Initializing …");
             VA.SetText("alterNERDtive-base.version", VERSION.ToString());
-            vaProxy.BooleanVariableChanged += new Action<String, Boolean?, Boolean?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
-            vaProxy.DateVariableChanged += new Action<String, DateTime?, DateTime?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
-            vaProxy.DecimalVariableChanged += new Action<String, decimal?, decimal?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
-            vaProxy.IntegerVariableChanged += new Action<String, int?, int?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
-            vaProxy.TextVariableChanged += new Action<String, String, String, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
+            vaProxy.BooleanVariableChanged += new Action<string, bool?, bool?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
+            vaProxy.DateVariableChanged += new Action<string, DateTime?, DateTime?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
+            vaProxy.DecimalVariableChanged += new Action<string, decimal?, decimal?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
+            vaProxy.IntegerVariableChanged += new Action<string, int?, int?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
+            vaProxy.TextVariableChanged += new Action<string, string, string, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
             VA.SetBoolean("alterNERDtive-base.initialized", true);
             Commands.TriggerEvent("alterNERDtive-base.initialized", wait: false, logMissing: false);
             Log.Notice("Init successful.");
         }
 
+        /// <summary>
+        /// The Invoke method, as required by the VoiceAttack plugin API.
+        /// Runs whenever a plugin context is invoked.
+        /// </summary>
+        /// <param name="vaProxy">The VoiceAttack proxy object.</param>
         public static void VA_Invoke1(dynamic vaProxy)
         {
             VA = vaProxy;
@@ -538,52 +610,52 @@ namespace alterNERDtive
                 switch (context)
                 {
                     case "startup":
-                        Context_Startup(vaProxy);
+                        Context_Startup();
                         break;
-                    // config
                     case "config.dialog":
-                        Context_Config_Dialog(vaProxy);
+                        // config
+                        Context_Config_Dialog();
                         break;
                     case "config.dump":
-                        Context_Config_Dump(vaProxy);
+                        Context_Config_Dump();
                         break;
                     case "config.getvariables":
-                        Context_Config_SetVariables(vaProxy);
+                        Context_Config_SetVariables();
                         break;
                     case "config.list":
-                        Context_Config_List(vaProxy);
+                        Context_Config_List();
                         break;
                     case "config.setup":
-                        Context_Config_Setup(vaProxy);
+                        Context_Config_Setup();
                         break;
                     case "config.versionmigration":
-                        Context_Config_VersionMigration(vaProxy);
+                        Context_Config_VersionMigration();
                         break;
-                    // EDSM
                     case "edsm.bodycount":
-                        Context_EDSM_BodyCount(vaProxy);
+                        // EDSM
+                        Context_EDSM_BodyCount();
                         break;
                     case "edsm.distancebetween":
-                        Context_EDSM_DistanceBetween(vaProxy);
+                        Context_EDSM_DistanceBetween();
                         break;
-                    // EDDI
                     case "eddi.event":
-                        Context_Eddi_Event(vaProxy);
+                        // EDDI
+                        Context_Eddi_Event();
                         break;
-                    // Spansh
                     case "spansh.outdatedstations":
-                        Context_Spansh_OutdatedStations(vaProxy);
+                        // Spansh
+                        Context_Spansh_OutdatedStations();
                         break;
-                    // log
                     case "log.log":
-                        Context_Log(vaProxy);
+                        // log
+                        Context_Log();
                         break;
-                    // update
                     case "update.check":
-                        Context_Update_Check(vaProxy);
+                        // update
+                        Context_Update_Check();
                         break;
-                    // invalid
                     default:
+                        // invalid
                         Log.Error($"Invalid plugin context '{vaProxy.Context}'.");
                         break;
                 }
@@ -598,8 +670,23 @@ namespace alterNERDtive
             }
         }
 
-        public static void VA_Exit1(dynamic vaProxy) { }
+        /// <summary>
+        /// The Exit method, as required by the VoiceAttack plugin API.
+        /// Runs when VoiceAttack is shut down.
+        /// </summary>
+        /// <param name="vaProxy">The VoiceAttack proxy object.</param>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "required by VoiceAttack plugin API")]
+        public static void VA_Exit1(dynamic vaProxy)
+        {
+        }
 
-        public static void VA_StopCommand() { }
+        /// <summary>
+        /// The StopCommand method, as required by the VoiceAttack plugin API.
+        /// Runs whenever all commands are stopped using the “Stop All Commands”
+        /// button or action.
+        /// </summary>
+        public static void VA_StopCommand()
+        {
+        }
     }
 }
