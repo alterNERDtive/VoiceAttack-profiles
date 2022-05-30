@@ -5,4 +5,6 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:Element should begin with upper-case letter", Justification = "<Pending>", Scope = "namespace", Target = "~N:alterNERDtive")]
+[assembly: SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:Element should begin with upper-case letter", Justification = "just cause", Scope = "namespace", Target = "~N:alterNERDtive")]
+[assembly: SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:Element should begin with upper-case letter", Justification = "just cause", Scope = "namespace", Target = "~N:alterNERDtive.edts")]
+[assembly: SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:Element should begin with upper-case letter", Justification = "just cause", Scope = "namespace", Target = "~N:alterNERDtive.util")]

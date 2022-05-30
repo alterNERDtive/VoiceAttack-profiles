@@ -39,7 +39,9 @@ namespace alterNERDtive
     [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1649:File name should match first type name", Justification = "F off :)")]
     public class BasePlugin
     {
-        private static readonly Dictionary<Guid, string> Profiles = new Dictionary<Guid, string>
+        private static readonly Version VERSION = new ("4.3.1");
+
+        private static readonly Dictionary<Guid, string> Profiles = new ()
         {
             { new Guid("{F7F59CFD-1AE2-4A7E-8F62-C62372418BAC}"), "alterNERDtive-base" },
             { new Guid("{f31b575b-6ce4-44eb-91fc-7459e55013cf}"), "EliteAttack" },
@@ -57,13 +59,153 @@ namespace alterNERDtive
         private static Configuration? config;
         private static VoiceAttackLog? log;
 
-        private static VoiceAttackCommands Commands => commands ??= new VoiceAttackCommands(VA, Log);
+        private static VoiceAttackCommands Commands => commands ??= new (VA, Log);
 
-        private static Configuration Config => config ??= new Configuration(VA, Log, Commands, "alterNERDtive-base");
+        private static Configuration Config => config ??= new (VA, Log, Commands, "alterNERDtive-base");
 
-        private static VoiceAttackLog Log => log ??= new VoiceAttackLog(VA, "alterNERDtive-base");
+        private static VoiceAttackLog Log => log ??= new (VA, "alterNERDtive-base");
 
         private static dynamic? VA { get; set; }
+
+        /*========================================\
+        | required VoiceAttack plugin shenanigans |
+        \========================================*/
+
+        /// <summary>
+        /// The plugin’s GUID, as required by the VoiceAttack plugin API.
+        /// </summary>
+        /// <returns>The GUID.</returns>
+        public static Guid VA_Id()
+            => new ("{F7F59CFD-1AE2-4A7E-8F62-C62372418BAC}");
+
+        /// <summary>
+        /// The plugin’s display name, as required by the VoiceAttack plugin API.
+        /// </summary>
+        /// <returns>The display name.</returns>
+        public static string VA_DisplayName()
+            => $"alterNERDtive-base {VERSION}";
+
+        /// <summary>
+        /// The plugin’s description, as required by the VoiceAttack plugin API.
+        /// </summary>
+        /// <returns>The description.</returns>
+        public static string VA_DisplayInfo()
+            => "The alterNERDtive plugin to manage all the alterNERDtive profiles!";
+
+        /// <summary>
+        /// The Init method, as required by the VoiceAttack plugin API.
+        /// Runs when the plugin is initially loaded.
+        /// </summary>
+        /// <param name="vaProxy">The VoiceAttack proxy object.</param>
+        public static void VA_Init1(dynamic vaProxy)
+        {
+            VA = vaProxy;
+            Log.Notice("Initializing …");
+            VA.SetText("alterNERDtive-base.version", VERSION.ToString());
+            vaProxy.BooleanVariableChanged += new Action<string, bool?, bool?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
+            vaProxy.DateVariableChanged += new Action<string, DateTime?, DateTime?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
+            vaProxy.DecimalVariableChanged += new Action<string, decimal?, decimal?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
+            vaProxy.IntegerVariableChanged += new Action<string, int?, int?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
+            vaProxy.TextVariableChanged += new Action<string, string, string, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
+            VA.SetBoolean("alterNERDtive-base.initialized", true);
+            Commands.TriggerEvent("alterNERDtive-base.initialized", wait: false, logMissing: false);
+            Log.Notice("Init successful.");
+        }
+
+        /// <summary>
+        /// The Invoke method, as required by the VoiceAttack plugin API.
+        /// Runs whenever a plugin context is invoked.
+        /// </summary>
+        /// <param name="vaProxy">The VoiceAttack proxy object.</param>
+        public static void VA_Invoke1(dynamic vaProxy)
+        {
+            VA = vaProxy;
+
+            string context = vaProxy.Context.ToLower();
+            Log.Debug($"Running context '{context}' …");
+            try
+            {
+                switch (context)
+                {
+                    case "startup":
+                        Context_Startup();
+                        break;
+                    case "config.dialog":
+                        // config
+                        Context_Config_Dialog();
+                        break;
+                    case "config.dump":
+                        Context_Config_Dump();
+                        break;
+                    case "config.getvariables":
+                        Context_Config_SetVariables();
+                        break;
+                    case "config.list":
+                        Context_Config_List();
+                        break;
+                    case "config.setup":
+                        Context_Config_Setup();
+                        break;
+                    case "config.versionmigration":
+                        Context_Config_VersionMigration();
+                        break;
+                    case "edsm.bodycount":
+                        // EDSM
+                        Context_EDSM_BodyCount();
+                        break;
+                    case "edsm.distancebetween":
+                        Context_EDSM_DistanceBetween();
+                        break;
+                    case "eddi.event":
+                        // EDDI
+                        Context_Eddi_Event();
+                        break;
+                    case "spansh.outdatedstations":
+                        // Spansh
+                        Context_Spansh_OutdatedStations();
+                        break;
+                    case "log.log":
+                        // log
+                        Context_Log();
+                        break;
+                    case "update.check":
+                        // update
+                        Context_Update_Check();
+                        break;
+                    default:
+                        // invalid
+                        Log.Error($"Invalid plugin context '{vaProxy.Context}'.");
+                        break;
+                }
+            }
+            catch (ArgumentNullException e)
+            {
+                Log.Error($"Missing parameter '{e.ParamName}' for context '{context}'");
+            }
+            catch (Exception e)
+            {
+                Log.Error($"Unhandled exception while executing plugin context '{context}'. ({e.Message})");
+            }
+        }
+
+        /// <summary>
+        /// The Exit method, as required by the VoiceAttack plugin API.
+        /// Runs when VoiceAttack is shut down.
+        /// </summary>
+        /// <param name="vaProxy">The VoiceAttack proxy object.</param>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "required by VoiceAttack plugin API")]
+        public static void VA_Exit1(dynamic vaProxy)
+        {
+        }
+
+        /// <summary>
+        /// The StopCommand method, as required by the VoiceAttack plugin API.
+        /// Runs whenever all commands are stopped using the “Stop All Commands”
+        /// button or action.
+        /// </summary>
+        public static void VA_StopCommand()
+        {
+        }
 
         /// <summary>
         /// Returns whether a given profile is currently active.
@@ -543,149 +685,6 @@ namespace alterNERDtive
         private static void Context_Update_Check()
         {
             UpdateCheck();
-        }
-
-        /*========================================\
-        | required VoiceAttack plugin shenanigans |
-        \========================================*/
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1201:Elements should appear in the correct order", Justification = "nicer grouping")]
-        private static readonly Version VERSION = new ("4.3.1");
-
-        /// <summary>
-        /// The plugin’s GUID, as required by the VoiceAttack plugin API.
-        /// </summary>
-        /// <returns>The GUID.</returns>
-        public static Guid VA_Id()
-            => new ("{F7F59CFD-1AE2-4A7E-8F62-C62372418BAC}");
-
-        /// <summary>
-        /// The plugin’s display name, as required by the VoiceAttack plugin API.
-        /// </summary>
-        /// <returns>The display name.</returns>
-        public static string VA_DisplayName()
-            => $"alterNERDtive-base {VERSION}";
-
-        /// <summary>
-        /// The plugin’s description, as required by the VoiceAttack plugin API.
-        /// </summary>
-        /// <returns>The description.</returns>
-        public static string VA_DisplayInfo()
-            => "The alterNERDtive plugin to manage all the alterNERDtive profiles!";
-
-        /// <summary>
-        /// The Init method, as required by the VoiceAttack plugin API.
-        /// Runs when the plugin is initially loaded.
-        /// </summary>
-        /// <param name="vaProxy">The VoiceAttack proxy object.</param>
-        public static void VA_Init1(dynamic vaProxy)
-        {
-            VA = vaProxy;
-            Log.Notice("Initializing …");
-            VA.SetText("alterNERDtive-base.version", VERSION.ToString());
-            vaProxy.BooleanVariableChanged += new Action<string, bool?, bool?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
-            vaProxy.DateVariableChanged += new Action<string, DateTime?, DateTime?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
-            vaProxy.DecimalVariableChanged += new Action<string, decimal?, decimal?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
-            vaProxy.IntegerVariableChanged += new Action<string, int?, int?, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
-            vaProxy.TextVariableChanged += new Action<string, string, string, Guid?>((name, from, to, id) => { ConfigurationChanged(name, from, to, id); });
-            VA.SetBoolean("alterNERDtive-base.initialized", true);
-            Commands.TriggerEvent("alterNERDtive-base.initialized", wait: false, logMissing: false);
-            Log.Notice("Init successful.");
-        }
-
-        /// <summary>
-        /// The Invoke method, as required by the VoiceAttack plugin API.
-        /// Runs whenever a plugin context is invoked.
-        /// </summary>
-        /// <param name="vaProxy">The VoiceAttack proxy object.</param>
-        public static void VA_Invoke1(dynamic vaProxy)
-        {
-            VA = vaProxy;
-
-            string context = vaProxy.Context.ToLower();
-            Log.Debug($"Running context '{context}' …");
-            try
-            {
-                switch (context)
-                {
-                    case "startup":
-                        Context_Startup();
-                        break;
-                    case "config.dialog":
-                        // config
-                        Context_Config_Dialog();
-                        break;
-                    case "config.dump":
-                        Context_Config_Dump();
-                        break;
-                    case "config.getvariables":
-                        Context_Config_SetVariables();
-                        break;
-                    case "config.list":
-                        Context_Config_List();
-                        break;
-                    case "config.setup":
-                        Context_Config_Setup();
-                        break;
-                    case "config.versionmigration":
-                        Context_Config_VersionMigration();
-                        break;
-                    case "edsm.bodycount":
-                        // EDSM
-                        Context_EDSM_BodyCount();
-                        break;
-                    case "edsm.distancebetween":
-                        Context_EDSM_DistanceBetween();
-                        break;
-                    case "eddi.event":
-                        // EDDI
-                        Context_Eddi_Event();
-                        break;
-                    case "spansh.outdatedstations":
-                        // Spansh
-                        Context_Spansh_OutdatedStations();
-                        break;
-                    case "log.log":
-                        // log
-                        Context_Log();
-                        break;
-                    case "update.check":
-                        // update
-                        Context_Update_Check();
-                        break;
-                    default:
-                        // invalid
-                        Log.Error($"Invalid plugin context '{vaProxy.Context}'.");
-                        break;
-                }
-            }
-            catch (ArgumentNullException e)
-            {
-                Log.Error($"Missing parameter '{e.ParamName}' for context '{context}'");
-            }
-            catch (Exception e)
-            {
-                Log.Error($"Unhandled exception while executing plugin context '{context}'. ({e.Message})");
-            }
-        }
-
-        /// <summary>
-        /// The Exit method, as required by the VoiceAttack plugin API.
-        /// Runs when VoiceAttack is shut down.
-        /// </summary>
-        /// <param name="vaProxy">The VoiceAttack proxy object.</param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "required by VoiceAttack plugin API")]
-        public static void VA_Exit1(dynamic vaProxy)
-        {
-        }
-
-        /// <summary>
-        /// The StopCommand method, as required by the VoiceAttack plugin API.
-        /// Runs whenever all commands are stopped using the “Stop All Commands”
-        /// button or action.
-        /// </summary>
-        public static void VA_StopCommand()
-        {
         }
     }
 }
