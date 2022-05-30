@@ -40,8 +40,8 @@ namespace alterNERDtive.util
             {
                 "alterNERDtive-base",
                 new OptDict<string, Option>{
-                    { new Option<decimal>("delays.keyPressDuration", (decimal)0.01, voiceTrigger: "key press duration",
-                        description: "The time keys will be held down for.") },
+                    /*{ new Option<decimal>("delays.keyPressDuration", (decimal)0.01, voiceTrigger: "key press duration",
+                        description: "The time keys will be held down for.") },*/
                     { new Option<decimal>("delays.quitToDesktop", (decimal)10.0, voiceTrigger: "quit to desktop delay",
                         description: "The delay before restarting the game after hitting “Exit to Desktop”, in seconds.\nDefault: 10.0. (Used by the `restart from desktop` command)") },
                     { new Option<bool>("eddi.quietMode", true, voiceTrigger: "eddi quiet mode",
