@@ -4,6 +4,11 @@
 
 * The Configuration GUI now has an “Apply” button.
 
+### Fixed
+
+* Configuration GUI now `.Activate()`s immediately to prevent it from hiding
+  behind other windows.
+
 ## EliteAttack 8.4
 
 ### Added

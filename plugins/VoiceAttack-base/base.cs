@@ -190,14 +190,16 @@ namespace alterNERDtive
         {
             Thread dialogThread = new Thread(new ThreadStart(() =>
             {
-                _ = new System.Windows.Window
+                System.Windows.Window options = new ()
                 {
                     Title = "alterNERDtive Profile Options",
                     Content = new SettingsDialog(Config, Log),
                     SizeToContent = System.Windows.SizeToContent.WidthAndHeight,
                     ResizeMode = System.Windows.ResizeMode.NoResize,
                     WindowStyle = System.Windows.WindowStyle.ToolWindow,
-                }.ShowDialog();
+                };
+                options.ShowDialog();
+                options.Activate();
             }));
             dialogThread.SetApartmentState(ApartmentState.STA);
             dialogThread.IsBackground = true;
