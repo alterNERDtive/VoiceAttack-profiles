@@ -547,11 +547,8 @@ namespace alterNERDtive
         | required VoiceAttack plugin shenanigans |
         \========================================*/
 
-        /// <summary>
-        /// The plugin’s version, as required by the VoiceAttack plugin API.
-        /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1201:Elements should appear in the correct order", Justification = "nicer grouping")]
-        public static readonly Version VERSION = new Version("4.3.1");
+        private static readonly Version VERSION = new ("4.3.1");
 
         /// <summary>
         /// The plugin’s GUID, as required by the VoiceAttack plugin API.
