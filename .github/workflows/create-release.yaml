@@ -3,7 +3,8 @@
 on:
   push:
     tags:
-      - 'releases/*'
+      - 'releases/*.*'
+      - 'releases/*.*.*'
 
 jobs:
   release:
