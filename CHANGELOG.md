@@ -1,4 +1,42 @@
-﻿# 4.3 (2022-05-19)
+﻿# 4.4 (2022-05-31)
+
+### Added
+
+* The Configuration GUI now has an “Apply” button.
+
+### Fixed
+
+* Configuration GUI now `.Activate()`s immediately to prevent it from hiding
+  behind other windows.
+
+## EliteAttack 8.4
+
+### Added
+
+* `auto retract landing gear` setting: Automatically retract landing gear when
+  lifting off a planet / undocking from a station. Default: true. (#133)
+* `auto disable s r v lights` setting: Automatically turn SRV lights off when
+  deploying one. Default: true. (#133)
+
+### Fixed
+
+* `auto enter station services` option. (#142)
+
+## RatAttack 6.3.1
+
+* Added error message to the CLI tool for running VoiceAttack with elevated
+  privileges which will cause an `UnAuthorizedAccessException` trying to
+  communicate with the plugin. (#138)
+* Added warning to VoiceAttack when running it with elevated privileges. (#138)
+
+## SpashAttack 7.2.2
+
+* Fixed getting current jump range from EDDI; no longer fails on the first try,
+  no longer sometimes reports the last requested range instead of current.
+
+-----
+
+# 4.3 (2022-05-19)
 
 **NOTE**: Further development is on hold and Odyssey compatibility will not be
 worked on for the time being. See [the corresponding issue on
@@ -52,7 +90,7 @@ the job.
 
 ### Added
 
-* Now gives feedback after asking for call confirmation: “Call aborted.”
+* Now gives feedback after asking for call confirmation: “Call aborted.” /
   “Calling <…>.”.
 * `auto copy rat case system` setting: Automatically copy the client’s system to
   the clipboard when you open a rat case. Default: true.

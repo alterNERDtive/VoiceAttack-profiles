@@ -1,93 +1,184 @@
-﻿#nullable enable
+﻿// <copyright file="RatAttack.cs" company="alterNERDtive">
+// Copyright 2019–2022 alterNERDtive.
+//
+// This file is part of alterNERDtive VoiceAttack profiles for Elite Dangerous.
+//
+// alterNERDtive VoiceAttack profiles for Elite Dangerous is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// alterNERDtive VoiceAttack profiles for Elite Dangerous is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with alterNERDtive VoiceAttack profiles for Elite Dangerous.  If not, see &lt;https://www.gnu.org/licenses/&gt;.
+// </copyright>
+
+#nullable enable
 
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
+
 using alterNERDtive.util;
 
 namespace RatAttack
 {
+    /// <summary>
+    /// VoiceAttack plugin for the RatAttack profile.
+    /// </summary>
     public class RatAttack
     {
-        private static Dictionary<int,RatCase> CaseList { get; } = new Dictionary<int, RatCase>();
-        private static dynamic? VA { get; set; }
-        private static alterNERDtive.util.PipeServer<Ratsignal> RatsignalPipe
-            => ratsignalPipe ??= new alterNERDtive.util.PipeServer<Ratsignal>(Log, "RatAttack",
-                new alterNERDtive.util.PipeServer<Ratsignal>.SignalHandler(On_Ratsignal));
-        private static alterNERDtive.util.PipeServer<Ratsignal>? ratsignalPipe;
+        private static readonly Version VERSION = new ("6.3.1");
 
-        private static readonly Regex RatsignalRegex = new Regex(
-            @"^RATSIGNAL Case #(?<number>\d+) (?<platform>(PC|Xbox|Playstation))(?<oxygen> \(Code Red\))?(?<odyssey> \(Odyssey\))? – CMDR (?<cmdr>.+) – System: (None|u\u200bnknown system|""(?<system>.+)"" \((?<systemInfo>([a-zA-Z0-9\s\(\)\-/]*(~?[0-9,\.]+ LY (""[a-zA-Z\-]+"" of|from) [a-zA-Z0-9\s\*\-]+)?( \([a-zA-Z\s]+\))?|Not found in galaxy database|Invalid system name))\)(?<permit> \(((?<permitName>.*) )?Permit Required\))?) – Language: (?<language>[a-zA-z0-9\x7f-\xff\-\(\)&,\s\.]+)( – Nick: (?<nick>[a-zA-Z0-9_\[\]\-]+))? \((PC|XB|PS)_SIGNAL\)\v*$"
-            );
+        private static readonly Regex RatsignalRegex = new (
+            @"^RATSIGNAL Case #(?<number>\d+) (?<platform>(PC|Xbox|Playstation))(?<oxygen> \(Code Red\))?(?<odyssey> \(Odyssey\))? – CMDR (?<cmdr>.+) – System: (None|u\u200bnknown system|""(?<system>.+)"" \((?<systemInfo>([a-zA-Z0-9\s\(\)\-/]*(~?[0-9,\.]+ LY (""[a-zA-Z\-]+"" of|from) [a-zA-Z0-9\s\*\-]+)?( \([a-zA-Z\s]+\))?|Not found in galaxy database|Invalid system name))\)(?<permit> \(((?<permitName>.*) )?Permit Required\))?) – Language: (?<language>[a-zA-z0-9\x7f-\xff\-\(\)&,\s\.]+)( – Nick: (?<nick>[a-zA-Z0-9_\[\]\-]+))? \((PC|XB|PS)_SIGNAL\)\v*$");
 
-        private static VoiceAttackLog Log
-            => log ??= new VoiceAttackLog(VA, "RatAttack");
+        private static PipeServer<Ratsignal>? ratsignalPipe;
         private static VoiceAttackLog? log;
-
-        private static VoiceAttackCommands Commands
-            => commands ??= new VoiceAttackCommands(VA, Log);
         private static VoiceAttackCommands? commands;
 
-        private class RatCase
+        private static Dictionary<int, RatCase> CaseList { get; } = new ();
+
+        private static dynamic? VA { get; set; }
+
+        private static PipeServer<Ratsignal> RatsignalPipe
+            => ratsignalPipe ??= new (
+                Log,
+                "RatAttack",
+                new PipeServer<Ratsignal>.SignalHandler(On_Ratsignal));
+
+        private static VoiceAttackLog Log => log ??= new (VA, "RatAttack");
+
+        private static VoiceAttackCommands Commands => commands ??= new (VA, Log);
+
+        /*========================================\
+        | required VoiceAttack plugin shenanigans |
+        \========================================*/
+
+        /// <summary>
+        /// The plugin’s GUID, as required by the VoiceAttack plugin API.
+        /// </summary>
+        /// <returns>The GUID.</returns>
+        public static Guid VA_Id()
+            => new ("{F2ADF0AE-4837-4E4A-9C87-8A7E2FA63E5F}");
+
+        /// <summary>
+        /// The plugin’s display name, as required by the VoiceAttack plugin API.
+        /// </summary>
+        /// <returns>The display name.</returns>
+        public static string VA_DisplayName()
+            => $"RatAttack {VERSION}";
+
+        /// <summary>
+        /// The plugin’s description, as required by the VoiceAttack plugin API.
+        /// </summary>
+        /// <returns>The description.</returns>
+        public static string VA_DisplayInfo()
+            => "RatAttack: a plugin to handle FuelRats cases.";
+
+        /// <summary>
+        /// The Init method, as required by the VoiceAttack plugin API.
+        /// Runs when the plugin is initially loaded.
+        /// </summary>
+        /// <param name="vaProxy">The VoiceAttack proxy object.</param>
+        public static void VA_Init1(dynamic vaProxy)
         {
-            public string Cmdr;
-            public string? Language;
-            public string? System;
-            public string? SystemInfo;
-            public bool PermitLocked;
-            public string? PermitName;
-            public string Platform;
-            public bool Odyssey;
-            public bool CodeRed;
-            public int Number;
-
-            public RatCase(string cmdr, string? language, string? system, string? systemInfo, bool permitLocked, string? permitName, string platform, bool odyssey, bool codeRed, int number)
-                => (Cmdr, Language, System, SystemInfo, PermitLocked, PermitName, Platform, Odyssey, CodeRed, Number) = (cmdr, language, system, systemInfo, permitLocked, permitName, platform, odyssey, codeRed, number);
-
-            public string ShortInfo
-            {
-                get => $"#{Number}, {Platform}{(Odyssey ? " (Odyssey)" : "")}{(CodeRed ? ", code red" : "")}, {System ?? "None"}{(SystemInfo != null ? $" ({SystemInfo}{(PermitLocked ? ", permit required" : "")})" : "")}";
-            }
-
-            public override string ToString()
-                => ShortInfo;
+            VA = vaProxy;
+            Log.Notice("Initializing …");
+            VA.SetText("RatAttack.version", VERSION.ToString());
+            vaProxy.ProfileChanged += new Action<Guid?, Guid?, string, string>(On_ProfileChanged);
+            Log.Notice("Init successful.");
         }
 
-        public class Ratsignal : IPipable
+        /// <summary>
+        /// The Invoke method, as required by the VoiceAttack plugin API.
+        /// Runs whenever a plugin context is invoked.
+        /// </summary>
+        /// <param name="vaProxy">The VoiceAttack proxy object.</param>
+        public static void VA_Invoke1(dynamic vaProxy)
         {
-            public string Signal { get; set; }
-            public bool Announce { get; set; }
-            private readonly char separator = '\x1F';
+            VA = vaProxy;
 
-            public Ratsignal()
-                => (Signal, Announce) = ("", false);
-
-            public Ratsignal(string signal, bool announce)
-                => (Signal, Announce) = (signal, announce);
-
-            public void ParseString(string serialization)
+            string context = vaProxy.Context.ToLower();
+            Log.Debug($"Running context '{context}' …");
+            try
             {
-                try
+                switch (context)
                 {
-                    string[] parts = serialization.Split(separator);
-                    Signal = parts[0];
-                    Announce = Boolean.Parse(parts[1]);
-                }
-                catch (Exception e)
-                {
-                    throw new ArgumentException($"Invalid serialized RATSIGNAL: '{serialization}'", e);
+                    case "getcasedata":
+                        // plugin methods
+                        Context_GetCaseData();
+                        break;
+                    case "parseratsignal":
+                        Context_ParseRatsignal();
+                        break;
+                    case "startup":
+                        Context_Startup();
+                        break;
+                    case "edsm.getnearestcmdr":
+                        // EDSM
+                        Context_EDSM_GetNearestCMDR();
+                        break;
+                    case "log.log":
+                        // log
+                        Context_Log();
+                        break;
+                    default:
+                        // invalid
+                        Log.Error($"Invalid plugin context '{VA!.Context}'.");
+                        break;
                 }
             }
-
-            public override string ToString()
-                => $"{Signal}{separator}{Announce}";
+            catch (ArgumentNullException e)
+            {
+                Log.Error($"Missing parameter '{e.ParamName}' for context '{context}'");
+            }
+            catch (Exception e)
+            {
+                Log.Error($"Unhandled exception while executing plugin context '{context}'. ({e.Message})");
+            }
         }
 
+        /// <summary>
+        /// The Exit method, as required by the VoiceAttack plugin API.
+        /// Runs when VoiceAttack is shut down.
+        /// </summary>
+        /// <param name="vaProxy">The VoiceAttack proxy object.</param>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "required by VoiceAttack plugin API")]
+        public static void VA_Exit1(dynamic vaProxy)
+        {
+            Log.Debug("Starting teardown …");
+            Log.Debug("Closing RATSIGNAL pipe …");
+            RatsignalPipe.Stop();
+            Log.Debug("Teardown finished.");
+        }
+
+        /// <summary>
+        /// The StopCommand method, as required by the VoiceAttack plugin API.
+        /// Runs whenever all commands are stopped using the “Stop All Commands”
+        /// button or action.
+        /// </summary>
+        public static void VA_StopCommand()
+        {
+        }
+
+        /// <summary>
+        /// Parses a RATSIGNAL and extracts case data for storage.
+        /// </summary>
+        /// <param name="ratsignal">The incoming RATSIGNAL.</param>
+        /// <returns>The case number.</returns>
+        /// <exception cref="ArgumentException">Thrown on invalid RATSIGNAL.</exception>
         private static int ParseRatsignal(string ratsignal)
         {
             if (!RatsignalRegex.IsMatch(ratsignal))
+            {
                 throw new ArgumentException($"Invalid RATSIGNAL format: '{ratsignal}'.", "ratsignal");
+            }
 
             Match match = RatsignalRegex.Match(ratsignal);
 
@@ -103,12 +194,12 @@ namespace RatAttack
 
             int number = int.Parse(match.Groups["number"].Value);
 
-            if (String.IsNullOrEmpty(system))
+            if (string.IsNullOrEmpty(system))
             {
                 system = "None";
             }
 
-            Log.Debug($"New rat case: CMDR “{cmdr}” in “{system}”{(systemInfo != null ? $" ({systemInfo})" : "")} on {platform}{(odyssey ? " (Odyssey)" : "")}, permit locked: {permitLocked}{(permitLocked && permitName != null ? $" (permit name: {permitName})" : "")}, code red: {codeRed} (#{number}).");
+            Log.Debug($"New rat case: CMDR “{cmdr}” in “{system}”{(systemInfo != null ? $" ({systemInfo})" : string.Empty)} on {platform}{(odyssey ? " (Odyssey)" : string.Empty)}, permit locked: {permitLocked}{(permitLocked && permitName != null ? $" (permit name: {permitName})" : string.Empty)}, code red: {codeRed} (#{number}).");
 
             CaseList[number] = new RatCase(cmdr, language, system, systemInfo, permitLocked, permitName, platform, odyssey, codeRed, number);
 
@@ -141,18 +232,19 @@ namespace RatAttack
         | plugin contexts |
         \================*/
 
-        private static void Context_EDSM_GetNearestCMDR(dynamic vaProxy)
+        private static void Context_EDSM_GetNearestCMDR()
         {
-            int caseNo = vaProxy.GetInt("~caseNo") ?? throw new ArgumentNullException("~caseNo");
-            string cmdrList = vaProxy.GetText("~cmdrs") ?? throw new ArgumentNullException("~cmdrs");
+            int caseNo = VA!.GetInt("~caseNo") ?? throw new ArgumentNullException("~caseNo");
+            string cmdrList = VA!.GetText("~cmdrs") ?? throw new ArgumentNullException("~cmdrs");
             string[] cmdrs = cmdrList.Split(';');
             if (cmdrs.Length == 0)
             {
                 throw new ArgumentNullException("~cmdrs");
             }
+
             string system = CaseList[caseNo]?.System ?? throw new ArgumentException($"Case #{caseNo} has no system information", "~caseNo");
 
-            string path = $@"{vaProxy.SessionState["VA_SOUNDS"]}\Scripts\edsm-getnearest.exe";
+            string path = $@"{VA!.SessionState["VA_SOUNDS"]}\Scripts\edsm-getnearest.exe";
             string arguments = $@"--short --text --system ""{system}"" ""{string.Join(@""" """, cmdrs)}""";
 
             Process p = PythonProxy.SetupPythonScript(path, arguments);
@@ -164,7 +256,7 @@ namespace RatAttack
 
             string message = stdout;
             string? errorMessage = null;
-            bool error = true;
+            bool error;
 
             switch (p.ExitCode)
             {
@@ -185,32 +277,31 @@ namespace RatAttack
                     Log.Error(stderr);
                     errorMessage = "Unrecoverable error in plugin.";
                     break;
-
             }
 
-            vaProxy.SetText("~message", message);
-            vaProxy.SetBoolean("~error", error);
-            vaProxy.SetText("~errorMessage", errorMessage);
-            vaProxy.SetInt("~exitCode", p.ExitCode);
+            VA!.SetText("~message", message);
+            VA!.SetBoolean("~error", error);
+            VA!.SetText("~errorMessage", errorMessage);
+            VA!.SetInt("~exitCode", p.ExitCode);
         }
 
-        private static void Context_GetCaseData(dynamic vaProxy)
+        private static void Context_GetCaseData()
         {
-            int cn = vaProxy.GetInt("~caseNumber");
+            int cn = VA!.GetInt("~caseNumber");
 
             if (CaseList.ContainsKey(cn))
             {
                 RatCase rc = CaseList[cn];
 
-                vaProxy.SetInt("~~caseNumber", rc.Number);
-                vaProxy.SetText("~~cmdr", rc.Cmdr);
-                vaProxy.SetText("~~system", rc?.System?.ToLower());
-                vaProxy.SetText("~~systemInfo", rc?.SystemInfo);
-                vaProxy.SetBoolean("~~permitLocked", rc?.PermitLocked);
-                vaProxy.SetText("~~permitName", rc?.PermitName);
-                vaProxy.SetText("~~platform", rc?.Platform);
-                vaProxy.SetBoolean("~~odyssey", rc?.Odyssey);
-                vaProxy.SetBoolean("~~codeRed", rc?.CodeRed);
+                VA!.SetInt("~~caseNumber", rc.Number);
+                VA!.SetText("~~cmdr", rc.Cmdr);
+                VA!.SetText("~~system", rc?.System?.ToLower());
+                VA!.SetText("~~systemInfo", rc?.SystemInfo);
+                VA!.SetBoolean("~~permitLocked", rc?.PermitLocked);
+                VA!.SetText("~~permitName", rc?.PermitName);
+                VA!.SetText("~~platform", rc?.Platform);
+                VA!.SetBoolean("~~odyssey", rc?.Odyssey);
+                VA!.SetBoolean("~~codeRed", rc?.CodeRed);
             }
             else
             {
@@ -218,10 +309,10 @@ namespace RatAttack
             }
         }
 
-        private static void Context_Log(dynamic vaProxy)
+        private static void Context_Log()
         {
-            string message = vaProxy.GetText("~message");
-            string level = vaProxy.GetText("~level");
+            string message = VA!.GetText("~message");
+            string level = VA!.GetText("~level");
 
             if (level == null)
             {
@@ -233,7 +324,10 @@ namespace RatAttack
                 {
                     Log.Log(message, (LogLevel)Enum.Parse(typeof(LogLevel), level.ToUpper()));
                 }
-                catch (ArgumentNullException) { throw; }
+                catch (ArgumentNullException)
+                {
+                    throw;
+                }
                 catch (ArgumentException)
                 {
                     Log.Error($"Invalid log level '{level}'.");
@@ -241,92 +335,111 @@ namespace RatAttack
             }
         }
 
-        private static void Context_Startup(dynamic vaProxy)
+        private static void Context_Startup()
         {
             Log.Notice("Starting up …");
-            VA = vaProxy;
             _ = RatsignalPipe.Run();
             Log.Notice("Finished startup.");
         }
 
-        private static void Context_ParseRatsignal(dynamic vaProxy)
+        private static void Context_ParseRatsignal()
         {
-            Log.Warn("Passing a RATSIGNAL from VoiceAttack (through the clipboard or a file) is DEPRECATED and will no longer be supported in the future.");
-            On_Ratsignal(new Ratsignal(vaProxy.GetText("~ratsignal"), vaProxy.GetBoolean("~announceRatsignal")));
+            Log.Warn("Passing a RATSIGNAL to VoiceAttack through the clipboard or a file is DEPRECATED and will no longer be supported in the future.");
+            On_Ratsignal(new Ratsignal(VA!.GetText("~ratsignal"), VA!.GetBoolean("~announceRatsignal")));
         }
 
-        /*========================================\
-        | required VoiceAttack plugin shenanigans |
-        \========================================*/
-
-        static readonly Version VERSION = new Version("6.3");
-
-        public static Guid VA_Id()
-            => new Guid("{F2ADF0AE-4837-4E4A-9C87-8A7E2FA63E5F}");
-        public static string VA_DisplayName()
-            => $"RatAttack {VERSION}";
-        public static string VA_DisplayInfo()
-            => "RatAttack: a plugin to handle FuelRats cases.";
-
-        public static void VA_Init1(dynamic vaProxy)
+        /// <summary>
+        /// Encapsulates a RATSIGNAL for sending between the CLI helper tool and
+        /// the plugin via named pipe.
+        /// </summary>
+        public class Ratsignal : IPipable
         {
-            VA = vaProxy;
-            Log.Notice("Initializing …");
-            VA.SetText("RatAttack.version", VERSION.ToString());
-            vaProxy.ProfileChanged += new Action<Guid?, Guid?, String, String>(On_ProfileChanged);
-            Log.Notice("Init successful.");
-        }
+            private readonly char separator = '\x1F';
 
-        public static void VA_Invoke1(dynamic vaProxy)
-        {
-            string context = vaProxy.Context.ToLower();
-            Log.Debug($"Running context '{context}' …");
-            try
+            /// <summary>
+            /// Initializes a new instance of the <see cref="Ratsignal"/> class.
+            /// </summary>
+            public Ratsignal()
+                => (this.Signal, this.Announce) = (string.Empty, false);
+
+            /// <summary>
+            /// Initializes a new instance of the <see cref="Ratsignal"/> class.
+            /// </summary>
+            /// <param name="signal">The RATSIGNAL.</param>
+            /// <param name="announce">Whether or not to announce the new case.</param>
+            public Ratsignal(string signal, bool announce)
+                => (this.Signal, this.Announce) = (signal, announce);
+
+            /// <summary>
+            /// Gets or sets the RATSIGNAL.
+            /// </summary>
+            public string Signal { get; set; }
+
+            /// <summary>
+            /// Gets or Sets a value indicating whether to announce the incoming
+            /// case.
+            /// </summary>
+            public bool Announce { get; set; }
+
+            /// <summary>
+            /// Initializes the <see cref="Ratsignal"/> instance from a
+            /// serialized representation.
+            /// FIXXME: should probably make this a static factory method.
+            /// </summary>
+            /// <param name="serialization">The serialized <see cref="Ratsignal"/>.</param>
+            /// <exception cref="ArgumentException">Thrown on receiving an invalid signal.</exception>
+            public void ParseString(string serialization)
             {
-                switch (context)
+                try
                 {
-                    // plugin methods
-                    case "getcasedata":
-                        Context_GetCaseData(vaProxy);
-                        break;
-                    case "parseratsignal":
-                        Context_ParseRatsignal(vaProxy);
-                        break;
-                    case "startup":
-                        Context_Startup(vaProxy);
-                        break;
-                    // EDSM
-                    case "edsm.getnearestcmdr":
-                        Context_EDSM_GetNearestCMDR(vaProxy);
-                        break;
-                    // log
-                    case "log.log":
-                        Context_Log(vaProxy);
-                        break;
-                    // invalid
-                    default:
-                        Log.Error($"Invalid plugin context '{vaProxy.Context}'.");
-                        break;
+                    string[] parts = serialization.Split(this.separator);
+                    this.Signal = parts[0];
+                    this.Announce = bool.Parse(parts[1]);
+                }
+                catch (Exception e)
+                {
+                    throw new ArgumentException($"Invalid serialized RATSIGNAL: '{serialization}'", e);
                 }
             }
-            catch (ArgumentNullException e)
-            {
-                Log.Error($"Missing parameter '{e.ParamName}' for context '{context}'");
-            }
-            catch (Exception e)
-            {
-                Log.Error($"Unhandled exception while executing plugin context '{context}'. ({e.Message})");
-            }
+
+            /// <inheritdoc/>
+            public override string ToString()
+                => $"{this.Signal}{this.separator}{this.Announce}";
         }
 
-        public static void VA_Exit1(dynamic vaProxy)
+        private class RatCase
         {
-            Log.Debug("Starting teardown …");
-            Log.Debug("Closing RATSIGNAL pipe …");
-            RatsignalPipe.Stop();
-            Log.Debug("Teardown finished.");
-        }
+            public RatCase(string cmdr, string? language, string? system, string? systemInfo, bool permitLocked, string? permitName, string platform, bool odyssey, bool codeRed, int number)
+                => (this.Cmdr, this.Language, this.System, this.SystemInfo, this.PermitLocked, this.PermitName, this.Platform, this.Odyssey, this.CodeRed, this.Number)
+                = (cmdr, language, system, systemInfo, permitLocked, permitName, platform, odyssey, codeRed, number);
 
-        public static void VA_StopCommand() { }
+            public string Cmdr { get; }
+
+            public string? Language { get; }
+
+            public string? System { get; }
+
+            public string? SystemInfo { get; }
+
+            public bool PermitLocked { get; }
+
+            public string? PermitName { get; }
+
+            public string Platform { get; }
+
+            public bool Odyssey { get; }
+
+            public bool CodeRed { get; }
+
+            public int Number { get; }
+
+            public string ShortInfo
+            {
+                get => $"#{this.Number}, {this.Platform}{(this.Odyssey ? " (Odyssey)" : string.Empty)}{(this.CodeRed ? ", code red" : string.Empty)}, {this.System ?? "None"}{(this.SystemInfo != null ? $" ({this.SystemInfo}{(this.PermitLocked ? ", permit required" : string.Empty)})" : string.Empty)}";
+            }
+
+            public override string ToString()
+                => this.ShortInfo;
+        }
     }
 }

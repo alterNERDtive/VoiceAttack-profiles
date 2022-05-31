@@ -1,4 +1,23 @@
-﻿#nullable enable
+﻿// <copyright file="util.cs" company="alterNERDtive">
+// Copyright 2019–2022 alterNERDtive.
+//
+// This file is part of alterNERDtive VoiceAttack profiles for Elite Dangerous.
+//
+// alterNERDtive VoiceAttack profiles for Elite Dangerous is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// alterNERDtive VoiceAttack profiles for Elite Dangerous is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with alterNERDtive VoiceAttack profiles for Elite Dangerous.  If not, see &lt;https://www.gnu.org/licenses/&gt;.
+// </copyright>
+
+#nullable enable
 
 using System;
 using System.Collections.Generic;
@@ -9,6 +28,7 @@ using System.Linq;
 
 namespace alterNERDtive.util
 {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1649:File name should match first type name", Justification = "file contains collection of utility classes")]
     public class Configuration
     {
         private readonly dynamic VA;
@@ -20,8 +40,8 @@ namespace alterNERDtive.util
             {
                 "alterNERDtive-base",
                 new OptDict<string, Option>{
-                    { new Option<decimal>("delays.keyPressDuration", (decimal)0.01, voiceTrigger: "key press duration",
-                        description: "The time keys will be held down for.") },
+                    /*{ new Option<decimal>("delays.keyPressDuration", (decimal)0.01, voiceTrigger: "key press duration",
+                        description: "The time keys will be held down for.") },*/
                     { new Option<decimal>("delays.quitToDesktop", (decimal)10.0, voiceTrigger: "quit to desktop delay",
                         description: "The delay before restarting the game after hitting “Exit to Desktop”, in seconds.\nDefault: 10.0. (Used by the `restart from desktop` command)") },
                     { new Option<bool>("eddi.quietMode", true, voiceTrigger: "eddi quiet mode",
@@ -69,8 +89,12 @@ namespace alterNERDtive.util
                         description: "Automatically restock after docking at a station.") },
                     { new Option<bool>("autoHangar", true, voiceTrigger: "auto move to hangar",
                         description: "Automatically move the ship to the hangar after docking at a station.") },
-                    { new Option<bool>("autoStationService", true, voiceTrigger: "auto enter station services",
+                    { new Option<bool>("autoStationServices", true, voiceTrigger: "auto enter station services",
                         description: "Automatically enter the Station Services menu after docking at a station.") },
+                    { new Option<bool>("autoRetractLandingGear", true, voiceTrigger: "auto retract landing gear",
+                        description: "Automatically retract landing gear when lifting off a planet / undocking from a station.") },
+                    { new Option<bool>("autoDisableSrvLights", true, voiceTrigger: "auto disable s r v lights",
+                        description: "Automatically turn SRV lights off when deploying one.") },
                     { new Option<bool>("flightAssistOff", false, voiceTrigger: "flight assist off",
                         description: "Permanent Flight Assist off mode. You should really do that, it’s great.") },
                     { new Option<bool>("hyperspaceDethrottle", true, voiceTrigger: "hyper space dethrottle",

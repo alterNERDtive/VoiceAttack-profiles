@@ -2,7 +2,7 @@
 
 ## Configuration
 
-The base profile provides voice commands for changing the profiles settings.
+The base profile provides voice commands for changing the profiles settings.
 See [the configuration section](../configuration/general#settings).
 
 ## Chat

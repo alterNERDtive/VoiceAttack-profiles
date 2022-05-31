@@ -18,6 +18,10 @@ Toggles:
   at a station. Default: true.
 * `auto enter station services`: Automatically enter the Station Services menu
   after docking at a station. Default: true.
+* `auto retract landing gear`: Automatically retract landing gear when lifting
+  off a planet / undocking from a station. Default: true. (#133)
+* `auto disable s r v lights`: Automatically turn SRV lights off when deploying
+  one. Default: true. (#133)
 * `edsm system status`: Pull system data from EDSM and compare it
   against your discovery scan. Default: true.
 * `discovery scan on primary fire`: Use primary fire for honking instead of
