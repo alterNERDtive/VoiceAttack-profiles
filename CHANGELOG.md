@@ -1,4 +1,14 @@
-﻿# 4.4 (2022-05-31)
+﻿# devel
+
+### Fixed
+
+* Race condition in all plugins that might lead to commands using command-scoped
+  variables (`~<name>`) not working as intended. This was introduced in
+  refactoring work that was done for 4.4.
+
+-----
+
+# 4.4 (2022-05-31)
 
 ### Added
 

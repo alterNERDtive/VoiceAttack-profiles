@@ -328,7 +328,8 @@ namespace alterNERDtive
         | plugin contexts |
         \================*/
 
-        private static void Context_Config_Dialog()
+#pragma warning disable IDE0060 // Remove unused parameter
+        private static void Context_Config_Dialog(dynamic vaProxy)
         {
             Thread dialogThread = new Thread(new ThreadStart(() =>
             {
@@ -348,17 +349,17 @@ namespace alterNERDtive
             dialogThread.Start();
         }
 
-        private static void Context_Config_Dump()
+        private static void Context_Config_Dump(dynamic vaProxy)
         {
             Config.DumpConfig();
         }
 
-        private static void Context_Config_List()
+        private static void Context_Config_List(dynamic vaProxy)
         {
             Config.ListConfig();
         }
 
-        private static void Context_Config_Setup()
+        private static void Context_Config_Setup(dynamic vaProxy)
         {
             Log.Debug("Loading default configuration …");
             Config.ApplyAllDefaults();
@@ -371,14 +372,14 @@ namespace alterNERDtive
             Log.Debug("Finished loading configuration.");
         }
 
-        private static void Context_Config_SetVariables()
+        private static void Context_Config_SetVariables(dynamic vaProxy)
         {
-            string trigger = VA!.GetText("~trigger") ?? throw new ArgumentNullException("~trigger");
+            string trigger = vaProxy.GetText("~trigger") ?? throw new ArgumentNullException("~trigger");
             Log.Debug($"Loading variables for trigger '{trigger}' …");
-            Config.SetVariablesForTrigger(VA!, trigger);
+            Config.SetVariablesForTrigger(vaProxy, trigger);
         }
 
-        private static void Context_Config_VersionMigration()
+        private static void Context_Config_VersionMigration(dynamic vaProxy)
         {
             // =============
             // === 4.3.1 ===
@@ -390,7 +391,7 @@ namespace alterNERDtive
                 string name = $"EliteAttack.{option}s#";
                 string oldName = $"EliteAttack.{option}#";
                 Commands.Run("alterNERDtive-base.loadVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{oldName}", "boolean" } });
-                bool? value = VA!.GetBoolean(oldName);
+                bool? value = vaProxy.GetBoolean(oldName);
                 if (value != null)
                 {
                     Log.Info($"Migrating option {oldName} …");
@@ -404,7 +405,7 @@ namespace alterNERDtive
             // ===========
 
             // SpanshAttack
-            string edtsPath = $@"{VA!.SessionState["VA_SOUNDS"]}\scripts\edts.exe";
+            string edtsPath = $@"{vaProxy.SessionState["VA_SOUNDS"]}\scripts\edts.exe";
             if (File.Exists(edtsPath))
             {
                 File.Delete(edtsPath);
@@ -422,7 +423,7 @@ namespace alterNERDtive
                 string name = $"{prefix}.{option}";
                 string oldName = $"{oldPrefix}.{option}";
                 Commands.Run("alterNERDtive-base.loadVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{oldName}", "boolean" } });
-                bool? value = VA!.GetBoolean(oldName);
+                bool? value = vaProxy.GetBoolean(oldName);
                 if (value != null)
                 {
                     Log.Info($"Migrating option {oldName} …");
@@ -437,7 +438,7 @@ namespace alterNERDtive
             {
                 string name = $"{prefix}.{option}";
                 Commands.Run("alterNERDtive-base.loadVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}", "boolean" } });
-                bool? value = VA!.GetBoolean(name);
+                bool? value = vaProxy.GetBoolean(name);
                 if (value != null)
                 {
                     Log.Info($"Migrating option {name} …");
@@ -450,7 +451,7 @@ namespace alterNERDtive
             {
                 string name = $"{prefix}.{option}";
                 Commands.Run("alterNERDtive-base.loadVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}", "text" } });
-                string value = VA!.GetText(name);
+                string value = vaProxy.GetText(name);
                 if (!string.IsNullOrEmpty(value))
                 {
                     Log.Info($"Migrating option {name} …");
@@ -465,7 +466,7 @@ namespace alterNERDtive
             {
                 string name = $"{prefix}.{option}";
                 Commands.Run("alterNERDtive-base.loadVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}", "boolean" } });
-                bool? value = VA!.GetBoolean(name);
+                bool? value = vaProxy.GetBoolean(name);
                 if (value != null)
                 {
                     Log.Info($"Migrating option {name} …");
@@ -478,7 +479,7 @@ namespace alterNERDtive
             {
                 string name = $"{prefix}.{option}";
                 Commands.Run("alterNERDtive-base.loadVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}", "text" } });
-                string value = VA!.GetText(name);
+                string value = vaProxy.GetText(name);
                 if (!string.IsNullOrEmpty(value))
                 {
                     Log.Info($"Migrating option {name} …");
@@ -493,7 +494,7 @@ namespace alterNERDtive
             {
                 string name = $"{prefix}.{option}";
                 Commands.Run("alterNERDtive-base.loadVariableFromProfile", wait: true, parameters: new dynamic[] { new string[] { $"{name}", "text" } });
-                string value = VA!.GetText(name);
+                string value = vaProxy.GetText(name);
                 if (!string.IsNullOrEmpty(value))
                 {
                     Log.Info($"Migrating option {name} …");
@@ -503,19 +504,19 @@ namespace alterNERDtive
             }
         }
 
-        private static void Context_Eddi_Event()
+        private static void Context_Eddi_Event(dynamic vaProxy)
         {
-            string eddiEvent = VA!.Command.Name();
+            string eddiEvent = vaProxy.Command.Name();
             string command = eddiEvent.Substring(2, eddiEvent.Length - 4);
             Log.Debug($"Running EDDI event '{command}' …");
             Commands.RunAll(ActiveProfiles, command, logMissing: false, subcommand: true); // FIXXME: a) triggerAll or something, b) change all profiles to use "((<name>.<event>))" over "<name>.<event>"
         }
 
-        private static void Context_EDSM_BodyCount()
+        private static void Context_EDSM_BodyCount(dynamic vaProxy)
         {
-            string system = VA!.GetText("~system") ?? throw new ArgumentNullException("~system");
+            string system = vaProxy.GetText("~system") ?? throw new ArgumentNullException("~system");
 
-            string path = $@"{VA!.SessionState["VA_SOUNDS"]}\scripts\explorationtools.exe";
+            string path = $@"{vaProxy.SessionState["VA_SOUNDS"]}\scripts\explorationtools.exe";
             string arguments = $@"bodycount ""{system}""";
 
             Process p = PythonProxy.SetupPythonScript(path, arguments);
@@ -551,19 +552,19 @@ namespace alterNERDtive
                     break;
             }
 
-            VA!.SetInt("~bodyCount", bodyCount);
-            VA!.SetBoolean("~error", error);
-            VA!.SetText("~errorMessage", errorMessage);
-            VA!.SetInt("~exitCode", p.ExitCode);
+            vaProxy.SetInt("~bodyCount", bodyCount);
+            vaProxy.SetBoolean("~error", error);
+            vaProxy.SetText("~errorMessage", errorMessage);
+            vaProxy.SetInt("~exitCode", p.ExitCode);
         }
 
-        private static void Context_EDSM_DistanceBetween()
+        private static void Context_EDSM_DistanceBetween(dynamic vaProxy)
         {
-            string fromSystem = VA!.GetText("~fromSystem") ?? throw new ArgumentNullException("~fromSystem");
-            string toSystem = VA!.GetText("~toSystem") ?? throw new ArgumentNullException("~toSystem");
-            int roundTo = VA!.GetInt("~roundTo") ?? 2;
+            string fromSystem = vaProxy.GetText("~fromSystem") ?? throw new ArgumentNullException("~fromSystem");
+            string toSystem = vaProxy.GetText("~toSystem") ?? throw new ArgumentNullException("~toSystem");
+            int roundTo = vaProxy.GetInt("~roundTo") ?? 2;
 
-            string path = $@"{VA!.SessionState["VA_SOUNDS"]}\Scripts\explorationtools.exe";
+            string path = $@"{vaProxy.SessionState["VA_SOUNDS"]}\Scripts\explorationtools.exe";
             string arguments = $@"distancebetween --roundto {roundTo} ""{fromSystem}"" ""{toSystem}""";
 
             Process p = PythonProxy.SetupPythonScript(path, arguments);
@@ -595,16 +596,16 @@ namespace alterNERDtive
                     break;
             }
 
-            VA!.SetDecimal("~distance", distance);
-            VA!.SetBoolean("~error", error);
-            VA!.SetText("~errorMessage", errorMessage);
-            VA!.SetInt("~exitCode", p.ExitCode);
+            vaProxy.SetDecimal("~distance", distance);
+            vaProxy.SetBoolean("~error", error);
+            vaProxy.SetText("~errorMessage", errorMessage);
+            vaProxy.SetInt("~exitCode", p.ExitCode);
         }
 
-        private static void Context_Log()
+        private static void Context_Log(dynamic vaProxy)
         {
-            string message = VA!.GetText("~message");
-            string level = VA!.GetText("~level");
+            string message = vaProxy.GetText("~message");
+            string level = vaProxy.GetText("~level");
 
             if (level == null)
             {
@@ -627,12 +628,12 @@ namespace alterNERDtive
             }
         }
 
-        private static void Context_Spansh_OutdatedStations()
+        private static void Context_Spansh_OutdatedStations(dynamic vaProxy)
         {
-            string system = VA!.GetText("~system") ?? throw new ArgumentNullException("~system");
-            int minage = VA!.GetInt("~minage") ?? throw new ArgumentNullException("~minage");
+            string system = vaProxy.GetText("~system") ?? throw new ArgumentNullException("~system");
+            int minage = vaProxy.GetInt("~minage") ?? throw new ArgumentNullException("~minage");
 
-            string path = $@"{VA!.SessionState["VA_SOUNDS"]}\Scripts\spansh.exe";
+            string path = $@"{vaProxy.SessionState["VA_SOUNDS"]}\Scripts\spansh.exe";
             string arguments = $@"oldstations --system ""{system}"" --minage {minage}";
 
             Process p = PythonProxy.SetupPythonScript(path, arguments);
@@ -667,24 +668,25 @@ namespace alterNERDtive
                     break;
             }
 
-            VA!.SetText("~message", message);
-            VA!.SetBoolean("~error", error);
-            VA!.SetText("~errorMessage", errorMessage);
-            VA!.SetInt("~exitCode", p.ExitCode);
+            vaProxy.SetText("~message", message);
+            vaProxy.SetBoolean("~error", error);
+            vaProxy.SetText("~errorMessage", errorMessage);
+            vaProxy.SetInt("~exitCode", p.ExitCode);
         }
 
-        private static void Context_Startup()
+        private static void Context_Startup(dynamic vaProxy)
         {
             Log.Notice("Starting up …");
-            CheckProfiles(VA);
+            CheckProfiles(vaProxy);
             Log.Notice($"Active profiles: {string.Join(", ", ActiveProfiles)}");
             Commands.TriggerEventAll(ActiveProfiles, "startup", logMissing: false);
             Log.Notice("Finished startup.");
         }
 
-        private static void Context_Update_Check()
+        private static void Context_Update_Check(dynamic vaProxy)
         {
             UpdateCheck();
         }
+#pragma warning restore IDE0060 // Remove unused parameter
     }
 }

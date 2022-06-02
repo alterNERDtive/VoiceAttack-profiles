@@ -86,8 +86,6 @@ namespace EliteAttack
         /// <param name="vaProxy">The VoiceAttack proxy object.</param>
         public static void VA_Invoke1(dynamic vaProxy)
         {
-            VA = vaProxy;
-
             string context = vaProxy.Context.ToLower();
             Log.Debug($"Running context '{context}' …");
             try
@@ -95,11 +93,11 @@ namespace EliteAttack
                 switch (context)
                 {
                     case "startup":
-                        Context_Startup();
+                        Context_Startup(vaProxy);
                         break;
                     case "log.log":
                         // log
-                        Context_Log();
+                        Context_Log(vaProxy);
                         break;
                     default:
                         // invalid
@@ -140,10 +138,11 @@ namespace EliteAttack
         | plugin contexts |
         \================*/
 
-        private static void Context_Log()
+#pragma warning disable IDE0060 // Remove unused parameter
+        private static void Context_Log(dynamic vaProxy)
         {
-            string message = VA!.GetText("~message");
-            string level = VA!.GetText("~level");
+            string message = vaProxy.GetText("~message");
+            string level = vaProxy.GetText("~level");
 
             if (level == null)
             {
@@ -166,10 +165,11 @@ namespace EliteAttack
             }
         }
 
-        private static void Context_Startup()
+        private static void Context_Startup(dynamic vaProxy)
         {
             Log.Notice("Starting up …");
             Log.Notice("Finished startup.");
         }
+#pragma warning restore IDE0060 // Remove unused parameter
     }
 }

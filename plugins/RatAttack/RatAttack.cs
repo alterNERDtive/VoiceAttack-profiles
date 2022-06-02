@@ -102,8 +102,6 @@ namespace RatAttack
         /// <param name="vaProxy">The VoiceAttack proxy object.</param>
         public static void VA_Invoke1(dynamic vaProxy)
         {
-            VA = vaProxy;
-
             string context = vaProxy.Context.ToLower();
             Log.Debug($"Running context '{context}' …");
             try
@@ -112,25 +110,25 @@ namespace RatAttack
                 {
                     case "getcasedata":
                         // plugin methods
-                        Context_GetCaseData();
+                        Context_GetCaseData(vaProxy);
                         break;
                     case "parseratsignal":
-                        Context_ParseRatsignal();
+                        Context_ParseRatsignal(vaProxy);
                         break;
                     case "startup":
-                        Context_Startup();
+                        Context_Startup(vaProxy);
                         break;
                     case "edsm.getnearestcmdr":
                         // EDSM
-                        Context_EDSM_GetNearestCMDR();
+                        Context_EDSM_GetNearestCMDR(vaProxy);
                         break;
                     case "log.log":
                         // log
-                        Context_Log();
+                        Context_Log(vaProxy);
                         break;
                     default:
                         // invalid
-                        Log.Error($"Invalid plugin context '{VA!.Context}'.");
+                        Log.Error($"Invalid plugin context '{vaProxy.Context}'.");
                         break;
                 }
             }
@@ -232,10 +230,11 @@ namespace RatAttack
         | plugin contexts |
         \================*/
 
-        private static void Context_EDSM_GetNearestCMDR()
+#pragma warning disable IDE0060 // Remove unused parameter
+        private static void Context_EDSM_GetNearestCMDR(dynamic vaProxy)
         {
-            int caseNo = VA!.GetInt("~caseNo") ?? throw new ArgumentNullException("~caseNo");
-            string cmdrList = VA!.GetText("~cmdrs") ?? throw new ArgumentNullException("~cmdrs");
+            int caseNo = vaProxy.GetInt("~caseNo") ?? throw new ArgumentNullException("~caseNo");
+            string cmdrList = vaProxy.GetText("~cmdrs") ?? throw new ArgumentNullException("~cmdrs");
             string[] cmdrs = cmdrList.Split(';');
             if (cmdrs.Length == 0)
             {
@@ -244,7 +243,7 @@ namespace RatAttack
 
             string system = CaseList[caseNo]?.System ?? throw new ArgumentException($"Case #{caseNo} has no system information", "~caseNo");
 
-            string path = $@"{VA!.SessionState["VA_SOUNDS"]}\Scripts\edsm-getnearest.exe";
+            string path = $@"{vaProxy.SessionState["VA_SOUNDS"]}\Scripts\edsm-getnearest.exe";
             string arguments = $@"--short --text --system ""{system}"" ""{string.Join(@""" """, cmdrs)}""";
 
             Process p = PythonProxy.SetupPythonScript(path, arguments);
@@ -279,29 +278,29 @@ namespace RatAttack
                     break;
             }
 
-            VA!.SetText("~message", message);
-            VA!.SetBoolean("~error", error);
-            VA!.SetText("~errorMessage", errorMessage);
-            VA!.SetInt("~exitCode", p.ExitCode);
+            vaProxy.SetText("~message", message);
+            vaProxy.SetBoolean("~error", error);
+            vaProxy.SetText("~errorMessage", errorMessage);
+            vaProxy.SetInt("~exitCode", p.ExitCode);
         }
 
-        private static void Context_GetCaseData()
+        private static void Context_GetCaseData(dynamic vaProxy)
         {
-            int cn = VA!.GetInt("~caseNumber");
+            int cn = vaProxy.GetInt("~caseNumber");
 
             if (CaseList.ContainsKey(cn))
             {
                 RatCase rc = CaseList[cn];
 
-                VA!.SetInt("~~caseNumber", rc.Number);
-                VA!.SetText("~~cmdr", rc.Cmdr);
-                VA!.SetText("~~system", rc?.System?.ToLower());
-                VA!.SetText("~~systemInfo", rc?.SystemInfo);
-                VA!.SetBoolean("~~permitLocked", rc?.PermitLocked);
-                VA!.SetText("~~permitName", rc?.PermitName);
-                VA!.SetText("~~platform", rc?.Platform);
-                VA!.SetBoolean("~~odyssey", rc?.Odyssey);
-                VA!.SetBoolean("~~codeRed", rc?.CodeRed);
+                vaProxy.SetInt("~~caseNumber", rc.Number);
+                vaProxy.SetText("~~cmdr", rc.Cmdr);
+                vaProxy.SetText("~~system", rc?.System?.ToLower());
+                vaProxy.SetText("~~systemInfo", rc?.SystemInfo);
+                vaProxy.SetBoolean("~~permitLocked", rc?.PermitLocked);
+                vaProxy.SetText("~~permitName", rc?.PermitName);
+                vaProxy.SetText("~~platform", rc?.Platform);
+                vaProxy.SetBoolean("~~odyssey", rc?.Odyssey);
+                vaProxy.SetBoolean("~~codeRed", rc?.CodeRed);
             }
             else
             {
@@ -309,10 +308,10 @@ namespace RatAttack
             }
         }
 
-        private static void Context_Log()
+        private static void Context_Log(dynamic vaProxy)
         {
-            string message = VA!.GetText("~message");
-            string level = VA!.GetText("~level");
+            string message = vaProxy.GetText("~message");
+            string level = vaProxy.GetText("~level");
 
             if (level == null)
             {
@@ -335,18 +334,19 @@ namespace RatAttack
             }
         }
 
-        private static void Context_Startup()
+        private static void Context_Startup(dynamic vaProxy)
         {
             Log.Notice("Starting up …");
             _ = RatsignalPipe.Run();
             Log.Notice("Finished startup.");
         }
 
-        private static void Context_ParseRatsignal()
+        private static void Context_ParseRatsignal(dynamic vaProxy)
         {
             Log.Warn("Passing a RATSIGNAL to VoiceAttack through the clipboard or a file is DEPRECATED and will no longer be supported in the future.");
-            On_Ratsignal(new Ratsignal(VA!.GetText("~ratsignal"), VA!.GetBoolean("~announceRatsignal")));
+            On_Ratsignal(new Ratsignal(vaProxy.GetText("~ratsignal"), vaProxy.GetBoolean("~announceRatsignal")));
         }
+#pragma warning restore IDE0060 // Remove unused parameter
 
         /// <summary>
         /// Encapsulates a RATSIGNAL for sending between the CLI helper tool and

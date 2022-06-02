@@ -89,8 +89,6 @@ namespace SpanshAttack
         /// <param name="vaProxy">The VoiceAttack proxy object.</param>
         public static void VA_Invoke1(dynamic vaProxy)
         {
-            VA = vaProxy;
-
             string context = vaProxy.Context.ToLower();
             Log.Debug($"Running context '{context}' …");
             try
@@ -98,26 +96,26 @@ namespace SpanshAttack
                 switch (context)
                 {
                     case "startup":
-                        Context_Startup();
+                        Context_Startup(vaProxy);
                         break;
                     case "edts.getcoordinates":
                         // EDTS
-                        Context_EDTS_GetCoordinates();
+                        Context_EDTS_GetCoordinates(vaProxy);
                         break;
                     case "log.log":
                         // log
-                        Context_Log();
+                        Context_Log(vaProxy);
                         break;
                     case "spansh.systemexists":
                         // Spansh
-                        Context_Spansh_SytemExists();
+                        Context_Spansh_SytemExists(vaProxy);
                         break;
                     case "spansh.nearestsystem":
-                        Context_Spansh_Nearestsystem();
+                        Context_Spansh_Nearestsystem(vaProxy);
                         break;
                     default:
                         // invalid
-                        Log.Error($"Invalid plugin context '{VA!.Context}'.");
+                        Log.Error($"Invalid plugin context '{vaProxy.Context}'.");
                         break;
                 }
             }
@@ -154,9 +152,10 @@ namespace SpanshAttack
         | plugin contexts |
         \================*/
 
-        private static void Context_EDTS_GetCoordinates()
+#pragma warning disable IDE0060 // Remove unused parameter
+        private static void Context_EDTS_GetCoordinates(dynamic vaProxy)
         {
-            string name = VA!.GetText("~system") ?? throw new ArgumentNullException("~system");
+            string name = vaProxy.GetText("~system") ?? throw new ArgumentNullException("~system");
 
             bool success = false;
             string? errorType = null;
@@ -175,10 +174,10 @@ namespace SpanshAttack
                     Log.Warn($@"Coordinates with low precision for ""{name}"": ({system.Coords.X}, {system.Coords.Y}, {system.Coords.Z}), precision: {system.Coords.Precision} ly");
                 }
 
-                VA!.SetInt("~x", system.Coords.X);
-                VA!.SetInt("~y", system.Coords.Y);
-                VA!.SetInt("~z", system.Coords.Z);
-                VA!.SetInt("~precision", system.Coords.Precision);
+                vaProxy.SetInt("~x", system.Coords.X);
+                vaProxy.SetInt("~y", system.Coords.Y);
+                vaProxy.SetInt("~z", system.Coords.Z);
+                vaProxy.SetInt("~precision", system.Coords.Precision);
 
                 success = true;
             }
@@ -193,19 +192,19 @@ namespace SpanshAttack
                 errorMessage = e.Message;
             }
 
-            VA!.SetBoolean("~success", success);
+            vaProxy.SetBoolean("~success", success);
             if (!string.IsNullOrWhiteSpace(errorType))
             {
                 Log.Error(errorMessage!);
-                VA!.SetText("~errorType", errorType);
-                VA!.SetText("~errorMessage", errorMessage);
+                vaProxy.SetText("~errorType", errorType);
+                vaProxy.SetText("~errorMessage", errorMessage);
             }
         }
 
-        private static void Context_Log()
+        private static void Context_Log(dynamic vaProxy)
         {
-            string message = VA!.GetText("~message");
-            string level = VA!.GetText("~level");
+            string message = vaProxy.GetText("~message");
+            string level = vaProxy.GetText("~level");
 
             if (level == null)
             {
@@ -228,13 +227,13 @@ namespace SpanshAttack
             }
         }
 
-        private static void Context_Spansh_Nearestsystem()
+        private static void Context_Spansh_Nearestsystem(dynamic vaProxy)
         {
-            int x = VA!.GetInt("~x") ?? throw new ArgumentNullException("~x");
-            int y = VA!.GetInt("~y") ?? throw new ArgumentNullException("~y");
-            int z = VA!.GetInt("~z") ?? throw new ArgumentNullException("~z");
+            int x = vaProxy.GetInt("~x") ?? throw new ArgumentNullException("~x");
+            int y = vaProxy.GetInt("~y") ?? throw new ArgumentNullException("~y");
+            int z = vaProxy.GetInt("~z") ?? throw new ArgumentNullException("~z");
 
-            string path = $@"{VA!.SessionState["VA_SOUNDS"]}\Scripts\spansh.exe";
+            string path = $@"{vaProxy.SessionState["VA_SOUNDS"]}\Scripts\spansh.exe";
             string arguments = $@"nearestsystem --parsable {x} {y} {z}";
 
             Process p = PythonProxy.SetupPythonScript(path, arguments);
@@ -273,21 +272,21 @@ namespace SpanshAttack
                     break;
             }
 
-            VA!.SetText("~system", system);
-            VA!.SetDecimal("~x", coords['x']);
-            VA!.SetDecimal("~y", coords['y']);
-            VA!.SetDecimal("~z", coords['z']);
-            VA!.SetDecimal("~distance", distance);
-            VA!.SetBoolean("~error", error);
-            VA!.SetText("~errorMessage", errorMessage);
-            VA!.SetInt("~exitCode", p.ExitCode);
+            vaProxy.SetText("~system", system);
+            vaProxy.SetDecimal("~x", coords['x']);
+            vaProxy.SetDecimal("~y", coords['y']);
+            vaProxy.SetDecimal("~z", coords['z']);
+            vaProxy.SetDecimal("~distance", distance);
+            vaProxy.SetBoolean("~error", error);
+            vaProxy.SetText("~errorMessage", errorMessage);
+            vaProxy.SetInt("~exitCode", p.ExitCode);
         }
 
-        private static void Context_Spansh_SytemExists()
+        private static void Context_Spansh_SytemExists(dynamic vaProxy)
         {
-            string system = VA!.GetText("~system") ?? throw new ArgumentNullException("~system");
+            string system = vaProxy.GetText("~system") ?? throw new ArgumentNullException("~system");
 
-            string path = $@"{VA!.SessionState["VA_SOUNDS"]}\Scripts\spansh.exe";
+            string path = $@"{vaProxy.SessionState["VA_SOUNDS"]}\Scripts\spansh.exe";
             string arguments = $@"systemexists ""{system}""";
 
             Process p = PythonProxy.SetupPythonScript(path, arguments);
@@ -321,16 +320,17 @@ namespace SpanshAttack
                     break;
             }
 
-            VA!.SetBoolean("~systemExists", exists);
-            VA!.SetBoolean("~error", error);
-            VA!.SetText("~errorMessage", errorMessage);
-            VA!.SetInt("~exitCode", p.ExitCode);
+            vaProxy.SetBoolean("~systemExists", exists);
+            vaProxy.SetBoolean("~error", error);
+            vaProxy.SetText("~errorMessage", errorMessage);
+            vaProxy.SetInt("~exitCode", p.ExitCode);
         }
 
-        private static void Context_Startup()
+        private static void Context_Startup(dynamic vaProxy)
         {
             Log.Notice("Starting up …");
             Log.Notice("Finished startup.");
         }
+#pragma warning restore IDE0060 // Remove unused parameter
     }
 }
