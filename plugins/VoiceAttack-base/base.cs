@@ -119,8 +119,6 @@ namespace alterNERDtive
         /// <param name="vaProxy">The VoiceAttack proxy object.</param>
         public static void VA_Invoke1(dynamic vaProxy)
         {
-            VA = vaProxy;
-
             string context = vaProxy.Context.ToLower();
             Log.Debug($"Running context '{context}' …");
             try
@@ -128,49 +126,49 @@ namespace alterNERDtive
                 switch (context)
                 {
                     case "startup":
-                        Context_Startup();
+                        Context_Startup(vaProxy);
                         break;
                     case "config.dialog":
                         // config
-                        Context_Config_Dialog();
+                        Context_Config_Dialog(vaProxy);
                         break;
                     case "config.dump":
-                        Context_Config_Dump();
+                        Context_Config_Dump(vaProxy);
                         break;
                     case "config.getvariables":
-                        Context_Config_SetVariables();
+                        Context_Config_SetVariables(vaProxy);
                         break;
                     case "config.list":
-                        Context_Config_List();
+                        Context_Config_List(vaProxy);
                         break;
                     case "config.setup":
-                        Context_Config_Setup();
+                        Context_Config_Setup(vaProxy);
                         break;
                     case "config.versionmigration":
-                        Context_Config_VersionMigration();
+                        Context_Config_VersionMigration(vaProxy);
                         break;
                     case "edsm.bodycount":
                         // EDSM
-                        Context_EDSM_BodyCount();
+                        Context_EDSM_BodyCount(vaProxy);
                         break;
                     case "edsm.distancebetween":
-                        Context_EDSM_DistanceBetween();
+                        Context_EDSM_DistanceBetween(vaProxy);
                         break;
                     case "eddi.event":
                         // EDDI
-                        Context_Eddi_Event();
+                        Context_Eddi_Event(vaProxy);
                         break;
                     case "spansh.outdatedstations":
                         // Spansh
-                        Context_Spansh_OutdatedStations();
+                        Context_Spansh_OutdatedStations(vaProxy);
                         break;
                     case "log.log":
                         // log
-                        Context_Log();
+                        Context_Log(vaProxy);
                         break;
                     case "update.check":
                         // update
-                        Context_Update_Check();
+                        Context_Update_Check(vaProxy);
                         break;
                     default:
                         // invalid
@@ -248,7 +246,7 @@ namespace alterNERDtive
                     string name = match.Groups["name"].Value;
                     Log.Debug($"Configuration has changed, '{id}.{name}': '{from}' → '{to}'");
 
-                    dynamic o = Config.GetOption(id, name);
+                    dynamic o = Configuration.GetOption(id, name);
 
                     // When loaded from profile but not explicitly set, will be null.
                     // Then load default.

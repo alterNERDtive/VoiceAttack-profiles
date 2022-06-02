@@ -1093,8 +1093,7 @@ up to date in EDDN.
 * Added `open [rat;] dispatch board` command. Opens the web dispatch board in 
   your default browser.
 * Added proper handling for multiple ratsignals hitting at once. That’s mainly 
-  an IRC client config thing,
-  [see the docs](docs/RatAttack.md#getting-case-data-from-irc).
+  an IRC client config thing, [see the docs](docs/configuration/RatAttack.md).
 * Renamed `RatAttack.getInfoFromRatsignal` to 
   `RatAttack.announceCaseFromRatsignal`. Removed the “open case?” voice input 
   prompt.

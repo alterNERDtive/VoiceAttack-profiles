@@ -56,7 +56,7 @@ namespace alterNERDtive
                 tab.IsEnabled = BasePlugin.IsProfileActive(profile);
 
                 StackPanel panel = new StackPanel();
-                util.Configuration.OptDict<string, util.Configuration.Option> options = config.GetOptions(profile);
+                util.Configuration.OptDict<string, util.Configuration.Option> options = util.Configuration.GetOptions(profile);
 
                 foreach (dynamic option in options.Values)
                 {
