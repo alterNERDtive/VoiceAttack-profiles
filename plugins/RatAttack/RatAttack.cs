@@ -20,7 +20,7 @@
 #nullable enable
 
 using System;
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 
@@ -33,7 +33,7 @@ namespace RatAttack
     /// </summary>
     public class RatAttack
     {
-        private static readonly Version VERSION = new ("6.3.1");
+        private static readonly Version VERSION = new ("6.3.2");
 
         private static readonly Regex RatsignalRegex = new (
             @"^RATSIGNAL Case #(?<number>\d+) (?<platform>(PC|Xbox|Playstation))(?<oxygen> \(Code Red\))?(?<odyssey> \(Odyssey\))? – CMDR (?<cmdr>.+) – System: (None|u\u200bnknown system|""(?<system>.+)"" \((?<systemInfo>([a-zA-Z0-9\s\(\)\-/]*(~?[0-9,\.]+ LY (""[a-zA-Z\-]+"" of|from) [a-zA-Z0-9\s\*\-]+)?( \([a-zA-Z\s]+\))?|Not found in galaxy database|Invalid system name))\)(?<permit> \(((?<permitName>.*) )?Permit Required\))?) – Language: (?<language>[a-zA-z0-9\x7f-\xff\-\(\)&,\s\.]+)( – Nick: (?<nick>[a-zA-Z0-9_\[\]\-]+))? \((PC|XB|PS)_SIGNAL\)\v*$");
@@ -42,7 +42,7 @@ namespace RatAttack
         private static VoiceAttackLog? log;
         private static VoiceAttackCommands? commands;
 
-        private static Dictionary<int, RatCase> CaseList { get; } = new ();
+        private static ConcurrentDictionary<int, RatCase> CaseList { get; } = new ();
 
         private static dynamic? VA { get; set; }
 

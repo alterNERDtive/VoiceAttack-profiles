@@ -6,6 +6,13 @@
   variables (`~<name>`) not working as intended. This was introduced in
   refactoring work that was done for 4.4.
 
+## RatAttack 6.3.2
+
+### Fixed
+
+* Made case list thread safe. Probably only ever impacted my own specific setup,
+  but still a huge 🤦.
+
 -----
 
 # 4.4 (2022-05-31)

@@ -39,7 +39,7 @@ namespace alterNERDtive
     [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1649:File name should match first type name", Justification = "F off :)")]
     public class BasePlugin
     {
-        private static readonly Version VERSION = new ("4.4");
+        private static readonly Version VERSION = new ("4.4.1-dev");
 
         private static readonly Dictionary<Guid, string> Profiles = new ()
         {
