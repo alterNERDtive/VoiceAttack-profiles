@@ -30,7 +30,7 @@ namespace EliteAttack
     /// </summary>
     public class EliteAttack
     {
-        private static readonly Version VERSION = new ("8.4");
+        private static readonly Version VERSION = new ("8.4.1");
 
         private static VoiceAttackLog? log;
         private static VoiceAttackCommands? commands;

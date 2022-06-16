@@ -6,6 +6,13 @@
   variables (`~<name>`) not working as intended. This was introduced in
   refactoring work that was done for 4.4.
 
+## EliteAttack 8.4.1
+
+### Fixed
+
+* `Docked` event now handles Odyssey settlements properly (they have no hangar).
+  (#145)
+
 ## RatAttack 6.3.2
 
 ### Fixed
