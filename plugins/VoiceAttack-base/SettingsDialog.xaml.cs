@@ -17,6 +17,8 @@
 // along with alterNERDtive VoiceAttack profiles for Elite Dangerous.  If not, see &lt;https://www.gnu.org/licenses/&gt;.
 // </copyright>
 
+#nullable enable
+
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -105,7 +107,7 @@ namespace alterNERDtive
 
             foreach (Setting setting in this.values)
             {
-                dynamic state = null;
+                dynamic? state = null;
 
                 try
                 {
