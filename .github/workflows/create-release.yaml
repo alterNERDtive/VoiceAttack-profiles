@@ -7,11 +7,14 @@ on:
       - 'releases/*.*.*'
 
 jobs:
-  release:
+  build:
     name: Create draft release
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+
       - name: Draft release
         uses: ncipollo/release-action@v1
         with:
