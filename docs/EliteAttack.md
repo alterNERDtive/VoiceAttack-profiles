@@ -35,7 +35,7 @@ the edit window ready to send. They will _not_ hit Enter on their own.
 
 ## Navigation
 
-There are so many navigation-focused commands now, they deserve there own 
+There are so many navigation-focused commands now, they deserve their own 
 category. Basically anything that helps you plot anywhere. A lot of those are 
 powered by awesome EDDI so I don’t have to do the work myself!
 
@@ -72,10 +72,9 @@ Basically anything that is related to directly doing something with your ship.
 * `[close;deploy;extend;open;retract;] [cargo scoop;hard points; landing gear] [up;down;]`:
   Overly complicated command to handle everything related to Cargo Scoop, Hard
   Points, Landing Gear. You get the gist, I guess. Works in SRV too.
-* `[dis;]engage silent running`: Handles silent running.
 * `[disco;discovery scan]`: Executes a discovery scan. Expects the Discovery
   Scanner in your first fire group, secondary fire. [You can change
-  that](/configuration/EliteAttack/#settings).
+  that](../configuration/EliteAttack/#settings).
 * `[dis;]engage silent running`: Turns silent running on and off.
 * `[head;spot;] lights [on;off]`: Turns your lights on and off. Works in SRV 
   too, kinda; turning lights off there relies on the state updating fast enough, 
@@ -96,7 +95,7 @@ Basically anything that is related to directly doing something with your ship.
   given “when ready” will wait for mass lock to clear and your FSD to cool down 
   first.
 
-## SRV controls
+## SRV Controls
 
 Things relevant to your SRV, but not your ship.
 
@@ -107,13 +106,12 @@ Things relevant to your SRV, but not your ship.
 
 ## Targeting
 
-Well … targeting stuff, I guess. Not really sure why I made that it’s own 
+Well … targeting stuff, I guess. Not really sure why I made that its own 
 category, but oh well :)
 
 * `target the [drive;drives;power plant;frame shift drive;f s d;shield
-  generator]`:* 
-  Targets the given submodule on your current target, or your next target if you
-  don’t have one currently. Does not persist between targets.
+  generator]`: Targets the given submodule on your current target, or your next
+  target if you don’t have one currently. Does not persist between targets.
 * `clear sub [module;system] target`: Clears the current submodule target.
 * `target next system`: Selects the next system on your route.
 * `target wing man [1;2;3]`: Targets your wingmen.
@@ -272,7 +270,7 @@ the (rough) range you still have on the fumes left in your tank.
 
 ### Material Threshold
 
-Warns you when a monitored material falls below it’s minimum stock level and
+Warns you when a monitored material falls below its minimum stock level and
 tells you when you reach your desired level or fill up.
 
 You will have to set minimum and desired amounts in EDDI’s material monitor
@@ -308,7 +306,7 @@ Reports on the synthesis type and quality.
 
 ### System Scan Complete
 
-Lists you all bodies EDDI considers worth mapping in the current system.
+Lists all bodies EDDI considers worth mapping in the current system.
 
 ### Undocked
 

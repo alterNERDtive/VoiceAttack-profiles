@@ -7,8 +7,8 @@ configuration is stored in a bunch of VoiceAttack variables which in turn are
 stored in your custom profile. You could even have different custom profiles
 with their own distinct settings.
 
-The easiest way to change setings is to say `customize settings`. That will
-bring up a rudminteary settings UI.
+The easiest way to change settings is to say `customize settings`. That will
+bring up a rudimentary settings UI.
 
 You change also change the configuration directly via voice commands:
 

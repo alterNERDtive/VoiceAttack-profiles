@@ -7,9 +7,7 @@ version](https://voiceattack.com/#download-1) off the official site and install
 it.
 
 If you are using the standalone version you should probably download the
-executable installer. If you are using the Steam version of VoiceAttack, you
-will have to download the zipped folder and replace your installed version with
-its contents.
+executable installer.
 
 ![[VoiceAttack-download.png]]
 
@@ -55,12 +53,12 @@ hit `Enter`) and do
 ```
 
 If you have installed the non-Steam version of VoiceAttack to the default folder
-within “ProgramFiles” you will have to run the command prompt as admin (Windows
+within “Program Files” you will have to run the command prompt as admin (Windows
 key + `R`, enter “cmd”, hit `Control` + `Shift` + `Enter`).
 
 ## Install ED-NeutronRouter
 
-[Grab the latest release release from 
+Grab [the latest release release from 
 Github](https://github.com/sc-pulgan/ED-NeutronRouter/releases/latest) (The 
 `EDNeutronRouter.vX.YZ.zip` under “Assets”). You will have to extract the 
 contents of the release .zip file to your VoiceAttack Apps folder:
@@ -99,7 +97,7 @@ the profiles that you want to change and add voice triggers or hotkeys.
 
 You can either use an existing profile, create a new one or use the provided
 profile example as a basis. Regardless of which way you choose, make sure to
-read the [[#Include Profiles]] section and follow the instructions there!
+read the [Include Profiles](#include-profiles) section and follow the instructions there!
 
 ### Option 1: Create a New Profile Or Use an Existing One
 
@@ -123,7 +121,7 @@ will now have to create the startup command. Hit the “New Command” button.
 ![[VoiceAttack-edit-new-command.png]]
 
 You can name it anything you want but I recommend calling it “startup” or
-similar, and to deactivate the “when i say”checkbox in the command options to
+similar, and to deactivate the “when I say” checkbox in the command options to
 make sure you do not accidentally run it via voice.
 
 ![[VoiceAttack-edit-startup.png]]
@@ -148,7 +146,7 @@ action. You do not have to set any configuration options, this can be done way
 more elegantly! More on this [later on](general.md#settings).
 
 After adding the startup command you will have to right click VoiceAttack’s
-title bar and choose “Reload Active Profile” or restart VoiceAttack to it
+title bar and choose “Reload Active Profile” or restart VoiceAttack to see it
 executed for the first time.
 
 ### Option 2: Use the Profile Example
@@ -185,8 +183,8 @@ button.
 
 ![[VoiceAttack-profile-options-include.png]]
 
-Add all my profiles (“alterNERDtive-base”, “EliteDangerous”, “RatAttack”,
-“SpanshAttack”,“StreamAttack”).
+Add all my profiles (“alterNERDtive-base”, “EliteAttack”, “RatAttack”,
+“SpanshAttack”, “StreamAttack”).
 
 ![[VoiceAttack-profile-options-includelist.png]]
 
