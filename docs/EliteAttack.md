@@ -74,7 +74,7 @@ Basically anything that is related to directly doing something with your ship.
   Points, Landing Gear. You get the gist, I guess. Works in SRV too.
 * `[disco;discovery scan]`: Executes a discovery scan. Expects the Discovery
   Scanner in your first fire group, secondary fire. [You can change
-  that](../configuration/EliteAttack/#settings).
+  that](../configuration/EliteAttack.md#settings).
 * `[dis;]engage silent running`: Turns silent running on and off.
 * `[head;spot;] lights [on;off]`: Turns your lights on and off. Works in SRV 
   too, kinda; turning lights off there relies on the state updating fast enough, 
