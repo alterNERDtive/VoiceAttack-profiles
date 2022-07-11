@@ -31,7 +31,7 @@ Well, you are in the right place. You can find comprehensive documentation right
 here.
 
 If you run into any errors, please make sure you are running the latest version
-of the profiles and all [requirements](requirements).
+of the profiles and all [requirements](requirements.md).
 
 If your problem persists, please [file an
 issue](https://github.com/alterNERDtive/VoiceAttack-profiles/issues). Thanks! :)
