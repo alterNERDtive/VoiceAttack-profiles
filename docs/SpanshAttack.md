@@ -1,10 +1,8 @@
 # SpanshAttack
 
-This profile uses the 
-[ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter) plugin to plot 
-neutron jumps using [spansh](https://spansh.co.uk/plotter). It fully does 
-everything you need from within the game and VoiceAttack, you won’t have to 
-visit the site at any point.
+This profile uses the [ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter) plugin to plot
+neutron jumps using [Spansh](https://spansh.co.uk/plotter). It does everything you need fully from within
+the game and VoiceAttack, you won’t have to visit the site at any point.
 
 ## Plotting a Route
 

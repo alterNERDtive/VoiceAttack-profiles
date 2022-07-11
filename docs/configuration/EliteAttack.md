@@ -14,7 +14,7 @@ Toggles:
   true.
 * `auto restock`: Automatically restock after docking at a station. Default:
   true.
-* `auto move to hangar`: Automatically move the ship to the hanger after docking
+* `auto move to hangar`: Automatically move the ship to the hangar after docking
   at a station. Default: true.
 * `auto enter station services`: Automatically enter the Station Services menu
   after docking at a station. Default: true.

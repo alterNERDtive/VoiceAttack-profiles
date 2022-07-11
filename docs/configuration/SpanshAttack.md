@@ -13,7 +13,7 @@ For any ships that you regularly use for neutron jumping, e.g. long range Fuel
 Rat ships, I recommend telling SpanshAttack about the range they are supposed to
 have with full fuel and your preferred amount of cargo/limpets.
 
-In oder to do that, copy the `SpanshAttack.getShipRange` command from
+In order to do that, copy the `SpanshAttack.getShipRange` command from
 SpanshAttack or the example profile to your custom profile and add your ships.
 Any ship listed in there will automatically have its jump range used instead of
 EDDI’s reported laden range or VoiceAttack prompting you to manually supply it.

@@ -8,9 +8,9 @@ Rats](https://fuelrats.com) and [Hull Seals](https://hullseals.space) work.
 **NOTE**: Further development is on hold and Odyssey compatibility will not be
 worked on for the time being. See [the corresponding issue on
 Github](https://github.com/alterNERDtive/VoiceAttack-profiles/issues/113). This
-might or might not change after the Horizons/Odyssey merge when console release
-is upon us. Feel free to file issues for anything that is broken on Odyssey and
-it will be worked on when it is worked on.
+might or might not change after the Horizons/Odyssey merge. Feel free to file
+issues for anything that is broken on Odyssey and it will be worked on when it
+is worked on.
 
 ## Available Profiles
 
@@ -31,7 +31,7 @@ Well, you are in the right place. You can find comprehensive documentation right
 here.
 
 If you run into any errors, please make sure you are running the latest version
-of the profiles and all requirements.
+of the profiles and all [requirements](requirements).
 
 If your problem persists, please [file an
 issue](https://github.com/alterNERDtive/VoiceAttack-profiles/issues). Thanks! :)

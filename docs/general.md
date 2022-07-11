@@ -2,7 +2,7 @@
 
 ## Configuration
 
-The base profile provides voice commands for changing the profiles settings.
+The base profile provides voice commands for changing the profiles’ settings.
 See [the configuration section](../configuration/general#settings).
 
 ## Chat
@@ -10,7 +10,7 @@ See [the configuration section](../configuration/general#settings).
 * `paste text`: Pastes the contents of your current clipboard. Note that this
   command is supposed to be used for pasting _into Elite_ and hence uses the
   configured paste key. If you’re using a non-standard layout that means that
-  you can _not_ use this command to paste text into other applications.
+  you _cannot_ use this command to paste text into other applications.
 
 ## Updating
 

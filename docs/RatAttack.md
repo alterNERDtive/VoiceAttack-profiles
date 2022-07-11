@@ -66,7 +66,7 @@ client or use the “General IRC Integration”, see below.
   login to the game or have to take off from your current 
   station/port/outpost/planet.
 * `call jumps [left;]`: Calls jumps for the currently open case based on a
-  neutron trip (requires Spanshattack) or a plotted ingame route.
+  neutron trip (requires SpanshAttack) or a plotted ingame route.
 * `call friend [positive;negative] [in pg;in private group;in solo;in main menu;sysconf;system confirmed;]`:
   Friend request confirmations, with all the 
   things you might want to / should call with it.
