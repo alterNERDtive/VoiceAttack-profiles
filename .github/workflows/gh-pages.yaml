@@ -1,0 +1,22 @@
+﻿name: Deploy github pages on tag push
+
+on:
+  push:
+    tags:
+      - 'release/*.*'
+      - 'release/*.*.*'
+
+jobs:
+  build:
+    name: Deploy documentation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+
+      - name: Deploy docs
+        uses: mhausenblas/mkdocs-deploy-gh-pages@nomaterial
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REQUIREMENTS: requirements.txt

@@ -38,3 +38,6 @@ issue](https://github.com/alterNERDtive/VoiceAttack-profiles/issues). Thanks! :)
 
 You can also [say “Hi” on Discord](https://discord.gg/kXtXm54) if that is your 
 thing.
+
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/alterNERDtive?style=for-the-badge)](https://github.com/sponsors/alterNERDtive)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/S6S1DLYBS)

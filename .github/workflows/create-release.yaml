@@ -1,0 +1,22 @@
+﻿name: Create release on tag push
+
+on:
+  push:
+    tags:
+      - 'releases/*.*'
+      - 'releases/*.*.*'
+
+jobs:
+  build:
+    name: Create draft release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+
+      - name: Draft release
+        uses: ncipollo/release-action@v1
+        with:
+          bodyFile: "CHANGELOG.md"
+          draft: true

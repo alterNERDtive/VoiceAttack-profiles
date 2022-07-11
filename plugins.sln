@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30413.136
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32519.111
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoiceAttack-base", "plugins\VoiceAttack-base\VoiceAttack-base.csproj", "{1C05DB3F-3449-4664-B363-A379892995E5}"
 EndProject
@@ -16,8 +16,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C2B4D94B-8D73-431A-880B-B1E7ADF064B2}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		CHANGELOG.md = CHANGELOG.md
+		.github\workflows\create-release.yaml = .github\workflows\create-release.yaml
+		Directory.build.props = Directory.build.props
 		mkdocs.yml = mkdocs.yml
 		README.md = README.md
+		stylecop.json = stylecop.json
 		VERSION = VERSION
 	EndProjectSection
 EndProject
@@ -43,6 +47,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configuration", "configurat
 		docs\configuration\RatAttack.md = docs\configuration\RatAttack.md
 		docs\configuration\SpanshAttack.md = docs\configuration\SpanshAttack.md
 		docs\configuration\StreamAttack.md = docs\configuration\StreamAttack.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{A68BA76B-47FA-4D25-805E-66EBDD8C5223}"
+	ProjectSection(SolutionItems) = preProject
+		.github\dependabot.yaml = .github\dependabot.yaml
+		.github\FUNDING.yml = .github\FUNDING.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{0147AF7E-BB7F-4D5F-96EC-8734393DFF56}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\create-release.yaml = .github\workflows\create-release.yaml
+		.github\workflows\gh-pages.yaml = .github\workflows\gh-pages.yaml
 	EndProjectSection
 EndProject
 Global
@@ -78,6 +94,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{5401ADF7-CB6D-448B-A4AC-D8A17B2D841F} = {C2B4D94B-8D73-431A-880B-B1E7ADF064B2}
 		{1AFD9AE6-7D22-4EF4-B0DE-51C9E91370FB} = {5401ADF7-CB6D-448B-A4AC-D8A17B2D841F}
+		{A68BA76B-47FA-4D25-805E-66EBDD8C5223} = {C2B4D94B-8D73-431A-880B-B1E7ADF064B2}
+		{0147AF7E-BB7F-4D5F-96EC-8734393DFF56} = {A68BA76B-47FA-4D25-805E-66EBDD8C5223}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {339E6747-C7BF-43C3-99C6-9249C9849A84}

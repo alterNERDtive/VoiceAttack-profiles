@@ -1,14 +1,62 @@
 ﻿# devel
 
-## EliteAttack 8.4
+### Fixed
+
+* Race condition in all plugins that might lead to commands using command-scoped
+  variables (`~<name>`) not working as intended. This was introduced in
+  refactoring work that was done for 4.4.
+
+## EliteAttack 8.4.1
+
+### Fixed
+
+* `Docked` event now handles Odyssey settlements properly (they have no hangar).
+  (#145)
+
+## RatAttack 6.3.2
+
+### Fixed
+
+* Made case list thread safe. Probably only ever impacted my own specific setup,
+  but still a huge 🤦.
+
+-----
+
+# 4.4 (2022-05-31)
 
 ### Added
 
+* The Configuration GUI now has an “Apply” button.
+
+### Fixed
+
+* Configuration GUI now `.Activate()`s immediately to prevent it from hiding
+  behind other windows.
+
+## EliteAttack 8.4
+
+### Added
 
 * `auto retract landing gear` setting: Automatically retract landing gear when
   lifting off a planet / undocking from a station. Default: true. (#133)
 * `auto disable s r v lights` setting: Automatically turn SRV lights off when
   deploying one. Default: true. (#133)
+
+### Fixed
+
+* `auto enter station services` option. (#142)
+
+## RatAttack 6.3.1
+
+* Added error message to the CLI tool for running VoiceAttack with elevated
+  privileges which will cause an `UnAuthorizedAccessException` trying to
+  communicate with the plugin. (#138)
+* Added warning to VoiceAttack when running it with elevated privileges. (#138)
+
+## SpashAttack 7.2.2
+
+* Fixed getting current jump range from EDDI; no longer fails on the first try,
+  no longer sometimes reports the last requested range instead of current.
 
 -----
 
@@ -1059,8 +1107,7 @@ up to date in EDDN.
 * Added `open [rat;] dispatch board` command. Opens the web dispatch board in 
   your default browser.
 * Added proper handling for multiple ratsignals hitting at once. That’s mainly 
-  an IRC client config thing,
-  [see the docs](docs/RatAttack.md#getting-case-data-from-irc).
+  an IRC client config thing, [see the docs](docs/configuration/RatAttack.md).
 * Renamed `RatAttack.getInfoFromRatsignal` to 
   `RatAttack.announceCaseFromRatsignal`. Removed the “open case?” voice input 
   prompt.

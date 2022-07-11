@@ -16,8 +16,9 @@
                 <TabItem Name="StreamAttack" Header="StreamAttack"></TabItem>
             </TabControl>
             <WrapPanel VerticalAlignment="Bottom" HorizontalAlignment="Right">
-                <Button Name="cancelButton" Click="cancelButton_Click" Padding="5" Margin="5">Cancel</Button>
-                <Button Name="okButton" Click="okButton_Click" Padding="5" Margin="5">OK</Button>
+                <Button Name="applyButton" Click="ApplyButton_Click" Padding="5" Margin="5" Width="100">Apply</Button>
+                <Button Name="okButton" Click="OkButton_Click" Padding="5" Margin="5" Width="100">Done</Button>
+                <Button Name="cancelButton" Click="CancelButton_Click" Padding="5" Margin="5" Width="100">Cancel</Button>
             </WrapPanel>
         </StackPanel>
     </Grid>
