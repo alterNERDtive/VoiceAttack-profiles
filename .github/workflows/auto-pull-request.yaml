@@ -3,7 +3,7 @@ name: Pull Request on Branch Push
 on:
   push:
     branches-ignore:
-      - develop
+      - devel
       - release
 
 jobs:
@@ -15,6 +15,6 @@ jobs:
         uses: vsoch/pull-request-action@1.0.19
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PULL_REQUEST_BRANCH: "develop"
+          PULL_REQUEST_BRANCH: "devel"
           PULL_REQUEST_DRAFT: true
           PASS_IF_EXISTS: true
