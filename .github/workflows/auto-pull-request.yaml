@@ -1,0 +1,20 @@
+name: Pull Request on Branch Push
+
+on:
+  push:
+    branches-ignore:
+      - develop
+      - release
+
+jobs:
+  auto-pull-request:
+    name: Open pull request
+    runs-on: ubuntu-latest
+    steps:
+      - name: pull-request-action
+        uses: vsoch/pull-request-action@1.0.19
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PULL_REQUEST_BRANCH: "develop"
+          PULL_REQUEST_DRAFT: true
+          PASS_IF_EXISTS: true
