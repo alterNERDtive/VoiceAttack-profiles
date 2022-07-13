@@ -20,3 +20,4 @@ jobs:
         with:
           bodyFile: "CHANGELOG.md"
           draft: true
+          token: ${{ secrets.RELEASE_TOKEN }}
