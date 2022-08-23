@@ -89,3 +89,12 @@ EDDI does have a mechanism to detect if it is currently speaking – it sets a
 corresponding VoiceAttack variable. HCS neither does anything similar nor checks
 if EDDI is speaking to prevent conflicts. Refer to them if you want that
 changed.
+
+## This does not work with Geforce Now
+
+Nope. Just won’t. Geforce Now obviously has Elite’s files, journals and keybinds
+stored on some random PC in the cloud. Your local VoiceAttack has no way of
+accessing those.
+
+If you can get VoiceAttack to run _on Geforce Now_ in parallel to Elite, I don’t
+see why it wouldn’t work.
