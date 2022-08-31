@@ -9,6 +9,10 @@
 
 ## EliteAttack 8.4.1
 
+### Added
+
+* `target nearest […]` commands now log the result (with log level “INFO”).
+
 ### Fixed
 
 * `Docked` event now handles Odyssey settlements properly (they have no hangar).
