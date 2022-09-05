@@ -19,6 +19,8 @@
 
 * `Docked` event now handles Odyssey settlements properly (they have no hangar).
   (#145)
+* Fixed potential race condition with the discovery scan event command queue.
+  Might have an impact on #64.
 
 ## RatAttack 6.3.2
 
