@@ -175,6 +175,13 @@ namespace alterNERDtive.util
                     },
                     {
                         new Option<bool>(
+                            name: "includeOutdatedSettlements",
+                            defaultValue: true,
+                            voiceTrigger: "include outdated settlements",
+                            description: "Include outdated Odyssey settlements in the outdated stations list.")
+                    },
+                    {
+                        new Option<bool>(
                             name: "announceR2RMappingCandidates",
                             defaultValue: false,
                             voiceTrigger: "road to riches",

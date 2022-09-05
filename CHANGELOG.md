@@ -7,11 +7,13 @@
   refactoring work that was done for 4.4.
 * Documentation proof read and fixed by @ACyprus. Thanks!
 
-## EliteAttack 8.4.1
+## EliteAttack 8.5
 
 ### Added
 
 * `target nearest […]` commands now log the result (with log level “INFO”).
+* `include outdated settlements` option: Include Odyssey settlements in the
+  outdated stations list. Default: true.
 
 ### Fixed
 

@@ -37,6 +37,8 @@ Toggles:
   Ammonia Worlds that have not been mapped yet.) Default: true.
 * `outdated stations`: Announce stations with outdated data in the online
   databases. Default: true.
+* `include outdated settlements` option: Include Odyssey settlements in the
+  outdated stations list. Default: true.
 * `repair reports`: Report on AFMU repairs. Default: true.
 * `road to riches`: Announce bodies worth scanning if you are looking for some
   starting cash on the Road to Riches. Default: false.

@@ -39,7 +39,7 @@ namespace alterNERDtive
     [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1649:File name should match first type name", Justification = "F off :)")]
     public class BasePlugin
     {
-        private static readonly Version VERSION = new ("4.4.1");
+        private static readonly Version VERSION = new ("4.5");
 
         private static readonly Dictionary<Guid, string> Profiles = new ()
         {
@@ -630,9 +630,10 @@ namespace alterNERDtive
         {
             string system = vaProxy.GetText("~system") ?? throw new ArgumentNullException("~system");
             int minage = vaProxy.GetInt("~minage") ?? throw new ArgumentNullException("~minage");
+            bool includeSettlements = vaProxy.GetBoolean("~includeSettlements") ?? throw new ArgumentNullException("~includeSettlements");
 
             string path = $@"{vaProxy.SessionState["VA_SOUNDS"]}\Scripts\spansh.exe";
-            string arguments = $@"oldstations --system ""{system}"" --minage {minage}";
+            string arguments = $@"oldstations --system ""{system}"" --minage {minage}{(includeSettlements ? string.Empty : " --nofeet")}";
 
             Process p = PythonProxy.SetupPythonScript(path, arguments);
 
