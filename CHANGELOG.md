@@ -28,6 +28,8 @@
 
 * Made case list thread safe. Probably only ever impacted my own specific setup,
   but still a huge 🤦.
+* Apparently `^` can be part of both CMDR names and IRC nicks (fixed RATSIGNAL
+  regex).
 
 -----
 
