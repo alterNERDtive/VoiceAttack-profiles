@@ -200,6 +200,14 @@ earlier.
 
 ![[VoiceAttack-profile-options-startup.png]]
 
+## Reload the Profile
+
+To make sure everything is loaded correctly, you now need to either reload the
+profile by right clicking on VoiceAttack’s title bar → “Reset Active Profile” or
+by simply restarting VoiceAttack.
+
+You should see a bunch of initialization messages pop up in the VoiceAttack log.
+
 ## Set Elite Keyboard Binds
 
 You need to have keyboard binds setup at least as secondary bindings in Elite’s
