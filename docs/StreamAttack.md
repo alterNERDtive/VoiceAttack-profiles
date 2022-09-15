@@ -1,4 +1,4 @@
-# StreamAttack
+﻿# StreamAttack
 
 This profile uses the [EDDI](https://github.com/EDCD/EDDI) plugin to write 
 a bunch of information about your commander, your current location and your ship 
@@ -22,6 +22,10 @@ Default folder is `%appdata%\StreamAttack\`.
 ## Output Files
 
 ### Elite
+
+Please do note that information in the output files is only updated when a
+journal event that contains the information is detected. E.g. the distance to
+your jump target is not constantly calculated, but only updated after a jump.
 
 #### Commander
 
