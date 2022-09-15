@@ -59,10 +59,11 @@ version is available.
 
 ## ED-NeutronRouter
 
-(required for SpanshAttack)
-
 [ED-NeutronRouter](https://github.com/sc-pulgan/ED-NeutronRouter) interfaces
 with [Spansh’s neutron plotter](https://spansh.uk/plotter) and makes the result
 available to VoiceAttack.
+
+This plugin is _only_ required if you intend to use the SpanshAttack profile for
+neutron routing. Otherwise you do not have to install it.
 
 This will also eventually be replaced by my own plugins.
