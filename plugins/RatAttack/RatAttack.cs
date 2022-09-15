@@ -33,10 +33,10 @@ namespace RatAttack
     /// </summary>
     public class RatAttack
     {
-        private static readonly Version VERSION = new ("6.3.2");
+        private static readonly Version VERSION = new ("6.4");
 
         private static readonly Regex RatsignalRegex = new (
-            @"^RATSIGNAL Case #(?<number>\d+) (?<platform>(PC|Xbox|Playstation))(?<oxygen> \(Code Red\))?(?<odyssey> \(Odyssey\))? – CMDR (?<cmdr>.+) – System: (None|u\u200bnknown system|""(?<system>.+)"" \((?<systemInfo>([a-zA-Z0-9\s\(\)\-/]*(~?[0-9,\.]+ LY (""[a-zA-Z\-]+"" of|from) [a-zA-Z0-9\s\*\-]+)?( \([a-zA-Z\s]+\))?|Not found in galaxy database|Invalid system name))\)(?<permit> \(((?<permitName>.*) )?Permit Required\))?) – Language: (?<language>[a-zA-z0-9\x7f-\xff\-\(\)&,\s\.]+)( – Nick: (?<nick>[a-zA-Z0-9_\[\]\-\^]+))? \((PC|XB|PS)_SIGNAL\)\v*$");
+            @"^RATSIGNAL Case #(?<number>\d+) (?<platform>(PC|Xbox|Playstation))( )?(?<mode>H3.8|H4.0|ODY)?(?<oxygen> \(Code Red\))? – CMDR (?<cmdr>.+) – System: (None|u\u200bnknown system|""(?<system>.+)"" \((?<systemInfo>([a-zA-Z0-9\s\(\)\-/]*(~?[0-9,\.]+ LY (""[a-zA-Z\-]+"" of|from) [a-zA-Z0-9\s\*\-]+)?( \([a-zA-Z\s]+\))?|Not found in galaxy database|Invalid system name))\)(?<permit> \(((?<permitName>.*) )?Permit Required\))?) – Language: (?<language>[a-zA-z0-9\x7f-\xff\-\(\)&,\s\.]+)( – Nick: (?<nick>[a-zA-Z0-9_\[\]\-\^]+))? \((H3|H4|ODY|XB|PS)_SIGNAL\)\v*$");
 
         private static PipeServer<Ratsignal>? ratsignalPipe;
         private static VoiceAttackLog? log;
@@ -188,7 +188,7 @@ namespace RatAttack
             string? permitName = match.Groups["permitName"].Value;
             string platform = match.Groups["platform"].Value;
             bool codeRed = match.Groups["oxygen"].Success;
-            bool odyssey = match.Groups["odyssey"].Success;
+            string? mode = match.Groups["mode"].Value;
 
             int number = int.Parse(match.Groups["number"].Value);
 
@@ -197,9 +197,9 @@ namespace RatAttack
                 system = "None";
             }
 
-            Log.Debug($"New rat case: CMDR “{cmdr}” in “{system}”{(systemInfo != null ? $" ({systemInfo})" : string.Empty)} on {platform}{(odyssey ? " (Odyssey)" : string.Empty)}, permit locked: {permitLocked}{(permitLocked && permitName != null ? $" (permit name: {permitName})" : string.Empty)}, code red: {codeRed} (#{number}).");
+            Log.Debug($"New rat case: CMDR “{cmdr}” in “{system}”{(!string.IsNullOrEmpty(systemInfo) ? $" ({systemInfo})" : string.Empty)} on {platform}{(!string.IsNullOrEmpty(mode) ? $" ({mode})" : string.Empty)}, permit locked: {permitLocked}{(permitLocked && !string.IsNullOrEmpty(permitName) ? $" (permit name: {permitName})" : string.Empty)}, code red: {codeRed} (#{number}).");
 
-            CaseList[number] = new RatCase(cmdr, language, system, systemInfo, permitLocked, permitName, platform, odyssey, codeRed, number);
+            CaseList[number] = new RatCase(cmdr, language, system, systemInfo, permitLocked, permitName, platform, mode, codeRed, number);
 
             return number;
         }
@@ -299,7 +299,7 @@ namespace RatAttack
                 vaProxy.SetBoolean("~~permitLocked", rc?.PermitLocked);
                 vaProxy.SetText("~~permitName", rc?.PermitName);
                 vaProxy.SetText("~~platform", rc?.Platform);
-                vaProxy.SetBoolean("~~odyssey", rc?.Odyssey);
+                vaProxy.SetText("~~mode", rc?.Mode);
                 vaProxy.SetBoolean("~~codeRed", rc?.CodeRed);
             }
             else
@@ -344,7 +344,7 @@ namespace RatAttack
         private static void Context_ParseRatsignal(dynamic vaProxy)
         {
             Log.Warn("Passing a RATSIGNAL to VoiceAttack through the clipboard or a file is DEPRECATED and will no longer be supported in the future.");
-            On_Ratsignal(new Ratsignal(vaProxy.GetText("~ratsignal"), vaProxy.GetBoolean("~announceRatsignal")));
+            On_Ratsignal(new Ratsignal(vaProxy.GetText("~ratsignal"), vaProxy.GetBoolean("~announceRatsignal") ?? false));
         }
 #pragma warning restore IDE0060 // Remove unused parameter
 
@@ -409,9 +409,9 @@ namespace RatAttack
 
         private class RatCase
         {
-            public RatCase(string cmdr, string? language, string? system, string? systemInfo, bool permitLocked, string? permitName, string platform, bool odyssey, bool codeRed, int number)
-                => (this.Cmdr, this.Language, this.System, this.SystemInfo, this.PermitLocked, this.PermitName, this.Platform, this.Odyssey, this.CodeRed, this.Number)
-                = (cmdr, language, system, systemInfo, permitLocked, permitName, platform, odyssey, codeRed, number);
+            public RatCase(string cmdr, string? language, string? system, string? systemInfo, bool permitLocked, string? permitName, string platform, string mode, bool codeRed, int number)
+                => (this.Cmdr, this.Language, this.System, this.SystemInfo, this.PermitLocked, this.PermitName, this.Platform, this.Mode, this.CodeRed, this.Number)
+                = (cmdr, language, system, systemInfo, permitLocked, permitName, platform, mode, codeRed, number);
 
             public string Cmdr { get; }
 
@@ -427,7 +427,7 @@ namespace RatAttack
 
             public string Platform { get; }
 
-            public bool Odyssey { get; }
+            public string? Mode { get; }
 
             public bool CodeRed { get; }
 
@@ -435,7 +435,7 @@ namespace RatAttack
 
             public string ShortInfo
             {
-                get => $"#{this.Number}, {this.Platform}{(this.Odyssey ? " (Odyssey)" : string.Empty)}{(this.CodeRed ? ", code red" : string.Empty)}, {this.System ?? "None"}{(this.SystemInfo != null ? $" ({this.SystemInfo}{(this.PermitLocked ? ", permit required" : string.Empty)})" : string.Empty)}";
+                get => $"#{this.Number}, {this.Platform}{(!string.IsNullOrEmpty(this.Mode) ? $" ({this.Mode})" : string.Empty)}{(this.CodeRed ? ", code red" : string.Empty)}, {this.System ?? "None"}{(!string.IsNullOrEmpty(this.SystemInfo) ? $" ({this.SystemInfo}{(this.PermitLocked ? ", permit required" : string.Empty)})" : string.Empty)}";
             }
 
             public override string ToString()

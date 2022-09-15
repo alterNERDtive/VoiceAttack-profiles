@@ -22,10 +22,11 @@
 * Fixed potential race condition with the discovery scan event command queue.
   Might have an impact on #64.
 
-## RatAttack 6.3.2
+## RatAttack 6.4
 
 ### Fixed
 
+* Support for new Horizons 3 / Horizons 4 / Odyssey RATSIGNALs. (#159)
 * Made case list thread safe. Probably only ever impacted my own specific setup,
   but still a huge 🤦.
 * Apparently `^` can be part of both CMDR names and IRC nicks (fixed RATSIGNAL
