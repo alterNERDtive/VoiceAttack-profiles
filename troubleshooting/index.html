@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="alterNERDtive" /><link rel="canonical" href="https://alterNERDtive.github.io/VoiceAttack-profiles/troubleshooting/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Troubleshooting - alterNERDtive VA profiles</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Troubleshooting";
+        var mkdocs_page_input_path = "troubleshooting.md";
+        var mkdocs_page_url = "/VoiceAttack-profiles/troubleshooting/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> alterNERDtive VA profiles
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Install</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../requirements/">Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installing/">Installing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../upgrading/">Upgrading</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Configure</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../configuration/general/">General Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../configuration/EliteAttack/">EliteAttack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../configuration/RatAttack/">RatAttack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../configuration/SpanshAttack/">SpanshAttack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../configuration/StreamAttack/">StreamAttack</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Use</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../general/">General Commands</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../EliteAttack/">EliteAttack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../RatAttack/">RatAttack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../SpanshAttack/">SpanshAttack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../StreamAttack/">StreamAttack</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Issues</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Troubleshooting</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#voiceattack-does-not-understand-me-mishears-me-fires-random-commands">VoiceAttack does not understand me / mishears me / fires random commands</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#voiceattack-recognizes-a-command-but-doesnt-do-anything-in-game">VoiceAttack recognizes a command, but doesn’t do anything in game</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#voiceattack-talks-over-the-covas-voice">VoiceAttack talks over the COVAS voice</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#this-doesnt-work-well-with-my-hcs-pack">This doesn’t work (well) with my HCS pack</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#this-does-not-work-with-geforce-now">This does not work with Geforce Now</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://github.com/alterNERDtive/VoiceAttack-profiles/blob/release/CHANGELOG.md">⎋ Changelog</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://github.com/alterNERDtive/VoiceAttack-profiles/issues/">⎋ Report a Bug</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Watch in Action</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="https://twitch.tv/alterNERDtive">⎋ Twitch</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://www.youtube.com/channel/UC3XNZA7xWed1zM1AWOOdmog">⎋ Youtube</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">alterNERDtive VA profiles</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Issues &raquo;</li>
+      <li>Troubleshooting</li>
+    <li class="wy-breadcrumbs-aside">
+        <a href="https://github.com/alterNERDtive/VoiceAttack-profiles/edit/devel/docs/troubleshooting.md"
+          class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Breadcrumb Navigation">
+        <a href="../StreamAttack/" class="btn btn-neutral float-left" title="StreamAttack"><span class="icon icon-circle-arrow-left" aria-hidden="true"></span> Previous</a>
+    </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h1>
+<p>This will fill up gradually with Troubleshooting tips as people run into common
+ones.</p>
+<h2 id="voiceattack-does-not-understand-me-mishears-me-fires-random-commands">VoiceAttack does not understand me / mishears me / fires random commands<a class="headerlink" href="#voiceattack-does-not-understand-me-mishears-me-fires-random-commands" title="Permanent link">&para;</a></h2>
+<p>There is <a href="https://forum.voiceattack.com/smf/index.php?topic=2667.msg12197#msg12197">a thread on the VoiceAttack
+forums</a>
+on how to set up your microphone and the speech recognition engine to work best.</p>
+<p>If your microphone is bad and you still get erroneous recognitions when you are
+not speaking it is probably going to recognize the same command every time. You
+can remedy that by blocking the voice trigger. One-syllable triggers are
+especially prone to misrecognition.</p>
+<ol>
+<li>Create a new command in your custom profile.</li>
+<li>Set the “when I say” field to the trigger that gets misrecognized.</li>
+</ol>
+<p>Adding the “Other” → “VoiceAttack Action” → “Ignore an Unrecognized Word or
+Phrase” action will also hide it from the VoiceAttack log when it is (wrongly)
+recognized. You might or might not want that.</p>
+<p>Example for the “cruise” voice trigger of the Supercruise command:</p>
+<p><img alt="troubleshooting-remove-trigger.png" src="../images/troubleshooting-remove-trigger.png" /></p>
+<p>Alternatively you can raise the minimum confidence level and call the underlying
+command to make misfires less likely:</p>
+<p><img alt="troubleshooting-raise-min-confidence.png" src="../images/troubleshooting-raise-min-confidence.png" /></p>
+<p>There are a few examples in the <a href="../installing#use-the-profile-example">Custom Profile
+Example</a>.</p>
+<h2 id="voiceattack-recognizes-a-command-but-doesnt-do-anything-in-game">VoiceAttack recognizes a command, but doesn’t do anything in game<a class="headerlink" href="#voiceattack-recognizes-a-command-but-doesnt-do-anything-in-game" title="Permanent link">&para;</a></h2>
+<p>Make sure you have a keyboard bind for whatever the command is supposed to do as
+outlined in <a href="../installing/#set-elite-keyboard-binds">Installing#Set Elite Keyboard Binds</a>.</p>
+<h2 id="voiceattack-talks-over-the-covas-voice">VoiceAttack talks over the COVAS voice<a class="headerlink" href="#voiceattack-talks-over-the-covas-voice" title="Permanent link">&para;</a></h2>
+<p>There is no way to know for sure when the ingame COVAS is talking to you, so
+there is no way to always prevent the two from speaking over each other.</p>
+<p>You can however either disable TTS responses for events that you know will clash
+(or <a href="https://github.com/alterNERDtive/VoiceAttack-profiles/issues/">file a feature
+request</a> if one
+is not optional yet). Alternatively, if you prefer the info given by VoiceAttack
+over the ingame COVAS, you can deactivate its response to these events in the
+ingame Audo settings:</p>
+<p><img alt="Elite-COVAS.png" src="../images/Elite-COVAS.png" /></p>
+<p>While you’re in there you might as well get rid of the spoken FSD countdown that
+is off by one second …</p>
+<h2 id="this-doesnt-work-well-with-my-hcs-pack">This doesn’t work (well) with my HCS pack<a class="headerlink" href="#this-doesnt-work-well-with-my-hcs-pack" title="Permanent link">&para;</a></h2>
+<p>My profiles are designed from the ground up to work with whatever else you are
+doing with VoiceAttack; that is the reason for importing them into your own
+custom profile instead of selecting e.g. <code>EliteAttack</code> as your active profile.</p>
+<p>HCS on the contrary explicitly expects you do exclusively use HCS with
+VoiceAttack. There is the rudimentary way of including simple profiles into
+theirs, but the mechanism falls flat in many places. For example you cannot tell
+HCS to run an included profile’s startup command.</p>
+<p>So, in order to mostly make stuff work, you need to treat the HCS profile as
+your “custom” profile as per this documentation.</p>
+<ol>
+<li>Include <code>alterNERDtive-base</code> and all profiles you want to use into the active
+   HCS profile.</li>
+<li>Include a custom profile that has a startup command with a voice trigger of
+   your choosing, e.g. “load included profiles”.</li>
+<li>Set up said startup command as you would normally.</li>
+<li>Every time you start VA or change profiles, you will have to manually say
+   “load included profiles”.</li>
+</ol>
+<p>That will make most things work. Conflicts may arise if HCS happens to have
+voice triggers that are the same as mine, in which case their command will take
+priority.</p>
+<p><strong>Note on TTS</strong>: EDDI’s TTS (used by my profiles) and HCS’ TTS / recorded voice
+lines act 100% independently. That means they will frequently “speak over each
+other”. There is no way to alleviate this.</p>
+<p>EDDI does have a mechanism to detect if it is currently speaking – it sets a
+corresponding VoiceAttack variable. HCS neither does anything similar nor checks
+if EDDI is speaking to prevent conflicts. Refer to them if you want that
+changed.</p>
+<h2 id="this-does-not-work-with-geforce-now">This does not work with Geforce Now<a class="headerlink" href="#this-does-not-work-with-geforce-now" title="Permanent link">&para;</a></h2>
+<p>Nope. Just won’t. Geforce Now obviously has Elite’s files, journals and keybinds
+stored on some random PC in the cloud. Your local VoiceAttack has no way of
+accessing those.</p>
+<p>If you can get VoiceAttack to run <em>on Geforce Now</em> in parallel to Elite, I don’t
+see why it wouldn’t work.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../StreamAttack/" class="btn btn-neutral float-left" title="StreamAttack"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/alterNERDtive/VoiceAttack-profiles" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../StreamAttack/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

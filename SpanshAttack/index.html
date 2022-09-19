@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="alterNERDtive" /><link rel="canonical" href="https://alterNERDtive.github.io/VoiceAttack-profiles/SpanshAttack/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>SpanshAttack - alterNERDtive VA profiles</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "SpanshAttack";
+        var mkdocs_page_input_path = "SpanshAttack.md";
+        var mkdocs_page_url = "/VoiceAttack-profiles/SpanshAttack/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> alterNERDtive VA profiles
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Install</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../requirements/">Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installing/">Installing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../upgrading/">Upgrading</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Configure</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../configuration/general/">General Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../configuration/EliteAttack/">EliteAttack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../configuration/RatAttack/">RatAttack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../configuration/SpanshAttack/">SpanshAttack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../configuration/StreamAttack/">StreamAttack</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Use</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../general/">General Commands</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../EliteAttack/">EliteAttack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../RatAttack/">RatAttack</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">SpanshAttack</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#plotting-a-route">Plotting a Route</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#plotting-to-a-system-unknown-to-the-neutron-router">Plotting to a System Unknown to the Neutron Router</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#neutron-jumping">Neutron Jumping</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#skipping-a-waypoint">Skipping a Waypoint</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#manual-re-plot">Manual Re-Plot</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#refueling">Refueling</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#clearing-a-route">Clearing a Route</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#other-commands">Other Commands</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#announcing-jumps-left">Announcing Jumps Left</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#announce-elapsed-time-on-the-trip">Announce elapsed time on the trip</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../StreamAttack/">StreamAttack</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Issues</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://github.com/alterNERDtive/VoiceAttack-profiles/blob/release/CHANGELOG.md">⎋ Changelog</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://github.com/alterNERDtive/VoiceAttack-profiles/issues/">⎋ Report a Bug</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Watch in Action</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="https://twitch.tv/alterNERDtive">⎋ Twitch</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://www.youtube.com/channel/UC3XNZA7xWed1zM1AWOOdmog">⎋ Youtube</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">alterNERDtive VA profiles</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Use &raquo;</li>
+      <li>SpanshAttack</li>
+    <li class="wy-breadcrumbs-aside">
+        <a href="https://github.com/alterNERDtive/VoiceAttack-profiles/edit/devel/docs/SpanshAttack.md"
+          class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Breadcrumb Navigation">
+        <a href="../RatAttack/" class="btn btn-neutral float-left" title="RatAttack"><span class="icon icon-circle-arrow-left" aria-hidden="true"></span> Previous</a>
+        <a href="../StreamAttack/" class="btn btn-neutral float-right" title="StreamAttack">Next <span class="icon icon-circle-arrow-right" aria-hidden="true"></span></a>
+    </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="spanshattack">SpanshAttack<a class="headerlink" href="#spanshattack" title="Permanent link">&para;</a></h1>
+<p>This profile uses the 
+<a href="https://github.com/sc-pulgan/ED-NeutronRouter">ED-NeutronRouter</a> plugin to
+plot neutron jumps using <a href="https://spansh.co.uk/plotter">Spansh</a>. It does
+everything you need fully from within the game and VoiceAttack, you won’t have
+to visit the site at any point.</p>
+<h2 id="plotting-a-route">Plotting a Route<a class="headerlink" href="#plotting-a-route" title="Permanent link">&para;</a></h2>
+<ol>
+<li><em>Target</em> the system you want to be routed to (target, do not plot to it).</li>
+<li>Either exit the galaxy map or make sure you are on its first tab (or 
+   auto-plotting will break).</li>
+<li>Trigger the <code>SpanshAttack.plotRoute</code> command either by voice
+   (<code>plot neutron [course;route;trip] [with custom range;]</code>) or by
+   calling it from another command.</li>
+<li>Enter your ship’s jump range if prompted.</li>
+<li>Wait for the route to be calculated. The command will automatically open the 
+   galaxy map and search it for the first waypoint on your route.</li>
+<li>Either target the first waypoint or plot to it.</li>
+<li>Start jumping!</li>
+</ol>
+<h3 id="plotting-to-a-system-unknown-to-the-neutron-router">Plotting to a System Unknown to the Neutron Router<a class="headerlink" href="#plotting-to-a-system-unknown-to-the-neutron-router" title="Permanent link">&para;</a></h3>
+<p>The router can only plot a route to a system that is in its database (obviously 
+can also only give you waypoints that are). If your target system is not, there 
+are several levels of fallback handling to find a system that is.</p>
+<ol>
+<li>Check <code>Next system</code> coordinates provided by EDDI. If the system is in EDSM, 
+   but has for some reason not been sent over EDDN to other sites including 
+   Spansh, we can get coordinates here.</li>
+<li>If the system is not in EDSM check EDTS. It can calculate approximate 
+   coordinates for a given procedurally generated system name.</li>
+<li>If that fails prompt the user for input.</li>
+<li>Query Spansh’ API for the closest system to these coordinates.</li>
+<li>Plot a route to the closest system.</li>
+</ol>
+<p>Generally you should almost never be asked to input coordinates manually. If 
+EDTS provides coordinates with an accuracy that is worse than ±100 ly per axis, 
+you will be prompted to make sure you are going roughly to the right 
+coordinates.  You will find the system that is used for plotting, its 
+coordinates and the accuracy in VoiceAttack’s log window.</p>
+<h2 id="neutron-jumping">Neutron Jumping<a class="headerlink" href="#neutron-jumping" title="Permanent link">&para;</a></h2>
+<p>With standard settings, just supercharge off a neutron cone. You should 
+automatically be taken to the galaxy map with the next waypoint selected.</p>
+<p>In case you have disabled auto-plotting to the next waypoint, manually invoke 
+the <code>SpanshAttack.targetNextNeutronWaypoint</code> command by voice
+(<code>[target;] next neutron [waypoint; way point]</code>) or calling it from
+another command.</p>
+<p>Additionally, you can use the <code>SpanshAttack.copyNextNeutronWaypoint</code> 
+/ <code>[get;copy] next neutron [waypoint;way point]</code> command to copy the next 
+neutron waypoint to the clipboard.</p>
+<h3 id="skipping-a-waypoint">Skipping a Waypoint<a class="headerlink" href="#skipping-a-waypoint" title="Permanent link">&para;</a></h3>
+<p>Sometimes, especially in very neutron-sparse areas of the galaxy, the plotter
+will give you weird jumps. E.g. I recently got neutron → 37 ly → neutron → 440
+ly.</p>
+<p>In these cases you can use the <code>SpanshAttack.skipNeutronWaypoint</code> / <code>skip
+[this;current] neutron waypoint</code> command to move on to the next one in the
+list.</p>
+<h3 id="manual-re-plot">Manual Re-Plot<a class="headerlink" href="#manual-re-plot" title="Permanent link">&para;</a></h3>
+<p>Trigger the <code>SpanshAttack.replotRoute</code> command either by voice
+(<code>replot neutron [course;route;trip]</code>) or calling it from another command.
+This will start a re-plot of the current route with the same target system and
+jump range.</p>
+<h2 id="refueling">Refueling<a class="headerlink" href="#refueling" title="Permanent link">&para;</a></h2>
+<p>Whenever you finish refueling off a scoopable star, the profile will
+automatically throttle back up to 100% speed. Unless you have disabled it in
+your configuration, you will also automatically target the next system on your
+route and jump to it once you leave fuel scoop range.</p>
+<h2 id="clearing-a-route">Clearing a Route<a class="headerlink" href="#clearing-a-route" title="Permanent link">&para;</a></h2>
+<p>When you reach your target system the neutron route will automatically be
+cleared. If you want to prematurely end your trip, call the
+<code>SpanshAttack.clearRoute</code> / <code>clear neutron [course;route;trip]</code> command.</p>
+<h2 id="other-commands">Other Commands<a class="headerlink" href="#other-commands" title="Permanent link">&para;</a></h2>
+<h3 id="announcing-jumps-left">Announcing Jumps Left<a class="headerlink" href="#announcing-jumps-left" title="Permanent link">&para;</a></h3>
+<p>You can have VoiceAttack tell you the amount of jumps left on the current route 
+by invoking <code>SpanshAttack.announceJumpsLeft</code> or saying
+<code>how many [neutron;] jumps [are;] left?</code>.</p>
+<p><strong>Note</strong>: Because it’s pretty much impossible to calculate a 100% accurate value 
+for the total jumps left, it will just tell you the jump count <em>from the current 
+neutron waypoint</em>.</p>
+<h3 id="announce-elapsed-time-on-the-trip">Announce elapsed time on the trip<a class="headerlink" href="#announce-elapsed-time-on-the-trip" title="Permanent link">&para;</a></h3>
+<p>SpanshAttack keeps track of your start time, even if you have the option to time 
+your trip turned off. This way you can get the time you’ve been jumping with the 
+<code>SpanshAttack.announceTripTime</code> or
+<code>how long have i been [jumping;on this trip;on this neutron trip]?</code> commands. </p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../RatAttack/" class="btn btn-neutral float-left" title="RatAttack"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../StreamAttack/" class="btn btn-neutral float-right" title="StreamAttack">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/alterNERDtive/VoiceAttack-profiles" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../RatAttack/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../StreamAttack/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
