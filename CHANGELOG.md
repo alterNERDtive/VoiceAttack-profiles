@@ -1,4 +1,14 @@
-﻿# devel
+﻿# 4.5 (2022-09-19)
+
+This might very well be the last release of this. With how the “Horizons 4.0”
+launch went, Frontier’s communication around it, and just _how_ horrible 4.0 is,
+I currently do not see me being motivated to actually port stuff to 4.0. And,
+let’s face it, 3.8 will go EoL eventually.
+
+Anyway, I still have some programming pet projects around this stuff that I
+might continue with and adapt this for, so I might sneak some fixes / updates
+in, and I’m not going to say never because who knows how I’ll feel about this in
+the future. Obviously there’s also still the option to _pay_ me to do stuff =p
 
 ### Fixed
 
@@ -6,6 +16,12 @@
   variables (`~<name>`) not working as intended. This was introduced in
   refactoring work that was done for 4.4.
 * Documentation proof read and fixed by @ACyprus. Thanks!
+
+### Changed
+
+* Some behind the scenes things regarding how builds work. This will make it
+  possible to build this entirely on Github (= less potential for human error)
+  once I have dealt with #62 (see #143 as well).
 
 ## EliteAttack 8.5
 
