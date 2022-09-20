@@ -1,4 +1,13 @@
-﻿# 4.5 (2022-09-19)
+﻿# devel
+
+## SpanshAttack 7.2.3
+
+* Fixed `Newtonsoft.Json` version conflict that prevented getting approximate
+  coordinates for an unknown system from EDTS.
+
+-----
+
+# 4.5 (2022-09-19)
 
 This might very well be the last release of this. With how the “Horizons 4.0”
 launch went, Frontier’s communication around it, and just _how_ horrible 4.0 is,

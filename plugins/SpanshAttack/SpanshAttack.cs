@@ -33,7 +33,7 @@ namespace SpanshAttack
     /// </summary>
     public class SpanshAttack
     {
-        private static readonly Version VERSION = new ("7.2.2");
+        private static readonly Version VERSION = new ("7.2.3");
 
         private static VoiceAttackLog? log;
         private static VoiceAttackCommands? commands;
