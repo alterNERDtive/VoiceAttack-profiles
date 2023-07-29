@@ -5,6 +5,10 @@
 * Fixed `Newtonsoft.Json` version conflict that prevented getting approximate
   coordinates for an unknown system from EDTS.
 
+## RatAttack 6.4.1
+
+* Fixed RATSIGNAL regex for the `LEG/HOR/ODY` distinction.
+
 -----
 
 # 4.5 (2022-09-19)
