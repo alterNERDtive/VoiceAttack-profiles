@@ -2,10 +2,14 @@
 
 ## SpanshAttack 7.2.3
 
+### Fixed
+
 * Fixed `Newtonsoft.Json` version conflict that prevented getting approximate
   coordinates for an unknown system from EDTS.
 
 ## RatAttack 6.4.1
+
+### Fixed
 
 * Fixed RATSIGNAL regex for the `LEG/HOR/ODY` distinction.
 
